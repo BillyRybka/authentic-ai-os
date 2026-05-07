@@ -51,6 +51,16 @@ If any of these already exist, leave them alone. Do NOT overwrite banks, READMEs
 
 ## The walkthrough (5 stages, sequential)
 
+**FIRST ACTION — create the task list.** Before opening Stage 1, after loading `knowledge/vault-integration.md` and silent-checking `foundation/`, create a TodoWrite list with these five items:
+
+1. Iceberg Discovery — produce iceberg top + bottom + Person + Top 3 + Axis owned
+2. Credibility brags — three specific viewer-relevant wins
+3. Backstory — Problem-Action-Outcome, 1-2 paragraphs
+4. Voice profile handoff — tell the creator to run `vid-voice-capture` next
+5. Packaging system — Gift framework + format rotation + thumbnail strategy + design guardrails + creation path
+
+Mark each `in_progress` when you start it, `completed` when the save lands and the creator moves on. The list keeps Claude honest about sequence and gives the creator visibility into what's coming.
+
 **This skill is a conversation, not a document.** Hard rules for every stage:
 
 - Keep messages SHORT. 3-5 lines is usually right. Never dump multiple paragraphs upfront.

@@ -21,6 +21,7 @@ desktop.ini
 # Claude local
 .claude/settings.local.json
 .claude/.credentials.json
+.claude/skills/*-workspace/
 
 # Env / secrets
 .env

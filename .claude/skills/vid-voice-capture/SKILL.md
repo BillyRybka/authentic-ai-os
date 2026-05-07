@@ -62,6 +62,16 @@ If sources are thin, the skill will still run but flags low-confidence patterns 
 
 Sequential. Each stage ends with creator approval before moving on.
 
+**FIRST ACTION — create the task list.** Before opening Stage 1, after loading `knowledge/vault-integration.md` and silent-checking for an existing `foundation/voice-profile.md`, create a TodoWrite list with these stages:
+
+1. Source intake and context grouping
+2. Layer 1 extraction — core profile (cross-context patterns)
+3. Layer 2 extraction — per-context sub-profiles
+4. Pressure-test the profile (read-aloud + simulated drafts)
+5. Lock and save to `foundation/voice-profile.md`
+
+Mark each `in_progress` when starting, `completed` when the creator confirms and you move on. Keeps the sequence honest and shows the creator what's coming.
+
 ### Stage 1: Source intake and context grouping
 
 Ask the creator what content is available. As sources come in, group them by **context** (the format/platform/situation they were produced in). Common contexts:

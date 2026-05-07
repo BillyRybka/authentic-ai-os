@@ -1,6 +1,6 @@
 # Iceberg Discovery Method
 
-The conversation backbone for Stage 1 of vid-foundation. Walks the creator from "what do you sell?" to a locked iceberg — top (umbrella positioning) + bottom (subtopic angles that solve it).
+The conversation backbone for Stage 1 of vid-foundation. Walks the creator from "what do you sell?" to a locked iceberg — top (channel positioning) + bottom (subtopic angles that solve it).
 
 This file is for Claude to drive the conversation with. Do **not** paste it into chat. Use it to know which question comes next, when to push back, which probe to pull, and what good output looks like.
 
@@ -17,8 +17,6 @@ BOTTOM     →  8–12 subtopic angles
 ```
 
 Top = thumbnail / title / cold-viewer hook. Bottom = the menu the creator pulls from when planning videos.
-
-Same concept as the underlying source curriculum's "umbrella" — top problem above, angles underneath. Renamed to "iceberg" because the visual carries better and the bottom matters more than the umbrella metaphor implied.
 
 ## Conversation rules (every phase)
 

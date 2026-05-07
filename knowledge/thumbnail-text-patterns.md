@@ -217,7 +217,7 @@ The set still hits multiple patterns (cognitive-dissonance, number-hero, single-
 
 Proven title + thumbnail combinations from creators who've tested them in market. Read these to internalize the patterns. When generating, look for the closest-fitting example as a calibration reference.
 
-Format: thumbnail text → channel context / niche / why it worked. Title shown when paired explicitly in the source material.
+Format: thumbnail text → channel context / niche / why it worked. Title shown when available.
 
 ### Cognitive Dissonance
 
