@@ -8,23 +8,23 @@ tags: [bank, packaging, title, thumbnail, index]
 
 # Packaging Bank
 
-**Scope: any packaging reference that works.** The creator's own winning title + thumbnail combos AND outliers from other creators worth studying. One bank, one place to look when the planner or generator needs proven packaging to reference.
+**Scope: any packaging reference that works.** The creator's own winning title and thumbnail combos plus outliers from other creators worth studying. One bank, one place to look when the planner or generator needs proven packaging to reference.
 
-Title and thumbnail get treated together because they ARE one unit — the title sells the click, the thumbnail sells the click, and the combo is what the algorithm tests. A winning title without its thumbnail context is half the story. A winning thumbnail without its title is half the story.
+Title and thumbnail get treated together because they ARE one unit. The title sells the click, the thumbnail sells the click, and the combo is what the algorithm tests. A winning title without its thumbnail context is half the story. A winning thumbnail without its title is half the story.
 
 ## Two sources, one bank
 
 Every entry has a `source` field distinguishing where it came from:
 
-- **`source: own`** — the creator's own videos that proved out. Real performance data (CTR vs channel baseline, retention through hook, views).
-- **`source: outlier`** — other creators' videos performing significantly above their channel average (2x+ is the rule of thumb). Per outlier analysis methodology: study what's working in your niche AND adjacent niches, extract the packaging pattern.
+- **`source: own`**: the creator's own videos that proved out. Real performance data (CTR vs channel baseline, retention through hook, views).
+- **`source: outlier`**: other creators' videos performing significantly above their channel average (2x+ is the rule of thumb). Per outlier analysis methodology, study what's working in your niche AND adjacent niches, then extract the packaging pattern.
 
-Both feed the same use case: when `vid-thumbnail` generates concept briefs, it pulls reference packages from here — the creator's proven wins plus the outliers they've studied. Over time, own-winners crowd out outliers as the creator builds their own proven style.
+Both feed the same use case. When `vid-thumbnail` generates concept briefs, it pulls reference packages from here. The creator's proven wins plus the outliers they've studied. Over time, own-winners crowd out outliers as the creator builds their own proven style.
 
 ## What does NOT go here
 
 - Third-party frameworks or examples → live in `knowledge/`
-- Title patterns / fill-in-the-blank formulas → live in `banks/title-bank.md`
+- Title patterns and fill-in-the-blank formulas → live in `banks/title-bank.md`
 - Hook patterns → future `banks/hook-bank.md`
 - Transition patterns → future `banks/transition-bank.md`
 
@@ -37,25 +37,25 @@ One file per packaging combo that won. Entry captures:
 - The exact title (as published)
 - The thumbnail asset (image path)
 - The strategy used (Cognitive Dissonance, Before-After, Curiosity, Social Hacking, Result, Minimal)
-- The BENS letters it hit (Big / Easy / New / Safe)
+- The BENS letters it hit (Big, Easy, New, Safe)
 - The performance signal (click-through rate, retention through hook, comparison to channel baseline)
 - Link to the video it packaged: `[[Content/pieces/{slug}]]`
 
-**Add an entry when:** a packaging combo clearly outperformed. Don't log every attempt — only winners. Swipe files are winners only.
+**Add an entry when** a packaging combo clearly outperformed. Don't log every attempt. Only winners. Swipe files are winners only.
 
 ## What does NOT go in this bank
 
-- **Losing A/B variants.** If a thumbnail lost, it doesn't go here. Winners only.
-- **Untested concepts.** Packages that never got measured against a real audience don't belong.
-- **Title-only wins without thumbnail context.** If the thumbnail data is missing, the entry is incomplete.
-- **Fill-in-the-blank title patterns.** Those live in `banks/title-bank.md` — that file is for reusable formulas, this bank is for specific wins.
+- Losing A/B variants. If a thumbnail lost, it doesn't go here. Winners only.
+- Untested concepts. Packages that never got measured against a real audience don't belong.
+- Title-only wins without thumbnail context. If the thumbnail data is missing, the entry is incomplete.
+- Fill-in-the-blank title patterns. Those live in `banks/title-bank.md`. That file is for reusable formulas, this bank is for specific wins.
 
 ## Difference from title-bank.md
 
-- `banks/title-bank.md` — **patterns** (reusable mad-libs like "[Number] Ways to [Outcome] Without [Pain]")
-- `banks/packaging-bank/` — **specific wins** (this exact title + this exact thumbnail + this exact strategy)
+- `banks/title-bank.md`: **patterns** (reusable mad-libs like "[Number] Ways to [Outcome] Without [Pain]")
+- `banks/packaging-bank/`: **specific wins** (this exact title plus this exact thumbnail plus this exact strategy)
 
-Both exist for different reasons. Patterns give you starting scaffolds; wins give you proven style references.
+Both exist for different reasons. Patterns give you starting scaffolds, wins give you proven style references.
 
 ## Schema
 
@@ -95,10 +95,10 @@ tags: [packaging, source-{own|outlier}, strategy-{slug}, {domain-slug}]
 
 ## Naming convention
 
-`{short-slug}.md` — kebab-case.
+`{short-slug}.md`. Kebab-case.
 
-- Own winners: match the video slug — `first-hire-broke-everything.md`, `quit-my-day-job-2022.md`
-- Outliers: prefix with channel or descriptor — `healthygamergg-self-loathing-man.md`, `livinleggings-splits-90-days.md`
+- Own winners: match the video slug. `first-hire-broke-everything.md`, `quit-my-day-job-2022.md`
+- Outliers: prefix with channel or descriptor. `healthygamergg-self-loathing-man.md`, `livinleggings-splits-90-days.md`
 - Bad: `packaging-1.md`, `thumbnail-winner.md`
 
 ## Body template
@@ -110,16 +110,16 @@ tags: [packaging, source-{own|outlier}, strategy-{slug}, {domain-slug}]
 ![[assets/{slug}.png]]
 
 ## The strategy
-[One paragraph on WHY this package worked — what tension did the title create that the thumbnail resolved? What BENS letter did each piece hit?]
+[One paragraph on WHY this package worked. What tension did the title create that the thumbnail resolved? What BENS letter did each piece hit?]
 
 ## Performance
 - CTR: {%} (channel baseline: {%})
 - Retention through hook: {%}
 - Views in first 30 days: {#}
-- What told you it was a winner: [the signal — often a spike relative to recent uploads]
+- What told you it was a winner: [the signal. Often a spike relative to recent uploads]
 
 ## What to copy going forward
-- [1-3 things that made this work — style elements, tension-pattern, text placement, expression choice]
+- [1-3 things that made this work. Style elements, tension-pattern, text placement, expression choice]
 
 ## Related
 - Video: [[Content/pieces/{slug}]]
@@ -129,8 +129,8 @@ tags: [packaging, source-{own|outlier}, strategy-{slug}, {domain-slug}]
 ## How entries get used
 
 1. **Own winners:** creator publishes video → `vid-measurement` flags a winner → entry logged with full performance data
-2. **Outliers:** creator studies above-baseline videos in their niche or adjacent niches → logs the ones worth copying, with the outlier multiplier noted
-3. `vid-thumbnail` (planner) reads from this bank when generating concept briefs — pulls both own winners and studied outliers as style anchors, weighting own winners higher once they exist
+2. **Outliers:** creator studies above-baseline videos in their niche or adjacent niches, then logs the ones worth copying with the outlier multiplier noted
+3. `vid-thumbnail` (planner) reads from this bank when generating concept briefs. Pulls both own winners and studied outliers as style anchors, weighting own winners higher once they exist
 4. `vid-thumbnail-gen` (generator, future) uses thumbnail assets from this bank as visual style references when generating new images
 5. Over time, own-winners dominate the bank and outliers serve as aspirational references. Retired outliers can move to `status: retired` rather than being deleted.
 

@@ -7,7 +7,7 @@ tags: [person, client]
 
 # {Full Name}
 
-> [!note] Stub created automatically when mentioned in [[source-entry-slug|a bank entry]]. Flesh out when needed — this is the second brain pattern.
+> [!note] Stub created automatically when mentioned in [[source-entry-slug|a bank entry]]. Flesh out when needed. This is the second brain pattern.
 
 ---
 

@@ -89,9 +89,9 @@ Use validated titles to come up with ideas faster.
 - 5 Common Tips That Can Ruin Your X
   - 5 Common Tips That Can Ruin Your Weight Loss Journey
   - 5 Common Tips That Can Ruin Your Productivity
-- 92% of X Use Y Wrong – Here's What To Do Instead
-  - 92% of Homeowners Use Their Thermostats Wrong – Here's What To Do Instead
-  - 92% of Job Seekers Use Resumes Wrong – Here's What To Do Instead
+- 92% of X Use Y Wrong, Here's What To Do Instead
+  - 92% of Homeowners Use Their Thermostats Wrong, Here's What To Do Instead
+  - 92% of Job Seekers Use Resumes Wrong, Here's What To Do Instead
 - What I Learned From My Failed X
   - What I Learned From My Failed Business Venture
   - What I Learned From My Failed Fitness Challenge
@@ -122,9 +122,9 @@ Use validated titles to come up with ideas faster.
 - STOP Doing These X For Y!
   - STOP Doing These Mistakes For Better Health!
   - STOP Doing These Habits For Better Productivity!
-- First X Things To Do – Y (Tips and Tricks)
-  - First 5 Things To Do – When Starting a New Job (Tips and Tricks)
-  - First 3 Things To Do – To Improve Your Diet (Tips and Tricks)
+- First X Things To Do When Y (Tips and Tricks)
+  - First 5 Things To Do When Starting a New Job (Tips and Tricks)
+  - First 3 Things To Do To Improve Your Diet (Tips and Tricks)
 - How To X Like a Y
   - How To Write Like a Bestselling Author
   - How To Dress Like a Fashion Icon
@@ -140,9 +140,9 @@ Use validated titles to come up with ideas faster.
 - X Your Y Without Z
   - Improve Your Skin Without Expensive Products
   - Enhance Your Workout Without Expensive Gear
-- X Money-Saving Y Tricks – Don't Z!
-  - 5 Money-Saving Grocery Tricks – Don't Fall for These Common Mistakes!
-  - 3 Money-Saving Travel Tricks – Don't Overlook These Essentials!
+- X Money-Saving Y Tricks (Don't Z!)
+  - 5 Money-Saving Grocery Tricks (Don't Fall for These Common Mistakes!)
+  - 3 Money-Saving Travel Tricks (Don't Overlook These Essentials!)
 - X Steps To Get The Best Y Of Your Life In Z
   - 7 Steps To Get The Best Sleep Of Your Life In 30 Days
   - 5 Steps To Get The Best Financial Health Of Your Life In 6 Months
@@ -258,9 +258,9 @@ Use validated titles to come up with ideas faster.
 - Huge Lies X Are Telling You
   - Huge Lies Fitness Apps Are Telling You
   - Huge Lies Beauty Products Are Telling You
-- I Ditched X — Here's Why
-  - I Ditched My Social Media Accounts — Here's Why
-  - I Ditched Processed Foods — Here's Why
+- I Ditched X (Here's Why)
+  - I Ditched My Social Media Accounts (Here's Why)
+  - I Ditched Processed Foods (Here's Why)
 
 ---
 
@@ -269,9 +269,9 @@ Use validated titles to come up with ideas faster.
 - The BEST X of 2024
   - The BEST Smartphones of 2024
   - The BEST Fitness Gadgets of 2024
-- Best X of Y – Forget Z! X In This Instead
-  - Best Budget Laptops of 2024 – Forget High-End Models! Check These Instead
-  - Best Skincare Products of 2024 – Forget Old Brands! Try These New Ones
+- Best X of Y (Forget Z, Try This Instead)
+  - Best Budget Laptops of 2024 (Forget High-End Models, Check These Instead)
+  - Best Skincare Products of 2024 (Forget Old Brands, Try These New Ones)
 - I Bought X: What It's Actually Like!
   - I Bought the Latest Drone: What It's Actually Like!
   - I Bought a Subscription Box: What It's Actually Like!

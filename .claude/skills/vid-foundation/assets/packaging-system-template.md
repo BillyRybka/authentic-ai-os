@@ -1,7 +1,7 @@
 ---
 type: foundation
 doc: packaging-system
-project: youtube-content-os
+project: authentic-ai-os
 status: active
 date: YYYY-MM-DD
 last_refreshed: YYYY-MM-DD
@@ -10,9 +10,11 @@ tags: [foundation, packaging, format-rotation, thumbnail, title]
 
 # Packaging System
 
-## Gift Framework Commitment
+This file stores the creator's starting video defaults. These are useful first choices, not final rules. Update them when `vid-research`, `vid-framing`, or post-publish data gives stronger evidence.
 
-*The three layers of every video, aligned to this specific avatar.*
+## Starting Packaging Defaults
+
+*The three layers of every video, lined up to this avatar.*
 
 ### Wrapping paper (thumbnail style)
 *What is the avatar's favorite thumbnail aesthetic?*
@@ -25,55 +27,73 @@ tags: [foundation, packaging, format-rotation, thumbnail, title]
 > [description]
 
 ### Gift (content type)
-*What kind of content does the avatar keep coming back for? Systems / tactics / stories / frameworks / opinion / other?*
+*What kind of content does the avatar keep coming back for? Systems, tactics, stories, frameworks, opinion, other?*
 
 > [description]
 
 ---
 
-## Format Rotation (3+1)
+## Starting Format Rotation (3+1)
 
-*Three proven formats that run on rotation plus one experimental slot.*
+*Three first formats to rotate plus one experimental slot. These choices should say why they are a good first test, what evidence supports them, how confident we are, and what would tell us to change.*
 
 ### Core Format 1
 - **Format:** [Short Process / Case Study / Roast / Deep Dive / Interview / News / Listicle]
-- **Why it fits the avatar:** [one sentence]
+- **Why this is a good first test:** [one sentence]
+- **Evidence basis:** [creator judgment / source-backed default / own channel data / pattern-bank research]
+- **Confidence:** [low / medium / high]
+- **Watch for:** [what would tell us this format is wrong]
 
 ### Core Format 2
 - **Format:**
-- **Why it fits the avatar:**
+- **Why this is a good first test:**
+- **Evidence basis:**
+- **Confidence:**
+- **Watch for:**
 
 ### Core Format 3
 - **Format:**
-- **Why it fits the avatar:**
+- **Why this is a good first test:**
+- **Evidence basis:**
+- **Confidence:**
+- **Watch for:**
 
 ### Experimental Slot (every 4th video)
 - **Format to test:**
 - **Hypothesis:** [what we're testing and why]
+- **Evidence basis:** [creator judgment / source-backed default / own channel data / pattern-bank research]
+- **Confidence:** [experimental]
+- **Watch for:** [what result would make us promote, repeat, or drop it]
 
 ---
 
 ## Title Bank location
 
-The Title Bank lives at `banks/title-bank.md`. It contains validated fill-in-the-blank title patterns organized by niche. The creator adapts variables (X, Y, Z) to their actual niche and topic whenever they need a title. Winning titles get added over time.
+The Title Bank lives at `banks/title-bank.md`. It holds validated fill-in-the-blank title patterns by niche. The creator adapts the variables (X, Y, Z) to their actual niche and topic whenever they need a title. Winning titles get added over time.
 
 ---
 
 ## Thumbnail Strategy Test Plan
 
-*Pick 2 strategies to test first. Commit to 2+ videos per strategy before judging.*
+*Pick 2 strategies to test first. Give each one enough reps to learn something before judging.*
 
 ### Strategy 1
 - **Strategy:** [Cognitive Dissonance / Before & After / Result / Social Hacking / Curiosity / Minimal]
-- **Why:** [why this fits]
+- **Why this is a good first test:** [why this fits the avatar and format mix]
+- **Evidence basis:** [creator judgment / source-backed default / own channel data / pattern-bank research]
+- **Confidence:** [low / medium / high]
+- **Watch for:** [what would tell us to keep, adjust, or drop it]
 
 ### Strategy 2
 - **Strategy:**
-- **Why:**
+- **Why this is a good first test:**
+- **Evidence basis:**
+- **Confidence:**
+- **Watch for:**
 
 ### After testing
-- Winner: [determined after test]
-- Committed style: [lock it in, repeat consistently]
+- What real data showed: [decided after testing]
+- Keep / adjust / drop: [decision]
 
 ---
 
@@ -121,16 +141,16 @@ Notes on the chosen path: [how it works, who's involved, turnaround]
 
 - [ ] Title under 50 characters
 - [ ] Title hits at least one BENS letter (B / E / N / S)
-- [ ] Thumbnail follows the committed strategy
+- [ ] Thumbnail follows one of the current test strategies
 - [ ] Thumbnail follows design guardrails (color, font, hero, expression)
-- [ ] Thumbnail text ≤ 5 words
-- [ ] Format matches the rotation (3 proven OR 1 experimental)
-- [ ] The promise (thumbnail + title) matches what the video actually delivers
+- [ ] Thumbnail text 5 words or fewer
+- [ ] Format matches the starting rotation (3 core OR 1 experimental)
+- [ ] The promise (thumbnail plus title) matches what the video actually delivers
 
 ---
 
 ## Update log
 
 - YYYY-MM-DD: Initial packaging system built
-- YYYY-MM-DD: Committed to [strategy] after testing
+- YYYY-MM-DD: Kept / adjusted / dropped [strategy] after testing
 - YYYY-MM-DD: Promoted [experimental format] into core rotation

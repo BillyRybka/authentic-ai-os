@@ -23,6 +23,28 @@ desktop.ini
 .claude/.credentials.json
 .claude/skills/*-workspace/
 
+# Work-in-progress skills (prefix with _ to keep out of releases)
+.claude/skills/_*/
+
+# Billy's strategy + working files (never ships to clients)
+build-plan.md
+*.log
+_scratch/
+_strategy/
+_notes/
+
+# Vault scaffolding — gitignored until starter-vault is ready to ship
+foundation/
+banks/
+Content/
+People/
+Companies/
+Resources/
+
+# Temp / scratch artifacts
+.tmp-*
+diagram-preview.png
+
 # Env / secrets
 .env
 .env.*

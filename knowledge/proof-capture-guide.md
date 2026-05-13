@@ -1,7 +1,7 @@
 ---
 type: reference
 scope: shared
-loaded_by: [vid-capture, vid-segment, vid-hook]
+loaded_by: [vid-capture, vid-segment, vid-intro]
 status: active
 tags: [reference, proof-capture, proof-bank]
 ---
@@ -10,7 +10,7 @@ tags: [reference, proof-capture, proof-bank]
 
 Proof is what a cold viewer needs to believe the creator. Right after a framework lands, the viewer asks "has this actually worked for anyone?" If the answer isn't shown visually, specifically, and undeniably, the viewer loses trust at the exact wrong moment.
 
-This guide teaches how proof works. vid-capture uses it to extract and log proof into the bank. Downstream writing skills (vid-segment, vid-hook) use it to understand placement and how to splice proof into a script.
+This guide teaches how proof works. Vid-capture uses it to extract and log proof into the bank. Downstream writing skills (vid-segment, vid-intro) use it to understand placement and how to splice proof into a script.
 
 ## Real examples (read these first)
 
@@ -43,7 +43,7 @@ A split image or two sequential stills. Left side shows the old listing photo th
 
 ## The 2 proof types
 
-`proof_type` answers ONE question: who does the result belong to? Pick the type first. Presentation format (how the proof is shown on screen) is captured separately in the body — a single proof can be presented multiple ways.
+`proof_type` answers ONE question: who does the result belong to? Pick the type first. Presentation format (how the proof is shown on screen) is captured separately in the body. A single proof can be presented multiple ways.
 
 ### Personal result
 
@@ -59,14 +59,14 @@ Use when the creator needs to prove the method works for someone besides themsel
 
 ## Presentation formats (body-level, not type-level)
 
-How the proof gets shown on screen. Recorded in the entry's "Presentation format" section. A single proof can be available in multiple formats — capture them all so writing skills can pick the right one for the moment.
+How the proof gets shown on screen. Recorded in the entry's "Presentation format" section. A single proof can be available in multiple formats. Capture them all so writing skills can pick the right one for the moment.
 
-- **Static screenshot** — single image, frozen frame. Most common.
-- **Before-after pairing** — two images side by side, or a graph showing change over time. Use when the transformation is visually obvious.
-- **Live clip** — video of someone actually saying or showing the result. Hardest to collect, heaviest impact.
-- **Inline stat or quote** — the proof IS the number or the words, no separate asset file. Capture verbatim.
+- **Static screenshot**: single image, frozen frame. Most common.
+- **Before-after pairing**: two images side by side, or a graph showing change over time. Use when the transformation is visually obvious.
+- **Live clip**: video of someone actually saying or showing the result. Hardest to collect, heaviest impact.
+- **Inline stat or quote**: the proof IS the number or the words, no separate asset file. Capture verbatim.
 
-A proof's `proof_type` never changes. Its presentation formats can grow over time (e.g. a client win starts as a screenshot; later you film the client on camera — both formats live in the same entry).
+A proof's `proof_type` never changes. Its presentation formats can grow over time (e.g. a client win starts as a screenshot, later you film the client on camera. Both formats live in the same entry).
 
 ## The screenshot-immediately rule
 
@@ -76,7 +76,7 @@ The moment a positive result lands (an email, a comment, a message, a graph, any
 
 Why: positive proof appears at random. If the creator tells themselves "I'll screenshot that later," they never do. The behavior has to be immediate and non-negotiable.
 
-The creator's phone and desktop should have a quick-capture workflow. A folder called something like "proof-inbox" is fine. vid-capture then processes items from that folder into proper bank entries.
+The creator's phone and desktop should have a quick-capture workflow. A folder called something like "proof-inbox" is fine. Vid-capture then processes items from that folder into proper bank entries.
 
 ## Where proof lands in a script
 

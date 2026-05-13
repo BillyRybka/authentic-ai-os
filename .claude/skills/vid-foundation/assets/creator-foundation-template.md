@@ -10,32 +10,32 @@ tags: [foundation, creator-identity, iceberg, positioning, avatar, credibility, 
 
 # Creator Foundation
 
-## Iceberg Top — Positioning Statement
+## Iceberg Statement
 
-*One sentence. The single umbrella every video lives under. Formula: "I help [Person] [achieve result] by [solving core problem]."*
+*One sentence. The channel's promise. Formula: "I help [Person] [achieve result] by [solving core problem]."*
 
-> [positioning statement goes here]
+> [Iceberg Statement goes here]
 
 ### Optional longer version
 
 *"I help [Person] [achieve result] by [solving problem] so they can [deeper reason]."*
 
-> [optional longer version, if surfaced naturally — leave blank otherwise]
+> [optional longer version, if it surfaced naturally. Leave blank otherwise]
 
 ---
 
-## Iceberg Bottom — Subtopic Angles
+## Bottom of the iceberg: subtopics
 
-*8-12 angles the creator can teach that solve the top problem. Not video ideas — angles. Categories of teaching. This list grows with experience.*
+*8-12 subtopics the creator can teach that deliver on the Iceberg Statement. Categories of teaching, not video titles. This list grows with experience.*
 
-1. [angle 1]
-2. [angle 2]
-3. [angle 3]
-4. [angle 4]
-5. [angle 5]
-6. [angle 6]
-7. [angle 7]
-8. [angle 8]
+1. [subtopic 1]
+2. [subtopic 2]
+3. [subtopic 3]
+4. [subtopic 4]
+5. [subtopic 5]
+6. [subtopic 6]
+7. [subtopic 7]
+8. [subtopic 8]
 
 *Add more (target 8-12 minimum). Refine as published videos surface what real viewers respond to.*
 
@@ -43,34 +43,43 @@ tags: [foundation, creator-identity, iceberg, positioning, avatar, credibility, 
 
 ## Person
 
-- **Age range:** [specific span — 28-42, not 18-60]
-- **Sex:** [M / F / both — pick "both" only if positioning truly applies equally]
-- **Location:** [English-speaking / specific region]
-- **Type of person:** [job title, life role, or lifestyle label — e.g. "solo founder," "new dad," "corporate dropout"]
+- **Public label:** [clean noun phrase used in the Iceberg Statement, e.g. "business owners," "new managers," "first-time homebuyers"]
+- **Fit qualifier:** [stage, revenue, life moment, industry constraint, or other gate. Mark "not primary" if none]
+- **Expertise / identity role:** [why this person recognizes themselves, e.g. "expert in their field," "new manager," "high-earning family"]
+- **Business / life context:** [the situation that makes the problem urgent]
+- **Content / channel role:** [why they watch this creator. What they come to learn or solve]
+- **Age range:** [specific span if it affects examples, buying psychology, or voice. Otherwise "not primary"]
+- **Sex:** [M / F / both / not primary. Pick "both" only if positioning truly applies equally]
+- **Location:** [English-speaking / specific region / not primary]
+
+### Internal context
+
+*[Useful detail that helps downstream skills understand the Person, but should not bloat the Iceberg Statement. Keep it factual and concise.]*
+
+> [internal context]
+
+---
+
+## Positioning Inputs
+
+*Internal signals that sharpen the Iceberg Statement and help downstream skills avoid generic output. These are not public copy.*
+
+- **Surface problem:** [the obvious complaint]
+- **Deeper blocker:** [why the surface problem keeps happening]
+- **Business / life consequence:** [what gets worse if they do not solve it]
+- **Method:** [the creator's method, mechanism, platform, or system]
+- **Creator-owned raw material:** [what the creator uses from the person's real life, expertise, stories, proof, or constraints]
+- **Named enemy:** [what the Person refuses to become, create, or be associated with]
+- **Stakes:** [what is at risk]
+- **Creator phrases to preserve:** [short exact phrases from the creator's answers]
 
 ### Top 3 perceived problems
 
 *What THEY think is stopping them. In their exact language, not the expert's. Three distinct domains.*
 
-1. [Problem 1 — in their exact words, most urgent]
-2. [Problem 2 — different domain]
-3. [Problem 3 — different domain]
-
----
-
-## Axis Owned
-
-*The differentiation lane. What the niche competes on that this creator refuses to play on, and what they own instead.*
-
-- **What the niche competes on:** [the crowded axis — speed, price, ease, credentials, aesthetics, etc.]
-- **What the creator refuses to play on:** [their excluded axis]
-- **What the creator owns instead:** [their differentiated axis]
-
-### Optional: Known-for word
-
-*The single word the creator wants to be associated with in the viewer's mind. Volvo = safety. Red Bull = energy. The narcissist lady. The cheese guy.*
-
-> [single word or short concept — leave blank if not surfaced]
+1. [Problem 1, in their exact words, most urgent]
+2. [Problem 2, different domain]
+3. [Problem 3, different domain]
 
 ---
 
@@ -86,7 +95,7 @@ tags: [foundation, creator-identity, iceberg, positioning, avatar, credibility, 
 
 ## Backstory
 
-*Problem → Action → Outcome. 1-2 short paragraphs. Conversational tone. If the creator never had the viewer's problem, use a real client's backstory with clear attribution.*
+*Problem, Action, Outcome. 1-2 short paragraphs. Conversational tone. If the creator never had the viewer's problem, use a real client's backstory with clear attribution.*
 
 > [Problem paragraph]
 >
@@ -103,5 +112,5 @@ tags: [foundation, creator-identity, iceberg, positioning, avatar, credibility, 
 ## Notes
 
 - This is a minimum viable foundation. Expect to refine after 3-4 videos of data.
-- Any major iceberg-top shift requires re-running this skill.
-- The iceberg-bottom list grows continuously — add angles as the channel evolves.
+- Any major Iceberg Statement shift means re-running this skill.
+- The bottom of the iceberg grows continuously. Add subtopics as the channel evolves.

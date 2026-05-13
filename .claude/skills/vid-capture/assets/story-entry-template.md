@@ -1,6 +1,6 @@
 ---
 type: story
-project: youtube-content-os
+project: authentic-ai-os
 story_type: client
 problem_illustrated: general
 client: "[[Client Name]]"

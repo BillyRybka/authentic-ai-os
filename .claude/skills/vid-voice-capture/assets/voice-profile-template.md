@@ -1,7 +1,7 @@
 ---
 type: foundation
 doc: voice-profile
-project: youtube-content-os
+project: authentic-ai-os
 status: active
 date: YYYY-MM-DD
 last_refreshed: YYYY-MM-DD
@@ -11,9 +11,9 @@ tags: [foundation, voice, creator-identity]
 
 # Voice Profile
 
-This profile is a preservation checklist. It captures how the creator already speaks. Writing skills load it to validate that their output still sounds like the creator. The profile is descriptive, not prescriptive — if the creator would reword any output line when reading it aloud, the profile hasn't been applied correctly.
+This profile is a preservation checklist. It captures how the creator already speaks. Writing skills load it to validate that their output still sounds like the creator. The profile is descriptive, not prescriptive. If the creator would reword any output line when reading it aloud, the profile hasn't been applied correctly.
 
-Two layers below: **Core** holds across every format the creator uses. **Context Maps** capture per-format flex. Writing skills load Core always, and the relevant Context Map if one exists for what they're producing.
+Two layers below. **Core** holds across every format the creator uses. **Context Maps** capture per-format flex. Writing skills load Core always, and the relevant Context Map if one exists for what they're producing.
 
 ---
 
@@ -23,13 +23,13 @@ Patterns that hold across every format.
 
 ### Recurring phrases
 
-5 to 10 phrases the creator uses across formats. Real quotes pulled from sources.
+5-10 phrases the creator uses across formats. Real quotes pulled from sources.
 
-- "[phrase 1]" — appears in [contexts where seen]
-- "[phrase 2]" — [contexts]
-- "[phrase 3]" — [contexts]
-- "[phrase 4]" — [contexts]
-- "[phrase 5]" — [contexts]
+- "[phrase 1]", appears in [contexts where seen]
+- "[phrase 2]", [contexts]
+- "[phrase 3]", [contexts]
+- "[phrase 4]", [contexts]
+- "[phrase 5]", [contexts]
 
 ### Words avoided
 
@@ -43,9 +43,9 @@ Words the creator does not use, paired with what they use instead.
 
 Phrasings the creator would never write. Stronger than words-avoided. Hard reject if they appear in any output.
 
-- "[phrasing 1]" — reason if known
-- "[phrasing 2]" — reason
-- "[phrasing 3]" — reason
+- "[phrasing 1]", reason if known
+- "[phrasing 2]", reason
+- "[phrasing 3]", reason
 
 ### POV default
 
@@ -85,7 +85,7 @@ Per-format sub-profiles. Only contexts with sufficient source material are popul
 
 ### Context: `youtube-script`
 
-*Stub note if not populated: "Context map deferred — needs more youtube-script source material before patterns can be validated."*
+*Stub note if not populated: "Context map deferred. Needs more youtube-script source material before patterns can be validated."*
 
 **Sentence rhythm:**
 - Median: [N words]
@@ -110,10 +110,10 @@ Per-format sub-profiles. Only contexts with sufficient source material are popul
 - Style: [none / direct ask / callback / community invite / question back / series teaser]
 
 **Energy modulation:**
-- [How the creator dials energy in this context vs. baseline]
+- [How the creator dials energy in this context vs baseline]
 
 **Format-specific phrases:**
-- "[phrase]" — appears in this context, absent or rare elsewhere
+- "[phrase]", appears in this context, absent or rare elsewhere
 
 **Format-specific transitions:**
 - [How they move between ideas in this format]

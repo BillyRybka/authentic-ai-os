@@ -2,21 +2,21 @@
 
 Every video is a gift to the viewer. A gift has three layers:
 
-1. **Wrapping paper** — the thumbnail and title
-2. **Box** — the video format (how the content is packaged)
-3. **Gift** — the information itself
+1. **Wrapping paper**: the thumbnail and title
+2. **Box**: the video format (how the content is packaged)
+3. **Gift**: the information itself
 
 Each layer must appeal to the specific viewer type, and each must deliver on the promise of the layer before it.
 
 ## The open-or-pass principle
 
-When a viewer sees a thumbnail, they're playing a game of "open or pass." It's not about the thumbnail being pretty or ugly — it's about whether it matches THEIR kind of wrapping paper.
+When a viewer sees a thumbnail, they're playing a game of "open or pass." It's not about the thumbnail being pretty or ugly. It's about whether it matches THEIR kind of wrapping paper.
 
 Two thumbnails can both do massive numbers while looking completely different:
 - A dark red background with a cutout figure and bold text "FASCIA HOPPING CHANGES EVERYTHING" (1.2M views)
 - A simple "STOP BEING BORING!" editing tutorial thumbnail (3.9M views)
 
-Both worked. Different audiences. The question is never "is this thumbnail good?" — it's "is this the wrapping paper my specific viewer is drawn to?"
+Both worked. Different audiences. The question is never "is this thumbnail good?" It's "is this the wrapping paper my specific viewer is drawn to?"
 
 ## The box example
 
@@ -26,7 +26,7 @@ Different audiences want different boxes (formats).
 - A watch-enthusiast audience might want a 10-minute news format repeated every week
 - An editing-community audience might want editing-challenge videos over and over
 
-If a creator with a Deep Dive audience suddenly starts posting News-format videos, most will fail — the audience came for a different box.
+If a creator with a Deep Dive audience suddenly starts posting News-format videos, most will fail. The audience came for a different box.
 
 ## The teabag moment
 
@@ -45,7 +45,7 @@ The Gift Framework commitment answers three questions for the creator's specific
 
 The thumbnail style that stops them mid-scroll.
 
-- Do they respond to faces + text?
+- Do they respond to faces plus text?
 - Do they respond to data visualizations?
 - Do they respond to before/after comparisons?
 - Do they respond to minimal cinematic images?
@@ -80,7 +80,7 @@ Pick the content type the avatar keeps returning for.
 
 ## The consistency rule
 
-Once the creator finds a winning combination of wrapping paper + box + gift, they should reuse it. Same thumbnail style. Same title structure. Same intro pattern. Same format.
+Once the creator finds a winning combination of wrapping paper, box, and gift, they should reuse it. Same thumbnail style. Same title structure. Same intro pattern. Same format.
 
 This feels boring to the creator. It isn't boring to the viewer. Viewers who love Louis Vuitton don't get bored of Louis Vuitton.
 
@@ -94,7 +94,7 @@ Only change the wrapping paper, box, or gift when the data says to. Not when the
 - Box changes when the format stops converting even with strong packaging
 - Gift changes when the content type stops serving the avatar's top 3 problems
 
-Changes happen through the Fail As Fast As You Can cycle — MVP → Test → Measure → Adjust.
+Changes happen through the Fail As Fast As You Can cycle: MVP → Test → Measure → Adjust.
 
 ## How to use the Gift Framework in the foundation
 
@@ -111,6 +111,6 @@ If any answer is no, the decision is wrong. Iterate.
 
 - Optimizing for "looks good" instead of "matches the avatar"
 - Changing format every few videos because the creator got bored
-- Premium wrapping + teabag content
-- Mismatched layers (tactical thumbnail + philosophical content)
+- Premium wrapping with teabag content
+- Mismatched layers (tactical thumbnail with philosophical content)
 - Copying wrapping paper from a different audience's winning style

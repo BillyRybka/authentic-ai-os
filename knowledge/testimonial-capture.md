@@ -1,7 +1,7 @@
 ---
 type: reference
 scope: shared
-loaded_by: [vid-capture, vid-segment, vid-hook]
+loaded_by: [vid-capture, vid-segment, vid-intro]
 status: active
 tags: [reference, testimonial-capture, proof-bank]
 ---
@@ -10,7 +10,7 @@ tags: [reference, testimonial-capture, proof-bank]
 
 A testimonial is captured client voice. Not the creator narrating what a client achieved (that's a story). Not a number on a dashboard (that's proof). A testimonial is the client's own words, preserved verbatim, with a source and a date.
 
-This guide teaches how testimonials work. vid-capture uses it to log testimonials that already exist. Downstream writing skills (vid-segment, vid-hook) use it to understand where testimonials land in a script and how to render them.
+This guide teaches how testimonials work. vid-capture uses it to log testimonials that already exist. Downstream writing skills (vid-segment, vid-intro) use it to understand where testimonials land in a script and how to render them.
 
 Soliciting new testimonials from clients is outside this skill's scope.
 
@@ -30,7 +30,7 @@ A client messages the creator on Instagram after watching a video: "Hey, I tried
 A public YouTube comment on a video: "Ok I didn't think this would work but I made the change you said and literally booked a call 2 hours later. wtf thank you."
 
 - Source: `comment`
-- Client: "Anonymous" (it's a public comment, but not everyone wants their handle blown up)
+- Client: "Anonymous" (it's a public comment, not everyone wants their handle blown up)
 - Verbatim: preserve lowercase, swearing, typos, all of it. The authenticity is the point.
 - Placement in script: multiple of these scrolled through as a "wall of wins" moment
 
@@ -49,7 +49,7 @@ Pick the source first. This drives the `source:` field and the way the testimoni
 
 ### `comment`
 
-Public YouTube comment, Instagram comment, blog comment. Public by default. The creator can screenshot without asking (it's already public), but if the commenter wants their handle hidden, anonymize.
+Public YouTube comment, Instagram comment, blog comment. Public by default. The creator can screenshot without asking (it's already public). If the commenter wants their handle hidden, anonymize.
 
 ### `dm`
 
@@ -77,7 +77,7 @@ Before capturing:
 
 - Has the client given explicit permission to use their full name? Use the name.
 - Has the client given permission to use just their first name or initials? Use what they allowed.
-- Is this from a public comment? Use the handle if the handle is already public, but consider "Anonymous" if blowing it up feels off.
+- Is this from a public comment? Use the handle if the handle is already public, consider "Anonymous" if blowing it up feels off.
 - Private message with no explicit permission? Anonymize. Use "Anonymous" in `client:` and set `anonymized: true`.
 
 When in doubt, anonymize. Ask later.

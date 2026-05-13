@@ -1,25 +1,25 @@
 ---
 type: reference
 doc: thumbnail-composition-guide
-project: youtube-content-os
+project: authentic-ai-os
 status: active
 tags: [reference, thumbnail, composition, visual, packaging]
 ---
 
 # Thumbnail Composition Guide
 
-The visual side of thumbnails — placement, color, typography hierarchy, audience aesthetic. Companion to `thumbnail-text-patterns.md` (which handles the words). Loaded by `vid-thumbnail` Phase 3 when proposing the composition concept.
+The visual side of thumbnails: placement, color, typography hierarchy, audience aesthetic. Companion to `thumbnail-text-patterns.md` (which handles the words). Loaded by `vid-thumbnail` Phase 3 when proposing the composition concept.
 
-## Subject placement — default right
+## Subject placement: default right
 
-The default is **subject on the right, text on the left** OR **subject on the left, text on the right**. Most channels go subject-left + text-right because viewers read left to right — text gets seen first, creating the intended hierarchy.
+The default is **subject on the right, text on the left** OR **subject on the left, text on the right**. Most channels go subject-left plus text-right because viewers read left to right. Text gets seen first, creating the intended hierarchy.
 
 Three options:
-- **Subject left + text right** (most common, text leads attention)
-- **Subject right + text left** (subject leads attention)
+- **Subject left plus text right** (most common, text leads attention)
+- **Subject right plus text left** (subject leads attention)
 - **Subject centered** (when text IS the hero or there's no subject)
 
-Centered is usually a mistake unless the text is the hero and the subject is small or absent. Pick one position per thumbnail and commit. Don't try to balance left and right symmetrically — symmetry kills hierarchy.
+Centered is usually a mistake unless the text is the hero and the subject is small or absent. Pick one position per thumbnail and commit. Don't try to balance left and right symmetrically. Symmetry kills hierarchy.
 
 ## Color by demographic
 
@@ -32,15 +32,15 @@ The packaging-system's color guardrails set the palette. This guide is for picki
 
 **Muted / pastel / authentic tones:**
 - Audience: millennial professionals, lifestyle creators, wellness audiences
-- Why it works: signals authenticity and "not selling to me" — the audience is suspicious of obvious marketing
+- Why it works: signals authenticity and "not selling to me." The audience is suspicious of obvious marketing
 - Visual cue: slow-living channels, design-aesthetic creators, productivity-minimalist niches
 
 **Muted / simple / clean:**
 - Audience: 50+ professionals, business audiences, established entrepreneurs
 - Why it works: signals seriousness, credibility, no-nonsense
-- Visual cue: WSJ/HBR style — limited palette, plenty of negative space
+- Visual cue: WSJ/HBR style. Limited palette, plenty of negative space
 
-**Test:** Look at three thumbnails the avatar would naturally click on (NOT what looks "good" objectively — what THEY would click). The aesthetic intensity in those is the target zone.
+**Test:** Look at three thumbnails the avatar would naturally click on (NOT what looks "good" objectively, what THEY would click). The aesthetic intensity in those is the target zone.
 
 ## Gender aesthetic shifts
 
@@ -49,7 +49,7 @@ Real audience-driven splits the planner has to respect:
 **Male-skewing audiences:**
 - Intense, often angry-looking faces (hustle-culture and high-conviction business niches)
 - High contrast, clean designs
-- Shouty / sweary text energy ("STOP," "WAKE THE F*CK UP," "GET SH*T DONE")
+- Shouty, sweary text energy ("STOP," "WAKE THE F*CK UP," "GET SH*T DONE")
 - Limited palette, hard edges
 
 **Female-skewing audiences:**
@@ -61,21 +61,21 @@ Real audience-driven splits the planner has to respect:
 
 **The rule:** sometimes you have to break the universal design rules to match the audience. The avatar's gender skew is a guardrail input, not an afterthought.
 
-## Cognitive load — minimize processing time
+## Cognitive load: minimize processing time
 
-Thumbnails are "monkey brain" — pre-conscious recognition. The viewer decides to click in under a second. Anything that requires interpretation kills clicks.
+Thumbnails are "monkey brain" pre-conscious recognition. The viewer decides to click in under a second. Anything that requires interpretation kills clicks.
 
 **Low cognitive load (good):**
 - Faces (instant recognition)
-- Direct text (READ → DONE)
+- Direct text (READ, DONE)
 - Specific numbers
 - Familiar objects in unexpected contexts
 - One clear hero element
 
 **High cognitive load (bad):**
-- Visual metaphors ("a roadmap" for a system, "a key" for unlock, "a brain" for mindset) — viewer has to decode
+- Visual metaphors ("a roadmap" for a system, "a key" for unlock, "a brain" for mindset). Viewer has to decode
 - Complex layered images requiring scanning
-- Abstract/illustrated concepts
+- Abstract or illustrated concepts
 - Multiple competing focal points
 - Stylized typography that delays reading
 
@@ -99,56 +99,56 @@ TANKED MY REVENUE            TANKED MY REVENUE
 
 **Sizing hierarchy:** the most important word gets the biggest size (often a number, name, or imperative verb). Secondary words shrink to fit. The eye reads size first, position second, color third.
 
-## Hero element — face / object / text / hybrid
+## Hero element: face / object / text / hybrid
 
 The packaging-system commits to one of these as the default hero. The thumbnail planner respects it but can flex within the commitment.
 
-**Face hero:** the creator's face dominates. Used when the channel is personality-driven. Expression and gaze direction matter — see Expression rules below.
+**Face hero:** the creator's face dominates. Used when the channel is personality-driven. Expression and gaze direction matter. See Expression rules below.
 
-**Object hero:** a single object (notebook, money stack, broken thing, before/after photo) carries the visual. Used when the channel is topic/result-driven. Object should be unexpected in context — predictable objects ("a graph going up") fail.
+**Object hero:** a single object (notebook, money stack, broken thing, before/after photo) carries the visual. Used when the channel is topic or result-driven. Object should be unexpected in context. Predictable objects ("a graph going up") fail.
 
-**Text hero:** the words ARE the visual. Used when the message is so strong it doesn't need imagery ("AVOID THESE BANKS," "YOU DON'T NEED SUBSCRIBERS"). Requires extremely punchy text — most thumbnail texts can't carry this.
+**Text hero:** the words ARE the visual. Used when the message is so strong it doesn't need imagery ("AVOID THESE BANKS," "YOU DON'T NEED SUBSCRIBERS"). Requires extremely punchy text. Most thumbnail texts can't carry this.
 
-**Hybrid (face + object):** most common winning combination. Face for emotional recognition, object for specificity. The object should narrate the situation (cracked org-chart card = system broke, floating notebook with SOPs = the fix is documented).
+**Hybrid (face plus object):** most common winning combination. Face for emotional recognition, object for specificity. The object should narrate the situation (cracked org-chart card equals system broke, floating notebook with SOPs equals the fix is documented).
 
 ## Expression rules (when face is hero or hybrid)
 
 The packaging-system guardrails specify allowed expressions. The planner picks one per pick.
 
 **Core expressions that work:**
-- **Surprised** — eyes wide, mouth slightly open, genuine "what happened" not exaggerated
-- **Focused** — closed mouth, steady gaze, slight chin lift, conviction without smiling
-- **Concerned** — slight brow furrow, mouth set, looking at something problematic off-frame
-- **Confident** — direct gaze, slight smile (not full smile), shoulders back
+- **Surprised**: eyes wide, mouth slightly open, genuine "what happened" not exaggerated
+- **Focused**: closed mouth, steady gaze, slight chin lift, conviction without smiling
+- **Concerned**: slight brow furrow, mouth set, looking at something problematic off-frame
+- **Confident**: direct gaze, slight smile (not full smile), shoulders back
 
 **Dead expressions** (do NOT use):
-- **Open-mouth shock face** — once a proven hero element, now tested out as underperforming. Avoid as a default.
-- **Big smile** — except for specific lifestyle/positivity niches. Reads as advertorial.
-- **Pointing finger** — the cliché business-bro pose. Untrustworthy.
-- **Theatrical anything** — exaggerated emotion reads as fake. Honest > performative.
+- **Open-mouth shock face**: once a proven hero element, now tested out as underperforming. Avoid as a default.
+- **Big smile**: except for specific lifestyle/positivity niches. Reads as advertorial.
+- **Pointing finger**: the cliché business-bro pose. Untrustworthy.
+- **Theatrical anything**: exaggerated emotion reads as fake. Honest beats performative.
 
 **Gaze direction:**
-- Looking AT the camera = direct address, used for confident/focused expressions
-- Looking just OFF-camera = used for surprised/concerned (the viewer feels what the subject sees)
-- Looking AT the object/text in frame = used for hybrid layouts to direct viewer attention
+- Looking AT the camera equals direct address, used for confident or focused expressions
+- Looking just OFF-camera equals used for surprised or concerned (the viewer feels what the subject sees)
+- Looking AT the object/text in frame equals used for hybrid layouts to direct viewer attention
 
-## Mismatch rule — packaging quality must match content quality
+## Mismatch rule: packaging quality must match content quality
 
-If the thumbnail looks slick (high production, polished) but the video is webcam at a kitchen table, the package fails on click — the viewer feels deceived. And vice versa: an authentic raw thumbnail on a polished studio video reads as undersold.
+If the thumbnail looks slick (high production, polished) but the video is webcam at a kitchen table, the package fails on click. The viewer feels deceived. Vice versa: an authentic raw thumbnail on a polished studio video reads as undersold.
 
-**Rule:** match production aesthetic. Polished thumbnail → polished video. Authentic raw thumbnail → authentic raw video. Don't mix.
+**Rule:** match production aesthetic. Polished thumbnail goes with polished video. Authentic raw thumbnail goes with authentic raw video. Don't mix.
 
 ## How to use this file in `vid-thumbnail` Phase 3
 
 When proposing the composition concept per pick:
 
-1. Pull subject placement from packaging-system or default to subject-left + text-right
+1. Pull subject placement from packaging-system or default to subject-left plus text-right
 2. Apply the demographic color intensity within the committed palette
 3. Apply gender aesthetic adjustments if the avatar is male-skewing or female-skewing
-4. Pick an expression from the guardrails — surprised / focused / concerned / confident
+4. Pick an expression from the guardrails: surprised, focused, concerned, confident
 5. Pick gaze direction based on layout (off-camera for surprise, at-camera for focus, at-object for hybrid)
 6. Box the text if it's multiple lines
-7. Confirm cognitive load is low — no visual metaphors, no decoding required
+7. Confirm cognitive load is low: no visual metaphors, no decoding required
 8. Cross-check production aesthetic matches the video's filming setup
 
-The composition concept presented to the creator should reference these rules implicitly (don't lecture) — but the choices should be deliberate, not random.
+The composition concept presented to the creator should reference these rules implicitly (don't lecture). The choices should be deliberate, not random.

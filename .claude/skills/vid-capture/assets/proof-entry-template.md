@@ -1,6 +1,6 @@
 ---
 type: proof
-project: youtube-content-os
+project: authentic-ai-os
 proof_type: client-win
 client: "[[Client Name]]"
 captured: YYYY-MM-DD
@@ -22,7 +22,7 @@ used_in: []
 
 ## Presentation format
 
-{One or more of: static-screenshot / before-after-pairing / live-clip / inline-stat-or-quote. A single proof can have multiple formats. Add new formats over time as you collect them — the proof_type never changes, but the ways of showing it can grow.}
+{One or more of: static-screenshot / before-after-pairing / live-clip / inline-stat-or-quote. A single proof can have multiple formats. Add new formats over time as you collect them. The proof_type never changes, but the ways of showing it can grow.}
 
 ## Context
 
@@ -43,7 +43,7 @@ used_in: []
 
 **Frontmatter fields:**
 
-- `proof_type`: one of `personal-result` or `client-win` (about who the result belongs to — not how it's presented)
+- `proof_type`: one of `personal-result` or `client-win` (about who the result belongs to, not how it's presented)
 - `client`: wikilink to `People/{Full Name}.md`. Only present for proof involving a client. Remove the line for personal-result proof.
 - `captured`: ISO date
 - `status`: starts `captured`

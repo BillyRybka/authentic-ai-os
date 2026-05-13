@@ -4,13 +4,13 @@ A copywriting system for titles, thumbnails, hooks, and CTAs. Every strong title
 
 ## The four letters
 
-**B — Big.** A bold claim or dramatic stakes. Makes the viewer think "wait, that's a lot."
+**B. Big.** A bold claim or dramatic stakes. Makes the viewer think "wait, that's a lot."
 
-**E — Easy.** Makes the result feel achievable. Signals a shortcut, a simple method, a defined number of steps.
+**E. Easy.** Makes the result feel achievable. Signals a shortcut, a simple method, a defined number of steps.
 
-**N — New.** Makes the information feel fresh. Either genuinely new or repackaged to feel novel. Frustrated viewers who have tried everything respond most to New.
+**N. New.** Makes the information feel fresh. Either genuinely new or repackaged to feel novel. Frustrated viewers who have tried everything respond most to New.
 
-**S — Safe.** Builds trust and credibility. Specific numbers, known sources, or a credible person attached.
+**S. Safe.** Builds trust and credibility through specific numbers, known sources, or a credible person attached.
 
 ## Examples
 
@@ -26,7 +26,7 @@ Primary drivers: B + N
 
 - **B:** 300 books is a big claim.
 - **E:** "3 lessons" is digestible. 350 lessons would scare viewers off.
-- **N:** Most haven't read 300 books. Lessons feel hard-earned.
+- **N:** Most haven't read 300 books, so the lessons feel hard-earned.
 - **S:** "I did the thing" signals the value is real.
 
 Primary drivers: B + E
@@ -35,7 +35,7 @@ Primary drivers: B + E
 
 - **B:** YouTubers are doing something specific to hook you.
 - **E:** "Hack" signals shortcut.
-- **N:** Doesn't name the hack. Keeps it mysterious.
+- **N:** Doesn't name the hack, keeps it mysterious.
 - **S:** Attributed to known creators (borrowed credibility).
 
 Primary drivers: E + N + S
@@ -53,14 +53,14 @@ Primary drivers: B + E + N
 
 For audiences who have tried every obvious solution and are frustrated, New is the strongest driver. A frustrated viewer clicks "The New Way To [result]" over "How To [result]" every time.
 
-**The info doesn't need to be genuinely new — it needs to FEEL new.** Repackage familiar ideas through unique stories, metaphors, or naming.
+**The info doesn't need to be genuinely new. It needs to FEEL new.** Repackage familiar ideas through unique stories, metaphors, or naming.
 
 "How to write better emails" becomes:
-- "The 3-Line Email Rule That Doubled My Replies" (N via naming + B via result)
+- "The 3-Line Email Rule That Doubled My Replies" (N via naming, B via result)
 - "Why Your Emails Are Dying in the First Sentence" (N via contrarian framing)
-- "I Tested 47 Email Subject Lines. Here's What Won." (N via volume + S via specificity)
+- "I Tested 47 Email Subject Lines. Here's What Won." (N via volume, S via specificity)
 
-## Specificity = S (Safe)
+## Specificity equals S (Safe)
 
 Specific numbers, time frames, ages, distances make claims believable. Specificity signals that real work went in.
 
@@ -80,7 +80,7 @@ Named methods signal N (novel, defined) and E (process exists, you just follow i
 - "The 15-Second Rule"
 - "The BENS System"
 
-A named method also signals proprietary authority. The creator didn't just observe a pattern. They built a system.
+A named method also signals proprietary authority. The creator didn't just observe a pattern, they built a system.
 
 ## Credibility matching
 

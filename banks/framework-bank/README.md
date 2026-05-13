@@ -8,7 +8,7 @@ tags: [bank, framework, index]
 
 # Framework Bank
 
-The creator's OWN named frameworks, systems, and mental models. The teachable structures they've built and want to repeat on camera. When a creator says "there are 4 types of X" or "the 3-part system I use" and that structure holds across multiple videos — it belongs here.
+The creator's OWN named frameworks, systems, and mental models. The teachable structures they've built and want to repeat on camera. When a creator says "there are 4 types of X" or "the 3-part system I use" and that structure holds across multiple videos, it belongs here.
 
 ## What goes in this bank
 
@@ -20,15 +20,15 @@ One file per framework:
 - A staged process (e.g. "The 5 gates before you scale")
 - A mental model the creator coined (e.g. "Owner math vs. Operator math")
 
-If the creator references the same labeled structure in 3+ videos, it should be a framework entry. If they've used it once, it's an idea — keep it in `Content/ideas/content-ideas.md` until tested.
+If the creator references the same labeled structure in 3+ videos, it should be a framework entry. If they've used it once, it's an idea. Keep it in `Content/ideas/content-ideas.md` until tested.
 
 ## What does NOT go here
 
-- **Frameworks other people created.** Popular business-coaching frameworks, the Eisenhower Matrix, BENS — those are reference material in `knowledge/` or third-party reference folders with explicit attribution. The framework-bank is creator-owned IP only.
-- **Acronyms Claude invents.** Frameworks come from the creator's actual practice, not branding.
-- **Stories or anecdotes** → `story-bank/`
-- **Single tactics.** "Use a Calendly link" is a tactic, not a framework. Frameworks have multiple parts.
-- **Half-baked ideas.** A framework needs (a) a name the creator actually uses, (b) named components/steps, (c) a clear problem it solves.
+- Frameworks other people created. Popular business-coaching frameworks, the Eisenhower Matrix, BENS. Those are reference material in `knowledge/` or third-party reference folders with explicit attribution. The framework-bank is creator-owned IP only.
+- Acronyms Claude invents. Frameworks come from the creator's actual practice, not branding.
+- Stories or anecdotes → `story-bank/`
+- Single tactics. "Use a Calendly link" is a tactic, not a framework. Frameworks have multiple parts.
+- Half-baked ideas. A framework needs (a) a name the creator actually uses, (b) named components/steps, and (c) a clear problem it solves.
 
 ## Schema
 
@@ -50,7 +50,7 @@ used_in: []
 
 ## Naming
 
-`{framework-slug}.md` — kebab-case, captures the framework name. e.g. `3-part-onboarding-system.md`, `hire-or-automate-matrix.md`, `owner-vs-operator-math.md`.
+`{framework-slug}.md`. Kebab-case, captures the framework name. E.g. `3-part-onboarding-system.md`, `hire-or-automate-matrix.md`, `owner-vs-operator-math.md`.
 
 ## Body sections
 
@@ -58,12 +58,12 @@ used_in: []
 # {Framework Name}
 
 ## What problem does this solve?
-[creator's voice — what specific problem this addresses]
+[creator's voice. What specific problem this addresses]
 
 ## The components
-1. **{Component 1}** — what it is, why it matters
-2. **{Component 2}** — same
-3. **{Component 3}** — same
+1. **{Component 1}**: what it is, why it matters
+2. **{Component 2}**: same
+3. **{Component 3}**: same
 
 ## When to use it
 - Which video types / pillars
@@ -75,16 +75,18 @@ used_in: []
 - Proof: [[proof-bank/relevant-proof]]
 
 ## Origin
-[where this came from — keeps Claude from later treating it as generic]
+[where this came from. Keeps Claude from later treating it as generic]
 ```
 
 ## How entries get used
 
-1. Currently manual — the creator authors entries when a framework crystallizes
-2. `vid-framing` / `vid-structure` pull frameworks when a video is structured around a named system
-3. `vid-segment` references frameworks when explaining complex systems, with related stories/metaphors/proof pulled alongside
-4. When used, `used_in` updates and `status` flips to `used`
+1. `vid-capture` Stage F (Log path) saves frameworks when they crystallize. Standalone invocation: "I have a system called X, save it." Sub-skill invocation: vid-segment routes here after inline crafting.
+2. `vid-segment` queries this bank when the segment's logic brick is a framework. If a match exists, the bank entry locks the structure for that segment. If no match exists, vid-segment loads `knowledge/framework-builder.md` and walks the 5-step build inline (dump → result → top 3 → shape → name), then offers to save the result via vid-capture Stage F.
+3. `vid-framing` may reference frameworks at the angle-locking stage when a video is structured around a named system.
+4. When used, `used_in` updates and `status` flips to `used`.
 
-## Note on vid-capture
+## Where the craft flow lives
 
-`vid-capture` currently has 4 stages (Story / Metaphor / Proof / Testimonial). Framework entries are manually created until a Framework stage is added — frameworks tend to crystallize from existing stories/proofs, so they're usually authored deliberately rather than captured on the fly.
+The actual building of a framework (the 5-step process: dump points → ask result → circle top 3 → pick shape → name it) lives in `knowledge/framework-builder.md`. That file is loaded inline by vid-segment when mid-write framework crafting is needed, and it's loaded by vid-capture Stage F for shape selection and naming guidance during a Log capture.
+
+vid-capture Stage F is the SAVE path only. The craft path lives in the knowledge file so the creator never has to context-switch into a sub-skill mid-write to build a framework.

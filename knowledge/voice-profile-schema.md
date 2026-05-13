@@ -1,7 +1,7 @@
 ---
 type: reference
 scope: shared
-loaded_by: [vid-voice-capture, vid-foundation, vid-segment, vid-hook, vid-ending, vid-structure]
+loaded_by: [vid-voice-capture, vid-foundation, vid-segment, vid-intro, vid-ending, vid-structure]
 status: active
 tags: [reference, voice, schema]
 ---
@@ -26,7 +26,7 @@ When a writing skill produces (say) a YouTube script, it loads Layer 1 (always) 
 
 ### `recurring_phrases` (required, list)
 
-5 to 10 phrases the creator uses across formats. Real quotes, not paraphrases. These are the strongest preservation anchors — if a draft doesn't contain at least one or echo one closely, voice drift is likely.
+5 to 10 phrases the creator uses across formats. Real quotes, not paraphrases. These are the strongest preservation anchors. If a draft doesn't contain at least one or echo one closely, voice drift is likely.
 
 ### `words_avoided` (required, list)
 
@@ -36,13 +36,13 @@ Words and phrasings the creator does not use. Often: corporate jargon, hedges, A
 
 Phrasings the creator would never write. Stronger than "words avoided." Examples: "Let's dive in," "But here's where it got interesting," any AI-tell. Captured from corrections, edits, or voice-rule-capture history.
 
-### `pov_default` (required, string + notes)
+### `pov_default` (required, string plus notes)
 
 Which pronoun dominates and when. "I" for X. "You" for Y. "We" for Z. Includes any rules ("never use 'one' as a generic pronoun").
 
 ### `energy_baseline` (required, string)
 
-The energy floor — what's true even in their lowest-energy context. Examples: "quiet confidence," "dry wit," "directness without aggression," "high conviction."
+The energy floor. What's true even in their lowest-energy context. Examples: "quiet confidence," "dry wit," "directness without aggression," "high conviction."
 
 ### `rhetorical_baseline` (required, list)
 
@@ -51,6 +51,18 @@ Devices the creator uses across formats: metaphor habit, rhetorical question hab
 ### `sources_analyzed` (required, list)
 
 Every source that fed the profile, with date and context tag. Refresh runs need this to know what's already been processed.
+
+### `preferred_hook_types` (optional, list)
+
+Which of the canonical 5 hook types the creator naturally defaults to: `question`, `contrarian`, `statement`, `fact`, `credibility`. Populated when `vid-voice-capture` notices a clear pattern across captured sources. Used by `vid-intro` to weight candidate generation toward the creator's natural opening style. Empty list means no preference established yet — generate across all 5 and let the creator pick.
+
+### `transition_style_preferences` (optional, free-form text)
+
+How the creator naturally bridges between ideas. Examples: "uses 'Here's the thing' a lot", "rarely uses 'so' as a transition", "leans on rhetorical questions to pivot". Populated from observed patterns. Used by `vid-intro` and (later) `vid-segment` to filter candidate transitions toward the creator's voice and against patterns they don't use.
+
+### `intro_pacing` (optional, descriptor)
+
+Pace of the creator's opening 30 seconds. Examples: `fast` (lots of cuts, quick beats), `measured` (steady, conversational), `slow-burn` (builds tension before payoff). Used by `vid-intro` to calibrate hook length, problem/result depth, and setup tightness against the creator's natural feel.
 
 ## Layer 2: Context map fields
 
@@ -104,19 +116,19 @@ How they move between ideas in this format specifically. Example: "Newsletter: '
 
 Every field can carry a confidence tag:
 
-- `confidence: high` — pattern survived cross-validation across multiple sources
-- `confidence: medium` — pattern strong in 2+ sources but limited corpus
-- `confidence: low` — pattern from 1-2 sources, surface for creator review
-- `confidence: format-specific` — pattern only validates in one context, treat as context-map-only
-- `confidence: deprecated` — pattern was true at last build but doesn't hold in new sources, kept for diff history
+- `confidence: high`: pattern survived cross-validation across multiple sources
+- `confidence: medium`: pattern strong in 2+ sources but limited corpus
+- `confidence: low`: pattern from 1-2 sources, surface for creator review
+- `confidence: format-specific`: pattern only validates in one context, treat as context-map-only
+- `confidence: deprecated`: pattern was true at last build but doesn't hold in new sources, kept for diff history
 
 ## How writing skills use the schema
 
-When vid-segment, vid-hook, or any other writing skill produces output, it:
+When vid-segment, vid-intro, or any other writing skill produces output, it:
 
-1. Loads Layer 1 (core profile) — always
+1. Loads Layer 1 (core profile). Always
 2. Determines what context it's writing for (YouTube script, newsletter, etc.)
-3. Loads matching Layer 2 context map if it exists; falls back to core only if not
+3. Loads matching Layer 2 context map if it exists, falls back to core only if not
 4. Pressure-tests output against both layers
 5. Flags any output line that contradicts a high-confidence pattern
 

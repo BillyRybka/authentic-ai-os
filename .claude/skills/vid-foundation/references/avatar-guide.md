@@ -1,14 +1,22 @@
 # Avatar Guide
 
-The avatar is the specific person a creator is talking to. Everything downstream — titles, hooks, thumbnails, scripts, CTAs — gets validated against this avatar.
+The avatar is the specific person a creator is talking to. Every downstream artifact (titles, hooks, thumbnails, scripts, CTAs) gets validated against this avatar.
 
-## The five attributes
+## The Person structure
 
-1. **Age range** — specific. "27-34" not "18-60."
-2. **Sex** — male, female, or both (only pick both if the positioning really applies equally).
-3. **Location** — "English-speaking countries," "US + Canada," or a specific region.
-4. **Type of person** — job title, life role, or lifestyle label. "Solo founder," "new dad," "corporate dropout," "restaurant owner with one location."
-5. **Top 3 perceived problems** — what THEY think is stopping them. Not the root cause. Not what you think they should be focused on.
+The Person has to be specific enough for downstream skills to write titles, hooks, thumbnails, scripts, and CTAs for a recognizable viewer.
+
+Save Person as structured fields, not a paragraph:
+
+1. **Public label.** Clean noun phrase the Iceberg Statement can use. "Solo founders," "new dads," "first-time homebuyers," "business owners."
+2. **Fit qualifier.** Stage, revenue, life moment, industry constraint, or other gate. "Doing $200k-$2M/year," "first-time," "booked-out," "15-30 pounds heavier after a decade of work travel."
+3. **Expertise / identity role.** Why this person recognizes themselves. "The expert in their field," "new manager," "fitness-conscious professional."
+4. **Business / life context.** The situation that makes the problem urgent.
+5. **Content / channel role.** Why they watch this creator and what they come to solve.
+6. **Demographics.** Age, sex, and location only when they change examples, buying psychology, voice, or platform behavior. Otherwise mark "not primary."
+7. **Top 3 perceived problems.** What THEY think is stopping them. Not the root cause. Not what you think they should be focused on.
+
+Do not lock Person as a paragraph. Rich detail belongs in Internal context. The Iceberg Statement uses the Public label.
 
 ## Top 3 perceived problems is the most important attribute
 
@@ -29,15 +37,15 @@ Three ways:
 2. **Reddit, Quora, YouTube comments in the niche.** What do people complain about unprompted?
 3. **Survey the email list or community.** Ask one open question: "What's the #1 thing stopping you from [desired result]?"
 
-Target 25-30+ responses minimum for survey data to be meaningful. Fewer than that is educated guessing.
+Target 25-30+ responses for survey data to be meaningful. Fewer than that is educated guessing.
 
-**Educated guessing is fine for the MVP.** You refine with real data over the next 6 months.
+**Educated guessing is fine for the MVP.** Refine with real data over the next 6 months.
 
-## Good vs bad — paired examples
+## Good vs bad: paired examples
 
-Show the creator these pairs. The Top 3 Problems is where almost every draft drifts — the most common failure is expert-framed problems instead of viewer-spoken ones.
+Show the creator these pairs. The Top 3 Problems is where almost every draft drifts. The most common failure is expert-framed problems instead of viewer-spoken ones.
 
-### Pair 1 — Physiotherapy audience
+### Pair 1: Physiotherapy audience
 
 **Good:**
 - Age: 35-55
@@ -50,10 +58,10 @@ Show the creator these pairs. The Top 3 Problems is where almost every draft dri
   3. "Every physio I see just gives me generic exercises that don't work"
 
 Why it works:
-- Age range is 20 years wide — tight enough to inform voice and references
+- Age range is 20 years wide. Tight enough to inform voice and references
 - Type is layered (fitness-conscious + specific activities + current state)
 - Top 3 are in the viewer's exact complaint language
-- Three problems are genuinely distinct (pain / fear / dissatisfaction with care), not three angles of one thing
+- Three problems are genuinely distinct (pain, fear, dissatisfaction with care), not three angles of one thing
 
 **Bad:**
 - Age: 25-65
@@ -66,12 +74,12 @@ Why it works:
   3. Insufficient movement optimization
 
 Why it fails:
-- Age range of 40 years = voice/examples won't land for either end
-- "Fitness enthusiasts" = broad, undifferentiated
-- Top 3 are in expert/clinician language — viewers don't complain in those words
+- Age range of 40 years means voice/examples won't land for either end
+- "Fitness enthusiasts" is broad and undifferentiated
+- Top 3 are in expert/clinician language. Viewers don't complain in those words
 - "Chronic musculoskeletal dysfunction" is one umbrella; the three entries are really aspects of that same thing
 
-### Pair 2 — Solo founder audience
+### Pair 2: Solo founder audience
 
 **Good:**
 - Age: 28-42
@@ -84,7 +92,7 @@ Why it fails:
   3. "I built the business I hate"
 
 Why it works:
-- Type has stage markers (solo, service, revenue band) — signals exactly who it isn't (not employees, not agencies, not $10M+)
+- Type has stage markers (solo, service, revenue band). Signals exactly who it isn't (not employees, not agencies, not $10M+)
 - Top 3 are what the viewer would actually say out loud to a friend
 - Problems sit in three different domains (time/workflow, team/hiring, identity/satisfaction)
 
@@ -99,11 +107,11 @@ Why it works:
   3. Leadership development
 
 Why it fails:
-- "Entrepreneurs" = includes tech founders, Etsy sellers, franchise owners, solopreneurs, Fortune 500 CMOs
+- "Entrepreneurs" includes tech founders, Etsy sellers, franchise owners, solopreneurs, Fortune 500 CMOs
 - Top 3 are MBA textbook categories, not human complaints
-- Viewer would never Google "operational inefficiency" — they'd search "why can't I get through my inbox"
+- Viewer would never Google "operational inefficiency". They'd search "why can't I get through my inbox"
 
-### Pair 3 — New-dad fitness audience
+### Pair 3: New-dad fitness audience
 
 **Good:**
 - Age: 28-40
@@ -116,9 +124,9 @@ Why it fails:
   3. "I'm watching myself get soft and I can feel my energy tanking"
 
 Why it works:
-- Type captures the before/after transition — the trigger that changed their life
-- Problems are concrete moments (the gym, the back, the mirror) not abstractions
-- Time, body, energy — three separate problems
+- Type captures the before/after transition, the trigger that changed their life
+- Problems are concrete moments (the gym, the back, the mirror), not abstractions
+- Time, body, energy. Three separate problems
 
 **Bad:**
 - Age: 25-45
@@ -131,26 +139,225 @@ Why it works:
   3. Low motivation
 
 Why it fails:
-- "Busy men" = 80% of adult men. No trigger, no life stage.
+- "Busy men" is 80% of adult men. No trigger, no life stage.
 - "Time management issues" could mean anything from missing meetings to never exercising
 - "Low motivation" is a symptom, not a problem the viewer complains about directly
 
-Notice the pattern: the viewer's exact language wins. If the creator wrote it, it's probably expert-framed. Extract from real complaints — client intake, comments, Reddit, surveys.
+### Pair 4: Narcissistic-relationships audience
+
+**Good:**
+- Age: 25-45
+- Sex: Women
+- Location: English-speaking
+- Type: Ambitious but recovering. Dating, or stuck in toxic relationships
+- Top 3 perceived problems:
+  1. "I keep attracting the wrong men"
+  2. "I can't trust myself anymore"
+  3. "I don't know how to spot the red flags"
+
+Why it works:
+- Type pairs an identity ("ambitious") with a current state ("recovering"). Captures the self-image gap
+- Problems are spoken in the voice of someone telling a friend over coffee, not a therapist's intake form
+- Three distinct domains (pattern-matching, self-trust, pattern-spotting), not three angles of one issue
+
+**Bad:**
+- Age: 18-65
+- Sex: Both
+- Location: Worldwide
+- Type: People in relationships
+- Top 3 perceived problems:
+  1. Communication issues
+  2. Emotional dysregulation
+  3. Unhealthy relationship dynamics
+
+Why it fails:
+- "People in relationships" includes everyone from teens to retirees with completely different problems
+- "Emotional dysregulation" is a clinician's phrase. Viewers complain in stories, not diagnoses
+- The three are all aspects of one umbrella ("my relationship is hard"), not distinct problems
+
+### Pair 5: Busy-professional weight-loss audience
+
+**Good:**
+- Age: 32-48
+- Sex: Both (slightly more female)
+- Location: US + UK + Canada + Australia
+- Type: Professionals who used to be in shape, now 15-30 pounds heavier after a decade of work travel, takeout dinners, and skipped workouts
+- Top 3 perceived problems:
+  1. "Every diet I try fails by week three"
+  2. "I don't have time for long workouts"
+  3. "I can lose 5 pounds and gain 8 back the second I stop"
+
+Why it works:
+- Type names the trigger arc (used to be in shape, now 15-30 lbs heavier) so the viewer recognizes themselves
+- Problems are about the failure pattern (not the desired result). That's where viewers actually live
+- Three different failure modes: diet attrition, time scarcity, yo-yo cycle
+
+**Bad:**
+- Age: 25-55
+- Sex: Both
+- Location: Global
+- Type: Adults who want to lose weight
+- Top 3 perceived problems:
+  1. Slow metabolism
+  2. Lack of willpower
+  3. Poor diet choices
+
+Why it fails:
+- "Adults who want to lose weight" is the entire fitness niche
+- "Slow metabolism" is a self-blame story, not the problem they complain about ("I tried keto and it didn't stick")
+- "Lack of willpower" and "poor diet choices" are framed as the viewer's fault. They don't say that out loud
+
+### Pair 6: Course-creator-from-freelancer audience
+
+**Good:**
+- Age: 28-45
+- Sex: Both
+- Location: English-speaking
+- Type: Freelancers (designers, copywriters, consultants) doing $80k-$200k/year, fully booked, can't take on more clients without breaking
+- Top 3 perceived problems:
+  1. "If I stop working for a week, I stop earning"
+  2. "I keep saying no to good clients because I'm at capacity"
+  3. "I've been told to make a course for years but I have no idea where to start"
+
+Why it works:
+- Type has a profession band, a revenue band, and a constraint signal (fully booked)
+- Problems are spoken in the actual reasoning the viewer has at the kitchen table on a Sunday night
+- Income, capacity, inertia. Three different blocks, not one problem with three names
+
+**Bad:**
+- Age: 22-60
+- Sex: Both
+- Location: Worldwide
+- Type: Online business owners
+- Top 3 perceived problems:
+  1. Scaling challenges
+  2. Time management
+  3. Course creation
+
+Why it fails:
+- "Online business owners" includes dropshippers, course creators, agencies, freelancers. Totally different operating models
+- "Course creation" is a topic, not a problem
+- These are MBA categories, not human complaints
+
+### Pair 7: Investing-for-retirement audience
+
+**Good:**
+- Age: 35-50
+- Sex: Mostly female
+- Location: US + Canada + UK
+- Type: Mid-career professionals who started saving late, watched friends retire and panicked
+- Top 3 perceived problems:
+  1. "I started too late and I'm scared the math doesn't work anymore"
+  2. "Every finance YouTuber is a 25-year-old crypto bro and I can't relate to any of them"
+  3. "My 401k is invested in something but I have no idea what or whether it's any good"
+
+Why it works:
+- Type names the trigger event (watched friends retire), the emotional entry point
+- Problems include a meta-problem about the niche itself (can't find content that fits them). That's a real viewer complaint
+- Math fear, representation gap, opacity. Three real failure modes
+
+**Bad:**
+- Age: 25-65
+- Sex: Both
+- Location: Global
+- Type: Investors
+- Top 3 perceived problems:
+  1. Asset allocation optimization
+  2. Tax efficiency
+  3. Portfolio diversification
+
+Why it fails:
+- "Investors" includes day traders, retirees, crypto bros, indexers. Completely different mindsets
+- All three problems are CFP-curriculum phrases. Viewers say "I don't know if my 401k is doing anything"
+- Three angles of one umbrella ("am I invested correctly?"), not three problems
+
+### Pair 8: Solo founder audience (additional)
+
+**Good:**
+- Age: 30-45
+- Sex: Both
+- Location: English-speaking
+- Type: Service-business owners doing $300k-$1M/year, running everything themselves, working 60+ hour weeks
+- Top 3 perceived problems:
+  1. "I'm drowning in emails and can't keep up"
+  2. "I keep forgetting things. Clients are noticing"
+  3. "Every system I try takes more time to set up than it saves"
+
+Why it works:
+- Type stacks profession + revenue band + workload signal. Paints a precise person
+- Problems are concrete moments (the inbox, the dropped ball, the failed automation)
+- Each problem maps to a different content axis (workflow, memory, systems)
+
+**Bad:**
+- Age: 25-55
+- Sex: Both
+- Location: Worldwide
+- Type: Small business owners
+- Top 3 perceived problems:
+  1. Productivity issues
+  2. Workflow optimization
+  3. Strategic planning
+
+Why it fails:
+- "Small business owners" includes e-commerce, agencies, brick-and-mortar, freelancers
+- "Productivity issues" is a vague header for hundreds of different problems
+- The third one is a category, not a complaint. No viewer says "I have strategic planning problems"
+
+Notice the pattern: the viewer's exact language wins. If the creator wrote it, it's probably expert-framed. Pull from real complaints, client intake, comments, Reddit, surveys.
+
+## Bank: viewer-voice problem language by niche
+
+When auditing a draft, sanity-check against this bank. If the creator's Top 3 problems read like the **left** column, send them back. If they read like the **right** column, they're locked.
+
+**Fitness / weight loss:**
+- Expert: "Caloric deficit non-compliance" / Viewer: "Every diet I try fails by week three"
+- Expert: "Inadequate progressive overload" / Viewer: "I'm working out and seeing nothing happen"
+- Expert: "Time-constrained training adherence" / Viewer: "I don't have time for long workouts"
+- Expert: "Metabolic adaptation" / Viewer: "I can lose 5 pounds and gain 8 back the second I stop"
+- Expert: "Postural compensation patterns" / Viewer: "My back hurts all the time from carrying the baby"
+
+**Business / freelancing:**
+- Expert: "Scaling bottlenecks" / Viewer: "I'm the bottleneck in every process"
+- Expert: "Hiring inefficiency" / Viewer: "Hiring people hasn't made things easier, it's made it worse"
+- Expert: "Founder identity misalignment" / Viewer: "I built the business I hate"
+- Expert: "Capacity constraint" / Viewer: "If I stop working for a week, I stop earning"
+- Expert: "Operational inefficiency" / Viewer: "I'm drowning in emails and can't keep up"
+- Expert: "Process documentation gap" / Viewer: "I keep forgetting things. Clients are noticing"
+
+**Relationships:**
+- Expert: "Pattern recognition deficits" / Viewer: "I keep attracting the wrong men"
+- Expert: "Compromised self-trust" / Viewer: "I can't trust myself anymore"
+- Expert: "Limited red-flag literacy" / Viewer: "I don't know how to spot the red flags"
+
+**Physiotherapy / injury:**
+- Expert: "Chronic musculoskeletal dysfunction" / Viewer: "My knee pain won't go away no matter what I try"
+- Expert: "Activity modification resistance" / Viewer: "I don't want to stop running, but I'm scared of making it worse"
+- Expert: "Generic protocol limitations" / Viewer: "Every physio I see just gives me generic exercises that don't work"
+
+**Investing / retirement:**
+- Expert: "Late-stage compounding catch-up" / Viewer: "I started too late and I'm scared the math doesn't work anymore"
+- Expert: "Demographic content mismatch" / Viewer: "Every finance YouTuber is a 25-year-old crypto bro and I can't relate"
+- Expert: "Portfolio opacity" / Viewer: "My 401k is invested in something but I have no idea what"
+
+**Course creation / digital products:**
+- Expert: "Productization friction" / Viewer: "I've been told to make a course for years but I have no idea where to start"
+- Expert: "Capacity utilization at peak" / Viewer: "I keep saying no to good clients because I'm at capacity"
+- Expert: "Recurring revenue infrastructure" / Viewer: "If I take a week off, my income goes to zero"
 
 ## How to use the avatar downstream
 
 Every future skill in the system will ask: "Does this [title / hook / thumbnail / script / CTA] serve the top 3 problems of the avatar?"
 
-If no → iterate.
-If yes → proceed.
+If no, iterate.
+If yes, proceed.
 
-This is why the top 3 must be locked early and changed reluctantly.
+That's why the top 3 has to be locked early and changed only when there's strong reason.
 
 ## If the creator has multiple audiences
 
-Pick one. The foundation is built for ONE avatar. If the creator genuinely serves multiple, ask them to pick the most profitable or highest-potential one for the channel, and run foundation separately later for other audiences.
+Pick one. The foundation is built for ONE avatar. If the creator genuinely serves multiple, ask them to pick the most profitable or highest-potential one for the channel. Run foundation separately later for other audiences.
 
-Channels that serve 3 avatars simultaneously never build with any of them. This is the "only 1 in 4 videos lands" problem.
+Channels that serve 3 avatars at once never build with any of them. This is the "only 1 in 4 videos lands" problem.
 
 ## Validation against positioning
 
@@ -162,8 +369,14 @@ If the Person in the statement doesn't match the avatar, one of them is wrong. U
 
 ## Common mistakes
 
-- "Busy professionals" (too broad — what industry? what level?)
-- "People who want to be healthy" (too broad — how? why haven't they been?)
-- Top 3 problems that are actually one problem with three angles
-- Top 3 problems that the viewer wouldn't say out loud (expert-framed)
-- Fabricating the avatar from theory rather than extracting from real humans
+- "Busy professionals" (too broad. What industry? what level?)
+- "People who want to be healthy" (too broad. How? why haven't they been?)
+- "Entrepreneurs" / "Creators" / "Investors" / "Service providers": single-word categories that span ten different operating models
+- "Adults who want to lose weight" / "People in relationships" / "Online business owners": too general to inform a single video
+- Top 3 problems that are actually one problem with three angles (e.g., "communication issues / emotional dysregulation / unhealthy relationship dynamics" = all "my relationship is hard")
+- Top 3 problems that the viewer wouldn't say out loud (expert-framed: "operational inefficiency," "metabolic adaptation," "asset allocation optimization")
+- Top 3 problems that are categories rather than complaints ("strategic planning," "course creation," "communication")
+- Top 3 problems that are symptoms ("low motivation," "lack of willpower") rather than the situation the viewer complains about
+- Top 3 problems framed as the viewer's fault ("poor diet choices," "lack of discipline"). Viewers don't blame themselves out loud
+- Top 3 problems that diagnose root cause ("you lack systems thinking") instead of capturing what the viewer actually says ("I'm drowning in emails")
+- Inventing the avatar from theory rather than pulling from real humans

@@ -1,6 +1,6 @@
 ---
 type: worksheet
-project: youtube-content-os
+project: authentic-ai-os
 status: in-progress
 date: YYYY-MM-DD
 session: voice-capture
@@ -43,7 +43,7 @@ Scratch workspace for the multi-stage voice extraction session. Final patterns f
 
 - Total contexts with ≥3 pieces or ≥5,000 words: [N]
 - Contexts deferred (insufficient material): [list]
-- Single-format limitation? [yes/no — if yes, only core profile builds]
+- Single-format limitation? [yes/no. If yes, only core profile builds]
 
 ## Stage 2: Quantitative pass per context
 
@@ -51,7 +51,7 @@ Scratch workspace for the multi-stage voice extraction session. Final patterns f
 
 **Sentence length:**
 - Median: [N words]
-- Range: [shortest – longest]
+- Range: [shortest, longest]
 - Distribution: [%] short / [%] medium / [%] long
 - Pattern observation: [free text]
 
@@ -89,17 +89,17 @@ Scratch workspace for the multi-stage voice extraction session. Final patterns f
 ### Cross-context patterns (feed Layer 1 core)
 
 **Recurring phrases (appear in 2+ contexts):**
-- "[phrase]" — appears in [contexts]
-- "[phrase]" — [contexts]
-- "[phrase]" — [contexts]
+- "[phrase]", appears in [contexts]
+- "[phrase]", [contexts]
+- "[phrase]", [contexts]
 
 **Words avoided (universal):**
 - [word] → [replacement]
 - [word] → [replacement]
 
 **Anti-patterns (universal):**
-- "[phrasing]" — reason
-- "[phrasing]" — reason
+- "[phrasing]", reason
+- "[phrasing]", reason
 
 **POV defaults:**
 - "I" for: [usage]
@@ -141,8 +141,8 @@ Scratch workspace for the multi-stage voice extraction session. Final patterns f
 ### Drop or low-confidence
 *Single-source patterns. Note for creator review.*
 
-- [pattern] — drop, anomaly
-- [pattern] — flag low-confidence for review
+- [pattern], drop, anomaly
+- [pattern], flag low-confidence for review
 
 ## Stage 5: Profile diff (if refresh)
 
@@ -151,7 +151,7 @@ Scratch workspace for the multi-stage voice extraction session. Final patterns f
 - [pattern]
 
 ### Patterns retired since last build
-- [pattern] — reason
+- [pattern], reason
 
 ### Conflicts to surface for creator review
 - Old: [pattern]. New evidence: [pattern]. Decision: [creator's call]
@@ -161,22 +161,22 @@ Scratch workspace for the multi-stage voice extraction session. Final patterns f
 
 ## Stage 6: Read-aloud results
 
-For each pattern below, did the creator confirm when reading aloud? If they reworded, the pattern is wrong — note the actual phrasing they used instead.
+For each pattern below, did the creator confirm when reading aloud? If they reworded, the pattern is wrong. Note the actual phrasing they used instead.
 
 **Recurring phrases tested:**
-- "[phrase]" — [confirmed / reworded as: "[actual phrasing]"]
+- "[phrase]", [confirmed / reworded as: "[actual phrasing]"]
 
 **Sample CTA tested:**
-- "[CTA line from profile]" — [confirmed / reworded]
+- "[CTA line from profile]", [confirmed / reworded]
 
 **Sample opener tested:**
-- "[opener]" — [confirmed / reworded]
+- "[opener]", [confirmed / reworded]
 
 **Per-context lines tested:**
-- `[context]`: "[line]" — [confirmed / reworded]
+- `[context]`: "[line]", [confirmed / reworded]
 
 ### Patterns demoted from read-aloud rejection
-- [pattern] — creator pushed back, demoted to [low-confidence / dropped]
+- [pattern]. Creator pushed back, demoted to [low-confidence / dropped]
 
 ## Stage 7: Final profile fields ready to save
 

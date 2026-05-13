@@ -8,25 +8,25 @@ tags: [bank, metaphor, index]
 
 # Metaphor Bank
 
-Analogies and metaphors the creator uses to make abstract ideas concrete. Each entry is a reusable comparison that lands with the creator's avatar — captured once, pullable from any script.
+Analogies and metaphors the creator uses to make abstract ideas concrete. Each entry is a reusable comparison that lands with the creator's avatar. Captured once, pullable from any script.
 
 ## What goes in this bank
 
 One file per metaphor. Examples:
 
-- **Everyday metaphors** — "Hiring without SOPs is like handing someone the keys to your car without a license"
-- **Food metaphors** — "A business without documented processes is like a restaurant with no recipes"
-- **Sports metaphors** — "A solo founder is the player-coach"
-- **Travel/journey metaphors** — "Building from services to systems is swapping a taxi meter for an Uber app"
+- **Everyday metaphors**: "Hiring without SOPs is like handing someone the keys to your car without a license"
+- **Food metaphors**: "A business without documented processes is like a restaurant with no recipes"
+- **Sports metaphors**: "A solo founder is the player-coach"
+- **Travel/journey metaphors**: "Building from services to systems is swapping a taxi meter for an Uber app"
 
-Metaphors come from the creator, not Claude. Captured via `vid-capture` (Metaphor stage). Do not invent metaphors — they sound wrong on camera.
+Metaphors come from the creator, not Claude. Captured via `vid-capture` (Metaphor stage). Do not invent metaphors. They sound wrong on camera.
 
 ## What does NOT go here
 
-- **Stories** → `story-bank/` (a metaphor compares A to B in a sentence; a story has tension and resolution)
-- **Frameworks or named systems** → `framework-bank/`
-- **Single clever phrases without a comparison structure.** A punchline isn't a metaphor.
-- **Metaphors Claude invented.** Capture only phrases the creator already uses or explicitly adopts.
+- Stories → `story-bank/` (a metaphor compares A to B in a sentence, a story has tension and resolution)
+- Frameworks or named systems → `framework-bank/`
+- Single clever phrases without a comparison structure. A punchline isn't a metaphor.
+- Metaphors Claude invented. Capture only phrases the creator already uses or explicitly adopts.
 
 ## Schema
 
@@ -47,21 +47,21 @@ used_in: []
 
 ## Naming
 
-`{short-slug}.md` — kebab-case, references the concept or the metaphor object. e.g. `car-without-license.md`, `restaurant-with-no-recipes.md`, `player-coach.md`.
+`{short-slug}.md`. Kebab-case, references the concept or the metaphor object. E.g. `car-without-license.md`, `restaurant-with-no-recipes.md`, `player-coach.md`.
 
 ## Body sections
 
 See `assets/metaphor-entry-template.md` in `vid-capture`. Key sections:
 
-1. **The concept** — what abstract idea this metaphor clarifies
-2. **The metaphor** — the comparison, in the creator's wording
-3. **Why it lands** — the point of comparison
-4. **Visual treatment** — if `visual: true`, what the prop or graphic would be
+1. **The concept**: what abstract idea this metaphor clarifies
+2. **The metaphor**: the comparison, in the creator's wording
+3. **Why it lands**: the point of comparison
+4. **Visual treatment**: if `visual: true`, what the prop or graphic would be
 5. **When to use it**
 
 ## How entries get used
 
 1. `vid-capture` → Metaphor stage → file written here
 2. `vid-segment` pulls matching metaphors when explaining complex points
-3. `vid-hook` may pull a short metaphor for the Problem statement
+3. `vid-intro` may pull a short metaphor for the Problem statement
 4. When used, `used_in` updates and `status` flips to `used`

@@ -20,13 +20,13 @@ The extraction process always asks: "does this hold across the corpus?" Single-s
 
 Different sources reveal different patterns. Pulling from a mix matters more than pulling a lot from one type.
 
-- **YouTube transcripts** — sentence rhythm, fillers, opener patterns, energy variation, real recurring phrases (people repeat themselves more on camera than in writing)
-- **Podcast appearances or interview transcripts** — conversational rhythm, how they answer questions, callbacks, off-script tics
-- **Newsletters / blog posts / long-form prose** — paragraph structure, punctuation signature, written sentence rhythm, transitions, callback structure, CTA style
-- **LinkedIn / Twitter posts** — short-form rhythm, hook patterns, opener clusters, line-break habits
-- **Email replies, DMs, Slack messages** — raw conversational voice, energy floor, the voice they DON'T perform
-- **Past scripts they drafted** — best signal for "here's what they want to sound like"
-- **Live 10-minute monologue (recorded fresh)** — current voice baseline if archive is thin
+- **YouTube transcripts**: sentence rhythm, fillers, opener patterns, energy variation, real recurring phrases (people repeat themselves more on camera than in writing)
+- **Podcast appearances or interview transcripts**: conversational rhythm, how they answer questions, callbacks, off-script tics
+- **Newsletters / blog posts / long-form prose**: paragraph structure, punctuation signature, written sentence rhythm, transitions, callback structure, CTA style
+- **LinkedIn / Twitter posts**: short-form rhythm, hook patterns, opener clusters, line-break habits
+- **Email replies, DMs, Slack messages**: raw conversational voice, energy floor, the voice they DON'T perform
+- **Past scripts they drafted**: best signal for "here's what they want to sound like"
+- **Live 10-minute monologue (recorded fresh)**: current voice baseline if archive is thin
 
 ## Method A: Quantitative pass (numbers)
 
@@ -54,7 +54,7 @@ Count paragraphs. For each, count sentences. Record:
 ### Punctuation signature
 
 Per 1000 words of source, count:
-- Em-dashes (`—` or `--` if formatted that way)
+- Em-dashes (`,` or `--` if formatted that way)
 - Ellipses (`...` or `…`)
 - Parenthetical asides `(like this)`
 - Semicolons
@@ -99,7 +99,7 @@ Numbers tell you rhythm. Qualitative pulls out the voice itself.
 
 Read 3-5 pieces in a row. Note phrases that appear more than once. Pull them as real quotes, not paraphrases. After 5 pieces, the cross-piece repeats are the recurring phrases. Aim for 5-10 across the full corpus.
 
-**Anti-pattern:** writing "uses the phrase 'systems beat hustle.'" Better: capture the actual quote — "systems beat hustle every time" — because the variation matters.
+**Anti-pattern:** writing "uses the phrase 'systems beat hustle.'" Better: capture the actual quote. "systems beat hustle every time", because the variation matters.
 
 ### Words avoided
 
@@ -134,7 +134,7 @@ How does the creator move between ideas? Note actual phrases. Examples to watch 
 
 ### POV default
 
-When does the creator use "I"? When "you"? When "we"? Note the situations, not just the pronoun. Example: "I" for personal experience, "you" for instruction, "we" for shared journey or shared belief — never "we" as the corporate plural."
+When does the creator use "I"? When "you"? When "we"? Note the situations, not just the pronoun. Example: "I" for personal experience, "you" for instruction, "we" for shared journey or shared belief. Never "we" as the corporate plural.
 
 ### Energy descriptor
 
@@ -177,29 +177,29 @@ If thinner: build core profile only, defer context maps, flag low confidence.
 
 If much thinner: tell the creator the profile won't be reliable until they bring more sources. Do not build a profile from 500 words.
 
-## Worked example (illustrative — adapt to actual creator data)
+## Worked example (illustrative, adapt to actual creator data)
 
-**Source: 4 YouTube transcripts (40 mins total) + 6 newsletters (~12k words) + 8 LinkedIn posts (~3k words)**
+**Source: 4 YouTube transcripts (40 mins total) plus 6 newsletters (~12k words) plus 8 LinkedIn posts (~3k words)**
 
 Quantitative pass per context:
 
 - YouTube median sentence: 7 words. 75% short. Em-dashes per 1000: 0. Ellipses: 5. Pattern: short-short-callback. 75% question-opener.
 - Newsletter median sentence: 12 words. 50% short. Em-dashes: 9. Ellipses: 1. Single-sentence paragraphs: 65%. 40% anecdote-opener.
-- LinkedIn: too thin for full quantitative — qualitative only.
+- LinkedIn: too thin for full quantitative. Qualitative only.
 
 Qualitative pass:
 
-- Cross-context recurring phrases (3 found): "every single time," "the truth is," "let me show you" — all appear in YouTube AND newsletter AND LinkedIn → **core profile**.
+- Cross-context recurring phrases (3 found): "every single time," "the truth is," "let me show you". All appear in YouTube AND newsletter AND LinkedIn → **core profile**.
 - Newsletter-only phrases: "I'll be honest with you" (7x in newsletters, 0 in YouTube) → **newsletter context map**.
 - POV: "I" for personal, "you" for direct instruction, never "we" as plural → **core profile**.
-- Energy: high conviction with dry wit, modulates up in YouTube, down in newsletter → **core baseline + per-context modulation note**.
+- Energy: high conviction with dry wit, modulates up in YouTube, down in newsletter → **core baseline plus per-context modulation note**.
 
 Cross-validation result:
 
 - 3 cross-context phrases → core (high confidence)
 - 1 newsletter-only phrase → context map (format-specific confidence)
 - LinkedIn context map deferred (too thin)
-- Core baseline + modulation captured per context
+- Core baseline plus modulation captured per context
 
 Output: rich profile with two strong context maps (YouTube, newsletter) and a deferred LinkedIn map awaiting more source material.
 

@@ -26,65 +26,65 @@ Specific numbers, specific timeframe, outcome the viewer wants.
 
 Unless the viewer is a Fortune 500 marketer, this doesn't apply to their situation.
 
-## Good vs bad — paired examples
+## Good vs bad: paired examples
 
 Show the creator these pairs. The cutoff between a brag that lands and one that sounds like a resume is sharper than most creators realize.
 
-### Pair 1 — The "years" trap
+### Pair 1: the "years" trap
 
 **Good:** *"I've built automation systems for 50+ businesses since 2022."*
 
 Why it works:
 - Big: 50+ businesses
 - Specific: real scale, real start date
-- Personal: "I built" — declarative past tense, the creator did the work
+- Personal: "I built", declarative past tense, the creator did the work
 
 **Bad:** *"I've been doing this for 10+ years."*
 
 Why it fails:
-- Years say nothing about what was accomplished — someone could fail for 10 years
+- Years say nothing about what was accomplished. Someone could fail for 10 years.
 - No number of clients, no result, no outcome
-- Viewer doesn't trust tenure alone; they trust what was produced
+- Viewer doesn't trust tenure alone. They trust what was produced
 
-### Pair 2 — Big result vs. vague scale
+### Pair 2: big result vs vague scale
 
 **Good:** *"My last client went from 80 hours a week to 15 after we built their operations system."*
 
 Why it works:
-- Big: 80 → 15 is a dramatic, concrete transformation
+- Big: 80 to 15 is a dramatic, concrete transformation
 - Specific: real numbers, real before/after, real scope of work
-- Personal: the creator was the one who built it ("after we built")
+- Personal: the creator built it ("after we built")
 
 **Bad:** *"I've helped lots of businesses become more efficient."*
 
 Why it fails:
-- "Lots" = no number, no scale
-- "More efficient" = nothing measurable — 2% more? 10x more?
+- "Lots" means no number, no scale
+- "More efficient" means nothing measurable. 2% more? 10x more?
 - Reads as hedge, not proof
 
-### Pair 3 — The credential trap
+### Pair 3: the credential trap
 
 **Good:** *"I made $4M from my YouTube channel in 2025."*
 
 Why it works:
 - Big: $4M is a number that stops the scroll
 - Specific: a year, a channel, a dollar amount
-- Personal: "I made" — direct ownership
+- Personal: "I made", direct ownership
 
 **Bad:** *"I have an MBA from Stanford and have consulted with major Fortune 500 companies."*
 
 Why it fails:
-- Credential, not result — doesn't answer what the viewer gets
-- "Major Fortune 500" = name-dropping without a specific outcome for the viewer's use case
+- Credential, not result. Doesn't answer what the viewer gets.
+- "Major Fortune 500" is name-dropping without a specific outcome for the viewer's use case
 - Resume brag, not channel brag
 
-### Pair 4 — Anti-proof (the self-sabotage)
+### Pair 4: anti-proof (the self-sabotage)
 
 **Good:** *"Since 2022, I've built the systems behind dozens of businesses. And the number one mistake I see business owners make before they even talk to me is..."*
 
 Why it works:
 - The creator is the expert
-- The problem is OTHER people's mistake — framed as the viewer's current error
+- The problem is OTHER people's mistake, framed as the viewer's current error
 - The creator knows what to do
 
 **Bad:** *"Since 2022, I've built the systems behind dozens of businesses. And the number one reason those systems fail is..."*
@@ -94,9 +94,9 @@ Why it fails:
 - Reads as "my systems fail" which is the opposite of a credibility brag
 - Even though the sentences look nearly identical, the frame destroys the proof
 
-Check every brag for anti-proof framing before locking it. This is the single most common credibility mistake.
+Check every brag for anti-proof framing before locking. This is the single most common credibility mistake.
 
-### Pair 5 — Hedged vs. declarative
+### Pair 5: hedged vs declarative
 
 **Good:** *"I've treated 3,000+ patients in my clinic."*
 
@@ -107,21 +107,21 @@ Why it works:
 **Bad:** *"I've been working on developing treatment approaches for a variety of patients over the years."*
 
 Why it fails:
-- "Been working on" = hedge, feels in-progress
-- "A variety of" = vague
-- "Over the years" = no real timeframe
+- "Been working on" is a hedge, feels in-progress
+- "A variety of" is vague
+- "Over the years" is no real timeframe
 - The hedge undermines credibility even when the reality is the same
 
-## The rule: Big, specific, personal
+## The rule: big, specific, personal
 
-- **Big:** The number or result is impressive.
-- **Specific:** Real numbers, real timeframes, real client names where appropriate. Not "many years" or "lots of businesses."
-- **Personal:** The creator DID the thing. Past tense. "I built" not "I've been studying how to build."
+- **Big:** the number or result is impressive.
+- **Specific:** real numbers, real timeframes, real client names where appropriate. Not "many years" or "lots of businesses."
+- **Personal:** the creator DID the thing. Past tense. "I built" not "I've been studying how to build."
 
 ## How to extract 3 brags
 
 Ask the creator:
-1. "What's the biggest result you've personally achieved that your viewer wants?"
+1. "What's the biggest result you've personally hit that your viewer wants?"
 2. "What's the most impressive client win you've produced?"
 3. "What's the volume number you can cite? (How many clients? How much revenue?)"
 
@@ -149,7 +149,7 @@ Each brag: one sentence. Specific numbers. Past tense (or present tense for ongo
 **Good:** "Since 2022, I've built systems for over 50 businesses."
 **Bad:** "Since 2022, I've been working on building systems for various businesses."
 
-The declarative certain version lands. The hedge undermines credibility.
+The declarative version lands. The hedge undermines credibility.
 
 ## When to use them in content
 
@@ -160,18 +160,18 @@ Example intro flow:
 - **Proof (credibility brag):** "Since 2022, I've built automation systems for over 50 businesses."
 - **Promise:** "In this video, I'm going to show you the five-part system I use..."
 
-Creators rotate between brags. Don't use the same one in every video. Pick the brag that best matches the specific topic.
+Creators rotate between brags. Don't use the same one in every video. Pick the brag that best matches the topic.
 
 ## If the creator doesn't have impressive numbers yet
 
 For new creators, borrow client results. "I helped my first client go from X to Y" is fine even if the dollar amounts are small, as long as the specificity is there.
 
-If there are no client results yet, credibility must come from a different angle:
+If there are no client results yet, credibility has to come from a different angle:
 - Education ("I've spent the last 2 years studying [specific thing]")
 - Consumption ("I've read 300 books on this topic")
 - Personal transformation ("I went from X to Y myself")
 
-These work for cold viewers but weaker than real results.
+These work for cold viewers. Weaker than real results.
 
 ## Anti-patterns
 

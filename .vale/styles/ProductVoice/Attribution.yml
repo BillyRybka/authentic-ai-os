@@ -1,0 +1,32 @@
+extends: existence
+message: "Source attribution leak: '%s'. Productized files cannot reference source curriculum, instructors, or named third-party creators. Use niche/category descriptors."
+level: error
+ignorecase: false
+tokens:
+  - '\bEd\b'
+  - "Ed's"
+  - "YGS"
+  - "Lawrence"
+  - "the source curriculum"
+  - "source-curriculum"
+  - "the source teacher"
+  - "the source material"
+  - "Hormozi"
+  - "MrBeast"
+  - "Mr Beast"
+  - "Matt D'Avella"
+  - "Andre Jikh"
+  - "Dan Martell"
+  - "Iman Gadzhi"
+  - "Joe Dispenza"
+  - "Casey Neistat"
+  - "MKBHD"
+  - "Marques Brownlee"
+  - "Taylor Swift"
+  - "Livin' Leggings"
+  - "Ramsay"
+  - "Andrew Kirby"
+  - "Diary of a CEO"
+  - "Humphrey"
+  - "Trey at Talent House"
+  - "Sebring"

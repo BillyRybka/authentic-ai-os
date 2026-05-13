@@ -1,13 +1,13 @@
 ---
 type: project-doc
 doc: build-plan
-project: youtube-content-os
+project: authentic-ai-os
 status: active
-last_refreshed: 2026-05-01
+last_refreshed: 2026-05-08
 tags: [project, build-plan, architecture, roadmap]
 ---
 
-# YouTube Content OS — Build Plan
+# Authentic AI OS — Build Plan
 
 The single source of truth for what this is, what's done, what's next, and how it all fits together. Read this before resuming work, before adding skills, before refactoring anything structural.
 
@@ -17,20 +17,22 @@ The single source of truth for what this is, what's done, what's next, and how i
 
 ### What we're building
 
-A productizable Claude Code skill system that takes any YouTube business owner from idea to filming-ready script in roughly an hour, in their actual voice. Built as an Obsidian-native vault — every artifact links into the graph, every story captured once auto-surfaces at script-writing time, every winning thumbnail logs back into the bank for future reference.
+A productizable Claude Code skill system that takes any expertise-based YouTube creator from idea to filming-ready script in roughly an hour, in their actual voice. Built as an Obsidian-native vault. Every artifact links into the graph. Every story captured once auto-surfaces at script-writing time. Every winning thumbnail logs back into the bank for future reference.
+
+The point is not to make "AI content." The point is to amplify the creator's authentic expertise without sanding off their specificity, weirdness, phrasing, lived proof, or hard-earned taste. AI does the heavy lifting of organizing, drafting, pressure-testing, and assembling. The knowledge, stories, standards, language, and judgment come from the creator.
 
 ### Who it's for
 
 Two audiences, one product:
 
-- **The creator using the system** — a YouTube business owner who runs the skills against their own workspace. They install the template, run setup once, then use per-video skills weekly to ship content.
+- **The creator using the system** — an expertise-based YouTube business owner who runs the skills against their own workspace. They install the template, run setup once, then use per-video skills weekly to ship content. Over time they grow the workspace into the place they run their business.
 - **Billy (Peak Systems)** — the first creator AND the system designer. authentic-ai-os is both the product template AND Billy's personal test workspace. Once the system works for him, the same template ships to other creators with their own foundation docs.
 
 ### What success looks like
 
 A creator can:
 
-1. Install the template, run `vid-foundation` once → produces creator-foundation.md, voice-profile.md, packaging-system.md
+1. Install the template, run `vid-foundation` once → produces creator-foundation.md and packaging-system.md, then hands off to `vid-voice-capture` for voice-profile.md
 2. Capture stories / proofs / metaphors / testimonials anytime via `vid-capture` → grow evergreen banks
 3. Run `vid-pipeline` per video → idea-to-filming-ready-script in ~60 minutes
 4. Post-publish, run `vid-measurement` → log winners back into banks, refine the loop
@@ -39,8 +41,7 @@ A creator can:
 ### Where this lives
 
 - **Product template:** `c:/Users/billr/projects/authentic-ai-os/` — the standalone, distributable workspace. Has `.claude/skills/`, `knowledge/`, `banks/`, etc. This IS the product.
-- **Underlying study material (Billy's reference, not shipped):** `c:/Users/billr/projects/business-os/Resources/references/` — Billy's third-party study materials. Consulted during development. Read-only. Never shipped or referenced in productized output. All content in skill files is stripped of attribution per the productization rule.
-- **Billy's personal workspace:** `c:/Users/billr/projects/business-os/` — Billy's full Obsidian vault (separate concerns, has Peak Systems content). The YouTube Content OS skills do NOT live there anymore.
+- **Development reference path (read-only, not shipped):** the underlying study material lives at a path outside this product workspace. Consulted during development. Read-only. Never shipped or referenced in productized output. All content in skill files is stripped of attribution per the productization rule.
 
 ---
 
@@ -48,11 +49,12 @@ A creator can:
 
 ### Three-layer architecture
 
-**Layer 1: Foundation Docs** — created once per creator, loaded by every downstream skill at startup. The creator's identity codified.
+**Layer 1: Foundation Docs** — created once per creator and selectively loaded by downstream skills when a decision needs identity, voice, or packaging context. The creator's identity codified without forcing every skill to carry every field.
 
 - `foundation/creator-foundation.md` — positioning, avatar, top 3 problems, credibility brags, backstory
 - `foundation/voice-profile.md` — how the creator actually talks, multi-format Context Maps
-- `foundation/packaging-system.md` — Gift Framework commitments, format rotation, thumbnail strategy, design guardrails
+- `foundation/packaging-system.md` — starting packaging defaults, format rotation, thumbnail strategy tests, design guardrails
+- `foundation/reference-pieces/` — full polished pieces (own or studied) preserved verbatim. Loaded by writing skills for piece-level voice rhythm. Populated by `vid-voice-capture`.
 - `foundation/channel-audit.md` — optional, existing channels only
 
 **Layer 2: Evergreen Banks** — grow continuously. Every script pulls from these.
@@ -64,7 +66,7 @@ A creator can:
 - `banks/framework-bank/` — creator's own named systems / rules / methods
 - `banks/packaging-bank/` — winning title+thumbnail combos (own + studied outliers)
 - `banks/title-bank.md` — fill-in-the-blank title patterns (file, not folder)
-- `banks/pattern-bank.md` — hook/structure patterns that worked (planned)
+- `banks/pattern-bank.md` — research synthesis and pattern pointers, built by `vid-research`
 
 **Layer 3: Per-Video Content** — Obsidian content pieces.
 
@@ -76,23 +78,302 @@ Confirmed best practice for creative work, learned from analyzing the original `
 
 - ~150-line orchestrator (`vid-pipeline`) that ROUTES and delegates. Pure delegator. Never duplicates sub-skill logic.
 - ~100-400 line sub-skills that each do ONE unit of work. Independently invokable AND callable by the orchestrator.
-- One source of truth per domain — when STRUCTURE phase needs a hook, it INVOKES `vid-hook`; the same `vid-hook` runs again at SCRIPT phase if revision is needed. No duplicate hook logic in the orchestrator.
+- One source of truth per domain — when STRUCTURE phase needs a hook, it INVOKES `vid-intro`; the same `vid-intro` runs again at SCRIPT phase if revision is needed. No duplicate hook logic in the orchestrator.
 
 This pattern is the locked architectural decision. Don't break it by inlining sub-skill logic into `vid-pipeline` to "save a step."
 
 ### Reference / knowledge strategy
 
-Two tiers:
+Three buckets:
 
-**Skill-local references** — `.claude/skills/{skill}/references/` — files only that skill needs. Each skill loads its own.
+**Skill-local references** — `.claude/skills/{skill}/references/` — packaged reference files only that skill needs. If a file in this folder becomes useful to a second skill, move it to `knowledge/` instead of having the second skill reach into the first skill's folder.
 
-**Shared knowledge** — `knowledge/` at workspace root — files multiple skills need. Format planners, vault-integration.md, BENS framework, gift framework, etc.
+**Shared knowledge** — `knowledge/` at workspace root — packaged reference files multiple skills need. Format planners, vault-integration.md, BENS framework, gift framework, thumbnail strategy, format rotation, audience temperature, and any reusable examples live here.
 
-Why split this way: skills evolve independently; shared concepts need one canonical location so updates propagate. Don't copy-paste references across skills.
+**Creator workspace outputs** — `foundation/`, `banks/`, `Content/`, `People/` — creator-specific files that skills read and write. These may be used by many skills, but they are not packaged reference material. They belong to the creator and the plugin never overwrites them.
+
+The placement rule:
+
+- One skill uses a packaged reference file: keep it under that skill.
+- Two or more skills use a packaged reference file: put it in `knowledge/`.
+- A file stores the creator's actual answers, patterns, stories, videos, people, or measured results: keep it in the workspace, even if many skills read it.
+- No skill should read another skill's private `references/` folder. If it needs that material, promote the file to `knowledge/` and update both skills.
+
+Why split this way: skills evolve independently; shared concepts need one home so updates propagate. Creator-owned data needs a separate home so plugin updates never overwrite it. Don't copy-paste references across skills.
+
+### Source-material discipline
+
+Every skill must be grounded in the underlying study material before it is built or materially changed. "Grounded" means the builder has read the relevant source files directly, extracted the usable operating patterns, and translated them into productized instructions without attribution leakage.
+
+For each skill build, complete this source pass before drafting the skill:
+
+1. **Find the relevant source files.** Start at the development reference path on the builder's machine, then narrow to the modules, shared materials, notes, transcripts, or framework files that map to the skill's job.
+2. **Extract operating patterns, not lessons.** Pull what the skill must DO: decision rules, prompt questions, examples, anti-patterns, structure shapes, and judgment checks.
+3. **Convert into runnable guidance.** Reference files should read like calibration sheets for Claude at runtime, not course notes for the creator.
+4. **Scrub attribution.** Productized files must not mention source-curriculum names, teacher names, instructor names, course names, or named public-figure examples. Keep internal source paths in this build plan only.
+5. **Record the source dependency.** In this plan, each new skill's build notes should list the source files read and the patterns extracted. That record stays internal so future builders know the skill is source-backed.
+
+If a proposed rule cannot be traced to creator input, source material, observed platform data, or a real downstream need, it is fluff. Cut it.
+
+### Principle traceability standard
+
+Every skill, knowledge file, bank, and handoff needs a traceable reason to exist. The reason can come from four places:
+
+1. **Source principle** — a pattern, framework, or workflow from the underlying study material.
+2. **Creator data** — something the creator said, proved, experienced, or repeatedly does.
+3. **Platform feedback** — retention, CTR, comments, sales actions, or other observed performance.
+4. **AI workflow need** — a constraint needed because AI agents need clearer context, narrower tasks, or better verification than a human collaborator would.
+
+If it cannot be mapped to one of those four, it does not belong in the build plan yet.
+
+Use this check before creating or expanding any file:
+
+| Proposed piece | Must answer |
+|---|---|
+| New skill | Which repeatable job does it own that no existing skill owns? |
+| New knowledge file | Which multiple skills need the same reference? |
+| New bank | What reusable creator-owned asset gets captured here? |
+| New field | Which downstream decision changes because this field exists? |
+| New example | Which rule boundary does this example make easier to apply? |
+| New agent | Which failure mode does this agent catch better than the main writer? |
+
+The current source-principle map:
+
+| Build-plan piece | Source / workflow anchor | Productized interpretation |
+|---|---|---|
+| `vid-foundation` | Positioning basics, top-of-umbrella/iceberg, avatar problems, credibility and backstory setup | Lock creator identity once so downstream skills do not invent positioning or audience language |
+| `vid-voice-capture` | "Update the AI brain" and creator-specific guardrails | Build the creator's AI brain from real speech/writing sources, not generic style adjectives |
+| `vid-capture` | Story/proof/metaphor lessons, minimum viable story, proof through lived examples | Capture reusable raw material when it appears so scripts pull from owned experience |
+| `vid-title` | BENS, outlier title patterns, warning not to use AI title suggestions verbatim | Generate options from proven shapes, then filter through creator judgment and read-aloud fit |
+| `vid-thumbnail` | Gift framework, thumbnail strategy, text/image separation, no fabricated numbers | Plan only the text promise and rationale; design/generation happens elsewhere |
+| `vid-research` | Three-circle research, outlier study, repeat what works, anti-fluke checks | Build pattern banks from real channel evidence so framing and packaging are not guesses |
+| `vid-intake` | Creator-owned raw material, iceberg fit, Top 3 problem alignment | Capture the creator's exact words before the system tries to frame or write the video |
+| `vid-intro` | Intro architecture, top 3 viewer questions, IntroBot feedback loop | Write and review the opening against viewer questions, title promise, and voice profile |
+| `vid-segment` | Setup/Tension/Payoff, emotion bricks, logic bricks, cut when the viewer gets it | Build points that change belief without over-explaining |
+| `vid-ending` | CTA and end-screen lessons, bridge to next best action | Make the ending feel like the logical next step, not a bolted-on pitch |
+| `vid-framing` | Guardrails AI alignment scoring and research pattern bank | Decide whether an idea is worth making before spending writing effort |
+| `vid-structure` | Keep/cut/combine planning, format templates as reusable layer | Assemble the skeleton without duplicating title, intro, or segment logic |
+| `vid-pressure-test` | IntroBot/PointBot feedback, script roasting, color-code review | Run focused reviewers that catch drift, bloat, missing payoffs, and AI-sounding prose |
+| `vid-measurement` | 3-hour / 7-day / 30-day checkpoints, retention as research | Turn performance data into updates to banks and future decisions |
+| `vid-monthly-review` | Pattern learning over time, AI brain should change every 6 months | Refresh the system from observed patterns, not opinions |
+| `vid-thumbnail-gen` | AI thumbnail workflow and creation-path selection | Optional generation layer only after the text promise and visual constraints are locked |
+
+### AI-first workflow standard
+
+This is not a human process copied into Claude. It is an AI-first workflow that preserves human judgment.
+
+Humans can carry fuzzy context in their heads. AI agents cannot. They need:
+
+- narrow jobs
+- explicit inputs
+- clear stop conditions
+- small context packets
+- examples that teach boundaries
+- verification loops that catch plausible nonsense
+
+Every skill should follow this rhythm:
+
+1. **Load only the minimum context needed for the next decision.**
+2. **Ask for missing creator-owned inputs before guessing.**
+3. **Generate multiple useful options when exploration helps.**
+4. **Use source-backed examples to expand creative range, not constrain it.**
+5. **Let the creator choose or correct the direction.**
+6. **Save the locked decision in a structured field.**
+7. **Pass forward only the fields downstream skills need.**
+
+Good AI-first example:
+
+`vid-framing` loads creator-foundation, packaging-system, the brain dump, and the relevant pattern bank. It produces 3-5 possible framings, each with source-backed rationale and a risk note. The creator chooses one. Only the selected framing, rejected alternatives, format, core payoff, and viewer-stage decision move forward.
+
+Why it works: AI explores more angles than the creator would manually, but the locked context stays small.
+
+Bad AI-first example:
+
+`vid-framing` writes a 2,000-word strategy memo and passes the entire memo to every downstream skill.
+
+Why it fails: downstream agents inherit too much prose, summarize instead of decide, and start sounding like the memo instead of the creator.
+
+### Context budget rule
+
+Context is a budget, not a closet.
+
+Each skill must declare:
+
+| Context type | Rule |
+|---|---|
+| Required inputs | Load every time. The skill cannot work without them. |
+| Conditional inputs | Load only when the artifact exists or the format needs it. |
+| Forbidden inputs | Do not load because they create noise or duplicate another skill's job. |
+| Output packet | The smallest set of fields the next skill needs. |
+
+Example context packet from `vid-intro` to `vid-structure`:
+
+```yaml
+intro_packet:
+  locked_hook: "..."
+  intro_strategy: problem-poke | result-tease | combined
+  top_3_questions_used:
+    - "..."
+    - "..."
+    - "..."
+  proof_used:
+    - "[[proof-slug]]"
+  voice_check: pass | needs_creator_revision
+```
+
+Do not pass the entire intro reference file. Do not pass every foundation field. Pass the result of the decision.
+
+### Creative constraint rule
+
+Examples should increase creativity, not shrink it.
+
+Use examples as shape libraries:
+
+- **Match the underlying move**, not the literal words.
+- **Show multiple niches** so Claude does not overfit to one category.
+- **Include near-misses** so Claude understands the boundary.
+- **Allow creator-approved deviations** when the deviation strengthens voice, proof, or delivery.
+
+The "iceberg" language is approved as the creator-facing name for the source material's umbrella/top-bottom positioning idea. It is a translation, not an invention. The underlying principle stays the same: own one clear top-level promise while keeping a broad bottom of related subtopics. This kind of rename is allowed when it makes the system easier for the creator to use without changing the source logic.
+
+Bad constraint:
+
+"Use this exact hook formula every time."
+
+Good constraint:
+
+"Here are five hook shapes. Pick the one that fits the title promise, viewer question, and creator's natural speaking style. If none fit, create a new hook and explain which source-backed principle it preserves."
+
+### Human vs. AI-sounding script standard
+
+Every writing skill needs a way to recognize AI-sounding prose.
+
+AI-sounding script:
+
+> "In today's video, we're going to dive into the powerful strategies that can help you unlock your true potential and transform the way you approach content creation."
+
+Why it fails: generic promise, no lived context, inflated verbs, could belong to anyone, no specific tension.
+
+Human-sounding script:
+
+> "Most people don't have a content problem. They have a 'I forgot what I actually know' problem. So they ask AI for ideas, and AI gives them the same beige list it gave everybody else."
+
+Why it works: specific belief, plain phrasing, creator point of view, concrete enemy, natural spoken rhythm.
+
+AI-sounding script:
+
+> "This framework is designed to streamline your workflow and ensure optimal results across every stage of the process."
+
+Why it fails: corporate abstraction, no viewer pain, no visual, no proof.
+
+Human-sounding script:
+
+> "If the AI needs a 4-page prompt to remember who you are, you don't have a system yet. You have a very polite memory problem."
+
+Why it works: memorable line, clear critique, specific image, sounds sayable.
+
+The test is not "does this sound casual?" The test is: would this specific creator naturally say this sentence while making this specific point?
+
+### Multi-agent orchestration standard
+
+Use multiple agents when different judgment lenses can run in parallel and catch different failure modes. Do not spawn agents just to make the process look sophisticated.
+
+Good times to use multiple agents:
+
+| Moment | Agents worth using | Why |
+|---|---|---|
+| After a skill draft is written | Source-faithfulness reviewer, context-bloat reviewer, schema reviewer | Catches unsupported invention, unnecessary context, broken contracts |
+| After `vid-framing` creates options | Alignment reviewer, novelty reviewer, risk reviewer | Checks fit to iceberg/top problems, whether the angle is fresh, and whether the idea is thin |
+| After `vid-intro` draft | Voice reviewer, intro-architecture reviewer, AI-slop reviewer | Checks creator voice, source structure, and generic phrasing |
+| During `vid-segment` review | Setup-payoff reviewer, proof reviewer, compression reviewer | Catches unresolved setups, unsupported claims, and over-explanation |
+| During `vid-pressure-test` | Source alignment, voice authenticity, retention logic, offer/CTA alignment | Focused adversarial pass before the creator films |
+| After publish data comes in | Measurement analyst, pattern-miner, bank-updater | Separates diagnosis, pattern extraction, and durable system updates |
+
+Bad times to use multiple agents:
+
+- During creator identity capture, where too many reviewers can muddy the creator's own words.
+- Before the creator has made a core choice, because agents will optimize every branch and bloat the session.
+- For simple file-scaffolding tasks where deterministic checks are enough.
+- When the task needs one clear owner and fast execution.
+
+Default `vid-pressure-test` agent set:
+
+1. **Source Alignment Reviewer** — does the script preserve the source-backed structure and format logic?
+2. **Creator Voice Reviewer** — does it sound like this creator, using their voice profile and brain dump?
+3. **AI-Slop Reviewer** — flags generic phrasing, inflated verbs, abstract transitions, and empty "value" language.
+4. **Viewer Retention Reviewer** — checks unresolved setups, early payoffs, over-explaining, and weak transitions.
+5. **Proof / Claim Reviewer** — verifies numbers, results, testimonials, and claims trace to source artifacts.
+
+Each agent returns only:
+
+```yaml
+reviewer:
+  verdict: pass | revise | block
+  top_3_issues:
+    - issue: "..."
+      evidence: "line or section"
+      fix: "specific edit"
+  do_not_change:
+    - "what is already working"
+```
+
+No long essays. No rewriting the whole script unless explicitly asked. Reviewers diagnose; the main writing skill integrates.
+
+### Context handoff discipline
+
+Context handoff is allowed only when the receiving skill or artifact uses the information to make a better decision. Passing context "because it might be useful" creates mushy prompts and generic output.
+
+Every handoff must answer four questions:
+
+| Question | Required answer |
+|---|---|
+| Who consumes it? | The specific downstream skill, artifact, or bank |
+| What decision does it improve? | The concrete choice it affects |
+| What exact field is passed? | Filename + field/section, not a vague document reference |
+| What happens if it is missing? | Fallback, ask-user behavior, or stop condition |
+
+Positive handoff example:
+
+`vid-framing` writes the framing decisions into `Content/pieces/{slug}/piece.md` (frontmatter fields: `format`, `core_payoff`, `viewer_stage`, `selected_angle`, `goal`, `outlier_anchor`, `anchor_confidence`). `vid-intro` consumes those fields to choose intro length, Problem/Result balance, hook type, and transition style. This works because each field changes an actual writing decision. piece.md is the main per-piece ledger. Every skill in the pipeline appends to it.
+
+Negative handoff example:
+
+`vid-intro` receives "all prior notes about the creator" and tries to infer the hook from everything. This fails because the receiving skill has no clear decision boundary. It invites summary, repetition, and generic AI-sounding glue.
+
+Positive source handoff example:
+
+`vid-foundation` captures `top_3_perceived_problems` in `foundation/creator-foundation.md`. `vid-intro` uses those exact problems to shape the opening questions and problem poke. This works because viewer-language collected once becomes reusable pressure in every script.
+
+Negative source handoff example:
+
+`vid-foundation` passes a broad "audience avatar summary" to every writing skill, and each skill independently chooses what matters. This fails because the same vague blob gets reinterpreted differently and weakens consistency across the system.
+
+### Example standard
+
+Every skill reference should be example-heavy and contrastive.
+
+Required shape:
+
+1. **Positive examples** — multiple examples showing the pattern working in different niches or content formats.
+2. **Why it works** — one tight explanation tied to the actual decision rule.
+3. **Negative / near-miss examples** — examples that look plausible but fail.
+4. **Why it fails** — one tight explanation that teaches the boundary.
+5. **Application instruction** — how Claude should adapt the shape to the creator's own voice and source material.
+
+Example of a good reference entry:
+
+| Type | Example |
+|---|---|
+| Positive | "I rebuilt my offer around one painful moment: the sales call where the prospect says yes emotionally but disappears after seeing the proposal." |
+| Why it works | Specific moment, real tension, clear business stakes, sounds like a person describing something they lived. |
+| Near-miss | "This video is about how to improve your offer so prospects convert better." |
+| Why it fails | Abstract, category-level, no lived moment, sounds like a topic label instead of a creator's point of view. |
+
+One positive and one negative is the minimum. Multiple positives and multiple near-misses are the standard for high-load skills like `vid-foundation`, `vid-intro`, `vid-segment`, and `vid-framing`.
 
 ### Format-aware writing
 
-Each writing sub-skill (`vid-hook`, `vid-segment`, `vid-ending`) reads the video's format from `reference-block.md` and loads the matching planner from `knowledge/format-planners/`. Different formats route through different internal workflows:
+Each writing sub-skill (`vid-intro`, `vid-segment`, `vid-ending`) reads the video's format from `piece.md` and loads the matching planner from `knowledge/format-planners/`. Different formats route through different internal workflows:
 
 - News → bullet workflow, light tension, scripted hook only
 - Deep Dive → full word-for-word, heavy STP (Setup-Tension-Payoff)
@@ -129,10 +410,10 @@ These are decisions made early and held throughout. Don't relitigate without str
 6. **Voice handling:** The brain dump IS the voice. Claude structures the creator's actual phrases — never generates from scratch.
 7. **Output format:** Format-aware. Each writing sub-skill detects format and routes internally.
 8. **Reference strategy:** Skill-local in each skill's `references/` folder; truly cross-skill in `knowledge/` at root.
-9. **Examples-heavy:** Every reference doc shows good examples first, principles second. Real winners, not invented ones.
+9. **Examples-heavy, contrastive:** Every reference doc — every skill prompt, every guide, every pattern library — leads with **real examples** before principles. Wherever a rule exists, show a worked example AND a near-miss with a one-line "why this lands / why this doesn't." Examples are sourced from the underlying study material, creator banks, or observed real-world examples. **Never attributed in productized files.** Principles without examples are abstract; rules without counter-examples are formulaic. Examples are the teaching surface. The creator and Claude both calibrate from them, not from rules.
 10. **Orchestrator role:** Pure delegator. Never duplicates sub-skill logic. Invokes the right sub-skill at each phase.
 11. **Status updates:** CLAUDE.md instructions, not a skill.
-12. **Capture skill:** One combined skill (`vid-capture` for story + proof + metaphor + testimonial). Not four separate skills.
+12. **Capture skill:** One combined skill (`vid-capture` for story + proof + metaphor + testimonial + framework). Not separate skills per brick tool. Framework added 2026-05-11 as Stage F (Log path only; the 5-step Create flow lives in `knowledge/framework-builder.md`).
 13. **Research skill:** Deferred. Not building this pass.
 14. **No expand-to-tier-2 skill:** `vid-segment` handles two-pass review (structure → prose) internally.
 15. **Attribution scrub:** Skill files, knowledge files, and bank READMEs reference no source-curriculum names, teacher names, instructor names, or course names. Public-figure examples in calibration material (e.g. thumbnail libraries) are replaced with niche/category descriptors. The underlying material is consulted during development but never cited in productized output.
@@ -151,15 +432,15 @@ Status legend: ✅ done · 🚧 building · ⬜ not started · 🟡 optional/def
 
 | Skill | Status | Description | Key dependencies | Files |
 |---|---|---|---|---|
-| `vid-foundation` | ✅ | 6-stage Q-script questionnaire walks the creator through positioning → avatar → credibility → backstory → voice profile (Stage 5) → packaging system. Outputs the 3 foundation docs. ICP-creator-style (one question at a time, exact prompts, probes for vague answers). | None — first skill run | `.claude/skills/vid-foundation/` (487-line SKILL.md, 5 references, 4 templates) |
-| `vid-voice-capture` | ✅ | Deeper voice profile build — Layer 1 Core (cross-context patterns) + Layer 2 Context Maps (per-format sub-profiles). Multi-source extraction (transcripts + writing + live monologue). Strict superset of vid-foundation Stage 5. Refresh-aware (90 days / 20+ videos). Built by another session, audited 5/1. | foundation/creator-foundation.md, knowledge/voice-extraction-methods.md, knowledge/voice-pressure-test.md, knowledge/voice-profile-schema.md | `.claude/skills/vid-voice-capture/` (SKILL.md + 2 templates) |
-| `vid-capture` | ✅ | Combined story + metaphor + proof + testimonial capture. Runnable standalone OR invoked by another skill mid-script. Dedup check per stage. People stub auto-creation. Invocation-mode aware (standalone loops, sub-skill mode returns wikilink). proof_type simplified to 2 (personal-result / client-win); presentation format moved to body. | foundation/creator-foundation.md (Top 3 problems), knowledge/vault-integration.md, capture guides in knowledge/ | `.claude/skills/vid-capture/` (SKILL.md + 5 templates) |
+| `vid-foundation` | ✅ | 5-stage guided setup walks the creator through Iceberg Discovery, credibility, backstory, starting video defaults, and voice-profile handoff. Outputs creator-foundation.md, packaging-system.md, and title-bank seed, then tells the creator to run `vid-voice-capture`. One question at a time, exact prompts, probes for vague answers. | None, first skill run | `.claude/skills/vid-foundation/` (SKILL.md, 5 references, 2 templates + title-bank seed) |
+| `vid-voice-capture` | ✅ | Dedicated voice profile build — Layer 1 Core (cross-context patterns) + Layer 2 Context Maps (per-format sub-profiles). Multi-source extraction (transcripts + writing + live monologue). The only skill that creates `foundation/voice-profile.md`. Refresh-aware (90 days / 20+ videos). Built by another session, audited 5/1. | foundation/creator-foundation.md, knowledge/voice-extraction-methods.md, knowledge/voice-pressure-test.md, knowledge/voice-profile-schema.md | `.claude/skills/vid-voice-capture/` (SKILL.md + 2 templates) |
+| `vid-capture` | ✅ | Combined story + metaphor + proof + testimonial + framework capture. Runnable standalone OR invoked by another skill mid-script. Dedup check per stage. People stub auto-creation. Invocation-mode aware (standalone loops, sub-skill mode returns wikilink). proof_type simplified to 2 (personal-result / client-win); presentation format moved to body. Stage F (framework) is Log-only — the 5-step build lives in `knowledge/framework-builder.md` and runs inline in vid-segment when mid-write framework crafting is needed. | foundation/creator-foundation.md (Top 3 problems), knowledge/vault-integration.md, capture guides in knowledge/, knowledge/framework-builder.md | `.claude/skills/vid-capture/` (SKILL.md + 5 templates) |
 
-### Phase 2 — Packaging (run once per creator, refresh occasionally)
+### Phase 2 — Research and Pattern Banks
 
 | Skill | Status | Description | Notes |
 |---|---|---|---|
-| `vid-packaging` | 🟡 | Standalone packaging refresh skill. **Likely redundant with vid-foundation Stage 6.** Decide before building — probably skip and let creators re-run vid-foundation Stage 6 for refresh. |
+| `vid-research` | ✅ | Builds or refreshes pattern banks from own channel, niche competitors, and adjacent niches. Produces pattern-bank.md plus focused banks for power words, title patterns, thumbnail patterns, format patterns, topic patterns, and viewer-hate patterns. Three modes: first build, quarterly refresh, single outlier add. | Run after foundation + voice capture and before first `vid-framing` when pattern banks do not exist. Requires YouTube Data API key. |
 
 ### Phase 3 — Per-video pipeline
 
@@ -169,13 +450,13 @@ Build leaves first, orchestrator last. Writing sub-skills before structure/routi
 |---|---|---|---|
 | `vid-thumbnail` | ✅ | Text planner ONLY. Generates 5-10 thumbnail text candidates using the patterns playbook. Creator picks 1-2. Output: brief with picks + strategy + BENS + rationale. Does NOT design the visual (no layouts, hero, expressions, AI prompts). | foundation/packaging-system.md, knowledge/thumbnail-text-patterns.md, knowledge/thumbnail-strategy-menu.md, knowledge/BENS-framework.md, knowledge/gift-framework.md, packaging-bank |
 | `vid-title` | ✅ | BENS title generation. Loads creator-foundation, packaging-system, BENS framework, title-bank patterns, and the video's actual material. Generates 5-10 candidates each ≤50 chars and hitting at least one BENS letter. Anti-fabrication enforced (numbers must come from the script). Standalone OR sub-skill (returns title string to caller when invoked by vid-structure). | knowledge/BENS-framework.md, banks/title-bank.md, the video's brain-dump/framing artifact, foundation docs |
-| `vid-hook` | ⬜ | Problem/Proof/Promise + 6-part intro. Format-aware. | format-planners/, voice-profile.md, banks/story-bank/, banks/proof-bank/ |
-| `vid-segment` | ⬜ | One Setup/Tension/Payoff per segment. Two-pass review (structure → prose) internally. Format-aware. The biggest sub-skill. | format-planners/, voice-profile.md, banks/story-bank/, banks/proof-bank/, banks/metaphor-bank/, banks/framework-bank/ |
-| `vid-ending` | ⬜ | Pivot/Gap/Bridge close. Format-aware. CTA placement. | format-planners/, voice-profile.md |
-| `vid-intake` | ⬜ | Raw material capture with type tagging. Output: brain-dump.md. | None — first per-video skill |
-| `vid-framing` | ⬜ | 3-5 framings, Core Payoff, format pick, goal pick. Output: reference-block.md. | foundation docs, banks/pattern-bank.md, knowledge/three-circle-research |
-| `vid-structure` | ⬜ | Keep/cut/combine review, Type 1 skeleton assembly. Invokes vid-title and vid-hook. | brain-dump.md, reference-block.md |
-| `vid-pressure-test` | ⬜ | Parallel adversarial review agents. | The full script |
+| `vid-intro` | ✅ | Full 6-part intro builder: Top 3 viewer questions, Hook, Problem/Result, Setup, Transition, and credibility woven in. Format-aware, title-aware, thumbnail-aware, anti-fabrication. | creator-foundation.md, voice-profile.md, reference-pieces, piece.md, thumbnail-brief.md, brain-dump.md, format-planners/ |
+| `vid-segment` | ✅ | Builds one body segment at a time using Setup/Tension/Payoff. Format-aware, pulls stories/proofs/metaphors/testimonials/frameworks, runs structure pass then prose pass before saving. | creator-foundation.md, voice-profile.md, piece.md, brain-dump.md, format-planners/, banks/ |
+| `vid-ending` | ✅ | Writes the close using Pivot/Gap/Bridge, recaps the transformation, reveals the next problem, and points to a real next video. Format-aware CTA placement. | creator-foundation.md, piece.md, script.md, voice-profile.md if present |
+| `vid-intake` | ✅ | Captures raw video material into brain-dump.md with exact creator phrasing preserved. Auto-detects intake mode, checks iceberg and Top 3 alignment, saves the raw material for downstream skills. | creator-foundation.md, voice-profile.md optional |
+| `vid-framing` | ✅ | 3-4 framings (3 anchored + 1 experimental), Core Payoff, format pick from current packaging defaults, goal pick, viewer_stage prediction. Output: framing decisions appended to piece.md. | foundation docs, banks/pattern-bank.md, knowledge/three-circle-research, knowledge/audience-temperature-model, knowledge/outlier-identification-rules |
+| `vid-structure` | ✅ | Builds the Tier 1 outline from the brain dump and locked framing: segment purposes, brick candidates, tension plan, and script.md skeleton ready for vid-segment. | brain-dump.md, piece.md, creator-foundation.md, format-planners/, banks/ |
+| `vid-pressure-test` | ⬜ | Focused adversarial review agents: source alignment, creator voice, AI-slop, retention logic, proof/claim traceability. Each returns top 3 issues only. | The full script + locked context packets |
 | `vid-pipeline` | ⬜ | Orchestrator (~150 lines target). Adaptive routing at start. Delegates to all of the above. Build LAST. | Everything above |
 
 ### Phase 4 — Feedback (post-publish)
@@ -192,7 +473,13 @@ Build leaves first, orchestrator last. Writing sub-skills before structure/routi
 | `vid-channel-audit` | 🟡 | Existing channels only. Analyzes a creator's current channel state to inform packaging refresh. |
 | `vid-thumbnail-gen` | 🟡 | Image generation extension. Takes a brief from vid-thumbnail + creator's AI tool config + their packaging-bank winners. Includes "training mode" — creator drops in title+thumbnail winner pairs to teach the generator their style. Optional add-on, requires creator to configure their own AI tool API keys. |
 
-**Total:** 14 skills if all built (4 done, 9 to build, 1 optional). If we drop `vid-packaging` and `vid-channel-audit`, 12 skills.
+### Phase 6 — Session orchestrator (after vid-pipeline lands)
+
+| Skill | Status | Description |
+|---|---|---|
+| `/assistant` | ⬜ | Content-only session orchestrator. Resume session, save session, reconcile-notes, web extract, route knowledge into the right vault file. Built after vid-pipeline lands. NOT meetings, NOT tasks, NOT daily reviews — strictly content workflow glue. |
+
+**Total:** 14 content skills + the `/assistant` orchestrator.
 
 ---
 
@@ -200,7 +487,7 @@ Build leaves first, orchestrator last. Writing sub-skills before structure/routi
 
 ```
                 Foundation Docs (creator-foundation, voice-profile, packaging-system)
-                        ↓ loaded by every downstream skill at startup
+                        ↓ selectively loaded by field when a decision needs them
                         ↓
     ┌───────────────────┼───────────────────┐
     ↓                   ↓                   ↓
@@ -208,21 +495,20 @@ Build leaves first, orchestrator last. Writing sub-skills before structure/routi
     ↓                                       ↓
  BANKS                                  per-phase invokes:
  (story / proof /                       vid-intake → brain-dump.md
-  testimonial /                         vid-framing → reference-block.md
+  testimonial /                         vid-framing → piece.md (framing fields)
   metaphor /                            vid-structure → script.md skeleton
   framework /                              ↳ invokes vid-title → title locked
-  packaging)                               ↳ invokes vid-hook → hook in script
+  packaging)                               ↳ invokes vid-intro → hook in script
     ↓                                   vid-segment (per segment) → script body
     ↓                                   vid-ending → script close
     ↓                                   vid-pressure-test → pressure-test.md
  read by writing skills                 vid-thumbnail → thumbnail-brief.md
- (vid-segment, vid-hook, vid-ending,
+ (vid-segment, vid-intro, vid-ending,
   vid-thumbnail)
                                             ↓
                                         Content/pieces/{slug}/
-                                        - meta.md (frontmatter)
+                                        - piece.md (main metadata + framing decisions)
                                         - brain-dump.md
-                                        - reference-block.md
                                         - script.md
                                         - thumbnail-brief.md
                                         - pressure-test.md
@@ -236,9 +522,9 @@ Build leaves first, orchestrator last. Writing sub-skills before structure/routi
 
 ### Specific dependencies
 
-- **Foundation docs** are loaded at startup by EVERY skill that produces user-facing content. They define the creator's voice and identity.
+- **Foundation docs** are mandatory anchors, not mandatory full-context dumps. Skills load the sections they need for the current decision: positioning / Top 3 problems from creator-foundation, voice rules from voice-profile, packaging constraints from packaging-system.
 - **Banks** are the connective tissue. Captured once via `vid-capture`, pulled at script-writing time by writing skills. Bidirectional wikilinks ensure traceability.
-- **`packaging-system.md`** drives both `vid-thumbnail` (committed thumbnail strategy + design guardrails) and the format-planner selection in writing skills.
+- **`packaging-system.md`** drives both `vid-thumbnail` (current thumbnail strategy tests + design guardrails) and the format-planner selection in writing skills. It stores first defaults and later updates from research or performance data, not final rules.
 - **`title-bank.md`** is read by `vid-title` (patterns to adapt). Updated by `vid-measurement` (winning patterns get logged).
 - **`packaging-bank/`** is read by `vid-thumbnail` (style anchors for past winners + studied outliers). Updated by `vid-measurement` post-publish.
 
@@ -246,16 +532,16 @@ Build leaves first, orchestrator last. Writing sub-skills before structure/routi
 
 When `vid-pipeline` runs the STRUCTURE phase:
 
-1. Reads `brain-dump.md`, `reference-block.md`
+1. Reads `brain-dump.md`, `piece.md`
 2. Extracts distinct ideas (lightweight logic in the orchestrator)
 3. Runs keep/cut/combine review with the creator
 4. **INVOKES `vid-title`** → returns locked title
-5. **INVOKES `vid-hook`** → returns hook drawing from the brain dump
+5. **INVOKES `vid-intro`** → returns hook drawing from the brain dump
 6. Gets thumbnail text decision (might invoke `vid-thumbnail` here or defer to a separate run)
 7. Assembles Type 1 skeleton (the outline)
 8. Saves to `script.md`
 
-When the SCRIPT phase runs, it invokes `vid-hook` again ONLY if the hook needs revision — otherwise uses the one from STRUCTURE. Same source of truth, no duplication.
+When the SCRIPT phase runs, it invokes `vid-intro` again ONLY if the hook needs revision — otherwise uses the one from STRUCTURE. Same source of truth, no duplication.
 
 ---
 
@@ -287,7 +573,7 @@ The references downstream skills will load. Build before the skills that need th
 - [x] `knowledge/format-planners/roast.md` ✅
 - [x] `knowledge/format-planners/listicle.md` ✅
 - [x] `knowledge/intro-architecture.md` ✅
-- [ ] `knowledge/voice-rhythm.md` — referenced in original build plan, used by all writing skills. Build before vid-hook / vid-segment.
+- [x] `knowledge/voice-rhythm.md` ✅
 
 ### Step 2 — Phase 1 foundation skills ✅ (done)
 
@@ -304,62 +590,53 @@ The references downstream skills will load. Build before the skills that need th
 - [x] `banks/framework-bank/README.md`
 - [x] `banks/packaging-bank/README.md`
 - [ ] `banks/title-bank.md` — exists as a seed file from vid-foundation; expand patterns over time
-- [ ] `banks/pattern-bank.md` — not yet created; populated by vid-measurement
-- [ ] `banks/hook-bank.md` — patterns; build alongside vid-hook
-- [ ] `banks/transition-bank.md` — patterns; build alongside vid-segment
+- [ ] `banks/pattern-bank.md` — workspace output, created by `vid-research` when the creator runs it
+- [x] `banks/hook-bank.md` ✅
+- [x] `banks/transition-bank.md` ✅
 
-### Step 4 — Phase 3 writing pipeline (next)
+### Step 4 — Research skill ✅ (done)
+
+- [x] `vid-research` ✅ (first build / quarterly refresh / single outlier add)
+
+### Step 5 — Phase 3 writing pipeline
 
 Build in dependency order. Writing sub-skills before structure/routing before orchestrator.
 
 - [x] `vid-title` ✅ (smallest, no deps — built and tested through 4 iterations)
 - [x] All 7 format planners ✅ (case-study, deep-dive, interview, listicle, news, roast, short-process)
 - [x] `knowledge/intro-architecture.md` ✅
-- [ ] `knowledge/voice-rhythm.md`
-- [ ] **`vid-hook` ← NEXT** (intro builder using the 6-part architecture + format planners)
-- [ ] `vid-segment` (the biggest)
-- [ ] `vid-ending`
-- [ ] `vid-intake`
-- [ ] `vid-framing`
-- [ ] `vid-structure` (invokes vid-title and vid-hook)
-- [ ] `vid-pressure-test`
+- [x] `knowledge/voice-rhythm.md` ✅
+- [x] `vid-intro` ✅
+- [x] `vid-segment` ✅
+- [x] `vid-ending` ✅
+- [x] `vid-intake` ✅
+- [x] `vid-framing` ✅
+- [x] `vid-structure` ✅
+- [ ] **`vid-pressure-test` ← NEXT**
 - [ ] `vid-pipeline` (orchestrator — build last)
 
-**Quick reference for vid-hook (the next skill to build):**
+**Current remaining core build items:**
+1. `vid-pressure-test` — focused adversarial reviewers for source alignment, creator voice, AI-slop, retention logic, and proof/claim traceability.
+2. `vid-pipeline` — orchestrator that routes through the built per-video skills without duplicating their logic.
 
-vid-hook produces the FULL intro (6 parts), not just the hook line. Loads:
-- `knowledge/intro-architecture.md` (universal template)
-- `knowledge/format-planners/{format}.md` (per-format adaptation)
-- `foundation/voice-profile.md` (creator preferences)
-- `foundation/creator-foundation.md` (avatar Top 3 problems for Problem-poke source)
-- `Content/pieces/{slug}/meta.md` + locked title + thumbnail-brief.md (drives Top 3 viewer questions)
-- `banks/hook-bank.md` and `banks/transition-bank.md` (NOT YET BUILT — see open items below)
-- the video's brain-dump or framing artifact
+### Step 6 — End-to-end test
 
-**Pre-vid-hook open items:**
-1. `banks/hook-bank.md` — seed file in vid-foundation/assets/. Mine from `business-os/Resources/references/ed-lawrence-ygs/materials-shared/ytgs-video-planner.txt` "Hook bank" section. Patterns + worked examples (same shape as title-bank-seed).
-2. `banks/transition-bank.md` — same. Mine from the "Transition Bank" section.
-3. `knowledge/voice-rhythm.md` — build alongside vid-hook; loaded by all writing skills.
-4. Voice-profile schema additions: `preferred_hook_types`, `transition_style_preferences`, `intro_pacing` fields. Small addition.
-5. Possibly add a `hook-style` field to packaging-system.md so the creator can pre-commit to certain hook types.
+Use a real creator video and run the current chain: vid-foundation → vid-voice-capture → vid-capture as needed → vid-research if banks are missing → vid-intake → vid-framing → vid-title → vid-thumbnail → vid-structure → vid-intro → vid-segment per body section → vid-ending.
 
-If the creator wants to test the existing skills end-to-end before vid-hook is built, run vid-foundation → vid-capture (a few entries) → vid-title → vid-thumbnail to get a sense of how the assembled output feels. The intro is missing but the rest of the brief comes together.
-
-### Step 5 — End-to-end test
-
-- [ ] Run `vid-pipeline` on a real Peak Systems video
+- [ ] Run the manual chain on a real creator video
+- [ ] After `vid-pipeline` is built, rerun the same video through `vid-pipeline`
 - [ ] Time it. Real clock time, not aspirational. Target: under 60 minutes idea-to-filming-ready.
 - [ ] Read script aloud — would Billy reword anything? If yes, voice profile or skill is broken.
 - [ ] Verify all artifacts in `Content/pieces/{slug}/`
-- [ ] Verify: when STRUCTURE invoked `vid-hook`, the hook in skeleton MATCHES the hook in final script (no duplicate logic regression)
+- [ ] Verify: when STRUCTURE invoked `vid-intro`, the hook in skeleton MATCHES the hook in final script (no duplicate logic regression)
 - [ ] Verify: running with format=News routes through different workflow than format=Deep Dive
 
-### Step 6 — Phase 4 feedback skills
+### Step 7 — Phase 4 feedback skills
 
 - [ ] `vid-measurement`
 - [ ] `vid-monthly-review`
 
-### Step 7 — Optional (Phase 5)
+### Step 8 — Optional (Phase 5)
 
 - [ ] `vid-channel-audit` (only if existing-channel use case demands it)
 - [ ] `vid-thumbnail-gen` (image generator + training mode)
@@ -374,13 +651,21 @@ c:/Users/billr/projects/authentic-ai-os/        ← THE PRODUCT TEMPLATE
 ├── build-plan.md                                      ← THIS FILE
 ├── .claude/
 │   └── skills/
-│       ├── vid-foundation/      ✅ SKILL.md, 5 references/, 4 assets/
+│       ├── vid-foundation/      ✅ SKILL.md, 5 references/, 3 assets/
 │       ├── vid-voice-capture/   ✅ SKILL.md, 2 assets/
 │       ├── vid-capture/         ✅ SKILL.md, 5 assets/
 │       ├── vid-thumbnail/       ✅ SKILL.md, 2 assets/
-│       └── vid-{title,hook,segment,ending,...}/      ⬜ to build
+│       ├── vid-title/           ✅ SKILL.md
+│       ├── vid-research/        ✅ SKILL.md, 3 references/, 8 assets/, 3 scripts/
+│       ├── vid-intake/          ✅ SKILL.md, 3 references/
+│       ├── vid-framing/         ✅ SKILL.md, 3 references/, 1 asset/
+│       ├── vid-structure/       ✅ SKILL.md, 2 references/, 1 asset/
+│       ├── vid-intro/           ✅ SKILL.md, 3 references/
+│       ├── vid-segment/         ✅ SKILL.md, 2 references/, 1 asset/
+│       ├── vid-ending/          ✅ SKILL.md, 4 references/, 1 asset/
+│       └── creator-setup/       ⚠️ folder exists, no SKILL.md
 ├── knowledge/                                         ← shared references loaded by skills
-│   ├── vault-integration.md     ✅ canonical schema contract
+│   ├── vault-integration.md     ✅ shared schema contract
 │   ├── BENS-framework.md        ✅
 │   ├── gift-framework.md        ✅
 │   ├── format-rotation-guide.md ✅
@@ -394,14 +679,15 @@ c:/Users/billr/projects/authentic-ai-os/        ← THE PRODUCT TEMPLATE
 │   ├── voice-extraction-methods.md ✅
 │   ├── voice-pressure-test.md   ✅
 │   ├── voice-profile-schema.md  ✅
-│   ├── voice-rhythm.md          ⬜ to build (writing skills load it)
+│   ├── voice-rhythm.md          ✅ writing skills load it
 │   └── format-planners/
 │       ├── short-process.md     ✅
-│       └── {6 others}.md        ⬜ to build
+│       └── {6 others}.md        ✅
 ├── foundation/                                        ← creator identity (skill-populated)
 │   ├── creator-foundation.md    (created by vid-foundation)
-│   ├── voice-profile.md         (created by vid-foundation Stage 5 / vid-voice-capture)
-│   └── packaging-system.md      (created by vid-foundation Stage 6)
+│   ├── voice-profile.md         (created by vid-voice-capture)
+│   ├── packaging-system.md      (created by vid-foundation Stage 4)
+│   └── reference-pieces/        ← full polished pieces for piece-level voice rhythm (populated by vid-voice-capture)
 ├── banks/                                             ← evergreen, grows over time
 │   ├── story-bank/              ✅ README + entries from vid-capture
 │   ├── proof-bank/              ✅ README + entries from vid-capture
@@ -410,36 +696,26 @@ c:/Users/billr/projects/authentic-ai-os/        ← THE PRODUCT TEMPLATE
 │   ├── metaphor-bank/           ✅ README + entries from vid-capture
 │   ├── framework-bank/          ✅ README + manual entries (creator-authored)
 │   ├── packaging-bank/          ✅ README + winners (own + outliers)
-│   ├── title-bank.md            ⬜ patterns + winning titles
-│   ├── pattern-bank.md          ⬜ structure/hook patterns
-│   ├── hook-bank.md             ⬜ hook patterns (alongside vid-hook)
-│   └── transition-bank.md       ⬜ transition patterns (alongside vid-segment)
+│   ├── title-bank.md            (seeded by vid-foundation when missing)
+│   ├── pattern-bank.md          (created by vid-research when run)
+│   ├── hook-bank.md             ✅ hook patterns
+│   └── transition-bank.md       ✅ transition patterns
 ├── Content/
-│   ├── pieces/                  ← per-video folders, each with full artifact set
+│   ├── pieces/                  ← per-video folders, each with full artifact set; single newsletters/posts also live here
 │   ├── ideas/                   ← swipe file for not-yet-built content
-│   └── sequences/               ← email sequences (multi-piece)
-└── People/                                            ← auto-stubbed when clients mentioned
-    └── {Full Name}.md
+│   └── email-sequences/         ← email sequences (multi-piece)
+├── People/                                            ← auto-stubbed when clients mentioned
+│   └── {Full Name}.md
+├── Notes/                                             ← optional drop-zone for on-the-go brain dumps (reconciled later)
+├── raw/                                               ← optional, creator's own raw material full text (transcripts, articles)
+└── references/                                        ← optional, external study material pointers (no full content)
 ```
+
+In-scope folders only. Out-of-scope (intentionally not present): `Daily/`, `Projects/`, `Trainings/`, `Companies/`, `Intelligence/`. This vault is content-only.
 
 ### Source material (read-only, not in product)
 
-```
-c:/Users/billr/projects/business-os/Resources/references/ed-lawrence-ygs/
-├── frameworks.md
-├── insights.md
-├── learning-paths.md
-├── modules/
-│   ├── phase-03-packaging-videos/
-│   ├── phase-04-video-strategy-ideation/
-│   ├── phase-05-writing-planning-videos/
-│   └── ...
-└── materials-shared/
-    ├── ytgs-video-planner.txt   ← Title Bank, Hook Bank, Transition Bank source
-    └── ...
-```
-
-When a skill's content needs source-material backing, read these files directly. Never reference them by name in productized skill files (attribution-scrub rule).
+The underlying study material lives at a development reference path on the builder's machine, outside this product workspace. It contains modules on packaging, video strategy/ideation, writing/planning, and shared materials including title/hook/transition banks. Read these files directly when a skill needs source-material backing. Never reference the path, the curriculum, the teacher, or the source by name in productized skill files (attribution-scrub rule).
 
 ---
 
@@ -449,15 +725,15 @@ Each bank serves a different purpose. Don't duplicate content across banks.
 
 | Bank | Source | Read by | Written by | Purpose |
 |---|---|---|---|---|
-| story-bank | creator's lived/observed stories | vid-segment, vid-hook | vid-capture (Story stage) | Narrative beats |
-| proof-bank | creator's own evidence | vid-hook, vid-segment | vid-capture (Proof stage) | Credibility through specifics |
-| testimonial-bank | other people's words | vid-hook, vid-segment | vid-capture (Testimonial stage) | Social proof |
-| metaphor-bank | creator's analogies | vid-segment, vid-hook | vid-capture (Metaphor stage) | Concrete-ifying abstractions |
+| story-bank | creator's lived/observed stories | vid-segment, vid-intro | vid-capture (Story stage) | Narrative beats |
+| proof-bank | creator's own evidence | vid-intro, vid-segment | vid-capture (Proof stage) | Credibility through specifics |
+| testimonial-bank | other people's words | vid-intro, vid-segment | vid-capture (Testimonial stage) | Social proof |
+| metaphor-bank | creator's analogies | vid-segment, vid-intro | vid-capture (Metaphor stage) | Concrete-ifying abstractions |
 | framework-bank | creator's named systems | vid-framing, vid-structure, vid-segment | manual (for now) | Repeatable teaching structures |
 | packaging-bank | own winners + studied outliers | vid-thumbnail, vid-thumbnail-gen | vid-measurement post-publish | Style anchors for proven packages |
 | title-bank | fill-in-the-blank patterns + winners | vid-title | vid-foundation seeds, vid-measurement adds winners | Reusable title formulas |
 | pattern-bank | hook/structure patterns | vid-framing | vid-measurement post-publish | What's worked structurally |
-| hook-bank | hook patterns | vid-hook | seed + creator additions | Hook starting points |
+| hook-bank | hook patterns | vid-intro | seed + creator additions | Hook starting points |
 | transition-bank | transition phrases | vid-segment, vid-ending | seed + creator additions | Smooth segment-to-segment flow |
 
 **Patterns vs. winners distinction:**
@@ -475,17 +751,22 @@ Each bank serves a different purpose. Don't duplicate content across banks.
 - Conversation pattern — short messages, ask-and-wait, no reference-dumping
 - Attribution scrub — no source-curriculum names, teacher names, instructor names, course names, or named third-party creators in productized files
 - Cross-skill integration — does it write to the same files other skills read?
+- **Source-principle traceability** — every new skill, knowledge file, field, bank, example, and handoff maps to source principle, creator data, platform feedback, or AI workflow need.
+- **Context budget declared** — required inputs, conditional inputs, forbidden inputs, and output packet are explicit. No whole-document handoff unless the receiving skill truly reads the whole document.
+- **Contrastive examples present** — every rule, pattern, or guideline in the skill's references has at least one worked example AND one near-miss / failure mode, each with a one-line "why this lands / why this doesn't." Examples sourced from the underlying study material. Rules without examples = abstract; examples without contrast = unfalsifiable.
+- **Foundation anchors present** — every writing skill explicitly loads the specific foundation sections it needs (`creator-foundation.md`, `voice-profile.md`, `packaging-system.md`) and uses them to filter, calibrate, or shape output. A skill that runs identically across two different creators has failed.
+- **AI-sounding prose check** — writing skills include positive/negative examples and an explicit check for generic AI phrasing, inflated verbs, abstract transitions, and source-less claims.
+- **Agent usefulness check** — if a skill uses multiple agents, each agent has a distinct failure mode and returns a bounded output. If agents duplicate each other, collapse them.
 - Honest pass count — what % of the skill works without manual fix?
 
 ### After Phase 3 (the big test)
 
-- Run `vid-pipeline` end-to-end on a real Peak Systems video
+- Run `vid-pipeline` end-to-end on a real creator video
 - Time it. Actual clock time, not aspirational.
 - Read the script aloud — does Billy reword anything?
 - Check artifacts at `Content/pieces/{slug}/`:
-  - meta.md ✓
+  - piece.md ✓ (main metadata + framing decisions)
   - brain-dump.md ✓
-  - reference-block.md ✓
   - script.md ✓
   - thumbnail-brief.md ✓
   - pressure-test.md ✓
@@ -504,15 +785,14 @@ Each bank serves a different purpose. Don't duplicate content across banks.
 
 ### Architectural
 
-1. **vid-packaging** — probably redundant with vid-foundation Stage 6. Default: skip. Confirm before building.
-2. **vid-research** — deferred from original plan. Revisit only if creators consistently need fresh data injection mid-script.
-3. **Title vs. thumbnail role asymmetry** — the underlying material doesn't explicitly say which carries more click weight. Worth documenting once packaging-bank has data.
+1. **No standalone packaging refresh skill for now.** It does not exist as a built skill. `vid-foundation` sets first packaging defaults, `vid-research` supplies pattern evidence, `vid-framing` chooses a format per video, and future `vid-monthly-review` can update packaging-system.md if real data says to change defaults.
+2. **Title vs. thumbnail role asymmetry** — the underlying material doesn't explicitly say which carries more click weight. Worth documenting once packaging-bank has data.
 
 ### Knowledge gaps (from deeper source-material mining)
 
 These are real gaps in our knowledge files that surfaced during deeper source mining. Address when building related skills:
 
-- **Outlier extraction methodology** — the source teaches "study outliers" but no systematic extraction protocol. Belongs in vid-channel-audit or a future research skill.
+- **Outlier extraction methodology pressure-test** — `vid-research` now has the systematic extraction job. It still needs real-channel testing against messy data to prove the protocol holds.
 - **A/B testing protocol for thumbnails** — sample size, threshold-to-judge, refresh/pivot timing. Belongs in vid-measurement.
 - **Niche-specific gift-framework lookup** — concrete wrapping/box/gift examples per niche (crypto / wellness / business / fitness). Currently abstract. Add as we see real creator data.
 - **Series thumbnail templating** — when videos are part of a series, thumbnails share visual elements. Implied in the source teaching, never systematized.
@@ -540,9 +820,13 @@ These hold across every skill in the system. Violating any of them = something t
 9. **MVP principle.** First version of every doc / skill / bank entry needs refinement after real data comes in. Don't grind for perfection upfront. Lock the best version the creator can articulate today.
 10. **Match scope to skill.** A planner plans. A capturer captures. A writer writes. Skills that drift across roles (e.g. a planner that also designs) should be split.
 
+11. **This is an implementation engine, not a teaching system.** Skills do not exist to teach the creator how YouTube works — that's what the underlying study material is for, and they can read it elsewhere. Skills exist to PRODUCE creative, unique, voice-authentic content the creator could not produce alone in the same time. Reference docs use examples to calibrate Claude's judgment at run-time, not to educate the creator. If a reference doc reads like a course lesson, it's wrong — it should read like a contrastive cheat-sheet a writer pulls open mid-draft.
+
+12. **The whole system exists to mimic the creator authentically and dynamically.** Foundation docs (positioning, voice profile, packaging system) exist so EVERY downstream skill produces output that sounds like the specific creator using it — not generic AI output, not the source material's voice, not anybody else's voice. The same `vid-intro` skill should produce a different intro for a fitness coach than for a B2B SaaS founder, because their foundation docs differ. If two creators run the same skill on the same brain dump and get content that sounds the same, the system has failed at its core job. Examples in references calibrate Claude TOWARD that creator's voice; foundation docs anchor it; the brain dump supplies the actual phrases.
+
 ---
 
-## 12. Recent work log (last refreshed 2026-05-01)
+## 12. Recent work log (last refreshed 2026-05-11)
 
 - 2026-04-18: vid-foundation built and audited
 - 2026-04-20: vid-capture built, four-stage capture
@@ -564,17 +848,39 @@ These hold across every skill in the system. Violating any of them = something t
 - 2026-05-02: knowledge/intro-architecture.md written (universal 6-part: Top 3 Q's → Hook → Problem/Result → Setup → Transition → Credibility woven in + Visual Proof). 5 hook types, 3 P/R options, banned transition phrases, length targets, format-adaptation map.
 - 2026-05-02: 3 format planners written (case-study, news + short-process updated). Each has explicit "Intro adaptation" section.
 - 2026-05-02: After feedback, softened all "REJECT" language in format planners + intro-architecture + vid-title. Defaults presented WITH explanations of why they tend to work. Hard rules stay (anti-fabrication, ≤50 chars, invented compound nouns, read-aloud). Soft friction = flag and explain, creator decides. Principle: locking everything as REJECT stifles creativity. Defaults are pattern-matches, not laws.
-- 2026-05-04: 4 remaining format planners written (deep-dive, interview, roast, listicle). All 7 format planners now complete in `knowledge/format-planners/`. Each has Intro adaptation table that vid-hook will load when assembling intros.
+- 2026-05-04: 4 remaining format planners written (deep-dive, interview, roast, listicle). All 7 format planners now complete in `knowledge/format-planners/`. Each has Intro adaptation table that vid-intro will load when assembling intros.
 - 2026-05-05: Workspace renamed `peak-content-ic-tools` → `authentic-ai-os`. Build-plan paths and proposed plugin name updated. Skill files use relative paths so the rename was non-breaking.
+- 2026-05-08: **Phase 1 Knowledge & Schema Coordinator delivered shared infrastructure.** Locked content-only scope across the build plan (removed any business-OS framing, removed Phase 6 biz-* scope, simplified vault-integration optional folders to raw/ + references/ + Notes/, dropped Daily/, Projects/, Trainings/, Companies/, Intelligence/ from in-scope). Added `foundation/reference-pieces/` to the foundation layer (full polished pieces for piece-level voice rhythm, populated by vid-voice-capture, loaded by every writing skill). Renamed `Content/sequences/` to `Content/email-sequences/` everywhere. Created `knowledge/voice-rhythm.md` (sentence rhythm, paragraph structure, opener pattern, punctuation signature, energy modulation — examples-first contrastive, ~150-200 lines). Created `banks/hook-bank.md` (5 hook types × 5-8 fill-in-the-blank patterns × worked examples + near-misses, ~40-50 patterns total). Created `banks/transition-bank.md` (intro-forward, segment-pivot, body-to-ending transitions; banned phrases section explicit). Added 3 optional fields to `voice-profile-schema.md`: `preferred_hook_types`, `transition_style_preferences`, `intro_pacing`. Added `reference-piece` frontmatter schema to vault-integration.md. Created `templates/skill-working-notes-template.md` for in-development source citation tracking. Phase 2 writing-skill builders (vid-intro, vid-segment, vid-ending) can now spawn against stable infrastructure.
+- 2026-05-05: vid-foundation gained context absorption + incremental save. Two real gaps from live testing fixed. **(1) Context absorption.** Before each phase's question, the skill now scans prior turns. If the creator already gave 70%+ of the answer (which happens a lot in Phase 1 when they describe the offer), surface it back as "here's what I heard, confirm or sharpen" instead of asking blind. Saves the creator from repeating themselves. Applies especially to Phases 2, 3, 4, 5 of Stage 1. **(2) Incremental save at every phase lock.** Each phase locks, the section gets written to creator-foundation.md immediately via Edit. Lock confirmation uses AskUserQuestion (Yes, lock or Refine UI). If chat closes mid-stage, the work is on disk and the next session resumes from where it stopped. RESUME protocol added to FIRST ACTION: skill reads creator-foundation.md at start, detects partial completion, surfaces "picking up where you left off" and skips to first unfilled phase. No pause command needed. Creator just leaves and starts a new session. The new session reads the file and picks up.
+- 2026-05-05: Vale linter integrated, two-tier architecture locked. **Dev-side** (this workspace): ProductVoice rules in `.vale/styles/ProductVoice/` lock the skill chain (em-dashes, en-dashes, AI-isms, banned words, attribution leaks). PostToolUse hook at `.claude/hooks/vale-fire.js` fires on every Edit/Write to flag violations and auto-apply safe swaps. Path exclusions skip build-plan, foundation/, Content/pieces/, Notes/, raw/, Daily/, Intelligence/, Onboarding/. **Creator-side** (ships with the plugin to other creators): opinionated rules do NOT ship. Creators get a blank `.vale/styles/CreatorVoice/` template that vid-voice-capture compiles from voice-profile.md, plus an OPTIONAL `AISanitizer/` pack (em-dashes, AI-isms, generic banned words) that creators can flip on if they want it. Default off. Their voice, their rules. Future work: build vid-voice-rule-capture skill (mirrors business-os pattern) for dynamic creator-side rule capture during draft review. Build creator-side scaffolding template that ships with the plugin.
+- 2026-05-05: Em-dash purge across all production files. Live test of vid-foundation revealed the skill defaulted to em-dashes everywhere because the example bank itself was full of them. Mechanical scrub caught all 1,103 em-dashes and en-dashes across 46 files. Numeric ranges broken by the scrub (8-12 became 8.12, 1-10 became 1.10) restored to hyphens. Five sub-agents in parallel rewrote the 41 mechanically-scrubbed files for prose flow: stilted "X. Y" breaks converted to commas where thoughts continued, parentheses where asides belonged, colons in headers, periods only where clean breaks made sense. Substance preserved across all files. Lesson: never do mass mechanical text replacements on prose. Always rewrite, don't substitute. Vale layer above prevents this from recurring.
+- 2026-05-05: vid-foundation strategic overhaul after live test surfaced gaps the scripted eval missed. Real-conversation failures: skill defaulted to em-dashes, contrast-template sharpening, switched perspective without permission, ignored creator's exact words, didn't pull from locked example bank. Five strategic fixes shipped:
+  1. **Hard voice rules at skill start.** No em-dashes ever, declarative no hedging, no contrast/comparison templates, use creator's exact words. Loaded in SKILL.md before Stage 1 fires. Voice-profile.md overrides if it exists.
+  2. **Examples-first protocol.** Reading locked examples in positioning-framework.md and avatar-guide.md is now REQUIRED before drafting any sub-artifact, not "if stuck." Skill writes IN the shape of proven examples, not from cold templates.
+  3. **Example libraries massively expanded.** Mining agent pulled additional locked examples from the underlying study material. positioning-framework.md grew from 185 → 278 lines (8 good/bad pairs, 10 locked statements, 10 anti-pattern examples). avatar-guide.md grew from 169 → 374 lines (8 avatar pairs, ~25 viewer-voice phrasing pairs across 6 niches, 12 common mistakes). All source attribution stripped per locked decision #15.
+  4. **Differentiator dropped as a saved field.** The probe still fires in Phase 4 (sharpens the Iceberg Statement so the differentiator gets baked in), but the answer doesn't get its own row in creator-foundation.md. Matches the underlying study material's actual model — differentiator informs the statement, not captured separately. Updated iceberg-discovery-method.md, SKILL.md Stage 1, creator-foundation-template.md.
+  5. **Lock-and-move discipline.** After 2 sharpening rounds on a sub-artifact, lock the best version and move forward. Iceberg Statement is the goal of Stage 1, not perfectly polished sub-bullets. Added to conversation rules.
+  Also: dropped "Known-for word" optional field. Renamed Iceberg Top → Iceberg Statement (creator-facing terminology). Cleared meta-commentary bleed from iceberg-discovery-method.md. Eval workspace at vid-foundation-workspace/ remains for iteration tracking.
 - 2026-05-05: TodoWrite-at-start pattern added to vid-foundation and vid-voice-capture — first action after loading vault-integration.md is to create a task list mirroring the skill's stages, marked in_progress / completed as work moves. Forces sequence discipline and gives the creator visibility into what's coming. Pattern applies to multi-stage sequential skills only — vid-capture (loop), vid-title (single-shot), vid-thumbnail (single-shot) skip it.
 - 2026-05-05: Architecture decision — credibility brags + backstory STAY in vid-foundation. Earlier proposal to move them into vid-capture rejected because the user-facing promise of vid-foundation is "run once → complete foundation." Fragmenting the foundation across two skills breaks that. Brags + backstory remain identity-level data in `creator-foundation.md`, loaded by every downstream writing skill. New wins captured later via vid-capture flow into proof-bank/story-bank as separate entries; foundation brags refresh only when the creator re-runs vid-foundation.
-- 2026-05-05: vid-foundation Stage 1 fundamentally restructured. Old Stage 1 (Positioning, 4 questions) + Stage 2 (Avatar, 5 questions) merged into a single **Stage 1: Iceberg Discovery**. Adopts the "iceberg" metaphor (top + bottom — same concept as the underlying source curriculum's "umbrella," renamed to carry the visual better). New skill-local reference `iceberg-discovery-method.md` holds the full conversation backbone (6 phases: Opening → Audience Narrowing → Problem Discovery → Iceberg Top → Iceberg Bottom → Final Validation) with one-question-at-a-time rules, problem-vs-solution disappearance probe, urgency 1–10 check, and good/bad-pair pull rules. Stage body in SKILL.md is now tight — loads three references (method + positioning + avatar), drives the conversation per the method file. Output expanded: creator-foundation.md now captures Iceberg Top + Iceberg Bottom (8–12 angles) + Person + Top 3 + Axis owned + optional Known-for word. Renumbered subsequent stages: Credibility 2, Backstory 3, Voice handoff 4, Packaging 5. Total stages dropped from 6 to 5. creator-foundation-template.md updated to match.
-- 2026-05-04: Foundation audit + reconciliation pass before building vid-framing/vid-hook. Critical schema drift fixed:
-  1. **vid-foundation Stage 5 → handoff to vid-voice-capture.** Stage 5 no longer writes a partial voice-profile.md; it now tells the creator to run vid-voice-capture next. Removed `vid-foundation/assets/voice-profile-template.md` and `vid-foundation/references/voice-capture-methods.md` (now redundant). The two-layer schema (cross-context + 7 context maps) lives only in vid-voice-capture, where it belongs.
+- 2026-05-05: vid-foundation Stage 1 fundamentally restructured. Old Stage 1 (Positioning, 4 questions) + Stage 2 (Avatar, 5 questions) merged into a single **Stage 1: Iceberg Discovery**. Adopts the "iceberg" metaphor (top + bottom) as the creator-facing model. New skill-local reference `iceberg-discovery-method.md` holds the full conversation backbone (6 phases: Opening → Audience Narrowing → Problem Discovery → Iceberg Top → Iceberg Bottom → Final Validation) with one-question-at-a-time rules, problem-vs-solution disappearance probe, urgency 1–10 check, and good/bad-pair pull rules. Stage body in SKILL.md is now tight — loads three references (method + positioning + avatar), drives the conversation per the method file. Output expanded: creator-foundation.md now captures Iceberg Top + Iceberg Bottom (8–12 angles) + Person + Top 3 + Axis owned. Renumbered subsequent stages: Credibility 2, Backstory 3, Packaging 4, Voice handoff 5. Total stages dropped from 6 to 5. creator-foundation-template.md updated to match.
+- 2026-05-07: **Skill renamed `vid-hook` → `vid-intro`.** The skill produces the FULL 6-part intro (Top 3 questions → Hook → Problem/Result → Setup → Transition → Credibility woven), not just the 5-second hook line. Old name described one ingredient; new name describes the deliverable. Mechanical rename across 15 files (build-plan, intro-architecture, vault-integration, voice-profile-schema, voice-pressure-test, all bank READMEs, all capture guides, vid-capture/vid-title SKILL.md). Frees the word "hook" to mean only the 5-second opener (step 2 of the 6-part architecture) everywhere downstream. `banks/hook-bank.md` (step 2 patterns) and `banks/transition-bank.md` (step 5 patterns) both feed `vid-intro`.
+- 2026-05-07: **Locked decisions #11 and #12 added.** #11: this is an implementation engine, not a teaching system — skills produce content, references are run-time calibration not creator education. #12: the whole system exists to mimic the creator authentically and dynamically — same skill, same brain dump, two different creators must produce different content. Foundation docs anchor it. #9 amplified: examples are contrastive (worked + near-miss with why-this/why-not), sourced from underlying material, never attributed. Principle: examples are the teaching surface, not rules.
+- 2026-05-07: Build-plan audit layer added for source-principle traceability and AI-first workflow design. New standards: every skill/field/bank/handoff maps to source principle, creator data, platform feedback, or AI workflow need; skills declare context budgets; examples should expand creativity; "iceberg" approved as creator-facing translation of the umbrella/top-bottom positioning principle; `vid-pressure-test` gets bounded multi-agent reviewers for source alignment, creator voice, AI-slop, retention, and proof/claim traceability.
+- 2026-05-04: Foundation audit + reconciliation pass before building vid-framing/vid-intro. Critical schema drift fixed:
+  1. **vid-foundation voice handoff → vid-voice-capture.** vid-foundation no longer writes a partial voice-profile.md; it finishes creator foundation and packaging, then tells the creator to run vid-voice-capture next. Removed `vid-foundation/assets/voice-profile-template.md` and `vid-foundation/references/voice-capture-methods.md` (now redundant). The two-layer voice profile lives only in vid-voice-capture, where it belongs.
   2. **Proof-bank reconciled to 2 types end-to-end.** `proof_type` is now strictly `personal-result | client-win` (about who the result belongs to). Presentation format (static-screenshot / before-after-pairing / live-clip / inline-stat) moved to body section in `proof-entry-template.md`. Updated: `knowledge/proof-capture-guide.md`, `vault-integration.md` proof-type slugs, `proof-entry-template.md` filling instructions, `banks/proof-bank/README.md` tag schema.
-  3. **Source-teacher attributions scrubbed ruthlessly.** All `Ed`, `Ed's`, `the source curriculum`, `the source teacher`, named-instructor references gone. Public-figure named creators in calibration material (Hormozi, MrBeast, Matt D'Avella, Nisha, Dan Martell, Iman Gadzhi, Joe Dispenza, Casey Neistat, MKBHD, Marques Brownlee, Taylor Swift, Livin' Leggings, etc.) replaced with niche/category descriptors. Files affected: format-planners (news, interview, listicle, roast), thumbnail-text-patterns, thumbnail-examples-library, thumbnail-composition-guide, story-capture-guide, framework-bank/README, build-plan.md. Locked decision #15 updated to clarify named-creator policy.
-  4. **Hook taxonomy reconciled to canonical 5.** Listicle and roast planners no longer reference non-canonical "Confession Hook" or "Visual Demo Hook." Confession framing is now a delivery style on top of Statement Hook. Visual Demo is an emotion brick (not a hook), paired with Statement Hook. The 5 canonical types in intro-architecture.md are the single source of truth.
-  Foundation now matches the schemas downstream skills will load. vid-framing and vid-hook can be built against a stable contract.
+  3. **Source attributions scrubbed ruthlessly.** Source names, source-course references, instructor references, and named public-figure examples removed from productized files. Calibration examples were replaced with niche/category descriptors. Files affected: format-planners (news, interview, listicle, roast), thumbnail-text-patterns, thumbnail-examples-library, thumbnail-composition-guide, story-capture-guide, framework-bank/README, build-plan.md. Locked decision #15 updated to clarify named-creator policy.
+  4. **Hook taxonomy reconciled to the locked 5.** Listicle and roast planners no longer reference off-list "Confession Hook" or "Visual Demo Hook." Confession framing is now a delivery style on top of Statement Hook. Visual Demo is an emotion brick (not a hook), paired with Statement Hook. The 5 locked types in intro-architecture.md are the single source of truth.
+  Foundation now matches the schemas downstream skills will load. vid-framing and vid-intro can be built against a stable contract.
+- 2026-05-11: **vid-framing built** (skill 11 of 14). Decision: surfaces 3 outlier-anchored candidates plus 1 experimental angle (Rule of 3+1 extended from format rotation to angle generation). `viewer_stage` field locked as cold/warm/hot per the Audience Temperature Model. Format pulled from creator's packaging-system rotation, not all 7. Goal locked at sales/email/views. Anti-fabrication: every anchored angle cites a real pattern-bank entry. Files: SKILL.md (229 lines), 3 references (167/148/259), 1 asset, 1 WORKING-NOTES. Right-size pass kept all files under target.
+- 2026-05-11: **`reference-block.md` collapsed into `piece.md`.** Old plan had vid-framing writing a separate `reference-block.md`. Reality: all existing writing skills (vid-title, vid-intro, vid-segment, vid-ending, vid-thumbnail, vid-capture) already read `meta.md` as the main metadata file; `reference-block.md` was envisioned but never actually used by any built skill. Consolidated: framing decisions now append to `piece.md` (renamed from `meta.md` to better signal the file's role as the per-piece identity card). piece.md becomes the main lifecycle ledger. vid-intake writes intake fields, vid-framing appends framing decisions, vid-thumbnail/vid-title append their picks, vid-segment writes stories_used/proofs_used/metaphors_used, vid-ending writes the ending packet, vid-pressure-test writes audit status. No skill overwrites another's fields. Schema-coherence matrix mapped in `C:/Users/billr/.claude/plans/remaining-skills-contracts.md`.
+- 2026-05-11: **Audience Temperature Model added as shared knowledge.** `knowledge/audience-temperature-model.md` (144 lines) defines cold/warm/hot, what determines temperature (topic, problem framing, stories, frameworks), the conversion math (broad: 250k cold → 10 sales; specific: 50k hot → 40 sales), and goal × temperature matching. Loaded by vid-framing, vid-ending (CTA placement), and future vid-measurement.
+- 2026-05-11: **Contract-level plan for remaining 3 skills locked.** vid-structure invokes vid-title and vid-intro inline as sub-skills, writes script.md skeleton with intro complete and segments stubbed. vid-pressure-test runs 5 parallel adversarial reviewers (source-alignment, voice-authenticity, AI-slop, retention-logic, proof/claim traceability) each capped at top-3 issues. vid-pipeline is the adaptive orchestrator (~150 lines target) routing based on piece state. Pipeline order confirmed: framing → thumbnail → structure (invokes title + intro) → per-segment → ending → pressure-test. Plan at `C:/Users/billr/.claude/plans/remaining-skills-contracts.md`.
+- 2026-05-11: **Brick-closure trim (vid-capture v2 minimum-viable).** Mapped all 6 brick tools (Story/Metaphor/Framework/Proof/Testimonial/Visual Demo + Checklist). Two gaps: framework had a bank but no capture flow; Visual Demo had nothing. First plan over-engineered (6 new files + new visual-demo-bank + dual-mode Stage V + entry templates). Three audit agents (workflow simulator, over-engineering hawk, source fidelity critic) pressure-tested and converged: drop Stage V entirely, drop visual-demo-bank, drop entry-template files, move Framework's 5-step build into knowledge file (not vid-capture stage). Final implementation: 2 new files + 3 edits. **Built:** `knowledge/framework-builder.md` (5 shapes, selection matrix, 5-step build, naming rules, entry schema inline), `knowledge/visual-demo-builder.md` (3 sub-types, planning filters, 3-step brainstorm, anti-patterns, transitions, no-bank rationale). **Edited:** vid-capture SKILL.md (added Stage F Log-only path; total now 243 lines), vid-segment SKILL.md (added knowledge file silent loads, async-brick-notes flow, no-Visual-Demo-bank handling), banks/framework-bank/README.md (capture flow + craft-lives-in-knowledge-file note). Verification: 0 em-dashes, 0 attribution leaks across all 5 changed files. Stage F handles Log save (standalone or after inline crafting); Framework Create lives in knowledge file loaded by vid-segment; Visual Demo craft is purely inline (no save target). Async-brick-notes.md captures cross-segment ideas without flow-breaks.
+- 2026-05-11: **Post-audit source-fidelity patches.** Respawned the 3 audit agents (workflow simulator, over-engineering hawk, source fidelity) against the built implementation. Workflow + Over-engineering passed clean (SHIP AS-IS verdicts, no friction or YAGNI violations). Source Fidelity passed architecture but flagged 3 pedagogical gaps from source teaching: sticky-notes visual (lesson-10:39, the "dump 12, keep 3" aid), "three is an example, not a rule" tactic (lesson-10:57), and Checklists as a co-equal logic-brick tool alongside Frameworks and Proof (lesson-10:21). All 3 patched: framework-builder.md gained the sticky-notes visual in Step 1 and "three is an example" callout in Naming rules (now 294 lines); a "Frameworks in the logic-brick context" section added to cross-reference proof-placement-rules.md and the new step-markers section. `knowledge/visual-proof-callouts.md` extended with an "On-screen step markers (checklists as the third logic-brick tool)" section covering when to flag step markers, callout syntax, what NOT to need step markers (cycles/venns/listicles), and piece.md tracking. Final state: 0 em-dashes, 0 attribution leaks, all line counts under target. Audit-build-audit loop validated the trim held.
+- 2026-05-13: **vid-structure built** (skill 12 of 14). Decision: vid-structure is the Tier 1 outline builder. Mines brain-dump against framing, surfaces brick candidates per segment (frameworks/stories/proofs/metaphors from brain-dump + banks), plans cross-segment tension (title-promise location + 1-2 active threads + handoffs), writes script.md skeleton with material-anchored segment purposes. Tier 2 word-for-word prose handed off to vid-segment. **Cut from prior contract** (per 3 audit agents converging): inline vid-title/vid-intro invocations (orchestrator concern, not vid-structure's), piece.md `segment_count` field (redundant with script.md headers + segment_purposes), hard-stop on missing thumbnail-brief (no longer relevant after sub-skill cut), Phase 1 Keep/Cut/Combine as a separate review phase (merged into mining). 4 phases collapsed to 2: Mine + propose outline → Write script.md skeleton. **Format-native shapes:** Case Study runs as narrative arc (Setup/Problem/Action/Outcome/Lesson, not N abstract segments), Listicle/Short-Process/Deep-Dive/Roast/Interview/News as N segments with format-prescribed counts. Skill loads `knowledge/format-planners/{format}.md` at runtime; never hard-codes a count. **piece.md additions:** `segment_purposes` (material-anchored), `tension_plan` (central_question + title_promise_segment + active_threads), `structure_locked_at`, `piece_status: structured`. **New shared knowledge:** `knowledge/script-tension-architecture.md` (224 lines, target <250) defines cross-segment tension flow + title-promise-late discipline + threading + handoff rules; loaded by vid-structure (planning), vid-segment (per-segment tension role), vid-pressure-test (retention audit). Distinct from vid-segment's local `references/setup-tension-payoff-shapes.md` which owns per-segment STP. Files: SKILL.md (327 lines, target <500), references/brain-dump-mining.md (148 lines) + references/structure-conversation-examples.md (237 lines), assets/script-skeleton-template.md (199 lines), WORKING-NOTES.md (99 lines, dev-only). Plus the shared knowledge file. Verification: 0 em-dashes, 0 attribution leaks in productized files. Pre-build audit-1 validated the trim from 4 phases to 2; Billy caught at consolidation that vid-structure is more substantive than the trim implied (it mines AND maps to segments, not just headers), restoring material-anchored segment purposes + brick surfacing per segment as load-bearing work.
+- 2026-05-13: **vid-structure post-build audit-2 patches.** Respawned the 3 audit agents. **Workflow Simulator: SHIP AS-IS** (build matched contract, format-native shapes held across Case Study + Short Process + re-structure scenarios). **Over-engineering Hawk: TRIM ~122 lines** flagged. **Source Fidelity: PATCH** flagged 3 false-quantification leaks (60-80% title-promise range, 1-2 thread cap as a hard rule, working-memory overload framing, format-specific percentages — all extrapolations not source teaching). All Source Fidelity patches applied: replaced hardened percentages with "push it LATE in the body, past midpoint" and "the exact spot depends on format"; replaced "Cap at 1-2 active threads" with "most scripts stay clearest with 1-2 prominent loops, more is doable but harder to honor"; replaced "working memory floods" overload framing with "the more open at once, the harder to honor every payoff." High-confidence Hawk cuts applied: redundant soft-friction reference table dropped from SKILL.md (~9 lines), brain-dump-mining principles section dropped (~6 lines, redundant with anti-patterns), News removed from segmented-formats list in template (~3 lines, News is its own shape not segmented). Pushed back on 3 Hawk trims with reasoning: Phase 1 sub-numbering kept (Workflow Sim validated as AI's roadmap, not chat-visible NPC-tick); Example 5 in conversation-examples kept (shows unique AI mid-draft reversal, not redundant with SKILL.md text); tension-architecture principles section kept (file is shared with vid-segment + vid-pressure-test, those skills shouldn't have to load SKILL.md for principles). Final state: SKILL.md 318 lines, brain-dump-mining 141, conversation-examples 237, script-skeleton-template 199, script-tension-architecture 224. 0 em-dashes, 0 attribution leaks across productized files. Audit-build-audit loop closed.
 
 ---
 
@@ -621,13 +927,12 @@ So the question becomes: **what goes in the plugin** (read-only, updates flow in
 ~/.claude/plugins/cache/peak-systems/authentic-ai-os/         ← THE PLUGIN (read-only)
 ├── .claude-plugin/
 │   └── plugin.json                                            ← name, version, description
-├── skills/                                                    ← all 14 skills
+├── skills/                                                    ← built skills plus planned skill folders
 │   ├── vid-foundation/
 │   │   ├── SKILL.md
 │   │   ├── references/
 │   │   └── assets/
 │   │       ├── creator-foundation-template.md
-│   │       ├── voice-profile-template.md
 │   │       ├── packaging-system-template.md
 │   │       ├── title-bank-seed.md
 │   │       └── bank-readmes/                                  ← scaffolded to workspace on first run
@@ -638,7 +943,7 @@ So the question becomes: **what goes in the plugin** (read-only, updates flow in
 │   │           ├── framework-bank-README.md
 │   │           └── packaging-bank-README.md
 │   ├── vid-capture/
-│   ├── vid-voice-capture/
+│   ├── vid-voice-capture/                                     ← owns voice-profile-template.md and voice-profile.md writes
 │   ├── vid-thumbnail/
 │   └── ... (all other vid- skills)
 ├── knowledge/                                                 ← universal reference, plugin-owned
@@ -666,10 +971,10 @@ So the question becomes: **what goes in the plugin** (read-only, updates flow in
 
 ~/projects/{creator-name}/                                     ← CREATOR'S WORKSPACE (never touched by plugin updates)
 ├── CLAUDE.md                                                  ← scaffolded once from template, creator owns
-├── foundation/                                                ← created by vid-foundation
-│   ├── creator-foundation.md
-│   ├── voice-profile.md
-│   └── packaging-system.md
+├── foundation/
+│   ├── creator-foundation.md                                  ← created by vid-foundation
+│   ├── voice-profile.md                                       ← created by vid-voice-capture
+│   └── packaging-system.md                                    ← created by vid-foundation Stage 4
 ├── banks/                                                     ← scaffolded once, creator-owned
 │   ├── story-bank/
 │   │   ├── README.md                                          ← scaffolded from plugin, creator owns
@@ -687,7 +992,7 @@ So the question becomes: **what goes in the plugin** (read-only, updates flow in
 ├── Content/
 │   ├── pieces/{slug}/...
 │   ├── ideas/
-│   └── sequences/
+│   └── email-sequences/
 └── People/{name}.md
 ```
 
@@ -755,7 +1060,7 @@ Becomes:
 load `${CLAUDE_PLUGIN_ROOT}/knowledge/vault-integration.md`
 ```
 
-Roughly 30-50 path edits across 14 skills. Mechanical work.
+Roughly 30-50 path edits across built and planned skills. Mechanical work.
 
 **Step 3: Move bank READMEs to plugin assets**
 

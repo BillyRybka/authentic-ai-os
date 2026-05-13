@@ -1,6 +1,6 @@
-# Content Engine
+# Authentic AI OS
 
-You are the creator's AI content partner. This vault is a content engine — an Obsidian-native workspace for taking ideas to published YouTube videos (and cross-platform derivatives) in the creator's voice.
+You are the creator's AI content partner. This vault is Authentic AI OS — an Obsidian-native workspace for taking ideas to published YouTube videos (and cross-platform derivatives) in the creator's voice.
 
 ## What this system is
 
@@ -29,7 +29,8 @@ The vault grows as the creator uses it. Not everything exists at day one.
 ├── foundation/                     # Creator identity (created by vid-foundation)
 │   ├── creator-foundation.md    # Positioning, avatar, credibility, backstory
 │   ├── voice-profile.md         # Speech patterns and language rules
-│   └── packaging-system.md      # Gift framework, format rotation, thumbnails
+│   ├── packaging-system.md      # Gift framework, format rotation, thumbnails
+│   └── reference-pieces/        # Full polished pieces (own + studied) — piece-level voice rhythm
 ├── banks/                       # Evergreen, reusable material (structure ships with template, grown by vid-capture)
 │   ├── story-bank/              # Narrative entries — see story-bank/README.md
 │   ├── proof-bank/              # Creator's own evidence: numbers, stats, credentials — see proof-bank/README.md
@@ -39,14 +40,17 @@ The vault grows as the creator uses it. Not everything exists at day one.
 │   ├── framework-bank/          # Creator's OWN named frameworks — see framework-bank/README.md
 │   ├── packaging-bank/          # Title+thumbnail winners (complete packages) — see packaging-bank/README.md
 │   ├── title-bank.md            # Validated title patterns (reusable formulas)
-│   └── pattern-bank.md          # Hook/structure patterns that worked
+│   ├── hook-bank.md             # Fill-in-the-blank hook patterns + worked examples (5 hook types)
+│   ├── transition-bank.md       # Transition patterns (intro-forward, segment-pivot, body-to-ending)
+│   └── pattern-bank.md          # Hook/structure patterns that won post-publish
 ├── Content/
-│   ├── pieces/                  # One folder per video/piece — all platform derivatives live together
+│   ├── pieces/                  # One folder per video/piece — all platform derivatives live together. Single newsletters/posts also live here.
 │   ├── ideas/                   # Content idea swipe file
-│   └── sequences/               # Email sequences
+│   └── email-sequences/         # Multi-piece email sequences (welcome, nurture, launch, re-engagement)
 ├── People/                      # One file per human (clients, prospects, guests, testimonial sources)
-├── Companies/                   # One file per company (optional — only when the company matters beyond one person)
-├── Resources/                   # Creator's own frameworks, templates, prompts
+├── Notes/                       # Optional drop-zone for on-the-go brain dumps
+├── raw/                         # Optional, creator's own raw material (transcripts, articles)
+├── references/                  # Optional, external study material pointers (no full content)
 └── knowledge/                   # Reference material loaded by skills (frameworks, schemas, format planners)
 ```
 
@@ -66,13 +70,14 @@ Every note that ties to a project, person, or other note gets wikilinked — not
 
 When meaningful info comes up — a correction, a fact about the creator, a new story, a decision — save it to the right file immediately. After saving, report what was saved and where. Never ask permission to save.
 
-## Knowledge routing (content engine)
+## Knowledge routing
 
 | Type | Route to |
 |------|----------|
 | Creator positioning, avatar, credibility, backstory | `foundation/creator-foundation.md` |
 | Speech patterns, recurring phrases, language rules | `foundation/voice-profile.md` |
 | Gift framework, format rotation, thumbnail strategy | `foundation/packaging-system.md` |
+| A full polished piece (own or studied) preserved verbatim for piece-level voice rhythm | `foundation/reference-pieces/{slug}.md` (via `vid-voice-capture`) |
 | A story the creator told | `banks/story-bank/{slug}.md` (via `vid-capture`) |
 | A proof point (number, result, credential) | `banks/proof-bank/{slug}.md` (via `vid-capture`) |
 | A metaphor or analogy | `banks/metaphor-bank/{slug}.md` (via `vid-capture`) |
@@ -82,8 +87,11 @@ When meaningful info comes up — a correction, a fact about the creator, a new 
 | A thumbnail brief for a specific video | `Content/pieces/{slug}/thumbnail-brief.md` (via `vid-thumbnail`) |
 | A person (client, guest, testimonial source) | `People/{Full Name}.md` — create a stub if missing |
 | A raw content idea or swipe-worthy insight | `Content/ideas/content-ideas.md` |
-| A video or cross-platform piece | `Content/pieces/{slug}/` — one folder per piece |
-| Email sequence | `Content/sequences/{slug}/` |
+| A video or cross-platform piece, including single newsletters and one-off posts | `Content/pieces/{slug}/` — one folder per piece |
+| Multi-piece email sequence | `Content/email-sequences/{slug}/` |
+| On-the-go brain dump waiting to be routed | `Notes/{anything}.md` |
+| Raw transcript / article / brain-dump full text | `raw/{slug}.md` (optional folder) |
+| External study material pointer (course, book, podcast) | `references/{slug}.md` (optional folder, pointers only — no full content) |
 
 ## Rules
 

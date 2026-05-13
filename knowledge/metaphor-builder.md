@@ -1,7 +1,7 @@
 ---
 type: reference
 scope: shared
-loaded_by: [vid-capture, vid-segment, vid-hook]
+loaded_by: [vid-capture, vid-segment, vid-intro]
 status: active
 tags: [reference, metaphor-capture, metaphor-bank]
 ---
@@ -10,7 +10,7 @@ tags: [reference, metaphor-capture, metaphor-bank]
 
 A strong metaphor turns an abstract concept into something anyone can picture. Facts alone retain around 10% of viewer attention. A strong visual metaphor can push retention on that concept to 65% or higher. Most creators skip metaphors because they're hard, which is exactly why a good one is a differentiator.
 
-This guide teaches how metaphors work. vid-capture uses it to extract, build, and classify metaphors into the bank. Downstream writing skills (vid-segment, vid-hook) use it to understand what they're pulling and where it fits in a script.
+This guide teaches how metaphors work. vid-capture uses it to extract, build, and classify metaphors into the bank. Downstream writing skills (vid-segment, vid-intro) use it to understand what they're pulling and where it fits in a script.
 
 ## Real examples (read these first)
 
@@ -18,7 +18,7 @@ This guide teaches how metaphors work. vid-capture uses it to extract, build, an
 
 **Concept being clarified:** niche channels out-earn broad channels even when the broad channel has more subscribers and watch time.
 
-**Spoken:** "Here's two different channels. Channel One spent five years building theirs, they can afford to go full time. Channel Two spent a year, not very big, but they're already paying an editor. Here's the crazy part, in a year Channel Two will be making ten times more than Channel One."
+**Spoken:** "Here's two different channels. Channel One spent five years building theirs, they can afford to go full time. Channel Two spent a year, not very big, they're already paying an editor. Here's the crazy part, in a year Channel Two will be making ten times more than Channel One."
 
 **Shown:** Two small glasses on a table. Fill one with a large handful of jelly beans, the other with just a few. Label the large glass "1" and the small one "2." Overlays appear: "$15K" above glass 1, "$150K" above glass 2.
 

@@ -1,6 +1,6 @@
 ---
 type: testimonial
-project: youtube-content-os
+project: authentic-ai-os
 source: dm
 client: "[[Client Name]]"
 anonymized: false

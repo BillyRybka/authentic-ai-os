@@ -1,6 +1,6 @@
 ---
 type: metaphor
-project: youtube-content-os
+project: authentic-ai-os
 concept: "short concept name"
 category: other
 visual: false
@@ -51,7 +51,7 @@ used_in: []
 
 **Frontmatter fields:**
 
-- `concept`: short phrase naming what the metaphor clarifies (e.g., "niche vs. broad channels")
+- `concept`: short phrase naming what the metaphor clarifies (e.g., "niche vs broad channels")
 - `category`: one of `food`, `cars`, `clothes`, `sports`, `travel`, `other`
 - `visual`: boolean. `true` if the metaphor depends on a prop or graphic to land. `false` if pure speech carries it.
 - `problem_illustrated`: one of `1`, `2`, `3`, `general`
@@ -78,4 +78,4 @@ used_in: []
 - `> [!tip] The pivot phrase` is required. This is the transition that brings the script back to logic after the metaphor lands.
 - Everyday source in Notes: food, cars, clothes, sports, travel, or other.
 
-**Read-aloud test:** the metaphor has to land fast. For non-visual, read it aloud with no visual aid — does the viewer still get it? For visual, imagine the spoken + shown together. If either layer is doing all the work alone, the classification is wrong.
+**Read-aloud test:** the metaphor has to land fast. For non-visual, read it aloud with no visual aid. Does the viewer still get it? For visual, imagine the spoken plus shown together. If either layer is doing all the work alone, the classification is wrong.
