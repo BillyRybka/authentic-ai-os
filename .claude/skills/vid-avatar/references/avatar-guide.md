@@ -2,21 +2,23 @@
 
 The avatar is the specific person a creator is talking to. Every downstream artifact (titles, hooks, thumbnails, scripts, CTAs) gets validated against this avatar.
 
-## The Person structure
+## What an avatar looks like
 
-The Person has to be specific enough for downstream skills to write titles, hooks, thumbnails, scripts, and CTAs for a recognizable viewer.
+The avatar is a description, not a structured field list. A few sentences that capture who this person is, what stage they're at, and why the problem is urgent for them.
 
-Save Person as structured fields, not a paragraph:
+What downstream skills need from the avatar:
 
-1. **Public label.** Clean noun phrase the Iceberg Statement can use. "Solo founders," "new dads," "first-time homebuyers," "business owners."
-2. **Fit qualifier.** Stage, revenue, life moment, industry constraint, or other gate. "Doing $200k-$2M/year," "first-time," "booked-out," "15-30 pounds heavier after a decade of work travel."
-3. **Expertise / identity role.** Why this person recognizes themselves. "The expert in their field," "new manager," "fitness-conscious professional."
-4. **Business / life context.** The situation that makes the problem urgent.
-5. **Content / channel role.** Why they watch this creator and what they come to solve.
-6. **Demographics.** Age, sex, and location only when they change examples, buying psychology, voice, or platform behavior. Otherwise mark "not primary."
-7. **Top 3 perceived problems.** What THEY think is stopping them. Not the root cause. Not what you think they should be focused on.
+- Enough specificity to write titles, hooks, thumbnails, scripts, and CTAs to a recognizable viewer.
+- The avatar's actual language, not the expert's diagnosis.
+- A signal of who this isn't for (often implicit in how the creator describes who it is for).
 
-Do not lock Person as a paragraph. Rich detail belongs in Internal context. The Iceberg Statement uses the Public label.
+What downstream skills don't need:
+
+- Demographic fields filled out when they don't change writing decisions.
+- Multiple paragraphs of psychographic theory.
+- A label, a fit qualifier, and a context separated into pieces. Just describe the person.
+
+If the creator gives you a paragraph that already describes the avatar, lock the paragraph. Don't restructure it. Don't decompose it into fields. The Iceberg Statement (built by `vid-positioning`) uses whatever language the creator already used.
 
 ## Top 3 perceived problems is the most important attribute
 
@@ -40,6 +42,14 @@ Three ways:
 Target 25-30+ responses for survey data to be meaningful. Fewer than that is educated guessing.
 
 **Educated guessing is fine for the MVP.** Refine with real data over the next 6 months.
+
+## How to read the examples below
+
+The good/bad pairs that follow use a structured format (Age, Sex, Location, Type, Top 3). That structure is reference data for Claude's calibration. It is NOT the saved output format.
+
+When you save the avatar to `creator-foundation.md`, write it as a plain description that captures whichever of those signals actually matter for the creator's voice and writing decisions. If age range changes voice and references, mention age. If location is irrelevant, leave it out. If "type" maps to a single tight description ("first-time dads working out between feedings"), use that phrase, not seven fields.
+
+The Top 3 perceived problems ARE saved as a list, in the avatar's exact viewer-language. Those translate one-to-one between the examples below and the saved output.
 
 ## Good vs bad: paired examples
 

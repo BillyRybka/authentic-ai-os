@@ -16,20 +16,29 @@ This file stores the creator's starting video defaults. These are useful first c
 
 *The three layers of every video, lined up to this avatar.*
 
-### Wrapping paper (thumbnail style)
+### Thumbnail style (wrapping paper)
 *What is the avatar's favorite thumbnail aesthetic?*
 
-> [description]
+- **Style:** [description]
+- **Evidence basis:** [creator judgment / source-backed default / own channel data / pattern-bank research]
+- **Confidence:** [low / medium / high]
+- **Watch for:** [what would tell us to refine this]
 
-### Box (video format preferences)
+### Format preference (box)
 *What format does the avatar open most often?*
 
-> [description]
+- **Format:** [description]
+- **Evidence basis:** [creator judgment / source-backed default / own channel data / pattern-bank research]
+- **Confidence:** [low / medium / high]
+- **Watch for:** [what would tell us to refine this]
 
-### Gift (content type)
-*What kind of content does the avatar keep coming back for? Systems, tactics, stories, frameworks, opinion, other?*
+### Content type (gift)
+*What does the avatar keep coming back to this creator for? Systems, tactics, stories, frameworks, opinion, other?*
 
-> [description]
+- **Content type:** [description]
+- **Evidence basis:** [creator judgment / source-backed default / own channel data / pattern-bank research]
+- **Confidence:** [low / medium / high]
+- **Watch for:** [what would tell us to refine this]
 
 ---
 

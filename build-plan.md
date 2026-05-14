@@ -430,9 +430,17 @@ Status legend: ✅ done · 🚧 building · ⬜ not started · 🟡 optional/def
 
 ### Phase 1 — Foundation (run once per creator)
 
+The original `vid-foundation` mega-skill was split into a thin orchestrator plus 6 focused interview skills. Each sub-skill owns one unit of work and loads `knowledge/interview-posture.md` for shared conversational posture. Sub-skills run in sequence; each one writes its locked section to `creator-foundation.md` or `packaging-system.md` and then stops.
+
 | Skill | Status | Description | Key dependencies | Files |
 |---|---|---|---|---|
-| `vid-foundation` | ✅ | 5-stage guided setup walks the creator through Iceberg Discovery, credibility, backstory, starting video defaults, and voice-profile handoff. Outputs creator-foundation.md, packaging-system.md, and title-bank seed, then tells the creator to run `vid-voice-capture`. One question at a time, exact prompts, probes for vague answers. | None, first skill run | `.claude/skills/vid-foundation/` (SKILL.md, 5 references, 2 templates + title-bank seed) |
+| `vid-foundation` | ✅ | Thin orchestrator (~100 lines). Reads `creator-foundation.md` and `packaging-system.md`, routes the creator to the correct next sub-skill in the foundation sequence. Does NOT run interview content itself. | None | `.claude/skills/vid-foundation/SKILL.md` |
+| `vid-avatar` | ✅ | Interview locks Offer + Avatar + Top 3 perceived problems in viewer language. First in the foundation sequence. | `knowledge/interview-posture.md`, `knowledge/creator-foundation-template.md` | `.claude/skills/vid-avatar/` (SKILL.md + avatar-guide.md) |
+| `vid-positioning` | ✅ | Drafts the Iceberg Statement using WHO + WHAT + HOW + TENSION. Claude drafts 2 candidates after avatar inputs lock, creator reacts. Literal-words rule for tension preserves brand-defining phrases. | Avatar + Top 3 locked | `.claude/skills/vid-positioning/` (SKILL.md + positioning-method.md + positioning-examples.md) |
+| `vid-pillars` | ✅ | Locks 8 to 12 content pillars (bottom of the iceberg) that deliver on the Iceberg Statement. Categories of teaching, not video titles. | Iceberg Statement locked | `.claude/skills/vid-pillars/SKILL.md` |
+| `vid-credibility` | ✅ | Locks three viewer-relevant brags for video intros. Big + Specific + Personal. Anti-proof check before lock. | Avatar + Top 3 locked | `.claude/skills/vid-credibility/` (SKILL.md + credibility-method.md) |
+| `vid-backstory` | ✅ | Locks Problem-Action-Outcome backstory in 1 to 2 paragraphs plus a 3-sentence compressed version. Action-section test catches summary-instead-of-moves failures. | Avatar + Iceberg Statement locked | `.claude/skills/vid-backstory/` (SKILL.md + backstory-method.md) |
+| `vid-packaging` | ✅ | 6-substage interview producing `packaging-system.md` plus seeding `banks/title-bank.md`. Propose-don't-interrogate pattern for format and thumbnail picks. | Iceberg Statement + Content pillars locked | `.claude/skills/vid-packaging/` (SKILL.md + assets/title-bank-seed.md) |
 | `vid-voice-capture` | ✅ | Dedicated voice profile build — Layer 1 Core (cross-context patterns) + Layer 2 Context Maps (per-format sub-profiles). Multi-source extraction (transcripts + writing + live monologue). The only skill that creates `foundation/voice-profile.md`. Refresh-aware (90 days / 20+ videos). Built by another session, audited 5/1. | foundation/creator-foundation.md, knowledge/voice-extraction-methods.md, knowledge/voice-pressure-test.md, knowledge/voice-profile-schema.md | `.claude/skills/vid-voice-capture/` (SKILL.md + 2 templates) |
 | `vid-capture` | ✅ | Combined story + metaphor + proof + testimonial + framework capture. Runnable standalone OR invoked by another skill mid-script. Dedup check per stage. People stub auto-creation. Invocation-mode aware (standalone loops, sub-skill mode returns wikilink). proof_type simplified to 2 (personal-result / client-win); presentation format moved to body. Stage F (framework) is Log-only — the 5-step build lives in `knowledge/framework-builder.md` and runs inline in vid-segment when mid-write framework crafting is needed. | foundation/creator-foundation.md (Top 3 problems), knowledge/vault-integration.md, capture guides in knowledge/, knowledge/framework-builder.md | `.claude/skills/vid-capture/` (SKILL.md + 5 templates) |
 
@@ -479,7 +487,7 @@ Build leaves first, orchestrator last. Writing sub-skills before structure/routi
 |---|---|---|
 | `/assistant` | ⬜ | Content-only session orchestrator. Resume session, save session, reconcile-notes, web extract, route knowledge into the right vault file. Built after vid-pipeline lands. NOT meetings, NOT tasks, NOT daily reviews — strictly content workflow glue. |
 
-**Total:** 14 content skills + the `/assistant` orchestrator.
+**Total:** 19 content skills + the `/assistant` orchestrator. (Phase 1 expanded from 1 mega-skill to 7 skills after the foundation split.)
 
 ---
 
