@@ -69,7 +69,7 @@ For every pillar proposed, ask silently: "If the avatar fixed THIS, would they b
 
 This is a discovery interview. Run the absorb-first protocol from `knowledge/interview-posture.md`. Short messages. One question at a time. Don't form-fill.
 
-### Step 1: Propose a starter list (don't ask the creator to list cold)
+### Step 1: Propose a starter list
 
 Read the Offer, Avatar, Top 3 problems, and Iceberg Statement. Then ask yourself the root-cause question:
 
@@ -77,36 +77,49 @@ Read the Offer, Avatar, Top 3 problems, and Iceberg Statement. Then ask yourself
 
 Generate 8 to 12 starter pillars by mining for those root-cause problems. Look in three places:
 
-1. **The Top 3 problems.** Each one is already a root cause the avatar named. Expand each into the broader sub-problem behind it. If the Top 3 says "thumbnails don't work, titles don't work, viewers leave in 30 seconds," the underlying root causes might be "weak packaging" and "weak retention," two distinct pillars.
+1. **The Top 3 problems.** Each one is already a root cause the avatar named. Expand each into the broader sub-problem behind it.
 
-2. **Other problems the creator hinted at.** Scan the Offer and Avatar sections for problems the creator described that didn't make it into Top 3. Those are still valid pillars. The Top 3 are the loudest, not the only ones.
+2. **Other problems the creator hinted at.** Scan the Offer and Avatar sections for problems the creator described that didn't make it into Top 3. Those are still valid pillars.
 
-3. **Problems the creator didn't say out loud but probably knows about.** Standard root causes for the promise. If the Iceberg promises revenue, "no offer to convert views into revenue" is a root cause whether the creator said it or not. If the promise is consistency, "no content system" is a root cause. Propose these and let the creator confirm or cut.
+3. **Standard root causes for the promise.** Things the creator may not have said out loud but probably knows about. If the Iceberg promises revenue, "offers" is a root cause whether named or not. If the promise is consistency, "content systems" is a root cause.
 
 The pillars should NOT all sound like the niche. If the Iceberg promises YouTube growth, "YouTube growth" is not a pillar. The pillars are the OTHER problems that, when broken, cause YouTube growth to fail. Storytelling. Offers. Email. Productivity. Mindset. The teaching is what fixes those problems.
 
-Show the proposed list to the creator with the Iceberg Statement at the top. Pillars are reactions, not blanks to fill.
+**Format: each pillar is 1 to 4 words. A short label. Not a sentence. Not a video title.**
 
-Shape:
+Right format:
+- Storytelling
+- Packaging
+- Retention
+- Offers
+- Mindset
+- AI voice
+- Content systems
+
+Wrong format:
+- "How to get AI to sound like you, not slop"
+- "Retention and storytelling. Keeping viewers past 30 seconds."
+
+Shape of the message:
 
 > "Reading your foundation. Iceberg Statement: '[the statement].'
 >
-> Starter pillars based on your offer, avatar, and Top 3. 8 to 12 categories that would deliver on that promise. These are drafts to react to.
+> Starter pillars. 8 to 12 root-cause sub-problems that block your avatar from getting that result. Short labels, drafts to react to.
 >
-> 1. [pillar]
-> 2. [pillar]
-> 3. [pillar]
-> 4. [pillar]
-> 5. [pillar]
-> 6. [pillar]
-> 7. [pillar]
-> 8. [pillar]
-> 9. [pillar]
-> 10. [pillar]
+> 1. [label]
+> 2. [label]
+> 3. [label]
+> 4. [label]
+> 5. [label]
+> 6. [label]
+> 7. [label]
+> 8. [label]
+> 9. [label]
+> 10. [label]
 >
 > Which land, which are duds, what's missing?"
 
-The creator reacts. Drop the ones that don't fit, replace duds, add what's missing. Iterate.
+The creator reacts. Drop, replace, add. Iterate until 8 to 12 short labels are locked.
 
 ### Step 2: Push back on tactics posing as pillars
 
@@ -164,7 +177,11 @@ Add the missing pillar. Re-validate.
 
 ### Step 6: Save
 
-Write the pillars to `foundation/creator-foundation.md` in the Content pillars section. Numbered list. Use the creator's words for the pillar names where they gave you good phrasing. Sharpen only by trimming filler.
+Write the pillars to `foundation/creator-foundation.md` in the Content pillars section. Numbered list. Each pillar is the short label only, 1 to 4 words. No sub-descriptions, no teaching-focus bullets, no parentheticals explaining the pillar. The label IS the pillar.
+
+If the creator handed you longer phrasing during iteration, compress to the short label before saving. The longer phrasing was for negotiation, the saved version is the working title.
+
+Use the creator's words for the label where they gave you good phrasing. Sharpen only by trimming filler.
 
 ## Closing the skill
 

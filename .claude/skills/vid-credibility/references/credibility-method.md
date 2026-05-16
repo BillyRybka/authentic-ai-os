@@ -72,7 +72,42 @@ Why: number stops the scroll, year locked, direct ownership.
 
 **Bad:** "I have an MBA from Stanford and have consulted with major Fortune 500 companies."
 
-Why fails: credential, not result. Name-drop without a specific outcome.
+Why fails: generic credential, not result. The avatar doesn't recognize it as authority in THEIR world.
+
+### Recognized authority is NOT the credential trap
+
+The credential trap is GENERIC credentials: MBA, certifications, "X years of experience," vague Fortune 500 name-drops the avatar has no relationship with.
+
+A recognized institutional role inside the avatar's own world is the opposite. It is authority and it anchors the set.
+
+- "Executive producer at [a brand the avatar follows]" is authority. The avatar knows that brand. Keep it. It is often a near-permanent brag, not a candidate for cutting.
+- "Head of growth at [a company the avatar admires in their niche]" is authority.
+- "MBA from Stanford" to a YouTube-creator avatar is a credential trap. They don't care.
+
+Test: would the avatar recognize this name or role and think "okay, this person operates at the level I want"? If yes, it is authority, keep it, anchor with it. If no, it is a credential trap, cut it.
+
+### The recognized-name vs unknown-name rule
+
+Names in brags only carry weight if the avatar recognizes them.
+
+- **Recognized name** (a brand or person the avatar follows or admires): use the name. The name IS the proof. "Built the content systems behind [recognized creator]."
+- **Unknown name** (a client the avatar has never heard of): drop the name. Lead with the result and the surprisingly small or relatable inputs. The anonymity plus the contrast is the proof.
+
+Example. Real client "Ashley," a creator the avatar has never heard of, made $1M from a 2,000-subscriber channel.
+
+- Weak (uses an unknown name): "I coached Ashley to an extra $1M a year."
+- Strong (drops the name, leads with the belief-breaking contrast): "I coached a creator with only 2,000 subscribers to an extra $1M a year from a channel averaging 200 views a video."
+
+The second one is stronger BECAUSE the client is a nobody. Small numbers plus a huge result destroys the avatar's false belief that they need to be big to win. Using the name would have buried that.
+
+### One proof point per brag (no cramming)
+
+Each brag carries ONE clean number or claim. Do not stack two numbers into one sentence to make it feel bigger. It reads crammed and the creator rewords it on the read-aloud.
+
+- Crammed: "I hit 100,000 subscribers on my own channel in under 2 years and under 100 videos."
+- Clean: "I hit 100,000 subscribers in under 100 videos."
+
+If two numbers are both strong (speed AND efficiency), that is two brags or a rotation extra. Pick the single sharpest one for the locked set. Bank the other.
 
 ### Pair 4: anti-proof (the self-sabotage)
 

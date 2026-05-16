@@ -58,49 +58,49 @@ Three things: Big, Specific, Personal. Past tense. Number attached.
 
 ## How this skill runs
 
-This is a three-question interview. Apply the absorb-first protocol from `knowledge/interview-posture.md`. Short messages. One question at a time. Push back hard when an answer hedges.
+Mirror the foundation. Make a strategic read about what kind of proof THIS avatar trusts. Then ask conversationally for the first brag. Don't announce "three questions." Don't say "Question 1." Just flow.
+
+Push back hard when an answer hedges, names years instead of results, drops credentials instead of outcomes, or names a brand without a number.
 
 ### Opener
 
-> "Three credibility brags for your intros. Specific wins your viewer cares about. Not years, not credentials. Each one: a number plus a past-tense verb. Three questions."
+Read the Offer, Avatar, Top 3 problems, and Iceberg Statement. Make a strategic read: what kind of result lives in THIS avatar's territory? Their proof has to land there.
 
-### Question 1: Biggest personal result
+Shape:
 
-> "What's the biggest result you've personally hit that your avatar wants? Number plus timeframe."
+> "Reading your foundation. Iceberg Statement: '[the statement].'
+>
+> Three brags for your intros. Your avatar trusts proof in this territory: [one-line strategic read tied to the Iceberg Statement and Top 3. Example: 'they care about content revenue and AI-quality content, so the strongest brags live in YouTube revenue numbers, client AI transformations, or content systems that scaled'].
+>
+> First, the biggest result you've personally hit in that territory. Number plus timeframe."
 
-**Push back on years or credentials:**
+### Pushback patterns
 
-> "'10 years of experience' tells me nothing. What did 10 years produce? A number."
+When the answer lands, react and move on. When it doesn't, push specifically:
 
-**Push back on hedges:**
+- Years instead of a result: "'10 years of experience' tells me nothing. What did 10 years produce? A number."
+- Credentials instead of a result: "An MBA is the setup. What did it produce in the avatar's territory?"
+- Hedges: "'I've been building' is in-progress. 'I built' is proof. Past tense."
+- Vague scale: "'I've helped many businesses' doesn't work. How many specifically? Best result?"
+- Name-drops: "Working with [brand] is the setup. What did you produce for them? Number, result, before-after?"
 
-> "'I've been building' is in-progress. 'I built' is proof. Past tense."
+### Next ask, after the first brag lands
 
-### Question 2: Most impressive client win
+> "Good. Next, most impressive client win you can cite with real numbers. Name them if you have permission, before/after, how long."
 
-> "Most impressive client win you can cite with real numbers. Name them if you have permission, before plus after, and how long it took."
+If the creator names a real client, create or update `People/{Full Name}.md` (stub if missing) and wikilink the name in the brag. Per the project's vault rule, every human mentioned gets a profile.
 
-**Push back on vague scale:**
+### Last ask, after the second brag lands
 
-> "'I've helped many businesses' doesn't work. How many specifically? What was the result for the best one?"
-
-**If the creator names a client by name:** create or update `People/{Full Name}.md` (stub if missing) and wikilink the name in the brag. Per the project's vault rule, every human mentioned gets a profile. Backlinks make the brag traceable to a real person.
-
-### Question 3: Volume number
-
-> "Volume. How many clients, how many dollars, how many cases, how many videos? One specific integer."
-
-**Push back on softeners:**
-
-> "Declarative past tense. 'I built, I served, I made.' Not 'I've been working on building.'"
+> "Last one. Volume. How many clients, how many dollars, how many videos, how many cases? One specific integer."
 
 ### Synthesis
 
 Once the three raw answers are in, draft three brag sentences. Each one: Big plus Specific plus Personal. Show all three back to the creator:
 
-> "Three brags. Read each one out loud. Anything that sounds off or that you'd reword?"
+> "Three brags. Read each one out loud. Anything off, or any need different wording?"
 
-Iterate on whatever they reword. Lock when they read all three without stumbling.
+Iterate on whatever they reword. Run the anti-proof check below. Save when the creator gives an explicit lock.
 
 ### Anti-proof check (mandatory before lock)
 
