@@ -90,24 +90,25 @@ Test: would the avatar recognize this name or role and think "okay, this person 
 
 Names in brags only carry weight if the avatar recognizes them.
 
-- **Recognized name** (a brand or person the avatar follows or admires): use the name. The name IS the proof. "Built the content systems behind [recognized creator]."
-- **Unknown name** (a client the avatar has never heard of): drop the name. Lead with the result and the surprisingly small or relatable inputs. The anonymity plus the contrast is the proof.
+- **Recognized name** (a brand or person the avatar follows or admires): use the name. The name IS the proof.
+- **Unknown name** (a client the avatar has never heard of): drop the name. Replace it with the avatar's own label, then lead with the surprisingly small inputs and the big result. The anonymity plus the contrast is the proof.
 
-Example. Real client "Ashley," a creator the avatar has never heard of, made $1M from a 2,000-subscriber channel.
+The anonymized descriptor must be the avatar's exact public label, pulled from the Avatar section of `creator-foundation.md`. Never a generic "client," "creator," or "someone" unless that word is literally the avatar's label. If the avatar is "busy parents," the brag says "a busy parent." If the avatar is "first-time homebuyers," it says "a first-time buyer." The brag mirrors the buyer back to themselves.
 
-- Weak (uses an unknown name): "I coached Ashley to an extra $1M a year."
-- Strong (drops the name, leads with the belief-breaking contrast): "I coached a creator with only 2,000 subscribers to an extra $1M a year from a channel averaging 200 views a video."
+Example (neutral domain, to calibrate the move only). A fitness coach whose avatar is busy parents. The client lost 40 pounds training 20 minutes a day.
 
-The second one is stronger BECAUSE the client is a nobody. Small numbers plus a huge result destroys the avatar's false belief that they need to be big to win. Using the name would have buried that.
+- Weak, unknown name: "I coached Dave to lose 40 pounds." Why it fails: the avatar has never heard of Dave, so the name is dead weight.
+- Weak, generic label: "I coached a client to lose 40 pounds." Why it fails: "a client" is faceless, the avatar does not see themselves in it.
+- Strong: "I coached a busy parent to lose 40 pounds training 20 minutes a day." Why it works: the avatar's own label mirrors them back, and the small input ("20 minutes a day") destroys the belief that it takes hours they do not have.
 
 ### One proof point per brag (no cramming)
 
 Each brag carries ONE clean number or claim. Do not stack two numbers into one sentence to make it feel bigger. It reads crammed and the creator rewords it on the read-aloud.
 
-- Crammed: "I hit 100,000 subscribers on my own channel in under 2 years and under 100 videos."
-- Clean: "I hit 100,000 subscribers in under 100 videos."
+- Crammed: "I lost 40 pounds in under 6 months and without ever stepping in a gym." Why it fails: two proof points (speed, no-gym) fight for attention, neither lands clean.
+- Clean: "I lost 40 pounds without ever stepping in a gym." Why it works: one claim, one bite.
 
-If two numbers are both strong (speed AND efficiency), that is two brags or a rotation extra. Pick the single sharpest one for the locked set. Bank the other.
+If two numbers are both strong (a speed number AND a constraint), that is two separate brags or a rotation extra. Pick the single sharpest one for the locked set. Bank the other.
 
 ### Pair 4: anti-proof (the self-sabotage)
 
@@ -131,13 +132,19 @@ Why: declarative, past tense, specific scale, no wiggle words.
 
 Why fails: "Been working on" is a hedge, feels in-progress. "A variety of" is vague. "Over the years" is no real timeframe.
 
-## How to extract three brags
+## How to surface and pick brags
 
-Three questions:
+Surface a pile through guided prompts asked one at a time, then rank and lock the strongest three for the avatar. The prompts surface material. They do not become the locked slots.
 
-1. **Biggest personal result.** "What's the biggest result you've personally hit that your avatar wants?"
-2. **Client win.** "Most impressive client win you've produced?"
-3. **Volume number.** "How many clients? How many dollars? How many videos? One specific integer."
+Collection prompts (ask one at a time, pull more than three):
+
+- **Personal result.** "Biggest result you personally got that this avatar wants too?"
+- **Client or customer result.** "Strongest result you helped someone else get? Before, after, how long."
+- **Authority or operator proof.** "Biggest role, brand, platform, or person you've worked with that this avatar would recognize and respect?"
+- **Volume proof.** "Biggest scale number, only when it produced something measurable."
+- **Belief-breaker.** "The result that would shock this avatar most given what they think is impossible."
+
+Then rank by buyer relevance and belief-kill, and lock three. The locked set does not have to take one from each prompt. Volume is not automatically slot three.
 
 ### Sample pulls by niche
 

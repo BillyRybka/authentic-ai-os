@@ -58,45 +58,78 @@ Three things: Big, Specific, Personal. Past tense. Number attached.
 
 ## How this skill runs
 
-Mirror the foundation. Make a strategic read about what kind of proof THIS avatar trusts. Then ask conversationally for the first brag. Don't announce "three questions." Don't say "Question 1." Just flow.
+Collect proof through sharp guided prompts, one at a time, so the creator can answer fast. Then rank the pile and lock the three that make THIS avatar trust the creator fastest. Bank the rest.
 
-Push back hard when an answer hedges, names years instead of results, drops credentials instead of outcomes, or names a brand without a number.
+Internal, do not say this aloud: the prompts surface material, they are not the locked slots. A prompt asked third does not become brag three. Surface more than three, then rank in Step 4. The creator never needs the methodology explained to them. They just answer good questions.
 
-### Opener
+### Step 1: Mirror the foundation, ask the first question
 
-Read the Offer, Avatar, Top 3 problems, and Iceberg Statement. Make a strategic read: what kind of result lives in THIS avatar's territory? Their proof has to land there.
-
-Shape:
+Read the Offer, Avatar, Top 3 problems, and Iceberg Statement. Mirror it in a line, then ground the first question in what the avatar actually wants before you ask it. That grounding is what makes the question land as "oh, that's easy" instead of a blank-page ask. Conversational, like a coach talking. Not a form label.
 
 > "Reading your foundation. Iceberg Statement: '[the statement].'
 >
-> Three brags for your intros. Your avatar trusts proof in this territory: [one-line strategic read tied to the Iceberg Statement and Top 3. Example: 'they care about content revenue and AI-quality content, so the strongest brags live in YouTube revenue numbers, client AI transformations, or content systems that scaled'].
->
-> First, the biggest result you've personally hit in that territory. Number plus timeframe."
+> Your avatar wants [the result they want, in their words, tied to the Iceberg]. So your proof has to live there. What's the biggest result you've personally pulled off in that world?"
 
-### Pushback patterns
+### Step 2: Guided proof prompts (one at a time, conversational)
 
-When the answer lands, react and move on. When it doesn't, push specifically:
+Ask like a person, not a form. Each ask is a real question with just enough framing to make it easy to answer. No "Question 2." No bare label. Wait, react, move on when there's a usable answer or the creator has nothing there.
 
-- Years instead of a result: "'10 years of experience' tells me nothing. What did 10 years produce? A number."
-- Credentials instead of a result: "An MBA is the setup. What did it produce in the avatar's territory?"
+1. **Personal result.** Asked in Step 1, grounded in what the avatar wants.
+2. **Client or customer result.** "Now the client side. What's the strongest result you got someone else? Walk me the before, the after, how long it took."
+3. **Authority or operator proof.** "Any role, brand, or person you've worked with that this avatar would recognize the second they heard it?"
+4. **Volume proof.** "What's the biggest number you can put on the table? Clients, videos, views, dollars. Only counts if it actually produced something."
+
+Pull a fifth if it opens, conversationally: "Anything you've done that this avatar would swear is impossible?"
+
+Keep the pile bigger than three. Don't announce that you're doing that.
+
+### Step 3: Pushback while collecting
+
+- Years with no output: "'10 years of experience' tells me nothing. What did 10 years produce? A number."
+- Generic credentials: "An MBA is the setup. What did it produce in the avatar's world?"
 - Hedges: "'I've been building' is in-progress. 'I built' is proof. Past tense."
 - Vague scale: "'I've helped many businesses' doesn't work. How many specifically? Best result?"
-- Name-drops: "Working with [brand] is the setup. What did you produce for them? Number, result, before-after?"
 
-### Next ask, after the first brag lands
+**Recognized authority is not a name-drop.** This overrides the credential pushback. If the creator names a brand, role, platform, or person the avatar recognizes and respects in their own world, the name IS the proof. Don't force a number onto it. Keep it. It is often a near-permanent brag. The credential trap is only generic credentials the avatar has no relationship with. Full rule in `references/credibility-method.md`.
 
-> "Good. Next, most impressive client win you can cite with real numbers. Name them if you have permission, before/after, how long."
+### Step 4: Ranking pass (do not lock the first three collected)
 
-If the creator names a real client, create or update `People/{Full Name}.md` (stub if missing) and wikilink the name in the brag. Per the project's vault rule, every human mentioned gets a profile.
+Score every candidate against these. Make the ranking visible to the creator when more than three surface ("We've got more than three. I wouldn't just pick the biggest numbers. I'd pick the three that make this avatar trust you fastest."):
 
-### Last ask, after the second brag lands
+1. Does it prove the creator can get this avatar the Iceberg promise?
+2. Is it a result the avatar actually wants?
+3. Does it kill a false belief the avatar holds?
+4. Is it specific enough to trust?
+5. Did the creator personally cause or contribute to it?
+6. Would the avatar recognize the name, role, number, or outcome as meaningful?
 
-> "Last one. Volume. How many clients, how many dollars, how many videos, how many cases? One specific integer."
+Pick the strongest three. Cover distinct trust types where possible (personal, client or customer outcome, recognized authority, volume), but never lock a weak one just to fill a type.
 
-### Synthesis
+### Step 5: False-belief test
 
-Once the three raw answers are in, draft three brag sentences. Each one: Big plus Specific plus Personal. Show all three back to the creator:
+Every locked brag either builds direct trust or destroys a false belief the avatar holds. If a brag is impressive but does neither for THIS avatar, it goes to the proof bank, not the locked three.
+
+A brag that kills a belief beats a bigger number that kills nothing. An avatar who believes "I need a huge audience before this works" is destroyed by a result from a tiny starting point, not by a giant aggregate stat.
+
+### Step 6: Iceberg-tension coverage check
+
+The Iceberg Statement names a tension or enemy. Check: does at least one locked brag prove the creator can deliver on THAT specific part of the promise?
+
+If yes, good. If no, flag it. Do not fake it:
+
+> "Your three prove [what they prove]. None prove the [tension] part of your promise yet. Fine if that's newer. Not faking it. Banking that as the next proof to collect."
+
+### Step 7: Unknown-client rule
+
+If a client in a brag is not recognizable to the avatar, drop the name. Lead with the avatar's own label plus the surprising-small-input, big-result contrast.
+
+Not the client's name. Not a generic "creator." If the avatar is business owners, it is "a business owner [surprising small inputs] to [big result]." The descriptor mirrors the buyer. The small numbers are the proof. Full rule in `references/credibility-method.md`.
+
+If the client IS recognizable, use the name and create or update `People/{Full Name}.md` (stub if missing) with a wikilink. Per the vault rule, every recognizable human named gets a profile.
+
+### Step 8: Synthesis
+
+Draft the three brags. Each one: Big, Specific, Personal. One proof point per brag, no cramming two numbers into one sentence. Show all three back:
 
 > "Three brags. Read each one out loud. Anything off, or any need different wording?"
 
@@ -138,7 +171,21 @@ Flag the MVP caveat:
 
 ## Save
 
-Write the three brags to `foundation/creator-foundation.md` in the Credibility brags section. Three numbered lines. Use the creator's words verbatim where possible. Sharpen only by trimming filler or fixing tense.
+Two writes on lock.
+
+**1. The locked three to the foundation.** Write the three brags to `foundation/creator-foundation.md` in the Credibility brags section. Three numbered lines. Creator's words verbatim where possible. Sharpen only by trimming filler or fixing tense.
+
+**2. The leftover wins to the proof bank.** Every strong proof point that surfaced but did not make the locked three goes to `banks/proof-bank/` as its own entry, so future intros and scripts can pull it. Follow the schema in `banks/proof-bank/README.md` (`proof_type` is `personal-result` or `client-win`, kebab-case filename, the body sections from the proof entry template).
+
+Rules for the bank write:
+- Do not create a duplicate if an entry already covers that proof. Check first.
+- Do not overwrite an existing proof entry without asking.
+- Anonymize unknown clients the same way as the locked brags (avatar label, not the name).
+- If a recognizable person is named, the same `People/{Full Name}.md` stub plus wikilink rule applies.
+
+Tell the creator plainly:
+
+> "Locked three to your foundation. The other [n] wins are saved to your proof bank so scripts can pull them when they fit."
 
 ## Closing the skill
 
