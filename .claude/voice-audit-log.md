@@ -1,0 +1,3 @@
+- 2026-05-19T16:58:45.641Z | foundation/voice-profile.md:42 | "utilize" → "use"
+- 2026-05-19T16:58:45.645Z | foundation/voice-profile.md:42 | "utilize" → "use"
+- 2026-05-19T16:58:45.645Z | foundation/voice-profile.md:52 | "utilize" → "use"

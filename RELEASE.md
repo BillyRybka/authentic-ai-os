@@ -37,7 +37,9 @@ claude
 /plugin install authentic-ai-os@peak-systems
 ```
 
-Run the affected skills, confirm they work as expected.
+Then, in that test folder: run `creator-setup` (it scaffolds `Authentic-AI-OS/`), open that folder, run `vid-foundation`. Confirm the affected skills resolve their `knowledge/` files via `${CLAUDE_PLUGIN_ROOT}` with no missing-file errors, and that nothing writes outside `Authentic-AI-OS/`.
+
+Note: `/plugin marketplace add` takes the repo path (real repo: `BillyRybka/authentic-ai-os`). `@peak-systems` is the marketplace alias from `marketplace.json`, not the repo owner. They do not need to match.
 
 ### 3. Cut the release
 
@@ -70,21 +72,26 @@ Inner Circle clients see the update next time their Cowork/Claude Code refreshes
 ## What ships vs what doesn't
 
 ### Ships to clients
-- `.claude/skills/{skill-name}/` (any skill not prefixed with `_`)
-- `.claude/commands/` (when added)
-- `.claude/agents/` (when added)
-- `knowledge/` — canonical reference docs
-- `CLAUDE.md` — operating instructions
-- `.claude-plugin/` — manifest
+- `.claude/skills/{skill-name}/` (any skill not prefixed with `_`). Declared via `"skills": "./.claude/skills"` in `plugin.json` so an installed plugin discovers them.
+- `.claude/commands/`, `.claude/agents/` (when added; declare their paths in `plugin.json` the same way)
+- `knowledge/` (canonical reference docs, read by skills via the dual-context `${CLAUDE_PLUGIN_ROOT}` rule)
+- `CLAUDE.md` (operating instructions)
+- `.claude-plugin/` (manifest)
+
+Hooks are NOT declared in `plugin.json`. The Vale hook stays local-only (its binary path is machine-specific). It runs for Billy via project `.claude/settings.json`, never ships.
 
 ### Stays Billy-only (gitignored)
-- `build-plan.md` — strategy doc
-- `*.log` — local logs
-- `.claude/skills/_*/` — work-in-progress skills
-- `_scratch/`, `_strategy/`, `_notes/` — scratch folders
-- `foundation/`, `banks/`, `Content/`, `People/`, `Companies/`, `Resources/` — vault scaffolding (not yet ready to ship)
+- `build-plan.md` (strategy doc)
+- `*.log` (local logs)
+- `.claude/skills/_*/` (work-in-progress skills)
+- `_scratch/`, `_strategy/`, `_notes/` (scratch folders)
+- `foundation/`, `banks/`, `Content/`, `People/`, `Companies/`, `Resources/` (Billy's own vault data; clients never get Billy's content)
 
-To ship the vault scaffolding later: remove from `.gitignore` and create a `/init` command that copies the structure into clients' folders.
+### How clients get a vault
+
+The vault is NOT shipped as repo folders. `creator-setup` builds the `Authentic-AI-OS/` container in the client's own folder at runtime, scaffolding only what the released skills need. `knowledge/` is never copied into a vault; skills read it from the plugin via `${CLAUDE_PLUGIN_ROOT}`.
+
+**Maintenance contract.** When a new skill ships and it needs container structure before it runs, add a row to `.claude/skills/creator-setup/manifest.md` (skill, needed folder, class, since-version). If the new skill introduces a new bank, put its schema doc in `knowledge/` (referenced via the dual-context rule), not in the vault. Never add a manifest row for an unreleased skill. No other change is needed; clients re-run `creator-setup` after the update and it adds the new structure additively.
 
 ## Rolling back
 

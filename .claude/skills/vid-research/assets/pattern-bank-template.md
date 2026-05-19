@@ -21,9 +21,7 @@ The synthesis index for this creator's pattern research. Cross-channel insights 
 - [[power-words-bank]] — global + audience-specific power words, frequency-ranked
 - [[title-patterns-bank]] — fill-in-the-blank title shapes with worked examples
 - [[thumbnail-patterns-bank]] — 6 strategies populated with real outlier thumbnails
-- [[format-patterns-bank]] — which of 7 formats land for this audience
-- [[topic-patterns-bank]] — topic clusters that pulled views (own + niche only)
-- [[viewer-hates-bank]] — flop signals, what tanks, why each fails
+- Topic clusters and the per-outlier full packages live in this file's sections below (not standalone banks). Format is a menu pick in `knowledge/format-rotation-guide.md`, not a research bank.
 
 ## Synthesis (cross-channel insights)
 

@@ -140,9 +140,9 @@ Be careful with:
 
 When the creator has published videos:
 
-1. Use own outliers first.
-2. If pattern banks exist, use `format-patterns-bank.md` and `packaging-bank/` as evidence.
-3. If pattern banks are missing, either run `vid-research` first or save temporary defaults from the creator's best memory.
+1. Use the creator's own-channel format data first (which of their own videos hit, and in what format).
+2. Cross-check against `packaging-bank/` past winners if any exist.
+3. Otherwise pick from this menu using the avatar + the 4-check filter below. Format is a menu pick, not a competitor-mined pattern (a competitor's format can't be classified from title + thumbnail without transcripts).
 4. Mark temporary defaults lower confidence until research or post-publish measurement confirms them.
 
 Do not throw away what already works because a default says another format is stronger. Repeat what works until the data says it is tired.

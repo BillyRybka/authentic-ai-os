@@ -7,16 +7,15 @@ description: Thin orchestrator for the Authentic AI OS foundation. Checks what's
 
 Thin orchestrator. Checks foundation state, points the creator at the next skill in the sequence. Doesn't run interviews itself.
 
-The actual interview work happens in six focused skills:
+The actual interview work happens in five focused skills:
 
 1. `vid-avatar`. Offer plus avatar plus Top 3 perceived problems.
 2. `vid-positioning`. Iceberg Statement.
 3. `vid-pillars`. 8 to 12 content pillars.
 4. `vid-credibility`. Three viewer-relevant brags.
 5. `vid-backstory`. Problem-Action-Outcome backstory.
-6. `vid-packaging`. Gift framework, format rotation, title bank seed, thumbnail strategy, design guardrails, creation path.
 
-Plus `vid-voice-capture` for the voice profile (run after `vid-packaging`).
+Then `vid-voice-capture` for the voice profile, then `vid-research`. Packaging defaults (format rotation, thumbnail strategy, title-bank seed) are authored by `vid-research` from real evidence, not guessed in a foundation interview. The old `vid-packaging` skill was collapsed 2026-05-19 for producing throwaway pre-research guesses.
 
 ## Contract
 
@@ -46,9 +45,9 @@ Use this routing table:
 | Iceberg Statement locked, Content pillars missing | `vid-pillars` |
 | Content pillars locked, Credibility brags missing | `vid-credibility` |
 | Credibility brags locked, Backstory missing | `vid-backstory` |
-| Backstory locked, `packaging-system.md` missing or incomplete | `vid-packaging` |
-| Foundation complete, `voice-profile.md` missing | Point at `vid-voice-capture` (don't auto-invoke; it needs source material) |
-| Everything complete | Foundation done. Point at next paths. |
+| Backstory locked (foundation identity complete), `voice-profile.md` missing | Point at `vid-voice-capture` (don't auto-invoke; it needs source material) |
+| Voice profile exists, `packaging-system.md` or pattern banks missing | Point at `vid-research` (it builds the banks AND authors packaging-system.md from the evidence; don't auto-invoke, it needs a YouTube API key and ~1.5 hrs) |
+| Everything complete (identity + voice + packaging-system + banks) | Foundation done. Point at next paths. |
 
 ### Step 3: Tell the creator where they are, then auto-invoke
 

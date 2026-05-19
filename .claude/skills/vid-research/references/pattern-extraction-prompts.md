@@ -168,46 +168,9 @@ Examples:
 - "STOP Resting 3 Minutes Between Sets (Do This)"
 ```
 
-## Prompt 5 — Format identification
+## Prompt 5: RETIRED (format is a menu pick, not a mined pattern)
 
-**Purpose:** classify each outlier into one of 7 video formats.
-
-**Input:** outlier title + duration + (optional) thumbnail description.
-
-**Prompt:**
-
-```
-Classify this outlier into one of 7 formats:
-1. Short Process — fast tactical walkthrough, 5-10 min, concrete steps
-2. Case Study — transformation story, 15-30 min, before/after
-3. Roast — review/critique, often submission-based
-4. Deep Dive — long-form expert analysis, 20-40+ min
-5. Interview — conversation with guest, 30+ min
-6. News — fast take on recent event, 5-8 min
-7. Listicle — counted list, 8-15 min
-
-Outlier:
-Title: {title}
-Duration: {minutes}
-Thumbnail: {if available}
-Views: {count}
-
-Format: {one of 7}
-Confidence: {HIGH | MEDIUM | LOW}
-Reasoning: {one sentence}
-```
-
-**Worked output:**
-
-```
-Title: "5 Programming Mistakes Every Intermediate Lifter Makes"
-Duration: 11 minutes
-Thumbnail: numbered "5" with bold red text
-
-Format: Listicle
-Confidence: HIGH
-Reasoning: numbered list framing with explicit count in title and thumbnail; duration matches typical listicle length.
-```
+Format cannot be reliably classified from title + duration + thumbnail without watching or transcribing every outlier (infeasible at research scale). Format is NOT extracted here. It is a creator menu pick from the fixed 7-format menu in `knowledge/format-rotation-guide.md`, handled in vid-research Phase 7. Prompt number kept stable so downstream references do not shift; this step does nothing.
 
 ## Prompt 6 — Topic cluster extraction (own + niche only)
 
@@ -246,41 +209,9 @@ Members:
 Why this pulls: audience trusts authorities who admit being wrong; reversals signal active learning rather than dogma.
 ```
 
-## Prompt 7 — Flop pattern extraction
+## Prompt 7: RETIRED (flop analysis is post-publish, not pre-research)
 
-**Purpose:** identify what tanks for this audience by analyzing underperformers (≤ 50% of channel median).
-
-**Input:** underperformer titles + channel themes.
-
-**Prompt:**
-
-```
-Below are videos that significantly underperformed (50% or less of channel median).
-
-Underperformer titles:
-{numbered list}
-
-Channel themes: {from Prompt 1}
-
-Identify 2-4 flop patterns. Each pattern = a recurring quality these underperformers share.
-
-Format per pattern:
-F-{N}: {label}
-Pattern: {what these share}
-Members: {2-3 examples}
-Why it fails for this audience: {one sentence}
-```
-
-**Worked output:**
-
-```
-F-1: Vague motivational without specifics
-Pattern: titles promise mindset shifts without concrete techniques or programming changes
-Members:
-- "How to Stay Consistent in Your Training"
-- "The Mindset That Changed My Lifting"
-Why it fails: audience is intermediate-to-advanced and wants programming/technique specifics. Mindset content reads as beginner-tier.
-```
+The source teaches flop diagnosis AFTER a video underperforms (why did THIS video tank: positioning, packaging, script, execution), not as a pre-research bank of "what the audience hates." That belongs to future vid-measurement, fed by the creator's own published data. It is not collected during research. Prompt number kept stable; this step does nothing.
 
 ## Where outputs land
 
@@ -288,9 +219,9 @@ Why it fails: audience is intermediate-to-advanced and wants programming/techniq
 - Prompt 2 (fluke) → skip/study decision, no direct bank entry
 - Prompt 3 (power words) → power-words-bank.md (global + audience-specific)
 - Prompt 4 (title patterns) → title-patterns-bank.md
-- Prompt 5 (format) → format-patterns-bank.md
-- Prompt 6 (topics) → topic-patterns-bank.md (own + niche only)
-- Prompt 7 (flops) → viewer-hates-bank.md
+- Prompt 5 (format) → RETIRED, format is a menu pick in knowledge/format-rotation-guide.md
+- Prompt 6 (topics) → topic-cluster section inside pattern-bank.md (own + niche only), not a standalone bank
+- Prompt 7 (flops) → RETIRED, post-publish flop diagnosis is future vid-measurement
 
 All entries start `status: draft-pending-curation` until Theory of One curation pass promotes them.
 

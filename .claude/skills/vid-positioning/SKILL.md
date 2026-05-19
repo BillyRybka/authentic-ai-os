@@ -21,6 +21,8 @@ This is the second skill in the foundation sequence. It runs after `vid-avatar` 
 
 ## Load at session start
 
+> **Resolving `knowledge/` paths.** Any path written `knowledge/X.md` is a plugin reference file. Load it from `${CLAUDE_PLUGIN_ROOT}/knowledge/X.md` when running as an installed plugin. If `${CLAUDE_PLUGIN_ROOT}` is unset or that path does not exist (running from the source repo during development), load `knowledge/X.md` relative to the repo root instead.
+
 1. `knowledge/interview-posture.md`. Shared conversation posture. Non-negotiable.
 2. `knowledge/vault-integration.md`. Frontmatter schema.
 3. `foundation/creator-foundation.md`. Read the Offer, Avatar, and Top 3 sections.

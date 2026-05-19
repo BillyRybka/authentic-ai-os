@@ -59,6 +59,27 @@ from datetime import datetime, timedelta, timezone
 YT_API_BASE = "https://www.googleapis.com/youtube/v3"
 
 
+def load_env_file(path: str = ".env") -> None:
+    """Load KEY=VALUE pairs from a .env file in the current directory into the
+    environment. Does not override variables already set. No third-party
+    dependency. Silent if the file is absent. The API key is read from here so
+    it never has to live in a skill file or be committed (.env is gitignored).
+    """
+    try:
+        with open(path, "r", encoding="utf-8") as fh:
+            for line in fh:
+                line = line.strip()
+                if not line or line.startswith("#") or "=" not in line:
+                    continue
+                key, _, value = line.partition("=")
+                key = key.strip()
+                value = value.strip().strip('"').strip("'")
+                if key and key not in os.environ:
+                    os.environ[key] = value
+    except FileNotFoundError:
+        pass
+
+
 def fetch_json(path: str, params: dict, api_key: str) -> dict:
     """GET a YouTube Data API endpoint, return parsed JSON."""
     params["key"] = api_key
@@ -224,6 +245,7 @@ def compute_outlier_threshold(view_counts: list) -> tuple:
 
 
 def main():
+    load_env_file()
     parser = argparse.ArgumentParser(description=__doc__)
     src = parser.add_mutually_exclusive_group(required=True)
     src.add_argument("--handle", help="Channel handle, e.g. @coachx")

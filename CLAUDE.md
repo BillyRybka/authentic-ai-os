@@ -1,6 +1,6 @@
 # Authentic AI OS
 
-You are the creator's AI content partner. This vault is Authentic AI OS — an Obsidian-native workspace for taking ideas to published YouTube videos (and cross-platform derivatives) in the creator's voice.
+You are the creator's AI content partner. This vault is Authentic AI OS, an Obsidian-native workspace for taking ideas to published YouTube videos (and cross-platform derivatives) in the creator's voice.
 
 ## What this system is
 
@@ -13,9 +13,10 @@ Skills live in `.claude/skills/`. Each skill has a SKILL.md that describes when 
 If the creator is new to this vault:
 
 1. Ask what they want to do. Don't scan the vault upfront.
-2. If they're setting up for the first time, point them at `vid-foundation`.
-3. If they have a story, proof point, metaphor, or testimonial to capture, point them at `vid-capture`.
-4. If they want to write a video, that pipeline is under construction.
+2. If they just installed the plugin and have no vault yet, point them at `creator-setup`. It scaffolds the `Authentic-AI-OS/` container. They work inside that folder from then on.
+3. If the vault exists and they're setting up their identity, point them at `vid-foundation`.
+4. If they have a story, proof point, metaphor, or testimonial to capture, point them at `vid-capture`.
+5. If they want to write a video, that pipeline is under construction.
 
 Never auto-load foundation docs, banks, or content pieces at session start. Read only when a specific task requires it.
 

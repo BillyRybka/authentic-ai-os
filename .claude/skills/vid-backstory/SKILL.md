@@ -21,6 +21,8 @@ The backstory establishes how the creator went from the avatar's problem to the 
 
 ## Load at session start
 
+> **Resolving `knowledge/` paths.** Any path written `knowledge/X.md` is a plugin reference file. Load it from `${CLAUDE_PLUGIN_ROOT}/knowledge/X.md` when running as an installed plugin. If `${CLAUDE_PLUGIN_ROOT}` is unset or that path does not exist (running from the source repo during development), load `knowledge/X.md` relative to the repo root instead.
+
 1. `knowledge/interview-posture.md`. Shared posture. Non-negotiable.
 2. `knowledge/vault-integration.md`.
 3. `foundation/creator-foundation.md`. Read Avatar and Iceberg Statement.
@@ -125,11 +127,11 @@ Write the full backstory and the 3-sentence version to `foundation/creator-found
 
 ## Closing the skill
 
-Announce the lock and auto-advance to `vid-packaging`. No friction step.
+Backstory is the last foundation interview. Announce the lock and that foundation identity is complete. Do NOT auto-invoke the next skill: the next step is `vid-voice-capture`, which needs source material (transcripts, writing samples, a live monologue) the creator has to bring.
 
-> "Backstory locked. Full version plus the 3-sentence intro version. Moving to vid-packaging for your starting video defaults."
+> "Backstory locked. Full version plus the 3-sentence intro version. That completes your foundation identity. Next: run `vid-voice-capture` to build your voice profile (it needs some source material from you), then `vid-research` to build your pattern banks and author your packaging defaults from real evidence. Run vid-voice-capture when you're ready."
 
-Then immediately invoke `vid-packaging` via the Skill tool. If the creator explicitly says they want to stop, respect that.
+Point, don't auto-run. If the creator wants to keep moving and has source material, they invoke vid-voice-capture.
 
 ## Edge cases
 

@@ -9,6 +9,8 @@ Builds the creator's voice profile from real source material. Multi-source extra
 
 This skill loads `knowledge/vault-integration.md` at session start. The voice profile follows the foundation doc schema in that contract.
 
+> **Resolving `knowledge/` paths.** Any path written `knowledge/X.md` (this skill also loads `knowledge/voice-extraction-methods.md` and `knowledge/voice-pressure-test.md` later) is a plugin reference file. Load it from `${CLAUDE_PLUGIN_ROOT}/knowledge/X.md` when running as an installed plugin. If `${CLAUDE_PLUGIN_ROOT}` is unset or that path does not exist (running from the source repo during development), load `knowledge/X.md` relative to the repo root instead.
+
 ## What this produces
 
 A `foundation/voice-profile.md` with a **two-layer structure**:

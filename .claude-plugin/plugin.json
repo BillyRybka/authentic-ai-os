@@ -1,12 +1,13 @@
 {
   "name": "authentic-ai-os",
-  "description": "Authentic AI OS — Billy Rybka's YouTube content system. Skills for foundation setup, voice capture, story/proof/metaphor banks, thumbnail and title development.",
+  "description": "Authentic AI OS. Billy Rybka's YouTube content system. Skills for foundation setup, voice capture, story/proof/metaphor banks, thumbnail and title development.",
   "version": "0.1.0",
   "author": {
     "name": "Billy Rybka",
     "email": "billy@channelcrafters.com"
   },
-  "homepage": "https://github.com/peak-systems/authentic-ai-os",
-  "repository": "https://github.com/peak-systems/authentic-ai-os",
-  "license": "Proprietary"
+  "homepage": "https://github.com/BillyRybka/authentic-ai-os",
+  "repository": "https://github.com/BillyRybka/authentic-ai-os",
+  "license": "Proprietary",
+  "skills": "./.claude/skills"
 }

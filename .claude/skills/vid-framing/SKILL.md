@@ -65,7 +65,7 @@ Silent loads (do NOT paste into chat):
 3. `foundation/creator-foundation.md`, iceberg statement, Top 3 problems, audience profile
 4. `foundation/voice-profile.md`, preferred_hook_types, opener pattern, energy baseline (style only)
 5. `foundation/packaging-system.md`, starting format rotation, current thumbnail test strategies
-6. `banks/pattern-bank.md` synthesis section + the 6 sub-banks (`power-words-bank.md`, `title-patterns-bank.md`, `thumbnail-patterns-bank.md`, `format-patterns-bank.md`, `topic-patterns-bank.md`, `viewer-hates-bank.md`)
+6. `banks/pattern-bank.md` (synthesis + topic clusters + per-outlier full packages) + the 3 sub-banks (`power-words-bank.md`, `title-patterns-bank.md`, `thumbnail-patterns-bank.md`). Format comes from `foundation/packaging-system.md` rotation, not a bank.
 7. `knowledge/outlier-identification-rules.md`, fluke filter logic
 8. `knowledge/audience-temperature-model.md`, temperature definitions
 9. `knowledge/three-circle-research.md`, own + niche + adjacent methodology (read once, don't re-explain)
@@ -123,7 +123,6 @@ Surface the four answers per angle. Creator confirms or pushes back.
 
 **Soft friction during filter:**
 - Angle doesn't land on Top 3 → "This angle is outlier-within-iceberg. Want to lock it anyway, or pick a Top 3 angle?"
-- Angle conflicts with `viewer-hates-bank` → "Your viewer-hates bank flagged this pattern as a flop in the past. Surface why anyway?"
 
 ### Phase 4: Lock the call
 
@@ -186,9 +185,8 @@ See `references/framing-conversation-examples.md` for the worked dialogues.
 
 1. Pattern banks stale (>120 days), surface, offer refresh-first option
 2. Goal × temperature mismatch, surface the conversion math (see `references/audience-temperature-fit.md`)
-3. Angle conflicts with `viewer-hates-bank`, surface the prior flop pattern, creator can override with rationale
-4. Selected format outside current packaging defaults, surface, creator knowingly overrides
-5. Brain-dump thin for selected angle, flag what's missing, suggest vid-intake refresh
+3. Selected format outside current packaging defaults, surface, creator knowingly overrides
+4. Brain-dump thin for selected angle, flag what's missing, suggest vid-intake refresh
 6. Low anchor diversity (e.g., all 3 anchored candidates come from one channel), surface, suggest broader research
 
 ## Reference index

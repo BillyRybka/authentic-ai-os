@@ -21,9 +21,11 @@ This is the first skill in the foundation sequence. Without it, `vid-positioning
 
 **Outputs:** Offer, Avatar, and Top 3 perceived problems sections written to `foundation/creator-foundation.md` using the schema in `knowledge/creator-foundation-template.md`.
 
-**Downstream consumers:** `vid-positioning` (reads all three sections), `vid-pillars`, `vid-credibility`, `vid-backstory`, `vid-packaging`, `vid-voice-capture`, every per-video skill in the pipeline.
+**Downstream consumers:** `vid-positioning` (reads all three sections), `vid-pillars`, `vid-credibility`, `vid-backstory`, `vid-voice-capture`, `vid-research`, every per-video skill in the pipeline.
 
 ## Load at session start
+
+> **Resolving `knowledge/` paths.** Any path written `knowledge/X.md` is a plugin reference file. Load it from `${CLAUDE_PLUGIN_ROOT}/knowledge/X.md` when running as an installed plugin. If `${CLAUDE_PLUGIN_ROOT}` is unset or that path does not exist (running from the source repo during development), load `knowledge/X.md` relative to the repo root instead.
 
 1. `knowledge/interview-posture.md`. The shared interview posture every foundation interview skill follows. Conversation shape, voice rules, how to handle messy answers, how to use the creator's exact words. Non-negotiable.
 2. `knowledge/vault-integration.md`. Frontmatter schema, wikilink contracts.

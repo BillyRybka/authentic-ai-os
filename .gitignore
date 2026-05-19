@@ -33,13 +33,18 @@ _scratch/
 _strategy/
 _notes/
 
-# Vault scaffolding — gitignored until starter-vault is ready to ship
+# Creator vault data. NEVER ships. The product is the plugin, not Billy's content.
+# Clients get an empty vault scaffolded by creator-setup at runtime.
 foundation/
 banks/
 Content/
 People/
 Companies/
 Resources/
+raw/
+Notes/
+# Any test/working vault run from inside the repo (recommended: run it OUTSIDE the repo).
+Authentic-AI-OS/
 
 # Temp / scratch artifacts
 .tmp-*

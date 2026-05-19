@@ -42,7 +42,7 @@ Source root: `c:/Users/billr/projects/business-os/Resources/references/ed-lawren
 
 - **Reads:** `foundation/creator-foundation.md`, `foundation/voice-profile.md`
 - **Writes:** 7 bank files in `banks/`
-- **Downstream consumers:** vid-framing (pattern-bank, topic-patterns, format-patterns), vid-title (power-words, title-patterns), vid-thumbnail (thumbnail-patterns, power-words), future vid-pressure-test (viewer-hates)
+- **Downstream consumers:** vid-framing (pattern-bank synthesis + topic clusters + 3 sub-banks), vid-title (power-words, title-patterns), vid-thumbnail (thumbnail-patterns, power-words). Also authors packaging-system.md (read by vid-title, vid-thumbnail, vid-framing, vid-structure, vid-pressure-test). Banks consolidated 7 to 4 on 2026-05-19; format-patterns / topic-patterns / viewer-hates retired (see build-plan).
 - **Shared knowledge:** `knowledge/three-circle-research.md`, `knowledge/outlier-identification-rules.md` (both loaded by future vid-channel-audit and vid-measurement)
 - **Future feedback loop:** vid-measurement writes confirmed winners back to relevant banks with `confidence: proven` flag
 
