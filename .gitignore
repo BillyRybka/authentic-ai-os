@@ -32,17 +32,25 @@ build-plan.md
 _scratch/
 _strategy/
 _notes/
+# Dev scratch inside skills: machine paths + named third-party refs. Never ships.
+*WORKING-NOTES.md
+.claude/voice-audit-log.md
 
 # Creator vault data. NEVER ships. The product is the plugin, not Billy's content.
 # Clients get an empty vault scaffolded by creator-setup at runtime.
 foundation/
-banks/
 Content/
 People/
 Companies/
 Resources/
 raw/
 Notes/
+
+# Banks: the STRUCTURE + schema READMEs are product and ship.
+# The actual entries (and assets) are personal content and never ship.
+banks/*/**
+!banks/*/README.md
+banks/*.md
 # Any test/working vault run from inside the repo (recommended: run it OUTSIDE the repo).
 Authentic-AI-OS/
 

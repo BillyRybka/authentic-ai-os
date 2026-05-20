@@ -6,134 +6,126 @@ status: active
 tags: [reference, voice, schema]
 ---
 
-# Voice Profile Schema
+# Voice Schema and Load Contract
 
-Defines what fields go in `foundation/voice-profile.md`, why each one exists, and how downstream writing skills use them. The profile is structured in two layers.
+The canonical contract for how the creator's voice is stored and how every writing skill loads it. This file is the single source. The writing skills point here instead of restating the rules.
 
-## Why a schema (not freeform notes)
+## Three layers, three jobs
 
-The voice profile is loaded by every writing skill. They need predictable fields to look up. Freeform notes get scanned inconsistently, lose patterns, and drift away from the read-aloud test. The schema prevents that.
+Every piece produced by this system pulls from three non-overlapping layers, and they must stay that way:
 
-## Two-layer structure
+1. **Voice (this skill).** HOW the creator generally talks. Grain, cadence, register, signature moves, what they refuse to say. Lives in `foundation/voice-profile.md` plus `foundation/reference-pieces/`. Carries texture, not architecture and not content.
+2. **Brain dump (per piece).** WHAT the creator actually said for THIS piece. Their real words, claims, stories, examples, in their phrasing. Lives in `Content/pieces/{slug}/brain-dump.md`. The source of truth for substance.
+3. **Structure (the writing skills).** The architecture of each beat. Hook arc, segment shape, Pivot-Gap-Bridge ending, CTA, push to the next video. Same best practice for every creator. Lives in `vid-intro`, `vid-segment`, `vid-ending`, `vid-structure`, and the format planners.
 
-**Layer 1: Core profile.** Patterns that hold across every format the creator uses. Their true voice fingerprint.
+A writing skill polishes the brain dump's content, in the voice grain, on the structure spec. Crossing lines causes the failures this system was built against: voice samples that smuggle structure produce repetitive endings; structure prescriptions that lock content produce generic videos; brain dumps polished into "better prose" lose the voice. Keep the layers clean.
 
-**Layer 2: Context maps.** Per-format sub-profiles. Each captures the patterns that flex for a specific platform/format. Only formats with enough source material get their own map.
+The rest of this file specifies the voice layer.
 
-When a writing skill produces (say) a YouTube script, it loads Layer 1 (always) plus the YouTube context map (if it exists). Both apply during the read-aloud pressure-test.
+## The principle (read this first)
 
-## Layer 1: Core fields
+Voice is reproduced from the creator's real sentences, not from a description of them. Cadence, word choice, and the feel of a real line live in the surface text. An abstracted rule ("self-Q&A, heavy" or "8 em-dashes per 1000 words") is a lossy compression a model can satisfy while still sounding generic.
 
-### `recurring_phrases` (required, list)
+So the system stores two things, with different jobs:
 
-5 to 10 phrases the creator uses across formats. Real quotes, not paraphrases. These are the strongest preservation anchors. If a draft doesn't contain at least one or echo one closely, voice drift is likely.
+1. **`foundation/reference-pieces/{voice_context}.md`, the voice engine.** One file per populated `voice_context`. Real passages the creator produced, intact, as `## ` sections inside the file. This is the generation seed. The writing skill reads it and writes in its grain.
+2. **`foundation/voice-profile.md`, the thin guardrail.** The short list of things examples cannot teach: what the creator refuses to say, the signature phrases, the energy floor. A constraint layer, not the voice.
 
-### `words_avoided` (required, list)
+Statistics (sentence-length distributions, punctuation counts) are not stored anywhere as generation input. Rhythm is judged at validation time, by ear, against the reference pieces. See [[voice-pressure-test]].
 
-Words and phrasings the creator does not use. Often: corporate jargon, hedges, AI-tells, academic filler. Each entry pairs with its preferred replacement.
+Banned terminology: do not say "voice locked" or "voice-locked drafting" anywhere in output or files. The creator rejected it. The voice is preserved, never "locked."
 
-### `anti_patterns` (required, list)
+## Artifact 1: `foundation/reference-pieces/{voice_context}.md`
 
-Phrasings the creator would never write. Stronger than "words avoided." Examples: "Let's dive in," "But here's where it got interesting," any AI-tell. Captured from corrections, edits, or voice-rule-capture history.
+Curated by `vid-voice-capture`. **One file per populated `voice_context`.** Inside: the creator's real passages as `## ` sections, intact (not trimmed of structure). Each section opens with a `> Demonstrates:` line in plain language, then the verbatim passage.
 
-### `pov_default` (required, string plus notes)
+Number: usually 3 to 8 passages, depending on the creator's range. Aim for 2 to 3 per major beat type the creator uses (cold-open, plain teach, live demo, signature analogy, ending). Single-sample beats are prone to structural shadowing in downstream writing; multiple samples per beat dilute that. The number serves coverage and dilution, not a fixed target.
 
-Which pronoun dominates and when. "I" for X. "You" for Y. "We" for Z. Includes any rules ("never use 'one' as a generic pronoun").
+Passages stay **intact**, not stripped of structural content. Stylometric and practitioner evidence is one-directional: flattened voice-only fragments lose the rhythm that IS voice. Whole passages carry the grain. The risk that intact samples cause downstream writing to copy their structural arc is real but is handled by (a) keeping 2 to 3 samples per beat to dilute any single arc, and (b) the explicit voice-only-not-structure clause every writing skill carries (see Load contract). The reference set is voice; structure stays the writing skill's job.
 
-### `energy_baseline` (required, string)
+Selection is by stylistic representativeness, not topic. Pick passages that together span the creator's actual range (their calm and charged poles, every distinct register including any live-demonstration register, and their signature moves), not the most frequent or the most on-topic. Range is derived from the creator's tape, not a fixed slot set. See `voice-extraction-methods.md` Step 2.
 
-The energy floor. What's true even in their lowest-energy context. Examples: "quiet confidence," "dry wit," "directness without aggression," "high conviction."
+**A creator-designated improvised moment is never curated as a reference piece.** A creator may have a personal beat they always deliver live and never want scripted. Storing it as a seed would let a writing skill regenerate it, which the creator forbade. It lives only as a refusal in Artifact 2.
 
-### `rhetorical_baseline` (required, list)
+## Artifact 2: `foundation/voice-profile.md`
 
-Devices the creator uses across formats: metaphor habit, rhetorical question habit, understatement, callback, rule-of-three, hyperbole. With frequency notes ("metaphor every 3-4 paragraphs in long-form" or "rhetorical question once per intro").
+Small. Always loaded. These sections, in order:
 
-### `sources_analyzed` (required, list)
+### `voice_fingerprint` (required, 2 to 4 sentences)
 
-Every source that fed the profile, with date and context tag. Refresh runs need this to know what's already been processed.
+Prose gestalt. The fastest possible orientation to who this sounds like. Not a field list.
 
-### `preferred_hook_types` (optional, list)
+### `signature_phrases` (required, list)
 
-Which of the canonical 5 hook types the creator naturally defaults to: `question`, `contrarian`, `statement`, `fact`, `credibility`. Populated when `vid-voice-capture` notices a clear pattern across captured sources. Used by `vid-intro` to weight candidate generation toward the creator's natural opening style. Empty list means no preference established yet — generate across all 5 and let the creator pick.
+Verbatim recurring phrases, real quotes, not paraphrases. These are high-fidelity anchors that survive generation. If a draft contains or closely echoes one, voice signal is present. If a long piece echoes none, signal is weak.
 
-### `transition_style_preferences` (optional, free-form text)
+### `refusals` (required)
 
-How the creator naturally bridges between ideas. Examples: "uses 'Here's the thing' a lot", "rarely uses 'so' as a transition", "leans on rhetorical questions to pivot". Populated from observed patterns. Used by `vid-intro` and (later) `vid-segment` to filter candidate transitions toward the creator's voice and against patterns they don't use.
+The rule layer. The only place rules live. Three kinds:
 
-### `intro_pacing` (optional, descriptor)
+- **Anti-patterns.** Full phrasings the creator would never write. Hard reject in any output. Includes the global product rules (em-dashes, real profanity in place of the clean register) and creator-specific ones.
+- **Words avoided.** Each entry is `word to swap (one-line reason)`. The reason is required, not optional. Reasons let the model generalize to unseen offenders ("elevate," "amplify," "transform") instead of catching only the words on the list. Example: `ship to post (software metaphor, reads wrong for content)`. Soft reject, auto-swap.
+- **Hard creator rules.** Named, explicit. Common shapes: never script a creator-designated improvised moment (leave the slot, never draft its text); never carpet-bomb an emphasis device or place it on a cadence (it fires at peaks by function, not by frequency).
 
-Pace of the creator's opening 30 seconds. Examples: `fast` (lots of cuts, quick beats), `measured` (steady, conversational), `slow-burn` (builds tension before payoff). Used by `vid-intro` to calibrate hook length, problem/result depth, and setup tightness against the creator's natural feel.
+### `pov_and_energy` (required, hard cap)
 
-## Layer 2: Context map fields
+Two short paragraphs maximum: one for POV, one for energy. No more. This section is for orientation, not a spec, and bloats over refreshes if left open-ended.
 
-Each context map is a sub-section per format the creator uses. Formats without enough source material get a stub note instead.
+- **POV (2 sentences max).** Which pronoun dominates and when. Example: "Talks to one viewer in 'you.' Uses 'I' for personal stories and 'we' for live build-along."
+- **Energy floor (2 sentences max).** What is true even at their calmest. Example: "Conversational but charged. Even at baseline they ask rhetorical questions and address the viewer directly; never goes flat or corporate."
 
-Common context keys:
+### vid-intro orientation fields (optional)
 
-- `youtube-script`
-- `newsletter`
-- `linkedin`
-- `twitter`
-- `podcast`
-- `casual` (DMs, Slack, raw conversational)
-- `talk` (keynote, webinar, live talk)
+Kept because `vid-intro` consumes them as a documented input. Populate only if clearly observed across sources, otherwise omit the field (do not write a guess):
 
-Each populated context map contains:
+- `preferred_hook_types`: which of `question | contrarian | statement | fact | credibility` the creator defaults to.
+- `transition_style_preferences`: free text, how they bridge ideas.
+- `intro_pacing`: `fast | measured | slow-burn`.
 
-### `sentence_rhythm` (required per context)
+### `context_flex` (required if any context file exists, one line each)
 
-Short/medium/long distribution. Example: "60% short (≤8 words), 25% medium (9-20), 15% long (21+). Pattern: short-short-long, then snap back short."
+One line per populated `voice_context`: how that context differs from the baseline, and confirmation that `foundation/reference-pieces/{voice_context}.md` exists. This is a pointer, not a sub-profile. No quantitative fields.
 
-### `paragraph_structure` (required per context)
+### `sources_analyzed` + `update_log` (required)
 
-Single-sentence vs multi-sentence ratio. Example: "70% single-sentence paragraphs, 30% 2-3 sentence. No 4+ sentence paragraphs in this context."
+Every source that fed the profile, with date and `voice_context` tag. One single update log for the whole profile. No per-context logs.
 
-### `punctuation_signature` (required per context)
+## `voice_context` (the medium axis)
 
-Per 1000 words: em-dash count, ellipsis count, parenthetical count, semicolon count, exclamation count. Example: "Newsletter: 8 em-dashes per 1000 words, 0 semicolons, 2 parentheticals, 1 exclamation."
+`voice_context` is the delivery medium or mode the creator's voice is in. It is orthogonal to `format` (the structural template of the video). A `listicle` could be delivered as a screen-share `tutorial` or a talking-head `youtube-script`. Do not derive one from the other.
 
-### `opener_pattern` (required per context)
+Values: `youtube-script` | `tutorial` | `shorts` | `newsletter` | `linkedin` | `twitter` | `podcast` | `casual` | `talk`.
 
-What % of pieces in this context open with question / declaration / anecdote / data-first / contrarian / quote. Example: "YouTube script: 70% question-opener, 20% declaration, 10% anecdote."
+`piece.md` carries `voice_context:` (default `youtube-script`), set by `vid-framing` alongside `format`. Schema home: [[vault-integration]] piece.md schema.
 
-### `closing_pattern` (required per context)
+## The unified load contract (every writing skill follows this exactly)
 
-CTA style for this format. Options: none, direct ask, callback, community invite, question back, series teaser. Example: "Newsletter: callback to opener, no direct ask. LinkedIn: question back to invite comments."
+When a writing skill (`vid-intro`, `vid-segment`, `vid-ending`, `vid-structure`) produces output:
 
-### `energy_modulation` (required per context)
+1. Load `foundation/voice-profile.md` always. The fingerprint, signature phrases, and refusals apply to every line.
+2. Read `voice_context` from the piece's `piece.md` (default `youtube-script` if absent).
+3. If `foundation/reference-pieces/{voice_context}.md` exists, load it. The `## ` sections inside are the generation seed: read them together to internalize the creator's combined cadence, then write in their grain.
+4. If that file does not exist, seed from the `voice_fingerprint` and `signature_phrases` only, and note the gap in the output meta so the creator can add sources for that context.
+5. Honor `refusals` as hard constraints. An anti-pattern present is wrong, not "soft." A creator hard rule (a never-script-this moment, an emphasis-cadence ban) is a hard block.
+6. Before save, run [[voice-pressure-test]].
 
-Does the creator dial up or down here vs. their baseline? Example: "YouTube: dials up to performer. Email: drops below baseline to direct/dry. LinkedIn: matches baseline."
+**Reference pieces are voice only, not structure.** The passages carry cadence, word choice, register, and signature moves. They do NOT determine the architecture of what you write. Hook arc, segment shape, Pivot-Gap-Bridge ending, CTA, push to the next video, those are the writing skill's spec, the same best practice for every creator. If a reference passage's structural arc conflicts with the spec, follow the spec. Reproduce the grain of the passages, not their order of moves.
 
-### `format_specific_phrases` (optional per context)
+Reference pieces are a seed, not a script to mirror. Read them as samples of how the creator talks and reproduce that feel. Signature phrases are anchors (one or two surfacing in long-form is a healthy signal, not a target to hit).
 
-Phrases that are strong in this context but absent elsewhere. Example: "newsletter: 'I'll be honest with you' (7x in 12 newsletters, never appears in YouTube scripts)."
+## Refresh and merge logic (vid-voice-capture re-runs)
 
-### `format_specific_transitions` (optional per context)
+Per `voice_context`:
 
-How they move between ideas in this format specifically. Example: "Newsletter: 'Here's the thing.' YouTube: 'But.' or 'So.' Twitter: just a line break."
+- Context has new validated passages and an existing file: append new `## ` sections to the file, tag the profile update log with the date and what was added. Keep prior passages unless the creator retires them.
+- Context file exists but new sources no longer validate it: do not silently delete. Mark it `deprecated` in the `context_flex` line with the reason, keep the file. Consumers loading a deprecated context log a warning and fall back to fingerprint-only.
+- New context: create the file (`foundation/reference-pieces/{voice_context}.md`), add the `context_flex` line, log it.
+- **At every refresh, re-ask the exclusion-rule question:** "Any new moment you always deliver live and never want drafted? Any existing one no longer relevant?" Refusals drift the same way passages do.
 
-## Confidence flags
+A missing context is simply no file. There are no stub files anywhere.
 
-Every field can carry a confidence tag:
+## What this schema does not do
 
-- `confidence: high`: pattern survived cross-validation across multiple sources
-- `confidence: medium`: pattern strong in 2+ sources but limited corpus
-- `confidence: low`: pattern from 1-2 sources, surface for creator review
-- `confidence: format-specific`: pattern only validates in one context, treat as context-map-only
-- `confidence: deprecated`: pattern was true at last build but doesn't hold in new sources, kept for diff history
-
-## How writing skills use the schema
-
-When vid-segment, vid-intro, or any other writing skill produces output, it:
-
-1. Loads Layer 1 (core profile). Always
-2. Determines what context it's writing for (YouTube script, newsletter, etc.)
-3. Loads matching Layer 2 context map if it exists, falls back to core only if not
-4. Pressure-tests output against both layers
-5. Flags any output line that contradicts a high-confidence pattern
-
-See `voice-pressure-test.md` for the validation flow.
-
-## Read-aloud test
-
-Every section in the profile is final only when the creator says it sounds like them out loud. If the schema says "70% question-opener" but the creator reads three of their own questions and reworks them, the data is wrong (or the sources were wrong). The read-aloud test overrides the data.
+- It does not store rhythm or punctuation numbers. Those are validation instruments only. See [[voice-pressure-test]].
+- It does not replace the read-aloud test. If the creator reads output and would reword it, the voice is wrong even if every rule passed.
+- It does not invent a voice. `vid-voice-capture` surfaces what is already in the sources. Empty beats guessed.

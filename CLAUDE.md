@@ -76,9 +76,9 @@ When meaningful info comes up — a correction, a fact about the creator, a new 
 | Type | Route to |
 |------|----------|
 | Creator positioning, avatar, credibility, backstory | `foundation/creator-foundation.md` |
-| Speech patterns, recurring phrases, language rules | `foundation/voice-profile.md` |
+| Voice guardrail: fingerprint, signature phrases, refusals, POV/energy | `foundation/voice-profile.md` |
 | Gift framework, format rotation, thumbnail strategy | `foundation/packaging-system.md` |
-| A full polished piece (own or studied) preserved verbatim for piece-level voice rhythm | `foundation/reference-pieces/{slug}.md` (via `vid-voice-capture`) |
+| Real creator passages preserved verbatim, the voice engine writing skills write from | `foundation/reference-pieces/{voice_context}.md` (one file per context, passages as `## ` sections, via `vid-voice-capture`) |
 | A story the creator told | `banks/story-bank/{slug}.md` (via `vid-capture`) |
 | A proof point (number, result, credential) | `banks/proof-bank/{slug}.md` (via `vid-capture`) |
 | A metaphor or analogy | `banks/metaphor-bank/{slug}.md` (via `vid-capture`) |

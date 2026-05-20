@@ -8,106 +8,75 @@ tags: [reference, voice, pressure-test]
 
 # Voice Pressure Test
 
-How writing skills validate produced output against `foundation/voice-profile.md` to ensure voice preservation. Used both during writing (to catch drift before saving) and during the vid-voice-capture read-aloud step (to confirm captured patterns are real).
+How a writing skill validates its output before saving. Read [[voice-profile-schema]] first for what is stored and why. This file is the check.
 
 ## Why pressure-test
 
-The brain dump is the voice. The voice profile is the preservation checklist. Between input and output, Claude adds connective tissue (transitions, restructuring, light polish). Drift happens in that connective tissue. The pressure test catches it before the creator does.
+The brain dump is the voice. The reference pieces show its grain. Between input and output, Claude adds connective tissue (transitions, restructuring, light polish). Drift happens in that connective tissue. The pressure test catches it before the creator does.
+
+It validates by ear against the creator's real passages. It does not compare against stored numbers, because no numbers are stored. Rhythm is a thing you hear, not a target you hit.
 
 ## When to run
 
-- **At the end of any writing skill** (vid-segment, vid-intro, vid-ending) before output is saved
-- **At the end of vid-voice-capture Stage 6** to validate that extracted patterns survive the creator's own read-aloud
-- **When a creator says "this doesn't sound like me"**: run pressure test against the rejected piece, find which patterns the output violates, log for next refresh
+- At the end of any writing skill (`vid-intro`, `vid-segment`, `vid-ending`, `vid-structure`) before output is saved.
+- At the end of `vid-voice-capture` when the creator reads the curated passages back.
+- When a creator says "this doesn't sound like me": run it against the rejected piece, find what it violates, log for the next refresh.
 
-## The two-pass check
+## Pass 1: guardrail check (always runs)
 
-### Pass 1: Core profile validation (Layer 1)
+Against `foundation/voice-profile.md`:
 
-Always runs. Checks the produced output against the cross-context core fields.
+1. **Signature phrases.** Does the piece contain or closely echo at least one? Long-form should surface one or two naturally. Zero is a weak-signal flag, not an automatic fail. Never pad to hit a count.
+2. **Refusals: anti-patterns.** Scan for any. Even one is a hard reject. Includes em-dashes and real profanity in place of the clean register.
+3. **Refusals: words avoided.** Each hit is a soft reject. Auto-swap to the paired replacement or flag.
+4. **Refusals: creator hard rules.** The named rules (for example: no scripted text anywhere for a creator-designated improvised moment, no carpet-bombed or cadence-placed emphasis device). Any breach is a hard reject.
+5. **POV and energy.** Does the pronoun use match the creator's default? Does the piece sit at or above the energy floor? Qualitative. Claude makes the call and flags if unsure.
 
-For each output paragraph, verify:
+## Pass 2: grain check (only if a reference-pieces folder exists for the piece's `voice_context`)
 
-1. **Recurring phrases.** Does the piece contain at least one core recurring phrase, or echo one closely? Long-form pieces should contain 2-3. If zero, voice signal is weak.
+No statistics. The method is the ear.
 
-2. **Anti-patterns.** Scan for any phrase in `anti_patterns`. Hard reject. Even one anti-pattern means the output failed.
+1. Load the passages in `foundation/reference-pieces/{voice_context}.md` (the `## ` sections inside).
+2. Read a representative reference passage aloud, then read the produced section aloud right after it.
+3. Judge, by that back-to-back read: does the output's sentence-length variation, paragraph shape, opener move, and energy feel like it came from the same person in the same mode? Real voice mixes short punchy lines with longer ones that earn their length. A section that runs all-uniform reads as a summary even when every word-rule passed.
+4. If the output drifts from the reference grain (flat rhythm, wrong opener default, energy off for this context), it is a soft reject. Restructure toward the reference feel, do not bolt on phrases.
 
-3. **Words avoided.** Scan for any word in `words_avoided`. Each hit is a soft reject. Flag for manual review or auto-swap to the preferred replacement.
-
-4. **POV consistency.** Does the output match the creator's POV defaults? "I" used for what they use I for, "you" used appropriately, no rogue "we"-as-plural drift.
-
-5. **Energy match.** Does the piece feel like the energy_baseline? Reading it aloud, does it match the descriptor? This is qualitative. Claude makes the call but flags if uncertain.
-
-6. **Rhetorical baseline.** If the creator uses metaphors every 3-4 paragraphs and the output has zero metaphors in 12 paragraphs, flag. Same for rhetorical questions, callbacks, etc.
-
-### Pass 2: Context map validation (Layer 2)
-
-Runs only if a context map exists for what the skill is producing.
-
-For each section of output, verify against the matched context map:
-
-1. **Sentence rhythm.** Does the actual rhythm of the output approximate the creator's distribution for this context? If the creator's YouTube voice is 75% short sentences and the output is 30% short, the rhythm is wrong.
-
-2. **Paragraph structure ratio.** If the creator's newsletter is 65% single-sentence paragraphs and the output is 20%, the structure is wrong for context.
-
-3. **Punctuation signature.** If the context map says "9 em-dashes per 1000 words" and the output has 1 in a 1500-word piece, the punctuation pattern is off.
-
-4. **Opener pattern.** Does the piece open with the dominant opener for this context? If the creator's YouTube is 70% question-opens and the script opens with a declaration, flag (could be intentional, could be drift, surface for review).
-
-5. **Closing pattern.** Does the close match the context's CTA pattern?
-
-6. **Energy modulation.** Does the energy match the modulation note for this context (dialed up for YouTube vs. dialed down for email)?
-
-7. **Format-specific phrases.** If the context map has phrases that should appear in this format, are they present or echoed?
+If no folder exists for this `voice_context`, Pass 2 is skipped. Note the gap in the output meta so the creator can add sources for that context. If the `context_flex` line marks the context `deprecated`, log a warning and run Pass 1 only.
 
 ## Severity tiers
 
-Not every drift is equal. Use these tiers:
+- **Hard reject.** Anti-pattern present, creator hard rule breached, or POV violation. Do not save. Restructure.
+- **Soft reject.** Words-avoided hit, or grain clearly off against the reference pieces. Auto-swap if possible, otherwise flag for creator review before save.
+- **Soft warn.** Zero signature-phrase echo in long-form, or opener default not matched. Flag in meta, allow save.
+- **Pass with note.** Within tolerance. Save with a one-line summary in `piece.md`.
 
-- **Hard reject**: anti-pattern present, or POV violation. Don't save. Restructure.
-- **Soft reject**: word from `words_avoided` present, or sentence rhythm severely off. Auto-swap if possible, otherwise flag for creator review before save.
-- **Soft warn**: opener pattern doesn't match dominant context default, or a recurring phrase is absent in long-form. Flag in output meta but allow save.
-- **Pass with note**: patterns within tolerance. Save with a one-line voice-pressure-test summary in meta.
+## The read-aloud test (final arbiter)
 
-## The read-aloud test
+After the checks:
 
-After all quantitative checks, run the human-in-the-loop check:
+> "Read the output aloud. If you would reword anything, the test failed."
 
-> "Read the output aloud. If you'd reword anything, the test failed."
-
-This is the final arbiter. Numbers and pattern-matching can pass while the output still feels off. The creator's mouth knows.
-
-In standalone vid-voice-capture (Stage 6), the read-aloud runs against quoted patterns from the profile itself. In writing skills, the read-aloud runs against the produced piece.
-
-If creator reads aloud and would reword: drop back to brain dump, find what was over-polished, re-structure preserving creator's exact phrasing for that beat.
+This overrides every mechanical pass. Numbers and pattern-matching can pass while the output still feels off. The creator's mouth knows. If they would reword: drop back to the brain dump, find what got over-polished, restructure preserving the creator's exact phrasing for that beat.
 
 ## Logging
 
-Each writing skill that uses pressure-test logs its result in the piece's `piece.md`:
+Each writing skill logs its result in the piece's `piece.md`:
 
 ```yaml
 voice_pressure_test:
   date: YYYY-MM-DD
   result: pass | soft-warn | soft-reject | hard-reject
-  layer1_pass: true | false
-  layer2_context: youtube-script | newsletter | linkedin | etc
-  layer2_pass: true | false
+  pass1_guardrail: true | false
+  voice_context: youtube-script | tutorial | shorts | newsletter | etc
+  pass2_grain: true | false | skipped-no-reference
   flags: [list of any soft warnings or rejects]
   read_aloud_confirmed: true | false
 ```
 
-This log feeds future refresh runs of vid-voice-capture. Repeated drift on the same field signals the profile needs updating.
-
-## What pressure-test does NOT do
-
-- It doesn't generate. It validates.
-- It doesn't override creator brain dump phrasing. If the creator's actual words seem to violate a captured pattern, the brain dump wins. The profile is descriptive, not prescriptive.
-- It doesn't replace the read-aloud test. Quantitative checks are a pre-filter, the creator's ear is final.
-- It doesn't enforce one-size-fits-all. Layer 2 context maps exist precisely so the test adapts to format.
+This log feeds future `vid-voice-capture` refreshes. Repeated drift on the same thing signals the profile or the reference set needs updating.
 
 ## Failure modes
 
-- **Profile drift.** If pressure-test repeatedly fails on the same pattern across multiple pieces, the profile is stale. Trigger vid-voice-capture refresh.
-- **Context-map mismatch.** Writing skill producing for a context that has no map yet. Falls back to core only. Note the gap, suggest creator gather more sources for that context.
-- **Brain dump conflicts with profile.** If the creator's brain dump for THIS piece uses phrasing that contradicts the profile, the brain dump wins. Update the profile in the next refresh if the new pattern persists.
-- **Output passes mechanically but creator rejects in read-aloud.** The mechanical pass missed something the ear caught. Log what creator changed, that's a candidate field for the profile or an addition to anti-patterns.
+- **Reference set thin or absent for a context.** Pass 2 skipped, gap noted. Suggest the creator add sources for that `voice_context`.
+- **Brain dump conflicts with the guardrail.** The brain dump wins. It is the creator's actual words for this piece. If the new pattern persists across pieces, update the profile at the next refresh.
+- **Passes mechanically but the creator rejects it on read-aloud.** The ear caught what the checks missed. Log what the creator changed. That is a candidate refusal or a sign the reference set needs a better passage.

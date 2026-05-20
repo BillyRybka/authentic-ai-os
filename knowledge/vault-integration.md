@@ -65,34 +65,36 @@ project: authentic-ai-os
 status: active
 date: YYYY-MM-DD
 last_refreshed: YYYY-MM-DD            # most recent update. Drives "stale doc" warnings (e.g. voice-profile older than 90 days)
-contexts_populated: [long-form, email]  # voice-profile only. Which Context Maps in Layer 2 have been filled (long-form | shorts | email | linkedin | twitter | other). Empty list is valid for fresh profiles.
+contexts_populated: [youtube-script]  # voice-profile only. Which voice_context reference-piece sets exist under foundation/reference-pieces/. Empty list is valid for fresh profiles.
 tags: [foundation, {doc-specific-tags}]
 ---
 ```
 
 **Field notes:**
 - `last_refreshed`: every foundation doc. Updated whenever the doc gets edited. Skills warn the creator if a load-bearing doc (voice-profile, especially) hasn't refreshed in 90+ days.
-- `contexts_populated`: voice-profile only. The Layer 2 Context Maps that have been filled. Other foundation doc types omit this field or set it to `[]`.
+- `contexts_populated`: voice-profile only. The `voice_context` values that have a reference-piece set under `foundation/reference-pieces/`. Other foundation doc types omit this field or set it to `[]`.
 
 ### Reference pieces
 
-Location: `foundation/reference-pieces/{slug}.md`
+Location: `foundation/reference-pieces/{voice_context}.md` (one file per populated `voice_context`).
 
-Full polished pieces preserved verbatim. Used as piece-level voice anchors at write time. No restructuring, no summarization, no light edits — store as-is so writing skills can read true rhythm and structure off real finished work. Mix of own and studied (own preferred).
+The voice engine. Real passages the creator produced, the generation seed writing skills write from. Curated by `vid-voice-capture`, one file per `voice_context`, with passages inside as `## ` sections. Passages stay **intact** (not trimmed of structure) and verbatim: no restructuring, summarizing, or light edits. A creator-designated improvised moment (a personal beat the creator always delivers live and never wants scripted) is never stored here; it is a refusal in voice-profile.md.
 
 ```yaml
 ---
-type: reference-piece
+type: reference-pieces
 project: authentic-ai-os
-source: own                 # own | studied
-title: "..."
+voice_context: youtube-script
 captured: YYYY-MM-DD
-voice_focus: [tags describing what this piece teaches the writing skill — e.g. "intro-pacing", "story-payoff", "list-rhythm"]
-status: active              # active | archived
+last_refreshed: YYYY-MM-DD
+sources: ["{source filename}", ...]
+tags: [voice, reference-pieces, context-{voice_context}]
 ---
 ```
 
-**How writing skills use them:** at startup, `vid-intro`, `vid-segment`, and `vid-ending` load `foundation/reference-pieces/*.md` alongside `voice-profile.md`. The voice profile gives them the rules; the reference pieces give them the live rhythm. Both are needed — voice rules without rhythm produce stilted output, rhythm without rules drifts off-creator.
+Body holds a short intro line plus each passage as a `## ` section. Each section opens with a `> Demonstrates:` line (plain-language description of the mode and energy that passage shows, derived from the creator) then the verbatim passage.
+
+**How writing skills use them:** per the contract in [[voice-profile-schema]], a writing skill loads `voice-profile.md` (the thin guardrail) always, plus `foundation/reference-pieces/{voice_context}.md` matching the piece's `voice_context` (default `youtube-script`) as the seed. Voice only, not structure: the passages carry cadence, word choice, register, signature moves. The writing skill's spec (hook arc, segment shape, Pivot-Gap-Bridge ending) owns the architecture. If a passage's structural arc conflicts with the spec, follow the spec. Rhythm is judged by ear against the passages, never against stored numbers.
 
 ### Story entries
 
@@ -202,6 +204,7 @@ project: authentic-ai-os
 slug: video-slug
 pillar: {pillar-slug}           # creator's content pillar
 format: short-process           # from the 7 formats: short-process | case-study | roast | deep-dive | interview | news | listicle
+voice_context: youtube-script   # delivery medium for voice: youtube-script (default) | tutorial | shorts | newsletter | linkedin | twitter | podcast | casual | talk. Orthogonal to format. Set by vid-framing. Drives which foundation/reference-pieces/{voice_context}.md a writing skill loads.
 goal: sales                     # sales | emails | views (ONE only)
 status: ideating                # ideating | drafting | filming-ready | filmed | editing | published
 captured: YYYY-MM-DD

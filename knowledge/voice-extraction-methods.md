@@ -8,205 +8,101 @@ tags: [reference, voice, extraction]
 
 # Voice Extraction Methods
 
-How to pull voice patterns out of existing creator content. The output of this work goes into `foundation/voice-profile.md` (schema in `voice-profile-schema.md`).
+How to turn the creator's existing content into the two artifacts in [[voice-profile-schema]]: curated reference pieces (the voice engine) and a thin guardrail (`foundation/voice-profile.md`). Read the schema first.
+
+The load-bearing move is passage selection, not rule extraction. The old instinct (read everything, distill it into rules and numbers) loses the voice. The job is to find the creator's best real passages and keep them intact.
 
 ## The cross-validation principle
 
-A pattern from one source is a coincidence. A pattern from one format (all transcripts, no writing) is format noise. A pattern from multiple sources across multiple formats is voice.
+A pattern from one source is a coincidence. A pattern from one medium (all transcripts, no writing) is medium noise. Something that holds across multiple sources and multiple media is voice.
 
-The extraction process always asks: "does this hold across the corpus?" Single-source patterns get demoted or dropped. Cross-source patterns get promoted to the profile.
+This decides where things go:
 
-## Source types and what they tell you
+- Holds across sources and across `voice_context`: it belongs in the guardrail (`signature_phrases`, `refusals`, fingerprint).
+- Strong in one `voice_context`, absent elsewhere: it stays in that context's reference pieces. Do not promote it.
+- One source only: drop it, or flag low-confidence for creator review. Never bake a guess.
 
-Different sources reveal different patterns. Pulling from a mix matters more than pulling a lot from one type.
+## Source types and what they give you
 
-- **YouTube transcripts**: sentence rhythm, fillers, opener patterns, energy variation, real recurring phrases (people repeat themselves more on camera than in writing)
-- **Podcast appearances or interview transcripts**: conversational rhythm, how they answer questions, callbacks, off-script tics
-- **Newsletters / blog posts / long-form prose**: paragraph structure, punctuation signature, written sentence rhythm, transitions, callback structure, CTA style
-- **LinkedIn / Twitter posts**: short-form rhythm, hook patterns, opener clusters, line-break habits
-- **Email replies, DMs, Slack messages**: raw conversational voice, energy floor, the voice they DON'T perform
-- **Past scripts they drafted**: best signal for "here's what they want to sound like"
-- **Live 10-minute monologue (recorded fresh)**: current voice baseline if archive is thin
+A mix matters more than volume from one type.
 
-## Method A: Quantitative pass (numbers)
+- **YouTube / video transcripts:** spoken rhythm, recurring phrases, opener and energy patterns. People repeat themselves more on camera than in writing.
+- **Podcast / interview transcripts:** conversational rhythm, how they answer, off-script tics.
+- **Newsletters / long-form prose:** written cadence, paragraph shape, transitions, closing style.
+- **LinkedIn / Twitter:** short-form rhythm, hook and opener habits, line-break feel.
+- **Email / DM / Slack:** the raw floor, the voice they do not perform.
+- **Past scripts they drafted:** the strongest signal for what they want to sound like.
+- **Live 10-minute monologue (recorded fresh):** the spoken floor when the archive is thin.
 
-Per source, count and record:
+## Step 1: group sources by `voice_context`
 
-### Sentence length distribution
+Sort every source into a `voice_context` (the medium/mode it was produced in): `youtube-script`, `tutorial`, `shorts`, `newsletter`, `linkedin`, `twitter`, `podcast`, `casual`, `talk`. A context needs roughly 3 pieces or 5,000 words before it earns its own curated reference set. Thinner contexts feed the guardrail only and are flagged.
 
-Split text into sentences. Count words per sentence. Record:
-- Median sentence length
-- Range (shortest to longest)
-- % short (≤8 words), % medium (9-20 words), % long (21+ words)
-- Pattern observation (does the creator alternate short-short-long? cluster long sentences then snap back?)
+## Step 2: diagnose the frame, then select passages
 
-**Example output:** "Newsletter: median 11 words. 55% short, 30% medium, 15% long. Pattern: opens with 1-2 short sentences, expands to medium, occasional long for nuance, returns short."
+Do not fill a fixed template. A generic peak / baseline / signature slot set fails on real creators: a creator who always teaches through examples has no flat baseline, and a creator who narrates a live screen demo has a mode no slot set names.
 
-### Paragraph structure ratio
+Instead, read all the grouped sources for a context and form a rough picture of the creator's actual range: the modes they shift into for different moments (a cold-open hook, plain teaching, a live on-screen demonstration narrating an action, a rant, a told story, whatever the tape shows), where they sit calm and where they spike, and the recurring rhetorical move that is unmistakably them. This is a private coverage lens, not a sorting job. A real passage usually spans several of these at once, and that is fine. Do not categorize each passage, do not argue categories with the creator, do not defend a passage as one type. The lens exists to catch exactly one failure: a whole mode the creator clearly uses going unrepresented in the final set.
 
-Count paragraphs. For each, count sentences. Record:
-- % single-sentence paragraphs
-- % 2-3 sentence paragraphs
-- % 4+ sentence paragraphs
+State that picture back to the creator in plain language, get it confirmed, then select the passages. This replaces guess, pick, get corrected, re-pick with confirm-then-fill.
 
-**Example output:** "LinkedIn: 80% single-sentence paragraphs. Almost no 4+ sentence paragraphs in this corpus."
+Select for `foundation/reference-pieces/{voice_context}.md` so the set spans the creator's calm and charged poles, every distinct mode they actually use (the live-demonstration mode is the easiest to miss and under-weight, since it reads looser than scripted teaching and hides in screen-share sources), and their signature move. Usually 3 to 8 passages depending on the creator's range, aiming for 2 to 3 per major beat type to dilute structural shadowing in downstream writing. The number serves coverage, never the reverse. If a creator has no flat baseline because they always teach through examples, that absence is the finding, not a slot to fill.
 
-### Punctuation signature
+**Registers are a coverage dimension inside one `voice_context`, not a reason to split contexts.** A creator whose hook, teaching, and outro are the same voice but who shifts into a looser register while demonstrating on screen is ONE context with a demonstration register in its reference set. Split `voice_context` only when the delivery medium is a genuinely separate persona (a written newsletter against a spoken video), never when the same person shifts register inside one medium.
 
-Per 1000 words of source, count:
-- Em-dashes (`,` or `--` if formatted that way)
-- Ellipses (`...` or `…`)
-- Parenthetical asides `(like this)`
-- Semicolons
-- Exclamation marks
-- Question marks
+**Provenance check (hard).** Before describing any passage, read its surrounding source text and confirm what it actually is. A passage where the creator is narrating an on-screen action is the demonstration register even when it sounds calm; do not describe it as plain teaching. Describe by what the source shows, never by how it sounds in isolation.
 
-**Example output:** "Newsletter: 8 em-dashes per 1000 words, 0 semicolons, 2 parentheticals, 1 exclamation, 4 questions."
+Pick for stylistic representativeness, not topic: a passage chosen because it matches a subject narrows the voice to that subject. Keep each passage **intact**, the way the creator actually said or wrote it, a few sentences to a short paragraph. Do not flatten or strip structural elements; flattened samples lose the rhythm that IS voice (the stylometric evidence is one-directional on this). Long enough that the rhythm is audible, short enough that there is no filler. Do not clean or rephrase the creator's words.
 
-Watch for cross-format consistency. If em-dashes only show up in newsletters because the platform renders them well, that's format noise, not voice.
+**Aim for 2 to 3 passages per major beat type the creator uses** (a cold-open kind of moment, plain teaching, a live demonstration, a signature analogy, an ending). Single-sample beats are prone to structural shadowing in downstream writing: with one whole-ending sample, the writing skill will tend to mirror that ending's arc. Multiple samples per beat dilute that. The voice-only-not-structure clause in each writing skill's prompt is the second defense (see [[voice-profile-schema]] load contract); together they keep the samples doing their job (voice grain) without dragging architecture along.
 
-### Opener pattern clustering
+**Output: one file per `voice_context`.** Write all the selected passages into `foundation/reference-pieces/{voice_context}.md` as `## ` sections, each opening with a `> Demonstrates:` line in plain language describing what the passage shows (mode, energy, signature move), then the verbatim passage. One file, multiple sections, not one file per passage. The file is loaded whole by writing skills working in that `voice_context`.
 
-For each piece in the source, classify the opening sentence into a bucket:
-- Question
-- Declaration / bold claim
-- Anecdote / story open
-- Data-first / number open
-- Contrarian / "everyone says X but..."
-- Quote (someone else's words)
-- Hook / cliffhanger
+**Exclusion rule:** never curate an improvised, creator-designated moment (a creator may name, for example, an unscripted personal closing they always deliver live) as a passage. Storing it as a seed lets a writing skill regenerate it, which the creator forbade. It goes in the guardrail as a hard refusal instead.
 
-Record % distribution across the corpus per context.
+## Step 3: build the thin guardrail
 
-**Example output:** "YouTube scripts: 70% question, 20% declaration, 10% anecdote. Newsletters: 50% anecdote, 30% question, 20% declaration."
+From the cross-validation pass, write only:
 
-### Closing pattern clustering
+- **`voice_fingerprint`:** 2 to 4 sentences. The gestalt. Who this sounds like, fast.
+- **`signature_phrases`:** verbatim recurring quotes that hold across contexts. Real quotes, never paraphrased ("systems beat hustle every time", not "uses a systems-over-hustle phrase").
+- **`refusals`:** anti-patterns (full phrasings they would never write, plus the global em-dash and clean-register rules); words avoided as `word to swap (one-line reason)`, reason required so the model generalizes to unseen offenders; named creator hard rules. Full spec in [[voice-profile-schema]] `refusals` section.
+- **`pov_and_energy`:** two paragraphs maximum, two sentences each. POV first, then energy floor. Spec in [[voice-profile-schema]].
+- **vid-intro orientation fields:** only if clearly observed. Omit otherwise.
+- **`context_flex`:** one line per populated context, pointing at its `foundation/reference-pieces/{voice_context}.md` file.
 
-Same approach for the last paragraph or closing line. Buckets:
-- No CTA (just ends)
-- Direct ask (subscribe, reply, click)
-- Callback to opener
-- Community invite (let me know in the comments)
-- Question back to reader/viewer
-- Series teaser (next time we'll...)
-- Quote / aphorism
+Nothing else. No rhythm numbers, no punctuation counts, no per-context field grids. Rhythm lives in the reference pieces and is judged by ear at validation time (see [[voice-pressure-test]]).
 
-## Method B: Qualitative pass (patterns the numbers miss)
+## The quantitative read is a selection aid, not an output
 
-Numbers tell you rhythm. Qualitative pulls out the voice itself.
+You may count sentence lengths, paragraph shapes, or openers while reading, to help you notice which passages are most representative. That noticing informs which passages you pick. The numbers themselves never go into any file. They are scaffolding you discard.
 
-### Recurring phrases
+## Method: live monologue (last resort only)
 
-Read 3-5 pieces in a row. Note phrases that appear more than once. Pull them as real quotes, not paraphrases. After 5 pieces, the cross-piece repeats are the recurring phrases. Aim for 5-10 across the full corpus.
+A fresh 10-minute monologue is a fallback when the archive is genuinely empty. **Never use it when archival sources exist**, even thin ones. Even with explicit "don't perform" coaching, a creator who knows the tape is for voice analysis performs. The result is a captured performance voice, not their natural one, and it corrupts every downstream output that writes from it.
 
-**Anti-pattern:** writing "uses the phrase 'systems beat hustle.'" Better: capture the actual quote. "systems beat hustle every time", because the variation matters.
+If archive truly is empty:
 
-### Words avoided
+1. Ask them to talk about something they care about. Tell them not to perform. Accept that they probably will.
+2. Record, auto-transcribe.
+3. Select passages and build the guardrail from it.
+4. Flag everything `confidence: single-context, fresh-monologue` until validated against future archival sources. The monologue is a spoken-floor baseline only; it cannot capture written voice, and it cannot be trusted at performance peaks because the moment was itself a performance.
 
-Read pieces looking for what's NOT there. Does the creator ever say "leverage" as a verb? "Synergy"? "Game-changer"? Note absences. Then pair each with what they use instead.
+Prefer waiting for archive over recording fresh.
 
-**Example output:** "Avoided: 'leverage' (uses 'use'), 'game-changer' (uses 'changes everything' or names the specific change), 'dive in' (uses 'let's go,' 'let me show you,' or just starts)."
+## Source minimums (the floor, not a target)
 
-### Anti-patterns
-
-Stronger than words avoided. These are full phrasings the creator has corrected before, called AI-tells, or rejected in edits. Pull from:
-- voice-rule-capture history if it exists
-- Edit diffs in past drafts
-- Direct creator quotes ("I would never write...")
-
-### Rhetorical tics
-
-Watch for habits across the corpus:
-- Rule of three? ("X, Y, and Z. Three things.")
-- Rhetorical questions? Frequency?
-- Understatement habit?
-- Callbacks (mentions an idea early, returns to it at the close)?
-- Hyperbole? Frequency?
-
-### Transitions
-
-How does the creator move between ideas? Note actual phrases. Examples to watch for:
-- "Here's the thing." / "Here's what nobody tells you."
-- "But." (single-word transition)
-- "So." (sentence opener pattern)
-- Numbered list transitions ("First. Second. Third.")
-- Pure line breaks (no transition word, structure carries it)
-
-### POV default
-
-When does the creator use "I"? When "you"? When "we"? Note the situations, not just the pronoun. Example: "I" for personal experience, "you" for instruction, "we" for shared journey or shared belief. Never "we" as the corporate plural.
-
-### Energy descriptor
-
-After reading the corpus, write one phrase that captures the energy. "Quiet confidence." "Dry wit with directness." "Performer with vulnerable beats." "High conviction, low volume." This goes in `energy_baseline`.
-
-## Method C: Live monologue (when archive is thin)
-
-If the creator has limited content, record a 10-minute monologue:
-
-1. Ask them to talk about a topic they care about. Tell them not to perform, just talk.
-2. Record. Auto-transcribe.
-3. Run Method A and B passes against the transcript.
-4. Flag every pattern as `confidence: single-context` until validated against future writing samples.
-
-The monologue captures the spoken-voice floor. It cannot capture written-voice patterns. It is a starting baseline only.
-
-## Cross-validation: which patterns make the cut
-
-After Methods A and B per source, ask of every pattern:
-
-- Does it appear in 2+ sources?
-- Does it appear in 2+ formats (transcript AND writing)?
-- Or is it isolated to one source/format?
-
-Sort:
-
-- **Cross-source AND cross-format → core profile (Layer 1)** with `confidence: high`
-- **Cross-source within ONE format → context map for that format (Layer 2)** with `confidence: format-specific`
-- **Single source → drop or flag `confidence: low`** for creator review
-
-## Source minimums
-
-Defaults that produce a useful profile (not absolute, just the floor):
-
-- 3-5 transcripts OR 30-60 minutes of recorded speech (for spoken patterns)
-- 15,000-20,000 words written across at least 2 formats (for written patterns)
-- Per context map: at least 3 pieces or 5,000 words in that format
-
-If thinner: build core profile only, defer context maps, flag low confidence.
-
-If much thinner: tell the creator the profile won't be reliable until they bring more sources. Do not build a profile from 500 words.
-
-## Worked example (illustrative, adapt to actual creator data)
-
-**Source: 4 YouTube transcripts (40 mins total) plus 6 newsletters (~12k words) plus 8 LinkedIn posts (~3k words)**
-
-Quantitative pass per context:
-
-- YouTube median sentence: 7 words. 75% short. Em-dashes per 1000: 0. Ellipses: 5. Pattern: short-short-callback. 75% question-opener.
-- Newsletter median sentence: 12 words. 50% short. Em-dashes: 9. Ellipses: 1. Single-sentence paragraphs: 65%. 40% anecdote-opener.
-- LinkedIn: too thin for full quantitative. Qualitative only.
-
-Qualitative pass:
-
-- Cross-context recurring phrases (3 found): "every single time," "the truth is," "let me show you". All appear in YouTube AND newsletter AND LinkedIn → **core profile**.
-- Newsletter-only phrases: "I'll be honest with you" (7x in newsletters, 0 in YouTube) → **newsletter context map**.
-- POV: "I" for personal, "you" for direct instruction, never "we" as plural → **core profile**.
-- Energy: high conviction with dry wit, modulates up in YouTube, down in newsletter → **core baseline plus per-context modulation note**.
-
-Cross-validation result:
-
-- 3 cross-context phrases → core (high confidence)
-- 1 newsletter-only phrase → context map (format-specific confidence)
-- LinkedIn context map deferred (too thin)
-- Core baseline plus modulation captured per context
-
-Output: rich profile with two strong context maps (YouTube, newsletter) and a deferred LinkedIn map awaiting more source material.
+- 3 to 5 transcripts or 30 to 60 minutes of recorded speech for spoken contexts.
+- Roughly 5,000 words per `voice_context` before that context gets its own reference set.
+- Thinner: guardrail only, contexts deferred (no folder), low-confidence flagged.
+- Much thinner: tell the creator the result will not be reliable until they bring more. Do not build from 500 words.
 
 ## Common extraction mistakes
 
-- **Counting one piece as if it were the whole creator.** Single-piece patterns are noise.
-- **Trusting auto-transcripts without cleaning.** Verbal fillers ("um," "you know") need separating from intentional discourse markers ("so," "look").
-- **Inventing patterns to fill the schema.** If a field has no data, leave it empty or `confidence: low`. Filling with guesses corrupts every downstream output.
-- **Conflating brand voice with personal voice.** Brand stuff (mission, tagline) belongs in `Context/brand.md`, not the voice profile.
-- **Ignoring the read-aloud test.** Numbers and patterns mean nothing if the creator doesn't recognize the result as their voice when said out loud.
+- **Distilling instead of selecting.** Rewriting the creator's voice into a description of it. The passage is the asset; keep it whole.
+- **Choosing passages by topic.** Narrows the voice. Choose by stylistic representativeness.
+- **Cleaning the passages.** Auto-transcript mess and verbal tics that are intentional discourse markers ("so", "look", "right?") stay. Only separate true noise ("um").
+- **Promoting a single-source pattern to the guardrail.** One source is noise.
+- **Curating the improvised moment.** A creator-designated improvised beat they always deliver live is a refusal, never a reference piece.
+- **Inventing to fill a section.** Empty beats a guess. A guessed guardrail corrupts every downstream piece.
+- **Ignoring the read-aloud test.** If the creator does not recognize the result as theirs when said out loud, it is wrong no matter how clean the method was.
