@@ -38,7 +38,7 @@ A context with too little material gets no folder (no stub) and is noted in `con
 ## Prerequisites
 
 - `foundation/creator-foundation.md` exists (positioning and avatar shape how voice reads in context).
-- Source material. Minimum viable: 3 to 5 transcripts or 30 to 60 minutes of speech, or ~5,000 words per context, or both. Thinner runs still work but flag low confidence and defer contexts.
+- Source material. Minimum viable depends on format-length: 3 to 5 pieces for short-form contexts (`shorts`, `linkedin`, `twitter`); 3 to 5 transcripts or ~5,000 words for long-form contexts (`youtube-script`, `tutorial`, `newsletter`, `podcast`, `talk`). Thinner runs still work but flag low confidence and defer contexts. Full floor in `knowledge/voice-extraction-methods.md`.
 
 ## Load at session start
 
@@ -74,7 +74,7 @@ Mark `in_progress` on start, `completed` when the creator confirms and you move 
 
 Ask what content is available. As sources come in, group each by `voice_context` (the medium/mode it was produced in): `youtube-script`, `tutorial`, `shorts`, `newsletter`, `linkedin`, `twitter`, `podcast`, `casual`, `talk`.
 
-Do not paste a pile of transcripts into chat. Stage files in `raw/voice-sources/` and read them from disk. Confirm which contexts have ~3 pieces or 5,000 words (those earn a reference set). Thin contexts feed the guardrail only and are flagged. Record the source list and grouping in the worksheet (`assets/extraction-worksheet-template.md`).
+Do not paste a pile of transcripts into chat. Stage files in `raw/voice-sources/` and read them from disk. Confirm which contexts clear the source floor (3 to 5 pieces for short-form; ~5,000 words or 3 to 5 transcripts for long-form, per `knowledge/voice-extraction-methods.md`). Those earn a reference set. Thin contexts feed the guardrail only and are flagged. Record the source list and grouping in the worksheet (`assets/extraction-worksheet-template.md`).
 
 ## Stage 2: Diagnose the range, then select passages
 
@@ -90,6 +90,8 @@ Run `knowledge/voice-extraction-methods.md` Step 2. It is the method; this Stage
 Walk every candidate pattern through the cross-validation test in [[voice-profile-schema]]: holds across sources and contexts goes to the guardrail; strong in one context stays in that context's reference pieces; single-source gets dropped or flagged.
 
 Write only: `voice_fingerprint` (2 to 4 sentences), `signature_phrases` (verbatim cross-context quotes), `refusals` (anti-patterns including the global em-dash and clean-register rules; words-avoided as `word to swap (one-line reason)` with reason required; named creator hard rules), `pov_and_energy` (hard cap, two paragraphs, two sentences each), the vid-intro orientation fields only if clearly observed, and one `context_flex` line per populated context. Nothing else. Full spec in [[voice-profile-schema]].
+
+**Filler check on signature phrases.** Recurrence is not enough. Before locking any `signature_phrases` candidate that matches a known-filler shape (`right?`, `you know`, `like`, `so`, `okay`, `alright`, `I mean`, `basically`, or anything that reads like a discourse marker), ask the creator: "this came up a lot, is it load-bearing for your voice or filler you'd cut?" Load-bearing stays. Filler moves to words-avoided with the reason `filler, drop unless the sentence needs it`. The hint list is a prompt for the question, not an auto-block. The creator's answer is the gate. This catches the regression at Stage 3 instead of waiting for the Stage 5 read-aloud.
 
 Surface creator-specific judgment calls explicitly and get the creator's ruling before locking them as refusals. Two common shapes: a recurring but improvised personal beat the creator delivers live, captured as a hard refusal ("leave the slot, never draft its text"); and an emphasis or intensity device that fires at peaks by function, captured as a refusal against cadence-placement or carpet-bombing, not as a frequency rule.
 

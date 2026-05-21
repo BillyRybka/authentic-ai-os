@@ -59,6 +59,8 @@ Prose gestalt. The fastest possible orientation to who this sounds like. Not a f
 
 Verbatim recurring phrases, real quotes, not paraphrases. These are high-fidelity anchors that survive generation. If a draft contains or closely echoes one, voice signal is present. If a long piece echoes none, signal is weak.
 
+Recurrence is necessary but not sufficient. A discourse marker ("right?", "you know", "so", "like") can recur across every source and still be filler, not signature: the kind of word any creator uses, and an AI tell. Before locking any candidate that matches a known-filler shape, **surface it to the creator and ask**: "this came up a lot, is it load-bearing for your voice or filler you'd cut?" If the creator says load-bearing, it stays. If filler, route it to `words_avoided` with the reason `filler, drop unless the sentence needs it` so writing skills do not reproduce it. Starter filler hints (to trigger the question, never to auto-block): `right?`, `you know`, `like`, `so`, `okay`, `alright`, `I mean`, `basically`. The list is a prompt for confirmation, not a blacklist; it grows creator by creator. The creator's answer is always the gate.
+
 ### `refusals` (required)
 
 The rule layer. The only place rules live. Three kinds:

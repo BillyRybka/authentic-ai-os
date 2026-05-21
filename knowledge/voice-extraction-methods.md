@@ -65,7 +65,7 @@ Pick for stylistic representativeness, not topic: a passage chosen because it ma
 From the cross-validation pass, write only:
 
 - **`voice_fingerprint`:** 2 to 4 sentences. The gestalt. Who this sounds like, fast.
-- **`signature_phrases`:** verbatim recurring quotes that hold across contexts. Real quotes, never paraphrased ("systems beat hustle every time", not "uses a systems-over-hustle phrase").
+- **`signature_phrases`:** verbatim recurring quotes that hold across contexts. Real quotes, never paraphrased ("systems beat hustle every time", not "uses a systems-over-hustle phrase"). Cross-validation finds recurrence; it does not separate signature from filler. A discourse marker ("right?", "you know", "so", "like") can hold across every source and still be filler an AI would over-reproduce. When a candidate matches a known-filler shape, surface it to the creator and ask: "load-bearing for your voice, or filler you'd cut?" Load-bearing stays in `signature_phrases`. Filler routes to `refusals` words-avoided with the reason `filler, drop unless the sentence needs it`. Filler hints (`right?`, `you know`, `like`, `so`, `okay`, `alright`, `I mean`, `basically`) are a prompt for that question, not a blacklist; the list is creator-specific and grows over time. The creator's answer is the gate.
 - **`refusals`:** anti-patterns (full phrasings they would never write, plus the global em-dash and clean-register rules); words avoided as `word to swap (one-line reason)`, reason required so the model generalizes to unseen offenders; named creator hard rules. Full spec in [[voice-profile-schema]] `refusals` section.
 - **`pov_and_energy`:** two paragraphs maximum, two sentences each. POV first, then energy floor. Spec in [[voice-profile-schema]].
 - **vid-intro orientation fields:** only if clearly observed. Omit otherwise.
@@ -92,10 +92,13 @@ Prefer waiting for archive over recording fresh.
 
 ## Source minimums (the floor, not a target)
 
-- 3 to 5 transcripts or 30 to 60 minutes of recorded speech for spoken contexts.
-- Roughly 5,000 words per `voice_context` before that context gets its own reference set.
-- Thinner: guardrail only, contexts deferred (no folder), low-confidence flagged.
-- Much thinner: tell the creator the result will not be reliable until they bring more. Do not build from 500 words.
+The floor depends on the context's format-length. A word-count rule fits long-form and breaks on short-form: 5,000 words of `shorts` is 30-plus reels, which is absurd.
+
+- **Long-form contexts** (`youtube-script`, `tutorial`, `newsletter`, `podcast`, `talk`): roughly 5,000 words OR 3 to 5 pieces, whichever comes first. For spoken long-form, 30 to 60 minutes of recorded speech.
+- **Short-form contexts** (`shorts`, `linkedin`, `twitter`): 3 to 5 pieces. Word count is irrelevant here; the pieces are short by nature.
+- Either rule earns the context its own reference set.
+- Below the floor: guardrail only, that context deferred (no file), low-confidence flagged.
+- Much thinner than that: tell the creator the result will not be reliable until they bring more. Do not build a context from a single piece.
 
 ## Common extraction mistakes
 

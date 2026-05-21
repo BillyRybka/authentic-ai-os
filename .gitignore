@@ -57,6 +57,7 @@ Authentic-AI-OS/
 # Temp / scratch artifacts
 .tmp-*
 diagram-preview.png
+excalidraw.log
 
 # Env / secrets
 .env
