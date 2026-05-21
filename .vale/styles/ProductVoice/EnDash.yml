@@ -1,5 +1,0 @@
-extends: existence
-message: "En dash banned. Use a hyphen for ranges (8-12) or 'to' (8 to 12)."
-level: error
-tokens:
-  - '–'
