@@ -58,10 +58,14 @@ try {
     foreach ($s in $ShipSkills) { git checkout dev -- ".claude/skills/$s" }
 
     # --- auto-detect the knowledge those skills reference, restore only that -
+    # Scan ONLY the allowlisted skill folders, never the whole .claude/skills/
+    # tree (which on dev also holds parked non-shipping skills like vid-research).
     $knowledgeRefs = @{}
-    foreach ($f in (Get-ChildItem '.claude/skills' -Recurse -Filter '*.md' -File)) {
-        foreach ($r in (Select-String -Path $f.FullName -Pattern 'knowledge/([A-Za-z0-9_/-]+\.md)' -AllMatches)) {
-            foreach ($m in $r.Matches) { $knowledgeRefs[$m.Groups[1].Value] = $true }
+    foreach ($s in $ShipSkills) {
+        foreach ($f in (Get-ChildItem ".claude/skills/$s" -Recurse -Filter '*.md' -File -ErrorAction SilentlyContinue)) {
+            foreach ($r in (Select-String -Path $f.FullName -Pattern 'knowledge/([A-Za-z0-9_/-]+\.md)' -AllMatches)) {
+                foreach ($m in $r.Matches) { $knowledgeRefs[$m.Groups[1].Value] = $true }
+            }
         }
     }
     $restored = @(); $skipped = @()
@@ -79,7 +83,13 @@ try {
     }
 
     # --- commit --------------------------------------------------------------
-    git add -A
+    # Stage ONLY the allowlist. Never `git add -A` here: a background process
+    # (Obsidian, an editor) can drop an untracked file into the tree mid-run,
+    # and -A would sweep it onto main. The `git rm` above already staged every
+    # deletion; `git checkout dev -- <path>` already staged every restore; only
+    # the two version-bumped manifests still need re-staging. Untracked files
+    # left in the working tree never enter the index, so the commit stays clean.
+    git add .claude-plugin/plugin.json .claude-plugin/marketplace.json
     git commit -m "Release v$Version"
     $ok = $true
 }
