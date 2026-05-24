@@ -44,7 +44,7 @@ Built by grepping every `SKILL.md`, `references/*.md`, and `assets/*.md` across 
 - `knowledge/interview-posture.md`
 - `knowledge/vault-integration.md`
 
-**vid-research** `SHIPPED`
+**vid-research** `WIP`
 - `knowledge/three-circle-research.md`
 - `knowledge/outlier-identification-rules.md`
 - `knowledge/format-rotation-guide.md`
