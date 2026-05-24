@@ -20,17 +20,22 @@ param(
 $ErrorActionPreference = 'Stop'
 
 # --- THE ALLOWLIST -----------------------------------------------------------
-# The only skills that ship. A WIP skill graduates by being added to this list
-# (and nowhere else). Nothing not named here can reach `main`.
-$ShipSkills = @(
-    'creator-setup',
-    'vid-foundation',
-    'vid-avatar',
-    'vid-positioning',
-    'vid-pillars',
-    'vid-credibility',
-    'vid-backstory'
-)
+# The skill list is read from documents/skill-knowledge-map.md (single source
+# of truth). Any skill tagged `SHIPPED` in that map ships; anything tagged
+# `WIP` does not. The `release` skill marks the tag when a WIP graduates.
+function Get-ShippedSkills {
+    $mapPath = 'documents/skill-knowledge-map.md'
+    if (-not (Test-Path $mapPath)) {
+        throw "Missing $mapPath. The map is the source of truth for what ships."
+    }
+    $map = Get-Content $mapPath -Raw
+    $found = [regex]::Matches($map, '(?m)^\*\*([a-z][a-z0-9-]+)\*\*\s+`SHIPPED`')
+    $skills = @($found | ForEach-Object { $_.Groups[1].Value } | Sort-Object -Unique)
+    if (-not $skills) { throw "No SHIPPED skills found in $mapPath." }
+    return $skills
+}
+$ShipSkills = Get-ShippedSkills
+
 # Always-ship paths (non-skill, non-knowledge). knowledge/ is auto-detected.
 $AlwaysShip = @('.claude-plugin', 'CLAUDE.md', 'banks', '.gitignore')
 
