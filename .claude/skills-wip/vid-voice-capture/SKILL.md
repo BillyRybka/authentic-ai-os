@@ -72,9 +72,12 @@ Mark `in_progress` on start, `completed` when the creator confirms and you move 
 
 ## Stage 1: Source intake and grouping
 
-Ask what content is available. As sources come in, group each by `voice_context` (the medium/mode it was produced in): `youtube-script`, `tutorial`, `shorts`, `newsletter`, `linkedin`, `twitter`, `podcast`, `casual`, `talk`.
+Ask what content is available. Every source ends up as a file on disk in `raw/voice-sources/` before you analyze it. Working from disk keeps chat context clean and makes the files re-readable on a refresh run. Two ways the creator brings sources:
 
-Do not paste a pile of transcripts into chat. Stage files in `raw/voice-sources/` and read them from disk. Confirm which contexts clear the source floor (3 to 5 pieces for short-form; ~5,000 words or 3 to 5 transcripts for long-form, per `knowledge/voice-extraction-methods.md`). Those earn a reference set. Thin contexts feed the guardrail only and are flagged. Record the source list and grouping in the worksheet (`assets/extraction-worksheet-template.md`).
+- **They point you at a folder or files.** Read them in place if already under `raw/voice-sources/`, otherwise copy them there.
+- **They paste a transcript into chat.** Expected and fine. Do not refuse it. Write each pasted transcript to `raw/voice-sources/{slug}.txt` yourself (slug from what it is, e.g. `yt-4-blind-spots-ai.txt`), confirm the save, then work from the file. Never analyze a long paste inline.
+
+As sources land, group each by `voice_context` (the medium/mode it was produced in): `youtube-script`, `tutorial`, `shorts`, `newsletter`, `linkedin`, `twitter`, `podcast`, `casual`, `talk`. Confirm which contexts clear the source floor (3 to 5 pieces for short-form; ~5,000 words or 3 to 5 transcripts for long-form, per `knowledge/voice-extraction-methods.md`). Those earn a reference set. Thin contexts feed the guardrail only and are flagged. Record the source list and grouping in the worksheet (`assets/extraction-worksheet-template.md`).
 
 ## Stage 2: Diagnose the range, then select passages
 
