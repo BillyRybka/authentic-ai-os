@@ -40,6 +40,7 @@ The vault grows as the creator uses it. Not everything exists at day one.
 │   ├── metaphor-bank/           # Analogies and comparisons — see metaphor-bank/README.md
 │   ├── framework-bank/          # Creator's OWN named frameworks — see framework-bank/README.md
 │   ├── packaging-bank/          # Title+thumbnail winners (complete packages) — see packaging-bank/README.md
+│   ├── audience-data/           # Per-call summaries (calls/) + comment vocabulary samples (comments/), via aud-intake
 │   ├── title-bank.md            # Validated title patterns (reusable formulas)
 │   ├── hook-bank.md             # Fill-in-the-blank hook patterns + worked examples (5 hook types)
 │   ├── transition-bank.md       # Transition patterns (intro-forward, segment-pivot, body-to-ending)
@@ -52,6 +53,12 @@ The vault grows as the creator uses it. Not everything exists at day one.
 ├── Notes/                       # Optional drop-zone for on-the-go brain dumps
 ├── raw/                         # Optional, creator's own raw material (transcripts, articles)
 ├── references/                  # Optional, external study material pointers (no full content)
+├── inbox/                       # Optional drop-in folders for raw files awaiting ingest
+│   └── audience/                # Raw call transcripts (calls/) and YouTube comment CSVs (comments/) for aud-intake
+├── audience/                    # Synthetic audience workspace (created by aud-* skills)
+│   ├── segments/                # Rough audience clusters (pre-avatar)
+│   ├── avatars/                 # Synthetic avatar profiles (one file per avatar)
+│   └── held-out/                # Reserved quotes per segment, used by aud-validate only
 └── knowledge/                   # Reference material loaded by skills (frameworks, schemas, format planners)
 ```
 
@@ -93,6 +100,16 @@ When meaningful info comes up — a correction, a fact about the creator, a new 
 | On-the-go brain dump waiting to be routed | `Notes/{anything}.md` |
 | Raw transcript / article / brain-dump full text | `raw/{slug}.md` (optional folder) |
 | External study material pointer (course, book, podcast) | `references/{slug}.md` (optional folder, pointers only — no full content) |
+| Raw call transcript awaiting ingest | `inbox/audience/calls/{anything}.txt` (drop-in zone; processed and removed by `aud-intake`) |
+| Raw YouTube comment export awaiting ingest | `inbox/audience/comments/{video-slug}.csv` (drop-in zone; processed by `aud-intake`) |
+| Per-call summary with extracted quote units (5 moment types) | `banks/audience-data/calls/{call-slug}.md` (via `aud-intake`. Source of truth for avatar building; raw transcripts are NOT) |
+| YouTube comment vocabulary sample | `banks/audience-data/comments/{video-slug}/{id}.md` (via `aud-intake`. Low-trust evidence, vocabulary-only) |
+| Audience segment cluster (pre-avatar) | `audience/segments/{segment-slug}.md` (via `aud-avatar-build`) |
+| Synthetic avatar profile | `audience/avatars/{avatar-slug}.md` (via `aud-avatar-build`. Status: draft / validated-vocabulary / validated-full / retired) |
+| Held-out quote set for an avatar segment | `audience/held-out/{segment-slug}.md` (written BEFORE avatars by `aud-avatar-build`; read ONLY by `aud-validate`) |
+| Avatar validation report | `audience/avatars/{avatar-slug}-validation-{date}.md` (via `aud-validate`) |
+| Per-avatar review of a content piece | `Content/pieces/{piece-slug}/reviews/{N}/{avatar-slug}.md` (via `aud-review` subagent invocations) |
+| Panel synthesis for a piece (verdict + top 3 fixes + scores + dissent) | `Content/pieces/{piece-slug}/reviews/{N}/synthesis.md` (via `aud-review`) |
 
 ## Rules
 

@@ -25,7 +25,6 @@ The map from currently released skill to the container structure it needs before
 | vid-backstory | `foundation/` | structure | v1 |
 | vid-backstory | `People/` | structure | v1 |
 | vid-voice-capture | `foundation/` | structure | v1 |
-| vid-research | `.env.example` | env-template | v1 |
 
 Distinct folders to create: `foundation/`, `banks/proof-bank/assets/`, `People/`. Plus the `_guide.md` and `.env.example` files at the container root.
 
