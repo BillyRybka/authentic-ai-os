@@ -8,7 +8,7 @@ tags: [reference, creator-setup, manifest, contract]
 
 # Creator setup manifest
 
-The map from currently released skill to the container structure it needs before it can run. `creator-setup` reads this and scaffolds exactly these folders inside `Authentic-AI-OS/`. Nothing else.
+The map from currently released skill to the workspace structure it needs before it can run. `creator-setup` reads this and scaffolds exactly these folders inside the chosen `TARGET` directory. Nothing else.
 
 **Rule:** never add a row for a skill that is not released. Never add structure a released skill does not actually write into. When a new skill ships, add its rows here; that is the only change `creator-setup` needs.
 
@@ -24,9 +24,8 @@ The map from currently released skill to the container structure it needs before
 | vid-credibility | `People/` | structure | v1 |
 | vid-backstory | `foundation/` | structure | v1 |
 | vid-backstory | `People/` | structure | v1 |
-| vid-voice-capture | `foundation/` | structure | v1 |
 
-Distinct folders to create: `foundation/`, `banks/proof-bank/assets/`, `People/`. Plus the `_guide.md` and `.env.example` files at the container root.
+Distinct folders to create: `foundation/`, `banks/proof-bank/assets/`, `People/`. Plus the `_guide.md`, `CLAUDE.md`, and `.env.example` files at the workspace root.
 
 ## Class meanings
 
@@ -35,11 +34,17 @@ Distinct folders to create: `foundation/`, `banks/proof-bank/assets/`, `People/`
 
 ## Deliberately NOT scaffolded
 
-- `knowledge/`: ships with the plugin, referenced via `${CLAUDE_PLUGIN_ROOT}` (dual-context rule). Never copied into the vault.
-- `banks/title-bank.md`, `foundation/packaging-system.md`: authored by `vid-research` Phase 7 from real evidence. Pre-creating them would seed a guess.
-- `banks/story-bank/`, `banks/testimonial-bank/`, `banks/metaphor-bank/`, `banks/framework-bank/`, `banks/packaging-bank/`: no released skill writes these yet. They get rows here when `vid-capture` (and kin) ship.
+- `knowledge/`: ships with the plugin, referenced via `${CLAUDE_PLUGIN_ROOT}`. Never copied into the workspace.
+- `banks/title-bank.md`, `foundation/packaging-system.md`, `banks/story-bank/`, `banks/testimonial-bank/`, `banks/metaphor-bank/`, `banks/framework-bank/`, `banks/packaging-bank/`: no released skill writes these yet. They get rows here when their owning skills ship.
 - `Content/`, `Notes/`: no released skill writes there.
 
-## Not in scope this release
+## Future skills (not yet shipping)
 
-- `vid-packaging`: collapsed 2026-05-19. Its packaging-defaults job moved to `vid-research` Phase 7. Never add a row for it.
+These are in development and will get manifest rows when their skill folders exist:
+
+- `vid-voice-capture`: voice profile authoring.
+- `vid-research`: pattern banks and packaging defaults from YouTube evidence.
+- `vid-capture`: structured capture of stories, proofs, metaphors, testimonials.
+- `vid-packaging`: collapsed 2026-05-19. Its job moved to `vid-research`. Never add a row for it.
+
+Do not add rows for these until their skill folder exists under `.claude/skills/`.

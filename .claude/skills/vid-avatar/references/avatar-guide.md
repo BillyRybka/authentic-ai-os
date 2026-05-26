@@ -104,7 +104,7 @@ Why it fails:
 Why it works:
 - Type has stage markers (solo, service, revenue band). Signals exactly who it isn't (not employees, not agencies, not $10M+)
 - Top 3 are what the viewer would actually say out loud to a friend
-- Problems sit in three different domains (time/workflow, team/hiring, identity/satisfaction)
+- Problems are three actually-different ones (time/workflow, team/hiring, identity/satisfaction), not three angles of the same thing
 
 **Bad:**
 - Age: 25-55
@@ -168,7 +168,7 @@ Why it fails:
 Why it works:
 - Type pairs an identity ("ambitious") with a current state ("recovering"). Captures the self-image gap
 - Problems are spoken in the voice of someone telling a friend over coffee, not a therapist's intake form
-- Three distinct domains (pattern-matching, self-trust, pattern-spotting), not three angles of one issue
+- Three actually-different problems (pattern-matching, self-trust, pattern-spotting), not three angles of one issue
 
 **Bad:**
 - Age: 18-65

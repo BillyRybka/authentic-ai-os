@@ -15,11 +15,11 @@ The actual interview work happens in five focused skills:
 4. `vid-credibility`. Three viewer-relevant brags.
 5. `vid-backstory`. Problem-Action-Outcome backstory.
 
-Then `vid-voice-capture` for the voice profile, then `vid-research`. Packaging defaults (format rotation, thumbnail strategy, title-bank seed) are authored by `vid-research` from real evidence, not guessed in a foundation interview. The old `vid-packaging` skill was collapsed 2026-05-19 for producing throwaway pre-research guesses.
+More skills are in development: voice capture, content production, pattern banks, packaging defaults. They will arrive in future plugin updates. This release ships the five foundation interview skills only.
 
 ## Contract
 
-**Inputs (optional):** `foundation/creator-foundation.md`, `foundation/packaging-system.md`, `foundation/voice-profile.md`. Any combination, any state.
+**Inputs (optional):** `foundation/creator-foundation.md`. Any state.
 
 **Outputs:** none directly. This skill routes. The sub-skills produce.
 
@@ -27,11 +27,9 @@ Then `vid-voice-capture` for the voice profile, then `vid-research`. Packaging d
 
 ### Step 1: Read state silently
 
-Check three files. Quiet reads. Don't announce.
+Quiet read. Don't announce.
 
-- `foundation/creator-foundation.md`: does it exist? Which sections are populated?
-- `foundation/packaging-system.md`: does it exist?
-- `foundation/voice-profile.md`: does it exist?
+- `foundation/creator-foundation.md`: does it exist? Which sections are populated (Offer, Avatar, Top 3, Iceberg Statement, Pillars, Credibility, Backstory)?
 
 ### Step 2: Map state to next skill
 
@@ -45,9 +43,7 @@ Use this routing table:
 | Iceberg Statement locked, Content pillars missing | `vid-pillars` |
 | Content pillars locked, Credibility brags missing | `vid-credibility` |
 | Credibility brags locked, Backstory missing | `vid-backstory` |
-| Backstory locked (foundation identity complete), `voice-profile.md` missing | Point at `vid-voice-capture` (don't auto-invoke; it needs source material) |
-| Voice profile exists, `packaging-system.md` or pattern banks missing | Point at `vid-research` (it builds the banks AND authors packaging-system.md from the evidence; don't auto-invoke, it needs a YouTube API key and ~1.5 hrs) |
-| Everything complete (identity + voice + packaging-system + banks) | Foundation done. Point at next paths. |
+| Backstory locked (foundation identity complete) | Foundation done. Acknowledge and stop. |
 
 ### Step 3: Tell the creator where they are, then auto-invoke
 
@@ -76,23 +72,16 @@ If they're quiet between sub-skills but engaged in the previous one's content, t
 
 ### Step 5: Foundation complete
 
-When all 6 foundation sub-skills have locked their sections plus `packaging-system.md` exists, congratulate briefly and surface the per-video paths:
+When all 5 foundation interview skills have locked their sections, congratulate briefly and stop:
 
-> "Foundation complete. You're ready to make videos.
->
-> Three paths from here:
-> 1. Run `vid-voice-capture` to build your voice profile. Critical for every script. Bring 2 to 3 transcripts or a 10-minute live riff.
-> 2. Capture raw material when it lands (`vid-capture`).
-> 3. Build pattern banks from your channel and competitors (`vid-research`).
->
-> What sounds right?"
+> "Foundation complete. Your avatar, Iceberg, pillars, credibility, and backstory are locked. More skills are coming for voice capture, content production, and pattern research. For now, this is your foundation."
 
-`vid-voice-capture` is NOT auto-invoked because it needs source material the creator has to bring. The handoff is a stopping point.
+Do not invoke any further skill. The released foundation chain ends here.
 
 ## What this skill is NOT
 
-- An interview skill. It doesn't ask the creator any of the foundation questions. Those live in the six sub-skills.
-- A combined run. It doesn't run all six skills back-to-back. Each interview deserves a dedicated session.
+- An interview skill. It doesn't ask the creator any of the foundation questions. Those live in the five sub-skills.
+- A combined run. It doesn't run all five skills back-to-back. Each interview deserves a dedicated session.
 - A refresh tool. If the creator wants to refresh a specific section, they run the sub-skill directly.
 
 If the creator asks foundation questions during this skill ("can you write my Iceberg Statement?"), redirect:
@@ -101,7 +90,7 @@ If the creator asks foundation questions during this skill ("can you write my Ic
 
 ## Pre-check
 
-Always read `foundation/creator-foundation.md` and `foundation/packaging-system.md` (silent). If either doesn't exist, the creator is at or near the start. If both exist, check `foundation/voice-profile.md` last.
+Always read `foundation/creator-foundation.md` (silent). If it doesn't exist, the creator is at the start. If it exists, check which sections are populated to determine the next step.
 
 ## Anti-patterns
 
@@ -109,7 +98,7 @@ Always read `foundation/creator-foundation.md` and `foundation/packaging-system.
 - Reading the references inside `vid-avatar`, `vid-positioning`, etc. Those belong to their skills.
 - Asking the creator to type the next command. Auto-invoke the next skill via the Skill tool.
 - Continuing to invoke skills after a clear stop signal.
-- Auto-invoking `vid-voice-capture` when the foundation completes. That skill needs source material and is a manual start.
+- Promising unreleased skills (voice capture, content production, pattern research) as immediate next steps. They are in development. Acknowledge them in the close, do not route to them.
 - Surfacing jargon (Iceberg Statement, BENS, 3+1 rotation) without context. Translate when needed.
 
 ## References

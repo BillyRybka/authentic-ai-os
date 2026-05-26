@@ -127,11 +127,11 @@ Write the full backstory and the 3-sentence version to `foundation/creator-found
 
 ## Closing the skill
 
-Backstory is the last foundation interview. Announce the lock and that foundation identity is complete. Do NOT auto-invoke the next skill: the next step is `vid-voice-capture`, which needs source material (transcripts, writing samples, a live monologue) the creator has to bring.
+Backstory is the last foundation interview in this release. Announce the lock and that foundation identity is complete. Do NOT auto-invoke any next skill: the released foundation chain ends here.
 
-> "Backstory locked. Full version plus the 3-sentence intro version. That completes your foundation identity. Next: run `vid-voice-capture` to build your voice profile (it needs some source material from you), then `vid-research` to build your pattern banks and author your packaging defaults from real evidence. Run vid-voice-capture when you're ready."
+> "Backstory locked. Full version plus the 3-sentence intro version. That completes your foundation identity. More skills are coming for voice capture, content production, and pattern research. For now, this is your foundation."
 
-Point, don't auto-run. If the creator wants to keep moving and has source material, they invoke vid-voice-capture.
+Stop. Do not point at unreleased skills.
 
 ## Edge cases
 
