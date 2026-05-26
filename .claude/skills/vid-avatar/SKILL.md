@@ -37,7 +37,7 @@ Updates three sections in `foundation/creator-foundation.md`:
 
 - **Offer.** One paragraph describing what they sell and the result the buyer walks away with.
 - **Avatar.** A few sentences describing the viewer. Not a structured field list. A description.
-- **Top 3 perceived problems.** Main plus 2 supporting, in viewer language, three distinct domains.
+- **Top 3 perceived problems.** Three problems in viewer language. Equally weighted.
 
 If `creator-foundation.md` doesn't exist, create it from `knowledge/creator-foundation-template.md`.
 
@@ -121,15 +121,15 @@ Pick one. The other can run through this skill again later.
 
 ### Phase 3: Top 3 perceived problems
 
-**Goal:** ONE main problem in the avatar's words, plus 2 supporting problems in different domains.
+**Goal:** Three perceived problems in the avatar's words. Equally weighted.
 
 **Opener (if not already covered):**
 
 > "What specific problem keeps [avatar] from getting what they want?"
 
-**If problems already came up in Phase 1 or Phase 2:** use the absorb-first protocol. Don't re-ask. Surface them back and ask which is loudest.
+**If problems already came up in Phase 1 or Phase 2:** use the absorb-first protocol. Don't re-ask. Surface them back and ask the creator to confirm or refine.
 
-> "I heard three problems while you were describing them: [problem 1], [problem 2], [problem 3]. Which is loudest, the one keeping them up at night?"
+> "I heard three problems while you were describing them: [problem 1], [problem 2], [problem 3]. These three feel right, or do any need a different framing?"
 
 **The disappearance probe:**
 
@@ -145,13 +145,13 @@ Creators reflexively list solutions ("they need confidence," "they need systems"
 
 Sanity-check against the viewer-voice bank in `references/avatar-guide.md`. Expert-column phrasing means send it back. Viewer-column phrasing means it locks.
 
-**Three distinct domains:**
+**Three actually-different problems:**
 
-Once the main problem is clear, ask for 2 supporting problems in different areas:
+Once one problem is clear, surface the other two:
 
-> "Two more problems they vent about. Different areas. If the first was time, the next two might be team, money, or identity."
+> "Two more problems they vent about. What else keeps them stuck?"
 
-Sanity check: three distinct domains, not three flavors of one umbrella.
+Sanity check: three actually-different problems, not three names for the same thing. "Communication issues / emotional dysregulation / unhealthy relationship dynamics" is one problem written three ways.
 
 **Lock-and-move rule:**
 
