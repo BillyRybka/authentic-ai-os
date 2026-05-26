@@ -103,6 +103,18 @@ try {
     # tree never enter the index so the commit stays clean.
     git add $mf
     git commit -m "Release v$Version"
+    git tag "v$Version"
+
+    # --- generate .plugin artifact (zip of plugin folder, renamed) -----------
+    # Cowork's auto-update is unreliable. The .plugin file is a manual override:
+    # creators drag-drop it into Cowork chat to force-install this exact version.
+    $pluginFile = "dist/authentic-ai-os-v$Version.plugin"
+    $zipFile = "dist/authentic-ai-os-v$Version.zip"
+    New-Item -ItemType Directory -Force -Path 'dist' | Out-Null
+    if (Test-Path $pluginFile) { Remove-Item $pluginFile -Force }
+    if (Test-Path $zipFile) { Remove-Item $zipFile -Force }
+    Compress-Archive -Path 'plugins/authentic-ai-os/*' -DestinationPath $zipFile
+    Move-Item $zipFile $pluginFile
     $ok = $true
 }
 finally {
@@ -111,13 +123,40 @@ finally {
 }
 
 if ($ok) {
+    # --- sync dev's plugin.json to the released version ----------------------
+    # Dev should never lag behind main. After release, bring dev's manifest
+    # forward so future work iterates from the released version, not behind it.
+    $devManifest = 'plugins/authentic-ai-os/.claude-plugin/plugin.json'
+    $raw = Get-Content $devManifest -Raw
+    $raw = $raw -replace '("version"\s*:\s*")[^"]*"', ('${1}' + $Version + '"')
+    Set-Content -Path $devManifest -Value $raw -NoNewline
+    if ((git status --porcelain $devManifest | Out-String).Trim()) {
+        git add $devManifest
+        git commit -m "Sync dev to v$Version" | Out-Null
+    }
+
+    # --- push everything -----------------------------------------------------
     Write-Host ""
-    Write-Host "main rebuilt for v$Version." -ForegroundColor Green
+    Write-Host "Pushing main, tag, and dev..." -ForegroundColor Cyan
+    git push origin main --follow-tags
+    git push origin dev
+
+    # --- create GitHub Release and upload .plugin artifact -------------------
+    $pluginFile = "dist/authentic-ai-os-v$Version.plugin"
+    $releaseTitle = "v$Version"
+    Write-Host "Creating GitHub Release v$Version with .plugin asset..." -ForegroundColor Cyan
+    gh release create "v$Version" `
+        --title $releaseTitle `
+        --notes "Plugin release v$Version. See commit log for changes. Drag the attached .plugin file into Cowork chat to force-install this version if auto-update fails." `
+        $pluginFile
+
+    Write-Host ""
+    Write-Host "Released v$Version." -ForegroundColor Green
     Write-Host "  Knowledge: $($restored -join ', ')"
     if ($skipped.Count) {
         Write-Host "  Skipped (not real files): $($skipped -join ', ')" -ForegroundColor DarkGray
     }
+    Write-Host "  Artifact: $pluginFile (uploaded to GitHub Release)"
     Write-Host ""
-    Write-Host "Review with:  git checkout main; git ls-files; git checkout dev" -ForegroundColor Yellow
-    Write-Host "Publish with: git push origin main" -ForegroundColor Yellow
+    Write-Host "GitHub Release: https://github.com/BillyRybka/authentic-ai-os/releases/tag/v$Version" -ForegroundColor Yellow
 }
