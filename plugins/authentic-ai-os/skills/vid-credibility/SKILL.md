@@ -127,7 +127,9 @@ If a client in a brag is not recognizable to the avatar, drop the name. Lead wit
 
 Not the client's name. Not a generic "creator." If the avatar is business owners, it is "a business owner [surprising small inputs] to [big result]." The descriptor mirrors the buyer. The small numbers are the proof. Full rule in `references/credibility-method.md`.
 
-If the client IS recognizable, use the name and create or update `people/{Full Name}.md` (stub if missing) with a wikilink. Per the vault rule, every recognizable human named gets a profile.
+If the client IS recognizable, use the name and create or update the person stub (stub if missing) with a wikilink. Per the vault rule, every recognizable human named gets a profile.
+
+**Where to write the person stub:** default path is `people/{Full Name}.md` inside the workspace. Before writing, check the workspace `CLAUDE.md` for a `## Path overrides` section. If it specifies an alternate person-stub path (e.g., a vault-root `../../People/` folder), follow that override instead of the default. The override is the source of truth; the default applies only when no override is set.
 
 ### Step 8: Synthesis
 
@@ -183,7 +185,7 @@ Rules for the bank write:
 - Do not create a duplicate if an entry already covers that proof. Check first.
 - Do not overwrite an existing proof entry without asking.
 - Anonymize unknown clients the same way as the locked brags (avatar label, not the name).
-- If a recognizable person is named, the same `people/{Full Name}.md` stub plus wikilink rule applies.
+- If a recognizable person is named, the same person-stub rule applies (default path `people/{Full Name}.md`; respect any `## Path overrides` in the workspace `CLAUDE.md`).
 
 Tell the creator plainly:
 

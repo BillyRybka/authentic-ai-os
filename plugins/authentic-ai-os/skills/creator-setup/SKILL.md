@@ -1,13 +1,15 @@
 ---
 name: creator-setup
-description: One-time installer that scaffolds the Authentic AI OS workspace so the foundation skills have somewhere to write. Looks at the current folder, figures out what kind of vault it is (fresh, an existing organizational structure with departments/areas/silos/etc., or something else), proposes a sensible landing spot, asks when unclear, writes a `CLAUDE.md` so Claude knows the rules, and is safe to re-run after every plugin update (additive, never destroys the creator's work). Use when a creator just installed the plugin, is setting up for the first time, or needs to refresh the workspace structure after an update. Triggers on "set up Authentic AI OS", "install Authentic AI OS", "scaffold my vault", "first time setup", "I just installed the plugin", "set up my vault", "run creator setup".
+description: One-time installer that scaffolds the Authentic AI OS workspace inside whichever folder the creator designates as their content home. Inspects the current folder to understand the vault's shape, lists candidate content folders with what's actually in each, and lets the creator pick. Writes a workspace `CLAUDE.md` so Claude follows the right rules in that folder, captures any path overrides the creator wants, and offers a routing block at the vault root. Safe to re-run after every plugin update (additive, never destroys the creator's work). Use when a creator just installed the plugin, is setting up for the first time, or needs to refresh the workspace structure after an update. Triggers on "set up Authentic AI OS", "install Authentic AI OS", "scaffold my vault", "first time setup", "I just installed the plugin", "set up my vault", "run creator setup".
 ---
 
 # Creator setup
 
-The installer. Establishes the workspace the foundation skills write into, then hands off to `vid-foundation`. It does not interview the creator. It does not write any identity content. It scaffolds structure and gets out of the way.
+The installer. Establishes the workspace the foundation skills write into, then offers a handoff. It does not interview the creator about their identity. It scaffolds structure, writes Claude's rules for that folder, and gets out of the way.
 
 This skill is manifest-driven. `manifest.md` lists every currently released skill and the container folders it needs. Scaffold only what the manifest says. Never scaffold for a skill that is not released. When a new skill ships, the maintainer adds a row to `manifest.md`; this skill needs no other change.
+
+**Core principle: the workspace IS the content folder.** Whatever folder the creator designates as their content home (a fresh folder, an existing `content/` inside a department, a root-level `content/`, or anything else), the skill scaffolds directly inside it. No `Authentic-AI-OS/` wrapper subfolder. The workspace and the content folder are the same thing.
 
 ## What gets scaffolded
 
@@ -15,15 +17,27 @@ The folders the released foundation skills need:
 
 - `foundation/` (empty; the foundation skills fill it)
 - `banks/proof-bank/assets/` (where `vid-credibility` writes proof entries and their screenshots)
-- `people/` (where `vid-credibility` and `vid-backstory` write person stubs)
+- `people/` (where `vid-credibility` and `vid-backstory` write person stubs by default. Skipped if the creator chose a path override; see "Path overrides" below.)
 
-Plus three files at the workspace root:
+Plus two files at the workspace root:
 
-- `_guide.md` (human-readable orientation; written from `assets/_guide.md`)
-- `CLAUDE.md` (Claude's rules for working in the workspace; written from `assets/CLAUDE.md`)
+- `CLAUDE.md` (Claude's scoped rules for this workspace; written from `assets/CLAUDE.md`). **Mandatory. Always written. Never skipped.** See "Why CLAUDE.md is mandatory" below.
 - `.env.example` (placeholder for API keys future skills will need)
 
-No `knowledge/` (it ships with the plugin and is referenced from there). No `title-bank.md`, no `story-bank/`, no `packaging-system.md`. Those arrive when their skills ship and get manifest rows.
+No `_guide.md` (deprecated; CLAUDE.md serves both Claude and the creator). No `knowledge/` (it ships with the plugin and is referenced from there). No `title-bank.md`, no `story-bank/`, no `packaging-system.md`. Those arrive when their skills ship and get manifest rows.
+
+## Why CLAUDE.md is mandatory
+
+Per Claude Code's documented [CLAUDE.md cascade](https://docs.claude.com/en/docs/claude-code/memory), when a creator is working inside the workspace folder, Claude Code loads:
+
+- The root vault `CLAUDE.md` (if it exists), AND
+- The workspace `CLAUDE.md` (the one this skill writes)
+
+Both **concatenate** into context. They do not conflict. The cascade is the documented mechanism for scoping instructions to a sub-tree.
+
+The workspace `CLAUDE.md` is the only place Authentic AI OS rules apply in that folder. Without it, the foundation skills have no scoped guardrails when they run there. Skipping it defeats the entire skill.
+
+**Never skip writing the workspace CLAUDE.md.** If the creator already has a root `CLAUDE.md`, that one stays as-is. The workspace one sits alongside, in the workspace folder, and applies on top.
 
 ## How this skill runs
 
@@ -31,28 +45,26 @@ No `knowledge/` (it ships with the plugin and is referenced from there). No `tit
 
 Check ONLY the current working directory. Never search parent or child directories.
 
-**First, check for an existing container.** If an `Authentic-AI-OS/` folder exists at CWD, OR the CWD itself already contains a `foundation/` folder (signals a previous flat scaffold), → go to **Step 3 (additive update)**.
+**First, check for an existing workspace.** If the CWD itself contains a `foundation/` folder AND a workspace `CLAUDE.md`, this is already an AAI OS workspace, → go to **Step 3 (additive update)**.
 
-**Otherwise, read what's there.** List the top-level folders and files. Look for:
+**Otherwise, inspect what's there.** List the top-level folders and files with `ls`. Look for:
 
 - A `claude.md` or `CLAUDE.md` at the root. Signals an existing vault with its own constitution.
-- Folder names that suggest organizational structure: `departments`, `areas`, `silos`, `categories`, `divisions`, `teams`, `pillars`, etc. (any plural label that groups work).
-- Folder names that suggest content already has a home: `content`, `marketing`, `creative`, `media`, anywhere inside an organizational folder or at the root.
-- Any other vault-like signals: `projects/`, `people/`, a `.obsidian/` folder, etc.
+- Any folder whose name suggests it could be a content home: `content`, `Content`, `creative`, `media`, `marketing`. Both at the vault root AND inside organizational folders (`departments/`, `areas/`, `silos/`, `teams/`, `divisions/`, etc.).
+- Other vault-like signals: `projects/`, `people/`, `People/`, `.obsidian/`.
 
-**Use judgment about what you see.** This is not a rule-based detection. The skill looks, reasons about the structure, and proposes the most sensible landing spot. If the vault is unfamiliar or the structure is ambiguous, ask.
+**Critical: inspect, do not pattern-match.** First-match-wins is the failure mode of this skill. If multiple folders could plausibly be content homes, do not lock in on the first one. List each candidate with `ls`, see what's actually inside, and surface them all to the creator with context.
 
-Then route to one of two paths:
+Then route:
 
-- **Empty or near-empty CWD** (no organizational signals, maybe just an empty folder): → **Step 2A (flat scaffold)**.
-- **Existing vault** (anything else, including the cases above): → **Step 2B (locate, propose, ask if unclear)**.
+- **Empty or near-empty CWD** (no organizational or vault signals): → **Step 2A (flat scaffold)**.
+- **Existing vault** (any signal found): → **Step 2B (inspect candidates, propose, ask)**.
 
 ### Step 2A: Empty CWD, flat scaffold
 
-Read `manifest.md`. Create every folder listed at CWD (no `Authentic-AI-OS/` wrapper).
+Read `manifest.md`. Create every folder listed at CWD.
 
 Then write:
-- `assets/_guide.md` → `./_guide.md`
 - `assets/CLAUDE.md` → `./CLAUDE.md`
 - `./.env.example` containing exactly:
 
@@ -62,44 +74,85 @@ Then write:
   # Future skills will document the keys they need.
   ```
 
+In Step 2A, the workspace CLAUDE.md ships with the default Path overrides section (none set, since there's no surrounding vault to integrate with).
+
 Go to **Step 4**.
 
-### Step 2B: Existing vault, locate the right landing spot
+### Step 2B: Existing vault, inspect candidates and let the creator pick
 
-Based on what Step 1 found, decide where Authentic AI OS should live. The principle: **fit the creator's existing structure, do not impose ours.**
+**This is the failure-prone step. Follow the discipline below.**
 
-**Reasoning the skill follows (in order):**
+#### B.1: Identify ALL candidate content homes
 
-1. **Is there already a content-style home inside an organizational folder?** Examples: `departments/content/`, `areas/content/`, `silos/creative/`, `categories/marketing/`. If yes, that's the likely target. Propose nesting Authentic AI OS inside it. Show the proposed path, confirm with the creator before writing.
+List every folder that could plausibly be the content workspace. Sources:
 
-2. **Is there an organizational folder but no content-style sub-folder inside it?** Examples: `departments/` exists, but no `content/` inside. Ask: "I see `<org-folder>/`. Should I create `<org-folder>/content/` for this work, place it somewhere else, or cancel?" Respect the answer.
+- Root-level folders with content-style names (e.g., `content/`, `Content/`, `creative/`).
+- Folders inside organizational containers (e.g., `departments/content/`, `areas/marketing/`).
+- The creator's volunteered preference, if they named one.
 
-3. **Is there a vault but no organizational folder at all?** Examples: a flat vault with `projects/`, `people/`, a root `claude.md`, but no department-style grouping. Ask: "I see an existing vault. Where should Authentic AI OS live? At the vault root as `Authentic-AI-OS/`, a custom path you pick, or cancel?"
+Do not stop after finding one match. There may be two or more.
 
-4. **Structure looks novel or you cannot tell?** Always fall back to asking. List the top-level folders you found, propose your best guess, let the creator override.
+#### B.2: Inspect each candidate
 
-**Collision check before writing:** Whatever the chosen `TARGET` is, if it already exists AND contains files (anything beyond a possible `_guide.md`), stop and ask:
-> "There's already content at `<TARGET>`. Do you want to (a) nest Authentic AI OS inside it, (b) pick a different path, or (c) cancel?"
+For each candidate folder, run `ls` and look at what's inside. Distinguish ops/strategy folders (SOPs, plans, strategy docs, README.md) from production folders (pieces/, ideas/, sequences/, content artifacts).
 
-**Once the creator confirms a `TARGET`:**
+#### B.3: Surface candidates to the creator
 
-1. Read `manifest.md`. Create every folder listed inside `TARGET`.
-2. Write `assets/_guide.md` → `TARGET/_guide.md`.
-3. Write `assets/CLAUDE.md` → `TARGET/CLAUDE.md`.
-4. Write `TARGET/.env.example` (same content as Step 2A).
-5. **Root routing block (only if a root `claude.md`/`CLAUDE.md` exists).** Read it. Check whether it already contains a `## Content work` section pointing at Authentic AI OS. If absent:
+If there is exactly one candidate and its contents clearly indicate a content production home, propose it: "Best fit based on your structure: `<path>`. It contains `<3-5 things you saw>`. Confirm, or pick a different path."
+
+If there are multiple candidates, list them with context:
+
+> "I see two folders that could be your content workspace:
+> - `<path-1>` contains `<contents>`. Looks like `<your read of what it is>`.
+> - `<path-2>` contains `<contents>`. Looks like `<your read of what it is>`.
+> Which one is the home for your content production work? Or pick a different path."
+
+If you cannot tell, ask plainly: "I see `<folders>` but can't tell which is your content home. Where should Authentic AI OS scaffold?"
+
+**Do not propose a path until you have inspected the contents of every plausible candidate.** First-match-wins is the documented failure mode of this skill.
+
+#### B.4: Collision check before writing
+
+Let `TARGET` be the folder the creator chose. If `TARGET` already exists and contains files:
+
+- If `TARGET/foundation/` exists, this is an AAI OS workspace already. Switch to Step 3.
+- Otherwise, the creator already has content in that folder. Confirm: "The folder `<TARGET>` already contains `<list a few files>`. The scaffold will add `foundation/`, `banks/proof-bank/assets/`, and `people/` alongside what's there. Confirm or pick a different path."
+
+#### B.5: Handle the people/ override
+
+The default behavior creates a local `people/` folder inside `TARGET` for `vid-credibility` and `vid-backstory` to write person stubs.
+
+**Check the vault root for an existing People-style folder** (`people/`, `People/`, `contacts/`, etc.). If one exists, ask:
+> "I see `<root-people-folder>` at the vault root. Person stubs from `vid-credibility` and `vid-backstory` can either (a) go to a local `people/` folder inside the workspace, or (b) go to your existing root `<root-people-folder>`. Which do you want?"
+
+- If (a): default behavior. Scaffold local `people/`. No override needed in CLAUDE.md.
+- If (b): SKIP scaffolding local `people/`. Record the override path. Include it in the workspace CLAUDE.md "Path overrides" section so foundation skills follow the redirect.
+
+#### B.6: Write
+
+Once `TARGET` and the people/ override (if any) are settled:
+
+1. Read `manifest.md`. Create the listed folders inside `TARGET`. If a people/ override is in effect, skip the `people/` row.
+2. Write `assets/CLAUDE.md` → `TARGET/CLAUDE.md`. **Always.** If a people/ override is in effect, fill in the "Path overrides" section in the written CLAUDE.md with the redirect. If no overrides, leave that section empty or note "no overrides."
+3. Write `TARGET/.env.example` (same content as Step 2A).
+4. **Root routing block.** Read the root `claude.md` or `CLAUDE.md`. Check whether it already contains a `## Content work` (or equivalent) section pointing at this workspace. If absent:
    - Read `assets/root-routing-block.md`.
-   - Substitute `{TARGET_PATH}` with the relative path to `TARGET` from the root.
+   - Substitute `{TARGET_PATH}` with the relative path to `TARGET` from the vault root.
    - Show the creator the exact block to be appended and ask yes/no.
-   - On yes: append the block to the end of the root file. Never overwrite existing content.
+   - On yes: append to the end of the root file. Never overwrite existing content.
    - On no: skip the append, note it in the receipt.
-6. **Never create index files inside folders you didn't create.** If the creator's vault uses a convention like `departments/content/content.md` as an index, that's their convention to maintain. Stay inside `TARGET`.
+
+   Always offer. Do not skip silently.
+
+5. **Do not create folder index files inside `TARGET`.** If the creator's vault uses a `content.md` or `README.md` index convention, that's theirs to maintain.
 
 Go to **Step 4**.
 
 ### Step 3: Additive update
 
-Read `manifest.md`. For every folder the manifest now lists that does not yet exist in the container, create it. If `_guide.md` or `CLAUDE.md` or `.env.example` is missing at the container root, write it from `assets/`. Never read, modify, overwrite, or delete anything the creator authored (`foundation/*`, bank entries, `people/*`, their `.env`).
+The workspace already exists. Read `manifest.md`. For every folder the manifest now lists that does not yet exist in `TARGET`, create it. If `CLAUDE.md` or `.env.example` is missing at the workspace root, write it from `assets/`.
+
+Never read, modify, overwrite, or delete anything the creator authored (`foundation/*`, bank entries, `people/*`, their `.env`, their CLAUDE.md if they edited it).
 
 Go to **Step 4**.
 
@@ -110,32 +163,35 @@ Report plainly:
 - The path where the workspace landed.
 - What was created vs already present.
 - Anything new this release added (Step 3 only).
-- Whether a routing block was appended to the client's root `claude.md` (Step 2B only).
+- Whether a routing block was appended to the root `claude.md` (Step 2B only).
+- Any path overrides recorded in the workspace CLAUDE.md.
 
-**Then tailor the handoff to what's already in the workspace.** Read `TARGET/foundation/creator-foundation.md` if it exists and check which sections (Offer, Avatar, Top 3, Iceberg, Pillars, Credibility, Backstory) are filled vs `[to fill]`.
+**Then tailor the handoff to foundation state.** Read `TARGET/foundation/creator-foundation.md` if it exists and check which sections (Offer, Avatar, Top 3, Iceberg, Pillars, Credibility, Backstory) are filled vs `[to fill]`.
 
-- **Foundation is empty or missing:** offer, don't direct. Phrase as a choice:
+- **Foundation is empty or missing:** offer, don't direct.
   > "Want me to start `vid-foundation` now? It walks you through avatar, positioning, pillars, credibility, and backstory, one focused session each. Or come back to it when you're ready."
 
-  If the creator says yes, invoke `vid-foundation` via the Skill tool. If they say not now, stop with a friendly close.
+  If yes, invoke `vid-foundation` via the Skill tool. If not now, friendly close.
 
 - **Foundation is partially filled:** acknowledge what's locked, offer to resume.
   > "Looks like your foundation is partway through. You have `[list locked sections in plain language]`. Want me to pick up with `vid-foundation` from where you left off? Or come back later."
 
-- **Foundation is complete (all sections filled):** do not suggest `vid-foundation`. Their identity is locked. Close with a status line:
+- **Foundation is complete:** do not suggest `vid-foundation`. Close with a status line:
   > "Workspace is current. Your foundation is locked. More skills are in development; you'll get them on the next plugin update."
 
   If Step 3 added new folders, name them. If nothing was added, say "Nothing new to add."
 
-Do NOT mention skills that have not shipped (no `vid-voice-capture`, `vid-research`, `vid-capture`). The end-of-foundation handoff lives inside `vid-foundation`, not here. The principle: facilitate, do not prescribe. The creator's state determines the offer.
+Do NOT mention skills that have not shipped (no `vid-voice-capture`, `vid-research`, `vid-capture`). The principle: facilitate, do not prescribe. The creator's state determines the offer.
 
 ## Safety rules
 
 - Only ever create or write inside the chosen `TARGET`. Never a sibling `people/`, `notes/`, or `foundation/` belonging to another system.
 - Creator content is untouchable. This skill scaffolds empty structure only.
 - The client's existing root `claude.md` is never overwritten. Only additively appended, and only with explicit confirmation.
+- The workspace CLAUDE.md is always written. No exceptions, no rationalized skips. See "Why CLAUDE.md is mandatory" above.
 - If any write fails, stop and report the exact path. Do not continue blindly.
 - Never fabricate a key, a value, or a foundation section.
+- Never invent new artifact files (no ad-hoc routing files, no sidecar configs). If a piece of information needs to live somewhere, it goes in the workspace CLAUDE.md (the documented vehicle for scoped instructions).
 
 ## What this skill is NOT
 

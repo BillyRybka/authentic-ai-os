@@ -68,4 +68,4 @@ used_in: []
 
 ## People links
 
-If a proof entry names a recognizable person (a client, a guest), create or update `people/{Full Name}.md` as a stub and wikilink the name both ways, per the vault-integration contract.
+If a proof entry names a recognizable person (a client, a guest), create or update a person stub and wikilink the name both ways, per the vault-integration contract. Default path is `people/{Full Name}.md` inside the workspace; if the workspace `CLAUDE.md` defines a `## Path overrides` entry for person stubs, follow that override instead.
