@@ -142,7 +142,7 @@ This connects to [[banks/proof-bank]]: if the proof exists in the bank but isn't
 
 `vid-segment` uses the same callout convention for body claims. `vid-pressure-test` (future) reads callouts during review and flags any claim that's missing one. The convention stays consistent across the writing skills.
 
-When `vid-intro` saves the intro, it also updates `Content/pieces/{slug}/piece.md`:
+When `vid-intro` saves the intro, it also updates `content/pieces/{slug}/piece.md`:
 
 ```yaml
 visual_proofs_called_out:

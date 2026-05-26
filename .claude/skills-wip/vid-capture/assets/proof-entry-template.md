@@ -44,7 +44,7 @@ used_in: []
 **Frontmatter fields:**
 
 - `proof_type`: one of `personal-result` or `client-win` (about who the result belongs to, not how it's presented)
-- `client`: wikilink to `People/{Full Name}.md`. Only present for proof involving a client. Remove the line for personal-result proof.
+- `client`: wikilink to `people/{Full Name}.md`. Only present for proof involving a client. Remove the line for personal-result proof.
 - `captured`: ISO date
 - `status`: starts `captured`
 - `tags`: at minimum `proof` and the proof-type slug (`personal-result` or `client-win`)
@@ -58,6 +58,6 @@ used_in: []
 - "Context" grounds the proof in a time, place, and person.
 - `> [!warning] Usage rules` callout is required if anonymization, NDA, or permission scope applies. Omit if there are none.
 
-**Client mention rule:** if the proof involves a client named, check `People/{Full Name}.md`. If missing, create it using `people-stub-template.md`.
+**Client mention rule:** if the proof involves a client named, check `people/{Full Name}.md`. If missing, create it using `people-stub-template.md`.
 
 **Anonymization default:** when in doubt, anonymize. Use "Anonymous" in `client:` until permission is verified.

@@ -1,16 +1,18 @@
 ---
-type: bank-index
-bank: metaphor-bank
-project: youtube-content-os
+type: reference
+doc: metaphor-bank-schema
+project: authentic-ai-os
 status: active
-tags: [bank, metaphor, index]
+tags: [reference, metaphor-bank, schema, contract]
 ---
 
-# Metaphor Bank
+# Metaphor bank schema
 
-Analogies and metaphors the creator uses to make abstract ideas concrete. Each entry is a reusable comparison that lands with the creator's avatar. Captured once, pullable from any script.
+The contract for writing metaphor entries to `banks/metaphor-bank/`. Analogies and metaphors the creator uses to make abstract ideas concrete. Each entry is a reusable comparison that lands with the creator's avatar. Captured once, pullable from any script.
 
-## What goes in this bank
+This bank is written by `vid-capture` (Metaphor stage) when that skill ships. Until then, this schema documents the intended contract.
+
+## What qualifies as a metaphor
 
 One file per metaphor. Examples:
 
@@ -19,13 +21,13 @@ One file per metaphor. Examples:
 - **Sports metaphors**: "A solo founder is the player-coach"
 - **Travel/journey metaphors**: "Building from services to systems is swapping a taxi meter for an Uber app"
 
-Metaphors come from the creator, not Claude. Captured via `vid-capture` (Metaphor stage). Do not invent metaphors. They sound wrong on camera.
+Metaphors come from the creator, not Claude. Do not invent metaphors. They sound wrong on camera.
 
-## What does NOT go here
+## What does NOT qualify
 
-- Stories → `story-bank/` (a metaphor compares A to B in a sentence, a story has tension and resolution)
-- Frameworks or named systems → `framework-bank/`
-- Single clever phrases without a comparison structure. A punchline isn't a metaphor.
+- Stories belong in `banks/story-bank/`. A metaphor compares A to B in a sentence; a story has tension and resolution.
+- Frameworks or named systems belong in `banks/framework-bank/`.
+- Single clever phrases without a comparison structure. A punchline is not a metaphor.
 - Metaphors Claude invented. Capture only phrases the creator already uses or explicitly adopts.
 
 ## Schema
@@ -33,7 +35,7 @@ Metaphors come from the creator, not Claude. Captured via `vid-capture` (Metapho
 ```yaml
 ---
 type: metaphor
-project: youtube-content-os
+project: authentic-ai-os
 concept: "short concept name"   # what the metaphor clarifies
 category: everyday              # food | cars | clothes | sports | travel | everyday | other
 visual: false                   # true if metaphor depends on a prop/graphic; false if pure speech works
@@ -47,11 +49,9 @@ used_in: []
 
 ## Naming
 
-`{short-slug}.md`. Kebab-case, references the concept or the metaphor object. E.g. `car-without-license.md`, `restaurant-with-no-recipes.md`, `player-coach.md`.
+`{short-slug}.md`. Kebab-case, references the concept or the metaphor object. For example: `car-without-license.md`, `restaurant-with-no-recipes.md`, `player-coach.md`.
 
 ## Body sections
-
-See `assets/metaphor-entry-template.md` in `vid-capture`. Key sections:
 
 1. **The concept**: what abstract idea this metaphor clarifies
 2. **The metaphor**: the comparison, in the creator's wording
@@ -61,7 +61,6 @@ See `assets/metaphor-entry-template.md` in `vid-capture`. Key sections:
 
 ## How entries get used
 
-1. `vid-capture` → Metaphor stage → file written here
-2. `vid-segment` pulls matching metaphors when explaining complex points
-3. `vid-intro` may pull a short metaphor for the Problem statement
-4. When used, `used_in` updates and `status` flips to `used`
+1. `vid-capture` writes entries at its Metaphor stage.
+2. Per-video skills pull matching metaphors when explaining complex points.
+3. When used, `used_in` updates and `status` flips to `used`.

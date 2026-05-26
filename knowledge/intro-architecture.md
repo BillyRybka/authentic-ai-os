@@ -273,7 +273,7 @@ When `vid-intro` runs, it should:
    - Credibility line: identify which of Hook/Problem-Result/Setup gets it, and which of the 5 credibility forms applies
 6. Creator picks at each step
 7. Assemble the full intro
-8. Save to `Content/pieces/{slug}/script.md` (the intro section) OR return to caller (vid-pipeline) when invoked as sub-skill
+8. Save to `content/pieces/{slug}/script.md` (the intro section) OR return to caller (vid-pipeline) when invoked as sub-skill
 
 Same Q-script discipline as `vid-title` and `vid-thumbnail`: short messages, ask-and-wait, no reference dumping, push back on weak options, anti-fabrication enforced (every claim must trace to script or foundation).
 

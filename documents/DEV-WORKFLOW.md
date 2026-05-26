@@ -54,7 +54,7 @@ git push origin main
 ## What never reaches a client
 
 - Anything not in the release allowlist: WIP skills, unused knowledge, `documents/`, `plans/`, `RELEASE.md`, `DEV-WORKFLOW.md`, `.vale/`, `.obsidian/`, the Vale hook.
-- Gitignored personal data: `foundation/`, `banks/` entries, `Content/`, `People/`, `raw/`, `Notes/`, `.env`. (Bank schema READMEs DO ship; bank entries do not.)
+- Gitignored personal data: `foundation/`, `banks/`, `content/`, `people/`, `raw/`, `notes/`, `.env`. Bank schemas live in `knowledge/{bank}-schema.md`; the bank folders themselves are creator content and never ship.
 
 ## The one rule
 

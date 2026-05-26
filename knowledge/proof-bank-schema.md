@@ -68,4 +68,4 @@ used_in: []
 
 ## People links
 
-If a proof entry names a recognizable person (a client, a guest), create or update `People/{Full Name}.md` as a stub and wikilink the name both ways, per the vault-integration contract.
+If a proof entry names a recognizable person (a client, a guest), create or update `people/{Full Name}.md` as a stub and wikilink the name both ways, per the vault-integration contract.

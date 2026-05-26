@@ -11,7 +11,7 @@ Produces the full 6-part intro for one video. Five phases: load context, derive 
 
 ## What this produces
 
-A full intro for one video, saved to `Content/pieces/{slug}/script.md` under an `## Intro` section. When invoked as a sub-skill by `vid-structure` or `vid-pipeline`, returns the intro as a structured packet to the caller (see "Output packet" below) and skips the save.
+A full intro for one video, saved to `content/pieces/{slug}/script.md` under an `## Intro` section. When invoked as a sub-skill by `vid-structure` or `vid-pipeline`, returns the intro as a structured packet to the caller (see "Output packet" below) and skips the save.
 
 ## When to run this
 
@@ -24,15 +24,15 @@ A full intro for one video, saved to `Content/pieces/{slug}/script.md` under an 
 Hard requirements:
 - `foundation/creator-foundation.md` exists (avatar, Top 3 problems, credibility brags)
 - `foundation/voice-profile.md` exists (the guardrail) and `foundation/reference-pieces/` has at least the `youtube-script` context (the voice engine)
-- `Content/pieces/{slug}/piece.md` exists with `title:` locked AND `format:` set (and `voice_context:`, default `youtube-script`)
-- `Content/pieces/{slug}/thumbnail-brief.md` exists with the locked thumbnail picks
-- A brain dump or reference block exists at `Content/pieces/{slug}/brain-dump.md` or `piece.md` (the actual video material)
+- `content/pieces/{slug}/piece.md` exists with `title:` locked AND `format:` set (and `voice_context:`, default `youtube-script`)
+- `content/pieces/{slug}/thumbnail-brief.md` exists with the locked thumbnail picks
+- A brain dump or reference block exists at `content/pieces/{slug}/brain-dump.md` or `piece.md` (the actual video material)
 
 If foundation is missing, tell the creator to run `vid-foundation` first. If the title or thumbnail aren't locked, tell them to run `vid-title` and `vid-thumbnail` first. If the brain dump is empty, ask them to fill it in or paste the script material before continuing.
 
 ## Invocation modes
 
-**Standalone:** creator invokes directly. After lock, save the intro to `Content/pieces/{slug}/script.md` under `## Intro`, update piece.md `voice_pressure_test:`, end.
+**Standalone:** creator invokes directly. After lock, save the intro to `content/pieces/{slug}/script.md` under `## Intro`, update piece.md `voice_pressure_test:`, end.
 
 **Sub-skill:** another skill (vid-structure, vid-pipeline) invokes. Return the intro packet to the caller; skip the save. The caller writes it into the script as part of its own flow.
 
@@ -55,9 +55,9 @@ If invoked with context from a caller (e.g. "intro for piece={slug}, format=case
 7. `banks/hook-bank.md` (5-type pattern library with worked plus near-miss examples)
 8. `banks/transition-bank.md` Section 1 (hook-forward transitions HF-1..HF-9) plus Section 4 (banned phrases B-1..B-13)
 9. `knowledge/emotion-brick-decision-matrix.md` (shared with vid-segment, vid-ending). Energy taxonomy (Visual Demo / Story / Metaphor). Useful for picking which energy lane the Hook + Problem/Result anchors in: question 4 maps to Poke-the-Problem (Story brick), question 5 maps to abstract reframes (Metaphor in hook), question 1 maps to Visual Demo when the avatar's pain is invisible. Body-segment scoped in name, but the underlying lane logic informs intro emotional weight too.
-10. `Content/pieces/{slug}/piece.md` (format, goal, pillar, locked title)
-11. `Content/pieces/{slug}/thumbnail-brief.md` (the locked thumbnail picks plus rationale)
-12. `Content/pieces/{slug}/brain-dump.md` AND/OR `piece.md` AND/OR `script.md` body (the actual material the intro must align to)
+10. `content/pieces/{slug}/piece.md` (format, goal, pillar, locked title)
+11. `content/pieces/{slug}/thumbnail-brief.md` (the locked thumbnail picks plus rationale)
+12. `content/pieces/{slug}/brain-dump.md` AND/OR `piece.md` AND/OR `script.md` body (the actual material the intro must align to)
 13. Conditional: `banks/story-bank/*.md` only if a credibility-line candidate would weave a story (Big-client-result, Volume-of-people-helped). When loading, also load `knowledge/story-pulling-criteria.md` (shared with vid-segment, vid-ending). 5 criteria for picking the right story from N candidates. Stage-match is the highest-priority filter for vid-intro because intro stories need to match the avatar's CURRENT stage, not their aspirational stage.
 14. Conditional: `banks/proof-bank/*.md` and `banks/testimonial-bank/*.md` only if the credibility line cites a number, screenshot, or testimonial. When loading, also load `knowledge/proof-placement-rules.md` (shared with vid-segment, vid-ending) for the PLACEMENT decision (proof immediately AFTER claim, not before; presentation-format selection across static-screenshot / before-after-pairing / live-clip / inline-stat). The CALLOUT SYNTAX itself lives in `knowledge/visual-proof-callouts.md` (already pointed at from Phase 4). Two files, two roles: placement-rules answers "where does proof go", visual-proof-callouts answers "how does the script mark it for the editor."
 15. Conditional: `knowledge/metaphor-integration.md` (shared with vid-segment, vid-ending) only when a Hook candidate uses metaphor framing. Key rules for hooks: drop clean (no "let me give you an analogy" announcement), 3-sentence cap, two-layer rule if the metaphor needs a visual.
@@ -220,8 +220,8 @@ If yes, drop back to Phase 2 or 3 with the specific beat the creator would chang
 
 **If standalone mode:**
 
-- Save the assembled intro to `Content/pieces/{slug}/script.md` under `## Intro`
-- Update `Content/pieces/{slug}/piece.md`:
+- Save the assembled intro to `content/pieces/{slug}/script.md` under `## Intro`
+- Update `content/pieces/{slug}/piece.md`:
   - `intro_locked: true`
   - `intro_strategy: problem-poke | result-tease | combined`
   - `intro_hook_type: question | contrarian | statement | fact | credibility`
@@ -359,9 +359,9 @@ These are the deeper principles. Use them to judge candidates internally before 
 | `foundation/creator-foundation.md` | Avatar, Top 3 problems, credibility brags |
 | `foundation/voice-profile.md` | The thin guardrail: fingerprint, signature phrases, refusals, POV/energy, optional preferred_hook_types / transition_style_preferences / intro_pacing |
 | `foundation/reference-pieces/{voice_context}.md` | The voice engine (voice only, not structure): real intact passages to write the intro from, matched to piece.md `voice_context` |
-| `Content/pieces/{slug}/piece.md` | Locked title, format, voice_context, goal, pillar |
-| `Content/pieces/{slug}/thumbnail-brief.md` | Locked thumbnail picks (drives Top 3 viewer-question derivation) |
-| `Content/pieces/{slug}/brain-dump.md` / `piece.md` / `script.md` | The actual material the intro must align to |
+| `content/pieces/{slug}/piece.md` | Locked title, format, voice_context, goal, pillar |
+| `content/pieces/{slug}/thumbnail-brief.md` | Locked thumbnail picks (drives Top 3 viewer-question derivation) |
+| `content/pieces/{slug}/brain-dump.md` / `piece.md` / `script.md` | The actual material the intro must align to |
 | `references/hook-type-selection-flow.md` | RUNTIME decision: how to cross-reference format + voice + channel size + brain dump to lock the hook lane. Does NOT restate the 5 hook types (those live in intro-architecture Step 2 and hook-bank) |
 | `references/credibility-line-weaving.md` | RUNTIME decision: which intro slot (Hook / Problem-Result / Setup) the credibility line weaves into given the form available. Does NOT restate the 5 forms or bolted-on rule (those live in intro-architecture Step 6) |
 | `references/problem-result-options.md` | RUNTIME decision: how to read pain-acuteness vs result-drama to pick Poke / Tease / Combine. Does NOT restate the 3 options or pivot phrases (those live in intro-architecture Step 3) |

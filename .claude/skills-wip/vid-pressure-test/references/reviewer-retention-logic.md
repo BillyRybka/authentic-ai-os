@@ -15,8 +15,8 @@ This is the ONLY reviewer that reads the whole script in one go to catch emergen
 
 1. `knowledge/script-tension-architecture.md`: the three load-bearing tactics: title-promise lock, setup-payoff threading, segment handoffs
 2. `knowledge/format-planners/{format}.md`: format-native tension arc for this piece (Case Study, Listicle, Short Process, Deep Dive, News, Roast, Interview)
-3. `Content/pieces/{slug}/piece.md`: locked title, selected_angle, format, goal, viewer_stage
-4. `Content/pieces/{slug}/script.md`: the full script being audited
+3. `content/pieces/{slug}/piece.md`: locked title, selected_angle, format, goal, viewer_stage
+4. `content/pieces/{slug}/script.md`: the full script being audited
 
 ## What to check (the 5 retention gates + 3 anti-patterns)
 

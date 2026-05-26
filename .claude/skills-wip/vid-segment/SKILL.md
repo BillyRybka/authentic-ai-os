@@ -13,7 +13,7 @@ This skill loads `knowledge/vault-integration.md` at session start. Every entry 
 
 ## What this produces
 
-The segment's prose appended to `Content/pieces/{slug}/script.md` under a heading that names the segment. Frontmatter side-effects on the piece's `piece.md` (`stories_used`, `proofs_used`, `metaphors_used`) plus matching `used_in:` updates on every bank entry pulled. When invoked as a sub-skill, the prose string is also returned to the caller so the orchestrator can place it.
+The segment's prose appended to `content/pieces/{slug}/script.md` under a heading that names the segment. Frontmatter side-effects on the piece's `piece.md` (`stories_used`, `proofs_used`, `metaphors_used`) plus matching `used_in:` updates on every bank entry pulled. When invoked as a sub-skill, the prose string is also returned to the caller so the orchestrator can place it.
 
 ## When to run this
 
@@ -30,18 +30,18 @@ Hard requirements:
 
 - `foundation/creator-foundation.md` exists with avatar plus Top 3 problems
 - `foundation/voice-profile.md` exists (the guardrail) and `foundation/reference-pieces/` has at least the default `youtube-script` context (the voice engine writing skills write from)
-- `Content/pieces/{slug}/piece.md` exists with at minimum `format`, `goal`, and `pillar`
-- `Content/pieces/{slug}/brain-dump.md` AND/OR `piece.md` exists with the segment's raw material
+- `content/pieces/{slug}/piece.md` exists with at minimum `format`, `goal`, and `pillar`
+- `content/pieces/{slug}/brain-dump.md` AND/OR `piece.md` exists with the segment's raw material
 
 Optional but used when present:
 
 - `foundation/reference-pieces/{voice_context}.md` (the voice engine, voice only not structure: real intact passages as `## ` sections, matched to piece.md `voice_context`)
-- `Content/pieces/{slug}/script.md` (so prior segments inform setup/payoff continuity)
+- `content/pieces/{slug}/script.md` (so prior segments inform setup/payoff continuity)
 - The relevant bank folders (`banks/story-bank/`, `banks/proof-bank/`, `banks/metaphor-bank/`, `banks/testimonial-bank/`, `banks/framework-bank/`)
 
 If foundation docs are missing, hard stop. Tell the creator to run `vid-foundation` and `vid-voice-capture` first.
 
-If `Content/pieces/{slug}/brain-dump.md` and `piece.md` are both missing, hard stop. The segment has no source material. Route the creator to `vid-intake` (raw capture) or `vid-framing` (decide angle / format / payoff) first.
+If `content/pieces/{slug}/brain-dump.md` and `piece.md` are both missing, hard stop. The segment has no source material. Route the creator to `vid-intake` (raw capture) or `vid-framing` (decide angle / format / payoff) first.
 
 ## Invocation modes
 
@@ -67,13 +67,13 @@ This skill is a conversation, not a document. Keep messages short. Never paste r
 6. `knowledge/voice-rhythm.md` (the lens for hearing rhythm in the reference pieces and the draft; no stored numbers)
 7. `knowledge/voice-pressure-test.md` (the validation pass to run before save)
 8. `knowledge/story-capture-guide.md` / `proof-capture-guide.md` / `metaphor-builder.md` / `testimonial-capture.md` (each loaded only if the segment ends up pulling that asset type)
-9. `Content/pieces/{slug}/piece.md` (format, goal, pillar, locked title, prior `stories_used` / `proofs_used` / `metaphors_used`)
-10. `Content/pieces/{slug}/brain-dump.md` and `piece.md` (the segment's raw material: locked angle, core payoff, point list)
-11. `Content/pieces/{slug}/script.md` (if it exists, so prior-segment closing line and prior banks pulled inform setup continuity)
+9. `content/pieces/{slug}/piece.md` (format, goal, pillar, locked title, prior `stories_used` / `proofs_used` / `metaphors_used`)
+10. `content/pieces/{slug}/brain-dump.md` and `piece.md` (the segment's raw material: locked angle, core payoff, point list)
+11. `content/pieces/{slug}/script.md` (if it exists, so prior-segment closing line and prior banks pulled inform setup continuity)
 12. Skill-local references: `references/setup-tension-payoff-shapes.md`, `references/framework-shapes.md` (uniquely this skill's runtime decision logic). Plus shared knowledge files used across writing skills: `knowledge/emotion-brick-decision-matrix.md`, `knowledge/story-pulling-criteria.md`, `knowledge/proof-placement-rules.md`, `knowledge/metaphor-integration.md`, `knowledge/framework-builder.md` (for inline framework crafting when the segment's logic brick is a framework and no bank match exists), `knowledge/visual-demo-builder.md` (for inline visual demo crafting when the segment's emotion brick is a Visual Demo, since there is no Visual Demo bank)
 13. `knowledge/visual-proof-callouts.md` (canonical `> [!important] Visual proof needed` callout convention. Load when the segment's logic block makes a numbered, named, or before/after claim that the editor must put on screen)
 14. `banks/transition-bank.md` (Section 2 segment-to-segment patterns plus Section 4 banned phrases for the segment's outbound transition)
-15. `Content/pieces/{slug}/async-brick-notes.md` (if it exists). Unstructured jot pad for ideas about OTHER segments that surfaced during prior writing. Check this file for any notes tagged with the current segment's purpose before brainstorming from scratch. If notes don't exist, create the file lazily when the creator drops the first note.
+15. `content/pieces/{slug}/async-brick-notes.md` (if it exists). Unstructured jot pad for ideas about OTHER segments that surfaced during prior writing. Check this file for any notes tagged with the current segment's purpose before brainstorming from scratch. If notes don't exist, create the file lazily when the creator drops the first note.
 
 **Frame the segment.** Pull the segment's job from `piece.md` (the locked angle and the segment's purpose in the body, e.g. "step 1 of 5", "point 3 of 7", "the case-study story beat", "the news 'why it matters' beat"). Confirm with the creator in one short message:
 
@@ -126,7 +126,7 @@ For each pulled candidate, surface to creator with: slug + one-line summary + WH
 
 Never invent client names, numbers, results, or specific phrasings. The brain dump is the only allowed source of new specifics, and only because the creator wrote it.
 
-**Async-brick-notes (handling ideas for OTHER segments mid-write).** If the creator is writing Segment N and an idea pops up for Segment M (a different segment), DON'T break flow to formally capture it. Jot a one-line note in `Content/pieces/{slug}/async-brick-notes.md` (create the file lazily on first note). Format: `- [Segment M, brick type]: quick idea`. When this skill later writes Segment M, it scans async-brick-notes.md as part of Phase 1 silent loads and surfaces relevant notes during the brainstorm step. Notes that don't get used can be deleted or left as artifacts.
+**Async-brick-notes (handling ideas for OTHER segments mid-write).** If the creator is writing Segment N and an idea pops up for Segment M (a different segment), DON'T break flow to formally capture it. Jot a one-line note in `content/pieces/{slug}/async-brick-notes.md` (create the file lazily on first note). Format: `- [Segment M, brick type]: quick idea`. When this skill later writes Segment M, it scans async-brick-notes.md as part of Phase 1 silent loads and surfaces relevant notes during the brainstorm step. Notes that don't get used can be deleted or left as artifacts.
 
 **Surface the structure draft.** Format:
 
@@ -206,7 +206,7 @@ Wait. The read-aloud test is the final voice gate. Loop until creator confirms.
 
 **Voice pressure-test full pass.** Run `knowledge/voice-pressure-test.md` Pass 2 (grain) against the locked prose: read a representative `## ` section from `foundation/reference-pieces/{voice_context}.md` aloud, then the prose aloud right after, and judge by ear whether sentence variation, paragraph shape, opener, and energy come from the same person in the same mode. If no file exists for this `voice_context`, skip Pass 2 and note the gap. Log result tier (pass / soft-warn / soft-reject / hard-reject). Hard-reject means a guardrail anti-pattern, a creator hard rule, or POV violation. Restructure, do not save.
 
-**Save the prose.** Append to `Content/pieces/{slug}/script.md` under a heading naming the segment (e.g. `## Step 2: Refactor your week`). Preserve any prior segments. Do NOT overwrite.
+**Save the prose.** Append to `content/pieces/{slug}/script.md` under a heading naming the segment (e.g. `## Step 2: Refactor your week`). Preserve any prior segments. Do NOT overwrite.
 
 **Update piece.md.** Append the new bank wikilinks to `stories_used:`, `proofs_used:`, `metaphors_used:`, plus `frameworks_used:` if used. Wikilink format: `[[bank-slug]]`.
 
@@ -293,10 +293,10 @@ From `vault-integration.md` Failure modes section. Never silent inconsistency.
 | `foundation/creator-foundation.md` | Avatar, Top 3 problems, credibility brags |
 | `foundation/voice-profile.md` | The thin guardrail (fingerprint, signature phrases, refusals, POV/energy) |
 | `foundation/reference-pieces/{voice_context}.md` | The voice engine (voice only, not structure): real intact passages as `## ` sections, matched to piece.md `voice_context` |
-| `Content/pieces/{slug}/piece.md` | Format, voice_context, goal, pillar, prior banks pulled |
-| `Content/pieces/{slug}/brain-dump.md` | The segment's actual creator-voice raw material |
-| `Content/pieces/{slug}/piece.md` | Locked angle, core payoff, segment job |
-| `Content/pieces/{slug}/script.md` | Prior segments (continuity for setup hooks) |
+| `content/pieces/{slug}/piece.md` | Format, voice_context, goal, pillar, prior banks pulled |
+| `content/pieces/{slug}/brain-dump.md` | The segment's actual creator-voice raw material |
+| `content/pieces/{slug}/piece.md` | Locked angle, core payoff, segment job |
+| `content/pieces/{slug}/script.md` | Prior segments (continuity for setup hooks) |
 | `banks/story-bank/*.md` | Story candidates by problem_illustrated and theme |
 | `banks/proof-bank/*.md` | Proof candidates by proof_type and theme |
 | `banks/metaphor-bank/*.md` | Metaphor candidates by concept and category |

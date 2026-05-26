@@ -11,9 +11,9 @@ Builds the Tier 1 outline for one video. Takes raw brain-dump material plus the 
 
 ## What this produces
 
-`Content/pieces/{slug}/script.md` with the outline skeleton: `## Intro` (empty, vid-intro fills), format-native body sections (each with one-line purpose anchored in brain-dump material + bullet outline + brick candidates listed), `## Ending` (empty, vid-ending fills).
+`content/pieces/{slug}/script.md` with the outline skeleton: `## Intro` (empty, vid-intro fills), format-native body sections (each with one-line purpose anchored in brain-dump material + bullet outline + brick candidates listed), `## Ending` (empty, vid-ending fills).
 
-`Content/pieces/{slug}/piece.md` frontmatter updates: `piece_status: structured`, `segment_purposes` (material-anchored list), `tension_plan` (title-promise location + active threads), `structure_locked_at: {today}`.
+`content/pieces/{slug}/piece.md` frontmatter updates: `piece_status: structured`, `segment_purposes` (material-anchored list), `tension_plan` (title-promise location + active threads), `structure_locked_at: {today}`.
 
 ## When to run this
 
@@ -24,13 +24,13 @@ Builds the Tier 1 outline for one video. Takes raw brain-dump material plus the 
 ## Prerequisites
 
 Hard requirements:
-- `Content/pieces/{slug}/brain-dump.md` exists with raw material AND `iceberg_aligned: true`
-- `Content/pieces/{slug}/piece.md` exists with `selected_angle`, `core_payoff`, `format`, `goal`, `viewer_stage` (all written by vid-framing)
+- `content/pieces/{slug}/brain-dump.md` exists with raw material AND `iceberg_aligned: true`
+- `content/pieces/{slug}/piece.md` exists with `selected_angle`, `core_payoff`, `format`, `goal`, `viewer_stage` (all written by vid-framing)
 - `foundation/creator-foundation.md` exists with iceberg + Top 3 problems
 - `knowledge/format-planners/{format}.md` exists for the locked format
 
 Soft requirements (used when present, never blockers):
-- `Content/pieces/{slug}/thumbnail-brief.md` (informs which lessons need on-screen demos)
+- `content/pieces/{slug}/thumbnail-brief.md` (informs which lessons need on-screen demos)
 - `foundation/packaging-system.md` (informs default segment count by format)
 - `banks/story-bank/`, `banks/proof-bank/`, `banks/metaphor-bank/`, `banks/framework-bank/`, `banks/testimonial-bank/` (queried for brick candidates per segment)
 
@@ -50,13 +50,13 @@ This is the conversation phase. The skill behaves as a creative sparring partner
 
 **Silent loads** (do NOT paste into chat):
 
-1. `Content/pieces/{slug}/brain-dump.md`, the raw material plus locked intake fields
-2. `Content/pieces/{slug}/piece.md`, locked framing (`selected_angle`, `core_payoff`, `format`, `voice_context`, `goal`, `viewer_stage`, `outlier_anchor`)
+1. `content/pieces/{slug}/brain-dump.md`, the raw material plus locked intake fields
+2. `content/pieces/{slug}/piece.md`, locked framing (`selected_angle`, `core_payoff`, `format`, `voice_context`, `goal`, `viewer_stage`, `outlier_anchor`)
 3. `foundation/creator-foundation.md`, iceberg statement, Top 3 problems, avatar, credibility brags
 4. `foundation/voice-profile.md`, the thin guardrail (fingerprint and energy, for skeleton style orientation only, no prose written here). The reference pieces in `foundation/reference-pieces/{voice_context}.md` are loaded by the prose skills, not this one. Contract in `knowledge/voice-profile-schema.md`
 5. `knowledge/format-planners/{format}.md`, the body shape for THIS format
 6. `knowledge/script-tension-architecture.md`, cross-segment tension flow + thread planning + handoff rules
-7. `Content/pieces/{slug}/thumbnail-brief.md` if present, for visual-demo cues
+7. `content/pieces/{slug}/thumbnail-brief.md` if present, for visual-demo cues
 8. The relevant bank folders by problem-tag, brain-dump theme match: `banks/story-bank/`, `banks/proof-bank/`, `banks/metaphor-bank/`, `banks/framework-bank/`, `banks/testimonial-bank/`
 
 **Hard friction checks during load:**

@@ -109,6 +109,7 @@ Built by grepping every `SKILL.md`, `references/*.md`, and `assets/*.md` across 
 - `knowledge/visual-proof-callouts.md`
 - `knowledge/metaphor-integration.md`
 - `knowledge/format-planners/*.md` — all 7
+- `knowledge/hook-bank.md` *(planned, not yet authored. Billy-built reference of hook patterns. Required before vid-intro ships.)*
 
 **vid-segment** `WIP`
 - `knowledge/vault-integration.md`
@@ -127,6 +128,7 @@ Built by grepping every `SKILL.md`, `references/*.md`, and `assets/*.md` across 
 - `knowledge/visual-demo-builder.md`
 - `knowledge/visual-proof-callouts.md`
 - `knowledge/format-planners/*.md` — all 7
+- `knowledge/transition-bank.md` *(planned, not yet authored. Billy-built reference of transition patterns. Required before vid-segment ships.)*
 
 **vid-ending** `WIP`
 - `knowledge/vault-integration.md`
@@ -139,6 +141,7 @@ Built by grepping every `SKILL.md`, `references/*.md`, and `assets/*.md` across 
 - `knowledge/visual-proof-callouts.md`
 - `knowledge/metaphor-integration.md`
 - `knowledge/format-planners/*.md` — all 7
+- `knowledge/transition-bank.md` *(planned, not yet authored. Same file vid-segment uses. Required before vid-ending ships.)*
 
 **vid-pressure-test** `WIP`
 - `knowledge/voice-profile-schema.md` (also via `references/reviewer-voice-authenticity.md`)
@@ -162,6 +165,7 @@ Use this when editing or renaming a knowledge file: it tells you every skill tha
 | `format-rotation-guide.md` | vid-research |
 | `framework-builder.md` | vid-capture, vid-segment, vid-structure |
 | `gift-framework.md` | vid-thumbnail |
+| `hook-bank.md` *(planned, not yet authored)* | vid-intro |
 | `interview-posture.md` | vid-avatar, vid-positioning, vid-pillars, vid-credibility, vid-backstory, vid-voice-capture |
 | `intro-architecture.md` | vid-intro, vid-pressure-test |
 | `metaphor-builder.md` | vid-capture, vid-segment |
@@ -177,6 +181,7 @@ Use this when editing or renaming a knowledge file: it tells you every skill tha
 | `testimonial-capture.md` | vid-capture, vid-segment |
 | `three-circle-research.md` | vid-research, vid-framing |
 | `thumbnail-composition-guide.md` | **none** (see Orphans) |
+| `transition-bank.md` *(planned, not yet authored)* | vid-segment, vid-ending |
 | `thumbnail-examples-library.md` | vid-thumbnail |
 | `thumbnail-strategy-menu.md` | vid-thumbnail |
 | `thumbnail-text-patterns.md` | vid-title, vid-thumbnail |
@@ -209,7 +214,12 @@ No other orphans. Every other file in `knowledge/` has at least one consumer.
 
 ## 4. Broken-reference list — referenced files that don't exist
 
-**None.** Every `knowledge/` path referenced by any skill resolves to a real file in the `knowledge/` directory.
+Two planned `knowledge/` files are referenced by WIP skills but have not been authored yet. They must exist before their consuming skills can ship:
+
+- `knowledge/hook-bank.md` — referenced by vid-intro. Billy-built reference of hook patterns and worked examples.
+- `knowledge/transition-bank.md` — referenced by vid-segment and vid-ending. Billy-built reference of transition patterns (intro-forward, segment-pivot, body-to-ending).
+
+These are NOT in `banks/`. They are universal reference content authored by the system maintainer that ships with the plugin and is read by skills, same shape as `format-rotation-guide.md` or `BENS-framework.md`. The pre-publish skills (vid-intro, vid-segment, vid-ending) cannot ship until these two files exist.
 
 One thing that looks like a broken reference but is not: the string `knowledge/X.md` appears in several SKILL.md files (vid-avatar, vid-positioning, vid-pillars, vid-credibility, vid-backstory, vid-research, vid-voice-capture). It is **not a reference** — it is a documentation line explaining how to resolve `knowledge/` paths at runtime (`${CLAUDE_PLUGIN_ROOT}/knowledge/` when installed, repo-relative in dev). The `X` is a literal placeholder. Ignore it.
 

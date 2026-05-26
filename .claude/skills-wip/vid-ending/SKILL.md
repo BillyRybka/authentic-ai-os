@@ -11,7 +11,7 @@ Writes the close of one video using the 3-Part End Formula: Pivot (recap the tra
 
 ## What this produces
 
-A locked ending block, saved as the closing section of `Content/pieces/{slug}/script.md`. Updates `Content/pieces/{slug}/piece.md` with the ending packet (next-video link, goal, CTA shape). When invoked as a sub-skill by `vid-pipeline`, returns the ending packet to the caller.
+A locked ending block, saved as the closing section of `content/pieces/{slug}/script.md`. Updates `content/pieces/{slug}/piece.md` with the ending packet (next-video link, goal, CTA shape). When invoked as a sub-skill by `vid-pipeline`, returns the ending packet to the caller.
 
 ## When to run this
 
@@ -23,8 +23,8 @@ A locked ending block, saved as the closing section of `Content/pieces/{slug}/sc
 
 Hard requirements:
 - `foundation/creator-foundation.md` exists with the avatar's Top 3 problems (the Gap reveals one of them)
-- `Content/pieces/{slug}/piece.md` exists with `format`, `goal`, and a `pillar` set
-- `Content/pieces/{slug}/script.md` has body content the close can recap (or at minimum a `piece.md` describing the transformation the video delivers)
+- `content/pieces/{slug}/piece.md` exists with `format`, `goal`, and a `pillar` set
+- `content/pieces/{slug}/script.md` has body content the close can recap (or at minimum a `piece.md` describing the transformation the video delivers)
 
 If body is missing, hard stop. Tell the creator: "I need the body locked first. Run `vid-segment` or paste the locked body, then re-invoke."
 
@@ -56,9 +56,9 @@ If invoked with caller context (e.g. "ending for case-study, goal=sales, transfo
 8. `references/cta-placement-by-format.md` (which goal-and-format combinations work, which tank)
 9. `references/ending-anti-patterns.md` (banned phrases and the failure mechanism)
 10. `references/end-screen-design.md` (which video to point to and why)
-11. `Content/pieces/{slug}/piece.md` (format, goal, pillar, locked title)
-12. `Content/pieces/{slug}/script.md` (the body. Read the `## Intro` section verbatim to lift the Setup contract, viewer-question promises, hook line, and which avatar problem the intro poked. Read the body sections too, to lift the actual transformation language.)
-13. `Content/pieces/{slug}/piece.md` if it exists (locked angle, core payoff)
+11. `content/pieces/{slug}/piece.md` (format, goal, pillar, locked title)
+12. `content/pieces/{slug}/script.md` (the body. Read the `## Intro` section verbatim to lift the Setup contract, viewer-question promises, hook line, and which avatar problem the intro poked. Read the body sections too, to lift the actual transformation language.)
+13. `content/pieces/{slug}/piece.md` if it exists (locked angle, core payoff)
 14. **Sub-skill mode only:** the intro packet returned by `vid-intro` to the caller. Key fields you read:
     - `setup.text` (literal Setup contract; your Pivot pays this off near-verbatim)
     - `setup.top_3_questions_used` (the three viewer questions your Pivot has to confirm got answered)
@@ -180,8 +180,8 @@ Once locked:
 
 **If standalone mode:**
 - Read `assets/ending-block-template.md` to get the fillable structure. Fill the bracketed slots ({Pivot}, {Gap}, {CTA}, {Bridge}, {{next-video-slug}}) with the locked content from the picked candidate. If `goal=views`, omit the CTA block entirely per the template's inline note.
-- Replace the existing close (if any) in `Content/pieces/{slug}/script.md` with the filled template. The close goes at the end of the script. The `## Ending` heading from the template makes it scannable for editors.
-- Update `Content/pieces/{slug}/piece.md`:
+- Replace the existing close (if any) in `content/pieces/{slug}/script.md` with the filled template. The close goes at the end of the script. The `## Ending` heading from the template makes it scannable for editors.
+- Update `content/pieces/{slug}/piece.md`:
   - `ending_locked: true`
   - `next_video: "[[slug-of-next-video]]"` (wikilink)
   - `cta_shape: sales | emails | views` (matches goal)
@@ -255,8 +255,8 @@ If the creator's draft pulls toward "and now to wrap up", that's the signal the 
 | `foundation/creator-foundation.md` | Avatar Top 3 problems (Gap source) |
 | `foundation/voice-profile.md` | The thin guardrail (fingerprint, signature phrases, refusals, POV/energy) |
 | `foundation/reference-pieces/{voice_context}.md` | The voice engine (voice only, not structure): real intact passages as `## ` sections, matched to piece.md `voice_context` |
-| `Content/pieces/{slug}/script.md` + `piece.md` | The video being closed |
-| `Content/pieces/{slug}/script.md` `## Intro` section | Standalone-mode source for Setup contract, hook lane, and which Top-3 problem the intro anchored. Drives the callback rules. |
+| `content/pieces/{slug}/script.md` + `piece.md` | The video being closed |
+| `content/pieces/{slug}/script.md` `## Intro` section | Standalone-mode source for Setup contract, hook lane, and which Top-3 problem the intro anchored. Drives the callback rules. |
 | Intro packet from `vid-intro` (sub-skill mode) | Sub-skill source for the same fields: `setup.text`, `setup.top_3_questions_used`, `problem_result.top_3_problem_anchored`, `hook.text`, `hook.type`, `credibility.text`. Schema in vid-intro SKILL.md "Output packet" section. |
 | `assets/ending-block-template.md` | Fillable structure read at lock time, filled with the locked content, then written into script.md |
 

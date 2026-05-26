@@ -277,7 +277,7 @@ When the name feels forced:
 - "Would you say this in a sales call without explaining the acronym? If no, simplify."
 
 When the creator wants to bank something half-baked:
-- "Have you used this framework in 3+ videos? If no, it's still an idea. Put it in `Content/ideas/content-ideas.md` and bank it when it crystallizes."
+- "Have you used this framework in 3+ videos? If no, it's still an idea. Put it in `content/ideas/content-ideas.md` and bank it when it crystallizes."
 
 ## Pivot phrases (the bridge into the framework)
 

@@ -1,6 +1,6 @@
 ---
 name: vid-framing
-description: Pick the angle for one specific video. Surfaces 3 outlier-anchored angle candidates plus 1 experimental angle from the creator's pattern banks and brain-dump. Runs Person, Problem, Positioning filter, predicts audience temperature (cold/warm/hot), confirms format from the creator's current packaging defaults, locks goal (sales/email/views). Output: framing decisions appended to `Content/pieces/{slug}/piece.md` with the four locked fields downstream skills consume (selected_angle, core_payoff, format, goal, viewer_stage). Anti-fabrication, every anchored angle cites a real bank entry. Standalone OR invoked by vid-pipeline. Phrases like "frame the video", "pick the angle", "frame this piece", "what's the angle for this", "lock the framing", "what should this video be about", "re-frame this piece", "what angles do I have on [topic]", or any downstream pipeline that needs an angle locked before structure starts should fire this skill.
+description: Pick the angle for one specific video. Surfaces 3 outlier-anchored angle candidates plus 1 experimental angle from the creator's pattern banks and brain-dump. Runs Person, Problem, Positioning filter, predicts audience temperature (cold/warm/hot), confirms format from the creator's current packaging defaults, locks goal (sales/email/views). Output: framing decisions appended to `content/pieces/{slug}/piece.md` with the four locked fields downstream skills consume (selected_angle, core_payoff, format, goal, viewer_stage). Anti-fabrication, every anchored angle cites a real bank entry. Standalone OR invoked by vid-pipeline. Phrases like "frame the video", "pick the angle", "frame this piece", "what's the angle for this", "lock the framing", "what should this video be about", "re-frame this piece", "what angles do I have on [topic]", or any downstream pipeline that needs an angle locked before structure starts should fire this skill.
 ---
 
 # Video Framing
@@ -11,7 +11,7 @@ Picks the angle for one specific video. Surfaces 3-4 candidates anchored to real
 
 ## What this produces
 
-Framing decisions written into `Content/pieces/{slug}/piece.md`. Fields appended to existing frontmatter, body sections appended after existing content. See `assets/piece-framing-additions.md` for the exact shape.
+Framing decisions written into `content/pieces/{slug}/piece.md`. Fields appended to existing frontmatter, body sections appended after existing content. See `assets/piece-framing-additions.md` for the exact shape.
 
 Locked fields after vid-framing completes:
 
@@ -37,8 +37,8 @@ Body sections appended: Selected Angle, Why This Angle Lands, Considered + Dropp
 ## Prerequisites
 
 Hard requirements:
-- `Content/pieces/{slug}/brain-dump.md` exists with the raw material AND `iceberg_aligned: true` (vid-intake locked this)
-- `Content/pieces/{slug}/piece.md` exists (created at piece-folder creation)
+- `content/pieces/{slug}/brain-dump.md` exists with the raw material AND `iceberg_aligned: true` (vid-intake locked this)
+- `content/pieces/{slug}/piece.md` exists (created at piece-folder creation)
 - `foundation/creator-foundation.md` exists with iceberg + Top 3 problems + audience profile
 - `foundation/packaging-system.md` exists with the starting format rotation (3 core + 1 experimental) and current thumbnail test strategies
 - `banks/pattern-bank.md` exists and is less than 120 days old (sticky-curated quarterly refresh)
@@ -61,8 +61,8 @@ Soft requirements:
 
 Silent loads (do NOT paste into chat):
 
-1. `Content/pieces/{slug}/brain-dump.md`, the raw material plus the locked `problem_addressed`, `iceberg_aligned`, `intake_mode` from vid-intake
-2. `Content/pieces/{slug}/piece.md`, existing frontmatter (slug, pillar, created, any prior framing if re-framing)
+1. `content/pieces/{slug}/brain-dump.md`, the raw material plus the locked `problem_addressed`, `iceberg_aligned`, `intake_mode` from vid-intake
+2. `content/pieces/{slug}/piece.md`, existing frontmatter (slug, pillar, created, any prior framing if re-framing)
 3. `foundation/creator-foundation.md`, iceberg statement, Top 3 problems, audience profile
 4. `foundation/voice-profile.md`, preferred_hook_types, opener pattern, energy baseline (style only)
 5. `foundation/packaging-system.md`, starting format rotation, current thumbnail test strategies

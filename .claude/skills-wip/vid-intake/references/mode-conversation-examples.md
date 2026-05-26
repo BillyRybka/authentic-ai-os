@@ -42,7 +42,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Creator:** "Yes."
 
-**Skill:** "Saved to `Content/pieces/cardio-vs-strength-for-founders/brain-dump.md`. Run vid-framing next to lock the angle and format."
+**Skill:** "Saved to `content/pieces/cardio-vs-strength-for-founders/brain-dump.md`. Run vid-framing next to lock the angle and format."
 
 **Why this works:** the creator dumped freely without interruption. Skill mirrored back the structure they already had. Alignment check took 10 seconds. One drill question on the weakest spot (James story specifics) unlocked the proof. Save was clean. Total conversation: under 5 minutes.
 

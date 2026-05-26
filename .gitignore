@@ -36,22 +36,18 @@ _notes/
 *WORKING-NOTES.md
 .claude/voice-audit-log.md
 
-# Creator vault data. NEVER ships. The product is the plugin, not Billy's content.
-# Clients get an empty vault scaffolded by creator-setup at runtime.
+# Vault content NEVER ships. The repo is the plugin source only.
+# Bank schemas live in knowledge/{bank}-schema.md.
+# Clients get an empty workspace scaffolded by creator-setup at runtime.
+# If any of these folders appear locally (test runs, accidental scaffold), keep them out of git.
 foundation/
-Content/
-People/
-Companies/
-Resources/
+content/
+people/
+companies/
+resources/
 raw/
-Notes/
-
-# Banks: the STRUCTURE + schema READMEs are product and ship.
-# The actual entries (and assets) are personal content and never ship.
-banks/*/**
-!banks/*/README.md
-banks/*.md
-# Any test/working vault run from inside the repo (recommended: run it OUTSIDE the repo).
+notes/
+banks/
 Authentic-AI-OS/
 
 # Temp / scratch artifacts

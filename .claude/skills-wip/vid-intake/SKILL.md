@@ -1,17 +1,17 @@
 ---
 name: vid-intake
-description: Capture raw video material into a structured brain-dump.md for one video. Auto-detects which of 7 intake modes the creator is in (idea + dump, outline paste, own transcript, inspired-by, news-jacking, client win, story-first), runs the matching short conversation, confirms iceberg fit and Top 3 problem alignment, saves to Content/pieces/{slug}/brain-dump.md. The creator's exact phrasing is preserved verbatim because the brain dump IS the voice for every downstream writing skill. Anti-fabrication. Adaptive drilling. Target time 5-10 minutes per video, never an interrogation. Runnable standalone OR invoked by vid-pipeline at the start of the SCRIPT phase. Use this skill whenever a creator brings video material that has not yet been captured into a piece folder, even if they don't explicitly say "intake". Phrases like "I want to make a video about X", "I have a brain dump for this video", "here's a transcript I want to turn into a video", "I saw this competitor video and want my own take", "I had this thing happen and want to make a video", "I want to do a video on my client win", "there's a new feature I want to cover", "let's start a new video", "let's plan this one out", or any downstream pipeline that needs the raw material captured should fire this skill.
+description: Capture raw video material into a structured brain-dump.md for one video. Auto-detects which of 7 intake modes the creator is in (idea + dump, outline paste, own transcript, inspired-by, news-jacking, client win, story-first), runs the matching short conversation, confirms iceberg fit and Top 3 problem alignment, saves to content/pieces/{slug}/brain-dump.md. The creator's exact phrasing is preserved verbatim because the brain dump IS the voice for every downstream writing skill. Anti-fabrication. Adaptive drilling. Target time 5-10 minutes per video, never an interrogation. Runnable standalone OR invoked by vid-pipeline at the start of the SCRIPT phase. Use this skill whenever a creator brings video material that has not yet been captured into a piece folder, even if they don't explicitly say "intake". Phrases like "I want to make a video about X", "I have a brain dump for this video", "here's a transcript I want to turn into a video", "I saw this competitor video and want my own take", "I had this thing happen and want to make a video", "I want to do a video on my client win", "there's a new feature I want to cover", "let's start a new video", "let's plan this one out", or any downstream pipeline that needs the raw material captured should fire this skill.
 ---
 
 # Video Intake
 
-Captures whatever raw material the creator brings and produces a structured `Content/pieces/{slug}/brain-dump.md` that downstream skills (`vid-framing`, `vid-structure`, `vid-segment`, `vid-intro`, `vid-ending`) read at runtime. Seven intake modes covering the realistic ways a creator starts a video. Auto-detects mode, runs the matching short conversation, locks iceberg fit and Top 3 problem alignment, saves.
+Captures whatever raw material the creator brings and produces a structured `content/pieces/{slug}/brain-dump.md` that downstream skills (`vid-framing`, `vid-structure`, `vid-segment`, `vid-intro`, `vid-ending`) read at runtime. Seven intake modes covering the realistic ways a creator starts a video. Auto-detects mode, runs the matching short conversation, locks iceberg fit and Top 3 problem alignment, saves.
 
 **Scope boundary:** vid-intake captures raw material only. It does NOT pick the format (`vid-framing` does that), does NOT generate angle framings (`vid-framing`), does NOT write any script content (`vid-intro`, `vid-segment`, `vid-ending`). Light alignment check (iceberg + Top 3) happens here so downstream skills don't waste time on a video that does not fit the channel. Full angle framing and Core Payoff selection happen in `vid-framing` next.
 
 ## What this produces
 
-`Content/pieces/{slug}/brain-dump.md` with creator's exact phrasing preserved, plus the iceberg fit and Top 3 problem alignment locked. Voice fuel for every downstream writing skill.
+`content/pieces/{slug}/brain-dump.md` with creator's exact phrasing preserved, plus the iceberg fit and Top 3 problem alignment locked. Voice fuel for every downstream writing skill.
 
 When invoked as a sub-skill, returns the brain-dump packet to the caller and skips the save (caller writes it).
 
@@ -130,9 +130,9 @@ Once the dump is captured and aligned:
 
 1. Propose a kebab-case slug. Source from the topic the creator named, not from the iceberg (the iceberg is generic, the slug is specific to this video).
 2. Confirm slug with creator in one short message: `slug: "frequency-vs-depth-on-youtube"` — sound right?
-3. Create `Content/pieces/{slug}/` directory.
-4. Write `Content/pieces/{slug}/brain-dump.md` per the schema below.
-5. Confirm save in one line: "Saved to `Content/pieces/{slug}/brain-dump.md`. Run `vid-framing` next to lock the angle and format."
+3. Create `content/pieces/{slug}/` directory.
+4. Write `content/pieces/{slug}/brain-dump.md` per the schema below.
+5. Confirm save in one line: "Saved to `content/pieces/{slug}/brain-dump.md`. Run `vid-framing` next to lock the angle and format."
 
 Do not create the folder before slug is confirmed. No orphan empty folders.
 

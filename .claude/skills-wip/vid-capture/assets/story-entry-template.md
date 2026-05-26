@@ -41,7 +41,7 @@ used_in: []
 
 - `story_type`: one of `client`, `own`, `viewer`
 - `problem_illustrated`: one of `1`, `2`, `3`, `general` (maps to top 3 problems in creator-foundation.md)
-- `client`: wikilink to `People/{Full Name}.md`. Only present for client stories. Remove the line entirely for own stories or viewer stories.
+- `client`: wikilink to `people/{Full Name}.md`. Only present for client stories. Remove the line entirely for own stories or viewer stories.
 - `captured`: ISO date YYYY-MM-DD
 - `status`: starts `captured`. Writing skills change to `used` when first consumed.
 - `tags`: at minimum `story` and `problem-{n}` or `problem-general`. Add theme slugs as applicable (e.g., `pricing`, `positioning`, `delegation`).
@@ -57,4 +57,4 @@ used_in: []
 - `> [!tip] Why this story lands` is a required callout.
 - Notes section captures meta: when, how, what it connects to.
 
-**Client mention rule:** if the creator names a client by full name, check `People/{Full Name}.md`. If missing, create it using `people-stub-template.md`. Then write `client: "[[Full Name]]"` in frontmatter and `[[Full Name]]` at first body mention.
+**Client mention rule:** if the creator names a client by full name, check `people/{Full Name}.md`. If missing, create it using `people-stub-template.md`. Then write `client: "[[Full Name]]"` in frontmatter and `[[Full Name]]` at first body mention.

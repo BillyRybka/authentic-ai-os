@@ -92,10 +92,10 @@ Per interview format planner. Same failure mode as R-4, interview-to-interview t
 
 Before saving the Bridge, verify:
 
-1. **Target video exists.** Check that `[[next-video-slug]]` resolves to a real piece in `Content/pieces/` OR that the creator confirms the published URL exists.
+1. **Target video exists.** Check that `[[next-video-slug]]` resolves to a real piece in `content/pieces/` OR that the creator confirms the published URL exists.
 2. **Target video matches goal.** If goal=sales, the target is a sales-converting video. If goal=emails, an email-converting one. If goal=views, an evergreen with strong watch-time.
 3. **Target video is not in violation of R-1 through R-5.** Run the rule checks.
-4. **Wikilink target resolves.** If `Content/pieces/{next-slug}/piece.md` doesn't exist, surface to the creator: "wikilink doesn't resolve. Want me to (a) ask for the right slug, (b) leave as plain text and you fix later, or (c) skip the Bridge until the next video is created?"
+4. **Wikilink target resolves.** If `content/pieces/{next-slug}/piece.md` doesn't exist, surface to the creator: "wikilink doesn't resolve. Want me to (a) ask for the right slug, (b) leave as plain text and you fix later, or (c) skip the Bridge until the next video is created?"
 
 If verification fails, do not lock. Ask the creator to fix or pick a different target.
 

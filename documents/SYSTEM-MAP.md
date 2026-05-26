@@ -99,7 +99,7 @@ Two skills fill the reusable banks. Done once, then topped up over time.
 ### vid-capture `WIP`
 Captures stories, proofs, metaphors, testimonials, and frameworks into the evidence banks.
 - **READS** — `creator-foundation.md`, `voice-profile.md` (alignment checks)
-- **WRITES** — `banks/story-bank/`, `banks/proof-bank/`, `banks/metaphor-bank/`, `banks/testimonial-bank/`, `banks/framework-bank/`, `People/{Name}.md` stubs
+- **WRITES** — `banks/story-bank/`, `banks/proof-bank/`, `banks/metaphor-bank/`, `banks/testimonial-bank/`, `banks/framework-bank/`, `people/{Name}.md` stubs
 - **NEXT** — vid-intake
 
 ### vid-research `WIP`
@@ -112,7 +112,7 @@ Studies winning content to build pattern banks and the packaging system.
 
 ## Stage 4 — Pre-Script (per video)
 
-From here, work happens inside one video folder: `Content/pieces/{slug}/`. `piece.md` is the **frontmatter hub** every per-video skill reads and updates.
+From here, work happens inside one video folder: `content/pieces/{slug}/`. `piece.md` is the **frontmatter hub** every per-video skill reads and updates.
 
 ### vid-intake `WIP`
 Takes raw material (7 intake modes) and locks the brain-dump for one video.
@@ -152,19 +152,19 @@ Builds the script skeleton: intro, format-native body sections, ending.
 
 ### vid-intro `WIP`
 Writes the `## Intro` section with the 6-part intro structure.
-- **READS** — `piece.md`, `thumbnail-brief.md`, `brain-dump.md`, `creator-foundation.md`, `voice-profile.md`, `reference-pieces/`, `banks/hook-bank.md`, `knowledge/intro-architecture.md`, `knowledge/script-tension-architecture.md`, `knowledge/vault-integration.md`
+- **READS** — `piece.md`, `thumbnail-brief.md`, `brain-dump.md`, `creator-foundation.md`, `voice-profile.md`, `reference-pieces/`, `knowledge/hook-bank.md` (planned), `knowledge/intro-architecture.md`, `knowledge/script-tension-architecture.md`, `knowledge/vault-integration.md`
 - **WRITES** — `script.md` (`## Intro`)
 - **NEXT** — vid-segment
 
 ### vid-segment `WIP`
 Writes one body section at a time (Setup/Tension/Payoff). Loops once per segment.
-- **READS** — `piece.md`, `brain-dump.md`, `script.md`, `voice-profile.md`, `reference-pieces/`, `creator-foundation.md`, `knowledge/script-tension-architecture.md`, `knowledge/emotion-brick-decision-matrix.md`, `knowledge/visual-proof-callouts.md`, `knowledge/vault-integration.md`, all 5 evidence banks + `banks/transition-bank.md`
+- **READS** — `piece.md`, `brain-dump.md`, `script.md`, `voice-profile.md`, `reference-pieces/`, `creator-foundation.md`, `knowledge/script-tension-architecture.md`, `knowledge/emotion-brick-decision-matrix.md`, `knowledge/visual-proof-callouts.md`, `knowledge/vault-integration.md`, all 5 evidence banks + `knowledge/transition-bank.md` (planned)
 - **WRITES** — `script.md` (one body section), `piece.md` (banks used)
 - **NEXT** — vid-segment again until done, then vid-ending
 
 ### vid-ending `WIP`
 Writes the `## Ending` section with the Pivot/Gap/Bridge formula.
-- **READS** — `piece.md`, `script.md` (full), `voice-profile.md`, `reference-pieces/`, `creator-foundation.md`, `banks/transition-bank.md`
+- **READS** — `piece.md`, `script.md` (full), `voice-profile.md`, `reference-pieces/`, `creator-foundation.md`, `knowledge/transition-bank.md` (planned)
 - **WRITES** — `script.md` (`## Ending`), `piece.md` (ending status)
 - **NEXT** — vid-pressure-test
 

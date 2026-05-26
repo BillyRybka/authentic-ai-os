@@ -55,7 +55,7 @@ tags: [thumbnail, brief, strategy-{slug}]
 
 ## Related
 
-- Video piece: [[Content/pieces/{slug}]]
+- Video piece: [[content/pieces/{slug}]]
 - Creator packaging system: [[foundation/packaging-system]]
 - Past winners pulled from: [[banks/packaging-bank]]
 

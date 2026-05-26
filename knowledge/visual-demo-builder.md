@@ -202,7 +202,7 @@ What does NOT get reused:
 - Specific contrast pairs (one sales page vs another)
 - Specific frozen frames
 
-When the creator nails a demo and wants to remember the IDEA for inspiration, drop a note in `Content/pieces/{slug}/async-brick-notes.md` or just trust the script's record. The bank model is wrong for this material type.
+When the creator nails a demo and wants to remember the IDEA for inspiration, drop a note in `content/pieces/{slug}/async-brick-notes.md` or just trust the script's record. The bank model is wrong for this material type.
 
 ## When to swap to a different brick type
 

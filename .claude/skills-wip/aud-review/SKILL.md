@@ -20,16 +20,16 @@ This is the final skill in the `aud-*` pipeline. It only uses avatars whose `sta
 
 **Inputs (required):**
 - A piece of content. The creator can supply it as:
-  - A wikilink to a piece in `Content/pieces/{slug}/` (preferred)
-  - A wikilink to a specific file inside a piece (e.g., `[[Content/pieces/x/email-draft.md]]`)
+  - A wikilink to a piece in `content/pieces/{slug}/` (preferred)
+  - A wikilink to a specific file inside a piece (e.g., `[[content/pieces/x/email-draft.md]]`)
   - A file path
 - The content type (script | email | title-thumb | hook | cta). If not stated, infer from the file name or ask once.
 
 **Validated avatars in `audience/avatars/` with status `validated-vocabulary` or `validated-full`.** If none exist, stop and route the creator to `aud-validate`.
 
 **Outputs:**
-- Per-avatar review files at `Content/pieces/{piece-slug}/reviews/{N}/{avatar-slug}.md`
-- Panel synthesis at `Content/pieces/{piece-slug}/reviews/{N}/synthesis.md`
+- Per-avatar review files at `content/pieces/{piece-slug}/reviews/{N}/{avatar-slug}.md`
+- Panel synthesis at `content/pieces/{piece-slug}/reviews/{N}/synthesis.md`
 - Updated panel-synthesis frontmatter (verdict, median scores)
 
 Where `{N}` is the next available iteration number (1, 2, 3...). Re-running on the same piece creates a new iteration folder, never overwrites.
@@ -99,7 +99,7 @@ Use the Agent tool (or whatever subagent mechanism is available). The prompt tem
 > - CTA strength: {score or N/A} - {1-line reason}
 
 ### Step 3: Write the subagent response to disk
-Save to `Content/pieces/{piece-slug}/reviews/{N}/{avatar-slug}.md` using the avatar-review schema. Frontmatter populated, body is the subagent response.
+Save to `content/pieces/{piece-slug}/reviews/{N}/{avatar-slug}.md` using the avatar-review schema. Frontmatter populated, body is the subagent response.
 
 CRITICAL: write this file BEFORE invoking the next subagent. The parent context will need to read these files back in Phase 2. Working memory is not the source of truth.
 
@@ -215,7 +215,7 @@ What's the single biggest thing keeping you from acting right now?
 After ALL subagents have written their files:
 
 ### Step 1: Read each avatar-review file
-Iterate through `Content/pieces/{piece-slug}/reviews/{N}/*.md` (excluding `synthesis.md`). For each:
+Iterate through `content/pieces/{piece-slug}/reviews/{N}/*.md` (excluding `synthesis.md`). For each:
 - Extract the 5 scores
 - Extract any 1-line reasons for outlier scores
 
@@ -328,7 +328,7 @@ Top 3 fixes:
 
 Median scores: clarity {n}, resonance {n}, believability {n}, friction {n}, CTA {n or N/A}.
 
-Full synthesis: Content/pieces/{piece-slug}/reviews/{N}/synthesis.md
+Full synthesis: content/pieces/{piece-slug}/reviews/{N}/synthesis.md
 Per-avatar reviews: same folder, one file per avatar.
 ```
 

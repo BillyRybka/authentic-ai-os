@@ -7,7 +7,7 @@ last_updated: 2026-05-13
 
 # script.md Skeleton Template
 
-The exact shape vid-structure writes to `Content/pieces/{slug}/script.md` after outline lock. vid-intro fills `## Intro`, vid-segment fills each body section, vid-ending fills `## Ending`.
+The exact shape vid-structure writes to `content/pieces/{slug}/script.md` after outline lock. vid-intro fills `## Intro`, vid-segment fills each body section, vid-ending fills `## Ending`.
 
 This template is a reference for vid-structure to emit. Do not paste this file into chat. Fill the slots with the locked outline's material.
 

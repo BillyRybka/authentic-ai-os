@@ -15,7 +15,7 @@ The canonical contract for how the creator's voice is stored and how every writi
 Every piece produced by this system pulls from three non-overlapping layers, and they must stay that way:
 
 1. **Voice (this skill).** HOW the creator generally talks. Grain, cadence, register, signature moves, what they refuse to say. Lives in `foundation/voice-profile.md` plus `foundation/reference-pieces/`. Carries texture, not architecture and not content.
-2. **Brain dump (per piece).** WHAT the creator actually said for THIS piece. Their real words, claims, stories, examples, in their phrasing. Lives in `Content/pieces/{slug}/brain-dump.md`. The source of truth for substance.
+2. **Brain dump (per piece).** WHAT the creator actually said for THIS piece. Their real words, claims, stories, examples, in their phrasing. Lives in `content/pieces/{slug}/brain-dump.md`. The source of truth for substance.
 3. **Structure (the writing skills).** The architecture of each beat. Hook arc, segment shape, Pivot-Gap-Bridge ending, CTA, push to the next video. Same best practice for every creator. Lives in `vid-intro`, `vid-segment`, `vid-ending`, `vid-structure`, and the format planners.
 
 A writing skill polishes the brain dump's content, in the voice grain, on the structure spec. Crossing lines causes the failures this system was built against: voice samples that smuggle structure produce repetitive endings; structure prescriptions that lock content produce generic videos; brain dumps polished into "better prose" lose the voice. Keep the layers clean.

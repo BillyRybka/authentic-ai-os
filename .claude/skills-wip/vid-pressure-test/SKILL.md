@@ -22,9 +22,9 @@ A script.md that is filmable. The skill EDITS the script in place during the int
 ## Prerequisites
 
 Hard requirements:
-- `Content/pieces/{slug}/script.md` exists with intro + all body segments + ending all written (no stub sections)
-- `Content/pieces/{slug}/piece.md` exists with `selected_angle`, `format`, `goal`, `viewer_stage` locked
-- `Content/pieces/{slug}/brain-dump.md` exists (claim traceability source)
+- `content/pieces/{slug}/script.md` exists with intro + all body segments + ending all written (no stub sections)
+- `content/pieces/{slug}/piece.md` exists with `selected_angle`, `format`, `goal`, `viewer_stage` locked
+- `content/pieces/{slug}/brain-dump.md` exists (claim traceability source)
 - `foundation/creator-foundation.md`, `foundation/voice-profile.md`
 - `Context/brand.md` (banned phrases, required swaps)
 
@@ -46,9 +46,9 @@ Soft requirements:
 
 Silent loads (do NOT paste into chat):
 
-1. `Content/pieces/{slug}/script.md` (the full audit target)
-2. `Content/pieces/{slug}/piece.md` (goal, format, voice_context, viewer_stage drive rubric weighting)
-3. `Content/pieces/{slug}/brain-dump.md` (traceability source)
+1. `content/pieces/{slug}/script.md` (the full audit target)
+2. `content/pieces/{slug}/piece.md` (goal, format, voice_context, viewer_stage drive rubric weighting)
+3. `content/pieces/{slug}/brain-dump.md` (traceability source)
 4. `foundation/creator-foundation.md` (avatar, Top 3, credibility brags)
 5. `foundation/voice-profile.md` (the thin guardrail: refusals, signature phrases, POV/energy. Contract in `knowledge/voice-profile-schema.md`)
 6. `foundation/reference-pieces/{voice_context}.md` (the voice engine: real intact passages as `## ` sections, matched to piece.md `voice_context`, default `youtube-script`. The gold standard for the read-aloud test)

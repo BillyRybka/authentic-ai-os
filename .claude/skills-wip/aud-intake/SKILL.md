@@ -28,7 +28,7 @@ This is the first skill in the `aud-*` pipeline. Without it, `aud-avatar-build` 
 **Outputs:**
 - Per-call summary files in `banks/audience-data/calls/{call-slug}.md` (one per call, with extracted moment-type quote units)
 - Vocabulary-sample files in `banks/audience-data/comments/{video-slug}/{id}.md` (one per kept comment)
-- People stubs in `People/{Full Name}.md` for any prospect identified in a call
+- People stubs in `people/{Full Name}.md` for any prospect identified in a call
 - A single batched contamination report shown at end of run
 
 **Downstream consumers:** `aud-avatar-build` reads ONLY the summary files in `banks/audience-data/calls/` and the vocabulary samples. It never reads raw transcripts.
@@ -69,7 +69,7 @@ Save the answer to `audience/state.md` so we don't ask again. Default: first spe
 
 ### Step 2: Identify the prospect
 Find the prospect's name in the transcript opening if present. If found:
-- Create `People/{Full Name}.md` stub if it doesn't exist (per the People stub rule in `knowledge/vault-integration.md`)
+- Create `people/{Full Name}.md` stub if it doesn't exist (per the People stub rule in `knowledge/vault-integration.md`)
 - Use the name for the call-slug: `{first-name}-{date-or-topic}.md`
 
 If no name in the transcript:
@@ -106,7 +106,7 @@ Body structure:
 
 ## Source
 - File: `inbox/audience/calls/{original-filename}`
-- Prospect: [[People/Full Name]] (if identified)
+- Prospect: [[people/Full Name]] (if identified)
 - Captured: {date}
 
 ## Extracted quote units

@@ -96,7 +96,7 @@ Patterns the creator considered and dropped during Theory of One curation. With 
 Patterns proven by the creator's own published videos. Future vid-measurement skill appends here when a video's performance confirms a pattern actually worked for this creator.
 
 > [!success] Confirmed: {pattern label}
-> Validated by: [[Content/pieces/{slug}]]
+> Validated by: [[content/pieces/{slug}]]
 > Performance: {view count, CTR, retention}
 > Confidence: proven
 > Date validated: {YYYY-MM-DD}

@@ -30,7 +30,7 @@ Bank entries in the creator's workspace, each following the vault-integration sc
 - `banks/proof-bank/{slug}.md`: screenshots, numbers, results (optionally with asset files in `banks/proof-bank/assets/`)
 - `banks/testimonial-bank/{slug}.md`: verbatim client quotes with source tagging
 - `banks/framework-bank/{slug}.md`: named systems with components, shape, problem solved
-- `People/{Full Name}.md`: auto-created stubs for any client mentioned
+- `people/{Full Name}.md`: auto-created stubs for any client mentioned
 
 The skill is looped. Capture one item, save it, loop back to the menu, capture another. End when the creator is done.
 
@@ -64,7 +64,7 @@ banks/proof-bank/                    (created if missing)
 banks/proof-bank/assets/             (created if missing, for screenshots/videos)
 banks/testimonial-bank/              (created if missing)
 banks/framework-bank/                (created if missing)
-People/                              (expected to exist, stubs created inside)
+people/                              (expected to exist, stubs created inside)
 ```
 
 ## Routing
@@ -90,7 +90,7 @@ Load `knowledge/story-capture-guide.md`.
    - Action: "What's the one thing you did? Not everything, the key move."
    - Outcome: "What's the exact number, timeline, or result? What changed?"
    - Plan on 2-3 rounds. Loop until specificity emerges, then save. Flag in Notes if still thin.
-4. **Client mention check.** If the creator names a client, check `People/{Full Name}.md`. If missing, create the stub per the vault-integration template. Write `client: "[[Full Name]]"` in frontmatter and `[[Full Name]]` at first body mention.
+4. **Client mention check.** If the creator names a client, check `people/{Full Name}.md`. If missing, create the stub per the vault-integration template. Write `client: "[[Full Name]]"` in frontmatter and `[[Full Name]]` at first body mention.
 5. **Set `problem_illustrated`.** Ask which of the top 3 problems this story illustrates. Value is `1`, `2`, `3`, or `general`.
 6. **Propose a slug.** Lowercase, hyphenated, 3-6 words, descriptive. Creator approves or overrides.
 7. **Dedup check.** Scan `banks/story-bank/*.md` for matches on `problem_illustrated` plus theme tags plus slug proximity plus first-sentence overlap of the Problem section. If candidates found, show them and ask: update existing, save as new angle, or merge manually.
@@ -129,7 +129,7 @@ Load `knowledge/proof-capture-guide.md`.
 1. **Pick the proof type.** Two options: `personal-result` (creator's own numbers and wins) or `client-win` (someone else's result, with permission or anonymized). Presentation format (static screenshot, before-after pairing, live video clip, inline stat) is captured separately in the body, not as a top-level type.
 2. **Collect the asset.** If there's a screenshot or video file, ask the creator for the path or where to save it. Put the asset in `banks/proof-bank/assets/`. Record the path in `asset_path:`. If the proof is inline (a stat or quote), capture it in the body.
 2b. **Note presentation format.** In the body's "Presentation format" section, record how this proof is shown: static screenshot, before-after pairing, live video clip, or inline stat. A single proof can be available in multiple formats.
-3. **Client mention check.** Same flow as Stage S. Auto-create `People/{Full Name}.md` stub if missing. Write `client:` wikilink in frontmatter.
+3. **Client mention check.** Same flow as Stage S. Auto-create `people/{Full Name}.md` stub if missing. Write `client:` wikilink in frontmatter.
 4. **Capture what it proves.** One sentence. The claim this proof backs up.
 5. **Context.** When, where, who, enough that the creator will remember why this matters in six months.
 6. **Usage rules.** If there are NDA or permission constraints, add a `> [!warning] Usage rules` callout. If the client consented to stats but not their name, note it. Anonymization rules live in the body.
@@ -149,7 +149,7 @@ Testimonials are captured client voice, preserved verbatim. Different from stori
 1. **Source check.** Is this from a comment, DM, email, or video? Set `source:` accordingly.
 2. **Capture the quote verbatim.** Do NOT paraphrase. Do NOT clean up grammar. The exact wording is the testimonial.
 3. **Client identification.** If the client is named and OK to be named, use their name. If anonymization applies, use "Anonymous" in `client:` and set `anonymized: true`. Note permission status in the body's Anonymization section.
-4. **People stub check.** If named, auto-create `People/{Full Name}.md` if missing.
+4. **People stub check.** If named, auto-create `people/{Full Name}.md` if missing.
 5. **Context.** What were they responding to? Which video or offer triggered this testimonial? Link to it with a wikilink if the piece exists.
 6. **Set `problem_illustrated`.** Which top-3 problem does this testimonial support? (Testimonials often map to `general` if the client isn't responding to a specific problem.)
 7. **Propose a slug.** Creator approves.

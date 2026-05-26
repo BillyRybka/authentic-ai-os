@@ -37,7 +37,11 @@ function Get-ShippedSkills {
 $ShipSkills = Get-ShippedSkills
 
 # Always-ship paths (non-skill, non-knowledge). knowledge/ is auto-detected.
-$AlwaysShip = @('.claude-plugin', 'CLAUDE.md', 'banks', '.gitignore')
+# Bank schemas live in knowledge/{bank}-schema.md and ship via knowledge/ auto-detection.
+# CLAUDE.md ships as plugin documentation. It describes shipped reality only (the
+# folder structure creator-setup actually scaffolds and the routing for shipped skills).
+# Clients also get a workspace-scoped CLAUDE.md from creator-setup's assets/CLAUDE.md.
+$AlwaysShip = @('.claude-plugin', 'CLAUDE.md', '.gitignore')
 
 # --- preconditions -----------------------------------------------------------
 $repoRoot = (git rev-parse --show-toplevel).Trim()

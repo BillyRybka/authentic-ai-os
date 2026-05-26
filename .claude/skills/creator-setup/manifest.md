@@ -21,11 +21,11 @@ The map from currently released skill to the workspace structure it needs before
 | vid-pillars | `foundation/` | structure | v1 |
 | vid-credibility | `foundation/` | structure | v1 |
 | vid-credibility | `banks/proof-bank/assets/` | structure | v1 |
-| vid-credibility | `People/` | structure | v1 |
+| vid-credibility | `people/` | structure | v1 |
 | vid-backstory | `foundation/` | structure | v1 |
-| vid-backstory | `People/` | structure | v1 |
+| vid-backstory | `people/` | structure | v1 |
 
-Distinct folders to create: `foundation/`, `banks/proof-bank/assets/`, `People/`. Plus the `_guide.md`, `CLAUDE.md`, and `.env.example` files at the workspace root.
+Distinct folders to create: `foundation/`, `banks/proof-bank/assets/`, `people/`. Plus the `_guide.md`, `CLAUDE.md`, and `.env.example` files at the workspace root.
 
 ## Class meanings
 
@@ -36,7 +36,7 @@ Distinct folders to create: `foundation/`, `banks/proof-bank/assets/`, `People/`
 
 - `knowledge/`: ships with the plugin, referenced via `${CLAUDE_PLUGIN_ROOT}`. Never copied into the workspace.
 - `banks/title-bank.md`, `foundation/packaging-system.md`, `banks/story-bank/`, `banks/testimonial-bank/`, `banks/metaphor-bank/`, `banks/framework-bank/`, `banks/packaging-bank/`: no released skill writes these yet. They get rows here when their owning skills ship.
-- `Content/`, `Notes/`: no released skill writes there.
+- `content/`, `notes/`: no released skill writes there.
 
 ## Future skills (not yet shipping)
 

@@ -11,7 +11,7 @@ Generates BENS-aligned title candidates for one video. Three phases: load contex
 
 ## What this produces
 
-A locked title for one video, saved to `Content/pieces/{slug}/piece.md` (the `title:` field). When invoked as a sub-skill by `vid-structure` or `vid-pipeline`, returns the title string to the caller instead.
+A locked title for one video, saved to `content/pieces/{slug}/piece.md` (the `title:` field). When invoked as a sub-skill by `vid-structure` or `vid-pipeline`, returns the title string to the caller instead.
 
 ## When to run this
 
@@ -24,7 +24,7 @@ A locked title for one video, saved to `Content/pieces/{slug}/piece.md` (the `ti
 Hard requirements:
 - `foundation/creator-foundation.md` exists with avatar plus Top 3 problems (so candidates align with what the audience cares about)
 - `foundation/packaging-system.md` exists with current packaging defaults and format guidance
-- `Content/pieces/{slug}/` exists with at minimum `piece.md` OR a brain-dump / framing artifact that explains what the video is about
+- `content/pieces/{slug}/` exists with at minimum `piece.md` OR a brain-dump / framing artifact that explains what the video is about
 
 If the foundation docs are missing, hard stop. Tell the creator to run `vid-foundation` first.
 
@@ -32,7 +32,7 @@ If `banks/title-bank.md` is missing, fall back to using BENS-framework patterns 
 
 ## Invocation modes
 
-**Standalone:** creator invokes directly. After lock, save the title to `Content/pieces/{slug}/piece.md` and end.
+**Standalone:** creator invokes directly. After lock, save the title to `content/pieces/{slug}/piece.md` and end.
 
 **Sub-skill:** another skill (vid-structure, vid-pipeline) invokes mid-pipeline. Skip the save step; return the locked title string to the caller. The caller writes it to piece.md as part of its own flow.
 
@@ -50,8 +50,8 @@ If invoked with context from a caller (e.g. "title for video about X, format=cas
 2. `foundation/packaging-system.md` (format guidance, current packaging defaults)
 3. `knowledge/BENS-framework.md` (Big / Easy / New / Safe rules and examples)
 4. `banks/title-bank.md` (creator's adapted title patterns, if it exists)
-5. `Content/pieces/{slug}/piece.md` (the video's format, goal, pillar)
-6. `Content/pieces/{slug}/brain-dump.md` AND/OR `piece.md` AND/OR `script.md`. Whatever exists. Pull the actual angle, the specific numbers, named methods, story moments.
+5. `content/pieces/{slug}/piece.md` (the video's format, goal, pillar)
+6. `content/pieces/{slug}/brain-dump.md` AND/OR `piece.md` AND/OR `script.md`. Whatever exists. Pull the actual angle, the specific numbers, named methods, story moments.
 7. `banks/packaging-bank/*.md` (filtered to `source: own`). Past winning titles, used as style anchors for what works for THIS creator.
 
 **Build the lock list:** every number, dollar figure, percentage, timeframe, named method that actually appears in the script. Title candidates may ONLY use numbers from this lock list. No fabrication.
@@ -190,7 +190,7 @@ If they want changes:
 Once picked:
 
 **If standalone mode:**
-- Save the title to `Content/pieces/{slug}/piece.md` `title:` field
+- Save the title to `content/pieces/{slug}/piece.md` `title:` field
 - Update `piece.md` `last_refreshed:` to today's date
 - Confirm save: "Title locked: '{title}'. Saved to piece.md."
 
@@ -231,7 +231,7 @@ If `vid-thumbnail` hasn't run yet, just lock the title. `vid-thumbnail` will res
 | `assets/title-bank-seed.md` (vid-foundation) | Fallback patterns if title-bank.md not yet scaffolded |
 | `foundation/creator-foundation.md` | Avatar, Top 3 problems |
 | `foundation/packaging-system.md` | Format guidance, current packaging defaults |
-| `Content/pieces/{slug}/*` | The video's actual material (brain-dump, framing, script) |
+| `content/pieces/{slug}/*` | The video's actual material (brain-dump, framing, script) |
 | `banks/packaging-bank/*.md` (own) | Past winning titles for THIS creator as style anchors |
 
 ## Related skills

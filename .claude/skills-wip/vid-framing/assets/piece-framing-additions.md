@@ -1,7 +1,7 @@
 ---
 type: asset-template
 loaded_by: vid-framing
-purpose: The frontmatter fields + body sections vid-framing APPENDS to Content/pieces/{slug}/piece.md
+purpose: The frontmatter fields + body sections vid-framing APPENDS to content/pieces/{slug}/piece.md
 ---
 
 # piece.md framing additions

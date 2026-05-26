@@ -16,7 +16,7 @@ This file is reference material for Claude to think with at draft time, not to p
 
 Goal × format determines CTA shape. Get the pairing wrong and a strong close still under-performs. Get it right and a weaker close still converts.
 
-The goal is set in `Content/pieces/{slug}/piece.md` (`goal: sales | emails | views`). The format is set there too. The ending uses both fields to pick CTA shape.
+The goal is set in `content/pieces/{slug}/piece.md` (`goal: sales | emails | views`). The format is set there too. The ending uses both fields to pick CTA shape.
 
 **Hard rule:** one goal per video. Sales OR emails OR views. Never two. A close that pitches sales AND a lead magnet AND end-screens to views is three signals fighting each other; viewers pick none.
 

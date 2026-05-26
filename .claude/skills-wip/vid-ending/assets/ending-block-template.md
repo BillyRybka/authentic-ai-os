@@ -1,5 +1,5 @@
 <!--
-TEMPLATE: ending block written into Content/pieces/{slug}/script.md by vid-ending.
+TEMPLATE: ending block written into content/pieces/{slug}/script.md by vid-ending.
 
 The skill reads this template at lock time, fills the bracketed slots with the locked content, and writes the filled block into script.md (replacing any existing close). Single # heading marks the close so editors and reviewers can find it without scanning.
 
@@ -24,7 +24,7 @@ Bracketed slots get filled. No tables, no callouts, no extra prose. the block is
 [END SCREEN: {{next-video-slug}}, card animates in during the Bridge sentence]
 
 <!--
-Frontmatter update written to Content/pieces/{slug}/piece.md alongside this block:
+Frontmatter update written to content/pieces/{slug}/piece.md alongside this block:
 
 ending_locked: true
 next_video: "[[{{next-video-slug}}]]"

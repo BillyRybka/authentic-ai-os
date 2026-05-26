@@ -9,7 +9,7 @@ tags: [plan, audience, synthetic, aud]
 
 # Synthetic Audience Subsystem Plan
 
-The `aud-*` skill family. Pre-publish copy review using synthetic avatars built from a creator's real call transcripts and YouTube comments. Independent subsystem inside Authentic AI OS. Reads from the vault, integrates with `Content/pieces/` artifacts produced by the vid-* pipeline, but otherwise stands alone.
+The `aud-*` skill family. Pre-publish copy review using synthetic avatars built from a creator's real call transcripts and YouTube comments. Independent subsystem inside Authentic AI OS. Reads from the vault, integrates with `content/pieces/` artifacts produced by the vid-* pipeline, but otherwise stands alone.
 
 ## 1. Purpose
 
@@ -90,7 +90,7 @@ audience/avatars/
         ↓                        Avatars with status validated-* are usable.
    aud-review                    Subagent per avatar, randomized, isolated.
         ↓                        Each response written to file before next runs.
-Content/pieces/{piece-slug}/reviews/{N}/
+content/pieces/{piece-slug}/reviews/{N}/
   {avatar-slug}.md               Per-avatar response. iteration N.
   synthesis.md                   Verdict + 3 fixes + median + dissent + links.
 ```
@@ -111,7 +111,7 @@ Listed so future-me knows what was considered and intentionally deferred. Each g
 
 The two subsystems are intentionally independent. The integration surface is a single file path.
 
-`aud-review` reads `Content/pieces/{piece-slug}/{file}.md` artifacts produced by the vid-* writing pipeline (`vid-intake`, `vid-structure`, `vid-segment`, `vid-intro`, `vid-ending`, `vid-title`, `vid-thumbnail`). It writes its outputs into `Content/pieces/{piece-slug}/reviews/{N}/`, alongside but never inside the piece artifacts the vid-* skills wrote.
+`aud-review` reads `content/pieces/{piece-slug}/{file}.md` artifacts produced by the vid-* writing pipeline (`vid-intake`, `vid-structure`, `vid-segment`, `vid-intro`, `vid-ending`, `vid-title`, `vid-thumbnail`). It writes its outputs into `content/pieces/{piece-slug}/reviews/{N}/`, alongside but never inside the piece artifacts the vid-* skills wrote.
 
 No vid-* skill reads anything from the aud-* subsystem. No vid-* skill changes when aud-* changes. The audience pipeline can be installed, run, retired, or rebuilt without touching the writing pipeline.
 

@@ -13,7 +13,7 @@ tags: [person, client]
 
 ## Filling instructions (delete this section before save)
 
-This template creates a `People/{Full Name}.md` stub whenever a bank entry mentions a client by name and no profile exists yet. Per CLAUDE.md rule 20 and the vault-integration People profile rule.
+This template creates a `people/{Full Name}.md` stub whenever a bank entry mentions a client by name and no profile exists yet. Per CLAUDE.md rule 20 and the vault-integration People profile rule.
 
 **Frontmatter fields:**
 
@@ -28,7 +28,7 @@ This template creates a `People/{Full Name}.md` stub whenever a bank entry menti
 
 **When to use this template:**
 
-- Any time a creator mentions a client in a story, proof, or testimonial and `People/{Full Name}.md` doesn't exist.
+- Any time a creator mentions a client in a story, proof, or testimonial and `people/{Full Name}.md` doesn't exist.
 - Never save a bank entry with an unresolved `[[Client Name]]` wikilink. Create the stub first, then save the entry.
 
 **When NOT to use this template:**

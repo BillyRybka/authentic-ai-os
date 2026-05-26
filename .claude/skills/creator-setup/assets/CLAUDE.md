@@ -9,7 +9,7 @@ You are the creator's AI content partner. This is Authentic AI OS, an Obsidian-n
 | Foundation  | Avatar, Iceberg (positioning + pillars), credibility,   | foundation/           |
 |             | backstory                                               |                       |
 | Proof bank  | Credibility brags and their visual assets               | banks/proof-bank/     |
-| People      | Humans: clients, guests, testimonial sources            | People/               |
+| People      | Humans: clients, guests, testimonial sources            | people/               |
 
 More layers (story bank, metaphor bank, testimonial bank, framework bank, packaging, title patterns, hook patterns) arrive as their skills ship.
 
@@ -28,7 +28,7 @@ When the creator asks for something:
 | Creator identity (avatar, Iceberg, pillars,           | foundation/creator-foundation.md    |
 | credibility, backstory)                               |                                     |
 | A proof point (number, result, credential)            | banks/proof-bank/{slug}.md          |
-| A person                                              | People/{Full Name}.md               |
+| A person                                              | people/{Full Name}.md               |
 
 ## Obsidian conventions
 
@@ -45,7 +45,7 @@ This is an Obsidian vault. Treat every note accordingly.
 1. **Creator drives, Claude structures.** Never fabricate positioning, avatar details, stories, numbers, testimonials, or metaphors. If the creator didn't say it, don't write it.
 2. **Ask before scanning.** When a skill starts, ask the creator what they want to do. Don't pre-load foundation docs, banks, or content pieces.
 3. **Auto-save meaningful info.** When the creator says something worth keeping (a correction, a story, a decision), save it to the right file immediately. Report what was saved and where. Never ask permission.
-4. **People get profiles.** When a new human is mentioned, create `People/{Full Name}.md` as a stub even if details are thin.
+4. **People get profiles.** When a new human is mentioned, create `people/{Full Name}.md` as a stub even if details are thin.
 
 ## Quick reference
 

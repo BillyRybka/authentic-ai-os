@@ -69,12 +69,12 @@ Clients see the update on their next Cowork/Claude Code marketplace refresh. To 
 - `.claude-plugin/` (manifest). `.claude/skills/` declared via `"skills": "./.claude/skills"`.
 - The 7 (and growing) skills named in `$ShipSkills`.
 - `knowledge/` files those skills reference (auto-detected by the release script).
-- `CLAUDE.md`, `banks/` schema READMEs, `.gitignore`.
+- `CLAUDE.md`, `.gitignore`.
 
 ### Never ships
 
 - `.claude/skills-wip/` (WIP skills), unused `knowledge/` files, `.claude/hooks/` + `.claude/settings.json` (the machine-specific Vale hook), `documents/`, `plans/`, `scripts/`, `.vale/`, `.obsidian/`, `templates/`.
-- Gitignored personal data: `foundation/`, `banks/` entries, `Content/`, `People/`, `raw/`, `Notes/`, `.env`.
+- Gitignored personal data: `foundation/`, `banks/`, `content/`, `people/`, `raw/`, `notes/`, `.env`. Bank schemas live in `knowledge/{bank}-schema.md`.
 
 ### How clients get a vault
 

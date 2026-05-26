@@ -17,7 +17,7 @@ Generates thumbnail TEXT candidates for one video and locks 1-2 picks with the c
 
 One file in the creator's workspace:
 
-- `Content/pieces/{slug}/thumbnail-brief.md`, the packaging brief: title pairing, 1-2 locked thumbnail text picks, strategy, BENS rationale, and notes for the creator's chosen creation path.
+- `content/pieces/{slug}/thumbnail-brief.md`, the packaging brief: title pairing, 1-2 locked thumbnail text picks, strategy, BENS rationale, and notes for the creator's chosen creation path.
 
 ## When to run this
 
@@ -34,7 +34,7 @@ Hard requirement: `foundation/packaging-system.md` must exist with:
 
 If `packaging-system.md` is missing, hard stop. Tell the creator to run `vid-foundation` Stage 4 first.
 
-Also hard: the video `slug` argument, or an existing `Content/pieces/{slug}/piece.md` with a locked title.
+Also hard: the video `slug` argument, or an existing `content/pieces/{slug}/piece.md` with a locked title.
 
 ## The walkthrough (3 phases)
 
@@ -50,8 +50,8 @@ Each phase ends with creator approval before moving on. Do not batch phases. Do 
 4. `knowledge/thumbnail-examples-library.md`. **26 annotated real-world title+thumbnail combinations**, organized by category (Curiosity heavy / Comparison / Result / Social Hacking). Each entry has hero element, why it works, and design notes. Use to find the closest analog to the target video and match the SHAPE, not the literal content.
 5. `knowledge/BENS-framework.md` (Big / Easy / New / Safe, for thumbnail text logic)
 6. `knowledge/gift-framework.md` (packaging philosophy)
-7. `Content/pieces/{slug}/piece.md` (locked title, format, goal, hook/payoff)
-8. `Content/pieces/{slug}/script.md` if it exists. Pulls specific lines, numbers, moments worth foregrounding.
+7. `content/pieces/{slug}/piece.md` (locked title, format, goal, hook/payoff)
+8. `content/pieces/{slug}/script.md` if it exists. Pulls specific lines, numbers, moments worth foregrounding.
 9. `banks/packaging-bank/*.md` (past winners and studied outliers, used as TEXT anchors for what wording worked for this creator, NOT for visual style)
 
 Note: `knowledge/thumbnail-composition-guide.md` exists but is NOT loaded here. It's reserved for `vid-thumbnail-gen` (future) which actually designs the visual.
@@ -144,7 +144,7 @@ That's the whole brief content per pick. No layout, no hero choice, no expressio
 
 ### Save
 
-Save to `Content/pieces/{slug}/thumbnail-brief.md` with this frontmatter:
+Save to `content/pieces/{slug}/thumbnail-brief.md` with this frontmatter:
 
 ```yaml
 ---
@@ -166,7 +166,7 @@ Body follows the Composition-brief template in `assets/thumbnail-brief-template.
 ### Wrap up
 
 After saving:
-1. Confirm file saved at `Content/pieces/{slug}/thumbnail-brief.md`
+1. Confirm file saved at `content/pieces/{slug}/thumbnail-brief.md`
 2. Quick next-step prompt based on `creation_path`:
    - AI workflow: "Prompt is ready. Paste into your image tool, iterate until it matches the brief. If a version wins after publishing, log it in `banks/packaging-bank/`."
    - Photoshop/DIY: "Shot list is in the brief. Execute it. When it wins, log it in packaging-bank."
@@ -198,8 +198,8 @@ After saving:
 | Phase | File | Why |
 |-------|------|-----|
 | 1 | `foundation/packaging-system.md` | Current strategy, design guardrails, creation path |
-| 1 | `Content/pieces/{slug}/piece.md` | Locked title, format, goal |
-| 1 | `Content/pieces/{slug}/script.md` | Hook lines, payoff, specific numbers to foreground |
+| 1 | `content/pieces/{slug}/piece.md` | Locked title, format, goal |
+| 1 | `content/pieces/{slug}/script.md` | Hook lines, payoff, specific numbers to foreground |
 | 1 | `banks/packaging-bank/*.md` | Past winners, the creator's proven packaging style |
 
 Template lives in `assets/`:

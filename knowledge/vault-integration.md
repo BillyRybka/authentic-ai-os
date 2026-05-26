@@ -20,10 +20,10 @@ Every skill in authentic-ai-os loads this file. It is the contract that makes th
 |---|---|
 | `foundation/` | Creator identity. creator-foundation.md, voice-profile.md, packaging-system.md, and `reference-pieces/` (full polished pieces preserved verbatim for piece-level voice rhythm). |
 | `banks/` | Evergreen material the creator builds over time. Stories, proofs, testimonials, metaphors, frameworks, packaging winners, plus single-file banks (title, hook, transition, pattern). |
-| `Content/pieces/` | Per-video work. One folder per piece. brain-dump, reference-block, script, thumbnail-brief, pressure-test, per-platform derivatives. Single newsletters and one-off posts also live here as their own piece folder. |
-| `Content/ideas/` | Swipe file for not-yet-built content. Raw ideas, hooks, framings the creator wants to come back to. |
-| `Content/email-sequences/` | Multi-piece email sequences (welcome, nurture, launch, re-engagement). One folder per sequence. |
-| `People/` | One file per human in the creator's world. Clients, prospects, partners, community. Frontmatter-typed. |
+| `content/pieces/` | Per-video work. One folder per piece. brain-dump, reference-block, script, thumbnail-brief, pressure-test, per-platform derivatives. Single newsletters and one-off posts also live here as their own piece folder. |
+| `content/ideas/` | Swipe file for not-yet-built content. Raw ideas, hooks, framings the creator wants to come back to. |
+| `content/email-sequences/` | Multi-piece email sequences (welcome, nurture, launch, re-engagement). One folder per sequence. |
+| `people/` | One file per human in the creator's world. Clients, prospects, partners, community. Frontmatter-typed. |
 
 **Optional, scaffolded as the creator needs them:**
 
@@ -31,11 +31,11 @@ Every skill in authentic-ai-os loads this file. It is the contract that makes th
 |---|---|
 | `raw/` | Creator's own raw material (full text). Transcripts, articles, brain dumps waiting to be mined. Staging area, not a permanent home. |
 | `references/` | External study material pointers (course names, book titles, podcast episodes the creator is learning from). Pointers and notes only, no full content. |
-| `Notes/` | Drop-zone for on-the-go brain dumps. Reconciled later through a routing skill. |
+| `notes/` | Drop-zone for on-the-go brain dumps. Reconciled later through a routing skill. |
 
 **Routing rule:** every piece of incoming material has exactly one home. The optional folders activate on demand.
 
-**Out of scope:** `Daily/`, `Projects/`, `Trainings/`, `Companies/`, `Intelligence/`. This vault is content-only. Business workflows live in a separate workspace.
+**Out of scope:** `Daily/`, `Projects/`, `Trainings/`, `companies/`, `Intelligence/`. This vault is content-only. Business workflows live in a separate workspace.
 
 ## Why this exists
 
@@ -106,7 +106,7 @@ type: story
 project: authentic-ai-os
 story_type: client              # client | own | viewer
 problem_illustrated: 1          # 1 | 2 | 3 | general (from creator-foundation top 3 problems)
-client: "[[Client Name]]"       # wikilink to People/ profile, only for client stories
+client: "[[Client Name]]"       # wikilink to people/ profile, only for client stories
 captured: YYYY-MM-DD
 status: captured                # captured | used | archived
 tags: [story, problem-{n}, {theme-slug}]
@@ -175,7 +175,7 @@ used_in: []
 
 Location: `banks/framework-bank/{slug}.md`
 
-Frameworks are the creator's OWN named systems/structures/mental models. The teachable patterns they repeat across videos. See `banks/framework-bank/README.md` for what belongs here and what doesn't (in particular, third-party frameworks like BENS or the Gift Framework do NOT go here. Those live in `knowledge/` or `Resources/references/` with attribution).
+Frameworks are the creator's OWN named systems/structures/mental models. The teachable patterns they repeat across videos. See `knowledge/framework-bank-schema.md` for what belongs here and what doesn't (in particular, third-party frameworks like BENS or the Gift Framework do NOT go here. Those live in `knowledge/` or `resources/references/` with attribution).
 
 ```yaml
 ---
@@ -209,7 +209,7 @@ collected: YYYY-MM-DD
 verified_human: true                  # true | false | needs_review
 evidence_weight: high
 contamination_flags: []               # list of flag tags if any
-person: "[[People/Full Name]]"        # wikilink if prospect identified
+person: "[[people/Full Name]]"        # wikilink if prospect identified
 segment_guesses: [returning-hobbyist] # one-word labels, refined by aud-avatar-build
 quote_count: 12
 tags: [audience-data, call, source-call]
@@ -323,7 +323,7 @@ tags: [avatar-validation]
 
 ### Avatar reviews of a piece
 
-Location: `Content/pieces/{piece-slug}/reviews/{N}/{avatar-slug}.md`
+Location: `content/pieces/{piece-slug}/reviews/{N}/{avatar-slug}.md`
 
 One per avatar per review iteration. Written by `aud-review` via subagent invocation, isolated from other avatars' responses. Read in a second pass by the synthesis step.
 
@@ -331,7 +331,7 @@ One per avatar per review iteration. Written by `aud-review` via subagent invoca
 ---
 type: avatar-review
 project: authentic-ai-os
-piece: "[[Content/pieces/why-most-guitarists-quit]]"
+piece: "[[content/pieces/why-most-guitarists-quit]]"
 avatar: "[[audience/avatars/weekend-warrior-mike]]"
 iteration: 1
 content_type: script                  # script | email | title-thumb | hook | cta
@@ -348,7 +348,7 @@ tags: [avatar-review, content-{type}]
 
 ### Panel synthesis for a piece
 
-Location: `Content/pieces/{piece-slug}/reviews/{N}/synthesis.md`
+Location: `content/pieces/{piece-slug}/reviews/{N}/synthesis.md`
 
 The Billy-facing output of one review iteration. Verdict, top 3 fixes, median scores, dissent block, links to per-avatar reviews, disclaimer. Read-on-the-first-screen design.
 
@@ -356,7 +356,7 @@ The Billy-facing output of one review iteration. Verdict, top 3 fixes, median sc
 ---
 type: panel-synthesis
 project: authentic-ai-os
-piece: "[[Content/pieces/why-most-guitarists-quit]]"
+piece: "[[content/pieces/why-most-guitarists-quit]]"
 iteration: 1
 content_type: script
 run_date: YYYY-MM-DD
@@ -375,7 +375,7 @@ tags: [panel-synthesis]
 
 ### Per-video pieces
 
-Location: `Content/pieces/{slug}/piece.md`
+Location: `content/pieces/{slug}/piece.md`
 
 ```yaml
 ---
@@ -402,7 +402,7 @@ tags: [piece, format-{slug}, pillar-{slug}, {other-tags}]
 
 1. In frontmatter: `client: "[[Client Name]]"`
 2. In body prose: reference as `[[Client Name]]` at first mention
-3. Check `People/{Client Name}.md`. If missing, create a stub per CLAUDE.md rule 20:
+3. Check `people/{Client Name}.md`. If missing, create a stub per CLAUDE.md rule 20:
 
 ```markdown
 ---
@@ -510,7 +510,7 @@ Examples:
 - `banks/metaphor-bank/wine-tasting-early-dating.md`
 - `banks/proof-bank/4m-youtube-revenue-2025.md`
 - `banks/testimonial-bank/sarah-50k-ad-spend.md`
-- `Content/pieces/why-systems-beat-hustle/`
+- `content/pieces/why-systems-beat-hustle/`
 
 Claude proposes the slug. Creator approves or overrides before saving.
 
@@ -618,13 +618,13 @@ Every entry body has clear sections, not just frontmatter. Readable in both sour
 
 ### Piece piece.md template
 
-See `Content/pieces/{slug}/piece.md` (templates live in the relevant skill's assets/).
+See `content/pieces/{slug}/piece.md` (templates live in the relevant skill's assets/).
 
 ## People profile stub rule
 
 When ANY entry mentions a client, customer, or external person by name:
 
-1. Check `People/{Full Name}.md`
+1. Check `people/{Full Name}.md`
 2. If missing, create a stub immediately:
 
 ```markdown
@@ -725,7 +725,7 @@ Piece's `stories_used` updated correctly. Story's `used_in` failed to update (pe
 Per CLAUDE.md rule 20 and this document's People profile stub rule.
 
 - Create the stub automatically.
-- If stub creation fails (permission error on `People/` folder, etc.): report visibly and ask creator to create the profile manually before proceeding. Do NOT save the bank entry with an unresolved `[[Client Name]]` wikilink.
+- If stub creation fails (permission error on `people/` folder, etc.): report visibly and ask creator to create the profile manually before proceeding. Do NOT save the bank entry with an unresolved `[[Client Name]]` wikilink.
 
 **6. Wikilink target doesn't exist yet**
 

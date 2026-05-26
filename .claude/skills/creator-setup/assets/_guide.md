@@ -29,7 +29,7 @@ Each saves to `foundation/creator-foundation.md`. The orchestrator auto-advances
 ```
 foundation/                 your identity docs (built by the foundation skills)
 banks/proof-bank/assets/    proof entries and their screenshots
-People/                     one file per person you mention (clients, guests)
+people/                     one file per person you mention (clients, guests)
 CLAUDE.md                   instructions for Claude when working in this folder
 .env.example                copy to .env and add API keys as future skills need them
 ```

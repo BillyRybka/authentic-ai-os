@@ -17,7 +17,7 @@ used_in: []
 
 ## Context
 
-{What the client was responding to. Which video, offer, or moment triggered this testimonial. Link to the piece with a wikilink if it exists in `Content/pieces/`.}
+{What the client was responding to. Which video, offer, or moment triggered this testimonial. Link to the piece with a wikilink if it exists in `content/pieces/`.}
 
 ## Anonymization
 
@@ -36,7 +36,7 @@ used_in: []
 **Frontmatter fields:**
 
 - `source`: one of `comment`, `dm`, `email`, `video`
-- `client`: wikilink to `People/{Full Name}.md` if named with permission. Otherwise "Anonymous".
+- `client`: wikilink to `people/{Full Name}.md` if named with permission. Otherwise "Anonymous".
 - `anonymized`: `true` if identifying details were removed, `false` if using real name with permission
 - `captured`: ISO date
 - `status`: starts `captured`
@@ -50,6 +50,6 @@ used_in: []
 - Context section: what was the client responding to? Link to the triggering piece if available.
 - Anonymization section: state the permission status clearly. Default to "Applied" when in doubt.
 
-**Client mention rule:** if the client is named with permission, check `People/{Full Name}.md`. If missing, create via `people-stub-template.md`. Then write `client: "[[Full Name]]"` in frontmatter.
+**Client mention rule:** if the client is named with permission, check `people/{Full Name}.md`. If missing, create via `people-stub-template.md`. Then write `client: "[[Full Name]]"` in frontmatter.
 
 **Scope note:** vid-capture saves testimonials that already exist (comments, DMs, emails, videos the creator already received). Soliciting new testimonials is out of scope for this skill.
