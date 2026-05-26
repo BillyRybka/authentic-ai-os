@@ -103,7 +103,9 @@ try {
     # tree never enter the index so the commit stays clean.
     git add $mf
     git commit -m "Release v$Version"
-    git tag "v$Version"
+    # Annotated tag (-a). Lightweight tags get skipped by `git push --follow-tags`,
+    # which then causes `gh release create` to fail because the tag is not on origin.
+    git tag -a "v$Version" -m "v$Version"
 
     # --- generate .plugin artifact (zip of plugin folder, renamed) -----------
     # Cowork's auto-update is unreliable. The .plugin file is a manual override:
@@ -139,7 +141,9 @@ if ($ok) {
     Write-Host ""
     Write-Host "Pushing main, tag, and dev..." -ForegroundColor Cyan
     git push origin main --follow-tags
+    if ($LASTEXITCODE -ne 0) { throw "git push origin main failed." }
     git push origin dev
+    if ($LASTEXITCODE -ne 0) { throw "git push origin dev failed." }
 
     # --- create GitHub Release and upload .plugin artifact -------------------
     $pluginFile = "dist/authentic-ai-os-v$Version.plugin"
@@ -149,6 +153,7 @@ if ($ok) {
         --title $releaseTitle `
         --notes "Plugin release v$Version. See commit log for changes. Drag the attached .plugin file into Cowork chat to force-install this version if auto-update fails." `
         $pluginFile
+    if ($LASTEXITCODE -ne 0) { throw "gh release create failed for v$Version. Check that the tag pushed (git tag --list; git ls-remote --tags origin) and re-run: gh release create v$Version --title v$Version --notes '...' $pluginFile" }
 
     Write-Host ""
     Write-Host "Released v$Version." -ForegroundColor Green
