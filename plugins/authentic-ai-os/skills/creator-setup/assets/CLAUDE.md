@@ -30,6 +30,20 @@ When the creator asks for something:
 | A proof point (number, result, credential)            | banks/proof-bank/{slug}.md          |
 | A person                                              | people/{Full Name}.md               |
 
+## Path overrides
+
+When the creator chose alternate paths during `creator-setup`, those overrides are recorded here. Foundation skills MUST follow these overrides instead of the default paths above.
+
+<!-- creator-setup writes this section based on setup answers. -->
+
+- *(no overrides set)*
+
+If an override IS set (filled in by `creator-setup`), it looks like this:
+
+> - **Person stubs.** Default is `people/{Full Name}.md` inside this workspace. **Override:** write to `<relative-path-from-this-folder-to-the-target>/{Full Name}.md` instead. Applies to `vid-credibility`, `vid-backstory`, and any future skill that creates person stubs.
+
+Foundation skills must check this section before writing person stubs (or any other path that could be overridden) and follow the override when present.
+
 ## Obsidian conventions
 
 This is an Obsidian vault. Treat every note accordingly.

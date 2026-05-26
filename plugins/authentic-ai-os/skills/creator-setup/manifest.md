@@ -25,7 +25,9 @@ The map from currently released skill to the workspace structure it needs before
 | vid-backstory | `foundation/` | structure | v1 |
 | vid-backstory | `people/` | structure | v1 |
 
-Distinct folders to create: `foundation/`, `banks/proof-bank/assets/`, `people/`. Plus the `_guide.md`, `CLAUDE.md`, and `.env.example` files at the workspace root.
+Distinct folders to create: `foundation/`, `banks/proof-bank/assets/`, `people/`. Plus `CLAUDE.md` and `.env.example` at the workspace root.
+
+The `people/` row is conditional. If the creator chose a path override during setup (person stubs go to an existing root-level People folder), `creator-setup` skips the local `people/` and records the override in the workspace `CLAUDE.md`.
 
 ## Class meanings
 
@@ -47,4 +49,4 @@ These are in development and will get manifest rows when their skill folders exi
 - `vid-capture`: structured capture of stories, proofs, metaphors, testimonials.
 - `vid-packaging`: collapsed 2026-05-19. Its job moved to `vid-research`. Never add a row for it.
 
-Do not add rows for these until their skill folder exists under `.claude/skills/`.
+Do not add rows for these until their skill folder exists under `plugins/authentic-ai-os/skills/`.
