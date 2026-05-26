@@ -1,6 +1,5 @@
 ---
-name: vid-foundation
-description: Thin orchestrator for the Authentic AI OS foundation. Checks what's locked in creator-foundation.md and packaging-system.md, then points the creator at the next skill in the foundation sequence. Use this when a creator is new to the system, when they're not sure what foundation step to run next, or when a downstream skill is missing inputs and the creator needs to know which foundation skill produces them. Triggers on "set up my channel", "start my creator foundation", "what's the next foundation step", "where am I in the foundation", "I'm new to Authentic AI OS".
+description: Thin orchestrator for the Authentic AI OS foundation. Checks what's locked in creator-foundation.md and packaging-system.md, then points the creator at the next skill in the foundation sequence. Use this when a creator is new to the system, when they're not sure what foundation step to run next, or when a downstream skill is missing inputs and the creator needs to know which foundation skill produces them.
 ---
 
 # Foundation
@@ -21,9 +20,9 @@ More skills are in development: voice capture, content production, pattern banks
 
 **Inputs (optional):** `foundation/creator-foundation.md`. Any state.
 
-**Outputs:** none directly. This skill routes. The sub-skills produce.
+**Outputs:** none directly. This command routes. The sub-skills produce.
 
-## How this skill runs
+## How this runs
 
 ### Step 1: Read state silently
 
@@ -78,13 +77,13 @@ When all 5 foundation interview skills have locked their sections, congratulate 
 
 Do not invoke any further skill. The released foundation chain ends here.
 
-## What this skill is NOT
+## What this is NOT
 
-- An interview skill. It doesn't ask the creator any of the foundation questions. Those live in the five sub-skills.
+- An interview. It doesn't ask the creator any of the foundation questions. Those live in the five sub-skills.
 - A combined run. It doesn't run all five skills back-to-back. Each interview deserves a dedicated session.
 - A refresh tool. If the creator wants to refresh a specific section, they run the sub-skill directly.
 
-If the creator asks foundation questions during this skill ("can you write my Iceberg Statement?"), redirect:
+If the creator asks foundation questions during this command ("can you write my Iceberg Statement?"), redirect:
 
 > "That's `vid-positioning`'s job. It runs a focused session for the Iceberg Statement and saves it to `foundation/creator-foundation.md`. Want me to point you there?"
 
@@ -94,13 +93,9 @@ Always read `foundation/creator-foundation.md` (silent). If it doesn't exist, th
 
 ## Anti-patterns
 
-- Running any sub-skill's interview content here. This skill routes, not interviews.
+- Running any sub-skill's interview content here. This routes, not interviews.
 - Reading the references inside `vid-avatar`, `vid-positioning`, etc. Those belong to their skills.
 - Asking the creator to type the next command. Auto-invoke the next skill via the Skill tool.
 - Continuing to invoke skills after a clear stop signal.
 - Promising unreleased skills (voice capture, content production, pattern research) as immediate next steps. They are in development. Acknowledge them in the close, do not route to them.
 - Surfacing jargon (Iceberg Statement, BENS, 3+1 rotation) without context. Translate when needed.
-
-## References
-
-None. This skill is route-only.

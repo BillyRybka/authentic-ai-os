@@ -14,7 +14,7 @@ If the creator is new to this vault:
 
 1. Ask what they want to do. Don't scan the vault upfront.
 2. If they just installed the plugin and have no vault yet, point them at `creator-setup`. It scaffolds the workspace.
-3. If the vault exists and they're setting up their identity, point them at `vid-foundation`. It walks them through avatar, positioning (Iceberg Statement), pillars, credibility, and backstory in focused sessions.
+3. If the vault exists and they're setting up their identity, point them at `/foundation`. It walks them through avatar, positioning (Iceberg Statement), pillars, credibility, and backstory in focused sessions.
 4. When the foundation is locked, the released chain ends. More skills are in development for voice capture, content production, pattern research, and packaging.
 
 Never auto-load foundation docs, banks, or content pieces at session start. Read only when a specific task requires it.
@@ -26,7 +26,7 @@ This is what `creator-setup` actually scaffolds in the current release. More fol
 ```
 ./
 ├── .claude/skills/              # Installed skills (read-only for the creator)
-├── foundation/                  # Creator identity (created by vid-foundation chain)
+├── foundation/                  # Creator identity (created by the /foundation command chain)
 │   └── creator-foundation.md    # Avatar, positioning (Iceberg), pillars, credibility, backstory
 ├── banks/
 │   └── proof-bank/              # Creator's own evidence: numbers, stats, credentials
@@ -58,7 +58,7 @@ When meaningful info comes up (a correction, a fact about the creator, a new sto
 
 | Type | Route to |
 |------|----------|
-| Creator positioning, avatar, pillars, credibility, backstory | `foundation/creator-foundation.md` (via the `vid-foundation` chain) |
+| Creator positioning, avatar, pillars, credibility, backstory | `foundation/creator-foundation.md` (via the `/foundation` command) |
 | A proof point (number, result, credential) | `banks/proof-bank/{slug}.md` (via `vid-credibility`) |
 | A person (client, guest, testimonial source) | `people/{Full Name}.md`. Create a stub if missing. |
 

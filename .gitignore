@@ -49,6 +49,8 @@ raw/
 notes/
 banks/
 Authentic-AI-OS/
+!plugins/authentic-ai-os/
+!plugins/authentic-ai-os/**
 
 # Temp / scratch artifacts
 .tmp-*
