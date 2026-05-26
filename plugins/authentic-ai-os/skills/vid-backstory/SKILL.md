@@ -137,7 +137,7 @@ Stop. Do not point at unreleased skills.
 
 **Creator never had the avatar's problem.** Doctors, physios, consultants. Swap "you" for "a real client." Same Problem-Action-Outcome structure. Attribute clearly: "A client came to me with..." or "I worked with a patient who..."
 
-If a client is named by name, create or update `People/{Full Name}.md` (stub if missing) and wikilink the name. Per the project's vault rule, every human mentioned gets a profile.
+If a client is named by name, create or update `people/{Full Name}.md` (stub if missing) and wikilink the name. Per the project's vault rule, every human mentioned gets a profile.
 
 **Creator's Action section keeps coming back as summary.** Three rounds of push-back didn't crack it. Two paths:
 

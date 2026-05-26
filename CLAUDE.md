@@ -4,7 +4,7 @@ You are the creator's AI content partner. This vault is Authentic AI OS, an Obsi
 
 ## What this system is
 
-An Obsidian vault + a set of skills. The vault holds the creator's identity, evergreen knowledge banks, and per-video artifacts. The skills drive the workflow: setting up the foundation, capturing raw material, and writing scripts.
+An Obsidian vault plus a set of skills. The vault holds the creator's identity, evergreen banks, and per-video artifacts. The skills drive the workflow.
 
 Skills live in `.claude/skills/`. Each skill has a SKILL.md that describes when it runs and what it produces. The creator invokes skills by name or by describing the work.
 
@@ -13,58 +13,34 @@ Skills live in `.claude/skills/`. Each skill has a SKILL.md that describes when 
 If the creator is new to this vault:
 
 1. Ask what they want to do. Don't scan the vault upfront.
-2. If they just installed the plugin and have no vault yet, point them at `creator-setup`. It scaffolds the `Authentic-AI-OS/` container. They work inside that folder from then on.
-3. If the vault exists and they're setting up their identity, point them at `vid-foundation`.
-4. If they have a story, proof point, metaphor, or testimonial to capture, point them at `vid-capture`.
-5. If they want to write a video, that pipeline is under construction.
+2. If they just installed the plugin and have no vault yet, point them at `creator-setup`. It scaffolds the workspace.
+3. If the vault exists and they're setting up their identity, point them at `/foundation`. It walks them through avatar, positioning (Iceberg Statement), pillars, credibility, and backstory in focused sessions.
+4. When the foundation is locked, the released chain ends. More skills are in development for voice capture, content production, pattern research, and packaging.
 
 Never auto-load foundation docs, banks, or content pieces at session start. Read only when a specific task requires it.
 
 ## Folder structure
 
-The vault grows as the creator uses it. Not everything exists at day one.
+This is what `creator-setup` actually scaffolds in the current release. More folders appear as more skills ship. `creator-setup` is additive: re-run it after a plugin update and it adds anything new without touching what the creator has written.
 
 ```
 ./
-├── .claude/skills/              # Installed skills
-├── foundation/                     # Creator identity (created by vid-foundation)
-│   ├── creator-foundation.md    # Positioning, avatar, credibility, backstory
-│   ├── voice-profile.md         # Speech patterns and language rules
-│   ├── packaging-system.md      # Gift framework, format rotation, thumbnails
-│   └── reference-pieces/        # Full polished pieces (own + studied) — piece-level voice rhythm
-├── banks/                       # Evergreen, reusable material (structure ships with template, grown by vid-capture)
-│   ├── story-bank/              # Narrative entries — see story-bank/README.md
-│   ├── proof-bank/              # Creator's own evidence: numbers, stats, credentials — see proof-bank/README.md
-│   │   └── assets/              # Screenshots/charts referenced by proof entries
-│   ├── testimonial-bank/        # Other people's words about the creator — see testimonial-bank/README.md
-│   ├── metaphor-bank/           # Analogies and comparisons — see metaphor-bank/README.md
-│   ├── framework-bank/          # Creator's OWN named frameworks — see framework-bank/README.md
-│   ├── packaging-bank/          # Title+thumbnail winners (complete packages) — see packaging-bank/README.md
-│   ├── audience-data/           # Per-call summaries (calls/) + comment vocabulary samples (comments/), via aud-intake
-│   ├── title-bank.md            # Validated title patterns (reusable formulas)
-│   ├── hook-bank.md             # Fill-in-the-blank hook patterns + worked examples (5 hook types)
-│   ├── transition-bank.md       # Transition patterns (intro-forward, segment-pivot, body-to-ending)
-│   └── pattern-bank.md          # Hook/structure patterns that won post-publish
-├── Content/
-│   ├── pieces/                  # One folder per video/piece — all platform derivatives live together. Single newsletters/posts also live here.
-│   ├── ideas/                   # Content idea swipe file
-│   └── email-sequences/         # Multi-piece email sequences (welcome, nurture, launch, re-engagement)
-├── People/                      # One file per human (clients, prospects, guests, testimonial sources)
-├── Notes/                       # Optional drop-zone for on-the-go brain dumps
-├── raw/                         # Optional, creator's own raw material (transcripts, articles)
-├── references/                  # Optional, external study material pointers (no full content)
-├── inbox/                       # Optional drop-in folders for raw files awaiting ingest
-│   └── audience/                # Raw call transcripts (calls/) and YouTube comment CSVs (comments/) for aud-intake
-├── audience/                    # Synthetic audience workspace (created by aud-* skills)
-│   ├── segments/                # Rough audience clusters (pre-avatar)
-│   ├── avatars/                 # Synthetic avatar profiles (one file per avatar)
-│   └── held-out/                # Reserved quotes per segment, used by aud-validate only
-└── knowledge/                   # Reference material loaded by skills (frameworks, schemas, format planners)
+├── .claude/skills/              # Installed skills (read-only for the creator)
+├── foundation/                  # Creator identity (created by the /foundation command chain)
+│   └── creator-foundation.md    # Avatar, positioning (Iceberg), pillars, credibility, backstory
+├── banks/
+│   └── proof-bank/              # Creator's own evidence: numbers, stats, credentials
+│       └── assets/              # Screenshots/charts referenced by proof entries
+├── people/                      # One file per human (clients, guests, sources)
+├── CLAUDE.md                    # Rules for Claude when working in this workspace
+├── _guide.md                    # Human-readable orientation
+├── .env.example                 # Placeholder for API keys future skills will need
+└── knowledge/                   # Plugin reference material (loaded by skills via ${CLAUDE_PLUGIN_ROOT})
 ```
 
 ## Obsidian-flavored markdown
 
-Everything in this vault is Obsidian-native. Wikilinks build the graph — use them everywhere.
+Everything in this vault is Obsidian-native. Wikilinks build the graph. Use them everywhere.
 
 - **Wikilinks**: `[[Note Name]]`, `[[Note|Display Text]]`, `[[Note#Heading]]`
 - **Embeds**: `![[Note]]`
@@ -72,44 +48,21 @@ Everything in this vault is Obsidian-native. Wikilinks build the graph — use t
 - **Highlights**: `==text==`
 - **Tags**: `#tag` inline or `tags: [a, b]` in frontmatter
 
-Every note that ties to a project, person, or other note gets wikilinked — not plain text, not `[markdown](links)`. Frontmatter goes on every note created by a skill; the schema is defined in [[knowledge/vault-integration]].
+Every note that ties to a project, person, or other note gets wikilinked, not plain text, not `[markdown](links)`. Frontmatter goes on every note created by a skill; the schema is defined in [[knowledge/vault-integration]].
 
 ## Auto-save rule
 
-When meaningful info comes up — a correction, a fact about the creator, a new story, a decision — save it to the right file immediately. After saving, report what was saved and where. Never ask permission to save.
+When meaningful info comes up (a correction, a fact about the creator, a new story, a decision), save it to the right file immediately. After saving, report what was saved and where. Never ask permission to save.
 
 ## Knowledge routing
 
 | Type | Route to |
 |------|----------|
-| Creator positioning, avatar, credibility, backstory | `foundation/creator-foundation.md` |
-| Voice guardrail: fingerprint, signature phrases, refusals, POV/energy | `foundation/voice-profile.md` |
-| Gift framework, format rotation, thumbnail strategy | `foundation/packaging-system.md` |
-| Real creator passages preserved verbatim, the voice engine writing skills write from | `foundation/reference-pieces/{voice_context}.md` (one file per context, passages as `## ` sections, via `vid-voice-capture`) |
-| A story the creator told | `banks/story-bank/{slug}.md` (via `vid-capture`) |
-| A proof point (number, result, credential) | `banks/proof-bank/{slug}.md` (via `vid-capture`) |
-| A metaphor or analogy | `banks/metaphor-bank/{slug}.md` (via `vid-capture`) |
-| A client testimonial | `banks/testimonial-bank/{slug}.md` (via `vid-capture`) |
-| A named framework or system the creator teaches | `banks/framework-bank/{slug}.md` (manual for now; `vid-capture` may add Framework stage later) |
-| A title+thumbnail combo that won after publishing | `banks/packaging-bank/{slug}.md` — populated post-publish when `vid-measurement` flags a winner |
-| A thumbnail brief for a specific video | `Content/pieces/{slug}/thumbnail-brief.md` (via `vid-thumbnail`) |
-| A person (client, guest, testimonial source) | `People/{Full Name}.md` — create a stub if missing |
-| A raw content idea or swipe-worthy insight | `Content/ideas/content-ideas.md` |
-| A video or cross-platform piece, including single newsletters and one-off posts | `Content/pieces/{slug}/` — one folder per piece |
-| Multi-piece email sequence | `Content/email-sequences/{slug}/` |
-| On-the-go brain dump waiting to be routed | `Notes/{anything}.md` |
-| Raw transcript / article / brain-dump full text | `raw/{slug}.md` (optional folder) |
-| External study material pointer (course, book, podcast) | `references/{slug}.md` (optional folder, pointers only — no full content) |
-| Raw call transcript awaiting ingest | `inbox/audience/calls/{anything}.txt` (drop-in zone; processed and removed by `aud-intake`) |
-| Raw YouTube comment export awaiting ingest | `inbox/audience/comments/{video-slug}.csv` (drop-in zone; processed by `aud-intake`) |
-| Per-call summary with extracted quote units (5 moment types) | `banks/audience-data/calls/{call-slug}.md` (via `aud-intake`. Source of truth for avatar building; raw transcripts are NOT) |
-| YouTube comment vocabulary sample | `banks/audience-data/comments/{video-slug}/{id}.md` (via `aud-intake`. Low-trust evidence, vocabulary-only) |
-| Audience segment cluster (pre-avatar) | `audience/segments/{segment-slug}.md` (via `aud-avatar-build`) |
-| Synthetic avatar profile | `audience/avatars/{avatar-slug}.md` (via `aud-avatar-build`. Status: draft / validated-vocabulary / validated-full / retired) |
-| Held-out quote set for an avatar segment | `audience/held-out/{segment-slug}.md` (written BEFORE avatars by `aud-avatar-build`; read ONLY by `aud-validate`) |
-| Avatar validation report | `audience/avatars/{avatar-slug}-validation-{date}.md` (via `aud-validate`) |
-| Per-avatar review of a content piece | `Content/pieces/{piece-slug}/reviews/{N}/{avatar-slug}.md` (via `aud-review` subagent invocations) |
-| Panel synthesis for a piece (verdict + top 3 fixes + scores + dissent) | `Content/pieces/{piece-slug}/reviews/{N}/synthesis.md` (via `aud-review`) |
+| Creator positioning, avatar, pillars, credibility, backstory | `foundation/creator-foundation.md` (via the `/foundation` command) |
+| A proof point (number, result, credential) | `banks/proof-bank/{slug}.md` (via `vid-credibility`) |
+| A person (client, guest, testimonial source) | `people/{Full Name}.md`. Create a stub if missing. |
+
+More routes get added when their owning skills ship. Until then, do not invent routes for unreleased capabilities.
 
 ## Rules
 
@@ -117,10 +70,10 @@ When meaningful info comes up — a correction, a fact about the creator, a new 
 2. **ASK before scanning.** When a skill starts a stage, ask the creator what they want to do at that stage. Do not pre-scan banks, foundation docs, or content pieces for context.
 3. **Wikilinks everywhere.** Internal references are always `[[wikilinks]]`, never plain text or markdown links.
 4. **Frontmatter on every note** a skill creates. Schema lives in [[knowledge/vault-integration]].
-5. **People get profiles.** When a new human is mentioned — client, guest, testimonial source — create `People/{Full Name}.md` as a stub even if details are thin.
-6. **Bidirectional wikilinks.** When a story/proof/metaphor references a person, the link goes both ways — the person's profile gets the backlink.
+5. **People get profiles.** When a new human is mentioned (client, guest, testimonial source), create `people/{Full Name}.md` as a stub even if details are thin.
+6. **Bidirectional wikilinks.** When a story, proof, or metaphor references a person, the link goes both ways. The person's profile gets the backlink.
 7. **Auto-save meaningful info.** Don't ask "should I save this?" Save it and report.
-8. **Read aloud is the voice test.** If the creator would reword it when speaking, the draft is wrong. Applies to scripts, emails, social posts, anywhere their voice appears.
+8. **Read aloud is the voice test.** If the creator would reword it when speaking, the draft is wrong. Applies anywhere their voice appears.
 
 ## Anti-patterns
 
@@ -128,10 +81,10 @@ Do NOT:
 
 - Scan the vault at session start
 - Load foundation docs, banks, or content pieces pre-emptively
-- Ask "should I save this?" — just save it
-- Use `[markdown](links)` for internal references — always `[[wikilinks]]`
-- Write plain-text names of people or projects — always wikilink
+- Ask "should I save this?" Just save it.
+- Use `[markdown](links)` for internal references. Always `[[wikilinks]]`.
+- Write plain-text names of people or projects. Always wikilink.
 - Fabricate stories, numbers, testimonials, positioning, or avatar details
-- Over-link: don't wikilink every occurrence of a common word — only entity references
+- Over-link: don't wikilink every occurrence of a common word. Only entity references.
 - Duplicate content across banks (check for existing entries before creating new ones)
-- Announce loading context ("Let me read your foundation docs...") — read silently when needed, never pre-emptively
+- Announce loading context ("Let me read your foundation docs..."). Read silently when needed, never pre-emptively.
