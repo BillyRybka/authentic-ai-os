@@ -1,6 +1,6 @@
 ---
 name: vid-pillars
-description: Lock the 8 to 12 content pillars that deliver on the creator's Iceberg Statement. The bottom of the iceberg. Categories of teaching, not video titles. Runs after `vid-positioning`. Triggers on "build my content pillars", "what should I teach", "bottom of the iceberg", "what topics deliver on my statement", or whenever the creator needs the teaching menu that backs up their channel promise.
+description: Lock the 8 to 12 content pillars that deliver on the creator's Iceberg Statement. The bottom of the iceberg, categories of teaching not video titles. Runs after vid-positioning. Triggers on "build my content pillars" or "what should I teach".
 ---
 
 # Pillars

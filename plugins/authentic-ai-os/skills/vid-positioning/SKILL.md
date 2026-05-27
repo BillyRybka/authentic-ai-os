@@ -1,6 +1,6 @@
 ---
 name: vid-positioning
-description: Draft the Iceberg Statement, the one-sentence channel promise that sits at the top of the iceberg. Uses WHO plus WHAT plus HOW plus TENSION, with the creator's literal language preserved. Runs after `vid-avatar`. Triggers on "write my Iceberg Statement", "draft my positioning", "lock the top of my iceberg", "what's the one-sentence promise", or whenever a downstream skill (vid-pillars, vid-title, vid-thumbnail) needs the Iceberg Statement and it does not yet exist.
+description: Draft the Iceberg Statement, the one-sentence channel promise. Uses WHO plus WHAT plus HOW plus TENSION with the creator's literal language preserved. Runs after vid-avatar. Triggers on "write my Iceberg Statement", "draft my positioning", or "top of my iceberg".
 ---
 
 # Positioning

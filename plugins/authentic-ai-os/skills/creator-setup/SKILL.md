@@ -1,6 +1,6 @@
 ---
 name: creator-setup
-description: One-time installer that scaffolds the Authentic AI OS workspace inside whichever folder the creator designates as their content home. Inspects the current folder to understand the vault's shape, lists candidate content folders with what's actually in each, and lets the creator pick. Writes a workspace `CLAUDE.md` so Claude follows the right rules in that folder, captures any path overrides the creator wants, and offers a routing block at the vault root. Safe to re-run after every plugin update (additive, never destroys the creator's work). Use when a creator just installed the plugin, is setting up for the first time, or needs to refresh the workspace structure after an update. Triggers on "set up Authentic AI OS", "install Authentic AI OS", "scaffold my vault", "first time setup", "I just installed the plugin", "set up my vault", "run creator setup".
+description: Scaffolds the Authentic AI OS workspace inside the creator's chosen content folder. Inspects the vault, surfaces candidate folders, lets the creator pick. Writes a workspace CLAUDE.md and offers a routing block at the root. Safe to re-run after plugin updates. Triggers on "set up Authentic AI OS", "scaffold my vault", or "run creator setup".
 ---
 
 # Creator setup

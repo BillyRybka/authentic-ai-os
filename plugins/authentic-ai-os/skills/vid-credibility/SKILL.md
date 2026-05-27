@@ -1,6 +1,6 @@
 ---
 name: vid-credibility
-description: Lock three viewer-relevant credibility brags the creator can use in intros. Specific numbers, real wins, declarative past tense. Big plus Specific plus Personal. Runs as the 4th foundation skill after `vid-pillars`. Triggers on "build my credibility brags", "intro proof", "what should I say about myself in intros", "lock my three brags", "credibility statement", or whenever the creator needs trust-builders for their hook section.
+description: Lock three viewer-relevant credibility brags for intros. Specific numbers, real wins, declarative past tense. Big plus Specific plus Personal. 4th foundation skill, runs after vid-pillars. Triggers on "build my credibility brags" or "lock my three brags".
 ---
 
 # Credibility

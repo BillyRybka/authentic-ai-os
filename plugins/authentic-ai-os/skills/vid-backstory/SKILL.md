@@ -1,6 +1,6 @@
 ---
 name: vid-backstory
-description: Lock the creator's Problem-Action-Outcome backstory in 1 to 2 conversational paragraphs, plus a 3-sentence compressed version for quick intros. Concrete actions, real numbers, no corporate tone. 5th foundation skill, runs after `vid-credibility`. Triggers on "build my backstory", "write my origin story", "what's my journey", "lock my PAO", "write the about section", or whenever the creator needs the story that gets reused across videos, channel banners, welcome emails, and case studies.
+description: Lock the creator's Problem-Action-Outcome backstory in 1 to 2 conversational paragraphs, plus a 3-sentence intro version. Concrete actions, real numbers, no corporate tone. 5th foundation skill, runs after vid-credibility. Triggers on "build my backstory" or "write my origin story".
 ---
 
 # Backstory
