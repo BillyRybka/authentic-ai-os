@@ -1,6 +1,7 @@
 ---
 name: vid-avatar
 description: Lock who the viewer is. Three-phase interview producing the offer summary, avatar description, and Top 3 perceived problems in viewer language. First foundation skill in Authentic AI OS. Triggers on "build my avatar", "who is my audience", "define my viewer", "start my channel foundation", or whenever a downstream skill needs avatar context that doesn't exist yet.
+argument-hint: "(optional: any starting context)"
 ---
 
 # Avatar
