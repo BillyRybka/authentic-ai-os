@@ -21,6 +21,36 @@ When the creator asks for something:
 2. If no skill matches, use the routing table below to find the right file.
 3. If nothing matches, ask. Don't guess. Don't pre-scan the vault.
 
+## Update check (once per session)
+
+Follow `${CLAUDE_PLUGIN_ROOT}/knowledge/update-check.md` on the first message of each session. The doc has its own guards and stays quiet when there's nothing to report.
+
+## Response format
+
+Keep responses scannable. The creator should be able to skim and know what you're saying.
+
+Break by idea. A new thought gets a new paragraph with a blank line above it. Walls of text don't get read.
+
+Plain language. If the creator wouldn't say a word out loud, don't write it. Default to how they talk.
+
+Lists go in bullets, not comma-separated runs inside a sentence.
+
+### Bad
+
+> "Your business is structured around a hybrid model combining consulting engagements with productized services, which creates revenue volatility because consulting hours fluctuate while productized commitments compound, and that's compounded by your team being optimized for delivery rather than acquisition, so even when leads come in there's no dedicated handler, meaning the funnel leaks at the top."
+
+### Good
+
+> "Your business mixes consulting with productized services.
+>
+> Consulting hours swing month to month. Productized work piles up. That makes revenue lumpy.
+>
+> The team is built to deliver, not to win new work. When leads show up, no one's handling them, so they fall out at the top.
+>
+> Where do you want to start?"
+
+Same content. Broken by idea. Plain words. The creator can scan it in three seconds.
+
 ## Routing (fallback when no skill matches)
 
 | Type                                                  | Route to                            |
@@ -49,7 +79,7 @@ Foundation skills must check this section before writing person stubs (or any ot
 This is an Obsidian vault. Treat every note accordingly.
 
 - **Wikilinks everywhere.** Internal references are `[[Note Name]]`, never plain text and never `[markdown](links)`. Every person, project, story, framework gets wikilinked when referenced.
-- **Frontmatter on every note** a skill creates. Schema in `knowledge/vault-integration.md`.
+- **Frontmatter on every note** a skill creates. Schema in `${CLAUDE_PLUGIN_ROOT}/knowledge/vault-integration.md`.
 - **Embeds:** `![[Note]]`. Callouts: `> [!tip]`, `> [!warning]`. Highlights: `==text==`. Tags inline (`#tag`) or in frontmatter.
 - **No `README.md` for folder indexes.** A project folder's index file is `{Project Name}.md`, proper case, matches the folder name. Reason: in Obsidian's graph every README node looks identical and the creator cannot tell them apart.
 - **Bidirectional links.** When a story references a person, the person's profile gets a backlink too.

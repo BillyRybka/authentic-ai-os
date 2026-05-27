@@ -3,6 +3,8 @@ name: creator-setup
 description: Scaffolds the Authentic AI OS workspace inside the creator's chosen content folder. Inspects the vault, surfaces candidate folders, lets the creator pick. Writes a workspace CLAUDE.md and offers a routing block at the root. Safe to re-run after plugin updates. Triggers on "set up Authentic AI OS", "scaffold my vault", or "run creator setup".
 ---
 
+> 🔄 **Pre-flight (mandatory).** Before doing anything else, read `${CLAUDE_PLUGIN_ROOT}/knowledge/update-check.md` and follow it. If a newer version exists, halt and tell the creator. If you're up to date, continue with the skill below.
+
 # Creator setup
 
 The installer. Establishes the workspace the foundation skills write into, then offers a handoff. It does not interview the creator about their identity. It scaffolds structure, writes Claude's rules for that folder, and gets out of the way.
@@ -10,6 +12,32 @@ The installer. Establishes the workspace the foundation skills write into, then 
 This skill is manifest-driven. `manifest.md` lists every currently released skill and the container folders it needs. Scaffold only what the manifest says. Never scaffold for a skill that is not released. When a new skill ships, the maintainer adds a row to `manifest.md`; this skill needs no other change.
 
 **Core principle: the workspace IS the content folder.** Whatever folder the creator designates as their content home (a fresh folder, an existing `content/` inside a department, a root-level `content/`, or anything else), the skill scaffolds directly inside it. No `Authentic-AI-OS/` wrapper subfolder. The workspace and the content folder are the same thing.
+
+## Response format
+
+Keep responses scannable. The creator should be able to skim and know what you're saying.
+
+Break by idea. A new thought gets a new paragraph with a blank line above it. Walls of text don't get read.
+
+Plain language. If the creator wouldn't say a word out loud, don't write it. Default to how they talk.
+
+Lists go in bullets, not comma-separated runs inside a sentence.
+
+### Bad
+
+> "Your business is structured around a hybrid model combining consulting engagements with productized services, which creates revenue volatility because consulting hours fluctuate while productized commitments compound, and that's compounded by your team being optimized for delivery rather than acquisition, so even when leads come in there's no dedicated handler, meaning the funnel leaks at the top."
+
+### Good
+
+> "Your business mixes consulting with productized services.
+>
+> Consulting hours swing month to month. Productized work piles up. That makes revenue lumpy.
+>
+> The team is built to deliver, not to win new work. When leads show up, no one's handling them, so they fall out at the top.
+>
+> Where do you want to start?"
+
+Same content. Broken by idea. Plain words. The creator can scan it in three seconds.
 
 ## What gets scaffolded
 

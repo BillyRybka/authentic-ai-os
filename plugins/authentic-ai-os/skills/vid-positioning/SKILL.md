@@ -1,7 +1,9 @@
 ---
 name: vid-positioning
-description: Draft the Iceberg Statement, the one-sentence channel promise. Uses WHO plus WHAT plus HOW plus TENSION with the creator's literal language preserved. Runs after vid-avatar. Triggers on "write my Iceberg Statement", "draft my positioning", or "top of my iceberg".
+description: Drafts the Iceberg Statement, the one-sentence channel promise. Uses WHO plus WHAT plus HOW plus TENSION with the creator's literal language preserved. Runs after vid-avatar. Triggers on "write my Iceberg Statement", "draft my positioning", or "top of my iceberg".
 ---
+
+> 🔄 **Pre-flight (mandatory).** Before doing anything else, read `${CLAUDE_PLUGIN_ROOT}/knowledge/update-check.md` and follow it. If a newer version exists, halt and tell the creator. If you're up to date, continue with the skill below.
 
 # Positioning
 
@@ -13,7 +15,7 @@ This is the second skill in the foundation sequence. It runs after `vid-avatar` 
 
 **Inputs (required):** `foundation/creator-foundation.md` with Offer, Avatar, and Top 3 perceived problems sections populated. If those don't exist, stop and point the creator at `vid-avatar`.
 
-**Inputs (optional):** `foundation/voice-profile.md` (its anti-patterns override the voice rules in `knowledge/interview-posture.md`).
+**Inputs (optional):** `foundation/voice-profile.md` (its anti-patterns override the voice rules in `${CLAUDE_PLUGIN_ROOT}/knowledge/interview-posture.md`).
 
 **Outputs:** Iceberg Statement section written to `foundation/creator-foundation.md`.
 
@@ -21,10 +23,8 @@ This is the second skill in the foundation sequence. It runs after `vid-avatar` 
 
 ## Load at session start
 
-> **Resolving `knowledge/` paths.** Any path written `knowledge/X.md` is a plugin reference file. Load it from `${CLAUDE_PLUGIN_ROOT}/knowledge/X.md` when running as an installed plugin. If `${CLAUDE_PLUGIN_ROOT}` is unset or that path does not exist (running from the source repo during development), load `knowledge/X.md` relative to the repo root instead.
-
-1. `knowledge/interview-posture.md`. Shared conversation posture. Non-negotiable.
-2. `knowledge/vault-integration.md`. Frontmatter schema.
+1. `${CLAUDE_PLUGIN_ROOT}/knowledge/interview-posture.md`. Shared conversation posture. Non-negotiable.
+2. `${CLAUDE_PLUGIN_ROOT}/knowledge/vault-integration.md`. Frontmatter schema.
 3. `foundation/creator-foundation.md`. Read the Offer, Avatar, and Top 3 sections.
 4. `foundation/voice-profile.md` if it exists.
 5. `references/positioning-method.md`. The WHO + WHAT + HOW + TENSION method this skill uses to draft.
@@ -70,7 +70,7 @@ This is a drafting skill, not a discovery skill. The creator already locked the 
 
 Read the Offer, Avatar, and Top 3 from `creator-foundation.md`. Don't ask the creator to repeat them.
 
-Run the absorb-first protocol from `knowledge/interview-posture.md`. The four components (WHO, WHAT, HOW, TENSION) are YOUR internal scaffolding. Don't speak the labels aloud. Mirror back what the inputs gave you, in prose, then ask the one useful question.
+Run the absorb-first protocol from `${CLAUDE_PLUGIN_ROOT}/knowledge/interview-posture.md`. The four components (WHO, WHAT, HOW, TENSION) are YOUR internal scaffolding. Don't speak the labels aloud. Mirror back what the inputs gave you, in prose, then ask the one useful question.
 
 Shape of the opener:
 
@@ -102,7 +102,7 @@ Don't show more than two. Don't show three rewordings of the same template.
 
 The creator reacts. You rewrite using whatever language they gave you. Show the new version. Keep going until they read it aloud without rewording.
 
-If they get stuck choosing between drafts, offer the two-option fork from `interview-posture.md`:
+If they get stuck choosing between drafts, offer the two-option fork from `${CLAUDE_PLUGIN_ROOT}/knowledge/interview-posture.md`:
 
 > "Two paths. Lock Draft 1 and refine, or scrap both and try a different tension. Which fits how you'd actually say it?"
 
@@ -146,7 +146,7 @@ If the creator named the enemy in 1 to 3 words, especially if they said it more 
 - "Fake gurus" stays "fake gurus." Not "people pretending to be experts."
 - "Hourly-rate model" stays "hourly-rate model." Not "trading time for money."
 
-Why: a phrase the creator already says becomes a brand asset. A paraphrase loses it. Full rule in `references/positioning-method.md` and `knowledge/interview-posture.md`.
+Why: a phrase the creator already says becomes a brand asset. A paraphrase loses it. Full rule in `references/positioning-method.md` and `${CLAUDE_PLUGIN_ROOT}/knowledge/interview-posture.md`.
 
 ## Edge cases
 

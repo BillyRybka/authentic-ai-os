@@ -158,14 +158,27 @@ if ($ok) {
         git push origin dev
         if ($LASTEXITCODE -ne 0) { throw "git push origin dev failed." }
 
-        # --- create GitHub Release and upload .plugin artifact ---------------
+        # --- create GitHub Release on PRIVATE source repo --------------------
+        # Internal release record. Clients never see this.
         $releaseTitle = "v$Version"
-        Write-Host "Creating GitHub Release v$Version with .plugin asset..." -ForegroundColor Cyan
+        Write-Host "Creating private-repo GitHub Release v$Version..." -ForegroundColor Cyan
         gh release create "v$Version" `
             --title $releaseTitle `
-            --notes "Plugin release v$Version. See commit log for changes. Drag the attached .plugin file into Cowork chat to force-install this version if auto-update fails." `
+            --notes "Plugin release v$Version. See commit log for changes." `
             $pluginFile
-        if ($LASTEXITCODE -ne 0) { throw "gh release create failed for v$Version. Check that the tag pushed (git tag --list; git ls-remote --tags origin) and re-run: gh release create v$Version --title v$Version --notes '...' $pluginFile" }
+        if ($LASTEXITCODE -ne 0) { throw "gh release create failed on private repo for v$Version. Re-run manually: gh release create v$Version --title v$Version --notes '...' $pluginFile" }
+
+        # --- mirror Release to PUBLIC distribution repo ----------------------
+        # Clients install from here. The plugin's update-check fetches the
+        # public mirror's latest release, not the private source repo.
+        $mirrorRepo = 'BillyRybka/aaios-releases'
+        Write-Host "Mirroring Release to public repo $mirrorRepo..." -ForegroundColor Cyan
+        gh release create "v$Version" `
+            --repo $mirrorRepo `
+            --title $releaseTitle `
+            --notes "Plugin release v$Version. Download the .plugin file and drag it into Cowork chat to install. The plugin's built-in update checker will notify you of future releases." `
+            $pluginFile
+        if ($LASTEXITCODE -ne 0) { throw "gh release create failed on public mirror for v$Version. Re-run manually: gh release create v$Version --repo $mirrorRepo --title v$Version --notes '...' $pluginFile" }
 
         Write-Host ""
         Write-Host "Released v$Version." -ForegroundColor Green
@@ -173,8 +186,9 @@ if ($ok) {
         if ($skipped.Count) {
             Write-Host "  Skipped (not real files): $($skipped -join ', ')" -ForegroundColor DarkGray
         }
-        Write-Host "  Artifact: $pluginFile (uploaded to GitHub Release)"
+        Write-Host "  Artifact: $pluginFile (uploaded to both private and public Releases)"
         Write-Host ""
-        Write-Host "GitHub Release: https://github.com/BillyRybka/authentic-ai-os/releases/tag/v$Version" -ForegroundColor Yellow
+        Write-Host "Private (internal): https://github.com/BillyRybka/authentic-ai-os/releases/tag/v$Version" -ForegroundColor DarkGray
+        Write-Host "Public (client-facing): https://github.com/$mirrorRepo/releases/tag/v$Version" -ForegroundColor Yellow
     }
 }

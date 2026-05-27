@@ -1,7 +1,9 @@
 ---
 name: vid-backstory
-description: Lock the creator's Problem-Action-Outcome backstory in 1 to 2 conversational paragraphs, plus a 3-sentence intro version. Concrete actions, real numbers, no corporate tone. 5th foundation skill, runs after vid-credibility. Triggers on "build my backstory" or "write my origin story".
+description: Locks the creator's Problem-Action-Outcome backstory in 1 to 2 conversational paragraphs, plus a 3-sentence intro version. Concrete actions, real numbers, no corporate tone. 5th foundation skill, runs after vid-credibility. Triggers on "build my backstory" or "write my origin story".
 ---
+
+> 🔄 **Pre-flight (mandatory).** Before doing anything else, read `${CLAUDE_PLUGIN_ROOT}/knowledge/update-check.md` and follow it. If a newer version exists, halt and tell the creator. If you're up to date, continue with the skill below.
 
 # Backstory
 
@@ -21,10 +23,8 @@ The backstory establishes how the creator went from the avatar's problem to the 
 
 ## Load at session start
 
-> **Resolving `knowledge/` paths.** Any path written `knowledge/X.md` is a plugin reference file. Load it from `${CLAUDE_PLUGIN_ROOT}/knowledge/X.md` when running as an installed plugin. If `${CLAUDE_PLUGIN_ROOT}` is unset or that path does not exist (running from the source repo during development), load `knowledge/X.md` relative to the repo root instead.
-
-1. `knowledge/interview-posture.md`. Shared posture. Non-negotiable.
-2. `knowledge/vault-integration.md`.
+1. `${CLAUDE_PLUGIN_ROOT}/knowledge/interview-posture.md`. Shared posture. Non-negotiable.
+2. `${CLAUDE_PLUGIN_ROOT}/knowledge/vault-integration.md`.
 3. `foundation/creator-foundation.md`. Read Avatar and Iceberg Statement.
 4. `foundation/voice-profile.md` if it exists.
 5. `references/backstory-method.md` when drafting starts. Holds the Problem-Action-Outcome structure, the Action-section test, examples, and good/bad pairs.
@@ -49,7 +49,7 @@ Length: 1 to 2 short paragraphs. Conversational tone. Contractions OK.
 
 ## How this skill runs
 
-Four-question interview. Apply the absorb-first protocol from `knowledge/interview-posture.md`. Short messages. One question at a time. Push hard on Q3 (the Action section is where most backstories fail).
+Four-question interview. Apply the absorb-first protocol from `${CLAUDE_PLUGIN_ROOT}/knowledge/interview-posture.md`. Short messages. One question at a time. Push hard on Q3 (the Action section is where most backstories fail).
 
 ### Opener
 

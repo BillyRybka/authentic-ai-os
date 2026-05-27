@@ -2,12 +2,14 @@
 
 How to ship updates from `authentic-ai-os` to Inner Circle clients.
 
-## The model: two branches
+## The model: two branches, two repos
 
 - **`dev`** is the workshop. All 19 skills, all knowledge, internal docs. You work here, always.
-- **`main`** is the storefront. Only the 7 shipping skills plus the knowledge they reference. Clients install from `main` (the GitHub default branch).
+- **`main`** (in the private source repo) is the lean storefront branch. Only the shipping skills plus the knowledge they reference.
+- **`BillyRybka/authentic-ai-os`** is the **private** source repo. Internal records only. Clients never touch it.
+- **`BillyRybka/aaios-releases`** is the **public** distribution mirror. Just a README and a Releases page. Every release script run uploads the `.plugin` artifact here. The plugin's update-check fetches `https://api.github.com/repos/BillyRybka/aaios-releases/releases/latest`.
 
-`main` is never edited by hand. It is rebuilt from `dev` by `scripts/release.ps1`, which uses an allowlist: only the named skills and their auto-detected knowledge reach `main`. WIP skills, unused knowledge, and internal docs cannot leak to a client.
+`main` is never edited by hand. It is rebuilt from `dev` by `scripts/release.ps1`, which uses an allowlist: only the named skills and their auto-detected knowledge reach `main`. WIP skills, unused knowledge, and internal docs cannot leak to a client. The script also uploads the resulting `.plugin` to both the private repo's Releases (internal record) and the public mirror's Releases (client-facing).
 
 ## Versioning
 
@@ -79,6 +81,46 @@ Clients see the update on their next Cowork/Claude Code marketplace refresh. To 
 ### How clients get a vault
 
 The vault is not shipped. `creator-setup` builds the `Authentic-AI-OS/` container in the client's folder at runtime. `knowledge/` is read from the plugin via `${CLAUDE_PLUGIN_ROOT}`, never copied into a vault.
+
+## Cowork gotchas
+
+Hard-won truths from real shipping. Add to the list whenever a new one bites.
+
+### Line endings: LF only on `.md` files
+
+Cowork's YAML frontmatter parser does not handle CRLF. A `---\r\n` closing delimiter is not recognized, so the entire frontmatter block leaks into the body as raw text. Symptoms: skill shows no description in the Cowork UI, and the body opens with literal `name: my-skill description: ...`.
+
+Fix: `.md` files in the plugin must use LF line endings. `.gitattributes` at `plugins/authentic-ai-os/.gitattributes` enforces this for `*.md` and `*.json`. Do not remove it. If a file is edited on Windows with a tool that re-saves as CRLF, run:
+
+```powershell
+$f = 'path\to\file.md'; $t = [IO.File]::ReadAllText($f) -replace "`r`n","`n"; [IO.File]::WriteAllText($f, $t, (New-Object Text.UTF8Encoding $false))
+```
+
+### Legacy `commands/` directory
+
+Cowork warns on install if the plugin uses `commands/<name>.md`. Use `skills/<name>/SKILL.md` for everything, even pure slash commands. Skills with a description trigger on both slash invocation and model auto-trigger.
+
+### Hooks do not fire in Cowork
+
+Tested 2026-05-27. A `SessionStart` hook configured via `hooks/hooks.json` does not execute on session start in Cowork. The hook file ships inside the `.plugin`, but Cowork's runtime ignores it.
+
+### Working alternative: skill pre-flight + knowledge doc + WebFetch
+
+Validated 2026-05-27. The shipping update-check pattern:
+
+- `knowledge/update-check.md` holds the full check logic, once-per-session guard, and the blocking flow when an update exists.
+- Every skill opens with a `> **STOP. PRE-FLIGHT IS MANDATORY.**` blockquote right after the H1, before the descriptive intro.
+- Wording must be unmistakably directive (all-caps "STOP," "non-negotiable," "before any tool use," "do not continue past"). Soft wording is treated as documentation and ignored.
+
+When the check finds a newer version, Claude halts and outputs the notice. The creator either drags in the new `.plugin` or says "continue without updating." Works reliably in Cowork.
+
+### Drag-drop installs work; GitHub-link installs are partial
+
+In testing, installing via Cowork's GitHub URL flow gave a partial install (hooks not fired, possibly other features missing). Drag-drop install of the `.plugin` artifact gives a complete install. For client distribution today, drag-drop is the only reliable path.
+
+### Plugin updates don't propagate
+
+Cowork does not auto-pull marketplace updates the way Claude Code does. Once a client installs a version, they stay on it until they manually drag-drop a newer `.plugin`. No "check for updates" or "refresh marketplace" action exists in the Cowork UI as of 2026-05-27. See `documents/audits/` for outreach to Cowork support if it exists.
 
 ## Rolling back
 

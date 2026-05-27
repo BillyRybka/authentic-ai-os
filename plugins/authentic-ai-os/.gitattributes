@@ -1,0 +1,4 @@
+# Markdown files must use LF line endings. Cowork's YAML frontmatter parser
+# rejects CRLF and silently leaks the entire frontmatter into the body.
+*.md text eol=lf
+*.json text eol=lf

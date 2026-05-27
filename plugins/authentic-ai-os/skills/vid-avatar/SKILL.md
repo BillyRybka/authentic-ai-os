@@ -1,8 +1,10 @@
 ---
 name: vid-avatar
-description: Lock who the viewer is via a three-phase interview producing the offer, avatar, and Top 3 perceived problems in viewer language. First foundation skill. Triggers on "build my avatar", "who is my audience", or "start my channel foundation".
+description: Locks who the viewer is via a three-phase interview producing the offer, avatar, and Top 3 perceived problems in viewer language. First foundation skill. Triggers on "build my avatar", "who is my audience", or "start my channel foundation".
 argument-hint: "(optional: any starting context)"
 ---
+
+> 🔄 **Pre-flight (mandatory).** Before doing anything else, read `${CLAUDE_PLUGIN_ROOT}/knowledge/update-check.md` and follow it. If a newer version exists, halt and tell the creator. If you're up to date, continue with the skill below.
 
 # Avatar
 
@@ -20,17 +22,15 @@ This is the first skill in the foundation sequence. Without it, `vid-positioning
 
 **Inputs (optional):** existing `foundation/creator-foundation.md` for refresh runs.
 
-**Outputs:** Offer, Avatar, and Top 3 perceived problems sections written to `foundation/creator-foundation.md` using the schema in `knowledge/creator-foundation-template.md`.
+**Outputs:** Offer, Avatar, and Top 3 perceived problems sections written to `foundation/creator-foundation.md` using the schema in `${CLAUDE_PLUGIN_ROOT}/knowledge/creator-foundation-template.md`.
 
 **Downstream consumers:** `vid-positioning` (reads all three sections), `vid-pillars`, `vid-credibility`, `vid-backstory`, `vid-voice-capture`, `vid-research`, every per-video skill in the pipeline.
 
 ## Load at session start
 
-> **Resolving `knowledge/` paths.** Any path written `knowledge/X.md` is a plugin reference file. Load it from `${CLAUDE_PLUGIN_ROOT}/knowledge/X.md` when running as an installed plugin. If `${CLAUDE_PLUGIN_ROOT}` is unset or that path does not exist (running from the source repo during development), load `knowledge/X.md` relative to the repo root instead.
-
-1. `knowledge/interview-posture.md`. The shared interview posture every foundation interview skill follows. Conversation shape, voice rules, how to handle messy answers, how to use the creator's exact words. Non-negotiable.
-2. `knowledge/vault-integration.md`. Frontmatter schema, wikilink contracts.
-3. `foundation/voice-profile.md` if it exists. Its anti-patterns override the voice rules in `interview-posture.md`.
+1. `${CLAUDE_PLUGIN_ROOT}/knowledge/interview-posture.md`. The shared interview posture every foundation interview skill follows. Conversation shape, voice rules, how to handle messy answers, how to use the creator's exact words. Non-negotiable.
+2. `${CLAUDE_PLUGIN_ROOT}/knowledge/vault-integration.md`. Frontmatter schema, wikilink contracts.
+3. `foundation/voice-profile.md` if it exists. Its anti-patterns override the voice rules in `${CLAUDE_PLUGIN_ROOT}/knowledge/interview-posture.md`.
 
 ## What this produces
 
@@ -40,7 +40,7 @@ Updates three sections in `foundation/creator-foundation.md`:
 - **Avatar.** A few sentences describing the viewer. Not a structured field list. A description.
 - **Top 3 perceived problems.** Three problems in viewer language. Equally weighted.
 
-If `creator-foundation.md` doesn't exist, create it from `knowledge/creator-foundation-template.md`.
+If `creator-foundation.md` doesn't exist, create it from `${CLAUDE_PLUGIN_ROOT}/knowledge/creator-foundation-template.md`.
 
 ## What this skill is NOT
 
@@ -58,13 +58,13 @@ If the creator asks for any of the above, finish the avatar work first, then poi
 
 Read `foundation/creator-foundation.md` if it exists.
 
-- **File missing** → fresh run. Create from `knowledge/creator-foundation-template.md`. Open Phase 1.
+- **File missing** → fresh run. Create from `${CLAUDE_PLUGIN_ROOT}/knowledge/creator-foundation-template.md`. Open Phase 1.
 - **Offer + Avatar + Top 3 all present** → ask refresh / keep / replace. Surface the avatar back.
 - **Partial** → resume. Tell the creator: "Picking up where you left off. Locked: [filled sections]. Next: [first unfilled]." Skip to the first unfilled phase.
 
 ## The three phases
 
-Run in order. One question at a time. Short messages. Follow the posture in `knowledge/interview-posture.md`.
+Run in order. One question at a time. Short messages. Follow the posture in `${CLAUDE_PLUGIN_ROOT}/knowledge/interview-posture.md`.
 
 ### Phase 1: Offer
 
@@ -74,7 +74,7 @@ The offer answers what the avatar walks away with. Everything else triangulates 
 
 > "Let's lock who you're building this channel for. First: what product or service do you currently sell, or plan to sell?"
 
-The creator's answer often spills into Phase 2 and 3 too. That's good. Use the absorb-first protocol from `interview-posture.md`. Mirror back what you heard, name the pattern, then ask the next useful question.
+The creator's answer often spills into Phase 2 and 3 too. That's good. Use the absorb-first protocol from `${CLAUDE_PLUGIN_ROOT}/knowledge/interview-posture.md`. Mirror back what you heard, name the pattern, then ask the next useful question.
 
 **Show-before-save (required).** Before writing the Offer section, show the proposed paragraph to the creator in a blockquote. Ask: "Lock this for the Offer section, or push?" Save only on explicit lock. If they push, iterate, show again, ask again.
 
