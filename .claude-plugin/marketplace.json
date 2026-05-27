@@ -7,6 +7,7 @@
   "plugins": [
     {
       "name": "authentic-ai-os",
+      "displayName": "Authentic AI OS",
       "description": "Authentic AI OS. Billy Rybka's YouTube content system. Foundation setup, voice capture, story/proof/metaphor banks, thumbnail and title development.",
       "source": "./plugins/authentic-ai-os",
       "category": "content-creation",

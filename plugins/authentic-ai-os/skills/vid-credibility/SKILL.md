@@ -1,7 +1,9 @@
 ---
 name: vid-credibility
-description: Lock three viewer-relevant credibility brags the creator can use in intros. Specific numbers, real wins, declarative past tense. Big plus Specific plus Personal. Runs as the 4th foundation skill after `vid-pillars`. Triggers on "build my credibility brags", "intro proof", "what should I say about myself in intros", "lock my three brags", "credibility statement", or whenever the creator needs trust-builders for their hook section.
+description: Locks three viewer-relevant credibility brags for intros. Specific numbers, real wins, declarative past tense. Big plus Specific plus Personal. 4th foundation skill, runs after vid-pillars. Triggers on "build my credibility brags" or "lock my three brags".
 ---
+
+> 🔄 **Pre-flight (mandatory).** Before doing anything else, read `${CLAUDE_PLUGIN_ROOT}/knowledge/update-check.md` and follow it. If a newer version exists, halt and tell the creator. If you're up to date, continue with the skill below.
 
 # Credibility
 
@@ -21,10 +23,8 @@ These are the sentences the creator says in nearly every intro to signal "I know
 
 ## Load at session start
 
-> **Resolving `knowledge/` paths.** Any path written `knowledge/X.md` is a plugin reference file. Load it from `${CLAUDE_PLUGIN_ROOT}/knowledge/X.md` when running as an installed plugin. If `${CLAUDE_PLUGIN_ROOT}` is unset or that path does not exist (running from the source repo during development), load `knowledge/X.md` relative to the repo root instead.
-
-1. `knowledge/interview-posture.md`. Shared posture. Non-negotiable.
-2. `knowledge/vault-integration.md`.
+1. `${CLAUDE_PLUGIN_ROOT}/knowledge/interview-posture.md`. Shared posture. Non-negotiable.
+2. `${CLAUDE_PLUGIN_ROOT}/knowledge/vault-integration.md`.
 3. `foundation/creator-foundation.md`. Read Avatar and Top 3 problems.
 4. `foundation/voice-profile.md` if it exists.
 5. `references/credibility-method.md` when drafting starts. Holds the Big plus Specific plus Personal rule, the anti-proof check, and the good/bad pairs.
@@ -179,7 +179,7 @@ Two writes on lock.
 
 **1. The locked three to the foundation.** Write the three brags to `foundation/creator-foundation.md` in the Credibility brags section. Three numbered lines. Creator's words verbatim where possible. Sharpen only by trimming filler or fixing tense.
 
-**2. The leftover wins to the proof bank.** Every strong proof point that surfaced but did not make the locked three goes to `banks/proof-bank/` as its own entry, so future intros and scripts can pull it. Follow the schema in `knowledge/proof-bank-schema.md` (`proof_type` is `personal-result` or `client-win`, kebab-case filename, the body sections from the proof entry template). The proof entries themselves are written to `banks/proof-bank/` in the creator's vault.
+**2. The leftover wins to the proof bank.** Every strong proof point that surfaced but did not make the locked three goes to `banks/proof-bank/` as its own entry, so future intros and scripts can pull it. Follow the schema in `${CLAUDE_PLUGIN_ROOT}/knowledge/proof-bank-schema.md` (`proof_type` is `personal-result` or `client-win`, kebab-case filename, the body sections from the proof entry template). The proof entries themselves are written to `banks/proof-bank/` in the creator's vault.
 
 Rules for the bank write:
 - Do not create a duplicate if an entry already covers that proof. Check first.

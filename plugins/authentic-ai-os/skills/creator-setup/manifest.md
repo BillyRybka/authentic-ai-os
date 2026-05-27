@@ -37,16 +37,4 @@ The `people/` row is conditional. If the creator chose a path override during se
 ## Deliberately NOT scaffolded
 
 - `knowledge/`: ships with the plugin, referenced via `${CLAUDE_PLUGIN_ROOT}`. Never copied into the workspace.
-- `banks/title-bank.md`, `foundation/packaging-system.md`, `banks/story-bank/`, `banks/testimonial-bank/`, `banks/metaphor-bank/`, `banks/framework-bank/`, `banks/packaging-bank/`: no released skill writes these yet. They get rows here when their owning skills ship.
-- `content/`, `notes/`: no released skill writes there.
-
-## Future skills (not yet shipping)
-
-These are in development and will get manifest rows when their skill folders exist:
-
-- `vid-voice-capture`: voice profile authoring.
-- `vid-research`: pattern banks and packaging defaults from YouTube evidence.
-- `vid-capture`: structured capture of stories, proofs, metaphors, testimonials.
-- `vid-packaging`: collapsed 2026-05-19. Its job moved to `vid-research`. Never add a row for it.
-
-Do not add rows for these until their skill folder exists under `plugins/authentic-ai-os/skills/`.
+- Any folder a released skill does not write into. New rows get added here only when their owning skill ships.

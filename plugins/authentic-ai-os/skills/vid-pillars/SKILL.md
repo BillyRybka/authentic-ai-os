@@ -1,7 +1,9 @@
 ---
 name: vid-pillars
-description: Lock the 8 to 12 content pillars that deliver on the creator's Iceberg Statement. The bottom of the iceberg. Categories of teaching, not video titles. Runs after `vid-positioning`. Triggers on "build my content pillars", "what should I teach", "bottom of the iceberg", "what topics deliver on my statement", or whenever the creator needs the teaching menu that backs up their channel promise.
+description: Locks the 8 to 12 content pillars that deliver on the creator's Iceberg Statement. The bottom of the iceberg, categories of teaching not video titles. Runs after vid-positioning. Triggers on "build my content pillars" or "what should I teach".
 ---
+
+> 🔄 **Pre-flight (mandatory).** Before doing anything else, read `${CLAUDE_PLUGIN_ROOT}/knowledge/update-check.md` and follow it. If a newer version exists, halt and tell the creator. If you're up to date, continue with the skill below.
 
 # Pillars
 
@@ -21,10 +23,8 @@ The Iceberg Statement (built by `vid-positioning`) is the top of the iceberg: th
 
 ## Load at session start
 
-> **Resolving `knowledge/` paths.** Any path written `knowledge/X.md` is a plugin reference file. Load it from `${CLAUDE_PLUGIN_ROOT}/knowledge/X.md` when running as an installed plugin. If `${CLAUDE_PLUGIN_ROOT}` is unset or that path does not exist (running from the source repo during development), load `knowledge/X.md` relative to the repo root instead.
-
-1. `knowledge/interview-posture.md`. Shared posture. Non-negotiable.
-2. `knowledge/vault-integration.md`. Frontmatter schema.
+1. `${CLAUDE_PLUGIN_ROOT}/knowledge/interview-posture.md`. Shared posture. Non-negotiable.
+2. `${CLAUDE_PLUGIN_ROOT}/knowledge/vault-integration.md`. Frontmatter schema.
 3. `foundation/creator-foundation.md`. Read Iceberg Statement, Avatar, Top 3 problems.
 4. `foundation/voice-profile.md` if it exists.
 
@@ -69,7 +69,7 @@ For every pillar proposed, ask silently: "If the avatar fixed THIS, would they b
 
 ## How this skill runs
 
-This is a discovery interview. Run the absorb-first protocol from `knowledge/interview-posture.md`. Short messages. One question at a time. Don't form-fill.
+This is a discovery interview. Run the absorb-first protocol from `${CLAUDE_PLUGIN_ROOT}/knowledge/interview-posture.md`. Short messages. One question at a time. Don't form-fill.
 
 ### Step 1: Propose a starter list
 
