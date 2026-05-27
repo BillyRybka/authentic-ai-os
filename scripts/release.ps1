@@ -14,7 +14,8 @@
 
 param(
     [Parameter(Mandatory = $true)]
-    [string]$Version
+    [string]$Version,
+    [switch]$DryRun
 )
 
 $ErrorActionPreference = 'Stop'
@@ -137,31 +138,43 @@ if ($ok) {
         git commit -m "Sync dev to v$Version" | Out-Null
     }
 
-    # --- push everything -----------------------------------------------------
-    Write-Host ""
-    Write-Host "Pushing main, tag, and dev..." -ForegroundColor Cyan
-    git push origin main --follow-tags
-    if ($LASTEXITCODE -ne 0) { throw "git push origin main failed." }
-    git push origin dev
-    if ($LASTEXITCODE -ne 0) { throw "git push origin dev failed." }
-
-    # --- create GitHub Release and upload .plugin artifact -------------------
     $pluginFile = "dist/authentic-ai-os-v$Version.plugin"
-    $releaseTitle = "v$Version"
-    Write-Host "Creating GitHub Release v$Version with .plugin asset..." -ForegroundColor Cyan
-    gh release create "v$Version" `
-        --title $releaseTitle `
-        --notes "Plugin release v$Version. See commit log for changes. Drag the attached .plugin file into Cowork chat to force-install this version if auto-update fails." `
-        $pluginFile
-    if ($LASTEXITCODE -ne 0) { throw "gh release create failed for v$Version. Check that the tag pushed (git tag --list; git ls-remote --tags origin) and re-run: gh release create v$Version --title v$Version --notes '...' $pluginFile" }
 
-    Write-Host ""
-    Write-Host "Released v$Version." -ForegroundColor Green
-    Write-Host "  Knowledge: $($restored -join ', ')"
-    if ($skipped.Count) {
-        Write-Host "  Skipped (not real files): $($skipped -join ', ')" -ForegroundColor DarkGray
+    if ($DryRun) {
+        Write-Host ""
+        Write-Host "DRY RUN. Local build complete. Nothing pushed or published." -ForegroundColor Yellow
+        Write-Host "  Main commit: $(git rev-parse main)"
+        Write-Host "  Tag: v$Version (LOCAL ONLY, not pushed)"
+        Write-Host "  Artifact: $pluginFile"
+        Write-Host ""
+        Write-Host "Inspect:   git log main -1; ls dist/" -ForegroundColor DarkGray
+        Write-Host "Roll back: git checkout main; git reset --hard origin/main; git tag -d v$Version; git checkout dev; git reset --hard origin/dev" -ForegroundColor DarkGray
+    } else {
+        # --- push everything -------------------------------------------------
+        Write-Host ""
+        Write-Host "Pushing main, tag, and dev..." -ForegroundColor Cyan
+        git push origin main --follow-tags
+        if ($LASTEXITCODE -ne 0) { throw "git push origin main failed." }
+        git push origin dev
+        if ($LASTEXITCODE -ne 0) { throw "git push origin dev failed." }
+
+        # --- create GitHub Release and upload .plugin artifact ---------------
+        $releaseTitle = "v$Version"
+        Write-Host "Creating GitHub Release v$Version with .plugin asset..." -ForegroundColor Cyan
+        gh release create "v$Version" `
+            --title $releaseTitle `
+            --notes "Plugin release v$Version. See commit log for changes. Drag the attached .plugin file into Cowork chat to force-install this version if auto-update fails." `
+            $pluginFile
+        if ($LASTEXITCODE -ne 0) { throw "gh release create failed for v$Version. Check that the tag pushed (git tag --list; git ls-remote --tags origin) and re-run: gh release create v$Version --title v$Version --notes '...' $pluginFile" }
+
+        Write-Host ""
+        Write-Host "Released v$Version." -ForegroundColor Green
+        Write-Host "  Knowledge: $($restored -join ', ')"
+        if ($skipped.Count) {
+            Write-Host "  Skipped (not real files): $($skipped -join ', ')" -ForegroundColor DarkGray
+        }
+        Write-Host "  Artifact: $pluginFile (uploaded to GitHub Release)"
+        Write-Host ""
+        Write-Host "GitHub Release: https://github.com/BillyRybka/authentic-ai-os/releases/tag/v$Version" -ForegroundColor Yellow
     }
-    Write-Host "  Artifact: $pluginFile (uploaded to GitHub Release)"
-    Write-Host ""
-    Write-Host "GitHub Release: https://github.com/BillyRybka/authentic-ai-os/releases/tag/v$Version" -ForegroundColor Yellow
 }
