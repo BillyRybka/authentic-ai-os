@@ -110,6 +110,33 @@ Go to **Step 4**.
 
 **This is the failure-prone step. Follow the discipline below.**
 
+#### Decision discipline
+
+Two rules that override everything below. The earlier failure mode was Claude ignoring its own rules and asking the creator about settled decisions. Don't.
+
+**Rule 1: Obey the defaults. Never re-ask them.**
+
+Some choices are already settled by this skill. Do NOT surface them as creator decisions. Not via the form tool, not via plain question, not via casual mention. They are settled:
+
+- **Existing root claude.md handling.** Always leave it alone. Always write the workspace CLAUDE.md alongside. The [Claude Code cascade](https://docs.claude.com/en/docs/claude-code/memory) concatenates both files when working inside the workspace folder. There is no creator decision to make. Do not ask.
+- **Writing the workspace CLAUDE.md.** Always yes. Mandatory per "Why CLAUDE.md is mandatory" above. Do not ask.
+- **What folders to scaffold.** `manifest.md` is the source of truth. Read it, create what's listed, done.
+
+The one exception is the root routing block append (B.6.4 below). Asked because we're touching the creator's authored root file. Everything else above defaults silently.
+
+**Rule 2: Propose, never just present.**
+
+When you do ask, lead with your recommendation and reasoning. Never hand the creator a flat list with no opinion. The creator's time is the resource; lazy "what do you want?" asks waste it.
+
+- In a form: mark one option as "(Recommended)" with a short reason in the description.
+- In a plain message: name your pick and why in the first sentence, then list alternates.
+
+> Good: "Best fit: `Projects/content/`. It already has README and ideas folders, so the production work lands there cleanly. Confirm or pick a different location."
+>
+> Bad: "Where should the workspace go? Options: vault root, Projects/, Resources/, somewhere else."
+
+Think critically before you ask. What does the structure actually suggest? What would a sharp human pick? Lead with that.
+
 #### B.1: Identify ALL candidate content homes
 
 List every folder that could plausibly be the content workspace. Sources:
@@ -126,32 +153,37 @@ For each candidate folder, run `ls` and look at what's inside. Distinguish ops/s
 
 #### B.3: Surface candidates to the creator
 
-If there is exactly one candidate and its contents clearly indicate a content production home, propose it: "Best fit based on your structure: `<path>`. It contains `<3-5 things you saw>`. Confirm, or pick a different path."
+If there is exactly one candidate and its contents clearly indicate a content production home, propose it: "Best fit based on your structure: `<path>`. It contains `<3-5 things you saw>`. Confirm, or pick a different location."
 
-If there are multiple candidates, list them with context:
+If there are multiple candidates, name your pick and why first. Then list the alternates:
 
-> "I see two folders that could be your content workspace:
-> - `<path-1>` contains `<contents>`. Looks like `<your read of what it is>`.
-> - `<path-2>` contains `<contents>`. Looks like `<your read of what it is>`.
-> Which one is the home for your content production work? Or pick a different path."
+> "Best fit: `<recommended-path>`. `<one-sentence reason based on what's inside>`.
+>
+> Alternates I considered:
+> - `<other-path-1>` contains `<contents>`. `<one-line read>`.
+> - `<other-path-2>` contains `<contents>`. `<one-line read>`.
+>
+> Confirm the recommendation, or pick a different location."
 
-If you cannot tell, ask plainly: "I see `<folders>` but can't tell which is your content home. Where should Authentic AI OS scaffold?"
+If no candidate is obvious and the vault has organizational structure, propose creating a new `content/` folder at the vault root: "I don't see an obvious content home. My recommendation: create a new `content/` folder at the vault root and scaffold there. Confirm or pick a different location."
 
-**Do not propose a path until you have inspected the contents of every plausible candidate.** First-match-wins is the documented failure mode of this skill.
+**Do not propose a location until you have inspected the contents of every plausible candidate.** First-match-wins is the documented failure mode of this skill.
 
 #### B.4: Collision check before writing
 
 Let `TARGET` be the folder the creator chose. If `TARGET` already exists and contains files:
 
 - If `TARGET/foundation/` exists, this is an AAI OS workspace already. Switch to Step 3.
-- Otherwise, the creator already has content in that folder. Confirm: "The folder `<TARGET>` already contains `<list a few files>`. The scaffold will add `foundation/`, `banks/proof-bank/assets/`, and `people/` alongside what's there. Confirm or pick a different path."
+- Otherwise, the creator already has content in that folder. Confirm: "The folder `<TARGET>` already contains `<list a few files>`. The scaffold will add `foundation/`, `banks/proof-bank/assets/`, and `people/` alongside what's there. Confirm or pick a different location."
 
 #### B.5: Handle the people/ override
 
 The default behavior creates a local `people/` folder inside `TARGET` for `vid-credibility` and `vid-backstory` to write person stubs.
 
-**Check the vault root for an existing People-style folder** (`people/`, `People/`, `contacts/`, etc.). If one exists, ask:
-> "I see `<root-people-folder>` at the vault root. Person stubs from `vid-credibility` and `vid-backstory` can either (a) go to a local `people/` folder inside the workspace, or (b) go to your existing root `<root-people-folder>`. Which do you want?"
+**Check the vault root for an existing People-style folder** (`people/`, `People/`, `contacts/`, etc.). If none exists, do NOT ask. Default to local `people/` silently. There is no creator choice when only one option exists.
+
+If a root-level People folder DOES exist, propose the recommendation and ask:
+> "I see `<root-people-folder>` at the vault root. My recommendation: route person stubs there so all your people live in one place. Confirm, or keep them local to the workspace in `people/`."
 
 - If (a): default behavior. Scaffold local `people/`. No override needed in CLAUDE.md.
 - If (b): SKIP scaffolding local `people/`. Record the override path. Include it in the workspace CLAUDE.md "Path overrides" section so foundation skills follow the redirect.
