@@ -12,7 +12,7 @@ The methodology for finding patterns that grow channels. Examples-first. Three c
 
 ## Why this exists
 
-Making videos based on what you THINK is a good idea is the dominant failure mode for business channels. Pattern research replaces guesses with hypotheses backed by real data. Three-Circle Research is the structured way to gather that data — never random, never just what's trending, always anchored to channels that share your audience.
+Making videos based on what you THINK is a good idea is the dominant failure mode for business channels. Pattern research replaces guesses with hypotheses backed by real data. Three-Circle Research is the structured way to gather that data, never random, never just what's trending, always anchored to channels that share your audience.
 
 ## The three circles
 
@@ -46,7 +46,7 @@ Each circle answers a different question. Together they triangulate the patterns
 
 If the channel has any history, this is the fastest, highest-confidence research. Find your own outliers (videos that pulled 2x+ your channel average). Repeat what worked. The audience that came back already told you what they want.
 
-**Worked example:** A channel averages 200k views per video. One video pulled 700k. That's the channel's most reliable data point — those 700k viewers came back for that specific topic, in that specific frame, with that specific thumbnail style. The next move: repeat it with minimal variation. Change the outfit color. Swap the specific stat. Don't redesign from scratch.
+**Worked example:** A channel averages 200k views per video. One video pulled 700k. That's the channel's most reliable data point, those 700k viewers came back for that specific topic, in that specific frame, with that specific thumbnail style. The next move: repeat it with minimal variation. Change the outfit color. Swap the specific stat. Don't redesign from scratch.
 
 **Worked example (creator's own quote):** "Just use one that already worked and change the color of your outfit, and change the days. And hey presto, 300,000 views."
 
@@ -61,23 +61,23 @@ Niche channels share your audience and your problem space. Their outliers tell y
 **Channel selection criteria:**
 
 - Channel covers the same problem space your channel covers
-- Channel has actual outliers to study (not just consistent averages — outliers are the signal)
+- Channel has actual outliers to study (not just consistent averages, outliers are the signal)
 - Channel has been active in the last 6 months (stale channels = stale patterns)
 - Channel size doesn't matter as long as outliers exist (a 50k-sub channel with a real 5x outlier teaches more than a 1M-sub channel with consistent flat performance)
 
 **Avoid:** channels so large their fame alone drives views (think Hormozi-tier creators). The pattern bank wants to teach what works for cold viewers who don't know you. Famous-creator outliers may be driven by name recognition, not packaging.
 
-**Worked example:** A YouTube growth coach researches 5 niche channels. Channel A's outlier: "Stop Making Boring Thumbnails" (1.4M views) — pattern: contrarian command + specific subject. Channel B's outlier: "I Studied 100 Outliers — Here's What Worked" (900k views) — pattern: study volume + result tease. Channel C: "5 Hooks That Actually Work in 2026" (700k views) — pattern: list + dated specificity + power word "actually." Three different angles, three different hook patterns. The synthesis: the niche audience responds to specificity + contrarian framing.
+**Worked example:** A YouTube growth coach researches 5 niche channels. Channel A's outlier: "Stop Making Boring Thumbnails" (1.4M views), pattern: contrarian command + specific subject. Channel B's outlier: "I Studied 100 Outliers, Here's What Worked" (900k views), pattern: study volume + result tease. Channel C: "5 Hooks That Actually Work in 2026" (700k views), pattern: list + dated specificity + power word "actually." Three different angles, three different hook patterns. The synthesis: the niche audience responds to specificity + contrarian framing.
 
 ### Circle 3: Adjacent niches (3-5 channels)
 
 **Question:** "What works for audiences ADJACENT to mine that I can translate?"
 
-This is where most creators fail to look. Adjacent niches share STRUCTURAL patterns with yours — the shape of titles, the thumbnail composition, the format choice, the power word toolkit — without sharing topics. Most differentiation comes from here.
+This is where most creators fail to look. Adjacent niches share STRUCTURAL patterns with yours, the shape of titles, the thumbnail composition, the format choice, the power word toolkit, without sharing topics. Most differentiation comes from here.
 
 **The translation rule:** adjacent niches give you SHAPES, not subjects. Extract title structures, power words, thumbnail patterns, formats. Never extract topics. If the adjacent channel is about guitar and yours is about drums, the topic doesn't transfer. The "STOP doing this with your hands" thumbnail composition does.
 
-**Worked example (the canonical case):** A yoga channel was stuck at 25k subs. The yoga niche had no usable patterns — every channel copied the same top creator with bad thumbnails and sporadic views. The creator looked at adjacent niches: mobility content and weightlifting content. Both used "before/after" thumbnail compositions and short bingeable tip videos with short clickbait titles — completely different from the 25-minute yoga tutorials that dominated yoga. The creator extracted the structural patterns (before/after composition, scientific dot overlays, shorter bingeable format), applied them to yoga content. First video in the new format: 2.4M views. Second: 8.2M views. Channel went from 25k to 450k subs in 18 months.
+**Worked example (the canonical case):** A yoga channel was stuck at 25k subs. The yoga niche had no usable patterns, every channel copied the same top creator with bad thumbnails and sporadic views. The creator looked at adjacent niches: mobility content and weightlifting content. Both used "before/after" thumbnail compositions and short bingeable tip videos with short clickbait titles, completely different from the 25-minute yoga tutorials that dominated yoga. The creator extracted the structural patterns (before/after composition, scientific dot overlays, shorter bingeable format), applied them to yoga content. First video in the new format: 2.4M views. Second: 8.2M views. Channel went from 25k to 450k subs in 18 months.
 
 **Adjacent niche identification:**
 
@@ -93,16 +93,22 @@ The adjacent niche either shares the audience problem at a different angle, OR s
 
 ## Channel selection workflow
 
-When proposing channels for any circle, surface candidates with rich context. The creator confirms with information, not blind trust.
+Ask the creator first. They know their competitors and the channels they watch better than any guess. The skill's job is to make it easy for them to name those channels, then quietly turn the names into real data. Never open with a generated list.
 
-For each proposed channel, surface:
+**Order:**
 
-- **Channel handle and recent themes** (from last 30 video titles)
-- **Subscriber count and recent outlier examples** (top 1-2)
-- **Why this fits the circle** (one-line rationale)
-- **What the creator might extract** (title structures, thumbnail patterns, etc.)
+1. **Ask.** For the niche circle, ask who their direct competitors are. For the adjacent circle, explain adjacent in one plain line and ask if any come to mind. Give them the simple test for a good pick, in plain words:
+   - Makes the kind of content they want to be known for (niche), or a similar type of content on a different topic or industry (adjacent).
+   - Serves the same kind of viewer, or one their viewer overlaps with.
+   - Has a few videos that clearly beat that channel's own normal, ideally within the last couple of years.
+2. **Take their list.** Hear all of it. If they come up short of the target, nudge once for more, then move on.
+3. **Suggest only to fill gaps.** If the creator is genuinely stuck, offer a couple of channels you believe fit, built from the ones they already named plus the known players in that space. A couple at a time, never a long list.
+4. **Enrich and confirm.** Resolve every named or suggested channel through the API and reflect back the real data so the creator confirms on facts, not blind trust. For each channel you surface:
+   - Channel handle and recent themes (from recent video titles)
+   - Subscriber count and a recent standout video or two
+   - Why it fits the circle (one plain line)
 
-Creator confirms, swaps, or rejects each candidate. Final list: 5 niche + 3-5 adjacent + 1 own = 9-11 channels per research session.
+Final set: about 5 niche, plus 3 to 5 adjacent, plus the creator's own = roughly 9 to 11 channels per session.
 
 ## Outlier identification within each circle
 
@@ -110,7 +116,7 @@ Same rule applies in all three circles:
 
 1. Compute channel's recent average views (last 2 years).
 2. Identify videos pulling 2x+ that average.
-3. Apply raw-count threshold: the absolute view count must be meaningful for the niche. A 600-view video on a 300-avg channel is NOT an outlier — 600 is too small for the niche. A 2M-view video on a 1M-avg channel IS an outlier — the raw count justifies it.
+3. Apply raw-count threshold: the absolute view count must be meaningful for the niche. A 600-view video on a 300-avg channel is NOT an outlier, 600 is too small for the niche. A 2M-view video on a 1M-avg channel IS an outlier, the raw count justifies it.
 4. Run the fluke filter: is this outlier on-niche for the channel's primary themes? Off-niche flukes don't represent what works for the audience and shouldn't be studied.
 
 See `knowledge/outlier-identification-rules.md` for full implementation.
