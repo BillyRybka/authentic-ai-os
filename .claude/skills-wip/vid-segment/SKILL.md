@@ -202,6 +202,8 @@ Then ask:
 
 Wait. The read-aloud test is the final voice gate. Loop until creator confirms.
 
+**Sibling handoff to `vid-voice-update`.** If the creator's reword reads like a permanent rule (signals like "never use X", "I'd never write that", "swap Y for Z", "I hate that word", "drop X from my voice"), hand the trigger off to `vid-voice-update` before applying the rewrite. That skill triages the signal, appends to `foundation/voice-profile.md` refusals when permanent, and returns. Then apply the rewrite to this segment. If the signal reads local ("this line specifically", "doesn't fit this segment"), just apply the rewrite. Do not invoke `vid-voice-update` for one-time edits.
+
 ### Phase 4: Pressure-test, save, update banks
 
 **Voice pressure-test full pass.** Run `knowledge/voice-pressure-test.md` Pass 2 (grain) against the locked prose: read a representative `## ` section from `foundation/reference-pieces/{voice_context}.md` aloud, then the prose aloud right after, and judge by ear whether sentence variation, paragraph shape, opener, and energy come from the same person in the same mode. If no file exists for this `voice_context`, skip Pass 2 and note the gap. Log result tier (pass / soft-warn / soft-reject / hard-reject). Hard-reject means a guardrail anti-pattern, a creator hard rule, or POV violation. Restructure, do not save.

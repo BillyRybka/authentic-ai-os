@@ -29,7 +29,8 @@ Hard requirements:
 - `Context/brand.md` (banned phrases, required swaps)
 
 Soft requirements:
-- `foundation/reference-pieces/{voice_context}.md` (the gold-standard passages as `## ` sections, for the voice-authenticity reviewer, matched to piece.md `voice_context`)
+- `foundation/reference-pieces/{voice_context}.md` (the gold-standard passages as `## ` sections, loaded by `vid-voice-audit` when reviewer 2 runs, matched to piece.md `voice_context`)
+- `raw/voice-sources/` (optional; if present, `vid-voice-audit` samples 2-3 raw passages per run for calibration)
 - `banks/story-bank/`, `banks/proof-bank/`, `banks/metaphor-bank/`, `banks/testimonial-bank/`, `banks/framework-bank/` (used material traceability)
 
 ## Invocation modes
@@ -89,9 +90,9 @@ Always multi-agent. No mode prompt. Each reviewer is a fresh-context Task spawn 
 
 Every claim, number, name, story, metaphor, framework, statistic, and quoted phrase in the script must trace to brain-dump.md, foundation docs, or banks. Untraceable = flag. Returns top 3 unsupported items with quote + location + suggested fix.
 
-**Reviewer 2: voice-authenticity** (`references/reviewer-voice-authenticity.md`)
+**Reviewer 2: voice-authenticity** (invokes `vid-voice-audit` as a sub-skill)
 
-Reads against the reference pieces for the piece's `voice_context` (the gold standard for grain), the voice-profile.md guardrail (refusals, signature phrases, POV/energy), and brand.md (banned words, required swaps). Returns the top 3 lines that fail the read-aloud test with quote + suggested rewrite in the creator's voice.
+Invoke `vid-voice-audit`. It loads `foundation/reference-pieces/{voice_context}.md` (the gold standard for grain), the voice-profile.md guardrail (refusals, signature phrases, POV/energy), and brand.md (banned words, required swaps), and optionally samples 2-3 raw passages from `raw/voice-sources/`. It returns the full findings list ranked by severity plus a per-beat verdict map (hook / segment_N / ending → passes / soft-flag / would-reword). Take the top 3 hard findings (severity-ordered, preferring hard over soft) for this reviewer slot in Phase 3 consolidation. Preserve the audit's per-beat verdict map and the remaining findings; the verdict map appears in the chat summary in Phase 6 and the remaining findings go to `soft_issues_list` in piece.md frontmatter.
 
 **Reviewer 3: AI-slop** (`references/reviewer-ai-slop.md`)
 
@@ -248,7 +249,7 @@ vid-pipeline (future) reads `pressure_test_audit` from piece.md frontmatter dire
 | File | When to read it |
 |---|---|
 | `references/reviewer-source-traceability.md` | Phase 2, reviewer 1 rubric and worked examples for claim-tracing failures |
-| `references/reviewer-voice-authenticity.md` | Phase 2, reviewer 2 rubric and worked examples for voice violations |
+| `.claude/skills-wip/vid-voice-audit/SKILL.md` | Phase 2, reviewer 2 (invoked as sub-skill). Voice check with full findings + per-beat verdict |
 | `references/reviewer-ai-slop.md` | Phase 2, reviewer 3 rubric, banned-phrase list pointers, AI-tell examples |
 | `references/reviewer-retention-logic.md` | Phase 2, reviewer 4 rubric, format-aware retention checks |
 | `references/rubric-conditioning.md` | Phase 1, the goal × format × viewer_stage weighting matrix |

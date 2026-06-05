@@ -144,7 +144,7 @@ Built by grepping every `SKILL.md`, `references/*.md`, and `assets/*.md` across 
 - `knowledge/transition-bank.md` *(planned, not yet authored. Same file vid-segment uses. Required before vid-ending ships.)*
 
 **vid-pressure-test** `WIP`
-- `knowledge/voice-profile-schema.md` (also via `references/reviewer-voice-authenticity.md`)
+- `knowledge/voice-profile-schema.md` (also via `vid-voice-audit` invoked as reviewer 2 sub-skill)
 - `knowledge/script-tension-architecture.md` (also via `references/reviewer-retention-logic.md`)
 - `knowledge/intro-architecture.md` (via `references/reviewer-ai-slop.md`)
 - `knowledge/audience-temperature-model.md` (via `references/reviewer-retention-logic.md`)

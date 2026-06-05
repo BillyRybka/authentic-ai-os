@@ -216,6 +216,8 @@ Soft warns: surface in the meta save but allow.
 
 If yes, drop back to Phase 2 or 3 with the specific beat the creator would change. Don't re-polish. Restructure preserving creator's exact phrasing for that beat.
 
+**Sibling handoff to `vid-voice-update`.** If the creator's reword reads like a permanent rule (signals like "never use X", "I'd never write that", "swap Y for Z", "I hate that word", "drop X from my voice"), hand the trigger off to `vid-voice-update` before applying the rewrite. That skill triages the signal, appends to `foundation/voice-profile.md` refusals when permanent, and returns. Then apply the rewrite. If the signal reads local ("this line specifically", "doesn't fit this intro"), just apply the rewrite. Do not invoke `vid-voice-update` for one-time edits; it is a permanence gate, not a logger.
+
 ### Phase 5: Lock and save
 
 **If standalone mode:**
