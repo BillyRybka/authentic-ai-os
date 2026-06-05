@@ -49,10 +49,11 @@ If invoked with context from a caller (e.g. "title for video about X, format=cas
 1. `foundation/creator-foundation.md` (avatar, Top 3 problems, credibility brags)
 2. `foundation/packaging-system.md` (format guidance, current packaging defaults)
 3. `knowledge/BENS-framework.md` (Big / Easy / New / Safe rules and examples)
-4. `banks/title-bank.md` (creator's adapted title patterns, if it exists)
-5. `content/pieces/{slug}/piece.md` (the video's format, goal, pillar)
-6. `content/pieces/{slug}/brain-dump.md` AND/OR `piece.md` AND/OR `script.md`. Whatever exists. Pull the actual angle, the specific numbers, named methods, story moments.
-7. `banks/packaging-bank/*.md` (filtered to `source: own`). Past winning titles, used as style anchors for what works for THIS creator.
+4. `banks/title-bank.md` (fill-in-the-blank title patterns, research + creator-curated in one file)
+5. `banks/power-words-bank.md` (global + audience-specific words. Loaded for word selection when filling pattern slots and writing fresh titles. Use the when-it-lands / when-it-fails criteria for fit, not raw word frequency)
+6. `content/pieces/{slug}/piece.md` (the video's format, goal, pillar)
+7. `content/pieces/{slug}/brain-dump.md` AND/OR `piece.md` AND/OR `script.md`. Whatever exists. Pull the actual angle, the specific numbers, named methods, story moments.
+8. `banks/packaging-bank/*.md` (filtered to `source: own`). Past winning titles, used as style anchors for what works for THIS creator.
 
 **Build the lock list:** every number, dollar figure, percentage, timeframe, named method that actually appears in the script. Title candidates may ONLY use numbers from this lock list. No fabrication.
 
@@ -227,7 +228,8 @@ If `vid-thumbnail` hasn't run yet, just lock the title. `vid-thumbnail` will res
 | File | Why |
 |---|---|
 | `knowledge/BENS-framework.md` | Big/Easy/New/Safe rules and examples |
-| `banks/title-bank.md` | Creator's adapted fill-in-the-blank patterns |
+| `banks/title-bank.md` | Fill-in-the-blank title patterns (research + creator-curated in one file) |
+| `banks/power-words-bank.md` | Global + audience-specific power words, loaded for word selection |
 | `assets/title-bank-seed.md` (vid-foundation) | Fallback patterns if title-bank.md not yet scaffolded |
 | `foundation/creator-foundation.md` | Avatar, Top 3 problems |
 | `foundation/packaging-system.md` | Format guidance, current packaging defaults |

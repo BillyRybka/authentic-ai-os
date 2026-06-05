@@ -66,7 +66,7 @@ Silent loads (do NOT paste into chat):
 3. `foundation/creator-foundation.md`, iceberg statement, Top 3 problems, audience profile
 4. `foundation/voice-profile.md`, preferred_hook_types, opener pattern, energy baseline (style only)
 5. `foundation/packaging-system.md`, starting format rotation, current thumbnail test strategies
-6. `banks/pattern-bank.md` (synthesis + topic clusters + per-outlier full packages) + the 3 sub-banks (`power-words-bank.md`, `title-patterns-bank.md`, `thumbnail-patterns-bank.md`). Format comes from `foundation/packaging-system.md` rotation, not a bank.
+6. `banks/pattern-bank.md` (synthesis sections + topic clusters folded into synthesis + per-outlier full-package rows). This is the only research bank vid-framing loads. The sub-banks (`title-bank.md`, `power-words-bank.md`) are loaded by vid-title at write time, not by vid-framing for angle selection. Format comes from `foundation/packaging-system.md` rotation, not a bank.
 7. `knowledge/outlier-identification-rules.md`, fluke filter logic
 8. `knowledge/audience-temperature-model.md`, temperature definitions
 9. `knowledge/three-circle-research.md`, own + niche + adjacent methodology (read once, don't re-explain)
@@ -220,7 +220,7 @@ See `references/framing-conversation-examples.md` for the worked dialogues.
 - `vid-research` produces the 7 pattern banks vid-framing consumes, primary upstream contract
 - `vid-intake` produces brain-dump.md plus the locked `iceberg_aligned` + `problem_addressed` fields, vid-framing reads, does NOT re-derive
 - `vid-thumbnail` reads piece.md `format` + `selected_angle` for thumbnail brief
-- `vid-title` reads piece.md `selected_angle` + `outlier_anchor` (uses anchor's title pattern if anchored, falls back to power-words-bank if experimental)
+- `vid-title` reads piece.md `selected_angle` + `outlier_anchor` plus `title-bank.md` and `power-words-bank.md` (uses anchor's title pattern if anchored, falls back to power-words-bank if experimental)
 - `vid-structure` reads piece.md + brain-dump.md, builds script.md skeleton, invokes vid-title and vid-intro
 - `vid-intro` reads piece.md `format`, `core_payoff`, `viewer_stage`, `selected_angle`
 - `vid-segment` reads piece.md `selected_angle`, `format`, `goal`

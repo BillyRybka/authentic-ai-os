@@ -1,7 +1,7 @@
 ---
 type: bank
 kind: power-words
-project: youtube-content-os
+project: authentic-ai-os
 status: active
 last_refreshed: {YYYY-MM-DD}
 total_words_global: {N}
@@ -10,87 +10,94 @@ total_words_audience: {N}
 
 # Power Words Bank
 
-Words that carry above-average emotional or curiosity weight, repeating across high-performing titles. Two categories: Global (work everywhere) and Audience-Specific (work for THIS audience).
+Words that carry above-average emotional or curiosity weight in the research outlier set. Two categories: Global (pull on virtually any audience) and Audience-Specific (resonate uniquely for this creator's audience because of domain expertise or jargon).
 
-Loaded by `vid-title` for headline candidate generation, `vid-intro` for hook construction, and `vid-thumbnail` for thumbnail text. Each entry includes confidence + frequency + worked example titles.
+Loaded by `vid-title` for headline candidate generation, `vid-intro` for hook construction, and `vid-thumbnail` for thumbnail text.
 
 ## How to read this bank
 
-- **Frequency** = number of outliers in the research session that used this word
-- **Channels** = how many distinct channels in the research used this word
-- **Confidence** = HIGH (4+ channels) / MEDIUM (2-3 channels) / LOW (1 channel)
-- **Status** = curated (creator approved) / draft-pending-curation / dropped
-- Worked examples come from the actual research data, never invented
+Each entry is a word + when it lands + when it fails + a real worked example. No frequency counts, no raw channel counts: those numbers anchor the AI on "this appeared most" rather than "this fits the line being written." The decision is fit-by-context, not popularity. The creator edits this file in place, deleting words they would not use and adding words they prefer.
 
 ## Global power words
 
 Words that pull on virtually any audience. These transcend niches.
 
 ### "STOP"
-- Frequency: {N}
-- Channels: {M}
-- Confidence: HIGH
-- Status: curated
-- Worked examples:
-  - "STOP Following This Outdated Programming Advice" — @CoachX, 145k views
-  - "STOP Resting 3 Minutes Between Sets (Do This)" — @CoachY, 88k views
-- When this lands: contrarian command framing where the audience is doing something the creator has authority to push back on
-- When this fails: when used without a credible "do this instead" replacement; reads as scolding
+
+- When this lands: contrarian command framing where the audience is doing something the creator has authority to push back on.
+- When this fails: used without a credible "do this instead" replacement; reads as scolding.
+- Worked example: "STOP Following This Outdated Programming Advice" → [[pattern-bank#outlier-row]]
 
 ### "FAST"
-- Frequency: {N}
-- Confidence: HIGH
-- Worked examples: {populated}
+
+- When this lands: result-oriented payoff for an audience under time pressure.
+- When this fails: when the actual content is slow or layered; raises a promise the body cannot keep.
+- Worked example: {populated by research}
 
 ### "EASY"
-{populated}
+
+- When this lands: relief framing for an audience that has tried complicated solutions.
+- When this fails: for sophisticated audiences who read "easy" as oversimplified.
+- Worked example: {populated}
 
 ### "REAL" / "TRUTH"
-{populated}
+
+{when this lands / when this fails / worked example}
 
 ### "MISTAKE"
+
 {populated}
 
 ### "NEVER"
+
 {populated}
 
 ### "FIX"
+
 {populated}
 
 ### "NEW"
+
 {populated}
 
 ## Audience-specific power words
 
-Words that resonate uniquely for THIS creator's audience based on their domain expertise or jargon. Pull these only when the audience is sophisticated enough to recognize them.
+Words that resonate uniquely for THIS creator's audience because of domain expertise or jargon. Pull only when the audience is sophisticated enough to recognize them; the title-thumbnail combo should signal niche-credibility from the first frame.
 
 ### "{audience-specific word 1}"
-- Frequency: {N}
-- Channels: {M}
-- Confidence: {HIGH | MEDIUM | LOW}
-- Status: curated
-- Audience context: {why this word lands for this audience specifically}
-- Worked examples:
-  - "{title}" — @channel, {views}
-- Caution: this word may not register for general audiences. Use when the title-thumbnail combo signals niche-credibility from frame one.
+
+- When this lands: {why this word resonates uniquely for this audience}
+- When this fails: {when this word does not register or backfires}
+- Worked example: "{title}" → [[pattern-bank#outlier-row]]
+- Caution: may not register for general audiences. Use only when the title-thumbnail combo signals niche-credibility.
 
 ### "{audience-specific word 2}"
+
 {...}
 
 ## Words avoided (flop signals)
 
-Words that surfaced in flops or were rejected by the creator during curation. Skill should AVOID generating titles containing these.
+Words that surfaced in flops or that the creator rejected during curation. The skill should AVOID generating titles containing these.
 
 ### "{word}"
+
 - Reason avoided: {one-line rationale}
-- Bucket: {tone-mismatch | audience-sophistication | brand-off-axis | etc}
-- Source: {flop analysis | creator drop | etc}
+- Bucket: {tone-mismatch | audience-sophistication | brand-off-axis | hype | other}
+- Source: {flop analysis | creator drop}
 
 ## Considered + dropped
 
-Power words AI proposed that the creator dropped. Captured rationale prevents re-surfacing.
+Power words AI proposed that the creator dropped. Rationale captured.
 
 > [!quote] Dropped: "{word}"
 > Rationale: {one-liner}
 > Date: {YYYY-MM-DD}
 
+## Field reference
+
+- **When this lands**: the conditions under which this word strengthens a title. The fit criterion.
+- **When this fails**: the conditions under which this word weakens a title. The guard.
+- **Worked example**: a real title from the research, linked back to its full outlier row in `pattern-bank.md` for context.
+- **Audience context** (audience-specific words only): why this word resonates uniquely for this creator's audience.
+
+Fields deliberately not captured: `frequency`, `channels_used`, `confidence` rank. The popularity of a word in the research set does not equal its fit for the next title. Fit is judged by the when-it-lands / when-it-fails criteria, not the count.

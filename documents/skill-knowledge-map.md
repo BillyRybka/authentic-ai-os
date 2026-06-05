@@ -44,11 +44,12 @@ Built by grepping every `SKILL.md`, `references/*.md`, and `assets/*.md` across 
 - `knowledge/interview-posture.md`
 - `knowledge/vault-integration.md`
 
-**vid-research** `WIP`
+**vid-research**
 - `knowledge/three-circle-research.md`
 - `knowledge/outlier-identification-rules.md`
 - `knowledge/format-rotation-guide.md`
 - `knowledge/packaging-system-template.md`
+- Outputs three bank files: `banks/pattern-bank.md`, `banks/title-bank.md`, `banks/power-words-bank.md` (plus `foundation/packaging-system.md` from Phase 7 evidence)
 
 ### WIP skills (unverified — re-scan before shipping)
 
