@@ -60,6 +60,12 @@ def download_one(url: str, dest_path: str, timeout: int = 15) -> dict:
 
 
 def main():
+    # Force UTF-8 on stdout/stderr so non-ascii in paths or errors doesn't
+    # crash the run on Windows (default console is cp1252). Guarded for
+    # interpreters older than 3.7 that lack reconfigure().
+    for _stream in (sys.stdout, sys.stderr):
+        if hasattr(_stream, "reconfigure"):
+            _stream.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--input",

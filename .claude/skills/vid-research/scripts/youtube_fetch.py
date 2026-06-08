@@ -245,6 +245,12 @@ def compute_outlier_threshold(view_counts: list) -> tuple:
 
 
 def main():
+    # Force UTF-8 on stdout/stderr so emoji and smart-quotes in video titles
+    # don't crash the run on Windows (default console is cp1252). Guarded for
+    # interpreters older than 3.7 that lack reconfigure().
+    for _stream in (sys.stdout, sys.stderr):
+        if hasattr(_stream, "reconfigure"):
+            _stream.reconfigure(encoding="utf-8")
     load_env_file()
     parser = argparse.ArgumentParser(description=__doc__)
     src = parser.add_mutually_exclusive_group(required=True)

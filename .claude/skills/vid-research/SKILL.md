@@ -59,6 +59,19 @@ Soft requirements:
 
 Mode 2 (refresh) runs the same phases but skips already-validated channels and surfaces only NEW outliers. Mode 3 (single add) runs Phase 4-6 directly with one channel and one outlier.
 
+### Before you research: load the method
+
+The rigor of this skill lives in a few files, not in this orchestrator. Load them before you select, judge, or extract from any channel, so you run the method instead of improvising it. Skipping this and ranking channels by gut is the known failure mode.
+
+- `knowledge/three-circle-research.md`: the workflow and the channel-selection order.
+- `knowledge/outlier-identification-rules.md`: what counts as an outlier (the 2x rule, the raw-count threshold, the fluke filter).
+- `references/pattern-extraction-prompts.md`: how to extract power words and title patterns, and run the fluke check.
+- `knowledge/interview-posture.md`: how to talk to the creator.
+
+Path resolution: `knowledge/` files live at `${CLAUDE_PLUGIN_ROOT}/knowledge/` when installed, or repo-root `knowledge/` in dev, never the skill folder. `references/` and `scripts/` are skill-local. Running against a separate vault does not change this; the method files stay plugin-side.
+
+Load silently. Never narrate it to the creator.
+
 ### Phase 1: Setup and own-channel research
 
 **Setup checks (silent unless missing):**
@@ -79,49 +92,46 @@ Mode 2 (refresh) runs the same phases but skips already-validated channels and s
 
 ### Phase 2: Niche research (the creator's direct competitors)
 
-The creator knows their competitors better than the skill does. Ask them first. Only suggest channels yourself if they run dry.
+Ask the creator first, they know their world. You bring the expertise: pull real data on every channel they name, read it, and propose where each belongs. They make the final call. (Method loaded first, see above.)
 
-**Ask the creator for their competitors:**
+**Build the niche set with the creator:**
 
-1. Ask one plain question: who are the channels they'd call their direct competitors? Give them the simple test for what counts so they can answer well, in plain words, no jargon:
-   - It makes the kind of content the creator wants to be known for.
-   - It serves the same kind of viewer.
-   - It has at least a few videos that clearly beat that channel's own normal by a wide margin, within roughly the last two years.
+1. Ask one plain question: "Who are your top competitors? The channels making the kind of content you want to be known for, for the same viewer, the ones with videos that clearly took off." Then listen. (What you are checking for, silently: same audience, real outliers in the last couple of years.)
 
-   Keep it conversational. Something like: "Who are your top competitors? The channels making the kind of content you want to be known for, for the same kind of viewer, the ones with videos that clearly took off." Then listen.
+2. Pull data on every channel they name, including the tentative ones. If they say "maybe so-and-so," pull it anyway, the numbers are how you both decide. Hear the whole list first. If they name only a couple, ask once if there are more, then move on.
 
-2. Take their whole list without interrupting. If they name fewer than five, ask once if there are more: "You've named three. Anyone else you watch or measure yourself against?" One nudge, then move on. Don't grind.
+3. If the creator doesn't know their competitors, that's normal. Lead: suggest a few real channels you believe fit, each with a one-line reason, built from anyone they named plus the known players in that space. Never open with a generated list, and don't hunt for new channels while they're still naming their own.
 
-3. **Only if they're genuinely stuck** (they can't get to five, or can't name any): suggest a couple of channels you believe are real fits. Build them from the competitors the creator already named plus the known players in that space. Never dump a long list, a couple at a time. Validate each suggestion against the API first (confirm the handle resolves, pull real subscriber count and recent video themes) so you are offering real channels, not guesses. Surface plainly: "A couple you might also count: @handleA (lately: X, Y) and @handleB (lately: X, Y). Either of these fit, or not really?"
+4. For each channel, named or suggested, run `scripts/youtube_fetch.py`, then show the real picture in plain terms and propose a bucket:
+   - **Direct competitor**: same viewer, same kind of content. Studied fully, topics included.
+   - **Adjacent**: same style or packaging, different topic or industry. Carries to Phase 3 (structure only, never topics).
+   - **Skip**: no real outliers, or off the creator's niche.
 
-4. Confirm the set. Aim for about five, but follow the creator. Resolve every confirmed handle through the API and quietly capture the real channel data.
+   Outliers are the signal. A channel with a modest typical view count but real breakout videos still has patterns worth studying, so don't write it off for being big or for low averages. Present the data and your read; the creator decides the bucket. Don't assert taste as fact ("elite packaging"); show what the data says and let them judge fit.
 
-**Per-channel research (runs silently for each confirmed channel, same engine as Phase 1):**
+5. Confirm the set. Aim for about five direct competitors, but follow the creator.
 
-5. Pull videos via `scripts/youtube_fetch.py`.
-6. Identify outliers (2x rule + raw-count threshold, see `knowledge/outlier-identification-rules.md`). Internal math, not narrated.
-7. Run the fluke filter. Only bring a fluke to the creator if it genuinely needs their call, and say it plainly: "This big one is about [topic], which is off from what that channel usually does. Worth studying, or skip?"
-8. For each confirmed on-niche outlier: top 5 per channel get thumbnail vision analysis.
-9. Extract patterns per category.
-10. **Save partial state** after each channel finishes. Frontmatter `last_phase_completed: 2`, `niche_channels_done: [list]`.
+**Per-channel research on the confirmed competitors (silent, same engine as Phase 1):**
 
-### Phase 3: Adjacent research (the creator's adjacent channels)
+6. From the pulled data, identify outliers (`knowledge/outlier-identification-rules.md`).
+7. Run the fluke filter. Surface a fluke only when it needs the creator's call: "This big one is about [topic], off from what that channel usually does. Worth studying, or skip?"
+8. Top 5 outliers per channel get thumbnail vision analysis.
+9. Extract patterns.
+10. **Save partial state** after each channel. Frontmatter `last_phase_completed: 2`, `niche_channels_done: [list]`.
 
-Same order: ask first, suggest only to fill gaps. Adjacent is a fuzzier idea for a creator, so explain it in one plain line and offer examples drawn from their own niche to spark it.
+### Phase 3: Adjacent research (same style, different topic)
 
-**Ask the creator for adjacent channels:**
+Adjacent channels make a similar kind of content for a different topic or industry, the kind of thing the creator's viewer might also watch. They give you structure that transfers (title shapes, thumbnail moves, formats), never topics.
 
-1. Explain adjacent in one plain sentence: creators who make a similar type of content, but on a different topic or in a different industry. The kind of channel your viewer might also watch. Then ask if a few come to mind. To help them think, offer two or three adjacent areas drawn from the creator's own niche (generate these at runtime from their foundation, never hardcode them) and let the creator react: "A few next-door areas could be [area 1], [area 2], [area 3]. Any channels you already follow in spaces like that?"
+1. Most adjacent channels come straight from Phase 2: the ones bucketed adjacent. Research those here.
+2. If the creator wants broader coverage and is short on names, lead: name two or three adjacent areas drawn from their niche (from their foundation, not hardcoded) and suggest a channel or two per area, each with a plain reason, validated against real data. Ask if any fit.
+3. Aim for three to five. If there are none, that's fine, the research still ships on the niche alone (the bank is thinner, say so once and move on).
 
-2. Take what they give. If they're stuck, suggest a couple of adjacent channels yourself, one per area, built from their niche and validated against the API first (handle resolves, real subs and recent themes). Offer plainly for a yes or no.
+**Per-channel research (silent):**
 
-3. Confirm three to five. If the creator can't or won't name any, that is fine, the research still ships valid data with niche-only (the bank is a little thinner, say so once and move on).
-
-**Per-channel research (adjacent extraction rule):**
-
-4. Pull videos, identify outliers, run the fluke filter (all internal).
-5. Top 3 per channel get thumbnail vision analysis.
-6. **Adjacent extraction rule (critical):** capture title structures, power words, thumbnail patterns, formats. DO NOT capture topics from adjacent niches. Adjacent gives you the structure that transfers, not the subject matter. Topics from adjacent niches pollute the bank.
+4. Pull, identify outliers, run the fluke filter.
+5. Top 3 outliers per channel get thumbnail vision analysis.
+6. Capture title structures, power words, thumbnail patterns, formats. Never capture topics from adjacent niches, the structure transfers, the subject matter does not. This is the one rule that keeps the bank clean.
 7. **Save partial state.** Frontmatter `last_phase_completed: 3`, `adjacent_channels_done: [list]`.
 
 ### Phase 4: Cross-channel synthesis
@@ -218,16 +228,14 @@ Detected when creator opens with "I just saw an outlier" or similar phrasing.
 
 ## Conversational discipline
 
-Talk to the creator the way the foundation skills do. Load `knowledge/interview-posture.md` and follow it: one question at a time, plain words, absorb what they said before asking the next thing. This skill has a lot of machinery under the hood. The creator should never feel it.
+Load `knowledge/interview-posture.md` and follow it: one question at a time, plain words, absorb before you ask again. This skill runs a lot of machinery; the creator should never feel it. A few rules specific to this skill:
 
-- **Ask, don't guess.** The creator names their competitors and adjacent channels. You only suggest channels when they're genuinely stuck, and then just a couple, built from what they already named. Never open with a list you generated.
-- **Keep the machinery silent.** Medians, the 2x rule, raw-count thresholds, the fluke filter, vision analysis, quota, draft states. These are how you think, not how you talk. Do the math quietly. Only surface a number or a judgment call when the creator actually needs to decide something, and say it in plain English.
-- **One thing at a time.** Short messages. Ask one question, wait, react to the answer, then move. No long preambles, no walls of explanation, no narrating your steps.
-- **Listen during dumps.** When the creator rattles off several channels or areas at once, take all of it before responding. Don't interrupt mid-list.
-- **Confirm their picks with real info, not blind trust.** Once they name channels, quietly pull the real data and reflect back what you found in a line or two, so they're confirming on facts. Same for any channel you suggest when they're stuck.
-- **Make curation fast.** The Keep/Drop/Modify pass can drag. Offer to bulk-keep the obvious winners and skip the obvious no's. Don't march them through thirty questions.
-- **Visual presentation matters.** This skill outputs to Obsidian. Use Obsidian-native syntax in the bank files: embedded thumbnails, callouts (`> [!note]`), wikilinks. The creator scrolls those files in Obsidian, not raw text.
-- **Save after every phase.** Never lose a session's work. If the session ends mid-way, resume picks up at `last_phase_completed + 1`.
+- **Expert-led, creator-decided.** You are the strategist in the room. Lead: pull the data, read it, propose buckets and patterns, teach what matters in plain terms. The creator brings knowledge of their world and makes the final calls. Don't make them drive, and don't make them feel they need to know YouTube strategy to use this.
+- **Data first.** When the creator names a channel, even a "maybe," pull the real numbers before judging it. Confirm on facts, not vibes. Never open with a list you generated, and don't hunt for new channels while they're still naming their own.
+- **Keep the machinery silent.** Medians, the 2x rule, thresholds, the fluke filter, vision analysis, quota, draft states: that is how you think, not how you talk. Surface a number only when the creator has a decision to make, and say it plainly.
+- **Make curation fast.** Offer to bulk-keep the obvious winners and skip the obvious no's. Don't march the creator through thirty questions.
+- **Obsidian output.** The bank files use Obsidian syntax (embedded thumbnails, callouts, wikilinks). The creator reads them there, not as raw text.
+- **Save after every phase**, so a dropped session resumes at `last_phase_completed + 1`.
 
 ## Hard friction (auto-flag)
 
@@ -246,6 +254,8 @@ Talk to the creator the way the foundation skills do. Load `knowledge/interview-
 4. **Empty adjacent niches.** If creator can't or won't confirm any adjacent categories, run with niche-only. Pattern bank quality suffers but skill ships valid data.
 
 ## Reference index
+
+`knowledge/` paths resolve to `${CLAUDE_PLUGIN_ROOT}/knowledge/` (installed) or repo-root `knowledge/` (dev), never the skill folder. `references/` and `scripts/` are skill-local.
 
 | File | When to read it |
 |---|---|

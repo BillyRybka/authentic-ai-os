@@ -67,3 +67,7 @@ excalidraw.log
 *.pem
 *.key
 secrets/
+
+# Python
+__pycache__/
+*.pyc
