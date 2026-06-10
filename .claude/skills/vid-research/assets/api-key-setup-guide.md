@@ -7,7 +7,7 @@ This guide walks the creator through the one-time setup. After this, the key get
 ## Step 1: Create or open a Google Cloud project
 
 1. Go to [console.cloud.google.com](https://console.cloud.google.com).
-2. Sign in with the Google account you want to use (any Google account works — doesn't need to match your YouTube channel account).
+2. Sign in with the Google account you want to use (any Google account works, doesn't need to match your YouTube channel account).
 3. Click the project dropdown at the top of the page (next to "Google Cloud").
 4. Click "NEW PROJECT".
 5. Give it a name like "vid-research" or "youtube-pattern-bank". The project ID auto-generates.
@@ -18,7 +18,7 @@ This guide walks the creator through the one-time setup. After this, the key get
 
 1. In the left sidebar (or via the search bar at the top), navigate to "APIs & Services" → "Library".
 2. In the API Library search, type "YouTube Data API v3".
-3. Click the result — it'll show a description page for "YouTube Data API v3".
+3. Click the result, it'll show a description page for "YouTube Data API v3".
 4. Click the blue "ENABLE" button.
 5. Wait for the API to enable (10-15 seconds).
 
@@ -27,7 +27,7 @@ This guide walks the creator through the one-time setup. After this, the key get
 1. After enabling, you'll be redirected to the API's overview page. If not, navigate to "APIs & Services" → "Credentials".
 2. Click the "+ CREATE CREDENTIALS" button at the top.
 3. Choose "API key" from the dropdown.
-4. A modal will pop up showing your new API key — a long string starting with "AIza...".
+4. A modal will pop up showing your new API key, a long string starting with "AIza...".
 5. **Copy the key immediately.** Save it somewhere safe (a password manager is ideal).
 
 ## Step 4: (Optional but recommended) Restrict the key to YouTube Data API only
@@ -68,7 +68,7 @@ Restrictions: YouTube Data API v3 only.
 Project: {your Google Cloud project name}
 ```
 
-Either way, the key gets stored locally on your machine, not in any productized files. `foundation/` is workspace-only — never shipped or shared.
+Either way, the key gets stored locally on your machine, not in any productized files. `foundation/` is workspace-only, never shipped or shared.
 
 ## Step 6: Verify the key works
 
@@ -108,12 +108,12 @@ A typical full research session (1 own + 5 niche + 5 adjacent = 11 channels):
 - playlistItems.list calls: ~3-5 per channel (depending on how many videos) × 11 = ~40 units
 - videos.list calls: ~3-5 per channel × 11 = ~40 units
 
-**Total per session: ~90 units.** Daily quota is 10,000. You can run ~100 full sessions per day before hitting limits — way more than any creator needs.
+**Total per session: ~90 units.** Daily quota is 10,000. You can run ~100 full sessions per day before hitting limits, way more than any creator needs.
 
 ## Common gotchas
 
 **Gotcha 1: API key tied to wrong Google account.**
-If you're running vid-research from a workspace tied to one Google account but generated the key in a different Google Cloud project, the key still works — keys aren't account-locked, they're project-locked. You can use one key across multiple workspaces.
+If you're running vid-research from a workspace tied to one Google account but generated the key in a different Google Cloud project, the key still works, keys aren't account-locked, they're project-locked. You can use one key across multiple workspaces.
 
 **Gotcha 2: Project deleted.**
 If the Google Cloud project is deleted, the API key dies with it. Re-run this guide to generate a new key in a new project. Update `foundation/youtube-api-config.md`.
@@ -132,7 +132,7 @@ If for some reason you hit the daily quota limit (you ran 50 research sessions i
 
 ## Privacy note
 
-The API key only lets vid-research READ public YouTube data — channel metadata, public video stats, public thumbnail URLs. It does NOT access:
+The API key only lets vid-research READ public YouTube data, channel metadata, public video stats, public thumbnail URLs. It does NOT access:
 
 - Your YouTube Studio analytics
 - Your audience-also-watches data

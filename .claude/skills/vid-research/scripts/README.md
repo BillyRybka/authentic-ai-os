@@ -21,7 +21,7 @@ API key: pass via `--api-key` flag or set `YT_API_KEY` env var.
 
 ## thumbnail_download.py
 
-Downloads thumbnail images from URLs to a local cache directory for vision analysis. Idempotent — re-running skips already-downloaded files. Outputs JSON status per attempt.
+Downloads thumbnail images from URLs to a local cache directory for vision analysis. Idempotent, re-running skips already-downloaded files. Outputs JSON status per attempt.
 
 **Dependencies:** Python 3.7+. Standard library only.
 
@@ -70,6 +70,6 @@ vid-research SKILL.md Phase 1, 2, 3:
 
 **Quota errors mid-session.** If you hit 10,000 units on a single API key, you're done for the day. The skill should bail gracefully and resume tomorrow. Quota resets at midnight Pacific Time per Google.
 
-**Rate limits.** YouTube Data API doesn't have a strict rate limit beyond the daily quota, but be polite — don't hammer it with parallel calls. The scripts run sequentially by design.
+**Rate limits.** YouTube Data API doesn't have a strict rate limit beyond the daily quota, but be polite, don't hammer it with parallel calls. The scripts run sequentially by design.
 
 **Thumbnail download failures.** If a thumbnail URL returns 404, the video may have been deleted or unlisted. Skill should mark the outlier with `vision: unavailable` and skip thumbnail-based pattern extraction for that entry.

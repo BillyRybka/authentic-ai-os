@@ -108,4 +108,4 @@ Per-outlier fields and why each is captured:
 - **hero element**: primary visual driver. Future vid-thumbnail-gen uses this when the angle does not match top examples in worked references
 - **patterns**: wikilinks to title-bank and power-words-bank entries. The cross-reference glue
 
-Fields deliberately not captured: `format` (cannot reliably be inferred from title + thumbnail + metadata; source-fidelity established 2026-05-19 work log).
+Fields deliberately not captured: `format` (cannot reliably be inferred from title + thumbnail + metadata; it is a Phase 7 menu pick, not a mined field).

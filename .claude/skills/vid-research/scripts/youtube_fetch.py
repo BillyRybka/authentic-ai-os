@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-youtube_fetch.py — Pull a YouTube channel's videos via the YouTube Data API v3.
+youtube_fetch.py: Pull a YouTube channel's videos via the YouTube Data API v3.
 
 Used by vid-research to fetch outlier candidate data per channel. Outputs JSON
 to stdout with channel metadata + video list (filtered to last N days, excluding

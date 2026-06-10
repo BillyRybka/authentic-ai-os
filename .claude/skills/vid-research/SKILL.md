@@ -21,11 +21,11 @@ Three bank files in `banks/`:
 
 **Not banks (by design):**
 - format is a menu pick, not a mined pattern (a competitor's format cannot reliably be classified from title + thumbnail + metadata without transcripts; format comes from `knowledge/format-rotation-guide.md`, set in Phase 7)
-- thumbnail patterns live IN the outlier rows of pattern-bank (image + strategy + text + hero element). Future `vid-thumbnail-gen` (Phase 5) queries pattern-bank by thumbnail strategy to find visual references. No separate thumbnail-patterns-bank file (the data would duplicate what pattern-bank rows already carry)
+- thumbnail patterns live in the pattern-bank outlier rows, not a separate file. Future `vid-thumbnail-gen` queries those rows by strategy for visual references
 - topic clusters fold into pattern-bank synthesis, not a standalone file
 - "what the audience hates" is post-publish flop diagnosis (future vid-measurement), not pre-research collection
 
-Plus one synthesis artifact: `foundation/packaging-system.md`. vid-research authors the creator's starting packaging defaults FROM the evidence it just gathered (format rotation picked from the `knowledge/format-rotation-guide.md` menu, thumbnail strategy from the strategy distribution observed in outlier rows). This file is read by vid-framing, vid-title, vid-thumbnail, vid-structure, and vid-pressure-test. Packaging defaults are a research output, never a pre-research guess. (vid-packaging skill was collapsed 2026-05-19; this is its replacement home for the evidence fields. The identity residue, design guardrails and creation path, is parked and not yet homed; leave its section in the template as an explicit unfilled stub, do not fabricate values.)
+Plus one synthesis artifact: `foundation/packaging-system.md`. vid-research authors the creator's starting packaging defaults FROM the evidence it just gathered (format rotation picked from the `knowledge/format-rotation-guide.md` menu, thumbnail strategy from the strategy distribution observed in outlier rows). This file is read by vid-framing, vid-title, vid-thumbnail, vid-structure, and vid-pressure-test. Packaging defaults are a research output, never a pre-research guess. The design-guardrails and creation-path sections are not yet homed; leave them as unfilled stubs, do not fabricate values.
 
 ## When to run this
 
@@ -87,7 +87,7 @@ Load silently. Never narrate it to the creator.
 6. Compute outliers: 2x channel average AND raw view count meaningful for the niche (see `knowledge/outlier-identification-rules.md` for the threshold logic).
 7. **Run the fluke filter on every outlier.** For each outlier, AI summarizes the channel's primary themes from the last 30 video titles, then checks "is this outlier on-niche for this channel?" Off-niche flukes get flagged: "This 700K-view video is about [topic], but the channel is about [primary themes]. Likely a fluke. Skip, or study?" Default skip. See `references/pattern-extraction-prompts.md` for the fluke detection prompt.
 8. For each confirmed on-niche outlier (top 10 prioritized): pull thumbnail via `scripts/thumbnail_download.py`, run vision classification per `references/thumbnail-vision-classification.md` (which of 6 strategies, hero element, color palette, text content, expression).
-9. Extract patterns per `references/pattern-extraction-prompts.md`: power words (global + audience-specific), title patterns, thumbnail patterns. Capture topic clusters into the pattern-bank synthesis section (not a standalone bank). Do NOT attempt format classification (can't be done from title + thumbnail + metadata without transcripts; format is a menu pick handled in Phase 7). Do NOT build a viewer-hates set (flop diagnosis is post-publish, future vid-measurement).
+9. Extract patterns per `references/pattern-extraction-prompts.md`: power words (global + audience-specific), title patterns, thumbnail patterns. Capture topic clusters into the pattern-bank synthesis (own + niche only).
 10. **Save partial state:** append draft entries to `pattern-bank.md` per-channel section + draft entries flagged `status: draft-pending-curation` to relevant banks (`power-words-bank.md`, `title-bank.md`). Thumbnail strategy and visual data live IN the outlier rows of pattern-bank, not a separate bank. Frontmatter `last_phase_completed: 1` so resume works if session ends here.
 
 ### Phase 2: Niche research (the creator's direct competitors)
@@ -198,7 +198,7 @@ The 3 banks are saved. Now synthesize the creator's starting packaging defaults.
 1. **Starting format rotation (3 core + 1 experimental).** Format is a menu pick, NOT a mined pattern. Load `knowledge/format-rotation-guide.md`: it holds the fixed 7-format menu (with Views/Sales/Trust scores), the Rule of 3+1, and the 4-check filter. Propose 3 core + 1 experiment from the menu based on the creator's avatar, strengths, and own-channel data if any, run the 4-check filter, creator confirms. Confidence is generally low at first build (no published data on the new positioning yet); that is expected and honest. The experiment-promote/retire loop is post-publish, deferred to future vid-measurement.
 2. **Thumbnail strategy (1-2 to test).** Pull from the thumbnail strategy distribution in `pattern-bank.md` outlier rows. Name the strategy, cite the example outliers it came from, mark confidence.
 3. **Title-bank seed.** `banks/title-bank.md` is already written in Phase 6 directly from research. Verify it has the patterns this packaging-system points at; no separate seeding step.
-4. **Identity residue (design guardrails, creation path).** Leave these sections in the template as explicit unfilled stubs marked `# TBD, not yet homed (see build-plan 2026-05-19)`. Do NOT interview for them here and do NOT fabricate values. This is a parked open question by decision.
+4. **Identity residue (design guardrails, creation path).** Leave these sections as unfilled stubs marked `# TBD, not yet homed`. Don't interview for them here, and don't fabricate values.
 
 Every evidence field carries: `evidence_basis` (which bank + how many channels), `confidence` (high/medium/low), `watch_for` (the signal that would invalidate it after real videos publish). This makes packaging-system.md a tested hypothesis, not a locked guess. Confirm the synthesis with the creator (propose, they react, lock) before saving.
 
@@ -273,10 +273,10 @@ Load `knowledge/interview-posture.md` and follow it: one question at a time, pla
 
 ## Principles (the why)
 
-- **Pattern research is the difference between hypothesis and guess.** Every framing decision downstream lands or fails based on whether the creator was working from real data or wishful thinking. vid-research generates the data.
+- **Hypothesis, not guess.** Real audience data beats intuition. Every downstream framing decision stands or falls on it.
 - **Three circles, not one.** Most creators only research their own niche and end up copying each other. The intersection of own + niche + adjacent is where differentiation lives. Adjacent niches are usually the breakthrough, same shape, different topic, applied to your audience.
 - **Outliers, not averages.** A 2x outlier signals what viewers want more of. The channel's average tells you what's expected. Pattern bank captures outliers exclusively.
-- **The creator's judgment is irreplaceable.** AI does the data heavy lifting. The Theory of One filter, does this pattern fit MY audience?, only the creator can answer. The skill structures the conversation; the creator owns the decisions.
+- **Expert-led, creator-decided.** The tool carries the YouTube expertise and does the data heavy lifting. The Theory of One filter, does this pattern fit MY audience?, only the creator can answer. The tool leads; the creator owns the calls.
 - **Pattern bank grows over time.** Sticky-curated entries persist. Quarterly refreshes layer NEW signal on top of validated existing patterns. Don't rebuild from scratch when the existing bank works.
 - **The whole packaging is the unit.** Outliers in `pattern-bank.md` per-channel sections show title + thumbnail text + thumbnail image + view count + outlier multiplier + hero element as one visual unit. Title patterns and power words extracted into focused banks (title-bank, power-words-bank) for vid-title's downstream use, but the outlier row stays coherent and visually browseable.
 

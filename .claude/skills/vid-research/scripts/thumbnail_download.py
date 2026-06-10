@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-thumbnail_download.py — Download thumbnail images for vision analysis.
+thumbnail_download.py: Download thumbnail images for vision analysis.
 
 Used by vid-research to fetch outlier thumbnails before running vision
 classification. Saves to a local cache directory and outputs the file paths

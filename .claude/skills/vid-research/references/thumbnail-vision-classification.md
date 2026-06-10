@@ -68,7 +68,7 @@ Thumbnail creates "wait, what?" reaction. Image or text contradicts conventional
 - Text: "I CUT MY SQUAT 20%"
 - The contrarian move (strength coach REDUCING a lift) creates dissonance.
 
-**Anti-pattern:** "STOP" text with no visual or contextual contradiction — that's a Result thumbnail with a warning label, not Dissonance.
+**Anti-pattern:** "STOP" text with no visual or contextual contradiction, that's a Result thumbnail with a warning label, not Dissonance.
 
 ### 2. Result
 
@@ -91,7 +91,7 @@ Leverages well-known person, brand, or recognizable symbol for borrowed authorit
 **Worked example:** split image of well-known fitness creator + creator's own face, text "[Celebrity name]'s WORKOUT (Tested)"
 - Borrows audience-recognition from celebrity. Pulls click from both audiences.
 
-**Caution:** overuse triggers audience fatigue. Track frequency — once a month at most.
+**Caution:** overuse triggers audience fatigue. Track frequency, once a month at most.
 
 ### 4. Curiosity
 
@@ -135,20 +135,20 @@ Clean, simple composition. Leans on title legibility + one strong visual element
 
 When vision surfaces these, flag rather than auto-classify:
 
-- **Polished but generic** — face + smile + bold text saying "MY BEST TIPS." No specific hook. Classify as `Strategy: Generic / no clear strategy` and flag. Shows up in flop analysis, not pattern extraction.
-- **Strategy stack** — multiple strategies piled (celebrity + dollar figure + before/after + curiosity text). Strategies dilute the click. Classify as `Strategy: Stacked / unclear primary` and flag.
-- **Mismatch with title's promise** — title is Curiosity ("What Nobody Tells You") but thumbnail is Result ($500K). Title and thumbnail should reinforce, not compete. Flag misalignment.
+- **Polished but generic**, face + smile + bold text saying "MY BEST TIPS." No specific hook. Classify as `Strategy: Generic / no clear strategy` and flag. Shows up in flop analysis, not pattern extraction.
+- **Strategy stack**, multiple strategies piled (celebrity + dollar figure + before/after + curiosity text). Strategies dilute the click. Classify as `Strategy: Stacked / unclear primary` and flag.
+- **Mismatch with title's promise**, title is Curiosity ("What Nobody Tells You") but thumbnail is Result ($500K). Title and thumbnail should reinforce, not compete. Flag misalignment.
 
 ## Signal weighting
 
 - **High signal:** strategy convergent across 3+ channels in the niche set
 - **Medium signal:** strategy appears in 2 niche channels + 1+ adjacent channel
-- **Low signal:** strategy appears on one channel only — could be creator quirk
-- **No signal:** anti-pattern flag — surface but don't recommend
+- **Low signal:** strategy appears on one channel only, could be creator quirk
+- **No signal:** anti-pattern flag, surface but don't recommend
 
 ## Common mistakes
 
 - **Classifying every thumbnail.** Respect the prioritization (top 10 own / top 5 niche / top 3 adjacent). Lower-tier outliers get URL-saved without vision analysis.
 - **Forcing one of the 6 strategies when none fit.** Generic thumbnails happen. Classify as Generic and flag.
 - **Confusing Curiosity with Cognitive Dissonance.** Curiosity withholds. Dissonance contradicts. "What nobody tells you" is Curiosity. "Stop doing this" is Dissonance.
-- **Hallucinating thumbnail content from the title alone.** If vision is unavailable (download failed, file corrupted), mark `vision: unavailable` — don't invent.
+- **Hallucinating thumbnail content from the title alone.** If vision is unavailable (download failed, file corrupted), mark `vision: unavailable`, don't invent.
