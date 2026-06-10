@@ -1,17 +1,17 @@
 ---
 name: vid-structure
-description: Build the Tier 1 outline for one video. Mines the brain-dump against the locked angle, filters core lessons from tangents, maps surviving material to the format's body shape (segments, narrative arc, cycles), surfaces brick candidates per segment (frameworks, stories, proofs, metaphors from brain-dump + banks), and plans the cross-segment tension graph (title-promise location, threads, handoffs). Writes script.md with material-anchored segment purposes and bullet-level outline notes ready for vid-segment to write the prose. Standalone OR invoked by vid-pipeline after framing + packaging lock. Phrases like "structure this video", "build the outline", "plan the body", "what segments should this have", "mine the brain dump into segments", "build the skeleton", "I'm ready to outline this", "lay out the script", or any pipeline that needs the body skeleton before per-segment writing should fire this skill.
+description: Build the Tier 1 outline for one video. Mines the brain-dump against the locked angle, filters core lessons from tangents, maps surviving material to the format's body shape (segments, narrative arc, cycles), surfaces block candidates per segment (frameworks, stories, proofs, metaphors from brain-dump + banks), and plans the cross-segment tension graph (title-promise location, threads, handoffs). Writes script.md with material-anchored segment purposes and bullet-level outline notes ready for vid-segment to write the prose. Standalone OR invoked by vid-pipeline after framing + packaging lock. Phrases like "structure this video", "build the outline", "plan the body", "what segments should this have", "mine the brain dump into segments", "build the skeleton", "I'm ready to outline this", "lay out the script", or any pipeline that needs the body skeleton before per-segment writing should fire this skill.
 ---
 
 # Video Structure Builder
 
-Builds the Tier 1 outline for one video. Takes raw brain-dump material plus the locked framing decisions and produces a working rough draft: material-anchored segment purposes, brick candidates per segment, cross-segment tension graph. Hands off to vid-segment for Tier 2 (word-for-word prose).
+Builds the Tier 1 outline for one video. Takes raw brain-dump material plus the locked framing decisions and produces a working rough draft: material-anchored segment purposes, block candidates per segment, cross-segment tension graph. Hands off to vid-segment for Tier 2 (word-for-word prose).
 
 **Scope boundary:** this skill produces THE outline only. It does NOT write titles (`vid-title`), thumbnails (`vid-thumbnail`), intros (`vid-intro`), segments (`vid-segment`), or endings (`vid-ending`). It does not re-litigate the angle (`vid-framing`) or re-derive iceberg alignment (`vid-intake`).
 
 ## What this produces
 
-`content/pieces/{slug}/script.md` with the outline skeleton: `## Intro` (empty, vid-intro fills), format-native body sections (each with one-line purpose anchored in brain-dump material + bullet outline + brick candidates listed), `## Ending` (empty, vid-ending fills).
+`content/pieces/{slug}/script.md` with the outline skeleton: `## Intro` (empty, vid-intro fills), format-native body sections (each with one-line purpose anchored in brain-dump material + bullet outline + block candidates listed), `## Ending` (empty, vid-ending fills).
 
 `content/pieces/{slug}/piece.md` frontmatter updates: `piece_status: structured`, `segment_purposes` (material-anchored list), `tension_plan` (title-promise location + active threads), `structure_locked_at: {today}`.
 
@@ -32,7 +32,7 @@ Hard requirements:
 Soft requirements (used when present, never blockers):
 - `content/pieces/{slug}/thumbnail-brief.md` (informs which lessons need on-screen demos)
 - `foundation/packaging-system.md` (informs default segment count by format)
-- `banks/story-bank/`, `banks/proof-bank/`, `banks/metaphor-bank/`, `banks/framework-bank/`, `banks/testimonial-bank/` (queried for brick candidates per segment)
+- `banks/story-bank/`, `banks/proof-bank/`, `banks/metaphor-bank/`, `banks/framework-bank/`, `banks/testimonial-bank/` (queried for block candidates per segment)
 
 ## Invocation modes
 
@@ -72,7 +72,7 @@ Read every lesson, story, proof, framework candidate, and tangent in the brain-d
 
 - **Core.** Directly serves the locked angle. The viewer needs this to get the core_payoff.
 - **Tangent.** Interesting but doesn't serve the angle. Likely cut.
-- **Support.** Provides context, proof, emotion brick material for a core lesson. Lives inside a segment, not as a segment of its own.
+- **Support.** Provides context, proof, parable material for a core lesson. Lives inside a segment, not as a segment of its own.
 - **Combine.** Overlaps with another lesson; should merge.
 
 Do NOT surface this tagging as a separate review step. Apply it silently during outline proposal. The creator sees the OUTPUT (lessons that survived, mapped to segments), not the tagging worksheet.
@@ -99,17 +99,17 @@ Load the format planner. Use the format's prescribed shape, NOT a generic "N seg
 
 If brain-dump material doesn't map cleanly to the format's shape, flag the mismatch. Don't silently force-fit. Surface: "Your brain-dump has 11 lessons but the locked format is case-study (narrative arc, not segmented). Want to re-frame as a deep-dive, or pick the one transformation story this becomes?"
 
-**Step 1.4: Surface brick candidates per segment.**
+**Step 1.4: Surface block candidates per segment.**
 
-For each segment, query banks + brain-dump for candidate bricks. Surface, don't lock. vid-segment makes the final pick when writing prose.
+For each segment, query banks + brain-dump for candidate blocks. Surface, don't lock. vid-segment makes the final pick when writing prose.
 
 Per segment, list (when available):
 - **Brain-dump material:** the actual lessons, stories, moments, quotes from the brain-dump that land here
 - **Story candidates:** `[[story-slug]]` matches from `banks/story-bank/` by `problem_illustrated` + theme
 - **Proof candidates:** `[[proof-slug]]` matches from `banks/proof-bank/` by claim being made
-- **Framework candidates:** `[[framework-slug]]` matches from `banks/framework-bank/` if a creator-owned system fits, OR flag "no framework yet, vid-segment may need to invent one inline" if logic-brick is needed
+- **Framework candidates:** `[[framework-slug]]` matches from `banks/framework-bank/` if a creator-owned system fits, OR flag "no framework yet, vid-segment may need to invent one inline" if a principle is needed
 - **Metaphor candidates:** `[[metaphor-slug]]` if an abstract concept needs clarification
-- **Visual demo flag:** if the segment's emotion brick is likely visual (per the brain-dump's actual material or thumbnail brief)
+- **Visual demo flag:** if the segment's parable is likely visual (per the brain-dump's actual material or thumbnail brief)
 
 **Anti-fabrication rule:** never invent bank entries. If banks are empty for a slot, say so. Don't guess at what might exist.
 
@@ -133,28 +133,28 @@ Handoffs: each item ends with "but wait until you see #{N+1}..." style forward-h
 
 ## Item 1: The thumbnail mistake (the visible one)
 Material: brain-dump entry on Linus's first 6 thumbnails + the click-rate data
-Bricks: [[story-linus-thumbnails]], [[proof-ctr-screenshot]]
+Blocks: [[story-linus-thumbnails]], [[proof-ctr-screenshot]]
 Tension role: opens easy, hooks viewer into "what's worse than this?"
 
 ## Item 2: The pacing mistake (the felt one)
 Material: brain-dump on 12-min vs 18-min retention split + your own analytics
-Bricks: [[proof-retention-curve]], framework candidate: pace-tension-rule (no bank match, vid-segment may invent inline)
+Blocks: [[proof-retention-curve]], framework candidate: pace-tension-rule (no bank match, vid-segment may invent inline)
 Tension role: deepens, viewer recognizes their own pattern starts here
 
 ## Item 3: The hook mistake (the structural one)
 Material: brain-dump on title-hook gap + the 6 case studies
-Bricks: [[story-tom-startup]], [[story-emma-coach]]
+Blocks: [[story-tom-startup]], [[story-emma-coach]]
 Tension role: MIDPOINT. Viewer thinks this is the answer; not yet
 Handoff: "...but the next one is the one I made for two years before someone called me out"
 
 ## Item 4: The promise mistake (the trust one)
 Material: brain-dump on viewer-betrayal patterns
-Bricks: [[metaphor-broken-contract]], [[proof-subscriber-churn]]
+Blocks: [[metaphor-broken-contract]], [[proof-subscriber-churn]]
 Tension role: builds toward Item 5; the "real" answer is close
 
 ## Item 5: The retention mistake (the title-promise payoff)
 Material: brain-dump on the named insight + the framework
-Bricks: [[framework-retention-curve]], [[proof-9-week-arc]], [[story-steve-90k]]
+Blocks: [[framework-retention-curve]], [[proof-9-week-arc]], [[story-steve-90k]]
 Tension role: the named answer the title promised; full payoff
 
 CUTS: brain-dump entries on "scheduling tools" (tangent), "studio setup" (tangent), 
@@ -173,7 +173,7 @@ Wait. Loop until outline locks.
 - Brain-dump material thin for a proposed segment → "Segment 3's material is light. Want to lock with a thinner segment, route back to vid-intake to capture more, or merge it into segment 2?"
 - Title-promise payoff lands in segment 1 or 2 → "This puts the named answer in segment 2 of 5. That's early-payoff territory, and most viewers will leave after segment 2. Want to push the named answer to segment 4 or restructure earlier segments?"
 - No threads identified → "I don't see a thread running across these segments. They read as disconnected lessons. Want me to propose a thread, or lock as-is?"
-- Bank candidates empty for a needed brick → "Segment 3 wants a story brick but the bank has no match for problem-2 + theme:retention. Want to skip the brick, use a metaphor instead, or pause to capture a story first?"
+- Bank candidates empty for a needed block → "Segment 3 wants a story block but the bank has no match for problem-2 + theme:retention. Want to skip the block, use a metaphor instead, or pause to capture a story first?"
 
 ### Phase 2: Write script.md skeleton
 
@@ -193,8 +193,8 @@ last_refreshed: {today}
 # {title from piece.md}
 
 > Tier 1 outline. vid-intro fills ## Intro. vid-segment fills each body section. 
-> vid-ending fills ## Ending. Material anchors and brick candidates are surfaced
-> per section. vid-segment makes the final brick picks at prose-writing time.
+> vid-ending fills ## Ending. Material anchors and block candidates are surfaced
+> per section. vid-segment makes the final block picks at prose-writing time.
 
 ## Intro
 
@@ -203,7 +203,7 @@ last_refreshed: {today}
 ## Item 1: The thumbnail mistake (the visible one)
 
 **Material:** brain-dump entries on Linus thumbnails + click-rate data  
-**Brick candidates:**
+**Block candidates:**
 - Story: [[story-linus-thumbnails]]
 - Proof: [[proof-ctr-screenshot]]
 
@@ -227,7 +227,7 @@ last_refreshed: {today}
 **Per body section, write:**
 - Section header with one-line purpose (material-anchored, not abstract)
 - **Material:** what brain-dump entries land here
-- **Brick candidates:** listed wikilinks per category, plus "no match" flags
+- **Block candidates:** listed wikilinks per category, plus "no match" flags
 - **Bullet outline:** 3-5 bullets covering setup, tension, payoff for this segment (working draft, not prose)
 - **Tension role:** where this segment sits in the cross-segment arc
 - **Outbound handoff:** the forward-hook into the next segment (or to ending)
@@ -270,7 +270,7 @@ then vid-intro for the opening, then vid-segment per body section, then vid-endi
 - **Listen during dumps.** If the creator pushes back on the outline with 3+ sentences of "actually, what I want is...", hear it all before re-proposing.
 - **Sparring partner, not NPC.** Make the call with reasoning. "I'd put the named answer in segment 4 because dropping it in segment 2 is early-payoff. Override if you want it earlier; it could work if segments 3-5 add new layers." Don't just tick through phases.
 - **Material-anchored purposes always.** Never propose `## Segment 3: {abstract purpose}`. Always reference actual brain-dump material the segment carries.
-- **Brick candidates surfaced, not locked.** vid-segment makes the final pick at prose-writing time. vid-structure's job is to expose options, not to choose.
+- **Block candidates surfaced, not locked.** vid-segment makes the final pick at prose-writing time. vid-structure's job is to expose options, not to choose.
 - **Tension graph is mandatory.** Every outline names the title-promise location, at least one thread, and the handoff style. No "five disconnected lessons stacked" outlines.
 - **Bulk-keep mode for experienced creators.** If the creator says "this outline is obvious, skip the loop," surface ONCE with the full proposal, lock on confirm. Don't drag a multi-round dialogue through someone who already sees it.
 
@@ -298,7 +298,7 @@ then vid-intro for the opening, then vid-segment per body section, then vid-endi
 
 - **Outline = mined material mapped to format shape.** Not abstract headers. Material-anchored purposes are what make vid-segment work later. The prose writer needs to know which lessons land where.
 - **Two tiers of writing.** vid-structure produces Tier 1 (the rough outline with bullets). vid-segment produces Tier 2 (word-for-word prose). Different skills, different tasks, different review cadences.
-- **Bricks surfaced early, locked late.** Surfacing brick candidates at outline time lets the creator see what's available without forcing a choice they'll regret at prose-writing time.
+- **Blocks surfaced early, locked late.** Surfacing block candidates at outline time lets the creator see what's available without forcing a choice they'll regret at prose-writing time.
 - **The format dictates shape, not the segment count.** Case Study isn't 5 segments. It's a narrative arc. Forcing every format into "N segments" breaks the formats that don't segment.
 - **Title-promise late or it dies.** Early-payoff is the most common retention killer. vid-structure's primary discipline is pushing the named answer to 60-80% through the body.
 - **Threads make scripts feel woven.** One open loop running across the body separates "lessons stacked" from "one experience."
@@ -312,7 +312,7 @@ then vid-intro for the opening, then vid-segment per body section, then vid-endi
 - `vid-thumbnail` produces `thumbnail-brief.md`, this skill reads (soft) for visual-demo cues
 - `vid-title` runs independently after framing, NOT invoked from this skill
 - `vid-intro` fills `## Intro` in the script.md this skill writes
-- `vid-segment` fills each body section in the script.md this skill writes; reads `segment_purposes` + bullet outline + brick candidates from this skill's output
+- `vid-segment` fills each body section in the script.md this skill writes; reads `segment_purposes` + bullet outline + block candidates from this skill's output
 - `vid-ending` fills `## Ending` in the script.md this skill writes
 - `vid-pressure-test` audits the full script against `script-tension-architecture.md` (the same file this skill plans against)
 - `vid-pipeline` (future) sequences this skill after framing + packaging

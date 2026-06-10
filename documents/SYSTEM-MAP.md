@@ -158,7 +158,7 @@ Writes the `## Intro` section with the 6-part intro structure.
 
 ### vid-segment `WIP`
 Writes one body section at a time (Setup/Tension/Payoff). Loops once per segment.
-- **READS** — `piece.md`, `brain-dump.md`, `script.md`, `voice-profile.md`, `reference-pieces/`, `creator-foundation.md`, `knowledge/script-tension-architecture.md`, `knowledge/emotion-brick-decision-matrix.md`, `knowledge/visual-proof-callouts.md`, `knowledge/vault-integration.md`, all 5 evidence banks + `knowledge/transition-bank.md` (planned)
+- **READS** — `piece.md`, `brain-dump.md`, `script.md`, `voice-profile.md`, `reference-pieces/`, `creator-foundation.md`, `knowledge/script-tension-architecture.md`, `knowledge/parable-decision-matrix.md`, `knowledge/visual-proof-callouts.md`, `knowledge/vault-integration.md`, all 5 evidence banks + `knowledge/transition-bank.md` (planned)
 - **WRITES** — `script.md` (one body section), `piece.md` (banks used)
 - **NEXT** — vid-segment again until done, then vid-ending
 
@@ -191,7 +191,7 @@ Four files carry context across many skills. If you understand these, you unders
 | `piece.md` | every Stage 4-6 skill | Per-video frontmatter hub. Status flags gate the pipeline |
 | `knowledge/vault-integration.md` | 10+ skills | The routing, frontmatter, and wikilink rules contract |
 
-The **5 evidence banks** (story, proof, metaphor, testimonial, framework) are filled once by `vid-capture` and pulled as "bricks" by `vid-structure` and `vid-segment`.
+The **5 evidence banks** (story, proof, metaphor, testimonial, framework) are filled once by `vid-capture` and pulled as "blocks" by `vid-structure` and `vid-segment`.
 
 ---
 

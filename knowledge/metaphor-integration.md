@@ -10,13 +10,13 @@ tags: [reference, metaphor-integration, banks]
 
 How to drop a metaphor into a segment without it landing as "let me give you an analogy" theater. Examples-first. Each integration pattern pairs a worked example with a near-miss.
 
-This file is reference material for Claude to think with at Phase 3 (prose pass) when a metaphor brick is in play. The metaphor builder (`knowledge/metaphor-builder.md`) lives upstream and defines what metaphors ARE and how they're built. This file is about the splice.
+This file is reference material for Claude to think with at Phase 3 (prose pass) when a metaphor block is in play. The metaphor builder (`knowledge/metaphor-builder.md`) lives upstream and defines what metaphors ARE and how they're built. This file is about the splice.
 
 ## Why integration is harder than capture
 
 Captured metaphors land in the bank well-shaped. Integrated metaphors land in scripts well-paced. Most metaphor failures aren't about the metaphor itself; they're about how it gets dropped in. A great metaphor announced as a metaphor flops. The same metaphor dropped clean lands.
 
-Three integration rules. Then the bridge-back-to-logic rule. Then the visual layer for visual metaphors.
+Three integration rules. Then the bridge to the principle rule. Then the visual layer for visual metaphors.
 
 ---
 
@@ -34,7 +34,7 @@ Why it lands: no announcement. The metaphor IS the sentence. Viewer's brain pick
 
 > "I want to share an analogy with you. Think of your content like a restaurant. So imagine if you had a restaurant but no recipes. Every Monday, the chef would have to make up the menu, right? That's basically what most creators are doing."
 
-Why it misses: 6 lines of announcement before the metaphor lands. By the time "restaurant with no recipes" arrives, the viewer's brain has tagged this as "lecture mode" and the metaphor's emotional charge is gone. Cut every announcement word. Drop the metaphor as the first sentence of the brick.
+Why it misses: 6 lines of announcement before the metaphor lands. By the time "restaurant with no recipes" arrives, the viewer's brain has tagged this as "lecture mode" and the metaphor's emotional charge is gone. Cut every announcement word. Drop the metaphor as the first sentence of the block.
 
 **Replacement template:**
 
@@ -62,11 +62,11 @@ Three sentences. The metaphor lands, the punch lands, move on.
 
 Why it misses: the metaphor stops being a metaphor and becomes a labeled diagram. Viewer brain stops doing the comparison work, starts trying to memorize what each variable maps to. The emotional punch dies in the explanation.
 
-**The principle:** if you find yourself writing "the [thing] represents the [other thing]" prose, the metaphor failed. Drop it. Pick a different brick.
+**The principle:** if you find yourself writing "the [thing] represents the [other thing]" prose, the metaphor failed. Drop it. Pick a different block.
 
 ---
 
-## Rule 3: Bridge back to logic
+## Rule 3: Bridge to the principle
 
 Every metaphor needs a single-sentence bridge back to the actual teaching. Three proven bridges:
 
@@ -82,16 +82,16 @@ Some bank entries have a custom pivot phrase in the `> [!tip] The pivot phrase` 
 >
 > "So what does that actually mean for you? It means you can grow slower and earn more. Here's the math."
 >
-> [Logic block: actual revenue math per niche size]
+> [Principle: actual revenue math per niche size]
 
 Why it lands: pivot phrase resets the energy from emotional to logical. Viewer's brain shifts gears cleanly.
 
 **Near-miss:**
 
 > [Metaphor lands]
-> [Immediately into a 2-minute logic block with no bridge]
+> [Immediately into a 2-minute principle with no bridge]
 
-Why it misses: viewer is mid-emotional-process when the logic arrives, doesn't fully shift gears, half the logic block lands. The bridge isn't decoration. It's the gear-shift signal.
+Why it misses: viewer is mid-emotional-process when the principle arrives, doesn't fully shift gears, half the principle lands. The bridge isn't decoration. It's the gear-shift signal.
 
 ---
 
@@ -150,7 +150,7 @@ Why it misses: garden-and-rocket compete for the viewer's mental real estate. Pi
 Pulling a metaphor from the bank doesn't mean the segment must use it. Drop the metaphor if:
 
 - The idea is already clear without it. Don't dress up simple ideas.
-- A story or visual demo would land harder. Metaphors compete with bricks; pick the strongest.
+- A story or visual demo would land harder. Metaphors compete with blocks; pick the strongest.
 - The metaphor's everyday category clashes with the segment's tone. A wine-tasting metaphor lands in a positioning segment but feels off in a tactical "fix your CTA" segment.
 - The creator has already used a metaphor in a prior segment of this video. Two metaphors in one video dilutes both.
 
@@ -180,7 +180,7 @@ If the segment's format can't support a visual metaphor (e.g., news segment with
 
 ## How vid-segment uses this file
 
-At Phase 2 (structure pass), when the brick is metaphor:
+At Phase 2 (structure pass), when the block is metaphor:
 
 1. Query `banks/metaphor-bank/*.md` by `concept:` field, `category:`, and `problem_illustrated`
 2. Filter visual metaphors based on format support (news / short process compress visual metaphors out)
@@ -191,7 +191,7 @@ At Phase 3 (prose pass):
 1. Drop the metaphor clean (no announcement)
 2. Limit to 3 sentences
 3. Add the `> [!note] visual:` callout if visual: true
-4. Add the bridge-back-to-logic line
+4. Add the bridge to the principle line
 5. Verify the metaphor isn't competing with another metaphor elsewhere in the segment
 
 At Phase 4 (save):

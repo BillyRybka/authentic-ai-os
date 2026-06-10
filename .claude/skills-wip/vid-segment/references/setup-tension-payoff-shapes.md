@@ -27,15 +27,15 @@ Each step in a deep dive has its OWN Setup / Tension / Payoff. Proof gets woven 
 
 > SETUP: "By this point, you've built the offer and you've built the audience. But there's a third lever most people skip. The lever that took my client Steve from 4 calls a month to 4 calls a week."
 >
-> TENSION (story emotion brick): Tells Steve's story. The one Wednesday afternoon he tried his usual outbound script and got six no-shows. The action: he changed one line in the follow-up email. The outcome: 4 calls booked the next 8 days, all from the same email list.
+> TENSION (story parable): Tells Steve's story. The one Wednesday afternoon he tried his usual outbound script and got six no-shows. The action: he changed one line in the follow-up email. The outcome: 4 calls booked the next 8 days, all from the same email list.
 >
-> TENSION (logic brick): Names the framework: "the Re-engagement Trigger." Walks the components (what triggers the message, what the message says, what happens after). Drops in proof: a Loom screenshot of Steve's calendar going from 4/month to 4/week.
+> TENSION (principle): Names the framework: "the Re-engagement Trigger." Walks the components (what triggers the message, what the message says, what happens after). Drops in proof: a Loom screenshot of Steve's calendar going from 4/month to 4/week.
 >
 > PAYOFF: "So when your outbound dries up, you're not the problem. The trigger is. Build the trigger and the calendar fills."
 >
 > TRANSITION OUT: "Which brings us to the next big problem: the calls book, but they don't close."
 
-Why this lands: Setup names the lever AND tags Steve immediately so the story has a hook before it starts. Tension uses both an emotion brick (Steve's story, P-A-O) AND a logic brick (named framework + proof asset placed AFTER the framework, not before). Payoff is one sharp sentence the viewer can repeat. Transition forward-hooks the next segment by naming the new problem.
+Why this lands: Setup names the lever AND tags Steve immediately so the story has a hook before it starts. Tension uses both a parable (Steve's story, P-A-O) AND a principle (named framework + proof asset placed AFTER the framework, not before). Payoff is one sharp sentence the viewer can repeat. Transition forward-hooks the next segment by naming the new problem.
 
 **Near-miss (deep dive segment running flat):**
 
@@ -48,15 +48,15 @@ Why this misses: Setup is a topic label, not an emotional or stakes-based open. 
 
 ---
 
-## Shape 2: Short Process segment (lean, logic-only by default)
+## Shape 2: Short Process segment (lean, principle-only by default)
 
-Short Process has ONE big STP up front in the intro. Body segments default to lean Logic-only steps. Add a mini emotion brick INSIDE a step ONLY when that step is hard or the viewer won't believe it.
+Short Process has ONE big STP up front in the intro. Body segments default to lean principle-only steps. Add a mini parable INSIDE a step ONLY when that step is hard or the viewer won't believe it.
 
 **Worked (lean Step 3 in a 5-step process):**
 
 > SETUP (one sentence): "Step 3 is where most creators stall, so this is the one to slow down on."
 >
-> TENSION (logic-only): "Open your editor and find the rough cut from yesterday. Drag the audio waveform up so you can see the spikes. Cut every spike that doesn't have a word attached."
+> TENSION (principle-only): "Open your editor and find the rough cut from yesterday. Drag the audio waveform up so you can see the spikes. Cut every spike that doesn't have a word attached."
 >
 > PAYOFF: "That's it. Three minutes shaved off every video, every time."
 >
@@ -64,59 +64,59 @@ Short Process has ONE big STP up front in the intro. Body segments default to le
 
 Why this lands: Setup names the stall risk in one line, which earns the lean structure. Tension is direct action with concrete verbs (find, drag, cut). Payoff is the receipt (3 minutes shaved). Transition forward-hooks Step 4 by naming the new risk (jumpy audio).
 
-**Worked (lean step UPGRADED with mini-emotion brick because step is hard):**
+**Worked (lean step UPGRADED with mini parable because step is hard):**
 
 > SETUP (one sentence): "Step 4 is the one nobody wants to do, but skipping it is why everyone's videos sound like a knife fight in a phone booth."
 >
-> MINI EMOTION BRICK (visual demo, 30 seconds): "Listen to this." [plays cut audio with no smoothing, jumpy and jarring] "Now this." [plays the same audio with crossfades] "Same cuts, totally different feel."
+> MINI PARABLE (visual demo, 30 seconds): "Listen to this." [plays cut audio with no smoothing, jumpy and jarring] "Now this." [plays the same audio with crossfades] "Same cuts, totally different feel."
 >
-> TENSION (logic): "On every cut, drag the right edge of the previous clip 0.3 seconds into the next. That's the crossfade. Do it on every cut."
+> TENSION (principle): "On every cut, drag the right edge of the previous clip 0.3 seconds into the next. That's the crossfade. Do it on every cut."
 >
 > PAYOFF: "Audio that sounds like a person talking, not a glitch."
 >
 > TRANSITION OUT: "Step 5 is the export setting that makes or breaks YouTube quality."
 
-Why this lands: Hard step earns the brick. The brick is a 30-second visual demo (Show-the-Problem then Contrast). Logic stays tight because the brick already did the emotional work. Payoff names the qualitative receipt.
+Why this lands: Hard step earns the parable. The parable is a 30-second visual demo (Show-the-Problem then Contrast). The principle stays tight because the parable already did the emotional work. Payoff names the qualitative receipt.
 
-**Near-miss (every step gets a brick, which flatlines the format):**
+**Near-miss (every step gets a block, which flatlines the format):**
 
-A 5-step short process where every single step opens with a story and a metaphor and a logic brick.
+A 5-step short process where every single step opens with a story and a metaphor and a principle.
 
-Why it misses: Short process is meant to be FAST. Bricks at every step double the runtime, dilute the emotion (every brick is a "this matters!" signal, and five "this matters!"s in one video means none of them matter), and contradict the format's identity. Save bricks for the steps that genuinely need them.
+Why it misses: Short process is meant to be FAST. Blocks at every step double the runtime, dilute the emotion (every block is a "this matters!" signal, and five "this matters!"s in one video means none of them matter), and contradict the format's identity. Save blocks for the steps that genuinely need them.
 
 ---
 
 ## Shape 3: Listicle segment (full STP per point)
 
-Each point gets emotion-then-logic. Strong transitions are the lifeline. Different brick types across points (don't reuse the same brick type for every point).
+Each point gets parable-then-principle. Strong transitions are the lifeline. Different block types across points (don't reuse the same block type for every point).
 
 **Worked (Point 4 of "12 mistakes that kill consistent leads"):**
 
 > SETUP: "Mistake number 4 is the one I made for two years and didn't even notice."
 >
-> TENSION (story brick): "I had a lead magnet. People were signing up. Open rates looked fine. But conversion to call was 0.4%. I kept swapping the lead magnet, kept rewriting the welcome email, nothing moved." [Action] "Then a friend asked to see my list and pointed at one line. The CTA in the welcome email said 'reply with your biggest challenge' instead of pointing them to a booking link." [Outcome] "I changed one line. Conversion went to 4.1% the next week."
+> TENSION (story parable): "I had a lead magnet. People were signing up. Open rates looked fine. But conversion to call was 0.4%. I kept swapping the lead magnet, kept rewriting the welcome email, nothing moved." [Action] "Then a friend asked to see my list and pointed at one line. The CTA in the welcome email said 'reply with your biggest challenge' instead of pointing them to a booking link." [Outcome] "I changed one line. Conversion went to 4.1% the next week."
 >
-> TENSION (logic): "The mistake: a CTA that gathers information instead of moving to action. Reply-to-me CTAs feel friendly but they put you in support mode. Booking-link CTAs put the prospect in commitment mode."
+> TENSION (principle): "The mistake: a CTA that gathers information instead of moving to action. Reply-to-me CTAs feel friendly but they put you in support mode. Booking-link CTAs put the prospect in commitment mode."
 >
 > PAYOFF: "Lead magnet didn't have a problem. The CTA did."
 >
 > TRANSITION OUT: "Mistake number 5 is going to fix something even more upstream: the form itself."
 
-Why this lands: Setup is a personal-confession framing (humanizes the mistake). Tension uses a fully-played story (Problem-Action-Outcome with specific numbers, 0.4% to 4.1%). Logic explains WHY it worked (the principle: info-gathering vs. action-driving). Payoff is one sentence. Transition forward-hooks Point 5 by naming what's even more upstream.
+Why this lands: Setup is a personal-confession framing (humanizes the mistake). Tension uses a fully-played story (Problem-Action-Outcome with specific numbers, 0.4% to 4.1%). The principle explains WHY it worked (info-gathering vs. action-driving). Payoff is one sentence. Transition forward-hooks Point 5 by naming what's even more upstream.
 
-**Worked (Point 5 with a DIFFERENT brick type, same listicle):**
+**Worked (Point 5 with a DIFFERENT block type, same listicle):**
 
 > SETUP: "Mistake number 5 is everywhere, but a metaphor will make it click."
 >
-> TENSION (metaphor brick): "Most lead-magnet forms are like a bouncer at a club: the more questions they ask at the door, the longer the line gets, and the fewer people make it inside."
+> TENSION (metaphor parable): "Most lead-magnet forms are like a bouncer at a club: the more questions they ask at the door, the longer the line gets, and the fewer people make it inside."
 >
-> TENSION (logic): "Every additional form field drops conversion by roughly 5-15% depending on niche. Three fields is the comfortable ceiling for most B2B lead magnets. Five is the warning line. Seven is the bouncer who's never letting anyone in."
+> TENSION (principle): "Every additional form field drops conversion by roughly 5-15% depending on niche. Three fields is the comfortable ceiling for most B2B lead magnets. Five is the warning line. Seven is the bouncer who's never letting anyone in."
 >
 > PAYOFF: "Cut your form to three fields. Watch the conversion."
 >
 > TRANSITION OUT: "Mistake number 6 is what happens AFTER they convert, and it's the one that decides whether they actually buy."
 
-Why this lands: Different brick type than Point 4 (metaphor vs. story), so the listicle's energy varies. Bouncer metaphor is everyday-familiar (clubs, queues). Logic block has a specific number range. Transition pivots to the post-conversion phase.
+Why this lands: Different block type than Point 4 (metaphor vs. story), so the listicle's energy varies. Bouncer metaphor is everyday-familiar (clubs, queues). The principle has a specific number range. Transition pivots to the post-conversion phase.
 
 **Near-miss (every point opens "Lesson number X is..."):**
 
@@ -126,20 +126,20 @@ Why it misses: Pure announcement. No forward hook. No promise. Listicle viewers 
 
 ## Shape 4: Case Study segment (one big STP across the whole body)
 
-Case study's body IS the story arc. There's typically one segment, not many. The whole body answers the 5 case study questions (what was the problem / why did they need to fix it / what actions / what outcome / where's the proof). Logic block (the takeaway) lands AT THE END of the body, not per-segment.
+Case study's body IS the story arc. There's typically one segment, not many. The whole body answers the 5 case study questions (what was the problem / why did they need to fix it / what actions / what outcome / where's the proof). The principle (the takeaway) lands AT THE END of the body, not per-segment.
 
 **Worked (full case-study body as one segment):**
 
 > SETUP: "When [Client] came to me, his agency was billing $42k a month, all of it tied to himself, and he hadn't taken a Saturday off in three years."
 >
-> TENSION (the story IS the brick, Problem-Action-Outcome at full length):
+> TENSION (the story IS the parable, Problem-Action-Outcome at full length):
 >   - Problem: His delivery was bottlenecked on him because every project required custom strategy. Stakes: his wife had just told him "if this doesn't change, I'm raising the kid alone."
 >   - Action: We rebuilt his delivery into three productized engagements with named deliverables. We trained one senior contractor on the framework. We changed the sales conversation from "tell me about your problem" to "here are the three engagements, which one fits."
 >   - Failure mid-arc: First contractor delivered the framework wrong on engagement 2 and a client churned in month 3. We wrote the SOP that would've prevented it.
 >   - Outcome: 9 months later, $74k MRR, two-week vacation, contractor handling 60% of delivery.
 >   - Proof: Stripe screenshot, calendar screenshot, contractor's Slack name (anonymized).
 >
-> TENSION (logic, the lesson): "What this proves: productized engagements aren't a marketing move. They're a delivery move. The marketing follows the delivery, not the other way around."
+> TENSION (principle, the lesson): "What this proves: productized engagements aren't a marketing move. They're a delivery move. The marketing follows the delivery, not the other way around."
 >
 > PAYOFF (the 1-3 actionable steps): "Three things you can do this week. Pick one engagement type from your past 10 clients. Write its named deliverable. Practice the new sales conversation in your next call."
 >
@@ -209,7 +209,7 @@ Why it misses: Showing the problem without the fix proves nothing. Roast format 
 
 ## Shape 7: Interview segment (per-question STP)
 
-Each question = one segment. Setup is the host's framing line. Tension is the guest's story (emotion). Payoff is the guest's actionable insight (logic). Edit aggressively. Most footage gets cut.
+Each question = one segment. Setup is the host's framing line. Tension is the guest's story (parable). Payoff is the guest's actionable insight (principle). Edit aggressively. Most footage gets cut.
 
 **Worked (one question segment):**
 
@@ -236,24 +236,24 @@ Why it misses: Most guests aren't media-trained. They take 90 seconds to land a 
 These fail across every format shape. If you see them in a structure draft, restructure before writing prose.
 
 - **Setup that announces a topic instead of opening on emotion or stakes.** "Now we're going to talk about X" is the topic-label trap. Replace with the actual emotional or stakes-based hook for THIS segment.
-- **Tension without an emotion brick AND a logic brick.** Most segments need both. Pure logic = research summary. Pure emotion = drama without lesson. (Lean-segment exception below.)
+- **Tension without a parable AND a principle.** Most segments need both. Pure principle = research summary. Pure emotion = drama without lesson. (Lean-segment exception below.)
 - **Payoff that's a topic-label echo of the setup.** "And that's outbound" closes nothing. The payoff names what the viewer walks AWAY with: the lesson, not the topic.
 - **Transition that's pure announcement ("now point 4").** See `banks/transition-bank.md` Section 2 for forward-hook patterns. Pure announcement loses 5-10% retention per transition.
-- **Bricks where the format planner says no bricks.** Every step of a short process getting its own brick contradicts the format's identity (fast action). Trust the planner.
+- **Blocks where the format planner says no blocks.** Every step of a short process getting its own block contradicts the format's identity (fast action). Trust the planner.
 
 ---
 
 ## Lean segments and early payoff (source-backed exception)
 
-Most segments need both an emotion brick and a logic brick to land. But two source-backed cases relax this:
+Most segments need both a parable and a principle to land. But two source-backed cases relax this:
 
 **Case 1: Early payoff with a new setup (rehook).**
 
 Source quote (lesson-16): "Don't worry if you pay something off early. If you pay something off early and then you keep explaining it, that's a problem. If you pay something off early and then you instantly set up something else, you've rehooked them. It's fine."
 
-Translated: a segment can compress to setup → quick payoff → new setup, without a full emotion + logic brick pair, IF the payoff lands and immediately sets up the next thing the viewer needs to know. The danger is paying off early and then continuing to explain the same thing the viewer already understood. That's where retention breaks. The fix is the rehook, not adding a forced second brick.
+Translated: a segment can compress to setup → quick payoff → new setup, without a full parable + principle pair, IF the payoff lands and immediately sets up the next thing the viewer needs to know. The danger is paying off early and then continuing to explain the same thing the viewer already understood. That's where retention breaks. The fix is the rehook, not adding a forced second block.
 
-Worked example: a Short Process segment lands the lesson in 12 seconds with a one-line metaphor payoff, then immediately sets up the friction in step 2 ("but the second you try this with a cold list, it falls apart, here's what's actually going on..."). No story or stat brick needed — the rehook IS the next brick.
+Worked example: a Short Process segment lands the lesson in 12 seconds with a one-line metaphor payoff, then immediately sets up the friction in step 2 ("but the second you try this with a cold list, it falls apart, here's what's actually going on..."). No story or stat block needed. The rehook IS the next block.
 
 Near-miss: a Short Process segment lands the lesson in 12 seconds and then keeps explaining the same lesson with three more variations. Retention drops because the viewer's brain already moved on.
 
@@ -261,9 +261,9 @@ Near-miss: a Short Process segment lands the lesson in 12 seconds and then keeps
 
 Source quote (lesson-16): "Intro setups don't have to be paid off immediately. They can be resolved anywhere in the video."
 
-Translated: a segment can deliberately leave a thread from the intro hanging until later. Don't force every body segment to fully resolve the intro's promise — sometimes the right move is to introduce a sub-piece in segment 2 and pay off the original intro thread in segment 4. The full-video arc is the unit, not the segment.
+Translated: a segment can deliberately leave a thread from the intro hanging until later. Don't force every body segment to fully resolve the intro's promise. Sometimes the right move is to introduce a sub-piece in segment 2 and pay off the original intro thread in segment 4. The full-video arc is the unit, not the segment.
 
-The rule: when a segment looks lean (short, missing a brick), check whether (a) a rehook is doing the brick's job, or (b) the missing payoff is intentionally deferred to a later segment. If neither, the segment is genuinely thin and needs structural work. If either, the segment is fine.
+The rule: when a segment looks lean (short, missing a block), check whether (a) a rehook is doing the block's job, or (b) the missing payoff is intentionally deferred to a later segment. If neither, the segment is genuinely thin and needs structural work. If either, the segment is fine.
 
 ---
 
@@ -273,8 +273,8 @@ At Phase 2 (structure pass), vid-segment reads:
 
 1. The matched format planner from `knowledge/format-planners/{format}.md`
 2. This file's matching shape section
-3. The relevant references for the brick type chosen (story / proof / metaphor / etc.)
+3. The relevant references for the block type chosen (story / proof / metaphor / etc.)
 
-The structure draft surfaced to the creator pulls its skeleton from the matching shape. Bank candidates surfaced for each brick slot get filtered through the per-shape examples. A story that lands in a deep-dive segment may not land in a tight news segment.
+The structure draft surfaced to the creator pulls its skeleton from the matching shape. Bank candidates surfaced for each block slot get filtered through the per-shape examples. A story that lands in a deep-dive segment may not land in a tight news segment.
 
 If the format planner conflicts with this file, the planner wins (it's loaded by all writing skills, this file is vid-segment-local).

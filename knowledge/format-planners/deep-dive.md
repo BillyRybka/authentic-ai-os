@@ -23,7 +23,7 @@ A creator's $250k-without-a-pitch deep dive is a known failure mode. The format 
 ## The structure
 
 ```
-INTRO → PROOF (~30 seconds, concentrated) → EMOTION BRICK → LOGIC (steps with proof per step) → END (with strong CTA)
+INTRO → PROOF (~30 seconds, concentrated) → PARABLE → PRINCIPLE (steps with proof per step) → END (with strong CTA)
 ```
 
 Deep Dive is the only format where **PROOF is a distinct block** that comes right after the intro. The reason: nobody sits through 60 minutes without first seeing evidence the time is worth spending.
@@ -32,9 +32,9 @@ Deep Dive is the only format where **PROOF is a distinct block** that comes righ
 
 In addition to the upfront proof block, the ideal pattern is: step 1, then proof step 1 worked, then step 2, then proof step 2 worked. Each step transition can carry a client win or before-and-after. Example: "Step five enabled Jerry to go from 25 pounds overweight to winning a bikini modeling competition."
 
-### Emotion brick: Old Way / New Way
+### Parable: Old Way / New Way
 
-Deep Dives commonly use Old Way / New Way as the emotion brick:
+Deep Dives commonly use Old Way / New Way as the parable:
 
 1. Discredit the status quo with conviction ("Search doesn't work. It's done.")
 2. Prove the new way works (testimonials, data, transformation)
@@ -64,8 +64,8 @@ Deep Dive runs the **fullest version of the universal 6-part intro.** The format
 4. **Brain dump.** List EVERY step in the system. For every step or claim, find proof that it works.
 5. **Refine.** Delete steps that aren't critical to the viewer's outcome. Apply the **highest-leverage filter**: of 100 possible steps, identify the 20 easiest-to-action that produce the biggest result. More overwhelms.
 6. **Plan the proof section.** 30 seconds of concentrated proof right after the intro. Clients, before and afters, testimonials.
-7. **Plan the emotion brick.** Often Old Way / New Way for deep dives.
-8. **Plan logic brick steps.** For each step: write the step, identify the proof, decide if a story, metaphor, or visual demo would help. Don't assume emotion bricks only go at the start.
+7. **Plan the parable.** Often Old Way / New Way for deep dives.
+8. **Plan principle steps.** For each step: write the step, identify the proof, decide if a story, metaphor, or visual demo would help. Don't assume parables only go at the start.
 9. **Conversion strategy.** Strong CTA at the end. Consider stealth CTAs woven through.
 10. **Write.** Full word-for-word script. Presenting from bullets is **not recommended**. Film time is exhausting and the result is uneven.
 11. **Upload and track.**
@@ -84,7 +84,7 @@ Deep Dive runs the **fullest version of the universal 6-part intro.** The format
 - No proof block. Viewers leave before reaching the value
 - No CTA at end. Viewers who finish are buyers. Leaving them without a path is a missed conversion
 - Overwhelm. 100 steps when 20 produce 80% of results
-- No emotion brick. Pure information dump kills retention
+- No parable. Pure information dump kills retention
 - Skipping the highest-leverage filter. Including everything because "it's a deep dive" guarantees the audience can't action any of it
 
 ## Output format

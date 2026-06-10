@@ -23,10 +23,10 @@ A case study can blow up for views in the right niche, but the format's stronges
 ## The structure
 
 ```
-INTRO → EMOTION BRICK (story: Problem-Action-Outcome) → LOGIC (one big lesson + 1-3 steps) → END
+INTRO → PARABLE (story: Problem-Action-Outcome) → PRINCIPLE (one big lesson + 1-3 steps) → END
 ```
 
-The emotion brick IS the story. Problem-Action-Outcome spans the intro setup AND the emotion brick. The logic brick is the takeaway: the ONE thing the viewer should remember and the 1-3 things they can do.
+The parable IS the story. Problem-Action-Outcome spans the intro setup AND the parable. The principle is the takeaway: the ONE thing the viewer should remember and the 1-3 things they can do.
 
 **Critical:** the case study must focus on ONE clear transformation. If the story tries to cover everything, it gets too complex and viewers drop. Pick the single biggest thing.
 
@@ -50,15 +50,15 @@ Case Study INVERTS the universal intro template. Lead with the receipt (the outc
 1. **Pick one goal.** Sales (recommended), emails, or views.
 2. **Thumbnails and title.** Lead the package with the result or transformation. The title hints at the journey, the thumbnail shows the receipt.
 3. **Viewer's top 3 questions.** Based on title and thumbnail. For case studies, common questions: "What did they actually do?", "Could I replicate this?", "How long did it take?"
-4. **Plan the emotion brick (the story).** Map out Problem, Action, Outcome. Answer the 5 questions in section below.
-5. **Plan the logic brick.** Identify ONE big lesson the viewer should walk away with. Then list 1-3 specific steps they can take.
+4. **Plan the parable (the story).** Map out Problem, Action, Outcome. Answer the 5 questions in section below.
+5. **Plan the principle.** Identify ONE big lesson the viewer should walk away with. Then list 1-3 specific steps they can take.
 6. **Conversion strategy.** Match the goal picked in step 1.
 7. **Write.** Word-for-word script, talking head style. Avoid heavy cinematic production.
 8. **Upload and track.**
 
 ## The 5 questions every case study answers
 
-Inside the emotion brick, the story must answer all 5:
+Inside the parable, the story must answer all 5:
 
 1. **What was their problem?** Specific. Not "they were stuck," but "they had 0 clients in 3 months and rent was due."
 2. **Why did they need to fix it?** The stakes. Wife pregnant, lost job, runway running out. Without stakes, the viewer doesn't care.
@@ -86,7 +86,7 @@ Most clients are not media-trained. They ramble. Use client footage SPARINGLY:
 
 Long client monologues kill pacing. The narration carries the story, the client confirms.
 
-## Logic brick (the takeaway)
+## Principle (the takeaway)
 
 After the story ends, deliver:
 

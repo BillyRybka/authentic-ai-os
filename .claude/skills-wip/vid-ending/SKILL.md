@@ -69,7 +69,7 @@ If invoked with caller context (e.g. "ending for case-study, goal=sales, transfo
     - `knowledge/story-pulling-criteria.md` only if the recap or Gap framing pulls a story from `banks/story-bank/`. Use the 5-criteria filter to pick the right one.
     - `knowledge/proof-placement-rules.md` only if the recap cites proof. Owns PLACEMENT decisions (place receipts AFTER the framework lesson, never before), bank-pulling, and presentation-format selection. Cross-references `knowledge/visual-proof-callouts.md` for callout SYNTAX. Load that one too if the proof needs an on-screen callout (vid-ending is in `loaded_by` for the recap edge case in Case Study / Deep Dive closes).
     - `knowledge/metaphor-integration.md` only if a metaphor frames the transformation. Honor the drop-clean / 3-sentence cap / two-layer rule.
-    - `knowledge/emotion-brick-decision-matrix.md` rarely needed at the close (the body owns emotion bricks); load only if the close opens with a fresh emotional beat (e.g., a story-led roast close where the Pivot replays a contestant's transformation).
+    - `knowledge/parable-decision-matrix.md` rarely needed at the close (the body owns parables); load only if the close opens with a fresh emotional beat (e.g., a story-led roast close where the Pivot replays a contestant's transformation).
 
 **Build the lock list:** every number, dollar figure, percentage, timeframe, named method that actually appears in the script. The Gap reveal and any receipt in the close may ONLY use these. No fabrication.
 
@@ -253,7 +253,7 @@ If the creator's draft pulls toward "and now to wrap up", that's the signal the 
 | `knowledge/proof-placement-rules.md` (conditional) | Receipt-placement rules when the close cites proof. Owns PLACEMENT decisions and bank-pulling. Shared with vid-intro, vid-segment. |
 | `knowledge/visual-proof-callouts.md` (rare, pending loaded_by add) | Callout SYNTAX (callout AFTER claim, never before) when a numeric Pivot needs an on-screen callout. Currently `loaded_by: [vid-intro, vid-segment]`; ask team-lead to extend to vid-ending. |
 | `knowledge/metaphor-integration.md` (conditional) | Splice rules when a metaphor frames the transformation. Shared with vid-intro, vid-segment. |
-| `knowledge/emotion-brick-decision-matrix.md` (rare) | Used only if the close opens with a fresh emotional beat. Shared with vid-intro, vid-segment. |
+| `knowledge/parable-decision-matrix.md` (rare) | Used only if the close opens with a fresh emotional beat. Shared with vid-intro, vid-segment. |
 | `foundation/creator-foundation.md` | Avatar Top 3 problems (Gap source) |
 | `foundation/voice-profile.md` | The thin guardrail (fingerprint, signature phrases, refusals, POV/energy) |
 | `foundation/reference-pieces/{voice_context}.md` | The voice engine (voice only, not structure): real intact passages as `## ` sections, matched to piece.md `voice_context` |

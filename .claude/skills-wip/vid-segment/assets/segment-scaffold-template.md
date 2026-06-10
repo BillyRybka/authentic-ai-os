@@ -22,13 +22,13 @@ Source: {brain-dump phrase / prior-segment payoff / avatar's Top 3 problem #N}
 
 ### TENSION (the middle)
 
-**Emotion brick:** {Visual Demo (Show-the-Problem | Contrast | Breakdown) | Story | Metaphor | none}
+**Parable:** {Visual Demo (Show-the-Problem | Contrast | Breakdown) | Story | Metaphor | none}
 
 Bank candidates:
 - {bank-slug-1}: {one-line rationale: stage match, problem match, type, etc.}
 - {bank-slug-2}: {one-line rationale}
 
-**Logic brick:** {framework name OR single-lesson description}
+**Principle:** {framework name OR single-lesson description}
 
 Framework: {[[framework-slug]] OR "no framework, single lesson"}
 Framework shape: {arrows | pyramid | triangle | cycle | venn | funnel | acronym | n/a}
@@ -66,7 +66,7 @@ If this is the FINAL body segment, the transition is body-to-ending. Defer to vi
 Ask the creator:
 
 1. Does the segment's job match what piece.md says?
-2. Is the brick type the right shape for THIS segment (not just a default)?
+2. Is the block type the right shape for THIS segment (not just a default)?
 3. Did the right bank candidates surface? Want to swap any?
 4. Does the payoff name what the viewer should walk away knowing?
 5. Does the outbound transition forward-hook the next segment or set up the ending?

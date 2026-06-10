@@ -8,19 +8,19 @@ tags: [reference, framework-capture, framework-bank]
 
 # Framework Builder
 
-A framework is a container for the viewer's brain. It turns a scattered topic into a named structure they can hold, repeat, and act on. The #1 mistake in a logic brick is including too much. A framework's job is to give the viewer the 20% of the material that creates 80% of the result, and to give that 20% a memorable shape and name.
+A framework is a container for the viewer's brain. It turns a scattered topic into a named structure they can hold, repeat, and act on. The #1 mistake in a principle is including too much. A framework's job is to give the viewer the 20% of the material that creates 80% of the result, and to give that 20% a memorable shape and name.
 
-This guide teaches how frameworks work. vid-capture's Stage F uses it to walk creators through naming an existing system. vid-segment loads it inline during writing when a Framework brick is needed and no matching entry exists in `banks/framework-bank/`.
+This guide teaches how frameworks work. vid-capture's Stage F uses it to walk creators through naming an existing system. vid-segment loads it inline during writing when a Framework block is needed and no matching entry exists in `banks/framework-bank/`.
 
 ## When this fires
 
 - vid-capture Stage F (standalone): creator says "I have a system called X, save it."
-- vid-segment (inline, mid-write): creator is writing a segment whose logic brick is a framework, no bank match exists, walks the 5-step build then optionally saves via Stage F.
+- vid-segment (inline, mid-write): creator is writing a segment whose principle is a framework, no bank match exists, walks the 5-step build then optionally saves via Stage F.
 - vid-segment (inline, mid-write): creator wants help naming a framework that already exists in their brain-dump but isn't banked yet.
 
-## Frameworks in the logic-brick context
+## Frameworks in the principle context
 
-Frameworks are one of three logic-brick tools. The other two are Proof (builds trust after the framework lands) and Checklists / On-Screen Steps (anchor attention through the framework's components, give the viewer a sense of progress). When using a framework in a video, all three usually appear together: the framework names the structure, proof backs each component, on-screen step markers ("STEP 1," "STEP 2") track progress for the viewer.
+Frameworks are one of three principle tools. The other two are Proof (builds trust after the framework lands) and Checklists / On-Screen Steps (anchor attention through the framework's components, give the viewer a sense of progress). When using a framework in a video, all three usually appear together: the framework names the structure, proof backs each component, on-screen step markers ("STEP 1," "STEP 2") track progress for the viewer.
 
 For Proof, see `knowledge/proof-placement-rules.md`. For Checklists / On-Screen Steps, see `knowledge/visual-proof-callouts.md` (the editor convention for surfacing step markers in saved scripts).
 
@@ -179,7 +179,7 @@ From the dumped points, circle the 3 that drive the result most directly. Push h
 
 Use the selection matrix. Propose 1-2 shapes based on how the 3 components relate, with a one-line "why this shape" each. Creator picks.
 
-**Worked:** components are "Find the topic → Build the brick → Polish the wording." Order matters and one feeds the next. Arrows.
+**Worked:** components are "Find the topic → Build the block → Polish the wording." Order matters and one feeds the next. Arrows.
 
 **Near-miss:** components are "Hook strength, Retention, CTA" but creator wants a pyramid. Push: do they actually stack equally to produce one outcome, or are they sequential? If sequential, arrows fit better.
 
@@ -194,7 +194,7 @@ Propose 3-5 names. Mix descriptive ("The 3-Part Onboarding System") and acronym 
 ## Naming rules
 
 - **Three is an example, not a rule.** Default to 3 components because the viewer can hold 3 easily, and more becomes overwhelming. But the rule is flexible. A 4-letter acronym like BENS works because the letters spell a memorable word. If 4 components compound to one outcome and lose meaning when reduced to 3, keep 4. Just be honest about whether the 4th component is core or padding.
-- **Use the creator's voice.** If the creator uses "Brick" everywhere, "The 3-Brick Stack" sounds natural; "The Triangulated Decision Architecture" does not.
+- **Use the creator's voice.** If the creator uses "Block" everywhere, "The 3-Block Stack" sounds natural; "The Triangulated Decision Architecture" does not.
 - **Avoid AI-invented compound nouns.** "Engagement Crystallization Loop" reads as AI. Real names sound like real people would say them at a dinner party.
 - **Test acronyms ruthlessly.** Read the acronym aloud. Does it sound like a word the creator would use, or a forced label? If forced, go descriptive.
 - **Allow descriptive names.** Not everything needs an acronym. "The 3-Part Onboarding System" is fine.
@@ -281,13 +281,13 @@ When the creator wants to bank something half-baked:
 
 ## Pivot phrases (the bridge into the framework)
 
-When transitioning from the emotion brick (story/metaphor/demo) into the framework as the logic brick, three patterns work:
+When transitioning from the parable (story/metaphor/demo) into the framework as the principle, three patterns work:
 
 - "So here's what I learned from that. I call it the [framework name]."
 - "Here's the system I built to fix this. Three parts: [component 1], [component 2], [component 3]."
 - "If I had to break it down into the smallest set of moves, it's [framework name]."
 
-These belong as the transition between the segment's emotion brick and its logic brick.
+These belong as the transition between the segment's parable and its principle.
 
 ## Source note
 

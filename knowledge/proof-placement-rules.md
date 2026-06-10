@@ -18,7 +18,7 @@ Proof goes RIGHT AFTER a framework, claim, or lesson lands. Not before. Not at t
 
 **Worked (deep-dive segment, Step 5 of a system):**
 
-> [Logic block teaches the framework: "the Re-engagement Trigger", three components walked through in 90 seconds]
+> [Principle teaches the framework: "the Re-engagement Trigger", three components walked through in 90 seconds]
 >
 > "Here's what this looked like when Steve installed it." [Loom screenshot: Steve's calendar going from 4 calls/month to 4 calls/week over 8 weeks]
 >
@@ -36,7 +36,7 @@ Why it misses: viewer doesn't know what's being proved. The screenshot lands as 
 
 **Near-miss (proof placed at the end of the segment, after the payoff):**
 
-> [Framework taught. Logic walked. Payoff delivered.]
+> [Framework taught. Principle walked. Payoff delivered.]
 >
 > "Oh, and here's a screenshot from a client who did this." [shows after the payoff has landed]
 
@@ -60,7 +60,7 @@ A single proof entry can carry multiple presentation formats (`static-screenshot
 
 Bank entry's `proof_type: client-win`. Body has all four presentation formats listed. Segment pulls `before-after-pairing`:
 
-> [Logic block lands]
+> [Principle lands]
 >
 > "Here's the before and the after." [split screen: left side = client's old sales page screenshot, right side = redesigned page screenshot, labeled "Before, 0.7% conversion" and "After, 4.2% conversion"]
 
@@ -82,7 +82,7 @@ If the proof entry has an `asset_path:` in frontmatter, the asset should appear 
 
 **Callout convention is canonical in `knowledge/visual-proof-callouts.md`** (the `> [!important] Visual proof needed` form, the `visual_proofs_called_out:` piece.md schema, and worked examples). Load that file when writing claim-proof callouts. This file (proof-placement-rules.md) owns the placement decision (where in the segment), bank-pulling logic, and presentation-format selection. It does not own the callout syntax.
 
-The examples below use a separate `> [!note] visual:` form because they describe production instructions for visual demo bricks and metaphor props (prop setup, camera angle, hold time, on-screen text), not claim-proof pairings. When the segment makes a CLAIM, use the canonical form per `knowledge/visual-proof-callouts.md` so vid-pressure-test can audit.
+The examples below use a separate `> [!note] visual:` form because they describe production instructions for visual demo blocks and metaphor props (prop setup, camera angle, hold time, on-screen text), not claim-proof pairings. When the segment makes a CLAIM, use the canonical form per `knowledge/visual-proof-callouts.md` so vid-pressure-test can audit.
 
 **Worked:**
 
@@ -134,7 +134,7 @@ Why it misses: volume without specificity is weaker than one specific case. Pair
 
 ## Testimonial placement
 
-Testimonials are verbatim client quotes. They drop in as social proof inside the logic block, in addition to (not instead of) numerical/visual proof.
+Testimonials are verbatim client quotes. They drop in as social proof inside the principle, in addition to (not instead of) numerical/visual proof.
 
 **Worked:**
 
@@ -161,9 +161,9 @@ Why it misses: testimonials carry social proof but not analytical proof. Cold vi
 
 ## Proof per segment: count rule
 
-Default: ONE specific proof per logic block. Stacking multiple proofs in one segment dilutes both.
+Default: ONE specific proof per principle. Stacking multiple proofs in one segment dilutes both.
 
-**Worked (one proof, one logic block):**
+**Worked (one proof, one principle):**
 
 > [Framework]
 > [One proof, Steve's calendar]

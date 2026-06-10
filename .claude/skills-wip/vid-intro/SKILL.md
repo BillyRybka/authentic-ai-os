@@ -54,7 +54,7 @@ If invoked with context from a caller (e.g. "intro for piece={slug}, format=case
 6. `foundation/reference-pieces/{voice_context}.md` (the voice engine: real intact passages to write the intro from, as `## ` sections in one file matched to piece.md `voice_context`, default `youtube-script`. If absent, seed from the guardrail fingerprint and note the gap). **Voice-only, not structure:** reference pieces carry cadence, word choice, register, and signature moves. The intro's architecture (hook arc, problem/result, setup, transition, credibility weave) is fixed by THIS skill's spec. If a reference passage's structural arc conflicts with the spec, follow the spec. Reproduce the grain, not the order of moves.
 7. `banks/hook-bank.md` (5-type pattern library with worked plus near-miss examples)
 8. `banks/transition-bank.md` Section 1 (hook-forward transitions HF-1..HF-9) plus Section 4 (banned phrases B-1..B-13)
-9. `knowledge/emotion-brick-decision-matrix.md` (shared with vid-segment, vid-ending). Energy taxonomy (Visual Demo / Story / Metaphor). Useful for picking which energy lane the Hook + Problem/Result anchors in: question 4 maps to Poke-the-Problem (Story brick), question 5 maps to abstract reframes (Metaphor in hook), question 1 maps to Visual Demo when the avatar's pain is invisible. Body-segment scoped in name, but the underlying lane logic informs intro emotional weight too.
+9. `knowledge/parable-decision-matrix.md` (shared with vid-segment, vid-ending). Energy taxonomy (Visual Demo / Story / Metaphor). Useful for picking which energy lane the Hook + Problem/Result anchors in: question 4 maps to Poke-the-Problem (Story block), question 5 maps to abstract reframes (Metaphor in hook), question 1 maps to Visual Demo when the avatar's pain is invisible. Body-segment scoped in name, but the underlying lane logic informs intro emotional weight too.
 10. `content/pieces/{slug}/piece.md` (format, goal, pillar, locked title)
 11. `content/pieces/{slug}/thumbnail-brief.md` (the locked thumbnail picks plus rationale)
 12. `content/pieces/{slug}/brain-dump.md` AND/OR `piece.md` AND/OR `script.md` body (the actual material the intro must align to)
@@ -81,7 +81,7 @@ Wait. Lock with creator approval before moving on.
 
 - Short Process: Question, Contrarian, Statement, sometimes Fact
 - Case Study: Question or Statement (lead with outcome). Sometimes Credibility if the result IS the credibility
-- Roast: Statement (often paired with a contestant submission as visual emotion brick), or Contrarian
+- Roast: Statement (often paired with a contestant submission as visual parable), or Contrarian
 - Deep Dive: Statement, Contrarian, or Question with conviction. Credibility allowed (format earns it)
 - Interview: Statement (the GUEST's identity plus achievement)
 - News: Statement or Fact (speed). Question wastes seconds
@@ -354,7 +354,7 @@ These are the deeper principles. Use them to judge candidates internally before 
 | `banks/hook-bank.md` | 5-type pattern library (Q-1..Q-8, C-1..C-7, S-1..S-8, F-1..F-7, Cr-1..Cr-6) plus anti-patterns |
 | `banks/transition-bank.md` Section 1 | Hook-forward transitions HF-1..HF-9 (intro to first point) |
 | `banks/transition-bank.md` Section 4 | Banned phrases. Tier 1 (B-1, B-2, B-3, B-6) auto-reject; Tier 2 (others) soft-friction, creator decides |
-| `knowledge/emotion-brick-decision-matrix.md` | Shared with vid-segment, vid-ending. 5-question matrix → Visual Demo / Story / Metaphor lane. Informs intro emotional weight when picking Hook + Problem/Result energy |
+| `knowledge/parable-decision-matrix.md` | Shared with vid-segment, vid-ending. 5-question matrix → Visual Demo / Story / Metaphor lane. Informs intro emotional weight when picking Hook + Problem/Result energy |
 | `knowledge/story-pulling-criteria.md` | Shared with vid-segment, vid-ending. 5 criteria for picking the right story from N candidates (stage match, problem match, outcome specificity, type match, reuse hygiene). Conditional load when credibility-line weaves a story |
 | `knowledge/proof-placement-rules.md` | Shared with vid-segment, vid-ending. Owns the PLACEMENT decision (where proof goes in the segment, bank-pulling, presentation-format selection across static-screenshot / before-after-pairing / live-clip / inline-stat). Pairs with visual-proof-callouts.md (which owns the syntax). Conditional load when credibility line cites a number or screenshot |
 | `knowledge/metaphor-integration.md` | Shared with vid-segment, vid-ending. Drop-clean / no-announcement / 3-sentence cap / two-layer rule. Conditional load when a Hook candidate uses metaphor framing |

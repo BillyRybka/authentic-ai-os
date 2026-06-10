@@ -23,14 +23,14 @@ Format scores reflect patterns observed across creator channels. Your results de
 ## The structure
 
 ```
-INTRO → EMOTION BRICK (one) → LOGIC (sequential steps, max 8) → END
+INTRO → PARABLE (one) → PRINCIPLE (sequential steps, max 8) → END
 ```
 
-This is the critical distinction. It's **NOT** emotion-logic-emotion-logic like a Listicle. You have ONE big emotional bit up front, then the rest is the step-by-step process.
+This is the critical distinction. It's **NOT** parable-principle-parable-principle like a Listicle. You have ONE big emotional bit up front, then the rest is the step-by-step process.
 
-### Optional: a second emotion brick before a hard step
+### Optional: a second parable before a hard step
 
-If one step in the logic brick is complex or viewers won't believe it, insert a second emotion brick before that step ONLY. Not every video needs this. You might only need to do it once, or not at all. Video by video.
+If one step in the principle is complex or viewers won't believe it, insert a second parable before that step ONLY. Not every video needs this. You might only need to do it once, or not at all. Video by video.
 
 ## Intro adaptation
 
@@ -56,15 +56,15 @@ Use this to plan a short process video before writing a single line of script.
 3. **Viewer's top 3 questions.** Based on the title and thumbnail, what will the viewer expect answers to? List 3.
 4. **Brain dump.** List 10-20 rough ideas, insights, or steps. Don't worry about order yet. Make sure they'll match or exceed the expectations set in the thumbnail and title. Use research on other videos on this topic to level up the plan.
 5. **Refine.** Keep only what directly pays off the 3 viewer questions.
-6. **Plan the emotion brick.** Pick ONE: Visual Demo, Contrast (Old Way vs New Way), Story, or Metaphor.
-7. **Plan logic steps.** Max 8 steps. If 10 steps exist but 5 deliver 80% of the result, give the 5.
+6. **Plan the parable.** Pick ONE: Visual Demo, Contrast (Old Way vs New Way), Story, or Metaphor.
+7. **Plan principle steps.** Max 8 steps. If 10 steps exist but 5 deliver 80% of the result, give the 5.
 8. **Conversion strategy.** Matches the goal picked in Step 1. Details below.
 9. **Write.** Word-for-word script.
 10. **Upload and track.** Into the measurement system.
 
-## Emotion Brick Decision Matrix
+## Parable Decision Matrix
 
-Pick the emotion brick type based on the problem:
+Pick the parable type based on the problem:
 
 - **Is the problem invisible or hard to see?** → Visual Demo. Show it on screen.
 - **Is the problem abstract or hard to explain?** → Metaphor. Use a familiar frame.
@@ -88,9 +88,9 @@ Pick the emotion brick type based on the problem:
 
 ## Examples
 
-### Example: "Copy This Video Style," Old Way vs New Way emotion brick
+### Example: "Copy This Video Style," Old Way vs New Way parable
 
-Emotion brick script:
+Parable script:
 > "The old way was stock footage, advanced animation, tons of broll, lots of cuts, music, sound effects, templates, zooms... But me and my editor have been testing this for over 12 months now and when we cut it all out and came up with a new style, there was an instant shift in results. More comments, more leads, sales and conversions."
 
 Why it works: Old way (concrete list of wrong pattern), then test period (credibility), then new way (result). Sets up the whole video in one paragraph.
@@ -103,7 +103,7 @@ Why it works: Short process is NARROW. One specific result, not a full system. D
 
 ## Rules
 
-- **One emotion brick up front.** Not one per step. The emotion sets the stakes, then logic delivers.
+- **One parable up front.** Not one per step. The emotion sets the stakes, then the principle delivers.
 - **Max 8 steps.** Format is meant to be short. If it requires ten steps but five of them get eighty percent of the results, just give those five.
 - **Don't be cute with the promise.** Make it clear they're gonna get a result they care about.
 - **Transition between steps hooks forward.** Tell the viewer why the next step matters before giving it.
@@ -160,6 +160,6 @@ Stick to: **Result**, **Cognitive Dissonance**, **Comparison**, or **Curiosity**
 ## What to skip
 
 - Don't pad steps. Quality over quantity.
-- Don't alternate emotion and logic like a listicle. This is one emotion then logic steps.
+- Don't alternate parable and principle like a listicle. This is one parable then principle steps.
 - Don't chase multiple goals. One per video.
 - Don't tie the lead magnet to something outside the video content.

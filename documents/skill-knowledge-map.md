@@ -104,7 +104,7 @@ Built by grepping every `SKILL.md`, `references/*.md`, and `assets/*.md` across 
 - `knowledge/voice-profile-schema.md`
 - `knowledge/voice-rhythm.md`
 - `knowledge/voice-pressure-test.md`
-- `knowledge/emotion-brick-decision-matrix.md`
+- `knowledge/parable-decision-matrix.md`
 - `knowledge/story-pulling-criteria.md`
 - `knowledge/proof-placement-rules.md`
 - `knowledge/visual-proof-callouts.md`
@@ -117,7 +117,7 @@ Built by grepping every `SKILL.md`, `references/*.md`, and `assets/*.md` across 
 - `knowledge/voice-profile-schema.md`
 - `knowledge/voice-rhythm.md`
 - `knowledge/voice-pressure-test.md`
-- `knowledge/emotion-brick-decision-matrix.md`
+- `knowledge/parable-decision-matrix.md`
 - `knowledge/story-capture-guide.md`
 - `knowledge/story-pulling-criteria.md`
 - `knowledge/proof-capture-guide.md`
@@ -136,7 +136,7 @@ Built by grepping every `SKILL.md`, `references/*.md`, and `assets/*.md` across 
 - `knowledge/voice-profile-schema.md`
 - `knowledge/voice-rhythm.md` (also via `references/pivot-gap-bridge-shapes.md`)
 - `knowledge/voice-pressure-test.md` (also via `references/pivot-gap-bridge-shapes.md`)
-- `knowledge/emotion-brick-decision-matrix.md`
+- `knowledge/parable-decision-matrix.md`
 - `knowledge/story-pulling-criteria.md`
 - `knowledge/proof-placement-rules.md`
 - `knowledge/visual-proof-callouts.md`
@@ -162,7 +162,7 @@ Use this when editing or renaming a knowledge file: it tells you every skill tha
 | `BENS-framework.md` | vid-title, vid-thumbnail |
 | `audience-temperature-model.md` | vid-framing, vid-pressure-test |
 | `creator-foundation-template.md` | vid-avatar |
-| `emotion-brick-decision-matrix.md` | vid-intro, vid-segment, vid-ending |
+| `parable-decision-matrix.md` | vid-intro, vid-segment, vid-ending |
 | `format-rotation-guide.md` | vid-research |
 | `framework-builder.md` | vid-capture, vid-segment, vid-structure |
 | `gift-framework.md` | vid-thumbnail |
@@ -250,9 +250,9 @@ When you ship a skill, confirm every box. The skill's own `SKILL.md`, `reference
 - [ ] **vid-title** — BENS-framework, thumbnail-text-patterns (2)
 - [ ] **vid-thumbnail** — vault-integration, thumbnail-strategy-menu, thumbnail-text-patterns, thumbnail-examples-library, BENS-framework, gift-framework (6)
 - [ ] **vid-structure** — voice-profile-schema, script-tension-architecture, framework-builder, format-planners/ ×7 (10)
-- [ ] **vid-intro** — vault-integration, intro-architecture, voice-profile-schema, voice-rhythm, voice-pressure-test, emotion-brick-decision-matrix, story-pulling-criteria, proof-placement-rules, visual-proof-callouts, metaphor-integration, format-planners/ ×7 (17)
-- [ ] **vid-segment** — vault-integration, voice-profile-schema, voice-rhythm, voice-pressure-test, emotion-brick-decision-matrix, story-capture-guide, story-pulling-criteria, proof-capture-guide, proof-placement-rules, metaphor-builder, metaphor-integration, testimonial-capture, framework-builder, visual-demo-builder, visual-proof-callouts, format-planners/ ×7 (22)
-- [ ] **vid-ending** — vault-integration, voice-profile-schema, voice-rhythm, voice-pressure-test, emotion-brick-decision-matrix, story-pulling-criteria, proof-placement-rules, visual-proof-callouts, metaphor-integration, format-planners/ ×7 (16)
+- [ ] **vid-intro** — vault-integration, intro-architecture, voice-profile-schema, voice-rhythm, voice-pressure-test, parable-decision-matrix, story-pulling-criteria, proof-placement-rules, visual-proof-callouts, metaphor-integration, format-planners/ ×7 (17)
+- [ ] **vid-segment** — vault-integration, voice-profile-schema, voice-rhythm, voice-pressure-test, parable-decision-matrix, story-capture-guide, story-pulling-criteria, proof-capture-guide, proof-placement-rules, metaphor-builder, metaphor-integration, testimonial-capture, framework-builder, visual-demo-builder, visual-proof-callouts, format-planners/ ×7 (22)
+- [ ] **vid-ending** — vault-integration, voice-profile-schema, voice-rhythm, voice-pressure-test, parable-decision-matrix, story-pulling-criteria, proof-placement-rules, visual-proof-callouts, metaphor-integration, format-planners/ ×7 (16)
 - [ ] **vid-pressure-test** — voice-profile-schema, script-tension-architecture, intro-architecture, audience-temperature-model, format-planners/ ×7 (11)
 
 ---

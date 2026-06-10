@@ -25,7 +25,7 @@ Also: guests virtually never promote the interview themselves. Don't count on it
 ## The structure
 
 ```
-INTRO (heavy lifting on credibility) → QUESTIONS (emotion → logic per question ideally) → END
+INTRO (heavy lifting on credibility) → QUESTIONS (parable → principle per question ideally) → END
 ```
 
 The intro does most of the work. The questions section is mostly the guest answering. Your job is to elicit stories first, then logic and steps.

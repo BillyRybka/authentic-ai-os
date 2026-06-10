@@ -233,7 +233,7 @@ For every prompt below:
 
 If the creator goes 3 prompts deep without a memory surfacing, stop. Either:
 
-- The video doesn't actually need a story (a metaphor or demo might land it faster — see [[metaphor-builder]] or [[emotion-brick-decision-matrix]])
+- The video doesn't actually need a story (a metaphor or demo might land it faster, see [[metaphor-builder]] or [[parable-decision-matrix]])
 - The creator's lived material on this topic is genuinely thin and the right move is to capture stories from clients, viewers, or studied creators instead
 - The creator needs to come back later — sometimes the right memory surfaces hours after the prompt was asked
 

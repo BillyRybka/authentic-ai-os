@@ -70,8 +70,8 @@ This skill is a conversation, not a document. Keep messages short. Never paste r
 9. `content/pieces/{slug}/piece.md` (format, goal, pillar, locked title, prior `stories_used` / `proofs_used` / `metaphors_used`)
 10. `content/pieces/{slug}/brain-dump.md` and `piece.md` (the segment's raw material: locked angle, core payoff, point list)
 11. `content/pieces/{slug}/script.md` (if it exists, so prior-segment closing line and prior banks pulled inform setup continuity)
-12. Skill-local references: `references/setup-tension-payoff-shapes.md`, `references/framework-shapes.md` (uniquely this skill's runtime decision logic). Plus shared knowledge files used across writing skills: `knowledge/emotion-brick-decision-matrix.md`, `knowledge/story-pulling-criteria.md`, `knowledge/proof-placement-rules.md`, `knowledge/metaphor-integration.md`, `knowledge/framework-builder.md` (for inline framework crafting when the segment's logic brick is a framework and no bank match exists), `knowledge/visual-demo-builder.md` (for inline visual demo crafting when the segment's emotion brick is a Visual Demo, since there is no Visual Demo bank)
-13. `knowledge/visual-proof-callouts.md` (canonical `> [!important] Visual proof needed` callout convention. Load when the segment's logic block makes a numbered, named, or before/after claim that the editor must put on screen)
+12. Skill-local references: `references/setup-tension-payoff-shapes.md`, `references/framework-shapes.md` (uniquely this skill's runtime decision logic). Plus shared knowledge files used across writing skills: `knowledge/parable-decision-matrix.md`, `knowledge/story-pulling-criteria.md`, `knowledge/proof-placement-rules.md`, `knowledge/metaphor-integration.md`, `knowledge/framework-builder.md` (for inline framework crafting when the segment's principle is a framework and no bank match exists), `knowledge/visual-demo-builder.md` (for inline visual demo crafting when the segment's parable is a Visual Demo, since there is no Visual Demo bank)
+13. `knowledge/visual-proof-callouts.md` (canonical `> [!important] Visual proof needed` callout convention. Load when the segment's principle makes a numbered, named, or before/after claim that the editor must put on screen)
 14. `banks/transition-bank.md` (Section 2 segment-to-segment patterns plus Section 4 banned phrases for the segment's outbound transition)
 15. `content/pieces/{slug}/async-brick-notes.md` (if it exists). Unstructured jot pad for ideas about OTHER segments that surfaced during prior writing. Check this file for any notes tagged with the current segment's purpose before brainstorming from scratch. If notes don't exist, create the file lazily when the creator drops the first note.
 
@@ -84,8 +84,8 @@ Wait. Lock segment job. If the creator sharpens, update the framing then continu
 **Identify the format's segment shape.** Different formats use Setup / Tension / Payoff differently. Defaults from the format planner:
 
 - **Deep dive.** Heavy STP per segment (each step IS a sub-cycle), proof woven after each step's logic.
-- **Short process.** One big STP up front (in intro), individual steps run lean Logic-only unless a step is hard enough to need its own emotion brick.
-- **Listicle.** Full STP per point, every point gets emotion-then-logic, transition forward-hooks.
+- **Short process.** One big STP up front (in intro), individual steps run lean principle-only unless a step is hard enough to need its own parable.
+- **Listicle.** Full STP per point, every point gets parable-then-principle, transition forward-hooks.
 - **Case study.** One STP across the whole body (the narrative IS the segment), one big lesson plus 1-3 steps as the payoff.
 - **News.** Tight STP: what happened (setup), why it matters (tension), what to do (payoff). Speed beats depth.
 - **Roast.** Per-review STP: show what they have (setup), show what's wrong (tension), show the fix (payoff).
@@ -99,9 +99,9 @@ Goal: the segment works AS A UNIT before any prose gets written. If the structur
 
 **Draft the segment structure.** A structure draft is bullets and slot fills, not prose. Three blocks:
 
-1. **Setup (the open).** What problem, claim, or question does this segment open on? What does the viewer need to feel BEFORE the explanation arrives? Pulls from: brain-dump phrasing, the avatar's Top 3 problems, the locked title's promise. Setup typically opens on the segment's emotional brick OR a forward-hook off the prior segment's closing line.
+1. **Setup (the open).** What problem, claim, or question does this segment open on? What does the viewer need to feel BEFORE the explanation arrives? Pulls from: brain-dump phrasing, the avatar's Top 3 problems, the locked title's promise. Setup typically opens on the segment's parable OR a forward-hook off the prior segment's closing line.
 
-2. **Tension (the middle).** What raises curiosity? The emotion brick (visual demo / story / metaphor / contrast) goes here. The logic brick's first move (the framework piece, the proof shown after the framework lands) follows. Use the emotion brick decision matrix in `knowledge/emotion-brick-decision-matrix.md` to pick the brick type.
+2. **Tension (the middle).** What raises curiosity? The parable (visual demo / story / metaphor / contrast) goes here. The principle's first move (the framework piece, the proof shown after the framework lands) follows. Use the parable decision matrix in `knowledge/parable-decision-matrix.md` to pick the block type.
 
 3. **Payoff (the close).** What does the viewer leave the segment knowing or able to do? One clear lesson the viewer walks away with. The outbound transition forward-hooks the next segment (per `banks/transition-bank.md` Section 2) OR sets up the body-to-ending bridge if this is the final body segment.
 
@@ -114,19 +114,19 @@ Given the segment's job, query the banks:
 - **Metaphor.** Query `banks/metaphor-bank/*.md` by `concept:` field and `problem_illustrated`. Filter to entries that clarify an abstract piece in the segment's logic. Surface 0-2 candidates.
 - **Testimonial.** Query `banks/testimonial-bank/*.md` for entries that match the claim being made. Use sparingly. Testimonials work best as social proof inside a segment, not as the segment's spine.
 - **Framework.** Query `banks/framework-bank/*.md` for the creator's named system the segment is teaching. If the segment is structured around a creator-owned framework, name it explicitly in the structure draft.
-- **Visual Demo.** No bank to query. If the segment's emotion brick is Visual Demo (per the emotion brick decision matrix), load `knowledge/visual-demo-builder.md` and run the 3-step brainstorm inline (name the point → pick sub-type via planning filters → generate 2-3 candidate demo concepts → creator picks). The demo lands directly in the segment prose. No save target.
+- **Visual Demo.** No bank to query. If the segment's parable is Visual Demo (per the parable decision matrix), load `knowledge/visual-demo-builder.md` and run the 3-step brainstorm inline (name the point → pick sub-type via planning filters → generate 2-3 candidate demo concepts → creator picks). The demo lands directly in the segment prose. No save target.
 
 For each pulled candidate, surface to creator with: slug + one-line summary + WHY this candidate matches the segment's job. Use `knowledge/story-pulling-criteria.md`, `knowledge/proof-placement-rules.md`, `knowledge/metaphor-integration.md` to filter. They teach contrastive examples of what lands vs. what misses.
 
 **The "no fabrication" gate** (same as `vid-title` and `vid-thumbnail`): if a story / proof / metaphor / testimonial / framework isn't in the banks, the skill does NOT invent it. Three options when banks come up empty:
 
 1. Route to `vid-capture` mid-skill (sub-skill mode) to capture the missing entry, then return with the new wikilink and continue. For Framework, this means: load `knowledge/framework-builder.md`, walk the creator through the 5-step build inline (dump → result → top 3 → shape → name), then route to vid-capture Stage F to save the locked framework, then return with the wikilink and continue. The creator never leaves vid-segment's flow; the inline craft happens here and the save happens via Stage F at the end.
-2. Tell the creator the bank is empty for this slot, ask if they want to skip the brick (use a different brick type) or pause the segment to capture material first.
+2. Tell the creator the bank is empty for this slot, ask if they want to skip the block (use a different block type) or pause the segment to capture material first.
 3. For Visual Demo specifically: there's no bank to capture into. Always run the inline 3-step brainstorm using `knowledge/visual-demo-builder.md`.
 
 Never invent client names, numbers, results, or specific phrasings. The brain dump is the only allowed source of new specifics, and only because the creator wrote it.
 
-**Async-brick-notes (handling ideas for OTHER segments mid-write).** If the creator is writing Segment N and an idea pops up for Segment M (a different segment), DON'T break flow to formally capture it. Jot a one-line note in `content/pieces/{slug}/async-brick-notes.md` (create the file lazily on first note). Format: `- [Segment M, brick type]: quick idea`. When this skill later writes Segment M, it scans async-brick-notes.md as part of Phase 1 silent loads and surfaces relevant notes during the brainstorm step. Notes that don't get used can be deleted or left as artifacts.
+**Async-brick-notes (handling ideas for OTHER segments mid-write).** If the creator is writing Segment N and an idea pops up for Segment M (a different segment), DON'T break flow to formally capture it. Jot a one-line note in `content/pieces/{slug}/async-brick-notes.md` (create the file lazily on first note). Format: `- [Segment M, block type]: quick idea`. When this skill later writes Segment M, it scans async-brick-notes.md as part of Phase 1 silent loads and surfaces relevant notes during the brainstorm step. Notes that don't get used can be deleted or left as artifacts.
 
 **Surface the structure draft.** Format:
 
@@ -135,9 +135,9 @@ SEGMENT: {short label, e.g. "Step 2: Refactor your week"}
 
 SETUP. {one bullet: emotional open or forward-hook off prior segment}
 TENSION
-  - Emotion brick: {Visual Demo (Show-the-Problem | Contrast | Breakdown) | Story | Metaphor | Contrast}
+  - Parable: {Visual Demo (Show-the-Problem | Contrast | Breakdown) | Story | Metaphor | Contrast}
     - Bank candidates: [[story-slug-1]] (problem-2, theme: scheduling) | [[story-slug-2]] (problem-2, theme: deep-work)
-  - Logic brick: {framework move + proof position}
+  - Principle: {framework move + proof position}
     - Framework: [[framework-slug]] (or "no framework, single lesson")
     - Proof candidates: [[proof-slug]] (client-win) | [[proof-slug-2]] (personal-result)
 PAYOFF. {one bullet: the lesson the viewer walks away with}
@@ -146,7 +146,7 @@ TRANSITION OUT. {one of the Section 2 patterns from transition-bank, slot-filled
 
 Then ask:
 
-> "Structure check. Does this segment do its job? Pick one: lock structure, swap the brick (story → metaphor / etc.), pull a different bank candidate, sharpen the payoff, scrap and start over."
+> "Structure check. Does this segment do its job? Pick one: lock structure, swap the block (story → metaphor / etc.), pull a different bank candidate, sharpen the payoff, scrap and start over."
 
 Wait. Loop until structure locks. **Do not write prose until structure locks.** This is the core architectural decision of the skill: structure dictates voice, not the other way around.
 
@@ -164,9 +164,9 @@ Now write the segment in the creator's voice. The structure is locked; this phas
 
 - **Setup prose.** Pull verbatim from brain dump where possible. If the creator wrote "I was staring at my inbox at 2am wondering when this stopped being fun," that line goes in. Match the opener move the reference pieces for this `voice_context` use (declaration / question / anecdote / contrarian). Setup runs short: 1-3 sentences for tight formats (news, short process), 3-6 for listicle/deep-dive.
 
-- **Tension prose.** Write the emotion brick first (the show), then the logic brick (the tell). For visual demos, the bank entry's body sections give you both layers: the spoken layer goes in script, the shown layer goes in a `> [!note] visual:` callout for the production team (production instructions, not claim-proof). For stories, follow the bank entry's Problem-Action-Outcome verbatim. Preserve the creator's specific language. For metaphors, drop the metaphor in clean (no "let me give you an analogy" announcement; just say it), then use the bank's pivot phrase to bridge back to logic. For frameworks, name the framework, walk the components, then immediately drop in the proof candidate selected.
+- **Tension prose.** Write the parable first (the show), then the principle (the tell). For visual demos, the bank entry's body sections give you both layers: the spoken layer goes in script, the shown layer goes in a `> [!note] visual:` callout for the production team (production instructions, not claim-proof). For stories, follow the bank entry's Problem-Action-Outcome verbatim. Preserve the creator's specific language. For metaphors, drop the metaphor in clean (no "let me give you an analogy" announcement; just say it), then use the bank's pivot phrase to bridge to the principle. For frameworks, name the framework, walk the components, then immediately drop in the proof candidate selected.
 
-- **Claim-proof callouts.** When the logic block contains a CLAIM (number, named outcome, before/after, volume signal, named person), drop a `> [!important] Visual proof needed` callout immediately AFTER the line carrying the claim, naming what the editor must put on screen. Follow the canonical convention in `knowledge/visual-proof-callouts.md` so vid-intro and vid-pressure-test audit against the same shape. Production-only instructions (visual demo prop setup, metaphor staging, on-screen text overlays) use `> [!note] visual:`. Keep the two distinct.
+- **Claim-proof callouts.** When the principle contains a CLAIM (number, named outcome, before/after, volume signal, named person), drop a `> [!important] Visual proof needed` callout immediately AFTER the line carrying the claim, naming what the editor must put on screen. Follow the canonical convention in `knowledge/visual-proof-callouts.md` so vid-intro and vid-pressure-test audit against the same shape. Production-only instructions (visual demo prop setup, metaphor staging, on-screen text overlays) use `> [!note] visual:`. Keep the two distinct.
 
 - **Payoff prose.** One clear sentence of takeaway. The "what they walk away with." Match the punch-out the reference pieces use (often a short sentence after a longer one; hear it via `voice-rhythm.md` short-short-long, snap back).
 
@@ -189,7 +189,7 @@ Now write the segment in the creator's voice. The structure is locked; this phas
 
 {Setup paragraph(s)}
 
-{Tension paragraph(s): emotion brick then logic brick. Visual notes in callouts where applicable}
+{Tension paragraph(s): parable then principle. Visual notes in callouts where applicable}
 
 {Payoff sentence}
 
@@ -198,7 +198,7 @@ Now write the segment in the creator's voice. The structure is locked; this phas
 
 Then ask:
 
-> "Read this aloud. Anything you'd reword? Or want me to adjust rhythm, swap a word, pull a different bank entry, or rewrite the brick from a different angle?"
+> "Read this aloud. Anything you'd reword? Or want me to adjust rhythm, swap a word, pull a different bank entry, or rewrite the block from a different angle?"
 
 Wait. The read-aloud test is the final voice gate. Loop until creator confirms.
 
@@ -262,7 +262,7 @@ From `vault-integration.md` Failure modes section. Never silent inconsistency.
 - **Foundation doc missing:** hard stop. Tell creator which is missing and which skill produces it.
 - **brain-dump and reference-block both missing:** hard stop. Route to `vid-intake` or `vid-framing`.
 - **Format planner missing or unrecognized:** hard stop. Show the `piece.md` `format:` value and the list of valid format slugs.
-- **Bank query returns nothing for a needed brick:** offer the creator three options: invoke `vid-capture` mid-skill to capture the missing entry, swap to a different brick type that has bank coverage, or skip the brick (rare; flag this in the segment notes).
+- **Bank query returns nothing for a needed block:** offer the creator three options: invoke `vid-capture` mid-skill to capture the missing entry, swap to a different block type that has bank coverage, or skip the block (rare; flag this in the segment notes).
 - **Structure pass keeps failing (3+ rounds without lock):** stop and ask the creator if the segment's job in `piece.md` is wrong. The skill is pulling from a broken framing. Route back to `vid-framing` if needed.
 - **Bank entry frontmatter malformed:** show creator what was found vs. expected. Ask: skip this entry or pause to fix?
 - **Primary write succeeds, secondary write fails (script.md saved but bank's `used_in:` update fails):** retry once, then surface visibly. "Segment saved to script.md. Could not update [[bank-slug]] used_in. Manually add `[[piece-slug]]` to its frontmatter to close the graph."
@@ -274,7 +274,7 @@ From `vault-integration.md` Failure modes section. Never silent inconsistency.
 - **Conversation, not document.** Short messages. Never dump reference content into chat. References are for YOUR thinking.
 - **Structure dictates voice, not the other way around.** Structure pass FIRST. If the segment doesn't work as a unit, no amount of voice polish saves it.
 - **Creator drives, Claude structures.** The brain dump IS the voice. Banks ARE the proof. Claude doesn't invent claims, stories, numbers, or metaphors to make a segment land better.
-- **Banks first, fabrication never.** Every story / proof / metaphor / testimonial in the prose traces to a bank entry or the brain dump. If banks come up empty, route to `vid-capture` or change the brick type. Never invent.
+- **Banks first, fabrication never.** Every story / proof / metaphor / testimonial in the prose traces to a bank entry or the brain dump. If banks come up empty, route to `vid-capture` or change the block type. Never invent.
 - **Update both sides.** When a bank entry gets used, both `piece.md` and the bank entry's `used_in:` get updated. Non-negotiable.
 - **Read-aloud is the final gate.** Quantitative pressure-test catches drift. The creator's mouth catches what the test misses.
 - **One segment per invocation.** Multi-segment requests get looped, not batched. Quality drops at scale.
@@ -284,7 +284,7 @@ From `vault-integration.md` Failure modes section. Never silent inconsistency.
 | File | Why |
 |---|---|
 | `knowledge/vault-integration.md` | Schemas, wikilink contract, "update both sides" rule, failure modes |
-| `knowledge/format-planners/{format}.md` | Format-specific segment shape and emotion-brick defaults |
+| `knowledge/format-planners/{format}.md` | Format-specific segment shape and parable defaults |
 | `knowledge/voice-rhythm.md` | Sentence-length variation, paragraph ratio, opener pattern, punctuation, energy |
 | `knowledge/voice-pressure-test.md` | Two-pass voice validation before save |
 | `knowledge/story-capture-guide.md` | What stories look like, P-A-O structure, the 6 prompts |
@@ -307,10 +307,10 @@ From `vault-integration.md` Failure modes section. Never silent inconsistency.
 | `banks/transition-bank.md` | Section 2 segment-to-segment patterns + Section 4 banned phrases |
 | `references/setup-tension-payoff-shapes.md` | Per-format STP shapes, contrastive examples (skill-local) |
 | `references/framework-shapes.md` | Arrows / pyramids / cycles / Venns / funnels: when to use each (skill-local) |
-| `knowledge/emotion-brick-decision-matrix.md` | Which brick type for which problem (visual demo / story / metaphor / contrast). Shared with vid-intro and vid-ending. |
+| `knowledge/parable-decision-matrix.md` | Which block type for which problem (visual demo / story / metaphor / contrast). Shared with vid-intro and vid-ending. |
 | `knowledge/story-pulling-criteria.md` | How to pick the right story from N candidates. Shared with vid-intro and vid-ending. |
 | `knowledge/proof-placement-rules.md` | Where proof goes, multi-format presentation. Shared with vid-intro and vid-ending. |
-| `knowledge/metaphor-integration.md` | How to drop a metaphor in clean and bridge back to logic. Shared with vid-intro and vid-ending. |
+| `knowledge/metaphor-integration.md` | How to drop a metaphor in clean and bridge to the principle. Shared with vid-intro and vid-ending. |
 | `assets/segment-scaffold-template.md` | The structure-draft skeleton for Phase 2 |
 
 ## Related skills

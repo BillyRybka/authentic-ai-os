@@ -156,15 +156,15 @@ visual_proofs_called_out:
 
 The `bank_link: null` cases get surfaced at save time so the creator can capture missing proofs before filming.
 
-## On-screen step markers (checklists as the third logic-brick tool)
+## On-screen step markers (checklists as the third principle tool)
 
-Step markers are the third logic-brick tool (alongside Frameworks and Proof). When a segment teaches a framework with named components, on-screen step markers ("STEP 1," "STEP 2," "STEP 3") track progress for the viewer. They reduce cognitive load and prevent the "should I stop here?" feeling by giving viewers chapter-marker-style orientation.
+Step markers are the third principle tool (alongside Frameworks and Proof). When a segment teaches a framework with named components, on-screen step markers ("STEP 1," "STEP 2," "STEP 3") track progress for the viewer. They reduce cognitive load and prevent the "should I stop here?" feeling by giving viewers chapter-marker-style orientation.
 
 Step markers are an editor-facing convention, just like visual proof callouts. The script flags them; the editor places them on screen.
 
 ### When to flag step markers
 
-- The segment's logic brick is a framework with 3+ named components
+- The segment's principle is a framework with 3+ named components
 - The framework's shape is sequential (Arrows) or staged (Funnel)
 - The viewer needs a sense of progress through a list of actions
 - A long segment (>2 minutes) benefits from chapter-style orientation

@@ -27,8 +27,8 @@ INTRO → WHAT HAPPENED → WHY IT MATTERS → WHAT VIEWERS SHOULD DO → END
 ```
 
 - **What happened** equals the storytelling beat (what is this news, who, what, when)
-- **Why it matters** equals the emotion brick (the stakes for the viewer)
-- **What viewers should do** equals the logic brick (action steps or watching position)
+- **Why it matters** equals the parable (the stakes for the viewer)
+- **What viewers should do** equals the principle (action steps or watching position)
 
 This is a tighter, faster structure than other formats. The whole video can run 4-7 minutes if the story is small.
 

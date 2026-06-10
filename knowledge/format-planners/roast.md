@@ -28,7 +28,7 @@ Channels that own this format dominate their niche.
 INTRO → REVIEW 1 (problem + solution) → REVIEW 2 → REVIEW 3 → END
 ```
 
-Each review equals problem (emotion brick: visual demo of what's wrong) plus solution (logic with actionable insight).
+Each review equals problem (parable: visual demo of what's wrong) plus solution (principle with actionable insight).
 
 **Tone benchmark:** stern-but-kind expert at 7/10, not 10/10. Be frank. Stay kind. The fixes are the point, not the takedowns. Cruelty kills the conversion (viewers stop seeing themselves in the contestant's seat).
 
@@ -45,7 +45,7 @@ Roast intros are **submission-and-stakes-driven.** The hook usually IS a contest
 | Universal intro step | Roast default | Why |
 |---|---|---|
 | 1. Top 3 viewer questions | Same. Usually variants of "what's getting fixed?", "can I learn from this?", "could you fix mine?" | Frames the review as something the viewer can apply to themselves. |
-| 2. Hook | Often the contestant's submission OR a contrast (here's what they have, here's what's wrong, here's what we'll fix) | Statement Hook works, typically paired with a Visual Demo emotion brick. The submission visible on screen carries the energy while the spoken hook frames the stakes. Contrarian Hook works when the contestant got something widely-believed wrong. The format gives you raw visual material. Use it as the emotion brick, not as the hook itself. |
+| 2. Hook | Often the contestant's submission OR a contrast (here's what they have, here's what's wrong, here's what we'll fix) | Statement Hook works, typically paired with a Visual Demo parable. The submission visible on screen carries the energy while the spoken hook frames the stakes. Contrarian Hook works when the contestant got something widely-believed wrong. The format gives you raw visual material. Use it as the parable, not as the hook itself. |
 | 3. Problem/Result | One line: "Today we're fixing 3 [thing] and showing you exactly what's broken and what's working." | The format's promise IS clear from the intro because the visual material carries the energy. |
 | 4. Setup | "We're going to look at 3 [things], find what's wrong with each, and fix them. With insights you can apply to your own [thing]." | Setup ties review to viewer's own application. |
 | 5. Transition | "First up is [contestant 1]" | Direct, gets to the work. |

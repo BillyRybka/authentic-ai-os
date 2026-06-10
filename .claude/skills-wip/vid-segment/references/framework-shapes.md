@@ -7,7 +7,7 @@ tags: [reference, framework-shapes, decision-matrix, segment]
 
 # Framework Shapes
 
-When the logic block uses a creator-owned framework, the framework needs a SHAPE: the visual or structural form the components take. Shape decides whether the audience can hold the framework in working memory or not.
+When the principle uses a creator-owned framework, the framework needs a SHAPE: the visual or structural form the components take. Shape decides whether the audience can hold the framework in working memory or not.
 
 Six shapes. Each shape pairs a worked example with a near-miss. The selection matrix at the bottom is the lookup.
 
@@ -211,11 +211,11 @@ If NO across the board, the "framework" is probably a list, not a framework. Che
 
 ## How vid-segment uses this file
 
-At Phase 2 (structure pass), when the segment's logic block pulls a creator framework:
+At Phase 2 (structure pass), when the segment's principle pulls a creator framework:
 
 1. Open the bank entry, read `framework_type` and `components:`
 2. Apply the selection matrix to pick the shape
-3. Note the shape in the structure draft (e.g. "Logic: framework [[3-part-onboarding-system]] (process → arrows shape)")
+3. Note the shape in the structure draft (e.g. "Principle: framework [[3-part-onboarding-system]] (process → arrows shape)")
 4. At Phase 3 (prose pass), name the framework, walk the components in shape order, and place a `> [!note] visual:` callout suggesting the on-screen graphic if the format supports it
 
 If the bank entry has a `shape:` field (rare; most don't), respect it. Otherwise, use the matrix.

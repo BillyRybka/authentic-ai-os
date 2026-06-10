@@ -6,7 +6,7 @@ tags: [format-planner, listicle]
 
 # Listicle Format Planner
 
-A 10-20 minute video that delivers N standalone points (each with its own emotion plus logic mini-cycle). Most YouTube videos are technically listicles, even without numbers in the title. Format-loyal viewers want quick, scannable takeaways. Audience-dependent. Some channels' viewers love it, others reject it.
+A 10-20 minute video that delivers N standalone points (each with its own parable plus principle mini-cycle). Most YouTube videos are technically listicles, even without numbers in the title. Format-loyal viewers want quick, scannable takeaways. Audience-dependent. Some channels' viewers love it, others reject it.
 
 ## When to use this format
 
@@ -23,12 +23,12 @@ Listicles work for some channels and tank for others. A creator's stated experie
 ## The structure
 
 ```
-INTRO → [EMOTION + LOGIC] x N → END
+INTRO → [PARABLE + PRINCIPLE] x N → END
 ```
 
-Each point follows its own mini-cycle: emotion brick (visual demo, story, contrast, breakdown, or metaphor), then one logical lesson the viewer can action. Then transition to the next point. Repeat.
+Each point follows its own mini-cycle: parable (visual demo, story, contrast, breakdown, or metaphor), then one logical lesson the viewer can action. Then transition to the next point. Repeat.
 
-Unlike Short Process (one emotion brick, then sequential logic steps), a Listicle has emotion-and-logic at every point. The structural challenge: keeping viewers engaged BETWEEN points. Strong transitions are the lifeline.
+Unlike Short Process (one parable, then sequential principle steps), a Listicle has parable-and-principle at every point. The structural challenge: keeping viewers engaged BETWEEN points. Strong transitions are the lifeline.
 
 ## Intro adaptation
 
@@ -57,13 +57,13 @@ That's: hook (cognitive dissonance, "thought it would be easy"), then problem an
 3. **Viewer's top 3 questions.** Based on title and thumbnail.
 4. **Brain dump.** List every idea, lesson, point you might include. Don't worry about order. Aim for 1.5-2x the final count so refinement has room.
 5. **Refine.** Cut to the strongest N. Apply: "would the average viewer in our avatar action this?" If no, cut.
-6. **Plan emotion brick per point.** Use the Emotion Brick Decision Matrix. Each point picks Visual Demo / Contrast / Breakdown / Story / Metaphor based on the problem the point addresses.
-7. **Plan logic brick per point.** One framework or simple lesson per point. Don't bury a 20-step process inside one listicle point. Keep it fast.
+6. **Plan parable per point.** Use the Parable Decision Matrix. Each point picks Visual Demo / Contrast / Breakdown / Story / Metaphor based on the problem the point addresses.
+7. **Plan principle per point.** One framework or simple lesson per point. Don't bury a 20-step process inside one listicle point. Keep it fast.
 8. **Conversion strategy.** Embed CTA mid-video after a strong point if relevant.
 9. **Write.** Word-for-word.
 10. **Upload and track.**
 
-## The emotion brick decision matrix (per point)
+## The parable decision matrix (per point)
 
 For each point in the list:
 
@@ -73,7 +73,7 @@ For each point in the list:
 - **Is the problem visible but viewers don't feel the stakes?** → Story. Make them feel it.
 - **Is the problem complex with multiple components?** → Breakdown. Walk through the parts.
 
-Don't use the same emotion brick type across all points. That flattens the video. Vary them.
+Don't use the same parable type across all points. That flattens the video. Vary them.
 
 ## Transitions are the lifeline
 
@@ -91,18 +91,18 @@ If the transition is just an announcement ("here's number 4"), viewers drop. If 
 
 For a Photoshop shortcuts listicle, point one might run:
 
-> **Emotion brick (Visual Demo):** "OK, this next tip is going to save you 10 minutes per photo edit. Right now, you're probably spending about 15 to 20 minutes cutting out an image, and it's a right pain. But look, you can actually do it in this." [shows the shortcut working, instant cutout]
+> **Parable (Visual Demo):** "OK, this next tip is going to save you 10 minutes per photo edit. Right now, you're probably spending about 15 to 20 minutes cutting out an image, and it's a right pain. But look, you can actually do it in this." [shows the shortcut working, instant cutout]
 >
-> **Logic brick:** "Now let me show you the shortcut to save 15 minutes per photo." [demonstrates the shortcut step-by-step]
+> **Principle:** "Now let me show you the shortcut to save 15 minutes per photo." [demonstrates the shortcut step-by-step]
 >
 > **Transition:** "Now, point two is gonna change how you handle layer organization forever. Even if you've been working in Photoshop for years."
 
-That's emotion, then logic, then forward-hook transition.
+That's parable, then principle, then forward-hook transition.
 
 ## Common mistakes
 
 - Weak transitions ("Lesson number 4") instead of result-promising ones
-- Using the same emotion brick type for every point
+- Using the same parable type for every point
 - Burying a 20-step process inside one listicle point (too dense)
 - Padding the count to hit a number (10 mediocre points kill more than 5 great ones)
 - Aggressive shock-value title without content that delivers (creators copy the loudest titles they see, then the script doesn't deliver, viewers churn faster than the average video would)
@@ -164,6 +164,6 @@ Show the COUNT in the thumbnail. The number is the format's contract.
 
 - Don't pad the count
 - Don't use weak transitions
-- Don't reuse the same emotion brick type at every point
+- Don't reuse the same parable type at every point
 - Don't bury complex processes inside listicle points
 - Don't copy aggressive titles without content that delivers

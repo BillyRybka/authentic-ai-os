@@ -25,7 +25,7 @@ If yes-needed: tag `core`. This becomes either its own segment OR a load-bearing
 
 ### Support
 
-Provides context, proof, emotion brick material, or examples that strengthen a core lesson. By itself it doesn't serve the angle, but it amplifies a core lesson that does.
+Provides context, proof, parable material, or examples that strengthen a core lesson. By itself it doesn't serve the angle, but it amplifies a core lesson that does.
 
 **Test:** "Does this material strengthen a core lesson without being a lesson of its own?"
 
@@ -36,7 +36,7 @@ Examples of support material:
 - A counterexample that sharpens what the core lesson is NOT
 - Background context (history, why this matters) for a core concept
 
-Tag `support` and note which core lesson it backs. vid-structure will surface support material as brick candidates in the segment that hosts the parent core lesson.
+Tag `support` and note which core lesson it backs. vid-structure will surface support material as block candidates in the segment that hosts the parent core lesson.
 
 ### Combine
 
@@ -104,9 +104,9 @@ Walk the brain-dump in the order it was written. For each block of material:
 | # | Material | Tag | Notes |
 |---|---|---|---|
 | 1 | "Most channels stall because they post too often" | `core` | The thesis statement; this is segment 1 |
-| 2 | "Lost 30% in 12-15 min window, like Linus" | `support` for #1 | Story brick candidate, parent = #1 |
+| 2 | "Lost 30% in 12-15 min window, like Linus" | `support` for #1 | Story block candidate, parent = #1 |
 | 3 | "Daily posting trains algorithm to expect frequency over quality" | `combine-with-1` | Same lesson, sharper phrasing → merge into #1 |
-| 4 | "Retention curve dropped at minute 12 across 8 videos" | `support` for #7 | Proof brick candidate, parent = #7 |
+| 4 | "Retention curve dropped at minute 12 across 8 videos" | `support` for #7 | Proof block candidate, parent = #7 |
 | 5 | "Backstory: quit job 2019" | `tangent` | Credibility material for vid-intro, not a body segment |
 | 6 | "Stop using stock B-roll" | `tangent` | Different angle (production, not retention) |
 | 7 | "12-minute mark matters because algorithm samples there" | `core` | The named mechanism; likely segment 3 (title-promise payoff territory) |
@@ -137,5 +137,5 @@ The creator may push back on a cut or a tag. When this happens:
 - **Mining without an angle.** Don't mine before piece.md framing is locked. The angle determines what's core vs tangent. Without it, everything is "interesting."
 - **Cutting silently.** Always log cuts. Creator may know the cut is the gold.
 - **Combining destructively.** When combining two lessons, preserve both stories/proofs/material. Discard only the redundant framing.
-- **Forcing every core into a segment.** Some core material lives as load-bearing support inside another segment's logic brick. Not every core is segment-worthy.
+- **Forcing every core into a segment.** Some core material lives as load-bearing support inside another segment's principle. Not every core is segment-worthy.
 - **Counting cores against format target.** If mining yields 3 cores and format wants 6 segments, don't pad with tangents to hit the count. Surface the gap. Either the brain-dump is thin (route back to vid-intake) or the format is wrong (route back to vid-framing).

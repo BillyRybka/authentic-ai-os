@@ -3,14 +3,14 @@ type: reference
 scope: shared
 loaded_by: [vid-segment]
 status: active
-tags: [reference, visual-demo, emotion-brick]
+tags: [reference, visual-demo, parable]
 ---
 
 # Visual Demo Builder
 
 A visual demo turns a problem you can't see into something you can. Pure facts retain about 10% of viewer attention. A strong visual demo can push retention on that point to 65% or higher because the viewer's brain does the work itself: it sees the visual, draws the connection, and forms the memory in one stroke.
 
-This guide teaches how visual demos work. vid-segment loads it inline during writing when the segment's emotion brick is a Visual Demo. There is **no Visual Demo bank**. Demos are created in-the-moment for each segment because the patterns transfer across videos, but specific demos don't.
+This guide teaches how visual demos work. vid-segment loads it inline during writing when the segment's parable is a Visual Demo. There is **no Visual Demo bank**. Demos are created in-the-moment for each segment because the patterns transfer across videos, but specific demos don't.
 
 ## Why no bank
 
@@ -30,7 +30,7 @@ The creator's signature visual style (icon charts, color-coded thumbnails) lives
 ## When this fires
 
 vid-segment loads this file inline when:
-- The segment's emotion brick is Visual Demo (per `knowledge/emotion-brick-decision-matrix.md`)
+- The segment's parable is Visual Demo (per `knowledge/parable-decision-matrix.md`)
 - The creator wants help generating a demo for a specific point mid-write
 
 The creator never invokes a "vid-visual-demo-craft" sub-skill. The 3-step brainstorm runs inline in vid-segment's structure pass.
@@ -123,7 +123,7 @@ If yes to any, this sub-type fits.
 
 ## The 3-step brainstorm process
 
-This is the spine of inline visual demo crafting in vid-segment. Walk the creator through these steps when the segment's emotion brick is Visual Demo.
+This is the spine of inline visual demo crafting in vid-segment. Walk the creator through these steps when the segment's parable is Visual Demo.
 
 ### Step 1: Name the point that needs the demo
 
@@ -173,7 +173,7 @@ After a visual demo lands, the viewer doesn't know if the moment ended or what c
 
 ### Verbal demo without the visual
 
-If the script says "imagine 16 sugar cubes next to a Coke can," the demo fails. Visual demos require ACTUAL VISUALS. If filming or editing can't produce the visual, swap to a different brick type (story or metaphor).
+If the script says "imagine 16 sugar cubes next to a Coke can," the demo fails. Visual demos require ACTUAL VISUALS. If filming or editing can't produce the visual, swap to a different block type (story or metaphor).
 
 ### Forcing a sub-type that doesn't fit
 
@@ -181,13 +181,13 @@ If the point is genuinely "show how this works step-by-step over time," that's a
 
 ## Transitions out of a visual demo
 
-After the demo lands, transition into the logic brick. Three patterns work:
+After the demo lands, transition into the principle. Three patterns work:
 
 - "So now that you've seen the problem, here's how to fix it."
 - "Let me show you the steps to get the same result."
 - "Here's how to apply this for yourself."
 
-The pattern signals the demo is done and the logic is starting. Without this signal, retention drops at the seam.
+The pattern signals the demo is done and the principle is starting. Without this signal, retention drops at the seam.
 
 ## Reusability notes
 
@@ -204,9 +204,9 @@ What does NOT get reused:
 
 When the creator nails a demo and wants to remember the IDEA for inspiration, drop a note in `content/pieces/{slug}/async-brick-notes.md` or just trust the script's record. The bank model is wrong for this material type.
 
-## When to swap to a different brick type
+## When to swap to a different block type
 
-If 2-3 brainstorm rounds don't produce a demo concept the creator believes in, swap the emotion brick to Story or Metaphor. The segment's job is to land the point with emotion before logic; the specific brick type is replaceable.
+If 2-3 brainstorm rounds don't produce a demo concept the creator believes in, swap the parable to Story or Metaphor. The segment's job is to land the point with emotion before logic; the specific block type is replaceable.
 
 Signals to swap:
 - All 3 candidates feel forced

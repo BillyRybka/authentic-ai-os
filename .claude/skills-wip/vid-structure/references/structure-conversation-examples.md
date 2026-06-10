@@ -28,25 +28,25 @@ A creator with a tight brain-dump on a clean angle. Outline proposal lands first
 >
 > ## Step 1: Why posting daily backfires
 > **Material:** brain-dump on frequency-vs-quality + Linus example
-> **Bricks:** [[story-linus-retention]] (story), [[proof-retention-curve]] (proof)
+> **Blocks:** [[story-linus-retention]] (story), [[proof-retention-curve]] (proof)
 > **Bullets:** open on Linus's pattern → name the algorithm mechanism → payoff: the algorithm rewards retention over volume
 > **Handoff:** "...but there's a specific window where this all breaks down."
 >
 > ## Step 2: The 12-minute window
 > **Material:** brain-dump on minute-12 retention drops, 8-video analysis
-> **Bricks:** [[proof-12min-curve]], framework candidate: 'algorithm-sampling-window' (no bank match)
+> **Blocks:** [[proof-12min-curve]], framework candidate: 'algorithm-sampling-window' (no bank match)
 > **Bullets:** name the window → show the curve → payoff: why minute 12 specifically
 > **Handoff:** "...so if posting daily is wrong AND the 12-min window is the test, what's the actual fix?"
 >
 > ## Step 3: The retention-first restructure (TITLE-PROMISE PAYOFF)
 > **Material:** brain-dump on shorter-videos-one-payoff + the 22% jump
-> **Bricks:** [[proof-22-percent-jump]], [[framework-one-big-payoff]] if exists, else inline craft
+> **Blocks:** [[proof-22-percent-jump]], [[framework-one-big-payoff]] if exists, else inline craft
 > **Bullets:** name the principle → walk the restructure → payoff: 22% personal proof
 > **Handoff:** "...and once retention jumps, the algorithm starts pushing your videos to cold viewers."
 >
 > ## Step 4: What happens after retention fixes
 > **Material:** brain-dump on the compounding effect (light material, flag)
-> **Bricks:** [[proof-cold-viewer-jump]] if available
+> **Blocks:** [[proof-cold-viewer-jump]] if available
 > **Bullets:** the compounding effect → the new ceiling → payoff: where this leads
 > **Handoff:** to ending. Pivots to "the next problem after retention fixes."
 >
@@ -64,7 +64,7 @@ A creator with a tight brain-dump on a clean angle. Outline proposal lands first
 
 [script.md written with 3 body sections, intro+ending stubbed, piece.md gets piece_status: structured, tension_plan, segment_purposes.]
 
-**Why this worked:** AI surfaced the full outline with material anchors, brick candidates, tension role, AND handoffs in one shot. Creator made one structural decision (cut Step 4), AI re-checked tension graph still holds, locked. No NPC-ticking through phases.
+**Why this worked:** AI surfaced the full outline with material anchors, block candidates, tension role, AND handoffs in one shot. Creator made one structural decision (cut Step 4), AI re-checked tension graph still holds, locked. No NPC-ticking through phases.
 
 ## Example 2: Re-structure mode
 
@@ -98,7 +98,7 @@ A creator runs vid-structure on a piece that already has `piece_status: structur
 > - Item 3: The hook-promise mistake (combined: hook is the contract, broken hook = broken trust)
 > - Item 4: Retention mistake (was Item 5, now the title-promise payoff)
 >
-> Item 3's material now combines hook-gap brain-dump + viewer-betrayal patterns. Bricks: [[story-tom-startup]], [[metaphor-broken-contract]]. Tension: still climbs toward Item 4. Locked?"
+> Item 3's material now combines hook-gap brain-dump + viewer-betrayal patterns. Blocks: [[story-tom-startup]], [[metaphor-broken-contract]]. Tension: still climbs toward Item 4. Locked?"
 
 > **Creator:** "Locked."
 
@@ -122,31 +122,31 @@ A case-study piece. The outline isn't N segments. It's a narrative arc.
 >
 > ## Setup: Where Steve started
 > **Material:** brain-dump on Steve's state (wife pregnant, lost job, runway gone, $0 MRR)
-> **Bricks:** [[story-steve-week-zero]] (the stakes-laden open)
+> **Blocks:** [[story-steve-week-zero]] (the stakes-laden open)
 > **Bullets:** name the stakes → name the goal → name what was at stake if it didn't work
 > **Role:** raises tension to maximum at the open (stakes drive emotional weight)
 >
 > ## Problem: Why nothing was working
 > **Material:** brain-dump on the 3 things Steve tried that didn't move the needle
-> **Bricks:** [[proof-failed-attempts]] if exists; otherwise narrate from brain-dump
+> **Blocks:** [[proof-failed-attempts]] if exists; otherwise narrate from brain-dump
 > **Bullets:** the 3 dead-ends → why each failed → the moment of realizing he was stuck
 > **Role:** deepens stakes. Viewer feels the trap.
 >
 > ## Action: What we actually did
 > **Material:** brain-dump on the 4-week methodology rollout (week-by-week)
-> **Bricks:** [[framework-9-week-arc]], [[proof-week-3-traction]]
+> **Blocks:** [[framework-9-week-arc]], [[proof-week-3-traction]]
 > **Bullets:** the named system → the first week's pivot → the moment retention started climbing → the breakthrough week
 > **Role:** rising action. Tension climbs toward Outcome.
 >
 > ## Outcome: $80k/mo (TITLE-PROMISE PAYOFF)
 > **Material:** brain-dump on the final number + the week it landed
-> **Bricks:** [[proof-80k-mrr-screenshot]], client video clip if available
+> **Blocks:** [[proof-80k-mrr-screenshot]], client video clip if available
 > **Bullets:** name the number → name the timeframe → land the moment
 > **Role:** the climax. The title's promise lands, full payoff.
 >
 > ## Lesson + Steps: What this proves and what you can do
 > **Material:** brain-dump on the one big takeaway + 1-3 replicable steps
-> **Bricks:** [[framework-9-week-arc]] (named again, this time as the takeaway)
+> **Blocks:** [[framework-9-week-arc]] (named again, this time as the takeaway)
 > **Bullets:** the ONE big lesson → 1-3 specific steps for the viewer → tie to offer (sales goal)
 > **Role:** falling action / application. Viewer converts from 'wow' to 'I could do this'.
 >

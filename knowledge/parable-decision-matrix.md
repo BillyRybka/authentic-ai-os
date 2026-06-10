@@ -3,14 +3,14 @@ type: reference
 scope: shared
 loaded_by: [vid-intro, vid-segment, vid-ending]
 status: active
-tags: [reference, emotion-brick, decision-matrix]
+tags: [reference, parable, decision-matrix]
 ---
 
-# Emotion Brick Decision Matrix
+# Parable Decision Matrix
 
-Examples-first. Five questions decide which brick a segment uses. Each brick maps to a sub-type. Each sub-type has a worked example and a near-miss so the boundary is clear.
+Examples-first. Five questions decide which block a segment uses. Each block maps to a sub-type. Each sub-type has a worked example and a near-miss so the boundary is clear.
 
-This file is reference material for Claude to think with at structure-pass time. The creator never sees the matrix; the skill picks the brick, surfaces it as part of the structure draft, and lets the creator override.
+This file is reference material for Claude to think with at structure-pass time. The creator never sees the matrix; the skill picks the block, surfaces it as part of the structure draft, and lets the creator override.
 
 ## The matrix
 
@@ -22,21 +22,21 @@ Ask in order. The first YES answer wins.
 4. **Does the viewer need to FEEL the pain or urgency of staying stuck?** YES → Story
 5. **Is the idea abstract, hard to grasp, or too familiar to feel fresh?** YES → Metaphor
 
-If multiple YES, surface ALL matched bricks as candidates. The three brick types are peers in the source teaching, not a ranked hierarchy. Source treats Visual Demo, Story, and Metaphor as separate tools with separate when-to-use criteria (lessons 7, 8, 9 respectively). Lesson 9 specifically notes metaphors drive some of the strongest performing creator content. Pick by fit to THIS segment's idea and the creator's voice, not by a standing rank.
+If multiple YES, surface ALL matched blocks as candidates. The three block types are peers in the source teaching, not a ranked hierarchy. Source treats Visual Demo, Story, and Metaphor as separate tools with separate when-to-use criteria (lessons 7, 8, 9 respectively). Lesson 9 specifically notes metaphors drive some of the strongest performing creator content. Pick by fit to THIS segment's idea and the creator's voice, not by a standing rank.
 
-A few non-binding fit cues that may help the creator pick when multiple bricks match:
+A few non-binding fit cues that may help the creator pick when multiple blocks match:
 
 - Visual demos land fastest when the viewer's eye can do the cognitive work (the problem is genuinely invisible, or a contrast is sharper than a description).
 - Stories carry farther when the viewer needs to FEEL the consequence and the creator has a real lived moment to anchor.
 - Metaphors compress hardest when the idea is abstract, familiar, or both — and the comparison is one the avatar already knows.
 
-Surface 1-3 candidate bricks (one per matched YES) so the creator can pick. Don't auto-default to Visual Demo just because it scored first.
+Surface 1-3 block candidates (one per matched YES) so the creator can pick. Don't auto-default to Visual Demo just because it scored first.
 
-If all NO: the segment may be a tight Logic-only step (short process default) or the brick is supplied by a prior segment. Confirm with the format planner before writing.
+If all NO: the segment may be a tight principle-only step (short process default) or the block is supplied by a prior segment. Confirm with the format planner before writing.
 
 ---
 
-## Brick 1: Visual Demo, Show-the-Problem
+## Parable 1: Visual Demo, Show-the-Problem
 
 Turns invisible into visible. Numbers become piles. Hidden mistakes become slow-mo. Use when stating the number alone would make viewers shrug.
 
@@ -78,7 +78,7 @@ Why it misses: the problem (inconsistent thumbnails) is already visible. The gri
 
 ---
 
-## Brick 2: Visual Demo, Contrast
+## Parable 2: Visual Demo, Contrast
 
 Side-by-side: old way vs. new way, wrong vs. right, before vs. after. Triggers the "Version A vs. Version B" moment. Viewer realizes they're version A, wants to be version B.
 
@@ -114,11 +114,11 @@ Concept: handwritten morning pages vs. typed morning pages.
 
 Spoken: "Old way is handwritten. New way is typed. Look at the difference."
 
-Why it misses: handwriting vs. typing isn't a wrong/right contrast, it's a preference. Contrast Demo needs one side to be CLEARLY worse. If the contrast is actually a tradeoff, drop the brick or use Breakdown Demo to teach when to use which.
+Why it misses: handwriting vs. typing isn't a wrong/right contrast, it's a preference. Contrast Demo needs one side to be CLEARLY worse. If the contrast is actually a tradeoff, drop the block or use Breakdown Demo to teach when to use which.
 
 ---
 
-## Brick 3: Visual Demo, Breakdown
+## Parable 3: Visual Demo, Breakdown
 
 Pause, zoom, annotate a real thing on screen. Best for visually specific skills (design, marketing, body language, analytics, sales pages, thumbnails).
 
@@ -153,7 +153,7 @@ Why it misses: viewers can't process where to look. Breakdown Demos need the scr
 
 ---
 
-## Brick 4: Story
+## Parable 4: Story
 
 The viewer needs to FEEL the pain (or the win) before the lesson lands. Problem-Action-Outcome format, 20-30 seconds spoken aloud. See `knowledge/story-capture-guide.md` for the canonical structure and the 6 prompts.
 
@@ -191,9 +191,9 @@ Why it misses: no name, no number, no specific action, no specific result. Gener
 
 ---
 
-## Brick 5: Metaphor
+## Parable 5: Metaphor
 
-The idea is abstract or too familiar. A familiar comparison makes it click. See `knowledge/metaphor-builder.md` for the 3-step builder. See `knowledge/metaphor-integration.md` for placement and the bridge-back-to-logic.
+The idea is abstract or too familiar. A familiar comparison makes it click. See `knowledge/metaphor-builder.md` for the 3-step builder. See `knowledge/metaphor-integration.md` for placement and the bridge to the principle.
 
 **Worked (channel-strategy niche):**
 
@@ -225,9 +225,9 @@ Why it misses: a metaphor lands fast or doesn't land. Three sentences max. If it
 
 ---
 
-## Bridge-back-to-logic
+## Bridge to the principle
 
-Every emotion brick needs a transition into the logic block. Three proven bridges (from `knowledge/metaphor-builder.md` and the source material's transition guidance):
+Every parable needs a transition into the principle. Three proven bridges (from `knowledge/metaphor-builder.md` and the source material's transition guidance):
 
 - "So what does that actually mean for you?"
 - "Here's how to apply this in real life."
@@ -239,10 +239,10 @@ The bridge is one sentence. Don't drag it. The viewer is primed; deliver the les
 
 ## What about Testimonials and Frameworks?
 
-Testimonials and frameworks aren't emotion-brick types. They're logic-block components that get pulled IN ADDITION to the emotion brick.
+Testimonials and frameworks aren't parable types. They're principle components that get pulled IN ADDITION to the parable.
 
-- **Testimonial.** Drops in as social proof inside the logic block. "And here's what [Client] said about that exact week" + a verbatim quote in a `> [!quote]` callout.
-- **Framework.** IS the logic block when the segment is teaching a creator-owned named system. The brick precedes it (story / metaphor / demo); the framework is what the brick sets up.
+- **Testimonial.** Drops in as social proof inside the principle. "And here's what [Client] said about that exact week" + a verbatim quote in a `> [!quote]` callout.
+- **Framework.** IS the principle when the segment is teaching a creator-owned named system. The block precedes it (story / metaphor / demo); the framework is what the block sets up.
 
 See `knowledge/proof-placement-rules.md` for proof and testimonial placement. See `vid-segment/references/framework-shapes.md` for which framework shape to use when (skill-local to vid-segment).
 
@@ -254,8 +254,8 @@ At Phase 2 (structure pass), the skill:
 
 1. Pulls the segment's job from `piece.md` and the format planner
 2. Asks the 5 matrix questions silently against the segment's job
-3. Surfaces ALL matched brick types (every YES) as candidates, plus the format planner's segment shape default if relevant
-4. For each candidate brick type, surfaces 0-3 bank candidates that match
-5. Lets the creator pick the brick type AND swap candidates
+3. Surfaces ALL matched block types (every YES) as candidates, plus the format planner's segment shape default if relevant
+4. For each candidate block type, surfaces 0-3 bank candidates that match
+5. Lets the creator pick the block type AND swap candidates
 
-If the brick choice and the format planner conflict (e.g. listicle Point 4 should default to a brick but the matrix says all-NO), the format planner wins. The brick exists for a structural reason in the format, even if the matrix doesn't fire.
+If the block choice and the format planner conflict (e.g. listicle Point 4 should default to a block but the matrix says all-NO), the format planner wins. The block exists for a structural reason in the format, even if the matrix doesn't fire.

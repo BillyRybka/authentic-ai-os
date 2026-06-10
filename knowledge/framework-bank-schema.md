@@ -85,7 +85,7 @@ used_in: []
 ## How entries get used
 
 1. `vid-capture` Stage F (Log path) saves frameworks when they crystallize. Standalone invocation: "I have a system called X, save it." Sub-skill invocation: per-video skills route here after inline crafting.
-2. Per-video skills query this bank when a segment's logic brick is a framework. If a match exists, the bank entry locks the structure for that segment. If no match exists, they load `knowledge/framework-builder.md` and walk the 5-step build inline, then offer to save the result.
+2. Per-video skills query this bank when a segment's principle is a framework. If a match exists, the bank entry locks the structure for that segment. If no match exists, they load `knowledge/framework-builder.md` and walk the 5-step build inline, then offer to save the result.
 
 ## Where the craft flow lives
 

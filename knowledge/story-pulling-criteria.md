@@ -62,7 +62,7 @@ Why it misses: the viewer is here for the time problem, not the pricing problem.
 
 ## Criterion 3: Outcome specificity
 
-The outcome must be specific (numbers, named timeframes, named results). Vague outcomes kill the brick.
+The outcome must be specific (numbers, named timeframes, named results). Vague outcomes kill the block.
 
 **Worked:**
 
@@ -140,13 +140,13 @@ You'll often have N candidates and no single one passes all five criteria. Resol
 
 1. **Stage match wins.** A criterion-1 mismatch breaks the segment harder than any other miss.
 2. **Problem match second.** A wrong-problem story is a wrong-segment story.
-3. **Outcome specificity third.** If the bank entry is thin, route to vid-capture or skip the brick.
+3. **Outcome specificity third.** If the bank entry is thin, route to vid-capture or skip the block.
 4. **Type and reuse are tiebreakers.** When two candidates pass 1-3, type and reuse pick the winner.
 
 If NO candidate passes 1-3, the bank doesn't have what the segment needs. Two options:
 
 - **Route to vid-capture** mid-skill to capture a fitting story (sub-skill mode of vid-capture). Resume the segment with the new entry.
-- **Switch the brick type.** Use Visual Demo (Show-the-Problem or Contrast) or Metaphor instead. The segment can still work without a story.
+- **Switch the block type.** Use Visual Demo (Show-the-Problem or Contrast) or Metaphor instead. The segment can still work without a story.
 
 ---
 
@@ -161,10 +161,10 @@ Story candidates for this segment (problem 2, drowning in client work):
 2. [[anonymous-client-15-hour-week-cut]]: client win, freed 15hr/wk via contractor, stage match (avatar at 60hr/wk)
 3. [[my-first-burnout-2021]]: own story, admits failure mid-arc, credibility framing
 
-Pick one, swap the brick type, or want me to pull more?
+Pick one, swap the block type, or want me to pull more?
 ```
 
-Three is the cap. More than three causes choice paralysis. If only one passes the criteria, surface only one and explain why the others didn't fit. If zero pass, surface the gap and offer the two fallback routes (capture or swap brick).
+Three is the cap. More than three causes choice paralysis. If only one passes the criteria, surface only one and explain why the others didn't fit. If zero pass, surface the gap and offer the two fallback routes (capture or swap block).
 
 ---
 
@@ -180,4 +180,4 @@ At Phase 2 (structure pass):
 6. On creator pick, lock the candidate
 7. At Phase 4 (save), update the entry's `used_in:` and flip `status:` to `used`
 
-If criteria 1-3 produce zero viable candidates, route to capture or swap the brick before writing prose.
+If criteria 1-3 produce zero viable candidates, route to capture or swap the block before writing prose.
