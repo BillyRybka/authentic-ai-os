@@ -64,7 +64,7 @@ Two checks, in order. Both silent. Don't announce them. Only surface output if a
 
 If both present: continue to the foundation state check below.
 
-If either is missing: tell the creator in one short line, then invoke `creator-setup` via the Skill tool. Don't continue with foundation's routing until creator-setup completes. Be honest about state — if `foundation/` exists but `CLAUDE.md` doesn't (or vice versa), name what's actually missing. Don't claim "not set up" if it's partially set up.
+If either is missing: tell the creator in one short line, then invoke `creator-setup` via the Skill tool. Don't continue with foundation's routing until creator-setup completes. Be honest about state. If `foundation/` exists but `CLAUDE.md` doesn't (or vice versa), name what's actually missing. Don't claim "not set up" if it's partially set up.
 
 Shape (when nothing is set up):
 
@@ -72,7 +72,7 @@ Shape (when nothing is set up):
 
 Shape (when partially set up, e.g. `foundation/` missing but `CLAUDE.md` exists):
 
-> "Workspace is partially set up — I see `CLAUDE.md` but no `foundation/` folder. Running `creator-setup` to fix the structure before we go further."
+> "Workspace is partially set up. I see `CLAUDE.md` but no `foundation/` folder. Running `creator-setup` to fix the structure before we go further."
 
 Then immediately invoke `creator-setup` via the Skill tool. After it completes, the creator can re-invoke `/foundation` to start the interview chain.
 

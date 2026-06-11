@@ -68,7 +68,7 @@ aligned_with: "Reinforces strength-as-highest-leverage-workout for time-poor fou
 **Brain dump topic:** "How to pick a barbell for a home gym setup. Bumper plates vs iron, knurling, sleeve length."
 
 **Skill surfacing:**
-> "Inside your iceberg, this fits busy founders setting up sustainable home strength. But this isn't one of your Top 3 problems specifically — your 3 are time scarcity, cardio-bias, inconsistency. This is more equipment-selection. Want to ship it as an outlier within the iceberg, or would the angle land cleaner against one of the Top 3?"
+> "Inside your iceberg, this fits busy founders setting up sustainable home strength. But this isn't one of your Top 3 problems specifically. Your 3 are time scarcity, cardio-bias, inconsistency. This is more equipment-selection. Want to ship it as an outlier within the iceberg, or would the angle land cleaner against one of the Top 3?"
 
 **Creator:** "It's an outlier. I want to make it because clients keep asking. The angle would force-fit if I tied it to time scarcity."
 

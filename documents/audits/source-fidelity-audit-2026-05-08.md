@@ -86,7 +86,7 @@ tags: [audit, source-fidelity, examples-density, phase-3a]
 
 3. **Claim:** "Sugar cubes / Coke can example for Show-the-Problem."
    - WORKING-NOTES cites `lesson-07-emotion-brick-visual-demos/notes.md` line 26.
-   - Verified: actual location is line 27 (the bullet starts at line 27 with "Show the Problem — Example: Weight loss channel..."). Off-by-one. SOFT-PASS, fix at productization scrub.
+   - Verified: actual location is line 27 (the bullet starts at line 27 with "Show the Problem. Example: Weight loss channel..."). Off-by-one. SOFT-PASS, fix at productization scrub.
 
 4. **Claim:** "Frameworks Decision Matrix" (Happen in order → arrows, etc.).
    - WORKING-NOTES cites `materials-shared/ytgs-video-planner.txt` lines 2122-2131.
@@ -97,9 +97,9 @@ tags: [audit, source-fidelity, examples-density, phase-3a]
    - Verified: lines 1922-1949 contain the Emotion Brick Decision Matrix with all 5 questions and brick mappings. PASS.
 
 **Citations missing:** Three productized examples in WORKING-NOTES are correctly flagged as synthesized:
-- "Steve case study ($42k → $74k MRR in 9 weeks)" — flagged as "Composite, niche-substituted into representative B2B-coaching avatar." This is the right honesty bar. Synthetic but plausible. PASS.
-- "Re-engagement Trigger framework" — flagged as "Synthesized for setup-tension-payoff-shapes.md... Plausible-sounding framework not pulled from any real source." PASS.
-- "Restaurant with no recipes metaphor" / "Bouncer-at-a-club metaphor" — both flagged as "Original synthesis." PASS.
+- "Steve case study ($42k → $74k MRR in 9 weeks)", flagged as "Composite, niche-substituted into representative B2B-coaching avatar." This is the right honesty bar. Synthetic but plausible. PASS.
+- "Re-engagement Trigger framework", flagged as "Synthesized for setup-tension-payoff-shapes.md... Plausible-sounding framework not pulled from any real source." PASS.
+- "Restaurant with no recipes metaphor" / "Bouncer-at-a-club metaphor", both flagged as "Original synthesis." PASS.
 
 **Attribution leaks:** None. Productized files contain no references to Ed Lawrence, YGS, ytgs, Synthia, IntroBot, RevTrack, Chris Do, Craig Ferguson, Film Booth, or any other source-curriculum / instructor / public-figure name. The Chris Do Venn diagram example (lesson-10 line 31) is correctly stripped to "Passion + Outcomes + Compensation = Entrepreneurial Sweet Spot" with no Chris Do attribution in `references/framework-shapes.md` (line 114). Locked decision #15 honored.
 
@@ -158,8 +158,8 @@ tags: [audit, source-fidelity, examples-density, phase-3a]
 **Attribution leaks:** None. Productized files (`SKILL.md`, `references/*.md`, `assets/ending-block-template.md`) contain no references to Ed Lawrence, YGS, ytgs, Film Booth, RevTrack, Synthia, or any other source-curriculum / instructor / tool name. The 700,000 views Film Booth example is correctly anonymized in `references/end-screen-design.md` line 22 ("one creator's chain produced 700,000+ views from one viral entry"). Locked decision #15 honored. RevTrack referenced as "conversion-tracking the creator uses" per attribution-scrub.
 
 **Synthesized examples correctly flagged:**
-- "Steve went from 0 clients to $80k a month in 9 weeks" — flagged as composite from format-planners/case-study.md.
-- Bridge phrasings ("Watch this next, where I'll show you..." etc.) — flagged as direct adaptations from `banks/transition-bank.md` BE-3, BE-6, BE-7 patterns.
+- "Steve went from 0 clients to $80k a month in 9 weeks", flagged as composite from format-planners/case-study.md.
+- Bridge phrasings ("Watch this next, where I'll show you..." etc.), flagged as direct adaptations from `banks/transition-bank.md` BE-3, BE-6, BE-7 patterns.
 
 #### Pass 2, examples-density
 

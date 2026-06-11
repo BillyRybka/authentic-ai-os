@@ -96,7 +96,7 @@ The best outcomes have a twist. If the end is wildly different from what anyone 
 
 If the creator says "I don't have a story for this," walk through these. Each is designed to surface a memory they forgot they had. Each has dynamic follow-ups: reframe if the opener doesn't land, pivot to a different prompt if the angle isn't right.
 
-**One prompt per round. Don't rapid-fire all six.** Pick the prompt that matches the video's emotional tone and the avatar's pain. Start there. If it doesn't land within 1-2 rounds, pivot to the next-best prompt — don't grind on a prompt that isn't unlocking a memory.
+**One prompt per round. Don't rapid-fire all six.** Pick the prompt that matches the video's emotional tone and the avatar's pain. Start there. If it doesn't land within 1-2 rounds, pivot to the next-best prompt. Don't grind on a prompt that isn't unlocking a memory.
 
 ### How to use each prompt
 
@@ -104,12 +104,12 @@ For every prompt below:
 
 1. **Open with the conversational version** (not the dimensions). Make it feel like a real interview question.
 2. **Listen for a thin or vague response** ("I guess so," "I think one time," "well, I had something like that..."). Thin = no specific moment, no time/place, no concrete consequence.
-3. **Reframe** if the first phrasing doesn't unlock. Use the alternate phrasings under each prompt — sometimes a small wording change opens the door.
+3. **Reframe** if the first phrasing doesn't unlock. Use the alternate phrasings under each prompt. Sometimes a small wording change opens the door.
 4. **Drill the dimensions** if a memory IS surfacing but is vague. Use the 3 sub-questions plus the generic probes in "Dig deeper probes" below.
 5. **Pivot** if 1-2 rounds of reframe don't unlock a memory. Route to the next-best prompt for this video's tone (see Pivot routes per prompt).
 6. **Bail to "skip" or "use a placeholder"** if 3 prompts in a row don't land. Don't force a story that isn't there.
 
-### Prompt 1 — Embarrassing First Attempt
+### Prompt 1: Embarrassing First Attempt
 
 **Opener:** "What's a time you tried [the thing this video teaches] for the first time and it went badly? Even better if it's embarrassing now looking back."
 
@@ -119,7 +119,7 @@ For every prompt below:
 - "First public attempt. First time someone watched you try."
 
 **Drill (after a memory surfaces):**
-- What made it embarrassing — what specifically was bad?
+- What made it embarrassing, what specifically was bad?
 - How did you react in the moment? Did you keep going or quit?
 - What did you learn that shaped how you do it now?
 
@@ -127,11 +127,11 @@ For every prompt below:
 - Thin: "Yeah I had a bad first video, it didn't get many views." (no moment, no specifics)
 - Strong: "I filmed my first video on my laptop webcam, the audio was distorted, and my mom commented 'are you okay?' before anyone else watched it. I didn't post for 6 months after."
 
-**Pivot routes:** if the creator's "first attempt" memory is too distant or rosy, try Prompt 2 (Costly Rookie Mistake — sharper because of the cost) or Prompt 6 (Did What Taught — sharper because of the betrayal angle).
+**Pivot routes:** if the creator's "first attempt" memory is too distant or rosy, try Prompt 2 (Costly Rookie Mistake, sharper because of the cost) or Prompt 6 (Did What Taught, sharper because of the betrayal angle).
 
-### Prompt 2 — Costly Rookie Mistake
+### Prompt 2: Costly Rookie Mistake
 
-**Opener:** "Tell me about a time you made a beginner mistake that actually cost you something — money, time, a relationship, an opportunity."
+**Opener:** "Tell me about a time you made a beginner mistake that actually cost you something: money, time, a relationship, an opportunity."
 
 **Reframes:**
 - "What's a mistake you'd undo if you could? Not a small one. One that hurt."
@@ -147,11 +147,11 @@ For every prompt below:
 - Thin: "I should've niched down sooner."
 - Strong: "I spent $4,200 on Facebook ads to a generic landing page and got two leads. Both ghosted. I burned through three months of savings."
 
-**Pivot routes:** if the creator gives a "shoulda" without a specific cost, pivot to Prompt 6 (Did What Taught — same betrayal energy with a clearer pivot point) or Prompt 4 (Advice Ignored — easier if the cost is emotional rather than financial).
+**Pivot routes:** if the creator gives a "shoulda" without a specific cost, pivot to Prompt 6 (Did What Taught, same betrayal energy with a clearer pivot point) or Prompt 4 (Advice Ignored, easier if the cost is emotional rather than financial).
 
-### Prompt 3 — Sudden Breakthrough Moment
+### Prompt 3: Sudden Breakthrough Moment
 
-**Opener:** "When did the thing you teach actually click for you? Not gradually — the specific moment."
+**Opener:** "When did the thing you teach actually click for you? Not gradually, the specific moment."
 
 **Reframes:**
 - "What's the moment you stopped guessing and started knowing?"
@@ -160,18 +160,18 @@ For every prompt below:
 
 **Drill:**
 - What had you been struggling with right before the breakthrough?
-- What exactly shifted — what changed in your perspective or method?
+- What exactly shifted, what changed in your perspective or method?
 - How did your results change immediately after?
 
 **Thin vs strong:**
 - Thin: "I just kept practicing and eventually got better."
-- Strong: "I was on call #47 of the year, getting hung up on for the third time that morning, and I tried a different opener — 'Hey, I'm cold-calling you, want me to keep going or hang up?' The guy laughed and gave me 8 minutes. Closed him. Used that opener every cold call after."
+- Strong: "I was on call #47 of the year, getting hung up on for the third time that morning, and I tried a different opener, 'Hey, I'm cold-calling you, want me to keep going or hang up?' The guy laughed and gave me 8 minutes. Closed him. Used that opener every cold call after."
 
-**Pivot routes:** breakthroughs are often quiet, not dramatic. If the creator can't name a moment, try Prompt 5 (Tiny Tweak — same shape but framed as a small change) or Prompt 4 (Advice Ignored — sometimes breakthroughs come from finally listening).
+**Pivot routes:** breakthroughs are often quiet, not dramatic. If the creator can't name a moment, try Prompt 5 (Tiny Tweak, same shape but framed as a small change) or Prompt 4 (Advice Ignored, sometimes breakthroughs come from finally listening).
 
-### Prompt 4 — Advice Ignored, Then Learned
+### Prompt 4: Advice Ignored, Then Learned
 
-**Opener:** "Has anyone ever given you advice you blew off — and then later realized they were right?"
+**Opener:** "Has anyone ever given you advice you blew off, and then later realized they were right?"
 
 **Reframes:**
 - "Whose advice do you wish you'd taken sooner?"
@@ -187,9 +187,9 @@ For every prompt below:
 - Thin: "My mom said school was important and I get it now."
 - Strong: "My business coach told me 'stop selling on the call, get them to ask for the offer.' I argued for 20 minutes. Three months later I tried it on a discovery call, the prospect said 'how do I work with you?' before I'd pitched. Closed her. Now it's the whole training I sell."
 
-**Pivot routes:** if no specific advisor comes to mind, try Prompt 6 (Did What Taught — flip side, where wrong advice was followed) or Prompt 3 (Sudden Breakthrough — sometimes the "advice" was self-realized).
+**Pivot routes:** if no specific advisor comes to mind, try Prompt 6 (Did What Taught, flip side, where wrong advice was followed) or Prompt 3 (Sudden Breakthrough, sometimes the "advice" was self-realized).
 
-### Prompt 5 — Tiny Tweak, Huge Payoff
+### Prompt 5: Tiny Tweak, Huge Payoff
 
 **Opener:** "What's the smallest change you ever made that got the biggest result?"
 
@@ -200,16 +200,16 @@ For every prompt below:
 
 **Drill:**
 - What was the exact tweak (one specific change)?
-- Why did it work — what was broken about the old way?
+- Why did it work, what was broken about the old way?
 - What's the lesson someone else can take from this?
 
 **Thin vs strong:**
 - Thin: "I improved my workflow."
 - Strong: "I moved my morning email check from 9am to 4pm. That's it. My deep work doubled. I went from finishing two videos a week to four."
 
-**Pivot routes:** if the creator can't isolate a single tweak, try Prompt 3 (Sudden Breakthrough — same payoff energy, allows for a moment instead of a tweak) or Prompt 1 (Embarrassing First Attempt — sometimes the tweak shows up against the failed first attempt).
+**Pivot routes:** if the creator can't isolate a single tweak, try Prompt 3 (Sudden Breakthrough, same payoff energy, allows for a moment instead of a tweak) or Prompt 1 (Embarrassing First Attempt, sometimes the tweak shows up against the failed first attempt).
 
-### Prompt 6 — Did What You / They Were Taught, But It Didn't Work
+### Prompt 6: Did What You / They Were Taught, But It Didn't Work
 
 **Opener:** "Tell me about a time you followed proven advice or common wisdom in your field and it just didn't work for you."
 
@@ -225,9 +225,9 @@ For every prompt below:
 
 **Thin vs strong:**
 - Thin: "All the advice didn't really fit my niche."
-- Strong: "Every YouTube guru said 'post 3x a week consistently for 6 months.' I did. 18 videos, 200 subs total, no sales. Switched to one video a month, scripted in 10 hours, and went from $0 to $40k in three months. Frequency wasn't the lever — depth was."
+- Strong: "Every YouTube guru said 'post 3x a week consistently for 6 months.' I did. 18 videos, 200 subs total, no sales. Switched to one video a month, scripted in 10 hours, and went from $0 to $40k in three months. Frequency wasn't the lever. Depth was."
 
-**Pivot routes:** if the creator can't think of failed advice they followed, try Prompt 2 (Costly Rookie Mistake — same energy, framed as their own error rather than bad advice) or Prompt 4 (Advice Ignored — flip side).
+**Pivot routes:** if the creator can't think of failed advice they followed, try Prompt 2 (Costly Rookie Mistake, same energy, framed as their own error rather than bad advice) or Prompt 4 (Advice Ignored, flip side).
 
 ### When to bail
 
@@ -235,7 +235,7 @@ If the creator goes 3 prompts deep without a memory surfacing, stop. Either:
 
 - The video doesn't actually need a story (a metaphor or demo might land it faster, see [[metaphor-builder]] or [[parable-decision-matrix]])
 - The creator's lived material on this topic is genuinely thin and the right move is to capture stories from clients, viewers, or studied creators instead
-- The creator needs to come back later — sometimes the right memory surfaces hours after the prompt was asked
+- The creator needs to come back later. Sometimes the right memory surfaces hours after the prompt was asked
 
 Don't fabricate a story to fill the slot. An empty slot beats a thin one.
 

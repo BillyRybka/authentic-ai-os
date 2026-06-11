@@ -41,13 +41,13 @@ If invoked with context from a caller (e.g. "intake for piece={slug}, mode=inspi
 
 ## The 7 modes (auto-detected)
 
-1. **Idea + dump** — creator has a topic plus things they want to say. Most common entry point.
-2. **Outline / notes paste** — creator brings half-formed bullet points or a doc.
-3. **Own transcript** — creator pastes their own Loom, voice memo, call transcript, or past video transcript.
-4. **Inspired-by** — creator wants to make their own evidence-based take on a topic they saw covered elsewhere (competitor video, transcript, article, podcast). Source is INVISIBLE in productized output. The creator never references the original source.
-5. **News-jacking** — fresh feature, release, or event the creator wants to cover. Faster flow.
-6. **Client win** — creator wants a video around a specific result. Skill captures the proof and forces the pivot to a teaching arc, not a client biography.
-7. **Story-first** — creator opens with a moment they had. Skill captures the moment, then locates the lesson that fits the channel.
+1. **Idea + dump**: creator has a topic plus things they want to say. Most common entry point.
+2. **Outline / notes paste**: creator brings half-formed bullet points or a doc.
+3. **Own transcript**: creator pastes their own Loom, voice memo, call transcript, or past video transcript.
+4. **Inspired-by**: creator wants to make their own evidence-based take on a topic they saw covered elsewhere (competitor video, transcript, article, podcast). Source is INVISIBLE in productized output. The creator never references the original source.
+5. **News-jacking**: fresh feature, release, or event the creator wants to cover. Faster flow.
+6. **Client win**: creator wants a video around a specific result. Skill captures the proof and forces the pivot to a teaching arc, not a client biography.
+7. **Story-first**: creator opens with a moment they had. Skill captures the moment, then locates the lesson that fits the channel.
 
 Mode detection happens from the creator's opening message. If ambiguous, surface a short menu and ask. See `references/mode-conversation-examples.md` for full mock dialogues showing each mode in action with worked examples and near-misses.
 
@@ -77,7 +77,7 @@ Confirm the detected mode in one short message before running the full flow:
 
 Once mode is confirmed, open the door for the dump. The exact opener varies by mode (see `references/mode-conversation-examples.md`). For Mode 1:
 
-> "Dump everything you've got — the points you want to make, anything kicking around in your head, raw, unfiltered. I'll listen."
+> "Dump everything you've got, the points you want to make, anything kicking around in your head, raw, unfiltered. I'll listen."
 
 Then SHUT UP. Do not interrupt mid-dump. Let the creator land their full thought before responding. Read-once, respond-once.
 
@@ -108,7 +108,7 @@ Never block the save. The creator's call. The flag in frontmatter signals to dow
 
 ### Phase 5: Drill ONLY where needed
 
-Scan the dumped material. If the dump is rich and clear, skip drilling, go to Phase 6. If the dump has thin spots, ask 1-3 surgical questions max. The detail on push vs pause lives in `references/push-vs-pause-rules.md`. Quick rules:
+Scan the dumped material. If the dump is rich and clear, skip drilling, go to Phase 6. If the dump has thin spots, ask 1-3 surgical questions max. The detail on push vs pause lives in `references/push-vs-pause-rules.md`. Quick rules.
 
 **Push when:**
 - A claim is made with no proof attached ("Where's that number from?")
@@ -117,10 +117,10 @@ Scan the dumped material. If the dump is rich and clear, skip drilling, go to Ph
 - Iceberg or Top 3 alignment was unclear in Phase 4
 
 **Don't push when:**
-- The dump is rich and clear — confirm + move on
-- The creator already said "I'll come back to that" — respect, mark TODO
-- 2 rounds of drilling on one point have not unlocked — bail, mark TODO
-- Creator says "stop, just save" — save with TODOs, end
+- The dump is rich and clear. Confirm + move on
+- The creator already said "I'll come back to that". Respect, mark TODO
+- 2 rounds of drilling on one point have not unlocked. Bail, mark TODO
+- Creator says "stop, just save". Save with TODOs, end
 
 When drilling on a thin story, use the dynamic 6 prompts from `knowledge/story-capture-guide.md`. Do not run all 6. Pick the prompt that fits the topic and the avatar's pain. If the first prompt does not unlock in 1-2 rounds, pivot to the next-best prompt. If 3 prompts in a row do not land, save the dump with a TODO that says "story missing for [point X], capture next session."
 
@@ -129,7 +129,7 @@ When drilling on a thin story, use the dynamic 6 prompts from `knowledge/story-c
 Once the dump is captured and aligned:
 
 1. Propose a kebab-case slug. Source from the topic the creator named, not from the iceberg (the iceberg is generic, the slug is specific to this video).
-2. Confirm slug with creator in one short message: `slug: "frequency-vs-depth-on-youtube"` — sound right?
+2. Confirm slug with creator in one short message: `slug: "frequency-vs-depth-on-youtube"`, sound right?
 3. Create `content/pieces/{slug}/` directory.
 4. Write `content/pieces/{slug}/brain-dump.md` per the schema below.
 5. Confirm save in one line: "Saved to `content/pieces/{slug}/brain-dump.md`. Run `vid-framing` next to lock the angle and format."
@@ -179,7 +179,7 @@ source_internal_only: "{Optional. For inspired-by mode: brief internal note abou
 - {[[metaphor-bank/slug]] if pulled, or new metaphor captured}
 
 ### Claims (no proof attached yet)
-- {Claim 1} — TODO: source proof from [bank or new capture]
+- {Claim 1}. TODO: source proof from [bank or new capture]
 
 ## Open questions / TODOs
 
@@ -206,7 +206,7 @@ source_internal_only: "{Optional. For inspired-by mode: brief internal note abou
 2. **Foundation missing.** Don't run vid-intake without `creator-foundation.md`. Tell the creator to run `vid-foundation` first.
 3. **No alignment captured.** Never save brain-dump.md without iceberg fit and Top 3 alignment fields populated, even if `outlier`. Frontmatter has to be honest.
 4. **Em-dashes.** Brand-level no. Use commas, periods, parens. Every save passes a Vale check.
-5. **"Avatar" replaced with vague terms.** Avatar is specific. Do not soften to "audience" in foundation references — it's the constructed profile of the viewer/buyer per `creator-foundation.md`.
+5. **"Avatar" replaced with vague terms.** Avatar is specific. Do not soften to "audience" in foundation references. It's the constructed profile of the viewer/buyer per `creator-foundation.md`.
 
 ## Soft friction (surface and explain, creator decides)
 

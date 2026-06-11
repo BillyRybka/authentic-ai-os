@@ -81,7 +81,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Creator:** "Day 47. I'd been waking at 4:45am for cold plunges and a 20-min run. Came down with a flu, kept pushing through, ended up bedridden for a week. Lost 8 lbs of muscle. Took me 2 months to rebuild."
 
-**Skill (alignment):** "Inside your iceberg. Problem 3: inconsistency under stress, but flipped — this is over-doing-it under stress. Same thread. Sound right?"
+**Skill (alignment):** "Inside your iceberg. Problem 3: inconsistency under stress, but flipped. This is over-doing-it under stress. Same thread. Sound right?"
 
 **Creator:** "Exactly."
 
@@ -241,7 +241,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Skill:** "Slug: `james-30-min-strength-protocol`. Save?"
 
-**Why this works:** the pivot from client biography to teaching arc happens explicitly, not implicitly. Skill captures the proof THEN forces "what's the principle?" — that's what makes a case study a video instead of a testimonial reel.
+**Why this works:** the pivot from client biography to teaching arc happens explicitly, not implicitly. Skill captures the proof THEN forces "what's the principle?" That's what makes a case study a video instead of a testimonial reel.
 
 ### Near-miss
 
@@ -281,7 +281,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Skill:** "Slug: `cut-frequency-to-stay-consistent`. Save?"
 
-**Why this works:** story captured in P-A-O without forcing the lesson first. Skill captures the moment THEN asks "what's the lesson?" — the story comes first, the teaching comes second. Alignment check at the end naturally locates the Top 3 thread.
+**Why this works:** story captured in P-A-O without forcing the lesson first. Skill captures the moment THEN asks "what's the lesson?" The story comes first, the teaching comes second. Alignment check at the end naturally locates the Top 3 thread.
 
 ### Near-miss
 

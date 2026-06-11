@@ -28,7 +28,7 @@ A few non-binding fit cues that may help the creator pick when multiple blocks m
 
 - Visual demos land fastest when the viewer's eye can do the cognitive work (the problem is genuinely invisible, or a contrast is sharper than a description).
 - Stories carry farther when the viewer needs to FEEL the consequence and the creator has a real lived moment to anchor.
-- Metaphors compress hardest when the idea is abstract, familiar, or both — and the comparison is one the avatar already knows.
+- Metaphors compress hardest when the idea is abstract, familiar, or both, and the comparison is one the avatar already knows.
 
 Surface 1-3 block candidates (one per matched YES) so the creator can pick. Don't auto-default to Visual Demo just because it scored first.
 

@@ -75,7 +75,7 @@ Stop drilling if any of these is true:
 
 ### 1. The dump is rich and clear
 
-If the creator handed you 5 specific points, a story with a date and a number, a claim with a source, and a clear outcome — STOP. Confirm what landed, run the alignment check, save. Drilling for the sake of drilling burns the conversation.
+If the creator handed you 5 specific points, a story with a date and a number, a claim with a source, and a clear outcome, STOP. Confirm what landed, run the alignment check, save. Drilling for the sake of drilling burns the conversation.
 
 Bad pattern:
 > Creator: [delivers a complete, specific brain dump]
@@ -93,7 +93,7 @@ Worked example:
 
 ### 3. Two rounds of drilling have not unlocked
 
-If you pushed once, the creator gave a thin response, you pushed again with a different angle, and it's still thin — STOP. Mark a TODO, move on. The memory or proof isn't there right now. Forcing it produces fabricated material the creator will reject later.
+If you pushed once, the creator gave a thin response, you pushed again with a different angle, and it's still thin, STOP. Mark a TODO, move on. The memory or proof isn't there right now. Forcing it produces fabricated material the creator will reject later.
 
 Worked example:
 > Skill: "Where's that number from?"
@@ -134,7 +134,7 @@ Conversation cadence to aim for:
 - **Creator dumps: long.** Whatever they bring. The skill listens, doesn't interrupt.
 - **Mirroring: tight.** The reflection back to the creator after the dump should fit in 4-6 lines.
 - **Drill questions: surgical.** One question at a time. Not "tell me about X, Y, and Z."
-- **Confirmations: micro.** "Sound right?" — yes or no in one word.
+- **Confirmations: micro.** "Sound right?" Yes or no in one word.
 
 Aim for the conversation to feel like a sharp friend taking notes, not a form being filled out.
 

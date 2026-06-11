@@ -33,7 +33,7 @@ Two corrections people get wrong:
 Used by `aud-intake` to flag entries that may be LLM-generated, not human. Flag any entry that hits **2 or more** of the following. One match is not enough.
 
 ### Surface tells (lexical)
-1. Em-dashes (`—`) used as punctuation, especially more than once per entry
+1. Em-dashes (the `U+2014` character) used as punctuation, especially more than once per entry
 2. Filler words common in LLM output: `delve`, `delving`, `tapestry`, `navigating`, `treasure trove`, `robust`, `seamless`, `elevate`, `cultivate`, `harness`, `unlock`, `landscape` (as metaphor), `realm`, `intricate`, `multifaceted`
 3. Hedging phrases: `it's important to note`, `it's worth noting`, `in conclusion`, `in summary`, `furthermore`, `moreover`, `that said`, `it's crucial to`
 4. Suspiciously formal contractions or no contractions at all in casual contexts (a comment that says "do not" instead of "don't" is suspect; an email that says neither over 500 words is suspect)
@@ -47,9 +47,9 @@ Used by `aud-intake` to flag entries that may be LLM-generated, not human. Flag 
 ### Worked examples
 
 **Contaminated example A** (do flag):
-> "The journey of mastering guitar is multifaceted — it requires navigating the intricate landscape of music theory while cultivating the muscle memory needed to truly elevate one's playing. It's worth noting that consistent practice unlocks the door to mastery."
+> "The journey of mastering guitar is multifaceted. It requires navigating the intricate landscape of music theory while cultivating the muscle memory needed to truly elevate one's playing. It's worth noting that consistent practice unlocks the door to mastery."
 >
-> Hits: em-dash, "multifaceted", "navigating", "intricate landscape", "cultivating", "elevate", "it's worth noting", "unlocks the door". 8 tells. Strip.
+> Hits: "multifaceted", "navigating", "intricate landscape", "cultivating", "elevate", "it's worth noting", "unlocks the door". 7 tells. Strip.
 
 **Contaminated example B** (do flag):
 > "I think there are three main reasons people stop playing guitar. First, they lack a structured practice routine. Second, they don't see immediate progress. Third, they don't have a community of fellow players. Each of these can be addressed with the right approach."

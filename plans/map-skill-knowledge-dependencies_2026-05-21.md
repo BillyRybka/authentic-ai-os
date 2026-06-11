@@ -60,7 +60,7 @@ The vault's `knowledge/` folder holds 35+ reference files that skills load at ru
 4. For each extracted path, confirm the target exists with `ls knowledge/{path}`; mismatches go to the broken-reference list.
 5. Diff the set of all referenced files against the `ls knowledge/` universe; files in the universe but not referenced are orphans.
 6. Confirm every shipped skill folder (minus `vid-foundation-workspace`) and every WIP skill name from `SYSTEM-MAP.md` appears as a heading in the map file.
-7. `grep -c "—" knowledge/skill-knowledge-map.md` returns 0.
+7. `grep -cP '\x{2014}' knowledge/skill-knowledge-map.md` returns 0 (scans for the em-dash character U+2014).
 
 ## References
 - `.claude/skills/` - 9 skill folders (8 shipped, 1 workspace)

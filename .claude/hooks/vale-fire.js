@@ -8,7 +8,7 @@ const fs = require('fs');
 const path = require('path');
 
 const VALE_BIN = 'C:\\Users\\billr\\.local\\bin\\vale.exe';
-// Hook lives at <vault>/.claude/hooks/vale-fire.js — derive vault root from __dirname.
+// Hook lives at <vault>/.claude/hooks/vale-fire.js, derive vault root from __dirname.
 const VAULT = path.resolve(__dirname, '..', '..');
 const LOG = path.join(VAULT, '.claude', 'voice-audit-log.md');
 
@@ -46,7 +46,7 @@ function isExcluded(filePath) {
   ];
   if (skipDirs.some(d => rel.startsWith(d))) return true;
   if (/transcript.*\.md$/i.test(rel)) return true;
-  // Meta files that document the voice rules themselves — they must contain the banned words.
+  // Meta files that document the voice rules themselves. They must contain the banned words.
   const metaFiles = ['CLAUDE.md', 'Context/brand.md', 'Context/system-evolution.md'];
   if (metaFiles.includes(rel)) return true;
   // Frontmatter checks
@@ -71,7 +71,7 @@ function runVale(filePath) {
     });
     return JSON.parse(out);
   } catch (err) {
-    // Vale exits non-zero when it finds violations — that's expected. Output still valid.
+    // Vale exits non-zero when it finds violations. That's expected. Output still valid.
     if (err.stdout) {
       try { return JSON.parse(err.stdout); } catch { return null; }
     }
@@ -172,14 +172,14 @@ function main() {
   console.log(`\n## Voice audit: ${rel}`);
   if (autoFixed > 0) console.log(`Auto-fixed ${autoFixed} deterministic swap(s).`);
   if (errors.length) {
-    console.log(`\n**Errors (${errors.length}) — fix before publishing:**`);
+    console.log(`\n**Errors (${errors.length}), fix before publishing:**`);
     for (const f of errors.slice(0, 10)) {
       console.log(`  L${f.Line}: ${f.Message}`);
     }
     if (errors.length > 10) console.log(`  ...and ${errors.length - 10} more`);
   }
   if (warnings.length) {
-    console.log(`\n**Warnings (${warnings.length}) — review:**`);
+    console.log(`\n**Warnings (${warnings.length}), review:**`);
     for (const f of warnings.slice(0, 10)) {
       console.log(`  L${f.Line}: ${f.Message}`);
     }

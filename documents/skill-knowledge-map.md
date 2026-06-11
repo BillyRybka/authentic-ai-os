@@ -8,11 +8,11 @@ Built by grepping every `SKILL.md`, `references/*.md`, and `assets/*.md` across 
 
 **Important:** transitive references count. If a skill's packaged `references/` or `assets/` file points at a `knowledge/` file, that knowledge file is required too. Those cases are marked `(via references/)` or `(via assets/)` below.
 
-**Status tags:** `SHIPPED` skills are live and their dependency lists are verified. `WIP` skills are in `skills-wip/` and their lists are accurate as of this scan but **unverified** — the skills are still changing, so re-run this map before shipping any of them.
+**Status tags:** `SHIPPED` skills are live and their dependency lists are verified. `WIP` skills are in `skills-wip/` and their lists are accurate as of this scan but **unverified**. The skills are still changing, so re-run this map before shipping any of them.
 
 ---
 
-## 1. Forward map — skill to required knowledge files
+## 1. Forward map: skill to required knowledge files
 
 ### SHIPPED skills
 
@@ -51,7 +51,7 @@ Built by grepping every `SKILL.md`, `references/*.md`, and `assets/*.md` across 
 - `knowledge/packaging-system-template.md`
 - Outputs three bank files: `banks/pattern-bank.md`, `banks/title-bank.md`, `banks/power-words-bank.md` (plus `foundation/packaging-system.md` from Phase 7 evidence)
 
-### WIP skills (unverified — re-scan before shipping)
+### WIP skills (unverified, re-scan before shipping)
 
 **vid-voice-capture** `WIP`
 - `knowledge/interview-posture.md`
@@ -77,7 +77,7 @@ Built by grepping every `SKILL.md`, `references/*.md`, and `assets/*.md` across 
 - `knowledge/three-circle-research.md`
 - `knowledge/outlier-identification-rules.md` (also via `references/angle-anchor-rules.md`)
 - `knowledge/audience-temperature-model.md` (also via `references/audience-temperature-fit.md`)
-- `knowledge/format-planners/*.md` — all 7 (case-study, deep-dive, interview, listicle, news, roast, short-process)
+- `knowledge/format-planners/*.md`: all 7 (case-study, deep-dive, interview, listicle, news, roast, short-process)
 
 **vid-title** `WIP`
 - `knowledge/BENS-framework.md`
@@ -90,13 +90,13 @@ Built by grepping every `SKILL.md`, `references/*.md`, and `assets/*.md` across 
 - `knowledge/thumbnail-examples-library.md`
 - `knowledge/BENS-framework.md`
 - `knowledge/gift-framework.md`
-- Note: `thumbnail-composition-guide.md` is named but explicitly **not loaded** — reserved for the future `vid-thumbnail-gen` skill. Not required for vid-thumbnail.
+- Note: `thumbnail-composition-guide.md` is named but explicitly **not loaded** (reserved for the future `vid-thumbnail-gen` skill). Not required for vid-thumbnail.
 
 **vid-structure** `WIP`
 - `knowledge/voice-profile-schema.md`
 - `knowledge/script-tension-architecture.md`
 - `knowledge/framework-builder.md` (via `assets/script-skeleton-template.md`)
-- `knowledge/format-planners/*.md` — all 7
+- `knowledge/format-planners/*.md`: all 7
 
 **vid-intro** `WIP`
 - `knowledge/vault-integration.md`
@@ -109,7 +109,7 @@ Built by grepping every `SKILL.md`, `references/*.md`, and `assets/*.md` across 
 - `knowledge/proof-placement-rules.md`
 - `knowledge/visual-proof-callouts.md`
 - `knowledge/metaphor-integration.md`
-- `knowledge/format-planners/*.md` — all 7
+- `knowledge/format-planners/*.md`: all 7
 - `knowledge/hook-bank.md` *(planned, not yet authored. Billy-built reference of hook patterns. Required before vid-intro ships.)*
 
 **vid-segment** `WIP`
@@ -128,7 +128,7 @@ Built by grepping every `SKILL.md`, `references/*.md`, and `assets/*.md` across 
 - `knowledge/framework-builder.md`
 - `knowledge/visual-demo-builder.md`
 - `knowledge/visual-proof-callouts.md`
-- `knowledge/format-planners/*.md` — all 7
+- `knowledge/format-planners/*.md`: all 7
 - `knowledge/transition-bank.md` *(planned, not yet authored. Billy-built reference of transition patterns. Required before vid-segment ships.)*
 
 **vid-ending** `WIP`
@@ -141,7 +141,7 @@ Built by grepping every `SKILL.md`, `references/*.md`, and `assets/*.md` across 
 - `knowledge/proof-placement-rules.md`
 - `knowledge/visual-proof-callouts.md`
 - `knowledge/metaphor-integration.md`
-- `knowledge/format-planners/*.md` — all 7
+- `knowledge/format-planners/*.md`: all 7
 - `knowledge/transition-bank.md` *(planned, not yet authored. Same file vid-segment uses. Required before vid-ending ships.)*
 
 **vid-pressure-test** `WIP`
@@ -149,11 +149,11 @@ Built by grepping every `SKILL.md`, `references/*.md`, and `assets/*.md` across 
 - `knowledge/script-tension-architecture.md` (also via `references/reviewer-retention-logic.md`)
 - `knowledge/intro-architecture.md` (via `references/reviewer-ai-slop.md`)
 - `knowledge/audience-temperature-model.md` (via `references/reviewer-retention-logic.md`)
-- `knowledge/format-planners/*.md` — all 7
+- `knowledge/format-planners/*.md`: all 7
 
 ---
 
-## 2. Reverse map — knowledge file to consuming skills
+## 2. Reverse map: knowledge file to consuming skills
 
 Use this when editing or renaming a knowledge file: it tells you every skill that breaks.
 
@@ -205,55 +205,55 @@ The 7 `format-planners/` files are always loaded one at a time (`{format}.md` ma
 
 ---
 
-## 3. Orphan list — knowledge files with no consumer
+## 3. Orphan list: knowledge files with no consumer
 
-`thumbnail-composition-guide.md` — referenced by no skill. **Intentional.** `vid-thumbnail/SKILL.md` line 57 explicitly states it is reserved for `vid-thumbnail-gen`, a skill that does not exist yet. It does not need to ship until that skill is built.
+`thumbnail-composition-guide.md` is referenced by no skill. **Intentional.** `vid-thumbnail/SKILL.md` line 57 explicitly states it is reserved for `vid-thumbnail-gen`, a skill that does not exist yet. It does not need to ship until that skill is built.
 
 No other orphans. Every other file in `knowledge/` has at least one consumer.
 
 ---
 
-## 4. Broken-reference list — referenced files that don't exist
+## 4. Broken-reference list: referenced files that don't exist
 
 Two planned `knowledge/` files are referenced by WIP skills but have not been authored yet. They must exist before their consuming skills can ship:
 
-- `knowledge/hook-bank.md` — referenced by vid-intro. Billy-built reference of hook patterns and worked examples.
-- `knowledge/transition-bank.md` — referenced by vid-segment and vid-ending. Billy-built reference of transition patterns (intro-forward, segment-pivot, body-to-ending).
+- `knowledge/hook-bank.md`: referenced by vid-intro. Billy-built reference of hook patterns and worked examples.
+- `knowledge/transition-bank.md`: referenced by vid-segment and vid-ending. Billy-built reference of transition patterns (intro-forward, segment-pivot, body-to-ending).
 
 These are NOT in `banks/`. They are universal reference content authored by the system maintainer that ships with the plugin and is read by skills, same shape as `format-rotation-guide.md` or `BENS-framework.md`. The pre-publish skills (vid-intro, vid-segment, vid-ending) cannot ship until these two files exist.
 
-One thing that looks like a broken reference but is not: the string `knowledge/X.md` appears in several SKILL.md files (vid-avatar, vid-positioning, vid-pillars, vid-credibility, vid-backstory, vid-research, vid-voice-capture). It is **not a reference** — it is a documentation line explaining how to resolve `knowledge/` paths at runtime (`${CLAUDE_PLUGIN_ROOT}/knowledge/` when installed, repo-relative in dev). The `X` is a literal placeholder. Ignore it.
+One thing that looks like a broken reference but is not: the string `knowledge/X.md` appears in several SKILL.md files (vid-avatar, vid-positioning, vid-pillars, vid-credibility, vid-backstory, vid-research, vid-voice-capture). It is **not a reference**. It is a documentation line explaining how to resolve `knowledge/` paths at runtime (`${CLAUDE_PLUGIN_ROOT}/knowledge/` when installed, repo-relative in dev). The `X` is a literal placeholder. Ignore it.
 
 ---
 
 ## 5. Per-skill packaging checklist
 
-When you ship a skill, confirm every box. The skill's own `SKILL.md`, `references/`, and `assets/` ship inside the skill folder automatically — these checklists are only the **external `knowledge/` files** that must also be present in the plugin.
+When you ship a skill, confirm every box. The skill's own `SKILL.md`, `references/`, and `assets/` ship inside the skill folder automatically. These checklists are only the **external `knowledge/` files** that must also be present in the plugin.
 
 ### SHIPPED skills
 
-- [ ] **creator-setup** — no knowledge files needed.
-- [ ] **vid-foundation** — no knowledge files needed.
-- [ ] **vid-avatar** — interview-posture, vault-integration, creator-foundation-template (3)
-- [ ] **vid-positioning** — interview-posture, vault-integration (2)
-- [ ] **vid-pillars** — interview-posture, vault-integration (2)
-- [ ] **vid-credibility** — interview-posture, vault-integration, proof-bank-schema (3)
-- [ ] **vid-backstory** — interview-posture, vault-integration (2)
-- [ ] **vid-research** — three-circle-research, outlier-identification-rules, format-rotation-guide, packaging-system-template (4)
+- [ ] **creator-setup**: no knowledge files needed.
+- [ ] **vid-foundation**: no knowledge files needed.
+- [ ] **vid-avatar**: interview-posture, vault-integration, creator-foundation-template (3)
+- [ ] **vid-positioning**: interview-posture, vault-integration (2)
+- [ ] **vid-pillars**: interview-posture, vault-integration (2)
+- [ ] **vid-credibility**: interview-posture, vault-integration, proof-bank-schema (3)
+- [ ] **vid-backstory**: interview-posture, vault-integration (2)
+- [ ] **vid-research**: three-circle-research, outlier-identification-rules, format-rotation-guide, packaging-system-template (4)
 
 ### WIP skills (re-verify dependency list before shipping)
 
-- [ ] **vid-voice-capture** — interview-posture, vault-integration, voice-profile-schema, voice-extraction-methods, voice-pressure-test (5)
-- [ ] **vid-capture** — vault-integration, story-capture-guide, proof-capture-guide, metaphor-builder, testimonial-capture, framework-builder (6)
-- [ ] **vid-intake** — vault-integration, story-capture-guide (2)
-- [ ] **vid-framing** — three-circle-research, outlier-identification-rules, audience-temperature-model, format-planners/ ×7 (10)
-- [ ] **vid-title** — BENS-framework, thumbnail-text-patterns (2)
-- [ ] **vid-thumbnail** — vault-integration, thumbnail-strategy-menu, thumbnail-text-patterns, thumbnail-examples-library, BENS-framework, gift-framework (6)
-- [ ] **vid-structure** — voice-profile-schema, script-tension-architecture, framework-builder, format-planners/ ×7 (10)
-- [ ] **vid-intro** — vault-integration, intro-architecture, voice-profile-schema, voice-rhythm, voice-pressure-test, parable-decision-matrix, story-pulling-criteria, proof-placement-rules, visual-proof-callouts, metaphor-integration, format-planners/ ×7 (17)
-- [ ] **vid-segment** — vault-integration, voice-profile-schema, voice-rhythm, voice-pressure-test, parable-decision-matrix, story-capture-guide, story-pulling-criteria, proof-capture-guide, proof-placement-rules, metaphor-builder, metaphor-integration, testimonial-capture, framework-builder, visual-demo-builder, visual-proof-callouts, format-planners/ ×7 (22)
-- [ ] **vid-ending** — vault-integration, voice-profile-schema, voice-rhythm, voice-pressure-test, parable-decision-matrix, story-pulling-criteria, proof-placement-rules, visual-proof-callouts, metaphor-integration, format-planners/ ×7 (16)
-- [ ] **vid-pressure-test** — voice-profile-schema, script-tension-architecture, intro-architecture, audience-temperature-model, format-planners/ ×7 (11)
+- [ ] **vid-voice-capture**: interview-posture, vault-integration, voice-profile-schema, voice-extraction-methods, voice-pressure-test (5)
+- [ ] **vid-capture**: vault-integration, story-capture-guide, proof-capture-guide, metaphor-builder, testimonial-capture, framework-builder (6)
+- [ ] **vid-intake**: vault-integration, story-capture-guide (2)
+- [ ] **vid-framing**: three-circle-research, outlier-identification-rules, audience-temperature-model, format-planners/ ×7 (10)
+- [ ] **vid-title**: BENS-framework, thumbnail-text-patterns (2)
+- [ ] **vid-thumbnail**: vault-integration, thumbnail-strategy-menu, thumbnail-text-patterns, thumbnail-examples-library, BENS-framework, gift-framework (6)
+- [ ] **vid-structure**: voice-profile-schema, script-tension-architecture, framework-builder, format-planners/ ×7 (10)
+- [ ] **vid-intro**: vault-integration, intro-architecture, voice-profile-schema, voice-rhythm, voice-pressure-test, parable-decision-matrix, story-pulling-criteria, proof-placement-rules, visual-proof-callouts, metaphor-integration, format-planners/ ×7 (17)
+- [ ] **vid-segment**: vault-integration, voice-profile-schema, voice-rhythm, voice-pressure-test, parable-decision-matrix, story-capture-guide, story-pulling-criteria, proof-capture-guide, proof-placement-rules, metaphor-builder, metaphor-integration, testimonial-capture, framework-builder, visual-demo-builder, visual-proof-callouts, format-planners/ ×7 (22)
+- [ ] **vid-ending**: vault-integration, voice-profile-schema, voice-rhythm, voice-pressure-test, parable-decision-matrix, story-pulling-criteria, proof-placement-rules, visual-proof-callouts, metaphor-integration, format-planners/ ×7 (16)
+- [ ] **vid-pressure-test**: voice-profile-schema, script-tension-architecture, intro-architecture, audience-temperature-model, format-planners/ ×7 (11)
 
 ---
 

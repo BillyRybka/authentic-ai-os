@@ -121,7 +121,7 @@ Hypothetical scenario context used throughout: slug `cut-onboarding-2-weeks-to-9
 
 - BUILT: YES.
 - Input expected: foundation/creator-foundation.md, foundation/voice-profile.md, foundation/reference-pieces (optional), knowledge/format-planners/{format}.md, voice-rhythm.md, voice-pressure-test.md, capture-guides for each bank type, `meta.md`, `brain-dump.md` AND/OR `reference-block.md`, `script.md` (for prior segment continuity), the relevant bank folders.
-- Output produced: appends segment prose under a heading (`## Step 2: Refactor your week`) to `Content/pieces/{slug}/script.md`. Appends bank wikilinks to `meta.md` `stories_used`, `proofs_used`, `metaphors_used`, `frameworks_used` (note: `frameworks_used` introduced here, not in vid-intro's set — see Cross-stage seams #2). Appends to `visual_proofs_called_out:` array. Logs `voice_pressure_test:` block (overwrites or appends? UNCLEAR — see Cross-stage seams #3). Updates each pulled bank entry's `used_in:` and `status: used` per the "update both sides" rule. Sub-skill mode returns `segment_packet`.
+- Output produced: appends segment prose under a heading (`## Step 2: Refactor your week`) to `Content/pieces/{slug}/script.md`. Appends bank wikilinks to `meta.md` `stories_used`, `proofs_used`, `metaphors_used`, `frameworks_used` (note: `frameworks_used` introduced here, not in vid-intro's set, see Cross-stage seams #2). Appends to `visual_proofs_called_out:` array. Logs `voice_pressure_test:` block (overwrites or appends? UNCLEAR, see Cross-stage seams #3). Updates each pulled bank entry's `used_in:` and `status: used` per the "update both sides" rule. Sub-skill mode returns `segment_packet`.
 - Downstream consumers: next vid-segment invocation (reads prior segment's closing line for setup continuity), vid-ending (reads body in script.md to lift transformation language and identify the avatar problem the body resolved), vid-pressure-test (reads full assembled script).
 - Hand-off coherence: STRONG within the loop. Each segment cleanly reads prior and writes the same shape. The bidirectional bank-update rule is honored.
 - Notes:
@@ -238,7 +238,7 @@ Misses:
 
 People stub creation rule (vault-integration.md plus CLAUDE.md rule 20):
 - vid-segment Phase 4 explicitly handles: "People stub missing for a client mentioned in a pulled bank entry: create the stub immediately per CLAUDE.md rule 20." Honored.
-- vid-intro's bank pulls also could mention clients (story-bank, testimonial-bank). vid-intro Phase 5 does not explicitly call out the People-stub creation step. The `vault-integration.md` load is referenced, which contains the rule, so it's covered by inheritance — but an explicit reminder would match vid-segment's discipline.
+- vid-intro's bank pulls also could mention clients (story-bank, testimonial-bank). vid-intro Phase 5 does not explicitly call out the People-stub creation step. The `vault-integration.md` load is referenced, which contains the rule, so it's covered by inheritance. But an explicit reminder would match vid-segment's discipline.
 
 ## Recommended Phase 4 priorities (build order)
 
