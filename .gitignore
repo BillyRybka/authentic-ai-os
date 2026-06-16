@@ -34,6 +34,7 @@ _strategy/
 _notes/
 # Dev scratch inside skills: machine paths + named third-party refs. Never ships.
 *WORKING-NOTES.md
+*DECISIONS.md
 .claude/voice-audit-log.md
 
 # Vault content NEVER ships. The repo is the plugin source only.

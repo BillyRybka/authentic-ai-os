@@ -7,9 +7,9 @@ to stdout with channel metadata + video list (filtered to last N days, excluding
 shorts and live streams).
 
 Usage:
-    python youtube_fetch.py --handle "@coachx" --days 730 --api-key "$YT_API_KEY"
-    python youtube_fetch.py --channel-id "UCxxx" --days 730 --api-key "$YT_API_KEY"
-    python youtube_fetch.py --url "https://youtube.com/@coachx" --days 730 --api-key "$YT_API_KEY"
+    python youtube_fetch.py --handle "@coachx" --days 365 --api-key "$YT_API_KEY"
+    python youtube_fetch.py --channel-id "UCxxx" --days 365 --api-key "$YT_API_KEY"
+    python youtube_fetch.py --url "https://youtube.com/@coachx" --days 365 --api-key "$YT_API_KEY"
 
 Environment:
     YT_API_KEY can be set as env var instead of --api-key flag.
@@ -21,6 +21,10 @@ Output (JSON to stdout):
       "channel_title": "Coach X",
       "subscriber_count": 50000,
       "channel_avg_views_median": 18000,
+      "median_2x_reference": 36000,
+      "window_days": 365,
+      "video_count": 47,
+      "videos_per_month": 3.9,
       "videos": [
         {
           "video_id": "abc123",
@@ -29,12 +33,17 @@ Output (JSON to stdout):
           "thumbnail_url": "https://...",
           "published_at": "2025-08-12T...",
           "duration_seconds": 660,
-          "is_outlier_candidate": true
+          "clears_2x_floor": true
         },
         ...
       ],
       "fetched_at": "2026-05-10T..."
     }
+
+Note: 2x median is the FLOOR, not the bar. `median_2x_reference` and
+`clears_2x_floor` are coarse hints. The skill scales the real per-channel
+outlier floor from the median plus `videos_per_month` (see
+outlier-identification-rules.md).
 
 Quota usage (per call):
     channels.list (resolve handle):           1 unit
@@ -236,7 +245,9 @@ def fetch_video_details(video_ids: list, api_key: str) -> list:
 
 def compute_outlier_threshold(view_counts: list) -> tuple:
     """
-    Returns (median, threshold_2x). Median is robust against the outliers themselves.
+    Returns (median, median*2). The 2x value is a reference floor, not the outlier
+    bar; the skill scales the real per-channel floor from median + cadence. Median
+    is robust against the outliers themselves.
     """
     if not view_counts:
         return (0, 0)
@@ -260,8 +271,8 @@ def main():
     parser.add_argument(
         "--days",
         type=int,
-        default=730,
-        help="Pull videos published within last N days (default 730 = 2 years)",
+        default=365,
+        help="Pull videos published within last N days (default 365 = 12 months; expand to 730 for 24 months)",
     )
     parser.add_argument(
         "--api-key",
@@ -285,10 +296,18 @@ def main():
         video_ids = fetch_uploads(channel["uploads_playlist_id"], since_date, args.api_key)
         videos = fetch_video_details(video_ids, args.api_key)
         view_counts = [v["view_count"] for v in videos]
-        median, threshold = compute_outlier_threshold(view_counts)
+        median, median_2x = compute_outlier_threshold(view_counts)
+
+        # Posting cadence. A high cadence deflates the median (a pile of low-view
+        # uploads), which is why a flat 2x is too loose for prolific channels. The
+        # skill reads this to scale the per-channel floor; the script does not set
+        # the bar.
+        videos_per_month = round(len(videos) / (args.days / 30.0), 1) if args.days else 0
 
         for v in videos:
-            v["is_outlier_candidate"] = v["view_count"] >= threshold
+            # 2x median is the FLOOR, not the bar. The skill/analyze sets the real
+            # per-channel floor from median + cadence. This flag is a coarse hint only.
+            v["clears_2x_floor"] = v["view_count"] >= median_2x
 
         result = {
             "channel_id": channel["channel_id"],
@@ -296,8 +315,10 @@ def main():
             "channel_title": channel["channel_title"],
             "subscriber_count": channel["subscriber_count"],
             "channel_avg_views_median": median,
-            "outlier_threshold_2x": threshold,
+            "median_2x_reference": median_2x,
+            "window_days": args.days,
             "video_count": len(videos),
+            "videos_per_month": videos_per_month,
             "videos": videos,
             "fetched_at": datetime.now(timezone.utc).isoformat(),
         }

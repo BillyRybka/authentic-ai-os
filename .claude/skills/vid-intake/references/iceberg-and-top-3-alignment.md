@@ -95,7 +95,7 @@ aligned_with: "Equipment-decision video for busy-founder home strength setup, 6+
 > "This doesn't clearly fit your iceberg, busy founders + sustainable strength training in 30 minutes. Lower back pain and posture is adjacent (rehab / mobility) but not strength. Two paths. Either your iceberg has shifted (do you cover rehab now?), or this video belongs on a different channel or as a guest piece somewhere else."
 
 **Creator (option A):** "My iceberg has shifted, I do cover rehab now for founders specifically."
-**Skill:** "OK. Recommend running vid-foundation refresh after this video to update the iceberg statement and Top 3 problems. For now I'll flag this as `outlier` and capture rationale that iceberg may be evolving."
+**Skill:** "OK. Recommend running /foundation refresh after this video to update the iceberg statement and Top 3 problems. For now I'll flag this as `outlier` and capture rationale that iceberg may be evolving."
 
 **Creator (option B):** "No, you're right, this should go on my email list as a free resource, not a channel video."
 **Skill:** "Bailing on save. Want me to capture the dump anyway as a draft you can pull from later, or drop it?"

@@ -103,7 +103,7 @@ Identify:
 1. GLOBAL power words appearing in these titles (transcend niches): "easy," "fast," "secret," "stop," "never," "fix," "real," "mistake," "new", and any similar.
 2. AUDIENCE-SPECIFIC power words: domain jargon or terms that resonate only for this audience.
 
-Pull only from the actual titles. Never invent.
+Pull only from the actual titles. Never invent. Be comprehensive: pull EVERY recurring power word, not a token few. A large outlier set (100-plus titles) should yield 20 or more global and 10 or more audience-specific. A short list means you under-mined the set.
 
 Format:
 Global:
@@ -141,11 +141,13 @@ Audience-specific:
 Outlier titles:
 {numbered list}
 
-Identify pattern shapes appearing in 2+ titles. Express each as a template with [SLOT] placeholders.
+Identify pattern shapes appearing in 2+ titles. One template = one pattern; split any "or" variant into its own pattern. Express each as a template with [SLOT] placeholders.
 
 Format per pattern:
-Pattern T-{N}: "{template}"
+Template: "{template}"
+pattern_id: {short-kebab-slug derived from the template}
 Pattern shape: {descriptive label}
+spread: {N} of {M} channels
 Examples:
 - "{title}"
 - "{title}"
@@ -154,15 +156,19 @@ Examples:
 **Worked output:**
 
 ```
-Pattern T-1: "Why I [reversal action] [specific subject] After [time/quantity]"
+Template: "Why I [reversal action] [specific subject] After [time/quantity]"
+pattern_id: authority-reversal
 Pattern shape: Authority Reversal
+spread: 4 of 11 channels
 Examples:
 - "Why I Cut My Squat 20% After Coaching 100+ Lifters"
 - "Why I Stopped Running 5x a Week After 12 Years"
 - "Why I Quit Tracking Macros (And What Replaced It)"
 
-Pattern T-2: "STOP [common practice] (Do This)"
+Template: "STOP [common practice] (Do This)"
+pattern_id: stop-do-this
 Pattern shape: Contrarian Command
+spread: 6 of 11 channels
 Examples:
 - "STOP Following This Outdated Programming Advice"
 - "STOP Resting 3 Minutes Between Sets (Do This)"
@@ -210,7 +216,7 @@ Why this pulls: audience trusts authorities who admit being wrong; reversals sig
 - Prompt 1 (themes) → per-channel section in pattern-bank.md
 - Prompt 2 (fluke) → skip/study decision, no direct bank entry
 - Prompt 3 (power words) → power-words-bank.md (global + audience-specific)
-- Prompt 4 (title patterns) → title-bank.md
+- Prompt 4 (title patterns) → title-bank.md as blocks where the heading IS the template string and the body carries pattern_id + spread + channels
 - Prompt 5 (topics) → topic-cluster section inside pattern-bank.md (own + niche only), not a standalone bank
 
 All entries start `status: draft-pending-curation` until Theory of One curation pass promotes them.
@@ -220,5 +226,5 @@ All entries start `status: draft-pending-curation` until Theory of One curation 
 - **Hallucinating content not in the input.** If a word, theme, or pattern doesn't appear in the actual titles provided, don't invent it. Mark "no pattern found" if true.
 - **Generic outputs.** "Fitness" isn't a theme. "Intermediate-to-advanced strength programming critique" is. Specificity is the whole job.
 - **Including adjacent niche topics in Prompt 5.** Hard rule, never. Topics never enter the bank from adjacent. Structures yes, topics no.
-- **Confidence inflation.** A pattern appearing in 2 of 5 channels is LOW-MEDIUM, not HIGH. Reserve HIGH for 4+ channels or convergent across niche AND adjacent.
+- **Inflating spread.** Report the channel count honestly: a pattern on 2 of 5 channels is thin spread, not convergence. Convergence is 4+ channels OR convergent across niche AND adjacent. Never round the count up, and never stamp a HIGH/MEDIUM/LOW label; the spread is the signal.
 - **Forcing patterns where none exist.** Sometimes 5 outliers don't share a structural pattern. Output "no pattern found" if true rather than inventing.

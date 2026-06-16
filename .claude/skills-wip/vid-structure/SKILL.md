@@ -11,7 +11,7 @@ Builds the Tier 1 outline for one video. Takes raw brain-dump material plus the 
 
 ## What this produces
 
-`content/pieces/{slug}/script.md` with the outline skeleton: `## Intro` (empty, vid-intro fills), format-native body sections (each with one-line purpose anchored in brain-dump material + bullet outline + block candidates listed), `## Ending` (empty, vid-ending fills).
+`content/pieces/{slug}/script.md` with the outline skeleton: `## Intro` (empty, vid-intro fills), format-native body sections (each with one-line purpose anchored in brain-dump material + bullet outline + block candidates listed), `## Ending` (empty, vid-ending fills), and `## Blocks to capture` (the consolidated list of blocks the script needs that the banks do not have yet).
 
 `content/pieces/{slug}/piece.md` frontmatter updates: `piece_status: structured`, `segment_purposes` (material-anchored list), `tension_plan` (title-promise location + active threads), `structure_locked_at: {today}`.
 
@@ -63,7 +63,7 @@ This is the conversation phase. The skill behaves as a creative sparring partner
 
 - `brain-dump.md` missing or empty → "No brain-dump for this piece. Run vid-intake first to capture the raw material."
 - `piece.md` missing framing fields (`selected_angle`, `format`) → "Piece isn't framed yet. Run vid-framing first to lock the angle."
-- `creator-foundation.md` missing → "No foundation docs. Run vid-foundation first to lock iceberg + Top 3."
+- `creator-foundation.md` missing → "No foundation docs. Run /foundation first to lock iceberg + Top 3."
 - Format planner missing for the locked format → show the format value and the list of available planners.
 
 **Step 1.1: Mine the brain-dump against the angle.**
@@ -222,6 +222,13 @@ last_refreshed: {today}
 ## Ending
 
 *To be written by vid-ending. CTA shape per piece.md goal.*
+
+## Blocks to capture
+
+*Open blocks the script needs that the banks do not have yet. Every "no match" flag from the sections above lands here. Fill them in a batch now, or inline as each segment gets written. Delete a row once its block is captured and wikilinked into its section. An empty list means the script is fully sourced.*
+
+- [ ] Item 2 / framework: pace-tension-rule (no bank match) needed for the pacing payoff
+- [ ] Item 3 / story: hook-gap example (problem-2, theme:retention) bank empty
 ```
 
 **Per body section, write:**
@@ -231,6 +238,8 @@ last_refreshed: {today}
 - **Bullet outline:** 3-5 bullets covering setup, tension, payoff for this segment (working draft, not prose)
 - **Tension role:** where this segment sits in the cross-segment arc
 - **Outbound handoff:** the forward-hook into the next segment (or to ending)
+
+Every "no match" flag you write into a section must also get a row in the `## Blocks to capture` list at the bottom of the file, tagged with the segment and block type. That list is the single record of what still needs sourcing; do not flag a gap in a section without adding its row.
 
 **Update piece.md frontmatter:**
 
@@ -261,9 +270,26 @@ Outline locked. script.md written, piece.md updated.
 - Threads: {count}
 - Cuts: {N} brain-dump entries (logged in comment, see script.md)
 
-Next: lock title + thumbnail (vid-title + vid-thumbnail, if not yet packaged), 
+Next: fill any open blocks in the `## Blocks to capture` list (batch now, or inline as you write),
 then vid-intro for the opening, then vid-segment per body section, then vid-ending.
 ```
+
+Title and thumbnail are already locked (packaging runs before structure). Do not send the creator back to package here.
+
+### Phase 3: Gap-fill decision
+
+This is the seam between the outline and the prose. The script needs its blocks (stories, proofs, metaphors, frameworks) sourced before the writing skills can pull them without fabricating.
+
+If the `## Blocks to capture` list is empty, the script is fully sourced. Skip this and hand off to vid-intro.
+
+If the list has open blocks, surface it and let the creator choose when to fill it:
+
+> "The script needs {N} blocks the banks don't have yet ({e.g. a framework for Item 2, a story for Item 3}). Capture them now in one batch, or grab each one inline when you write that segment? We're about to enter the writing phase."
+
+- **Capture now (batch).** For each open block, invoke `vid-capture` in sub-skill mode (captures one item, returns the new `[[wikilink]]`). For a framework with no bank match, load `knowledge/framework-builder.md`, run the 5-step build inline (dump → result → top 3 → shape → name), then save via vid-capture Stage F. As each block is captured, replace the "no match" placeholder in its section with the real wikilink and delete that row from `## Blocks to capture`. When the list is empty, hand off to vid-intro. Prose then gets written against complete banks, uninterrupted.
+- **Inline later.** Leave `## Blocks to capture` as-is. It is the resurfacing mechanism: vid-segment reads it when writing each section and captures the open block for that segment at that moment.
+
+Either path is fine; it is the creator's call, not an enforced gate. The only rule is that no block is silently skipped. The manifest stays the single source of truth until every row is filled or the creator consciously cuts a block (note the cut in the section it would have served).
 
 ## Conversational discipline
 
@@ -278,7 +304,7 @@ then vid-intro for the opening, then vid-segment per body section, then vid-endi
 
 1. `brain-dump.md` missing → redirect to vid-intake
 2. `piece.md` missing framing → redirect to vid-framing
-3. `creator-foundation.md` missing → redirect to vid-foundation
+3. `creator-foundation.md` missing → redirect to /foundation
 4. Format planner missing for the locked format → show available formats
 5. Fabricated bank entries surfaced (always cite real entries; if banks empty, say so)
 6. Em-dashes in productized output (brand rule)
@@ -306,11 +332,11 @@ then vid-intro for the opening, then vid-segment per body section, then vid-endi
 
 ## Related skills
 
-- `vid-foundation` produces `creator-foundation.md` (iceberg, Top 3, avatar), this skill reads
+- The `/foundation` chain produces `creator-foundation.md` (iceberg, Top 3, avatar), this skill reads
 - `vid-intake` produces `brain-dump.md`, this skill mines
 - `vid-framing` produces `piece.md` framing fields (`selected_angle`, `format`, `goal`, `viewer_stage`), this skill reads
 - `vid-thumbnail` produces `thumbnail-brief.md`, this skill reads (soft) for visual-demo cues
-- `vid-title` runs independently after framing, NOT invoked from this skill
+- `vid-title` locks the title in the packaging phase (after framing, before structure), NOT invoked from this skill
 - `vid-intro` fills `## Intro` in the script.md this skill writes
 - `vid-segment` fills each body section in the script.md this skill writes; reads `segment_purposes` + bullet outline + block candidates from this skill's output
 - `vid-ending` fills `## Ending` in the script.md this skill writes

@@ -33,8 +33,21 @@ The `people/` row is conditional. If the creator chose a path override during se
 
 - **structure**: an empty directory a released skill writes into. Create if missing, never touch otherwise.
 - **env-template**: the `.env.example` scaffold. Create if missing. Never create or read the real `.env`.
+- **seed**: a starter bank file copied from a plugin template (the `template` column names a file under `${CLAUDE_PLUGIN_ROOT}/knowledge/`) into the workspace. Copy only if the target file does not already exist. Never overwrite a creator's edited bank. Once copied, the creator owns and grows it.
 
 ## Deliberately NOT scaffolded
 
-- `knowledge/`: ships with the plugin, referenced via `${CLAUDE_PLUGIN_ROOT}`. Never copied into the workspace.
+- `knowledge/`: ships with the plugin, referenced via `${CLAUDE_PLUGIN_ROOT}`. Never copied into the workspace. The one exception is a **seed**-class row, where a single named `knowledge/` template is copied into `banks/` as a starter the creator then owns.
 - Any folder a released skill does not write into. New rows get added here only when their owning skill ships.
+
+## Pending (ships with the script-writing skills)
+
+These rows are staged, not live. `creator-setup` acts ONLY on the "Container needs (current release)" table above. When `vid-intro`, `vid-segment`, and `vid-ending` graduate from `skills-wip`, move their rows up into that table and the seeds scaffold on the next setup or additive update.
+
+| skill | needs in container | class | template | since |
+|---|---|---|---|---|
+| vid-intro | `banks/hook-bank.md` | seed | `hook-bank-template.md` | pending |
+| vid-segment | `banks/transition-bank.md` | seed | `transition-bank-template.md` | pending |
+| vid-ending | `banks/transition-bank.md` | seed | `transition-bank-template.md` | pending |
+
+The `banks/transition-bank.md` seed is shared by `vid-segment` and `vid-ending`; the copy is idempotent (skip if the file exists), so listing it twice is safe.

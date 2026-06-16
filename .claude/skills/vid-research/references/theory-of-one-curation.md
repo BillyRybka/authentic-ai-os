@@ -16,14 +16,16 @@ AI does the data heavy lifting. Theory of One is the irreplaceable human filter:
 
 Skipping this step (or rubber-stamping every AI proposal) pollutes the bank with patterns the creator's audience won't actually engage with. The Theory of One filter is what separates a useful pattern bank from a generic outlier database.
 
+But do not over-filter. The bank is a signal library of what works in the space, not a brand-purity set. A pattern that clearly works, even one borrowed from an adjacent niche or an off-lane theme, is a signal worth keeping; it gets adapted into the creator's voice at title-making time (Modify), not dropped here. Drop is for true noise, not for adaptable signals. When in doubt on a real signal, Keep or Modify.
+
 ## The conversation shape
 
 For each draft pattern surfaced from extraction, the AI presents a short structured panel:
 
 ```
-> Pattern {ID}: {pattern name}
+> Pattern: `{template}`  (pattern_id: {slug})
 > 
-> Confidence: {HIGH | MEDIUM | LOW}, {N of M channels}
+> Spread: {N} of {M} channels{, own-channel proven if true}
 > 
 > Worked examples (from your research session):
 > 1. "{example 1}", {channel}, {views}
@@ -33,6 +35,7 @@ For each draft pattern surfaced from extraction, the AI presents a short structu
 > Theory of One check:
 > Your iceberg: "{iceberg statement from creator-foundation}"
 > Your audience expects: {brief audience expectation summary}
+> {off-positioning note, only when it applies: "This prints views but leans off your lane (e.g. {off-lane theme}). It is still a real signal. Lean toward Keep or Modify (adapt it to your lane), not Drop, unless it is true noise."}
 > 
 > Does this pattern fit YOUR audience's expectations of you?
 > 
@@ -51,13 +54,13 @@ The creator wants this pattern in the bank as-is. Future vid-framing, vid-title,
 - Pattern aligns clearly with the audience's existing expectations of the creator
 - Pattern matches the creator's tone and voice (won't feel forced)
 - Pattern is concrete enough to actually apply (not vague generic principle)
-- Confidence ≥ MEDIUM and Theory of One filter passes
+- Spread ≥ 3 of M channels (or own-channel-proven) and Theory of One filter passes
 
 **Worked Keep dialogue:**
 
 ```
-> Pattern T-1: "Why I [reversal action] [specific subject] After [time/quantity]"
-> Confidence: HIGH, appears in 4 of 5 niche channels
+> Pattern: `Why I [reversal action] [specific subject] After [time/quantity]` (pattern_id: authority-reversal)
+> Spread: 4 of 5 niche channels
 > Worked examples:
 > 1. "Why I Cut My Squat 20% After Coaching 100+ Lifters", @CoachX, 145k views
 > 2. "Why I Stopped Running 5x a Week After 12 Years", @CoachY, 92k views
@@ -71,7 +74,7 @@ The creator wants this pattern in the bank as-is. Future vid-framing, vid-title,
 
 Creator: Keep. This is exactly the energy my audience comes back for.
 
-Skill: Locked as Pattern T-1 in title-bank.md. Status: curated.
+Skill: Locked as pattern_id `authority-reversal` in title-bank.md. Status: curated.
 ```
 
 ### Drop
@@ -89,8 +92,8 @@ The creator rejects this pattern. Future runs should NOT re-surface it.
 **Worked Drop dialogue:**
 
 ```
-> Pattern T-3: "I Tested [Famous Person]'s [Method/Routine] for 30 Days"
-> Confidence: MEDIUM, appears in 3 of 5 niche channels
+> Pattern: `I Tested [Famous Person]'s [Method/Routine] for 30 Days` (pattern_id: celebrity-test)
+> Spread: 3 of 5 niche channels
 > Worked examples:
 > 1. "I Tested Hormozi's Sales Script for 30 Days", @CoachW, 380k views
 > 2. "I Tried David Goggins' Workout for 30 Days", @CoachQ, 245k views
@@ -106,7 +109,7 @@ Creator: Drop. My audience expects me to be the authority, not test someone else
 
 Skill: Captured rationale: "celebrity-test framing conflicts with creator's authority positioning; audience expects original method, not borrowed."
 
-Pattern T-3 moved to ## Considered + dropped. Won't re-surface in quarterly refresh.
+Pattern `celebrity-test` moved to ## Considered + dropped. Won't re-surface in quarterly refresh.
 ```
 
 **Drop rationales worth capturing (examples):**
@@ -126,13 +129,13 @@ The pattern has signal but needs reframing for the creator's audience. Creator r
 - The structural pattern works but the specific phrasing doesn't fit the creator's voice
 - Pattern is close but needs to dial up specificity for a sophisticated audience
 - Pattern needs to drop a power word the creator avoids and substitute one they use
-- Pattern's confidence is high but Theory of One says "almost yes, but..."
+- Pattern's spread is wide but Theory of One says "almost yes, but..."
 
 **Worked Modify dialogue:**
 
 ```
-> Pattern P-2: Power word "STOP" appearing as title opener
-> Confidence: HIGH, 6 occurrences across niche set
+> Pattern: power word "STOP" as a title opener (pattern_id: power-stop)
+> Spread: 6 of the niche channels
 > Worked examples:
 > 1. "STOP Following This Outdated Programming Advice", @CoachX, 145k
 > 2. "STOP Resting 3 Minutes Between Sets", @CoachY, 88k
@@ -156,31 +159,31 @@ Pattern P-2 saved in power-words-bank.md as audience-specific modification of th
 
 Some patterns are obvious keeps. The creator already trusts AI synthesis and doesn't want a per-pattern review.
 
-**Trigger:** when 5+ patterns in a row are HIGH confidence AND the creator has been hitting Keep on every one.
+**Trigger:** when 5+ patterns in a row are wide-spread AND the creator has been hitting Keep on every one.
 
 **Skill offers:**
 
 ```
-> 5 high-confidence patterns surfaced so far, all Kept. 
-> 12 more high-confidence patterns remaining in this batch.
+> 5 wide-spread patterns surfaced so far, all Kept. 
+> 12 more wide-spread patterns remaining in this batch.
 > 
 > Bulk-keep them all and save time? Or continue per-pattern review?
 > 
-> [Bulk keep all HIGH] [Continue per-pattern]
+> [Bulk keep all wide-spread] [Continue per-pattern]
 ```
 
-**On bulk-keep:** all HIGH confidence patterns get Kept, audit log captures the bulk action, creator returns to per-pattern review for MEDIUM and LOW confidence patterns.
+**On bulk-keep:** all wide-spread patterns get Kept, audit log captures the bulk action, creator returns to per-pattern review for the thinner-spread patterns.
 
 **Why this matters:** the curation pass can have 30+ patterns. Per-pattern feels exhausting at scale. Bulk-keep on obvious wins lets the creator focus attention on the borderline cases where their judgment matters most.
 
-**When NOT to use bulk-keep:** first time the creator is curating (no track record yet, all patterns deserve fresh consideration). Or when confidence rankings haven't been validated against the creator's actual feel for the bank.
+**When NOT to use bulk-keep:** first time the creator is curating (no track record yet, all patterns deserve fresh consideration). Or when the spread signal hasn't been validated against the creator's actual feel for the bank.
 
 ## Sticky-curated growth (Mode 2 quarterly refresh)
 
 In quarterly refreshes, patterns from prior sessions are sticky:
 
 - Previously **Kept** patterns stay in the bank with `last_validated: {prior date}` updated to today only if the creator wants to re-validate. By default, Kept patterns just persist and don't get re-surfaced for review.
-- Previously **Dropped** patterns are checked against new outlier data. If the dropped pattern shows up again with higher confidence (+convergence), surface as: "This was dropped 90 days ago for [rationale]. New data shows it appearing in [N] more channels. Reconsider, or stay dropped?"
+- Previously **Dropped** patterns are checked against new outlier data. If the dropped pattern shows up again with wider spread (more channels), surface as: "This was dropped 90 days ago for [rationale]. New data shows it appearing in [N] more channels. Reconsider, or stay dropped?"
 - Previously **Modified** patterns are honored as the modified version. If new data could refine the modification further, surface for re-review.
 - New patterns from this refresh's data go through a fresh Theory of One pass.
 
@@ -230,5 +233,5 @@ Either path is valid. Bail at any time with no work lost, sticky curated entries
 - **Dropping without rationale.** Future runs re-surface the same pattern and the creator drops it again. Capture rationale every Drop, no exceptions.
 - **Modify-as-rewrite-from-scratch.** Modify is for tweaking the pattern's framing, not inventing new patterns. If the creator wants to rewrite extensively, that's a Drop + a separate creator-supplied pattern (which gets logged as `source: creator-input` in the bank).
 - **Surfacing all patterns at once instead of one-at-a-time.** Cognitive overload. Always one pattern per turn (with bulk-keep as opt-in escape).
-- **Auto-bulk-keep without creator opt-in.** Theory of One requires conscious choice. Don't bulk-keep unprompted just because confidence is high.
+- **Auto-bulk-keep without creator opt-in.** Theory of One requires conscious choice. Don't bulk-keep unprompted just because the spread is wide.
 - **Letting Drop rationales drift to vague.** "I don't like it" isn't a rationale. Push for specificity: "what about it doesn't work for your audience?" Capture the answer.

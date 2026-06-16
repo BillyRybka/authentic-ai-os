@@ -22,7 +22,7 @@ Locked fields after vid-framing completes:
 - `goal`, sales | email | views
 - `viewer_stage`, cold | warm | hot (predicted audience temperature)
 - `outlier_anchor`, the specific pattern-bank outlier this angle anchors to, or null for experimental
-- `anchor_confidence`, high | medium | low | experimental
+- `anchor_confidence`, high | medium | low | experimental (derived from the anchor's spread + own_channel_proven, not read from a stored label)
 - `piece_status: framed`
 - `framed_at: {today}`
 
@@ -32,7 +32,7 @@ Body sections appended: Selected Angle, Why This Angle Lands, Considered + Dropp
 
 - The creator has run vid-intake on a brain-dump and is ready to pick the angle
 - The creator wants to re-frame an existing piece (the first angle wasn't right)
-- vid-pipeline (future) invokes after vid-intake completes and before vid-thumbnail
+- vid-pipeline (future) invokes after vid-intake completes and before vid-title (framing precedes packaging)
 
 ## Prerequisites
 
@@ -77,7 +77,7 @@ Silent loads (do NOT paste into chat):
 - `brain-dump.md` missing → "No brain-dump for this piece. Run vid-intake first to capture the raw material."
 - `pattern-bank.md` missing → "No pattern banks. Run vid-research first, first-build takes ~1.5 hours."
 - `pattern-bank.md` older than 120 days → soft friction: "Your pattern banks are {N} days old. Want to refresh first (30-45 min) or proceed with stale data?"
-- `creator-foundation.md` missing → "No foundation docs. Run vid-foundation first to lock iceberg + Top 3."
+- `creator-foundation.md` missing → "No foundation docs. Run /foundation first to lock iceberg + Top 3."
 
 ### Phase 2: Angle generation
 
@@ -85,7 +85,7 @@ Generate 4 angle candidates total: 3 anchored + 1 experimental.
 
 **For each of the 3 anchored angles:**
 
-1. Pull a HIGH or MEDIUM confidence outlier from the pattern banks. Prioritize the creator's OWN past winners (highest DPV signal). Then niche channel outliers. Then adjacent-niche structural patterns.
+1. Pull a strong or moderate outlier from the pattern banks (strength derived from spread + own_channel_proven; see angle-anchor-rules.md). Prioritize the creator's OWN past winners (highest DPV signal). Then niche channel outliers. Then adjacent-niche structural patterns.
 2. Match to brain-dump material, does the creator's raw material support this angle without stretching?
 3. Run the fluke filter, confirm the anchor is on-niche for its source channel (`knowledge/outlier-identification-rules.md`).
 4. Construct the angle. Use the creator's voice (from voice-profile). Specific, concrete, in one sentence.
@@ -107,7 +107,7 @@ See `references/framing-conversation-examples.md` Example 1 for the worked surfa
 
 **Anti-fabrication rule:** every anchored angle MUST cite a real bank entry. Never invent an outlier. If the bank is thin, surface that as soft friction.
 
-See `references/angle-anchor-rules.md` for the full anchor logic, fluke filter application, and HIGH/MEDIUM/LOW/EXPERIMENTAL confidence definitions.
+See `references/angle-anchor-rules.md` for the full anchor logic, fluke filter application, and the strong/moderate/weak/experimental strength definitions (derived from spread).
 
 ### Phase 3: Theory of One filter
 
@@ -130,7 +130,7 @@ Surface the four answers per angle. Creator confirms or pushes back.
 The creator picks 1 of the 4 angles. Then:
 
 1. **Confirm format.** If the anchored outlier has a clear format (e.g., Case Study anchor), default to that. Otherwise, show the creator's current packaging defaults (3 core + 1 experimental) and let them pick.
-   - **Hard rule:** only formats in the creator's packaging-system are surfaced. Don't show all 7.
+   - **Default, not a cage:** lead with the formats in the creator's packaging-system rotation (3 core + 1 experimental), not all 7, so the channel keeps a recognizable rhythm. But the creator can knowingly override and pick a different format for this video. If they want one off-rotation, let them and note it; don't block it.
 2. **Pick goal.** Sales, email, or views? Tied to the offer ecosystem.
 3. **Set voice_context.** Always write the field to piece.md, even when it stays `youtube-script`, so downstream skills read an explicit value and never guess. Do not ask the creator unless this piece is genuinely a different delivery medium (a screen-share tutorial, a short, a written newsletter cut). It is orthogonal to format: a listicle can be a youtube-script or a tutorial. Only override the default when the medium clearly differs.
 4. **Confirm viewer_stage.** Default to the temperature predicted in Phase 3. If goal/temperature mismatch (e.g., sales goal + cold temperature), surface the conversion math, see `references/audience-temperature-fit.md`, and let the creator decide.
@@ -159,7 +159,7 @@ Framing locked. piece.md updated.
 - Format: {format}, Goal: {goal}, Audience: {viewer_stage}
 - Anchor: {outlier_anchor or "experimental"}
 
-Next: run vid-thumbnail to lock thumbnail picks.
+Next: lock the title (vid-title), then the thumbnail (vid-thumbnail). Packaging comes before structure.
 ```
 
 ## Conversational discipline
@@ -177,11 +177,11 @@ See `references/framing-conversation-examples.md` for the worked dialogues.
 
 1. `brain-dump.md` missing → redirect to vid-intake
 2. `pattern-bank.md` missing → redirect to vid-research
-3. `creator-foundation.md` missing → redirect to vid-foundation
+3. `creator-foundation.md` missing → redirect to /foundation
 4. Em-dashes anywhere in the productized output (brand-level no)
 5. Attribution leaks, no Ed/YGS/named-source language ever
 6. Fabricated outliers, every anchored angle must cite a real bank entry
-7. Cited outlier confidence is LOW being surfaced as one of the 3 anchored slots (must be HIGH or MEDIUM)
+7. Cited outlier is weak-spread (1-2 channels, not own-channel-proven) being surfaced as one of the 3 anchored slots (must be strong or moderate)
 
 ## Soft friction (surface and explain, creator decides)
 
@@ -195,7 +195,7 @@ See `references/framing-conversation-examples.md` for the worked dialogues.
 
 | File | When to read it |
 |---|---|
-| `references/angle-anchor-rules.md` | Phase 2, the 3+1 split rule, anchor confidence levels, fluke filter application, what counts as a real anchor versus hand-waving, Repeat What Works affirmative surfacing, adjacent-niche structural transfer for experimental slot |
+| `references/angle-anchor-rules.md` | Phase 2, the 3+1 split rule, anchor strength derived from spread, fluke filter application, what counts as a real anchor versus hand-waving, Repeat What Works affirmative surfacing, adjacent-niche structural transfer for experimental slot |
 | `references/audience-temperature-fit.md` | Phase 3 + Phase 4, predicting temperature from angle + brain-dump, goal × temperature match matrix, specificity dial calibration, soft friction surfacing |
 | `references/framing-conversation-examples.md` | All phases, worked dialogues for clean session, experimental pick, modified angle, bulk-keep, mismatch surface, stale banks |
 | `knowledge/audience-temperature-model.md` | Phase 3. Audience Temperature Model definitions (shared with vid-ending, future vid-measurement) |
@@ -215,13 +215,13 @@ See `references/framing-conversation-examples.md` for the worked dialogues.
 
 ## Related skills
 
-- `vid-foundation` produces creator-foundation.md (iceberg, Top 3, audience), vid-framing reads
+- The `/foundation` chain produces creator-foundation.md (iceberg, Top 3, audience), vid-framing reads
 - `vid-voice-capture` produces voice-profile.md, vid-framing reads for mirroring style only
-- `vid-research` produces the 7 pattern banks vid-framing consumes, primary upstream contract
+- `vid-research` produces the 3 research banks (pattern-bank, title-bank, power-words-bank) vid-framing consumes, primary upstream contract
 - `vid-intake` produces brain-dump.md plus the locked `iceberg_aligned` + `problem_addressed` fields, vid-framing reads, does NOT re-derive
 - `vid-thumbnail` reads piece.md `format` + `selected_angle` for thumbnail brief
 - `vid-title` reads piece.md `selected_angle` + `outlier_anchor` plus `title-bank.md` and `power-words-bank.md` (uses anchor's title pattern if anchored, falls back to power-words-bank if experimental)
-- `vid-structure` reads piece.md + brain-dump.md, builds script.md skeleton, invokes vid-title and vid-intro
+- `vid-structure` reads piece.md + brain-dump.md and builds the script.md skeleton (title + thumbnail already locked in packaging; structure does not invoke them)
 - `vid-intro` reads piece.md `format`, `core_payoff`, `viewer_stage`, `selected_angle`
 - `vid-segment` reads piece.md `selected_angle`, `format`, `goal`
 - `vid-ending` reads piece.md `goal`, `viewer_stage` (CTA placement depends on temperature)

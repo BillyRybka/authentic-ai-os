@@ -16,7 +16,7 @@ Loaded by `vid-title` for headline candidate generation, `vid-intro` for hook co
 
 ## How to read this bank
 
-Each entry is a word + when it lands + when it fails + a real worked example. No frequency counts, no raw channel counts: those numbers anchor the AI on "this appeared most" rather than "this fits the line being written." The decision is fit-by-context, not popularity. The creator edits this file in place, deleting words they would not use and adding words they prefer.
+This bank is comprehensive: mine every recurring power word from the FULL outlier title set, not a token few. A 100-plus-title set should produce a couple dozen words. "Lean" means no frequency junk, not a short list. Each entry is a word + when it lands + when it fails + a real worked example. No frequency counts, no raw channel counts: those numbers anchor the AI on "this appeared most" rather than "this fits the line being written." The decision is fit-by-context, not popularity. The creator edits this file in place, deleting words they would not use and adding words they prefer.
 
 ## Global power words
 

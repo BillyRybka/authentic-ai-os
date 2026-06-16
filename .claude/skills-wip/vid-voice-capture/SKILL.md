@@ -10,7 +10,7 @@ Voice is reproduced from the creator's real sentences, not from a description of
 1. Curates **reference pieces**: real passages the creator produced, written into `foundation/reference-pieces/{voice_context}.md` (one file per populated context, passages inside as `## ` sections). This is the voice engine. Every writing skill writes from these.
 2. Writes a **thin guardrail**: `foundation/voice-profile.md`. Fingerprint, signature phrases, refusals, POV and energy. The short list of what examples cannot teach.
 
-No statistics are stored. Rhythm is judged by ear against the reference pieces at validation time. Read [[voice-profile-schema]] for the full contract. `vid-foundation` does not write these files.
+No statistics are stored. Rhythm is judged by ear against the reference pieces at validation time. Read [[voice-profile-schema]] for the full contract. `/foundation` does not write these files.
 
 > **Resolving `knowledge/` paths.** Any path written `knowledge/X.md` is a plugin reference file. Load it from `${CLAUDE_PLUGIN_ROOT}/knowledge/X.md` when running as an installed plugin. If `${CLAUDE_PLUGIN_ROOT}` is unset or that path does not exist (running from the source repo during development), load `knowledge/X.md` relative to the repo root instead.
 
@@ -25,13 +25,13 @@ A context with too little material gets no folder (no stub) and is noted in `con
 
 ## Invocation modes
 
-**Standalone.** The creator runs it directly: the first build after `vid-foundation`, or a refresh when the voice has drifted or new sources exist.
+**Standalone.** The creator runs it directly: the first build after `/foundation`, or a refresh when the voice has drifted or new sources exist.
 
 **Sub-skill.** A writing skill detects drift and invokes this to refresh from updated sources. Returns a wikilink to the refreshed guardrail.
 
 ## When to run
 
-- After `vid-foundation`, once the creator has source material to bring.
+- After `/foundation`, once the creator has source material to bring.
 - Quarterly, or after a medium/audience/tone shift.
 - When a writing skill logs repeated drift, or the creator says "this doesn't sound like me anymore".
 

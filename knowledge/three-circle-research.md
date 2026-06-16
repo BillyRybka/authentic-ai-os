@@ -44,7 +44,7 @@ Each circle answers a different question. Together they triangulate the patterns
 
 **Question:** "What's already worked for me?"
 
-If the channel has any history, this is the fastest, highest-confidence research. Find your own outliers (videos that pulled 2x+ your channel average). Repeat what worked. The audience that came back already told you what they want.
+If the channel has any history, this is the fastest, highest-signal research. Find your own outliers (videos that cleared the channel's scaled floor, see `knowledge/outlier-identification-rules.md`). Repeat what worked. The audience that came back already told you what they want.
 
 **Worked example:** A channel averages 200k views per video. One video pulled 700k. That's the channel's most reliable data point, those 700k viewers came back for that specific topic, in that specific frame, with that specific thumbnail style. The next move: repeat it with minimal variation. Change the outfit color. Swap the specific stat. Don't redesign from scratch.
 
@@ -112,12 +112,12 @@ Final set: about 5 niche, plus 3 to 5 adjacent, plus the creator's own = roughly
 
 ## Outlier identification within each circle
 
-Same rule applies in all three circles:
+Same method applies in all three circles:
 
-1. Compute channel's recent average views (last 2 years).
-2. Identify videos pulling 2x+ that average.
-3. Apply raw-count threshold: the absolute view count must be meaningful for the niche. A 600-view video on a 300-avg channel is NOT an outlier, 600 is too small for the niche. A 2M-view video on a 1M-avg channel IS an outlier, the raw count justifies it.
-4. Run the fluke filter: is this outlier on-niche for the channel's primary themes? Off-niche flukes don't represent what works for the audience and shouldn't be studied.
+1. Compute the channel's median views over the calibrated window (default 12 months), excluding shorts and live streams.
+2. Set a floor scaled to the channel: start at 2x median, real bar ~3 to 4x for normal cadence, higher for hyper-cadence channels, mega-hits only for giants. The raw count still has to be meaningful for the niche.
+3. Identify every video that clears the floor (the full set, not just the top one).
+4. Run the fluke filter: is the outlier on-niche for the channel's primary themes? Off-niche flukes don't transfer to the audience and shouldn't be studied.
 
 See `knowledge/outlier-identification-rules.md` for full implementation.
 
@@ -141,10 +141,10 @@ The "topics from adjacent NO" rule is non-negotiable. Adjacent niches translate 
 
 After all 3 circles are researched, synthesize:
 
-- **Convergent patterns:** appear across multiple channels and across multiple circles. Highest confidence. Worth testing first.
-- **Niche-specific patterns:** appear in 3+ niche channels. Medium-high confidence for the audience.
-- **Adjacent translations:** structural patterns from adjacent niches that haven't been adopted in the niche yet. Highest differentiation potential, medium confidence (untested in this audience).
-- **Channel-unique signals:** patterns from one channel that may or may not transfer. Lowest confidence. Tag and revisit if testing.
+- **Convergent patterns:** appear across multiple channels and across multiple circles. Widest spread, the strongest signal. Worth testing first.
+- **Niche-specific patterns:** appear in 3+ niche channels. Strong spread for this audience.
+- **Adjacent translations:** structural patterns from adjacent niches not yet used in the niche. Highest differentiation potential, thinner spread in this audience (untested here).
+- **Channel-unique signals:** patterns from one channel only. Spread of one, may or may not transfer. Tag and revisit if testing.
 
 The synthesis output drives Theory of One curation: which patterns DOES the creator's audience already expect from them? Which would feel surprising but earned? Which are too far?
 
@@ -159,7 +159,7 @@ Filter every pattern through:
 - What's my credibility for this angle? Can I deliver on it?
 - Has my audience already given me permission to do this kind of video?
 
-A pattern that scored HIGH confidence in cross-channel synthesis can still be a wrong fit for the creator's specific audience. The creator's call, always. The pattern bank captures the data; the creator decides what to test.
+A pattern that showed wide spread across channels can still be a wrong fit for the creator's specific audience. The creator's call, always. The pattern bank captures the data; the creator decides what to test.
 
 ## Cadence
 

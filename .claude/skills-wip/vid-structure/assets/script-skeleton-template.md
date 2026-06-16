@@ -73,6 +73,12 @@ last_refreshed: {YYYY-MM-DD}
 
 *To be written by vid-ending. CTA shape per piece.md goal. Pivots to next problem in Top 3.*
 
+## Blocks to capture
+
+*Open blocks the script still needs (every "no match" flag above lands here). Filled batch-now at the structure seam, or inline as each section is written. Delete a row when its block is captured and wikilinked into its section. An empty list means the script is fully sourced.*
+
+- [ ] {segment} / {block type}: {what's needed} ({why the bank had no match})
+
 ---
 
 <!-- 
@@ -135,6 +141,12 @@ COMBINES applied:
 ## Ending
 
 *To be written by vid-ending. Sales-goal CTA placement per format-planner.*
+
+## Blocks to capture
+
+*Open blocks the script still needs (every "no match" flag above lands here). Filled batch-now at the structure seam, or inline as each beat is written. Delete a row when its block is captured and wikilinked. An empty list means the script is fully sourced.*
+
+- [ ] {beat} / {block type}: {what's needed} ({why the bank had no match})
 
 ---
 

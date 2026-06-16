@@ -19,7 +19,7 @@ Built by grepping every `SKILL.md`, `references/*.md`, and `assets/*.md` across 
 **creator-setup** `SHIPPED`
 - Required knowledge files: **none**. Pure scaffolder, references no `knowledge/`.
 
-**vid-foundation** `SHIPPED`
+**foundation** `SHIPPED`
 - Required knowledge files: **none**. Thin orchestrator, references no `knowledge/`.
 
 **vid-avatar** `SHIPPED`
@@ -233,7 +233,7 @@ When you ship a skill, confirm every box. The skill's own `SKILL.md`, `reference
 ### SHIPPED skills
 
 - [ ] **creator-setup**: no knowledge files needed.
-- [ ] **vid-foundation**: no knowledge files needed.
+- [ ] **foundation**: no knowledge files needed.
 - [ ] **vid-avatar**: interview-posture, vault-integration, creator-foundation-template (3)
 - [ ] **vid-positioning**: interview-posture, vault-integration (2)
 - [ ] **vid-pillars**: interview-posture, vault-integration (2)

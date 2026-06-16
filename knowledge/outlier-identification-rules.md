@@ -8,153 +8,98 @@ tags: [reference, outliers, research, rules]
 
 # Outlier Identification Rules
 
-The rules for identifying which videos count as outliers in pattern research. Examples-first. Three layers: the 2x rule, the raw-count threshold, and the fluke filter.
+The rules for deciding which videos count as outliers in pattern research. Examples-first. The core move: a video is an outlier when it clearly beat what is normal for THAT channel's size. 2x the median is the floor you start from, not the bar you stop at. The bar scales per channel.
+
+All examples here are generic placeholders (`@CoachX`, fitness niche). They illustrate the method. Real channel data lives only in the creator's `banks/pattern-bank.md`, never in this file.
 
 ## Why this exists
 
-Pattern research only studies outliers, videos that significantly outperformed channel average. Studying underperformers teaches you what tanks, which is useful but separate. Studying average videos teaches you what's expected, which is unhelpful. Outliers signal what audiences want MORE of, which is the only signal worth scaling.
+Pattern research only studies outliers, videos that significantly outperformed what the channel normally does. Studying average videos teaches you what is expected. Studying underperformers teaches you what tanks. Outliers signal what audiences want MORE of, which is the only signal worth scaling.
 
-But "outlier" is fuzzy. A bigger view count alone isn't enough. Need three layers of filtering to separate real signal from noise.
+But "outlier" is fuzzy. A bigger view count alone is not enough, and a flat 2x rule breaks at the edges (it floods on channels that post daily and starves on giants). So the floor scales to the channel.
 
-## Layer 1: The 2x rule
+## The window (calibrated, ask first)
 
-**Rule:** A video qualifies as an outlier candidate if its view count is at least 2x the channel's recent average.
+Pull each channel's videos from a set window. **Default is the last 12 months.** Offer to expand to 24 if a channel posts rarely and 12 months is too thin to read. This is a calibration question at the start of a run, not a hardcoded number. Older data is staler (the channel and the platform have moved on), so recent wins weigh more (see Recency below).
 
-**How to compute channel average:**
+When computing the median, exclude shorts (60 seconds or less) and live streams. They have different view dynamics and would skew the picture.
 
-- Pull the channel's videos from the last 2 years (older data is stale, channel may have evolved).
-- Exclude shorts (60 seconds or less), different content type, different ranking signals.
-- Exclude live streams, different format, often performance-skewed by drop-in views.
-- Compute median of remaining videos' view counts (median, not mean, outliers themselves would skew the mean).
+## The rule: scale the floor to the channel
 
-**Why 2x:** below 2x is within normal channel variance. 1.5x performance is noise (any given video can hit that on a normal day). 2x signals something genuinely caught fire that other videos didn't.
+For each channel, compute the **median** view count over the window (median, not mean, so the outliers do not inflate their own bar). Then set a raw-view floor that represents a genuine breakout for a channel THAT size. Three things move the floor:
 
-**Worked example:** A channel's median over last 2 years is 80,000 views. Outlier threshold = 160,000 views. A video at 145k views: not an outlier (close but inside variance). A video at 220k views: outlier candidate (passes Layer 1, must clear Layer 2 next).
+1. **Start at 2x the median.** This is the floor of the floor. Below 2x is normal channel variance (a 1.5x video is just a good day). 2x is the minimum to even be a candidate.
+2. **For a normal-cadence channel, the real bar is closer to 3 to 4x the median.** A video that did 3 to 4x what the channel usually does clearly caught fire. That is the breakout, not a video that squeaked past 2x.
+3. **Push the floor higher when the channel posts constantly.** A channel that uploads near-daily drags its own median down with a pile of low-view videos, which makes 2x trivial to clear. For those, the floor climbs to 8x, 10x, more, until only the real breakouts survive.
+4. **For giant, fame-driven channels, only the mega-hits count.** A huge channel's median is already enormous, so 2x is a big number on its own. Keep the floor high (their biggest videos only). You are mining these for packaging shape, not benchmarking against them.
 
-**Edge case, small channels:** if median is fewer than 1,000 views, the 2x rule is mathematically too easy to clear. Apply the raw-count threshold (Layer 2) more strictly.
+The AI proposes a floor per channel from the median plus the posting cadence (videos per window) and explains the reasoning. The creator confirms or adjusts. The creator's eye on "is that a real breakout for a channel that size" is the final call.
 
-## Layer 2: The raw-count threshold
+A second sanity check after the multiple: the raw view count has to be meaningful for the niche. A 600-view video on a 300-view channel is 2x but means nothing; the audience could be one share or one search fluke. If the raw number is too small to trust, it is not an outlier no matter the multiple.
 
-**Rule:** The video's absolute view count must be meaningful for the niche, not just relative to the channel.
+## Worked examples (generic)
 
-This is the "common sense over math" layer. A 600-view video on a 300-view-average channel passes Layer 1 (2x the average) but is NOT an outlier in the meaningful sense. 600 views is too small for nearly any niche to teach a real lesson, the data set is too thin and the audience may have come from one share, one search query, one accident. The pattern can't be trusted.
+**Normal-cadence mid channel.** `@CoachX`, fitness programming, posts weekly, ~50 videos in the window, median 20k. Start: 2x = 40k. Real bar: 3 to 4x = 60k to 80k. A 145k video (7x) is a clear outlier. A 52k video (2.6x) is a solid breakout worth keeping. A 41k video (2x exactly) is borderline, probably just a good week, lean skip.
 
-**The threshold is niche-relative.**
+**Hyper-cadence channel.** `@DailyFitTips`, posts near-daily, ~500 videos in the window, median 4k (dragged down by volume). Start: 2x = 8k, which dozens of videos clear, that is noise. Push the floor up: at ~12x median (48k) only the genuine breakouts remain. Set the floor where the real hits separate from the daily churn, then confirm with the creator.
 
-Compute the niche's typical view count:
+**Giant fame-driven channel.** `@MegaCreator`, 5M subs, median 300k. 2x = 600k. Keep the floor at the mega-hits only (say 1M+), because the goal is to study the shape of their biggest packaging, not to compare a smaller creator's reach to theirs. Mark this channel style-only: take title and thumbnail structure, never topics, never view benchmarks.
 
-1. Take all niche channels in the research session (Circle 2, 5 channels).
-2. Compute each channel's median view count (using Layer 1 method).
-3. Take the median of those medians. Call this "niche-typical."
-4. The raw-count threshold for outliers is **at least 50% of niche-typical**.
+**Tiny channel below the niche.** `@NewCoach`, median 1.5k. The multiples look huge (a 10k video is 6.7x), but 10k may still be too small to trust for the niche. Surface it to the creator: "this is 6.7x your normal but small for the niche, study it as your own data point knowing the pattern may be small-channel-specific?" The creator decides.
 
-**Worked example:** Researching the YouTube growth niche. Five niche channels analyzed. Their medians: 80k, 120k, 200k, 60k, 180k. Niche-typical median = 120k. Raw-count threshold = 60k.
+## The fluke filter (always run it)
 
-Now consider a candidate outlier on a small niche channel: channel median 30k, video pulled 90k. Layer 1: 3x the average, passes. Layer 2: 90k > 60k threshold, passes. Confirmed outlier.
+A high multiple does not make a pattern if the topic is off-niche. A YouTube-marketing channel with 99 videos about thumbnails and one viral video about sewing does not have 100 useful data points. It has 99 plus a fluke.
 
-Consider another candidate: channel median 5k, video pulled 18k. Layer 1: 3.6x average, passes. Layer 2: 18k < 60k threshold, FAILS. Not an outlier for this niche. Skip.
+How to apply it:
 
-**Why this matters:** prevents the pattern bank from being polluted with patterns from videos that simply caught a friend share, a small subreddit boost, or a one-time algorithmic spike that doesn't represent what the niche audience really wants.
-
-**Edge case, your own channel below niche-typical:** a creator's own channel may be smaller than the niche typical. Still apply the threshold for OWN-channel outliers but with creator confirmation: "Your channel's outlier at 18k views is small for the niche-typical 120k. Want to study it as your own data point, knowing the pattern may be small-channel-specific?" Creator decides.
-
-## Layer 3: The fluke filter
-
-**Rule:** The outlier must be on-niche for the channel's primary themes. Off-niche flukes don't represent what works for the audience.
-
-This is the underwater-basket-weaving filter. A YouTube marketing channel with 99 videos about thumbnails, retention, and hooks, and one viral video about sewing, does not have 100 useful data points. It has 99 data points + 1 fluke. The sewing video's pattern doesn't transfer to the channel's actual audience because the audience that watches the sewing video probably isn't the channel's regular audience.
-
-**How to apply the fluke filter:**
-
-1. AI summarizes the channel's primary themes from the last 30 video titles.
-2. For each candidate outlier (passed Layers 1 and 2), AI checks: is this video's topic on-niche for the channel?
-3. Surface fluke flags to the creator with full context:
+1. Summarize the channel's primary themes from its recent video titles.
+2. For each candidate outlier, check: is this topic on-niche for the channel?
+3. Surface flukes to the creator with context:
 
 ```
 > [!warning] Possible fluke
-> 
-> Outlier: "I Tried Sewing for 30 Days", 700k views
-> Channel @YouTubeMarketingPro, primary themes: thumbnails, retention, hook writing, scripting
-> 
-> This outlier appears off-niche for the channel. Likely a fluke (algorithmic spike, 
-> cross-promotion, or one-off curiosity hit). Pattern data from off-niche flukes 
-> typically doesn't transfer to the channel's actual audience.
-> 
+>
+> Outlier: "I Tried Sewing for 30 Days", 700k views (14x median)
+> Channel @CoachX, primary themes: thumbnails, retention, hook writing
+>
+> This looks off-niche. Likely a one-off spike (cross-promotion, algorithmic luck) that
+> will not transfer to the channel's actual audience.
+>
 > Skip / Study anyway / Flag for manual review
 ```
 
-4. Default = Skip. Creator can override only with rationale ("this fluke shows my audience is broader than I thought, want to study it").
+Default is skip. The creator can override only with a reason ("this fluke shows my audience is broader than I thought, worth studying"). When they override, capture the audience insight, not the off-niche topic.
 
-**Why default skip:** off-niche flukes pollute patterns. A channel that gets 700k on a sewing video, applied to thumbnail strategy research, would suggest "show your hands doing a craft" as a thumbnail pattern that pulls. But the channel's regular audience came for thumbnail teaching, not crafts. The pattern is a misattribution.
+## Recency (a weight, not a gate)
 
-**When to override:** when the fluke reveals something genuine about the audience the creator didn't realize. "My YouTube marketing audience apparently also responds to creator-process content, interesting." Capture the insight, not the topic.
+Within the window, newer wins weigh more, because the platform shifts.
 
-## Layer 4 (optional): Recency check
+- Outliers from the last 6 months are the strongest signal.
+- Older outliers in the window are useful but mark the date.
+- A pattern that shows up in both recent AND older outliers is the most trustworthy, it has held across platform changes.
 
-For any outlier candidate that passes Layers 1-3, also check recency:
+## Spread, not confidence
 
-- If the outlier was published 24+ months ago, the platform context has shifted enough that the pattern may be stale. Flag with `published: {date}, age: {months}` in the bank.
-- Outliers from the last 12 months are highest signal.
-- Outliers from 12-24 months ago are useful but should be marked.
-- Outliers older than 24 months can be excluded entirely from primary pattern bank (live in archived section if creator wants the historical record).
+When a pattern repeats across multiple channels, that is the real strength signal: it is repeatable, not a one-channel quirk. Record the spread (how many channels, and which ones) on the synthesized pattern. Do not stamp a HIGH/MEDIUM/LOW confidence label; the channel count is the honest signal and a label only skews how the next decision gets made. A pattern proven on the creator's OWN channel is the strongest of all (mark `own_channel_proven: true`).
 
-This isn't a hard filter, recency is more of a confidence weight than a yes/no. Patterns that converge across recent AND older outliers are highest confidence (proven across multiple platform iterations).
+## Summary
 
-## Threshold confirmation summary
+A video is a confirmed outlier when ALL of these hold:
 
-A video qualifies as a confirmed outlier when ALL of the following are true:
+- It clears the channel's scaled floor (start at 2x median, real bar ~3 to 4x for normal cadence, higher for hyper-cadence, mega-only for giants).
+- Its raw view count is meaningful for the niche (not a tiny-channel math trick).
+- Its topic is on-niche for the channel (passes the fluke filter).
+- It falls inside the calibrated window (default 12 months), with recency as a weight.
 
-- View count ≥ 2x channel median (Layer 1)
-- View count ≥ 50% of niche-typical median (Layer 2)
-- Topic is on-niche for the channel's primary themes (Layer 3)
-- Published within last 24 months for primary bank (Layer 4, soft preference, not hard filter)
-
-Anything that fails any layer is either skipped (default), flagged for creator override, or moved to an archived/considered-and-dropped section.
-
-## Worked end-to-end example
-
-**Scenario:** researching a fitness-coaching channel for the creator's pattern bank. Channel @CoachX has been active 3 years.
-
-**Pull last 2 years of @CoachX videos (excluding shorts and live streams):**
-
-- 47 videos found
-- View counts: 12k, 8k, 22k, 15k, 9k, 14k, 145k, 11k, 18k, ... (sorted)
-- Median: 18k
-
-**Identify Layer 1 candidates (≥ 2x median = ≥ 36k):**
-
-- Video A: 145k, passes
-- Video B: 80k, passes
-- Video C: 52k, passes
-- Video D: 38k, passes (just over threshold)
-- 4 candidates total
-
-**Compute Layer 2 threshold:**
-
-- Niche-typical (from 5 niche channels' medians): 80k
-- Layer 2 threshold = 40k
-
-**Apply Layer 2:**
-
-- Video A: 145k > 40k, passes
-- Video B: 80k > 40k, passes
-- Video C: 52k > 40k, passes
-- Video D: 38k < 40k, FAILS Layer 2. Skip from primary bank, capture in considered-but-too-small section.
-
-**Apply Layer 3 fluke filter on remaining 3:**
-
-- Video A: "5 Lifts I Wish I Started With", on-niche (fitness, lift programming), passes
-- Video B: "Why I Quit My 9-to-5 to Coach", on-niche but personal/business, borderline, surface to creator: "this is on-niche-adjacent (your story, not lift programming), worth studying as a different content type or fluke?" Creator says: "study it, this is the personal-brand thread my audience also engages with." Confirmed outlier.
-- Video C: "How My Wife Reorganized Our Pantry", off-niche (channel is fitness, not home org), FLAGGED FLUKE. Default skip. Creator confirms skip.
-
-**Final outlier set: Videos A and B.** These get full pattern extraction (vision-classify thumbnails, extract title patterns, identify formats, log power words). Video C is captured in `## Considered + dropped` appendix with rationale "off-niche fluke per Layer 3."
-
-**Time spent on filtering:** roughly 3-5 minutes per channel. Done.
+Anything that fails is skipped (default), surfaced for creator override, or moved to a considered-and-dropped note.
 
 ## Common mistakes
 
-- **Using mean instead of median for channel average.** Outliers themselves skew the mean upward, making the threshold artificially high and missing real outliers. Always median.
-- **Including shorts in the average computation.** Shorts have different view dynamics. Including them either inflates the average (channels that ride shorts) or makes outliers easier to clear artificially. Exclude shorts and live streams.
-- **Skipping Layer 2 for small channels.** Producing pattern data from 600-view videos on 300-view channels gives the creator confidence in patterns that haven't actually been tested at meaningful scale. Always apply niche-typical threshold.
-- **Auto-skipping fluke flags without creator review.** Sometimes the "fluke" reveals genuine audience insight. Surface with context, let creator decide. Don't silently drop.
-- **Treating 2-year-old outliers as fresh signal.** Platform changes shift what works. Mark recency on every captured outlier so future runs can re-validate.
+- **Treating 2x as the bar.** 2x is the floor. The real breakout for a normal channel is 3 to 4x its median. Stopping at 2x fills the bank with good-week videos.
+- **Using mean instead of median.** Outliers inflate the mean and hide themselves. Always median.
+- **Including shorts or live streams in the median.** Different view dynamics. Exclude them.
+- **Letting hyper-cadence channels flood the bank.** A daily-posting channel clears 2x dozens of times. Raise its floor until only the real breakouts remain.
+- **Benchmarking a small creator against a giant.** Giant channels are style-only references. Take their packaging shape, never their view counts or topics.
+- **Auto-skipping flukes without surfacing them.** Sometimes the fluke reveals a real audience insight. Surface with context, let the creator decide.
+- **Stamping confidence labels.** Record spread (which channels, how many) instead. The count is the signal; the label skews.

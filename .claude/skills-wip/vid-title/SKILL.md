@@ -1,6 +1,6 @@
 ---
 name: vid-title
-description: Generate 5-10 BENS-aligned title candidates for one video and lock 1 with the creator. Pulls from creator-specific patterns in `banks/title-bank.md`, the video's specific material (brain-dump or framing artifact), and the BENS framework. Anti-fabrication. Every claim must be backed by the script. Runnable standalone OR invoked by `vid-structure` during the structure phase. Triggers on "generate titles", "title options for [video]", "lock the title", "rename this video", or when a downstream pipeline needs a locked title.
+description: Generate 5-10 BENS-aligned title candidates for one video and lock 1 with the creator. Pulls from creator-specific patterns in `banks/title-bank.md`, the video's specific material (brain-dump or framing artifact), and the BENS framework. Anti-fabrication. Every claim must be backed by the script. Runnable standalone OR invoked by the orchestrator during the packaging phase (after framing, before structure). Triggers on "generate titles", "title options for [video]", "lock the title", "rename this video", or when a downstream pipeline needs a locked title.
 ---
 
 # Video Title Generator
@@ -11,13 +11,13 @@ Generates BENS-aligned title candidates for one video. Three phases: load contex
 
 ## What this produces
 
-A locked title for one video, saved to `content/pieces/{slug}/piece.md` (the `title:` field). When invoked as a sub-skill by `vid-structure` or `vid-pipeline`, returns the title string to the caller instead.
+A locked title for one video, saved to `content/pieces/{slug}/piece.md` (the `title:` field). When invoked as a sub-skill by `vid-pipeline`, returns the title string to the caller instead.
 
 ## When to run this
 
-- A video is in framing/structure phase and needs a title before the script gets written
+- A video is framed and needs its title locked before structure and scripting (the packaging step)
 - Creator wants to re-title an existing piece based on better understanding of the angle
-- Orchestrator (vid-pipeline) invokes during STRUCTURE phase
+- Orchestrator (vid-pipeline) invokes during the PACKAGING phase, after framing and before structure
 
 ## Prerequisites
 
@@ -26,15 +26,15 @@ Hard requirements:
 - `foundation/packaging-system.md` exists with current packaging defaults and format guidance
 - `content/pieces/{slug}/` exists with at minimum `piece.md` OR a brain-dump / framing artifact that explains what the video is about
 
-If the foundation docs are missing, hard stop. Tell the creator to run `vid-foundation` first.
+If the foundation docs are missing, hard stop. Tell the creator to run `/foundation` first.
 
-If `banks/title-bank.md` is missing, fall back to using BENS-framework patterns directly plus the title-bank seed at `${CLAUDE_PLUGIN_ROOT}/skills/vid-foundation/assets/title-bank-seed.md` (or in the current dev workspace, `assets/title-bank-seed.md`). Note in the brief: "Title bank not yet scaffolded. Using seed patterns only."
+If `banks/title-bank.md` is missing, fall back to using BENS-framework patterns directly plus the title-bank seed at `${CLAUDE_PLUGIN_ROOT}/skills/vid-research/assets/title-bank-template.md` (or `.claude/skills/vid-research/assets/title-bank-template.md` in the dev workspace). Note in the brief: "Title bank not yet scaffolded. Using seed patterns only."
 
 ## Invocation modes
 
 **Standalone:** creator invokes directly. After lock, save the title to `content/pieces/{slug}/piece.md` and end.
 
-**Sub-skill:** another skill (vid-structure, vid-pipeline) invokes mid-pipeline. Skip the save step; return the locked title string to the caller. The caller writes it to piece.md as part of its own flow.
+**Sub-skill:** the orchestrator (vid-pipeline) invokes it mid-pipeline during the packaging phase. Skip the save step; return the locked title string to the caller. The caller writes it to piece.md as part of its own flow.
 
 If invoked with context from a caller (e.g. "title for video about X, format=case-study, locked angle=Y"), skip questions the caller has already answered and go straight to candidate generation.
 
@@ -230,7 +230,7 @@ If `vid-thumbnail` hasn't run yet, just lock the title. `vid-thumbnail` will res
 | `knowledge/BENS-framework.md` | Big/Easy/New/Safe rules and examples |
 | `banks/title-bank.md` | Fill-in-the-blank title patterns (research + creator-curated in one file) |
 | `banks/power-words-bank.md` | Global + audience-specific power words, loaded for word selection |
-| `assets/title-bank-seed.md` (vid-foundation) | Fallback patterns if title-bank.md not yet scaffolded |
+| `vid-research/assets/title-bank-template.md` | Fallback patterns if title-bank.md not yet scaffolded |
 | `foundation/creator-foundation.md` | Avatar, Top 3 problems |
 | `foundation/packaging-system.md` | Format guidance, current packaging defaults |
 | `content/pieces/{slug}/*` | The video's actual material (brain-dump, framing, script) |
@@ -238,8 +238,9 @@ If `vid-thumbnail` hasn't run yet, just lock the title. `vid-thumbnail` will res
 
 ## Related skills
 
-- `vid-foundation` produces the foundation docs this skill loads
+- The `/foundation` chain produces `creator-foundation.md` and `vid-research` produces `packaging-system.md`, the docs this skill loads
 - `vid-thumbnail` pairs with this skill; coordinate to avoid word repeats
-- `vid-structure` (future) invokes this skill during STRUCTURE phase
-- `vid-pipeline` (future) is the orchestrator that calls this skill via vid-structure
+- `vid-framing` runs before this skill and locks the angle plus format the title is built on
+- `vid-ideas` may have surfaced a provisional working title when the topic was chosen. If `piece.md` or the seed carries one, treat it as a single input candidate, not a locked answer. This skill does the real craft and is free to beat it or discard it.
+- `vid-pipeline` (future) is the orchestrator that calls this skill during the packaging phase (after framing, before structure)
 - `vid-measurement` (future) does post-publish analysis, logs winning titles back into `banks/title-bank.md` and `banks/packaging-bank/`

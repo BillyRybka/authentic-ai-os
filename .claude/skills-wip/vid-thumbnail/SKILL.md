@@ -1,6 +1,6 @@
 ---
 name: vid-thumbnail
-description: Generate thumbnail TEXT options for one video and help the creator pick 1-2 winners. The skill is a TEXT planner only. It does NOT design the visual (no layouts, hero choices, expressions, color application, or AI prompts). Those live in the future vid-thumbnail-gen skill or in the creator's own design process. Outputs a brief with the locked text picks plus rationale (strategy, BENS letters, why it lands). Use when a video is locked and ready for packaging text, or when the creator says "let's do the thumbnail text", "thumbnail options for [video]", or a downstream pipeline invokes it after the script and title are locked.
+description: Generate thumbnail TEXT options for one video and help the creator pick 1-2 winners. The skill is a TEXT planner only. It does NOT design the visual (no layouts, hero choices, expressions, color application, or AI prompts). Those live in the future vid-thumbnail-gen skill or in the creator's own design process. Outputs a brief with the locked text picks plus rationale (strategy, BENS letters, why it lands). Use when the title is locked and you are packaging the video, or when the creator says "let's do the thumbnail text", "thumbnail options for [video]", or a downstream pipeline invokes it right after vid-title and before vid-structure.
 ---
 
 # Video Thumbnail Text Planner
@@ -21,9 +21,9 @@ One file in the creator's workspace:
 
 ## When to run this
 
-- A video's title is locked and the script is filming-ready
+- A video's title is locked (thumbnail is the next packaging step, before structure)
 - Creator asks for thumbnail options for an existing piece
-- A pipeline orchestrator invokes this after structure/script is done
+- A pipeline orchestrator invokes this in the packaging phase, after vid-title and before vid-structure
 
 ## Prerequisites
 
@@ -32,7 +32,7 @@ Hard requirement: `foundation/packaging-system.md` must exist with:
 - Design guardrails (color, font, hero element, expression rules)
 - Creation path picked (Photoshop / AI workflow / batch photos / outsource)
 
-If `packaging-system.md` is missing, hard stop. Tell the creator to run `vid-foundation` Stage 4 first.
+If `packaging-system.md` is missing, hard stop. Tell the creator to run `vid-research` first (it authors packaging-system.md from real outlier evidence).
 
 Also hard: the video `slug` argument, or an existing `content/pieces/{slug}/piece.md` with a locked title.
 
@@ -207,6 +207,6 @@ Template lives in `assets/`:
 
 ## Related skills
 
-- `vid-foundation` (Stage 4) creates the `packaging-system.md` this skill reads
+- `vid-research` authors the `packaging-system.md` this skill reads (from outlier evidence)
 - `vid-thumbnail-gen` (future) takes a brief from this skill and produces actual images via the creator's AI tool
 - `vid-measurement` (future) post-publish analysis that flags winning packaging, creator logs a `packaging-bank/` entry

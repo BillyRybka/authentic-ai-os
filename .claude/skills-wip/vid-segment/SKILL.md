@@ -1,6 +1,6 @@
 ---
 name: vid-segment
-description: Build one body segment of a video script using a per-segment Setup → Tension → Payoff arc. Format-aware (deep dive, listicle, case study, short process, news, roast, interview), bank-pulling (story, proof, metaphor, testimonial, framework), and runs an internal two-pass review (structure first, then prose) before saving. Standalone OR invoked by vid-structure / vid-pipeline once per body segment. Triggers on "write segment", "draft point", "build the next point", "write point [N]", "expand step [N]", "next body segment", or when an orchestrator asks for one segment of script body.
+description: Build one body segment of a video script using a per-segment Setup → Tension → Payoff arc. Format-aware (deep dive, listicle, case study, short process, news, roast, interview), bank-pulling (story, proof, metaphor, testimonial, framework), and runs an internal two-pass review (structure first, then prose) before saving. Standalone OR invoked by vid-pipeline once per body segment in the script phase. Triggers on "write segment", "draft point", "build the next point", "write point [N]", "expand step [N]", "next body segment", or when an orchestrator asks for one segment of script body.
 ---
 
 # Video Segment Writer
@@ -18,7 +18,7 @@ The segment's prose appended to `content/pieces/{slug}/script.md` under a headin
 ## When to run this
 
 - A piece is in script-writing phase and the next body segment needs to be drafted
-- The orchestrator (`vid-pipeline` / `vid-structure`) invokes one segment at a time
+- The orchestrator (`vid-pipeline`) invokes one segment at a time
 - A creator wants to revise or rebuild a single segment without touching the rest of the script
 - A previously-written segment failed pressure-test and needs a structure-first rebuild
 
@@ -39,7 +39,7 @@ Optional but used when present:
 - `content/pieces/{slug}/script.md` (so prior segments inform setup/payoff continuity)
 - The relevant bank folders (`banks/story-bank/`, `banks/proof-bank/`, `banks/metaphor-bank/`, `banks/testimonial-bank/`, `banks/framework-bank/`)
 
-If foundation docs are missing, hard stop. Tell the creator to run `vid-foundation` and `vid-voice-capture` first.
+If foundation docs are missing, hard stop. Tell the creator to run `/foundation` and `vid-voice-capture` first.
 
 If `content/pieces/{slug}/brain-dump.md` and `piece.md` are both missing, hard stop. The segment has no source material. Route the creator to `vid-intake` (raw capture) or `vid-framing` (decide angle / format / payoff) first.
 
@@ -47,7 +47,7 @@ If `content/pieces/{slug}/brain-dump.md` and `piece.md` are both missing, hard s
 
 **Standalone.** Creator invokes directly to write or rebuild one segment. The skill loops the two-pass review with the creator until lock, saves to script.md, updates banks, ends.
 
-**Sub-skill.** Another skill (`vid-structure`, `vid-pipeline`) invokes mid-pipeline. The caller passes a context packet (segment's purpose, format, prior-segment closing line, locked title and intro). Skip questions the caller has already answered. Return the locked prose string plus the packet of bank wikilinks pulled.
+**Sub-skill.** The orchestrator (`vid-pipeline`) invokes it mid-pipeline, once per segment. The caller passes a context packet (segment's purpose, format, prior-segment closing line, locked title and intro). Skip questions the caller has already answered. Return the locked prose string plus the packet of bank wikilinks pulled.
 
 If invoked with a caller packet that already names the format, segment purpose, and any locked banks to pull, skip Phase 1 questions and go straight to Phase 2 (structure pass).
 
@@ -69,11 +69,11 @@ This skill is a conversation, not a document. Keep messages short. Never paste r
 8. `knowledge/story-capture-guide.md` / `proof-capture-guide.md` / `metaphor-builder.md` / `testimonial-capture.md` (each loaded only if the segment ends up pulling that asset type)
 9. `content/pieces/{slug}/piece.md` (format, goal, pillar, locked title, prior `stories_used` / `proofs_used` / `metaphors_used`)
 10. `content/pieces/{slug}/brain-dump.md` and `piece.md` (the segment's raw material: locked angle, core payoff, point list)
-11. `content/pieces/{slug}/script.md` (if it exists, so prior-segment closing line and prior banks pulled inform setup continuity)
+11. `content/pieces/{slug}/script.md` (if it exists, so prior-segment closing line and prior banks pulled inform setup continuity, AND the `## Blocks to capture` list so you know which open blocks this segment still owes)
 12. Skill-local references: `references/setup-tension-payoff-shapes.md`, `references/framework-shapes.md` (uniquely this skill's runtime decision logic). Plus shared knowledge files used across writing skills: `knowledge/parable-decision-matrix.md`, `knowledge/story-pulling-criteria.md`, `knowledge/proof-placement-rules.md`, `knowledge/metaphor-integration.md`, `knowledge/framework-builder.md` (for inline framework crafting when the segment's principle is a framework and no bank match exists), `knowledge/visual-demo-builder.md` (for inline visual demo crafting when the segment's parable is a Visual Demo, since there is no Visual Demo bank)
 13. `knowledge/visual-proof-callouts.md` (canonical `> [!important] Visual proof needed` callout convention. Load when the segment's principle makes a numbered, named, or before/after claim that the editor must put on screen)
 14. `banks/transition-bank.md` (Section 2 segment-to-segment patterns plus Section 4 banned phrases for the segment's outbound transition)
-15. `content/pieces/{slug}/async-brick-notes.md` (if it exists). Unstructured jot pad for ideas about OTHER segments that surfaced during prior writing. Check this file for any notes tagged with the current segment's purpose before brainstorming from scratch. If notes don't exist, create the file lazily when the creator drops the first note.
+15. `content/pieces/{slug}/async-block-notes.md` (if it exists). Unstructured jot pad for ideas about OTHER segments that surfaced during prior writing. Check this file for any notes tagged with the current segment's purpose before brainstorming from scratch. If notes don't exist, create the file lazily when the creator drops the first note.
 
 **Frame the segment.** Pull the segment's job from `piece.md` (the locked angle and the segment's purpose in the body, e.g. "step 1 of 5", "point 3 of 7", "the case-study story beat", "the news 'why it matters' beat"). Confirm with the creator in one short message:
 
@@ -124,9 +124,11 @@ For each pulled candidate, surface to creator with: slug + one-line summary + WH
 2. Tell the creator the bank is empty for this slot, ask if they want to skip the block (use a different block type) or pause the segment to capture material first.
 3. For Visual Demo specifically: there's no bank to capture into. Always run the inline 3-step brainstorm using `knowledge/visual-demo-builder.md`.
 
+**Clearing the gap manifest.** vid-structure may have written open rows into the `## Blocks to capture` list at the bottom of script.md (the inline-later path). Before brainstorming a block from scratch, check that list for a row tagged to this segment. If there is one, it names exactly what to capture. When you capture it (option 1) or consciously cut it (option 2), delete its row from `## Blocks to capture` and replace the section's "no match" placeholder with the real `[[wikilink]]`. If the creator chose batch capture at the structure seam, the list is already empty and this is a no-op.
+
 Never invent client names, numbers, results, or specific phrasings. The brain dump is the only allowed source of new specifics, and only because the creator wrote it.
 
-**Async-brick-notes (handling ideas for OTHER segments mid-write).** If the creator is writing Segment N and an idea pops up for Segment M (a different segment), DON'T break flow to formally capture it. Jot a one-line note in `content/pieces/{slug}/async-brick-notes.md` (create the file lazily on first note). Format: `- [Segment M, block type]: quick idea`. When this skill later writes Segment M, it scans async-brick-notes.md as part of Phase 1 silent loads and surfaces relevant notes during the brainstorm step. Notes that don't get used can be deleted or left as artifacts.
+**Async-block-notes (handling ideas for OTHER segments mid-write).** If the creator is writing Segment N and an idea pops up for Segment M (a different segment), DON'T break flow to formally capture it. Jot a one-line note in `content/pieces/{slug}/async-block-notes.md` (create the file lazily on first note). Format: `- [Segment M, block type]: quick idea`. When this skill later writes Segment M, it scans async-block-notes.md as part of Phase 1 silent loads and surfaces relevant notes during the brainstorm step. Notes that don't get used can be deleted or left as artifacts.
 
 **Surface the structure draft.** Format:
 
@@ -172,7 +174,7 @@ Now write the segment in the creator's voice. The structure is locked; this phas
 
 - **Transition prose.** Pull the slot-filled Section 2 pattern from Phase 2's structure draft. Verify against Section 4 banned phrases. If the candidate trips a banned phrase ("anyway, moving on" / "let's dive in" / etc.), regenerate from a different Section 2 pattern.
 
-**Anti-fabrication discipline.** Every number, name, claim, story moment, or specific phrasing in the prose MUST trace to one of: brain dump, reference-block, foundation docs, or a bank entry pulled in Phase 2. If a sentence has a number, the number is verifiable. If a sentence claims a result, the result is in the bank. No "imagine you" framing if the brain dump used a real example. No "$10K to $100K" if the bank says "$8,400 to $74,000". Use the real one.
+**Anti-fabrication discipline.** Every number, name, claim, story moment, or specific phrasing in the prose MUST trace to one of: brain dump, piece.md, foundation docs, or a bank entry pulled in Phase 2. If a sentence has a number, the number is verifiable. If a sentence claims a result, the result is in the bank. No "imagine you" framing if the brain dump used a real example. No "$10K to $100K" if the bank says "$8,400 to $74,000". Use the real one.
 
 **Voice pressure-test inline.** Run `knowledge/voice-pressure-test.md` Pass 1 (guardrail) silently as you write:
 
@@ -260,7 +262,7 @@ Caller writes the segment's location into the script.md skeleton.
 From `vault-integration.md` Failure modes section. Never silent inconsistency.
 
 - **Foundation doc missing:** hard stop. Tell creator which is missing and which skill produces it.
-- **brain-dump and reference-block both missing:** hard stop. Route to `vid-intake` or `vid-framing`.
+- **brain-dump and piece.md both missing:** hard stop. Route to `vid-intake` or `vid-framing`.
 - **Format planner missing or unrecognized:** hard stop. Show the `piece.md` `format:` value and the list of valid format slugs.
 - **Bank query returns nothing for a needed block:** offer the creator three options: invoke `vid-capture` mid-skill to capture the missing entry, swap to a different block type that has bank coverage, or skip the block (rare; flag this in the segment notes).
 - **Structure pass keeps failing (3+ rounds without lock):** stop and ask the creator if the segment's job in `piece.md` is wrong. The skill is pulling from a broken framing. Route back to `vid-framing` if needed.
@@ -315,13 +317,13 @@ From `vault-integration.md` Failure modes section. Never silent inconsistency.
 
 ## Related skills
 
-- `vid-foundation` produces creator-foundation.md
+- `/foundation` produces creator-foundation.md
 - `vid-voice-capture` produces voice-profile.md and reference-pieces/
 - `vid-capture` produces bank entries this skill reads and may be invoked mid-skill if a bank gap blocks the segment
 - `vid-intake` produces brain-dump.md
 - `vid-framing` produces piece.md
 - `vid-intro` writes the intro segment (different shape: 6-part architecture, not STP)
 - `vid-ending` writes the ending segment (different shape: body-to-ending bridge plus CTA)
-- `vid-structure` (future) assembles the skeleton and invokes this skill once per segment
+- `vid-structure` (future) assembles the skeleton this skill fills, once per body section (the orchestrator runs the loop in the script phase)
 - `vid-pipeline` (future) orchestrates the full per-video pipeline
 - `vid-pressure-test` (future) runs the multi-agent adversarial review across the full script after segments are assembled

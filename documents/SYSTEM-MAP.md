@@ -36,15 +36,15 @@ Blue = shipped. Tan = work-in-progress. The whole journey: build the creator's i
 Scaffolds the empty vault so every other skill has somewhere to write.
 - **READS**: nothing (creator passes in a `manifest.md`)
 - **WRITES**: the `Authentic-AI-OS/` folder structure (folders only, no content)
-- **NEXT**: vid-foundation
+- **NEXT**: /foundation
 
 ---
 
 ## Stage 1: Foundation Identity
 
-`vid-foundation` is a thin orchestrator. It checks what's done and auto-advances the five identity skills in order. All five write into **one shared file**: `creator-foundation.md`.
+`/foundation` is a thin orchestrator. It checks what's done and auto-advances the five identity skills in order. All five write into **one shared file**: `creator-foundation.md`.
 
-### vid-foundation `SHIPPED` · orchestrator
+### /foundation `SHIPPED` · orchestrator
 Points the creator at the next foundation step. Holds no content itself.
 - **READS**: `creator-foundation.md`, `packaging-system.md` (to see what's done)
 - **WRITES**: nothing
@@ -105,14 +105,20 @@ Captures stories, proofs, metaphors, testimonials, and frameworks into the evide
 ### vid-research `WIP`
 Studies winning content to build pattern banks and the packaging system.
 - **READS**: `creator-foundation.md`, `packaging-system.md`, `knowledge/three-circle-research.md`, `knowledge/outlier-identification-rules.md`, YouTube API key from `.env`
-- **WRITES**: `banks/pattern-bank.md`, `banks/power-words-bank.md`, `banks/title-patterns-bank.md`, `banks/thumbnail-patterns-bank.md`, `packaging-system.md`
+- **WRITES**: `banks/pattern-bank.md`, `banks/title-bank.md`, `banks/power-words-bank.md`, `packaging-system.md`
 - **NEXT**: vid-intake
 
 ---
 
 ## Stage 4: Pre-Script (per video)
 
-From here, work happens inside one video folder: `content/pieces/{slug}/`. `piece.md` is the **frontmatter hub** every per-video skill reads and updates.
+From here, work happens inside one video folder: `content/pieces/{slug}/`. `piece.md` is the **frontmatter hub** every per-video skill reads and updates. The one exception is `vid-ideas`, the optional front-door that runs before any piece folder exists.
+
+### vid-ideas `WIP` · optional front-door
+Generates a batch of signal-backed video ideas when the creator is blank on what to make. Skip it when the creator already has a topic.
+- **READS**: `creator-foundation.md` (iceberg, pillars, avatar, Top 3), `banks/pattern-bank.md` (synthesis + confirmed winners + dropped), `content/ideas-backlog.md` (if present)
+- **WRITES**: `content/ideas-backlog.md` (kept ideas only)
+- **NEXT**: vid-intake (hands the picked idea as a seed packet)
 
 ### vid-intake `WIP`
 Takes raw material (7 intake modes) and locks the brain-dump for one video.
@@ -124,7 +130,7 @@ Takes raw material (7 intake modes) and locks the brain-dump for one video.
 Picks the angle, core payoff, and format for the video.
 - **READS**: `brain-dump.md`, `piece.md`, `creator-foundation.md`, `banks/pattern-bank.md`, `knowledge/vault-integration.md`
 - **WRITES**: `piece.md` (angle, payoff, format, goal, viewer stage)
-- **NEXT**: vid-title, vid-thumbnail, vid-structure
+- **NEXT**: vid-title (packaging: title then thumbnail, locked before structure)
 
 ### vid-title `WIP`
 Writes the video title using BENS and validated patterns.
@@ -147,24 +153,24 @@ Writes the thumbnail brief: text picks, strategy, BENS rationale.
 ### vid-structure `WIP`
 Builds the script skeleton: intro, format-native body sections, ending.
 - **READS**: `brain-dump.md`, `piece.md`, `creator-foundation.md`, `voice-profile.md`, `thumbnail-brief.md`, `knowledge/format-planners/{format}.md`, `knowledge/script-tension-architecture.md`, all 5 evidence banks
-- **WRITES**: `pieces/{slug}/script.md` (skeleton), `piece.md` (structure status)
-- **NEXT**: vid-intro · can call vid-title/vid-thumbnail as sub-skills if not yet locked
+- **WRITES**: `pieces/{slug}/script.md` (skeleton + `## Blocks to capture` manifest), `piece.md` (structure status)
+- **NEXT**: gap-fill decision (batch now or inline), then vid-intro. Title and thumbnail are already locked in Pre-Script; structure never calls them.
 
 ### vid-intro `WIP`
 Writes the `## Intro` section with the 6-part intro structure.
-- **READS**: `piece.md`, `thumbnail-brief.md`, `brain-dump.md`, `creator-foundation.md`, `voice-profile.md`, `reference-pieces/`, `knowledge/hook-bank.md` (planned), `knowledge/intro-architecture.md`, `knowledge/script-tension-architecture.md`, `knowledge/vault-integration.md`
+- **READS**: `piece.md`, `thumbnail-brief.md`, `brain-dump.md`, `creator-foundation.md`, `voice-profile.md`, `reference-pieces/`, `banks/hook-bank.md`, `knowledge/intro-architecture.md`, `knowledge/script-tension-architecture.md`, `knowledge/vault-integration.md`
 - **WRITES**: `script.md` (`## Intro`)
 - **NEXT**: vid-segment
 
 ### vid-segment `WIP`
 Writes one body section at a time (Setup/Tension/Payoff). Loops once per segment.
-- **READS**: `piece.md`, `brain-dump.md`, `script.md`, `voice-profile.md`, `reference-pieces/`, `creator-foundation.md`, `knowledge/script-tension-architecture.md`, `knowledge/parable-decision-matrix.md`, `knowledge/visual-proof-callouts.md`, `knowledge/vault-integration.md`, all 5 evidence banks + `knowledge/transition-bank.md` (planned)
+- **READS**: `piece.md`, `brain-dump.md`, `script.md`, `voice-profile.md`, `reference-pieces/`, `creator-foundation.md`, `knowledge/script-tension-architecture.md`, `knowledge/parable-decision-matrix.md`, `knowledge/visual-proof-callouts.md`, `knowledge/vault-integration.md`, all 5 evidence banks + `banks/transition-bank.md`
 - **WRITES**: `script.md` (one body section), `piece.md` (banks used)
 - **NEXT**: vid-segment again until done, then vid-ending
 
 ### vid-ending `WIP`
 Writes the `## Ending` section with the Pivot/Gap/Bridge formula.
-- **READS**: `piece.md`, `script.md` (full), `voice-profile.md`, `reference-pieces/`, `creator-foundation.md`, `knowledge/transition-bank.md` (planned)
+- **READS**: `piece.md`, `script.md` (full), `voice-profile.md`, `reference-pieces/`, `creator-foundation.md`, `banks/transition-bank.md`
 - **WRITES**: `script.md` (`## Ending`), `piece.md` (ending status)
 - **NEXT**: vid-pressure-test
 
@@ -206,8 +212,8 @@ Every skill, knowledge file, and bank was grep-verified on 2026-05-21. The wirin
 **Verified as correct (not issues):**
 
 - **Knowledge files all wired.** Every file in `knowledge/` is referenced by at least one skill. The capture/placement guides (`story-capture-guide.md`, `proof-placement-rules.md`, `metaphor-builder.md`, `voice-rhythm.md`, etc.) load conditionally deep in skill bodies, not in header read-lists. `thumbnail-composition-guide.md` is intentionally reserved for the future `vid-thumbnail-gen` skill.
-- **Two title banks is by design.** `title-patterns-bank.md` (raw mined patterns from vid-research) feeds vid-framing. `title-bank.md` (the creator's adapted patterns) feeds vid-title. Distinct artifacts, correct consumers.
-- **`vid-foundation` to `vid-voice-capture` handoff is correct.** vid-foundation explicitly points the creator at vid-voice-capture but does not auto-invoke it, because that skill needs source material the creator brings. Documented and intentional.
+- **One title bank.** `title-bank.md` holds the research-mined patterns plus the creator's curated set in one file (creator edits in place). vid-title loads it. vid-framing loads `pattern-bank.md` for angle selection, not a title bank.
+- **`/foundation` to `vid-voice-capture` handoff is correct.** The `/foundation` chain explicitly points the creator at vid-voice-capture but does not auto-invoke it, because that skill needs source material the creator brings. Documented and intentional.
 - **`vid-avatar` reading `voice-profile.md` is correctly guarded** with "if it exists". Voice capture runs later in the sequence, and the skill handles its absence cleanly.
 
 **Note on the `foundation/` folder:** in this dev repo `creator-foundation.md` sits at the root with no `foundation/` directory. That is expected. The client installer scaffolds `foundation/` on setup. Not a bug.

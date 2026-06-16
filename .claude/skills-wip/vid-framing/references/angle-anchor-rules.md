@@ -7,13 +7,13 @@ when_to_read: Phase 2 (angle generation) and Phase 3 (Theory of One filter)
 
 # Angle Anchor Rules
 
-Every angle vid-framing surfaces is either anchored to a real pattern-bank outlier OR flagged experimental. No third option. This file is the rule set for HOW to anchor, what "confidence" means, when to use the experimental slot, and how to avoid common mistakes.
+Every angle vid-framing surfaces is either anchored to a real pattern-bank outlier OR flagged experimental. No third option. This file is the rule set for HOW to anchor, how anchor strength is derived from a pattern's spread, when to use the experimental slot, and how to avoid common mistakes.
 
 ## The 3 + 1 rule
 
 Every framing session surfaces 4 angles:
 
-- **Angles 1, 2, 3** anchor to real outliers from the creator's pattern banks (`banks/pattern-bank.md` + 6 sub-banks). HIGH or MEDIUM confidence anchors only.
+- **Angles 1, 2, 3** anchor to real outliers from the creator's pattern banks (`banks/pattern-bank.md` + sub-banks). Strong or moderate anchors only (strength derived from spread; see below).
 - **Angle 4** is experimental. No outlier anchor required. Flagged `anchor_confidence: experimental` so the creator picks it with eyes open.
 
 The 3+1 split protects two things at once: discipline (75% of angles are evidence-anchored) and creativity (one slot for the creator's gut).
@@ -27,30 +27,32 @@ An anchor is a SPECIFIC outlier entry from one of the seven pattern banks. Not a
 - A real view count
 - A documented "why this pulled" hypothesis in the bank entry
 
-If the AI surfaces an angle with the rationale "outliers in your niche use curiosity hooks," that's not an anchor. That's hand-waving. The anchor must be: `"You Need This Camera Setting" (@SonyCreator, 480k views, Title Pattern T-3: Imperative + Hidden Move)`.
+If the AI surfaces an angle with the rationale "outliers in your niche use curiosity hooks," that's not an anchor. That's hand-waving. The anchor must be: `"You Need This Camera Setting" (@SonyCreator, 480k views, title pattern imperative-hidden-move)`.
 
-## Anchor confidence levels
+## Anchor strength (derived from spread)
 
-### HIGH
+Strength is NOT read from a stored label. vid-framing derives it at load time from the pattern's `spread` (how many channels used it) and `own_channel_proven`, both written by vid-research into `pattern-bank.md`. When writing piece.md, strong maps to `anchor_confidence: high`, moderate to `medium`, weak to `low`.
 
-Anchor outlier matches ALL of:
-- Appears in `pattern-bank.md` with `confidence: HIGH` (cross-channel convergence, same pattern in 5+ channels OR in the creator's own channel with proven DPV)
-- Pattern has been validated post-publish on a real video (winner logged via vid-measurement, future)
-- The creator's brain-dump material can support the angle without stretching
+### STRONG
 
-HIGH confidence anchors should be surfaced first. They're the "Repeat What Works" candidates.
+Anchor outlier's pattern matches ANY of:
+- `own_channel_proven: true` (the creator has already proven it on THIS audience). The strongest signal, Repeat What Works.
+- `spread` is 5+ of the analyzed channels (cross-channel convergence).
+- Pattern has been validated post-publish on a real video (winner logged via vid-measurement, future).
 
-### MEDIUM
+And the creator's brain-dump material supports the angle without stretching. Strong anchors are surfaced first.
 
-Anchor outlier matches:
-- Appears in `pattern-bank.md` with `confidence: MEDIUM` (pattern observed in 3-4 channels OR strong single-channel signal but not yet validated on the creator's own channel)
+### MODERATE
+
+Anchor outlier's pattern matches:
+- `spread` is 3-4 of the analyzed channels (observed but not yet convergent), and `own_channel_proven: false`
 - Creator's brain-dump material supports the angle but may require some drilling to flesh out
 
-MEDIUM confidence anchors are the "test this" candidates. Reasonable bet, not guaranteed.
+Moderate anchors are the "test this" candidates. Reasonable bet, not guaranteed.
 
-### LOW
+### WEAK
 
-LOW confidence anchors should NOT be surfaced as one of the 3 anchored angles. If the only available anchors for a topic are LOW confidence, the creator probably has a pattern-bank gap, flag this in soft friction: "Limited high-confidence anchors for this topic. Consider running vid-research to refresh banks before locking the angle."
+`spread` of 1-2 channels and not own-channel-proven. Weak anchors should NOT be surfaced as one of the 3 anchored angles. If the only available anchors for a topic are weak, the creator probably has a pattern-bank gap, flag this in soft friction: "Limited anchors with real spread for this topic. Consider running vid-research to refresh banks before locking the angle."
 
 ### EXPERIMENTAL (no anchor)
 
@@ -66,17 +68,17 @@ Experimental angles MUST be flagged: `anchor_confidence: experimental`, `outlier
 
 **Brain-dump topic:** the creator's framework for setting weekly priorities under ADHD.
 
-**Pattern bank shows:** Title Pattern T-7 ("STOP [common practice]") with HIGH confidence (8 of 11 niche channels), anchored to outliers like:
+**Pattern bank shows:** title pattern `stop-do-this` ("STOP [common practice]") with spread 8 of 11 niche channels, anchored to outliers like:
 - "STOP Using These 5 Outdated Productivity Apps" (@CoachX, 1.4M views)
 - "STOP Planning Your Week Like This" (@CoachY, 800k views)
 
 **Anchored angle proposal:**
 
-> **Angle 1 (HIGH-confidence anchored):** "Stop Using Time-Blocking If You Have ADHD"
+> **Angle 1 (strong, anchored):** "Stop Using Time-Blocking If You Have ADHD"
 >
-> Anchor: T-7 pattern. Worked outliers: "STOP Using These 5 Outdated Productivity Apps" (@CoachX, 1.4M), "STOP Planning Your Week Like This" (@CoachY, 800k).
+> Anchor: `stop-do-this` pattern. Worked outliers: "STOP Using These 5 Outdated Productivity Apps" (@CoachX, 1.4M), "STOP Planning Your Week Like This" (@CoachY, 800k).
 >
-> Why it could land: Brain-dump has the creator's specific story about abandoning time-blocking after burnout. T-7 pattern lands consistently in this niche because the audience expects contrarian framing of common advice. Avatar's Top 3 problem #2 ("productivity systems made for neurotypical brains").
+> Why it could land: Brain-dump has the creator's specific story about abandoning time-blocking after burnout. The stop-do-this pattern lands consistently in this niche because the audience expects contrarian framing of common advice. Avatar's Top 3 problem #2 ("productivity systems made for neurotypical brains").
 >
 > Risk: Audience may push back if the alternative the video offers isn't strong. Brain-dump's alternative (energy-blocking) needs to be specific in execution.
 
@@ -110,7 +112,7 @@ Pattern banks built via vid-research should have flukes already filtered. But if
 
 The creator's own past winners are the strongest anchors. When a past winner exists for a topic similar to the brain-dump:
 
-- HIGH-confidence anchor by default (creator has already proven the pattern works for THIS audience)
+- Strong anchor by default (`own_channel_proven: true`, creator has already proven the pattern works for THIS audience)
 - Surface affirmatively: "This angle repeats your past winner '[title]' which pulled [N] views and [DPV signal if known]. The Repeat What Works principle says copy the packaging."
 - Note any planned variations, different story, different framework, so the creator sees what's changing
 
@@ -136,7 +138,7 @@ Each session surfaces 3 anchored + 1 experimental. Don't surface 7 anchored angl
 
 If the pattern bank surfaces 10 strong anchored candidates, vid-framing picks the TOP 3 by:
 
-1. Highest confidence first
+1. Widest spread (and own-channel-proven) first
 2. Best alignment to brain-dump material second
 3. Best fit to the Theory of One filter third
 
@@ -150,7 +152,7 @@ The creator may say "I like the anchor but rewrite the angle." This is fine. The
 - Creator's rewrite: "I Threw Out My Calendar. Here's What Replaced It"
 - Same anchor (T-7 STOP pattern, but applied as a personal-story framing). Captures the creator's voice.
 
-The anchor confidence stays HIGH. The selected_angle field captures the creator's rewrite. The outlier_anchor field captures the original pattern.
+The anchor's strength stays the same (derived from spread). The selected_angle field captures the creator's rewrite. The outlier_anchor field captures the original pattern.
 
 ## Mode 2: anchoring during a refresh / re-frame
 
@@ -162,6 +164,6 @@ Reject any anchor that is:
 
 - Cited without a real bank entry (AI invented the outlier)
 - A fluke (off-niche outlier on the source channel)
-- LOW confidence and surfaced as one of the 3 anchored slots
+- Weak spread (1-2 channels, not own-channel-proven) and surfaced as one of the 3 anchored slots
 - An adjacent-niche topic being borrowed AS a topic (only structures transfer)
 - Anchored to a video the creator has already directly copied within the last 90 days (use Repeat What Works affirmatively, but don't propose the third-in-a-row clone, that's diminishing returns)

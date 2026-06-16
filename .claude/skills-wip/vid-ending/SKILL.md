@@ -24,9 +24,9 @@ A locked ending block, saved as the closing section of `content/pieces/{slug}/sc
 Hard requirements:
 - `foundation/creator-foundation.md` exists with the avatar's Top 3 problems (the Gap reveals one of them)
 - `content/pieces/{slug}/piece.md` exists with `format`, `goal`, and a `pillar` set
-- `content/pieces/{slug}/script.md` has body content the close can recap (or at minimum a `piece.md` describing the transformation the video delivers)
+- `content/pieces/{slug}/script.md` has the full body written (every segment) AND a non-stub `## Intro` (the close's Pivot calls back to the intro's Setup contract, so the opening must already be written)
 
-If body is missing, hard stop. Tell the creator: "I need the body locked first. Run `vid-segment` or paste the locked body, then re-invoke."
+If the body is missing or only partially written, hard stop. Tell the creator: "I need the full body locked first. Run `vid-segment` for every section, then re-invoke." If the `## Intro` section is still a stub (`*To be written by vid-intro...*`), hard stop. Tell the creator: "The intro isn't written yet. Run `vid-intro` first so the close can call back to the opening, then re-invoke."
 
 If `foundation/voice-profile.md` is missing, fall back to core voice rules from `Context/brand.md` and note in the brief: "Voice profile not captured. Using brand defaults. Run `vid-voice-capture` for sharper voice fit."
 
@@ -34,7 +34,7 @@ If `foundation/voice-profile.md` is missing, fall back to core voice rules from 
 
 **Standalone:** creator invokes directly. After lock, save the close into `script.md` (replacing any existing close) and update `piece.md`.
 
-**Sub-skill:** another skill (vid-pipeline, vid-structure) invokes mid-pipeline with a context packet. Skip questions the caller has already answered. Return the ending packet to the caller; caller writes to script.md.
+**Sub-skill:** the orchestrator (vid-pipeline) invokes it in the script phase, after vid-segment has produced the body, with a context packet. Skip questions the caller has already answered. Return the ending packet to the caller; caller writes to script.md.
 
 If invoked with caller context (e.g. "ending for case-study, goal=sales, transformation=client went from 0 to 80k/mo, next video={{slug}}"), skip prerequisite probing and go straight to draft.
 

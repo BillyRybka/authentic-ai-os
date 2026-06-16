@@ -48,7 +48,7 @@ Not for: soliciting testimonials from clients (out of scope, this skill captures
 
 ## Prerequisites
 
-Hard requirement: `foundation/creator-foundation.md` must exist with a readable "Top 3 problems" section. Every bank entry gets a `problem_illustrated` value mapping to one of those three (or "general"). If the file is missing, the skill exits and asks the creator to run `vid-foundation` first.
+Hard requirement: `foundation/creator-foundation.md` must exist with a readable "Top 3 problems" section. Every bank entry gets a `problem_illustrated` value mapping to one of those three (or "general"). If the file is missing, the skill exits and asks the creator to run `/foundation` first.
 
 Optional but helpful:
 - The raw material the creator wants to capture (a memory, a Slack screenshot, a DM, a number from analytics)
@@ -195,7 +195,7 @@ These come from `knowledge/vault-integration.md`. Non-negotiable.
 
 From `vault-integration.md` Failure modes section. Never silent inconsistency.
 
-- **Missing `foundation/creator-foundation.md`:** hard stop. Tell the creator to run `vid-foundation` first. Do not proceed.
+- **Missing `foundation/creator-foundation.md`:** hard stop. Tell the creator to run `/foundation` first. Do not proceed.
 - **Missing bank subfolders:** create them silently and proceed.
 - **People stub creation fails** (permission error, folder missing): do NOT save the bank entry with an unresolved `[[Client Name]]` wikilink. Report visibly, ask the creator to resolve, then retry save.
 - **`creator-foundation.md` frontmatter malformed** (Top 3 problems section unreadable): show the creator what was found vs what was expected. Ask: "Want to skip `problem_illustrated` this session (default to 'general'), or pause and fix creator-foundation first?"

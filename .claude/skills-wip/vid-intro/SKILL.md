@@ -1,6 +1,6 @@
 ---
 name: vid-intro
-description: Produce the full 6-part video intro (Top 3 viewer questions, Hook, Problem/Result, Setup, Transition, Credibility woven) for one video. Format-aware. Pulls from creator-foundation, voice-profile, reference-pieces, the video's brain dump, the locked title, the thumbnail brief, and the matching format planner. Anti-fabrication. Every claim must trace to script or foundation. Runnable standalone OR invoked by `vid-structure` / `vid-pipeline`. Make sure to use this skill whenever the creator needs the opening of a video written, even if they don't explicitly say "intro". Phrases like "write the intro", "intro for [video]", "lock the hook", "rewrite the intro", "fix the intro", "what should I open with", "how do I start this video", "I need a hook", "the opening feels off", "help me set up this video", or any downstream pipeline that needs the opening of a video should fire this skill.
+description: Produce the full 6-part video intro (Top 3 viewer questions, Hook, Problem/Result, Setup, Transition, Credibility woven) for one video. Format-aware. Pulls from creator-foundation, voice-profile, reference-pieces, the video's brain dump, the locked title, the thumbnail brief, and the matching format planner. Anti-fabrication. Every claim must trace to script or foundation. Runnable standalone OR invoked by `vid-pipeline` during the script phase. Make sure to use this skill whenever the creator needs the opening of a video written, even if they don't explicitly say "intro". Phrases like "write the intro", "intro for [video]", "lock the hook", "rewrite the intro", "fix the intro", "what should I open with", "how do I start this video", "I need a hook", "the opening feels off", "help me set up this video", or any downstream pipeline that needs the opening of a video should fire this skill.
 ---
 
 # Video Intro Builder
@@ -11,13 +11,13 @@ Produces the full 6-part intro for one video. Five phases: load context, derive 
 
 ## What this produces
 
-A full intro for one video, saved to `content/pieces/{slug}/script.md` under an `## Intro` section. When invoked as a sub-skill by `vid-structure` or `vid-pipeline`, returns the intro as a structured packet to the caller (see "Output packet" below) and skips the save.
+A full intro for one video, saved to `content/pieces/{slug}/script.md` under an `## Intro` section. When invoked as a sub-skill by `vid-pipeline`, returns the intro as a structured packet to the caller (see "Output packet" below) and skips the save.
 
 ## When to run this
 
 - A video has a locked title and thumbnail and now needs the opening written
 - Creator wants to rewrite the intro because the current one feels off
-- Orchestrator (vid-pipeline) invokes during STRUCTURE phase or SCRIPT phase
+- Orchestrator (vid-pipeline) invokes during the SCRIPT phase, after structure and gap-fill
 
 ## Prerequisites
 
@@ -26,15 +26,15 @@ Hard requirements:
 - `foundation/voice-profile.md` exists (the guardrail) and `foundation/reference-pieces/` has at least the `youtube-script` context (the voice engine)
 - `content/pieces/{slug}/piece.md` exists with `title:` locked AND `format:` set (and `voice_context:`, default `youtube-script`)
 - `content/pieces/{slug}/thumbnail-brief.md` exists with the locked thumbnail picks
-- A brain dump or reference block exists at `content/pieces/{slug}/brain-dump.md` or `piece.md` (the actual video material)
+- A brain dump exists at `content/pieces/{slug}/brain-dump.md` (or the material lives in `piece.md`)
 
-If foundation is missing, tell the creator to run `vid-foundation` first. If the title or thumbnail aren't locked, tell them to run `vid-title` and `vid-thumbnail` first. If the brain dump is empty, ask them to fill it in or paste the script material before continuing.
+If foundation is missing, tell the creator to run `/foundation` first. If the title or thumbnail aren't locked, tell them to run `vid-title` and `vid-thumbnail` first. If the brain dump is empty, ask them to fill it in or paste the script material before continuing.
 
 ## Invocation modes
 
 **Standalone:** creator invokes directly. After lock, save the intro to `content/pieces/{slug}/script.md` under `## Intro`, update piece.md `voice_pressure_test:`, end.
 
-**Sub-skill:** another skill (vid-structure, vid-pipeline) invokes. Return the intro packet to the caller; skip the save. The caller writes it into the script as part of its own flow.
+**Sub-skill:** the orchestrator (vid-pipeline) invokes it in the script phase. Return the intro packet to the caller; skip the save. The caller writes it into the script as part of its own flow.
 
 If invoked with context from a caller (e.g. "intro for piece={slug}, format=case-study, locked-title='X', thumbnail-text='Y'"), skip the load step's questions to creator and go straight to candidate generation.
 
@@ -380,7 +380,7 @@ These are the deeper principles. Use them to judge candidates internally before 
 
 ## Related skills
 
-- `vid-foundation` produces the foundation docs this skill loads
+- `/foundation` produces the foundation docs this skill loads
 - `vid-voice-capture` produces voice-profile.md and reference-pieces/*.md
 - `vid-title` locks the title before this skill runs
 - `vid-thumbnail` locks the thumbnail before this skill runs (drives Top 3 viewer-question derivation)

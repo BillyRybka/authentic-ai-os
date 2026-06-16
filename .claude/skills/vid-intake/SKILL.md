@@ -21,6 +21,7 @@ When invoked as a sub-skill, returns the brain-dump packet to the caller and ski
 - Creator wants to dump material for a video they have been thinking about
 - Orchestrator (`vid-pipeline`) invokes at the start of the SCRIPT phase
 - Creator just had an experience or got a client win and wants to capture it before it fades
+- `vid-ideas` hands over a picked-idea seed packet (the front-door, when the creator started blank). Run the matching mode (usually idea + dump) seeded from `{idea_title, pillar, top_3_problem, iceberg_fit, anchor}`, then drill for the material.
 
 ## Prerequisites
 
@@ -29,7 +30,7 @@ Hard requirements:
 - `foundation/creator-foundation.md` exists (iceberg + Top 3 problems + audience). vid-intake reads these to run the alignment check.
 - `foundation/voice-profile.md` exists. vid-intake reads opener pattern, energy baseline, words avoided so it mirrors back in the creator's voice.
 
-If foundation is missing, tell the creator to run `vid-foundation` first. If foundation exists but voice-profile.md does not, tell them to run `vid-voice-capture` next so downstream writing skills have voice context, but proceed with intake (it can run on creator-foundation alone).
+If foundation is missing, tell the creator to run `/foundation` first. If foundation exists but voice-profile.md does not, tell them to run `vid-voice-capture` next so downstream writing skills have voice context, but proceed with intake (it can run on creator-foundation alone).
 
 ## Invocation modes
 
@@ -55,6 +56,8 @@ Mode detection happens from the creator's opening message. If ambiguous, surface
 
 Same shape every mode runs. The body of each mode varies (see references), but the spine is universal.
 
+Every quoted line below shows register and length, not a script. Respond to what the creator actually said. Never paste one verbatim. The point is the feel: short, human, one move per message.
+
 ### Phase 1: Detect mode and load context
 
 Silent loads (do NOT paste into chat):
@@ -71,13 +74,15 @@ Detect the mode from the creator's first message. If they paste a wall of text �
 
 Confirm the detected mode in one short message before running the full flow:
 
-> "Sounds like you have an idea you want to think through together. Going Mode 1 (idea + dump). Sound right?"
+> "Mode 1, idea dump. Brain dump whenever you're ready, I'll capture as you go."
+
+When the mode is obvious, fuse the confirm into the dump opener like that and skip the separate Phase 2 line. Only split them when the mode is genuinely ambiguous and you need a yes before opening the door.
 
 ### Phase 2: Brain dump
 
 Once mode is confirmed, open the door for the dump. The exact opener varies by mode (see `references/mode-conversation-examples.md`). For Mode 1:
 
-> "Dump everything you've got, the points you want to make, anything kicking around in your head, raw, unfiltered. I'll listen."
+> "Go ahead, I'm listening." / "Brain dump whenever you're ready, I'll capture as you go."
 
 Then SHUT UP. Do not interrupt mid-dump. Let the creator land their full thought before responding. Read-once, respond-once.
 
@@ -87,7 +92,7 @@ For modes 2-7, the dump shape varies but the rule holds: open the door, let them
 
 After the dump, mirror back what was captured. Use the creator's own language. Surface the points, stories, claims, proofs, metaphors, open questions you heard. Format:
 
-> "Heard 4 points: [point 1], [point 2], [point 3], [point 4]. A story about [thing]. A claim about [other thing] without a proof attached yet. Open question on [last thing]. Did I miss anything?"
+> "Got [point 1], [point 2], [point 3], plus the [thing] story. Miss anything?"
 
 Creator confirms or corrects. This step takes 30 seconds. It builds trust (the creator hears their thinking organized) and surfaces gaps (the AI flags what it could not catch).
 
@@ -95,14 +100,14 @@ Creator confirms or corrects. This step takes 30 seconds. It builds trust (the c
 
 Two-layer alignment, fast. The detail is in `references/iceberg-and-top-3-alignment.md`. Surface format:
 
-> "This is inside your iceberg [creator's iceberg statement]. Lands on Problem [N]: [the specific Top 3 thread]. Sound right?"
+> "That's Problem [N], the [specific Top 3 thread] one, inside your iceberg. Right?"
 
 Possible creator responses:
 
 - YES → confirmed, lock alignment in frontmatter, move to Phase 5.
 - NO, wrong Top 3 → ask which one fits better, confirm.
 - NO, doesn't fit any Top 3 but does fit iceberg → flag as `outlier_within_iceberg`, ask for a one-line rationale, allow override.
-- NO, doesn't fit iceberg → harder flag. Ask "wrong channel for this one, or has your iceberg shifted?" If shifted, point at vid-foundation refresh. Otherwise capture rationale and let creator decide whether to save anyway.
+- NO, doesn't fit iceberg → harder flag. Ask "wrong channel for this one, or has your iceberg shifted?" If shifted, point at /foundation refresh. Otherwise capture rationale and let creator decide whether to save anyway.
 
 Never block the save. The creator's call. The flag in frontmatter signals to downstream skills that alignment was deliberate.
 
@@ -132,7 +137,8 @@ Once the dump is captured and aligned:
 2. Confirm slug with creator in one short message: `slug: "frequency-vs-depth-on-youtube"`, sound right?
 3. Create `content/pieces/{slug}/` directory.
 4. Write `content/pieces/{slug}/brain-dump.md` per the schema below.
-5. Confirm save in one line: "Saved to `content/pieces/{slug}/brain-dump.md`. Run `vid-framing` next to lock the angle and format."
+5. Ask which content pillar this video lands under. Offer the pillars from `creator-foundation.md`; the creator picks one or leaves it open (null is fine, it is not a blocker). Then create `content/pieces/{slug}/piece.md` with the intake frontmatter (the per-piece identity ledger every downstream skill appends to). See the piece.md schema below.
+6. Confirm save in one line: "Saved. `vid-framing` next to lock the angle."
 
 Do not create the folder before slug is confirmed. No orphan empty folders.
 
@@ -191,6 +197,22 @@ source_internal_only: "{Optional. For inspired-by mode: brief internal note abou
 {For inspired-by mode: the source piece's points captured for the creator's reference. For own-transcript mode: the original transcript, lightly cleaned. For other modes: empty.}
 ```
 
+## Output schema (piece.md)
+
+The per-piece identity ledger. vid-intake creates it with the intake fields; every downstream skill appends its own fields and never overwrites another skill's.
+
+```yaml
+---
+type: content-piece
+slug: {kebab-case-slug}
+pillar: {pillar-slug or null}
+status: ideating
+captured: YYYY-MM-DD
+---
+```
+
+vid-framing appends `selected_angle`, `core_payoff`, `format`, `goal`, `viewer_stage`, `voice_context`; vid-title appends `title`; vid-thumbnail appends its picks; vid-structure appends `segment_purposes` + `tension_plan`; the writing skills append `stories_used` / `proofs_used` / `metaphors_used`; vid-pressure-test appends the audit block. Full schema in `knowledge/vault-integration.md`.
+
 ## Conversational discipline
 
 - **Conversation, not document.** Short messages. Never paste reference content into chat. References are for YOUR thinking.
@@ -203,7 +225,7 @@ source_internal_only: "{Optional. For inspired-by mode: brief internal note abou
 ## Hard friction (auto-flag)
 
 1. **Fabricated content.** Anything not in the creator's dump or already in their banks. The brain dump is the creator's words plus what they explicitly pull from banks. Never invent stories, numbers, clients, results, or proof.
-2. **Foundation missing.** Don't run vid-intake without `creator-foundation.md`. Tell the creator to run `vid-foundation` first.
+2. **Foundation missing.** Don't run vid-intake without `creator-foundation.md`. Tell the creator to run `/foundation` first.
 3. **No alignment captured.** Never save brain-dump.md without iceberg fit and Top 3 alignment fields populated, even if `outlier`. Frontmatter has to be honest.
 4. **Em-dashes.** Brand-level no. Use commas, periods, parens. Every save passes a Vale check.
 5. **"Avatar" replaced with vague terms.** Avatar is specific. Do not soften to "audience" in foundation references. It's the constructed profile of the viewer/buyer per `creator-foundation.md`.
@@ -235,7 +257,8 @@ source_internal_only: "{Optional. For inspired-by mode: brief internal note abou
 
 ## Related skills
 
-- `vid-foundation` produces the iceberg + Top 3 + audience this skill reads
+- `/foundation` produces the iceberg + Top 3 + audience this skill reads
+- `vid-ideas` (optional front-door) hands this skill a picked-idea seed when the creator started blank on what to make
 - `vid-voice-capture` produces the voice profile this skill reads
 - `vid-capture` fills the story / proof / metaphor / testimonial banks this skill pulls from
 - `vid-framing` reads the brain-dump.md this skill produces and locks the angle, format, goal

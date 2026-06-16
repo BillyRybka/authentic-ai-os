@@ -1,7 +1,7 @@
 ---
 type: reference
 scope: shared
-loaded_by: [vid-voice-capture, vid-foundation]
+loaded_by: [vid-voice-capture]
 status: active
 tags: [reference, voice, extraction]
 ---
