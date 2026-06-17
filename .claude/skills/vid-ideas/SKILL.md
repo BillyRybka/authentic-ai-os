@@ -13,7 +13,7 @@ Generates a small batch of video ideas for the blank-slate moment, grounded in t
 
 ## What this produces
 
-- A surfaced batch of ~5-6 video ideas in chat. Each leads with the real outlier receipt it borrows (title + @channel + views + xMed), and is tagged to a pillar, a Top 3 problem (or `outlier_within_iceberg`), an iceberg-fit verdict, and its signal tier (or flagged as an experimental swing).
+- A surfaced batch of ~5-6 video ideas in chat. Each leads with the real outlier receipt it borrows (title + @channel + views + xMed), and is tagged to a pillar, its signal tier, and an iceberg-fit verdict, with an optional Top 3 problem tag where one genuinely fits (or flagged as an experimental swing).
 - `content/ideas-backlog.md`, created from `assets/ideas-backlog-template.md` on the first keep. Only ideas the creator flags to keep are saved (status `kept`). Dropped backlog ideas are marked `dropped` and never re-proposed.
 - A seed packet handed to `vid-intake` for the one idea the creator picks to make now: `{idea_title, pillar, top_3_problem, iceberg_fit, anchor}`. This skill writes no piece folder; `vid-intake` creates it.
 
@@ -47,7 +47,7 @@ Soft requirements:
 **Silent loads** (do NOT paste into chat). Load ONLY these, and only the named slices. This skill stays lean on purpose.
 
 1. `foundation/creator-foundation.md`, but only: the **Iceberg Statement**, the **Content Pillars** list, the **Avatar** description, and the **Top 3 problems**. Skip credibility, backstory, offer.
-2. `banks/pattern-bank.md`, but only: the **Synthesis** sections (convergent / niche-specific / adjacent / unique), **Confirmed winners**, and **Considered + dropped**. Do NOT load the full per-outlier row table. Pull a single outlier row only when you need its title/channel/views to cite an anchor in Phase 2.
+2. `banks/pattern-bank.md`: the **Synthesis** sections (convergent / niche-specific / adjacent / unique), **Confirmed winners**, and **Considered + dropped** for orientation (which shapes have spread, what is on-lane), AND the **per-channel raw outlier rows** (the actual winning titles + views + xMed). You generate from the raw titles, not the labels, so the rows are working material, not just citations. The Synthesis is the map; the raw titles are the evidence you decompose.
 3. `content/ideas-backlog.md` if it exists, for prior keepers (surface them) and dropped entries (never re-propose).
 4. `references/idea-generation-rules.md`, the signal-anchoring, anti-skew, and posture-dial logic. This is your thinking, not chat content.
 Do NOT load voice-profile, reference-pieces, BENS, or the title / power-words / thumbnail banks. This skill proposes ideas, not titles, and loads no title source.
@@ -60,22 +60,27 @@ A focus narrows generation to that pillar / theme / problem. No focus ranges bro
 
 ### Phase 2: Generate the batch
 
-Generate ~5-6 ideas per `references/idea-generation-rules.md`. Default mix: mostly anchored to proven signals, plus 1-2 experimental swings, clearly flagged.
+Generate ~5-6 ideas per `references/idea-generation-rules.md`. Default mix: 4 anchored to proven raw titles, plus 1-2 experimental swings, clearly flagged. Build and vet one idea at a time, then surface the set.
 
-**Generate per `idea-generation-rules.md`:** anchor to one real outlier, name its structural job (the frame) and emotional job (the trigger), transplant one onto the avatar's specific want (a fresh line, never a transcribe; mirror the shape, never crush; numbers stay as a placeholder), and lead with the receipt. One anchor per idea, no combining.
+**The spine (per `idea-generation-rules.md`):**
+1. **Work from a raw winning title**, not a Synthesis label. Open the per-channel rows.
+2. **Name why it won:** the one load-bearing element that drove the multiple (e.g. the kicker "(No Employees)", not the abstract "control").
+3. **Carry that engine onto the creator's topic**, bounded both ways: the engine must survive (fidelity floor) and the line must not be the source with its nouns swapped (transcribe ceiling). Rebuild the surface phrasing fresh; numbers stay placeholders.
+4. **Click test:** put it next to the others, would the avatar click THIS, and why. A dream outcome beats a defensive reassurance. On-brand is the floor, not the pull. Do not staple the positioning ("without the slop") onto a title where voice is not the premise.
+5. **Fit is a floor, checked last:** inside the iceberg = pass, off-iceberg never surfaces. Range across 3-4 pillars. A Top 3 problem is an optional tag, never forced.
 
-Each idea surfaces with exactly this shape (keep it tight, no walls of text). The receipt is mandatory: lead the evidence, not the wording.
+Each idea surfaces with exactly this shape (keep it tight, no walls of text). Lead with the receipt:
 
-> **{the idea as one short line, wearing the proven shape it borrows, in the creator's voice}**
+> **{the idea as one short line, carrying the engine of a real winning title, in the creator's voice}**
 > inspired by: "{real outlier title}" (@{channel}, {views}, {xMed}x median)
-> Pillar: {pillar} | Problem: {1 | 2 | 3 | outlier_within_iceberg} | Iceberg: {one-phrase verdict} | Signal: {STRONG | MODERATE | swing}
-> Why it could land: {one line tying the proven shape to the avatar's want}
+> Pillar: {pillar} | Iceberg: {one-phrase fit verdict} | Signal: {STRONG | MODERATE | swing} | Problem: {1 | 2 | 3, or omit if none fits}
+> Why it could land: {one line on why a human clicks this: the engine carried, plus the avatar's want}
 
 For an experimental swing with no proven anchor, replace the receipt with `swing: {the adjacent-niche or weaker outlier it gestures at}, unproven for this channel`.
 
-**Anti-fabrication (hard rule):** every anchored idea must cite a REAL entry from `pattern-bank.md` (pattern label or outlier title + channel). Never invent an outlier, a view count, or a spread. Swings are flagged as unproven, never dressed up as proven.
+**Anti-fabrication (hard rule):** every anchored idea cites a REAL per-channel row (actual title + @channel + views + xMed), and the cited engine must actually be the one carried into the line. Never invent an outlier, a view count, or a spread, and never cite a row you did not use. Swings are flagged unproven, never dressed up as proven.
 
-Reuse the iceberg 2-layer fit check from `knowledge/iceberg-and-top-3-alignment.md` (iceberg fit, then Top 3 fit, the 4 outcomes). Only surface ideas that land inside the iceberg. A YES-iceberg / NO-Top-3 idea is allowed but flagged `outlier_within_iceberg`. Never surface a NO/NO (off-channel) idea.
+**Fit gate:** use the iceberg layer of `knowledge/iceberg-and-top-3-alignment.md`. Only surface ideas inside the iceberg; never surface an off-iceberg idea. Top 3 fit is an optional tag, not a gate, and not a reason to stamp an idea `outlier`.
 
 ### Phase 3: Adjust and pick (the dial)
 
@@ -102,12 +107,14 @@ Do not over-talk between rolls. Surface the new batch, repeat the one-line dial 
 - **Signal over volume.** Five or six sharp ideas beat ten mushy ones. The creator's worry is crappy ideas, so every anchored idea earns its place by citing a real signal.
 - **Specificity wins.** Each idea is a concrete topic in the creator's voice, not a category ("a video about pricing" is not an idea, "the pricing mistake that makes clients ghost you after the proposal" is).
 - **The dial is the creator's, not yours.** Re-roll on request without arguing. If they want wilder, go wilder. If the swings flop, they will tell you.
-- **Transplant a job, never the words.** Name the anchor's structural job (the frame) and emotional job (the trigger), then transplant one onto the creator's pillar. A competitor's title with its nouns swapped is a transcribe.
+- **Carry the engine, never the words.** Work from the raw winning title. Name the one load-bearing element that drove its multiple, then carry THAT onto the creator's topic. The engine must survive (fidelity floor) but the line must not be the source with its nouns swapped (transcribe ceiling). A summary label is not the engine; the title is.
+- **Run the click test.** Before surfacing, ask which of these a human actually clicks, and why. A dream outcome beats a defensive reassurance. Never bend a title toward the creator's positioning to feel on-brand; on-brand is the floor, not the pull.
 
 ## Hard friction (stop and flag)
 
 - Foundation or pattern-bank missing: hard stop per Prerequisites.
 - An idea you cannot anchor to a real signal AND that is not flagged as an experimental swing: do not surface it. Anchor it, flag it as a swing, or drop it.
+- An anchored idea whose receipt's engine you did not actually carry into the line: that is a fake citation. Re-roll it so the borrowed engine is visible, or drop the receipt and flag it a swing.
 - An off-iceberg (NO/NO) idea: do not surface it. If the creator insists the iceberg has shifted, point them at `/foundation` to refresh positioning first.
 
 ## Soft friction (surface and let the creator decide)
