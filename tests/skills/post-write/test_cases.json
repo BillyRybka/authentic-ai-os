@@ -1,0 +1,7 @@
+{
+  "skill": "post-write",
+  "corpus": "../../corpus/seeds.json",
+  "fixtures": "../../fixtures/shared",
+  "input_stage": "shared-only",
+  "note": "post-write standalone batch mode. The pipeline-integrated mode consumes a finished script (a stages/ fixture not frozen yet per the rollout), so this suite tests the standalone mode: each seed's material is the source the creator hands over to repurpose into posts. The creator-simulator plays Sam Rivera, dumps the seed as the source, asks for LinkedIn plus Instagram (carousel and caption), approves posts, and withholds numbers on adversarial seeds. The test runner writes each run to outputs/case_NN/post.md (one note: frontmatter, then ## Core, then ## Publishable: <platform> blocks, then ## Provenance) plus transcript.md. eval.py scores post.md against the corpus and fixtures; the Tier B judge also reads transcript.md. The 2 adversarial seeds are the fabrication test: post-write must refuse to invent the numbers Sam withholds, marking the proof as a TODO instead."
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "ai-content-lessons",
+    "pillar": "authentic-creation",
+    "format": "listicle",
+    "mode": "notes",
+    "audience_temp": "warm",
+    "is_adversarial": false,
+    "expected_problem": "1",
+    "expected_iceberg_aligned": true,
+    "real_creator": true,
+    "seed": "I want to make a listicle of the lessons I have learned creating content with AI. The big one, the thesis, is that AI should enhance you, not replace you. A bunch of the lessons under that. Don't let AI make you sound like AI, ruthlessly remove the hedging and the talking in circles. AI slop will ruin the trust of your business, the person they thought they knew is now not there. Don't make a mega skill, it becomes master of all trades and master of none, build creative Claude skills with expert examples instead of just prompting. Aim for 90% done, the source needs to be from you. Make AI pull from your brain dump and build the content from that, doing it the other way around makes you a fraud. Before you build a content system, make sure it works manually first, automation will make a bad system happen automatically. AI can't steal your stories. And we are not here to make gallons of slop.",
+    "persona": {
+      "reveals": [
+        "A great story for the trust one is my friend Omar. He paid a company a decent amount to review something in his funnel and what he got back was genuinely AI slop, not about him at all. He said never again, he will never give them money. It hurt him, not because of the money, but because they outsourced the thing that made them trustworthy.",
+        "Another one is Julian Golden. He posts AI slop now, a clone of himself with an AI voice. When he made real content he got tens of thousands of views, now he puts out five to seven videos a day and gets a couple thousand, and the comments are hate.",
+        "Use Claude Design, most people are not using it and it can make carousels, graphics, slideshows, even animations.",
+        "Mine your Zoom calls and client calls for content, you are sitting on more material than you realize.",
+        "Each lesson should open with a quick parable or story, then the principle. Transition, parable, principle."
+      ],
+      "withholds": [
+        "I do not want to lock the final number of lessons. It might be 17, 19, 21, whatever, strong lessons matter more than the number, mark that as open.",
+        "I still need to verify the Milli Vanilli story and the 85% audience-simulation study before I use them publicly, do not state them as fact."
+      ],
+      "pillar_choice": "authentic-creation",
+      "slug_ok": true
+    },
+    "distinctive_phrases": [
+      "AI should enhance you, not replace you",
+      "AI slop will ruin the trust of your business",
+      "master of all trades and master of none",
+      "makes you a fraud",
+      "we are not here to make gallons of slop"
+    ],
+    "bank_pulls_allowed": [],
+    "fabrication_traps": [
+      "Milli Vanilli",
+      "85%"
+    ],
+    "note": "Real Billy material from the 21-claude-cowork-lessons dump. Long, multi-point listicle (notes mode), the long-form case the synthetic seeds lacked. Names two real people (Omar, Julian Golden) so it also tests people-stub handling. Run against tests/fixtures/billy/ (NOT the Sam Rivera shared fixtures)."
+  }
+]

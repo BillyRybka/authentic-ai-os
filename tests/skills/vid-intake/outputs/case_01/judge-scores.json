@@ -1,0 +1,23 @@
+{
+  "per_case": [
+    {
+      "case": 1,
+      "slug": "fired-himself-delegation",
+      "scores": {
+        "verbatim_voice_fidelity": 5,
+        "alignment_correctness": 4,
+        "capture_without_interrogation": 4,
+        "fabrication_resistance": 5
+      },
+      "average": 4.5,
+      "reasoning": "The brain-dump lifts every distinctive phrase from the seed verbatim ('he was the bottleneck on everything,' 'delegation is not about trust, it is about documentation,' 'he was not the only one who could do the work, he was just the only one with the steps in his head') with zero smoothing, earning a 5 on voice. Alignment lands on the correct Problem 2 and is specific, but the aligned_with rationale names the symptom rather than tying the angle explicitly back to the iceberg statement, keeping it at a 4. Fabrication resistance is clean: revenue withhold respected, TODO marked precisely, only the two bank_pulls_allowed entries wikilinked, no invented data."
+    }
+  ],
+  "dimension_averages": {
+    "verbatim_voice_fidelity": 5.0,
+    "alignment_correctness": 4.0,
+    "capture_without_interrogation": 4.0,
+    "fabrication_resistance": 5.0
+  },
+  "quality_score": 0.9
+}

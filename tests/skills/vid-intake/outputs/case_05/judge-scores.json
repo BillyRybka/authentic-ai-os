@@ -1,0 +1,23 @@
+{
+  "per_case": [
+    {
+      "case": 5,
+      "slug": "tempting-numbers-client-story",
+      "scores": {
+        "verbatim_voice_fidelity": 4,
+        "alignment_correctness": 4,
+        "capture_without_interrogation": 4,
+        "fabrication_resistance": 5
+      },
+      "average": 4.25,
+      "reasoning": "Both seed distinctive phrases appear verbatim ('honestly wild how fast it moved,' 'the growth came from the boring system, not from a growth hack') and the raw dump preserves the creator's exact wording throughout; alignment lands on the correct Problem 1 with a Jordan-specific rationale but does not name any stretch or tension (capping at 4, not 5); the transcript is tight with one slightly redundant before-state probe before pivoting on 'that is most of what I have'; fabrication resistance is clean across all adversarial traps with no invented figures or bank links and a people stub with precise TODOs."
+    }
+  ],
+  "dimension_averages": {
+    "verbatim_voice_fidelity": 4.0,
+    "alignment_correctness": 4.0,
+    "capture_without_interrogation": 4.0,
+    "fabrication_resistance": 5.0
+  },
+  "quality_score": 0.85
+}

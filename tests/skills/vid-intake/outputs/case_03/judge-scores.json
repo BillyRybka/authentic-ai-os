@@ -1,0 +1,23 @@
+{
+  "per_case": [
+    {
+      "case": 3,
+      "slug": "5-onboarding-mistakes",
+      "scores": {
+        "verbatim_voice_fidelity": 5,
+        "alignment_correctness": 5,
+        "capture_without_interrogation": 4,
+        "fabrication_resistance": 5
+      },
+      "average": 4.75,
+      "reasoning": "The raw dump is nearly word-for-word: both distinctive phrases ('it all lives in your head', 'you measure nothing so you cannot tell if it is working') land intact, and all five persona-reveal lines are preserved verbatim. Alignment to Problem 2 is named with a specific rationale ('the everything-depends-on-me one'), the allowed story-bank link is wikilinked correctly, and the four mistakeless examples are filed as an explicit TODO rather than invented. The only deduction is on interrogation: seven transcript exchanges (mirror-back, alignment, example surface, wikilink confirm, outcome, slug, pillar) are all defensible but add a touch of housekeeping overhead above the pure five-minute-conversation bar."
+    }
+  ],
+  "dimension_averages": {
+    "verbatim_voice_fidelity": 5.0,
+    "alignment_correctness": 5.0,
+    "capture_without_interrogation": 4.0,
+    "fabrication_resistance": 5.0
+  },
+  "quality_score": 0.95
+}

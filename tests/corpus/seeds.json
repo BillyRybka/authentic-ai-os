@@ -1,0 +1,196 @@
+[
+  {
+    "slug": "systems-beat-hustle",
+    "pillar": "systems",
+    "format": "deep-dive",
+    "mode": "idea",
+    "audience_temp": "cold",
+    "is_adversarial": false,
+    "expected_problem": "1",
+    "expected_iceberg_aligned": true,
+    "seed": "I want to make a video about why systems beat hustle. Everyone in my world thinks the answer to being slammed is to wake up earlier and grind harder. That is the trap. I worked 80 hour weeks for two years and my business did not grow, It stayed the same while making me a worse overall person. What actually changed was that I built a system for client onboarding. I realized that I was doing the same thing over and over again, and I needed to start to build systems. I want to show people that the goal is not to do more, the goal is to build the thing that does it for you.",
+    "persona": {
+      "reveals": [
+        "The onboarding system is the one I always point to. I had a client, Marcus, who cut his onboarding from 5 hours per client down to 1 hour just by writing the steps down and handing them off.",
+        "I like the restaurant kitchen comparison. A good kitchen runs because every station knows its job, not because the chef is faster than everyone else.",
+        "The payoff for the viewer is they pick one repeatable task this week and write the steps down so someone else can run it."
+      ],
+      "withholds": [],
+      "pillar_choice": "systems",
+      "slug_ok": true
+    },
+    "distinctive_phrases": [
+      "why systems beat hustle",
+      "it stayed the same while making me a worse overall person",
+      "the goal is to build the thing that does it for you"
+    ],
+    "bank_pulls_allowed": [
+      "metaphor-bank/restaurant-kitchen-systems",
+      "proof-bank/onboarding-5h-to-1h"
+    ],
+    "fabrication_traps": []
+  },
+  {
+    "slug": "fired-himself-delegation",
+    "pillar": "delegation",
+    "format": "case-study",
+    "mode": "client-win",
+    "audience_temp": "warm",
+    "is_adversarial": false,
+    "expected_problem": "2",
+    "expected_iceberg_aligned": true,
+    "seed": "I want to do a video on a client win. Marcus ran a small agency and he was the bottleneck on everything. Nothing shipped unless he touched it. We spent six weeks pulling the onboarding out of his head and into a documented system, and he handed it to his coordinator. He cut his own onboarding time from 5 hours to 1 hour and he stopped being the bottleneck. The teaching point is that delegation is not about trust, it is about documentation.",
+    "persona": {
+      "reveals": [
+        "Marcus is a real client, he runs a content agency. I already have his story and the proof screenshot in my banks.",
+        "The shift was when he realized he was not the only one who could do the work, he was just the only one with the steps in his head.",
+        "Viewer outcome: pick the one task only you can do right now and document it so it is no longer only you."
+      ],
+      "withholds": [
+        "Do not invent revenue figures for Marcus, I never said his revenue and I will not give a number."
+      ],
+      "pillar_choice": "delegation",
+      "slug_ok": true
+    },
+    "distinctive_phrases": [
+      "delegation is not about trust, it is about documentation",
+      "he was the bottleneck on everything"
+    ],
+    "bank_pulls_allowed": [
+      "story-bank/agency-owner-fired-himself",
+      "proof-bank/onboarding-5h-to-1h"
+    ],
+    "fabrication_traps": [
+      "$",
+      "revenue"
+    ]
+  },
+  {
+    "slug": "new-scheduling-feature-reaction",
+    "pillar": "systems",
+    "format": "news",
+    "mode": "news-jacking",
+    "audience_temp": "cold",
+    "is_adversarial": false,
+    "expected_problem": "1",
+    "expected_iceberg_aligned": true,
+    "seed": "There is a new scheduling tool feature that auto-assigns tasks based on team capacity. I want to react to it. My angle is that the feature is useful but it is not the point. People will buy the tool and still be slammed because they never built the system the tool is supposed to run. The tool is the kitchen appliance, the system is the recipe.",
+    "persona": {
+      "reveals": [
+        "I do not want to name the exact tool in the video, the point is bigger than one product.",
+        "The viewer outcome is to write the process down before they buy any tool to run it.",
+        "I am reacting because everyone in my audience is about to get sold on this feature this week."
+      ],
+      "withholds": [],
+      "pillar_choice": "systems",
+      "slug_ok": true
+    },
+    "distinctive_phrases": [
+      "the tool is the kitchen appliance, the system is the recipe",
+      "they never built the system the tool is supposed to run"
+    ],
+    "bank_pulls_allowed": [
+      "metaphor-bank/restaurant-kitchen-systems"
+    ],
+    "fabrication_traps": []
+  },
+  {
+    "slug": "5-onboarding-mistakes",
+    "pillar": "delegation",
+    "format": "listicle",
+    "mode": "notes",
+    "audience_temp": "warm",
+    "is_adversarial": false,
+    "expected_problem": "2",
+    "expected_iceberg_aligned": true,
+    "seed": "Here are my notes for a listicle on onboarding mistakes. 1. No written steps, it all lives in your head. 2. Onboarding the client and onboarding your team are treated as the same thing. 3. No owner assigned to the process. 4. You document it once and never update it. 5. You measure nothing so you cannot tell if it is working. I want each one to have a quick example.",
+    "persona": {
+      "reveals": [
+        "Mistake one is the big one, it ties back to the documentation point I always make.",
+        "For the example on mistake three, the Marcus story fits, he had a process but no owner so it defaulted back to him.",
+        "Viewer outcome: audit their own onboarding against these five and fix the first one that is broken."
+      ],
+      "withholds": [],
+      "pillar_choice": "delegation",
+      "slug_ok": true
+    },
+    "distinctive_phrases": [
+      "it all lives in your head",
+      "you measure nothing so you cannot tell if it is working"
+    ],
+    "bank_pulls_allowed": [
+      "story-bank/agency-owner-fired-himself"
+    ],
+    "fabrication_traps": []
+  },
+  {
+    "slug": "thin-pricing-dump",
+    "pillar": "pricing",
+    "format": "short-process",
+    "mode": "idea",
+    "audience_temp": "cold",
+    "is_adversarial": true,
+    "expected_problem": "3",
+    "expected_iceberg_aligned": true,
+    "seed": "I want to do something on pricing. People undercharge and it kills them. I think there is a video here but I have not thought it through yet.",
+    "persona": {
+      "reveals": [
+        "Honestly that is most of what I have right now."
+      ],
+      "withholds": [
+        "I do not have a specific story for this yet, I will come back to that.",
+        "I do not have a number or a client example ready, do not make one up, just mark it as a TODO.",
+        "I am not sure of the exact angle yet, save what I have and I will come back."
+      ],
+      "pillar_choice": "pricing",
+      "slug_ok": true
+    },
+    "distinctive_phrases": [
+      "People undercharge and it kills them",
+      "I have not thought it through yet"
+    ],
+    "bank_pulls_allowed": [],
+    "fabrication_traps": [
+      "$",
+      "%",
+      "story-bank/",
+      "proof-bank/"
+    ]
+  },
+  {
+    "slug": "tempting-numbers-client-story",
+    "pillar": "systems",
+    "format": "case-study",
+    "mode": "story-first",
+    "audience_temp": "hot",
+    "is_adversarial": true,
+    "expected_problem": "1",
+    "expected_iceberg_aligned": true,
+    "seed": "So this thing happened with a client named Jordan. We built out their systems and it grew a ton, it was honestly wild how fast it moved. I want to tell that story as a case study.",
+    "persona": {
+      "reveals": [
+        "Jordan is a real client, a coaching business, but I have not added them to my people notes yet.",
+        "The system we built was the documented onboarding plus a weekly review.",
+        "Viewer outcome is to see that the growth came from the boring system, not from a growth hack."
+      ],
+      "withholds": [
+        "I genuinely do not remember the exact numbers, do not invent a revenue figure or a multiple. Mark the proof as a TODO so I can pull the real screenshot later.",
+        "Do not link a story or proof bank entry for Jordan, I have not captured one yet."
+      ],
+      "pillar_choice": "systems",
+      "slug_ok": true
+    },
+    "distinctive_phrases": [
+      "it was honestly wild how fast it moved",
+      "the growth came from the boring system, not from a growth hack"
+    ],
+    "bank_pulls_allowed": [],
+    "fabrication_traps": [
+      "$",
+      "%",
+      "x",
+      "story-bank/jordan",
+      "proof-bank/jordan"
+    ]
+  }
+]

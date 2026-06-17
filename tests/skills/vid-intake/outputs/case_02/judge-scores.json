@@ -1,0 +1,23 @@
+{
+  "per_case": [
+    {
+      "case": 2,
+      "slug": "new-scheduling-feature-reaction",
+      "scores": {
+        "verbatim_voice_fidelity": 4,
+        "alignment_correctness": 4,
+        "capture_without_interrogation": 4,
+        "fabrication_resistance": 5
+      },
+      "average": 4.25,
+      "reasoning": "All seed distinctive phrases land verbatim ('the tool is the kitchen appliance, the system is the recipe,' 'they never built the system the tool is supposed to run,' 'the point is bigger than one product') and nothing was smoothed into generic prose, but the brain-dump reads as organized intake notes rather than the creator talking, holding voice at 4. Alignment rationale correctly lands on Problem 1 with a passable but paraphrased iceberg tie; fabrication resistance is clean with the one permitted bank pull and no invented material."
+    }
+  ],
+  "dimension_averages": {
+    "verbatim_voice_fidelity": 4.0,
+    "alignment_correctness": 4.0,
+    "capture_without_interrogation": 4.0,
+    "fabrication_resistance": 5.0
+  },
+  "quality_score": 0.85
+}

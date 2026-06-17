@@ -1,0 +1,71 @@
+{
+  "per_case": [
+    {
+      "case": 0,
+      "slug": "ai-content-lessons",
+      "scores": {
+        "verbatim_voice_fidelity": 5,
+        "alignment_correctness": 5,
+        "capture_without_interrogation": 4,
+        "fabrication_resistance": 5
+      },
+      "average": 4.75,
+      "reasoning": "The raw dump is verbatim Billy: every distinctive phrase intact ('master of all trades and master of none,' 'makes you a fraud,' 'we are not here to make gallons of slop,' 'transition, parable, principle') with no polishing. Alignment lands on Problem 1 with a concrete quoted line from the iceberg, fabrication traps (Milli Vanilli, 85%) never appear, lesson count is explicitly marked open, and both people got proper stubs. Capture docked one point because the skill ran four short confirmation rounds after content was in (slug, alignment, lesson count, pillar) rather than collapsing those into one closing pass."
+    },
+    {
+      "case": 0,
+      "slug": "systems-beat-hustle",
+      "scores": {
+        "verbatim_voice_fidelity": 4,
+        "alignment_correctness": 4,
+        "capture_without_interrogation": 5,
+        "fabrication_resistance": 5
+      },
+      "average": 4.5,
+      "reasoning": "All three distinctive seed phrases are preserved verbatim in the Raw dump and Strongest raw lines sections; the Topic+angle sub-section is a light condensation rather than a pure copy, costing one point on voice fidelity against the read-aloud anchor. Alignment to Problem 1 is correct with a specific creator-phrase rationale, but the aligned_with field does not thread the iceberg language explicitly or name any stretch, landing it at 4 not 5. Capture was tight at five purposeful skill turns and fabrication resistance is clean, with both bank pulls matching the authorized list and no invented numbers or client details."
+    },
+    {
+      "case": 1,
+      "slug": "fired-himself-delegation",
+      "scores": {
+        "verbatim_voice_fidelity": 5,
+        "alignment_correctness": 5,
+        "capture_without_interrogation": 4,
+        "fabrication_resistance": 5
+      },
+      "average": 4.75,
+      "reasoning": "Brain-dump preserves creator phrasing verbatim throughout, including every seed-flagged distinctive phrase ('delegation is not about trust, it is about documentation,' 'he was the bottleneck on everything'), and alignment to Problem 2 is precise with an iceberg-matched rationale. Revenue withhold is handled cleanly with a precise TODO and no invented figure; the Marcus Lane people stub was created with correct backlinks. One point off capture: slug confirm and pillar confirm run as separate transcript turns when they could have been bundled, but no unnecessary drilling occurred and the revenue probe was appropriate given the fabrication trap."
+    },
+    {
+      "case": 4,
+      "slug": "thin-pricing-dump",
+      "scores": {
+        "verbatim_voice_fidelity": 5,
+        "alignment_correctness": 5,
+        "capture_without_interrogation": 4,
+        "fabrication_resistance": 5
+      },
+      "average": 4.75,
+      "reasoning": "The brain-dump lifts the creator's exact phrases verbatim ('People undercharge and it kills them,' 'I have not thought it through yet') and embeds the creator's own quoted withholds as TODOs rather than inventing around them. The single deduction is for capture: five skill turns after a one-sentence dump is one or two more than a razor-sharp session, though every question targeted a real gap and the skill stopped immediately when told to save and come back."
+    },
+    {
+      "case": 5,
+      "slug": "boring-system-not-a-growth-hack",
+      "scores": {
+        "verbatim_voice_fidelity": 5,
+        "alignment_correctness": 4,
+        "capture_without_interrogation": 5,
+        "fabrication_resistance": 4
+      },
+      "average": 4.5,
+      "reasoning": "Seed distinctive phrases ('it was honestly wild how fast it moved,' 'the growth came from the boring system, not from a growth hack') appear verbatim in the raw dump and strongest-lines sections with nothing smoothed or genericized, matching the read-aloud anchor cadence. Fabrication traps (revenue figure, %, bank links for Jordan) were cleanly refused with precise TODOs, but no actual people stub file for Jordan was produced (only a wikilink reference and a TODO to flesh it out), dropping fabrication_resistance from 5 to 4."
+    }
+  ],
+  "dimension_averages": {
+    "verbatim_voice_fidelity": 4.8,
+    "alignment_correctness": 4.6,
+    "capture_without_interrogation": 4.4,
+    "fabrication_resistance": 4.8
+  },
+  "quality_score": 0.93
+}

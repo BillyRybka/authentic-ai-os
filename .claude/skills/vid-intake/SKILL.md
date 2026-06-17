@@ -67,7 +67,7 @@ Silent loads (do NOT paste into chat):
 3. `knowledge/vault-integration.md` (frontmatter schema for brain-dump.md)
 4. `knowledge/story-capture-guide.md` (the 6 dynamic story prompts, used in story-first mode and to drill thin stories in any mode)
 5. `references/mode-conversation-examples.md` (your calibration anchors per mode)
-6. `references/iceberg-and-top-3-alignment.md` (the 2-layer alignment gate)
+6. `knowledge/iceberg-and-top-3-alignment.md` (the 2-layer alignment gate)
 7. `references/push-vs-pause-rules.md` (when to drill vs when to save with TODOs)
 
 Detect the mode from the creator's first message. If they paste a wall of text → Mode 2 or Mode 3 (ask: yours or someone else's?). If they describe an idea conversationally → Mode 1. If they drop a URL or describe an outside source → Mode 4. If they open with "this thing happened" → Mode 7. If they open with a number or client name → Mode 6. If they reference a fresh feature/release → Mode 5.
@@ -98,7 +98,7 @@ Creator confirms or corrects. This step takes 30 seconds. It builds trust (the c
 
 ### Phase 4: Iceberg and Top 3 alignment check
 
-Two-layer alignment, fast. The detail is in `references/iceberg-and-top-3-alignment.md`. Surface format:
+Two-layer alignment, fast. The detail is in `knowledge/iceberg-and-top-3-alignment.md`. Surface format:
 
 > "That's Problem [N], the [specific Top 3 thread] one, inside your iceberg. Right?"
 
@@ -152,21 +152,25 @@ mode: idea | notes | own-transcript | inspired-by | news-jacking | client-win | 
 captured: YYYY-MM-DD
 problem_addressed: 1 | 2 | 3 | outlier_within_iceberg | outlier
 iceberg_aligned: true | false
-aligned_with: "{one-line rationale: this video reinforces the iceberg by ___}"
+aligned_with: "{The problem this maps to. Use the bare mapping (e.g. 'Problem 1'), optionally followed by the creator's VERBATIM phrase for that problem from their dump. Never paraphrase, summarize, or add a justification or channel-fit clause. If you cannot quote it from what they actually said, just write the bare mapping.}"
 source_internal_only: "{Optional. For inspired-by mode: brief internal note about source piece. NEVER referenced in productized video.}"
 ---
 
+## Raw dump (verbatim)
+
+{The creator's complete dump for this video, exactly as they said it. Nothing cut, nothing reordered, nothing cleaned beyond obvious transcription fixes. This is the lossless source of truth; every organized section below is an index built from this and must never drop, reorder, or contradict it. For paste input (own-transcript, inspired-by) this is the pasted text in full.}
+
 ## Topic + angle
 
-{The topic in the creator's words, plus the specific angle they're taking. One paragraph.}
+{The topic and angle in the creator's OWN words and sentence shapes, not a summary of them. Use what they actually said. Do not open with "The angle is that..." or any narrative framing.}
 
 ## Audience and Top 3 problem
 
-{Which Top 3 problem this lands on, in the creator's words. Why this specific avatar feels this specific pain right now.}
+{Capture only. State which Top 3 problem this lands on (e.g. "Problem 1"). Then add only what the creator actually said about who this is for and why it matters to them, in their words. Do NOT invent a "why this avatar feels this pain right now" rationale they did not say. If they did not describe the audience, the problem mapping alone is enough.}
 
 ## Outcome
 
-{What the viewer DOES differently after watching. The behavior change or decision they walk away with.}
+{Capture only. If the creator stated what they want the viewer to walk away with, write it in their words. If they did not state it, write "Not stated. vid-framing sets the core payoff and goal." Never synthesize or invent an outcome, and never reduce a listicle to a single action. Outcome framing is vid-framing's job, not intake's.}
 
 ## Material
 
@@ -176,16 +180,20 @@ source_internal_only: "{Optional. For inspired-by mode: brief internal note abou
 - {etc}
 
 ### Stories
-- {[[story-bank/slug]] if pulled from existing bank, or new story captured here in P-A-O shape}
+- {A story or anecdote, including cautionary ones (someone got burned). [[story-bank/slug]] if pulled from existing bank, or new story captured here in P-A-O shape.}
 
 ### Proof
-- {[[proof-bank/slug]] if pulled, or new proof captured here}
+- {Evidence that something WORKS: a result, what you did, a testimonial of what worked for a client or for you. [[proof-bank/slug]] if pulled, or new proof captured here. A cautionary anecdote is a Story, not Proof.}
 
 ### Metaphors
 - {[[metaphor-bank/slug]] if pulled, or new metaphor captured}
 
 ### Claims (no proof attached yet)
 - {Claim 1}. TODO: source proof from [bank or new capture]
+
+## Strongest raw lines
+
+- "{The creator's most vivid, quotable lines, verbatim. Exact words, stutters cleaned only, never reworded. This is the voice reservoir the downstream writing skills pull from. Capture the lines the way the creator actually said them, not a tidy paraphrase of them.}"
 
 ## Open questions / TODOs
 
@@ -218,6 +226,13 @@ vid-framing appends `selected_angle`, `core_payoff`, `format`, `goal`, `viewer_s
 - **Conversation, not document.** Short messages. Never paste reference content into chat. References are for YOUR thinking.
 - **Listen during dumps.** When the creator is mid-dump, do not interrupt. Read-once, respond-once.
 - **Use the creator's exact phrasing.** When mirroring back, when saving, when asking follow-ups. The brain dump IS the voice. Polishing kills it.
+- **Bank the raw lines verbatim.** As the creator talks, pull their most vivid, quotable lines into `## Strongest raw lines` exactly as said (stutters cleaned only, never reworded). Paraphrasing into tidy bullets is the most common way the voice gets lost. The Material bullets organize the thinking. The raw lines preserve the voice.
+- **No narrative framing in the body.** Do NOT rewrite the creator's material into summary prose. Never write "The angle is that...", "This lesson is about...", "The viewer sees that...". Write Topic, Outcome, and Material in the creator's own words and sentence shapes, the way they said it. If they said "everyone thinks the answer is to grind harder, that is the trap," save that, not "The angle is that grinding harder is a trap." Reflect-back in chat can paraphrase for confirmation. The saved dump never does. The dump is raw capture, not a summary of raw capture.
+- **No AI-meta narration anywhere, including frontmatter.** Fields like `aligned_with` and the Audience and Top 3 problem section read plainly or in the creator's words. Never write "the thesis of this is...", "Reinforces X", or similar AI-meta phrasing. If you would not say it out loud to the creator, do not write it.
+- **Proof is not Story.** Proof is evidence that something WORKS: a result, what you did, a testimonial of what worked for a client or for you. An anecdote, including a cautionary one (someone got burned by slop), is a Story. Never file a story under Proof.
+- **Bank wikilink format.** Bank pulls use the `bank-dir/slug` form, like `[[proof-bank/onboarding-5h-to-1h]]` or `[[story-bank/agency-owner-fired-himself]]`. Never put the banks folder in the path.
+- **Capture the full dump first, organize second.** Put the creator's complete dump verbatim in `## Raw dump (verbatim)` before sorting anything into Material. The organized sections are an index built from the raw dump; they never drop, reorder, or contradict it. Raw is the source of truth, structure is the convenience layer.
+- **Capture everything, cut nothing.** Intake captures every point the creator makes, raw, even rhetorical lines or points that overlap each other. You are not the editor here. Deciding what is a standalone lesson versus a line, and merging overlaps, is `vid-structure`'s job. Do not drop, dedup, or trim material at intake.
 - **Push back when the material is thin.** Not interrogation. One surgical question that unlocks the next layer. If it does not unlock in 2 rounds, mark TODO and move on.
 - **Specificity wins.** Vague answers get pushed back on. Generic verbs become specific verbs. Round numbers become real numbers. But not at the cost of the conversation feeling like a form.
 - **Read-aloud as the final filter.** Before saving, ask the creator to read the brain dump back. If they would reword anything, capture the better wording.
@@ -241,7 +256,7 @@ vid-framing appends `selected_angle`, `core_payoff`, `format`, `goal`, `viewer_s
 | Reference file | When to read it |
 |---|---|
 | `references/mode-conversation-examples.md` | Every run. Mock dialogues per mode (good + bad examples) so you calibrate the conversational shape before running it. |
-| `references/iceberg-and-top-3-alignment.md` | Phase 4. The 2-layer alignment gate decision flow with worked examples and near-misses. |
+| `knowledge/iceberg-and-top-3-alignment.md` | Phase 4. The 2-layer alignment gate decision flow with worked examples and near-misses. |
 | `references/push-vs-pause-rules.md` | Phase 5. When to drill, when to save with TODOs, how to bail without burning the conversation. |
 | `knowledge/story-capture-guide.md` | Mode 7 (story-first) and any mode where a thin story needs drilling. The 6 dynamic prompts plus reframes plus pivots. |
 | `knowledge/vault-integration.md` | Phase 6. Frontmatter schema for `brain-dump.md`. Wikilink rules for bank pulls. |

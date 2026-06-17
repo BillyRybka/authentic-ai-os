@@ -1,0 +1,23 @@
+{
+  "per_case": [
+    {
+      "case": 4,
+      "slug": "thin-pricing-dump",
+      "scores": {
+        "verbatim_voice_fidelity": 5,
+        "alignment_correctness": 5,
+        "capture_without_interrogation": 4,
+        "fabrication_resistance": 5
+      },
+      "average": 4.75,
+      "reasoning": "Both distinctive phrases land verbatim ('People undercharge and it kills them,' 'I have not thought it through yet') with nothing polished, and every withheld item is routed to an explicit TODO using the creator's own quoted words with no dollar signs, percentages, or bank links invented. One point off capture_without_interrogation: the pillar question after the creator's final stop signal was inferrable from the seed material and did not need to be asked."
+    }
+  ],
+  "dimension_averages": {
+    "verbatim_voice_fidelity": 5.0,
+    "alignment_correctness": 5.0,
+    "capture_without_interrogation": 4.0,
+    "fabrication_resistance": 5.0
+  },
+  "quality_score": 0.95
+}

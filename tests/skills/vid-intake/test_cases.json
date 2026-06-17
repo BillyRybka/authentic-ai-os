@@ -1,0 +1,7 @@
+{
+  "skill": "vid-intake",
+  "corpus": "../../corpus/seeds.json",
+  "fixtures": "../../fixtures/shared",
+  "input_stage": "shared-only",
+  "note": "vid-intake is the first per-video step, so its only input fixture is the shared foundation + banks plus each seed's raw material. The corpus file is the single source of truth for test cases. The test runner drives the skill once per seed with the creator-simulator playing Sam Rivera, and writes each run to outputs/case_NN/ (brain-dump.md, piece.md, transcript.md). eval.py scores those against the corpus."
+}
