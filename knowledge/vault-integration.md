@@ -384,7 +384,7 @@ project: authentic-ai-os
 slug: video-slug
 pillar: {pillar-slug}           # creator's content pillar
 format: short-process           # from the 7 formats: short-process | case-study | roast | deep-dive | interview | news | listicle
-voice_context: youtube-script   # delivery medium for voice: youtube-script (default) | tutorial | shorts | newsletter | linkedin | twitter | podcast | casual | talk. Orthogonal to format. Set by vid-framing. Drives which foundation/reference-pieces/{voice_context}.md a writing skill loads.
+voice_context: youtube-script   # delivery medium for voice: youtube-script (default) | tutorial | shorts | newsletter | linkedin | twitter | instagram | podcast | casual | talk. Orthogonal to format. Set by vid-framing (videos) or post-write (posts). Drives which foundation/reference-pieces/{voice_context}.md a writing skill loads.
 goal: sales                     # sales | emails | views (ONE only)
 status: ideating                # ideating | drafting | filming-ready | filmed | editing | published
 captured: YYYY-MM-DD

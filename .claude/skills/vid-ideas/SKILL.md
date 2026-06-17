@@ -7,13 +7,13 @@ description: Generate a small batch of signal-backed video ideas for a creator w
 
 Generates a small batch of video ideas for the blank-slate moment, grounded in the creator's positioning and in the evidence of what has actually worked. Reads the iceberg, pillars, avatar, and Top 3 problems plus the pattern-bank, proposes ~5-6 signal-anchored ideas, lets the creator turn a dial until the batch lands, then hands the picked idea to `vid-intake`.
 
-**Scope boundary:** this skill picks WHAT video to make (the topic), from a blank slate or the backlog. It does NOT pick the angle (`vid-framing`), capture raw material or create the piece folder (`vid-intake`), craft the final title (`vid-title`) or thumbnails (`vid-thumbnail`), or write any script. It surfaces each idea AS a provisional working title (an idea is a title), but that title is a seed for judging the idea, not finished packaging. `vid-title` does the real title craft later, working from the captured material. This skill hands a chosen idea seed to `vid-intake` and stops. It is the optional front-door: a creator who already knows what to make skips straight to `vid-intake`.
+**Scope boundary:** this skill picks WHAT video to make (the topic), from a blank slate or the backlog. It does NOT pick the angle (`vid-framing`), capture raw material or create the piece folder (`vid-intake`), craft the final title (`vid-title`) or thumbnails (`vid-thumbnail`), or write any script. It surfaces each idea as a short line wearing the borrowed shape, with the real outlier receipt, as a seed for judging the idea; `vid-title` crafts the real title later from the captured material. This skill hands the chosen idea seed to `vid-intake` and stops.
 
 > **Resolving `knowledge/` and skill paths.** Any path written `knowledge/X.md` is a plugin reference file. Load it from `${CLAUDE_PLUGIN_ROOT}/knowledge/X.md` when running as an installed plugin. If `${CLAUDE_PLUGIN_ROOT}` is unset or that path does not exist (running from the source repo during development), load the repo-relative path instead. The same applies to skill references named `.claude/skills.../...`.
 
 ## What this produces
 
-- A surfaced batch of ~5-6 video ideas in chat, each tagged to a pillar, a Top 3 problem (or `outlier_within_iceberg`), an iceberg-fit verdict, and a real signal anchor (or flagged as an experimental swing).
+- A surfaced batch of ~5-6 video ideas in chat. Each leads with the real outlier receipt it borrows (title + @channel + views + xMed), and is tagged to a pillar, a Top 3 problem (or `outlier_within_iceberg`), an iceberg-fit verdict, and its signal tier (or flagged as an experimental swing).
 - `content/ideas-backlog.md`, created from `assets/ideas-backlog-template.md` on the first keep. Only ideas the creator flags to keep are saved (status `kept`). Dropped backlog ideas are marked `dropped` and never re-proposed.
 - A seed packet handed to `vid-intake` for the one idea the creator picks to make now: `{idea_title, pillar, top_3_problem, iceberg_fit, anchor}`. This skill writes no piece folder; `vid-intake` creates it.
 
@@ -50,9 +50,7 @@ Soft requirements:
 2. `banks/pattern-bank.md`, but only: the **Synthesis** sections (convergent / niche-specific / adjacent / unique), **Confirmed winners**, and **Considered + dropped**. Do NOT load the full per-outlier row table. Pull a single outlier row only when you need its title/channel/views to cite an anchor in Phase 2.
 3. `content/ideas-backlog.md` if it exists, for prior keepers (surface them) and dropped entries (never re-propose).
 4. `references/idea-generation-rules.md`, the signal-anchoring, anti-skew, and posture-dial logic. This is your thinking, not chat content.
-5. `knowledge/BENS-framework.md`, but ONLY the **Title rules**, **Specificity equals S**, and **Credibility matching** sections. This is the shared title source `vid-title` owns. You read it LIGHT, only to keep each working title legitimate (Phase 2). Skip the rest.
-
-Do NOT load voice-profile, reference-pieces, or the full title-bank / power-words / thumbnail banks. This skill proposes topics and a provisional working title, it does not craft the final title or write prose. Full title craft (multiple candidates, the whole checklist, A/B variants) is `vid-title`'s job, working from the actual captured material.
+Do NOT load voice-profile, reference-pieces, BENS, or the title / power-words / thumbnail banks. This skill proposes ideas, not titles, and loads no title source.
 
 **Then ask one short question:**
 
@@ -62,22 +60,22 @@ A focus narrows generation to that pillar / theme / problem. No focus ranges bro
 
 ### Phase 2: Generate the batch
 
-Generate ~5-6 ideas per `references/idea-generation-rules.md`. Default mix: mostly anchored to proven signals, plus 1-2 experimental swings, clearly flagged. Never proven-only (kills originality). Never all-experimental (kills signal).
+Generate ~5-6 ideas per `references/idea-generation-rules.md`. Default mix: mostly anchored to proven signals, plus 1-2 experimental swings, clearly flagged.
 
-**The generative move is anchor, then adjust** (see `idea-generation-rules.md`): pick a real signal, then bend its shape onto a pillar AND the avatar's specific named want. The adjustment is the idea, never a competitor's title with the nouns swapped. On a tie between equally strong anchors, prefer the one that differentiates this creator (own-channel-proven or an adjacent-niche shape translated in) over a pattern the whole niche already runs.
+**Generate per `idea-generation-rules.md`:** anchor to one real outlier, name its structural job (the frame) and emotional job (the trigger), transplant one onto the avatar's specific want (a fresh line, never a transcribe; mirror the shape, never crush; numbers stay as a placeholder), and lead with the receipt. One anchor per idea, no combining.
 
-**Each idea is a working title.** Run it past the title rules in `knowledge/BENS-framework.md` lightly (under ~50 chars, specific, reads as one human thought, credible for this creator) so the idea is judgeable. This is NOT full title craft: do not spin variants or load the title-bank. `vid-title` finishes the title later from the captured material.
+Each idea surfaces with exactly this shape (keep it tight, no walls of text). The receipt is mandatory: lead the evidence, not the wording.
 
-Each idea surfaces with exactly this shape (keep it tight, no walls of text):
+> **{the idea as one short line, wearing the proven shape it borrows, in the creator's voice}**
+> inspired by: "{real outlier title}" (@{channel}, {views}, {xMed}x median)
+> Pillar: {pillar} | Problem: {1 | 2 | 3 | outlier_within_iceberg} | Iceberg: {one-phrase verdict} | Signal: {STRONG | MODERATE | swing}
+> Why it could land: {one line tying the proven shape to the avatar's want}
 
-> **{working title / topic, in the creator's voice}**
-> Pillar: {pillar} | Problem: {1 | 2 | 3 | outlier_within_iceberg} | Iceberg: {one-phrase fit verdict}
-> Signal: {named pattern / outlier / confirmed-winner + spread or multiplier + own_channel_proven}, OR "experimental swing (no anchor, unproven)"
-> Why it could land: {one line tying the signal to the avatar's problem}
+For an experimental swing with no proven anchor, replace the receipt with `swing: {the adjacent-niche or weaker outlier it gestures at}, unproven for this channel`.
 
 **Anti-fabrication (hard rule):** every anchored idea must cite a REAL entry from `pattern-bank.md` (pattern label or outlier title + channel). Never invent an outlier, a view count, or a spread. Swings are flagged as unproven, never dressed up as proven.
 
-Reuse the iceberg 2-layer fit check from `.claude/skills/vid-intake/references/iceberg-and-top-3-alignment.md` (iceberg fit, then Top 3 fit, the 4 outcomes). Only surface ideas that land inside the iceberg. A YES-iceberg / NO-Top-3 idea is allowed but flagged `outlier_within_iceberg`. Never surface a NO/NO (off-channel) idea.
+Reuse the iceberg 2-layer fit check from `knowledge/iceberg-and-top-3-alignment.md` (iceberg fit, then Top 3 fit, the 4 outcomes). Only surface ideas that land inside the iceberg. A YES-iceberg / NO-Top-3 idea is allowed but flagged `outlier_within_iceberg`. Never surface a NO/NO (off-channel) idea.
 
 ### Phase 3: Adjust and pick (the dial)
 
@@ -104,7 +102,7 @@ Do not over-talk between rolls. Surface the new batch, repeat the one-line dial 
 - **Signal over volume.** Five or six sharp ideas beat ten mushy ones. The creator's worry is crappy ideas, so every anchored idea earns its place by citing a real signal.
 - **Specificity wins.** Each idea is a concrete topic in the creator's voice, not a category ("a video about pricing" is not an idea, "the pricing mistake that makes clients ghost you after the proposal" is).
 - **The dial is the creator's, not yours.** Re-roll on request without arguing. If they want wilder, go wilder. If the swings flop, they will tell you.
-- **Translate, never copy.** An anchor is a PATTERN to adapt to the creator's pillars, never a competitor's title to rephrase.
+- **Transplant a job, never the words.** Name the anchor's structural job (the frame) and emotional job (the trigger), then transplant one onto the creator's pillar. A competitor's title with its nouns swapped is a transcribe.
 
 ## Hard friction (stop and flag)
 
@@ -124,9 +122,8 @@ Do not over-talk between rolls. Surface the new batch, repeat the one-line dial 
 |------|-----------------|
 | `references/idea-generation-rules.md` | Phase 2 + Phase 3. Signal-anchoring rules, the anti-skew guards, and what each dial posture changes. |
 | `assets/ideas-backlog-template.md` | Phase 4. The `content/ideas-backlog.md` file shape, created on first keep. |
-| `.claude/skills/vid-intake/references/iceberg-and-top-3-alignment.md` | Phase 2. The iceberg 2-layer fit check + 4 outcomes. Reuse, do not duplicate. |
-| `.claude/skills/vid-research/references/theory-of-one-curation.md` | Phase 2. The audience-fit lens when an anchor works everywhere but may not fit this creator. |
-| `knowledge/BENS-framework.md` (Title rules + Specificity + Credibility sections only) | Phase 2. Light legitimacy check on each working title. Shared source `vid-title` owns; read light here, never the full craft. |
+| `knowledge/iceberg-and-top-3-alignment.md` | Phase 2. The iceberg 2-layer fit check + 4 outcomes. Reuse, do not duplicate. |
+| `knowledge/theory-of-one-curation.md` | Phase 2. The audience-fit lens when an anchor works everywhere but may not fit this creator. |
 
 ## Principles (the why)
 
@@ -141,6 +138,6 @@ Do not over-talk between rolls. Surface the new batch, repeat the one-line dial 
 - `vid-research` produces `banks/pattern-bank.md`, the signal source this skill anchors ideas to
 - `vid-intake` receives the picked idea seed and captures the brain dump (this skill's downstream handoff)
 - `vid-framing` runs after intake and picks the angle (this skill picks the topic, not the angle)
-- `vid-title` owns final title craft. The working title this skill surfaces is a provisional seed; `vid-title` finalizes it later against `banks/title-bank.md` + `knowledge/BENS-framework.md`, working from the captured material. Shared title source, two depths, no duplication.
+- `vid-title` owns ALL title craft. The idea line this skill surfaces is a provisional seed (a borrowed proven shape), never a crafted title; `vid-title` writes the real title later from the captured material. vid-ideas loads no title source.
 - `vid-pipeline` (future) may invoke this at the start of the SCRIPT phase when no piece exists yet
 - `vid-measurement` (future) will feed published performance back into the pattern-bank's Confirmed winners, sharpening this skill's signals over time

@@ -18,9 +18,9 @@ Video ideas the creator generated with `vid-ideas` and chose to keep. This is a 
 
 ## Ideas
 
-| Status | Date | Idea | Pillar | Problem | Signal anchor |
-|---|---|---|---|---|---|
-| kept | {YYYY-MM-DD} | {working title / topic in the creator's voice} | {pillar} | {1 \| 2 \| 3 \| outlier_within_iceberg} | {named pattern / outlier + spread or multiplier, or "experimental swing"} |
+| Status | Date | Idea | Pillar | Problem | Receipt | Note |
+|---|---|---|---|---|---|---|
+| kept | {YYYY-MM-DD} | {the idea line, in the creator's voice} | {pillar} | {1 \| 2 \| 3 \| outlier_within_iceberg} | "{outlier title}" @{channel} {xMed}x, or "swing" | {optional angle note, usually blank} |
 
 <!--
 Append one row per kept idea. Never auto-save the whole generated batch, only the ideas the creator flags to keep.

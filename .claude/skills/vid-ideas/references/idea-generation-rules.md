@@ -11,14 +11,27 @@ Every idea is built from a cross of three things already loaded:
 
 An idea is a pillar's territory, aimed at one avatar problem, wearing the shape of a proven signal, said in the creator's voice. Miss any of the three and it drifts: no pillar means off-positioning, no problem means content-only filler, no signal means a guess.
 
-## The generative move: anchor, then adjust
+## Anchor, then adjust (the generative move)
 
-This is the heart of the skill, and it is not "invent a topic." It is Ed Lawrence's actual ideation mechanic: take a proven shape and bend it onto the one specific thing this avatar wants.
+Pick one real outlier and transplant its DNA onto the avatar's named want. Every title does two jobs at once:
 
-1. **Anchor.** Pick a real signal from the pattern-bank (a pattern, an outlier, a confirmed winner). Never start from a blank guess. No anchor means it does not get surfaced (guard 1).
-2. **Adjust.** Translate that shape onto a pillar AND the avatar's specific named want, not a generic problem. Ed picks "Drumming MISTAKES That KILL Your Progress" and bends it to "...That Kill Your Hand Speed" because that audience cares about speed. The signal supplies the shape; the avatar supplies the substance.
+- **Structural job:** the frame. List, story, question, challenge, speed claim, concession-plus-payoff, personal testimony.
+- **Emotional job:** the trigger. Curiosity gap, loss aversion, desire, pattern interrupt, competence, replacement drama.
 
-The adjustment IS the idea. A pattern handed back with the nouns swapped is not an idea (guard 2). A pattern bent onto what the avatar actually wants from THIS creator is.
+Name both, then transplant ONE onto the creator's pillar and problem and rebuild the rest fresh:
+- keep the structure, swap the emotional job, or
+- keep the emotional job, swap the structure.
+
+**Transplant a job, never the words.** Within a couple of word-swaps of the source = a copy. Reject it. The avatar's want is the headline, not a clause stapled on.
+
+Show, don't tell. Source: "It's Stupid Simple, But It Books Clients Like Crazy" (@channel, 90k, 5x). Structural job: concession plus payoff. Emotional job: pattern interrupt plus desire.
+- GOOD (keep structure, swap the emotional job): "It Sounds Too Basic, But Skipping It Is Why Your Videos Flop." Same concession-payoff frame, the trigger is now loss aversion instead of desire.
+- GOOD (keep emotional, swap the structure): "The Embarrassingly Simple Trick That Makes Your Content Take Off." Same interrupt-plus-desire trigger, a named-method frame instead of concession-payoff.
+- BAD (transcribe): "It's Stupid Simple, But It Makes Content Like Crazy." Same frame, same trigger, same skeleton, nouns swapped. A copy.
+
+Neither GOOD line is a finished title; it is raw material with the right DNA.
+
+One anchor per idea. No fusing two shapes into one line (four competing jobs in one sentence, the viewer skips).
 
 ## Signal tiers (what counts as "proven")
 
@@ -31,15 +44,12 @@ Read the anchor's strength from the pattern-bank fields (same logic `vid-framing
 
 Rank ideas by anchor strength, not by raw view count. A 3x own-channel-proven shape beats a 12x one-channel fluke.
 
-## Differentiation tiebreaker (the three circles)
+## Differentiation tiebreaker
 
-When two anchors are equally strong, prefer the one that DIFFERENTIATES this creator. Ed's three circles: your own channel, your niche, and adjacent niches. The glory is your channel crossed with the wider and adjacent space, not the direct niche everyone already copies.
-
-- **Own-channel-proven** is always first. Repeat what already won here.
-- **Adjacent-niche shapes translated in** are the differentiation goldmine. A shape proven in a neighboring niche, bent onto this creator's pillar, reads as original because nobody in the direct niche is running it yet.
-- **Niche-saturated patterns** (the same shape every direct competitor already uses) are the trap. Proven but unoriginal, and a channel built only on them looks derivative and often underperforms. Usable, never the tiebreaker winner.
-
-So on a tie: own-channel or adjacent-transferred beats niche-saturated.
+On a tie between equally strong anchors, prefer the one that differentiates this creator:
+- **Own-channel-proven** first. Repeat what already won here.
+- **Adjacent-niche shapes** bent onto this pillar next. They read as original because nobody in the direct niche runs them yet.
+- **Niche-saturated shapes** last. Proven but derivative.
 
 ## The default batch (~5-6)
 
@@ -49,17 +59,29 @@ So on a tie: own-channel or adjacent-transferred beats niche-saturated.
 
 Never proven-only (the channel goes derivative). Never all-experimental (the channel gambles with no signal).
 
-**Why this mix (Ed's 100 doors).** Most doors punch you; a few hand you cash. Once a door pays, you keep opening that one and only gamble on a new door occasionally. So the batch leans proven (repeat what works) and spends 1-2 slots on swings (the every-fourth experiment). Proven-heavy is not laziness; it is how a channel compounds. The swings are what keep it from going stale.
+## How the batch is built (vet each, then present the set)
 
-## Anti-skew guards (the "don't be crappy" rules)
+Build and vet one idea at a time, internally. Per idea:
+1. **Pick a slot:** a pillar + a Top 3 problem the batch has not covered yet.
+2. **Find the anchor:** the strongest REAL pattern-bank shape that serves that slot (own-channel-proven first, then high spread, then an adjacent-niche shape for differentiation).
+3. **Decompose and transplant** per Anchor, then adjust.
+4. **Run the gate below.** Pass = hold it. Fail = throw it out and re-pick. Never surface a failed idea.
+5. Repeat until the mix is filled (the default batch above).
 
-1. **Anchor or flag, never fake.** Every anchored idea cites a real `pattern-bank.md` entry by name (pattern label, or outlier title + channel). Never invent an outlier, a multiplier, or a spread. If you cannot anchor it and it is not a deliberate swing, drop it.
-2. **Translate, never transcribe.** An anchor is a SHAPE to adapt ("titles that open with a named enemy", "the receipts-first case study"). Apply that shape to the creator's pillar and problem. Never hand back a competitor's title with the nouns swapped.
-3. **Iceberg gate first.** Run the 2-layer check (`iceberg-and-top-3-alignment.md`) before surfacing. Inside iceberg + lands on a Top 3 problem = clean, lead with these. Inside iceberg + no Top 3 = allowed, flagged `outlier_within_iceberg`. Off iceberg = never surfaced.
-4. **Theory of One.** A pattern that works on every channel in the niche can still miss THIS audience's expectation of the creator. When an anchor is niche-wide but the fit is uncertain, name the tension (per `theory-of-one-curation.md`) instead of assuming it transfers.
+Then surface only the ideas that passed.
+
+## The per-idea gate (run before surfacing)
+
+Every idea clears every check below before it is shown. Fail any one = re-pick, do not surface.
+
+1. **Anchor or flag, never fake, and show the receipt.** Every anchored idea cites a REAL `pattern-bank.md` outlier as a receipt: the actual title + @channel + views + xMed (the multiple of that channel's median). Never invent an outlier, a view count, a multiplier, or a spread. If you cannot anchor it and it is not a deliberate swing, drop it.
+2. **Transplant a job, never the words.** Name the anchor's structural job (the frame) and emotional job (the trigger), then transplant one onto the creator's pillar and problem as a fresh line. Handing back the source with its nouns swapped is a transcribe.
+3. **Iceberg gate first.** Run the 2-layer check (`knowledge/iceberg-and-top-3-alignment.md`) before surfacing. Inside iceberg + lands on a Top 3 problem = clean, lead with these. Inside iceberg + no Top 3 = allowed, flagged `outlier_within_iceberg`. Off iceberg = never surfaced.
+4. **Theory of One.** A pattern that works on every channel in the niche can still miss THIS audience's expectation of the creator. When an anchor is niche-wide but the fit is uncertain, name the tension (per `knowledge/theory-of-one-curation.md`) instead of assuming it transfers.
 5. **Respect the drop list.** Skip any idea built on a `Considered + dropped` pattern. If it is genuinely strong, surface the drop rationale and ask before using it. Never silently re-propose a dropped pattern or a `dropped` backlog idea.
 6. **Specificity bar.** A category is not an idea. "Pricing" fails. "The pricing mistake that makes clients ghost after the proposal" passes. If you cannot say the specific tension in one line, the idea is not ready.
-7. **Working-title bar.** Each idea is surfaced as a working title (Ed: an idea is a title). Run it past the title rules in `knowledge/BENS-framework.md` lightly: under ~50 characters, specific not vague, reads as one human thought, credible for this creator. This is a quick legitimacy check so the idea can be judged, NOT full title craft. The working title is a provisional seed; `vid-title` does the real craft later against the full title-bank. Do not spin title variants or load the title / power-words banks here.
+7. **Idea-line bar (read-aloud, not char count).** Two checks: it reads like one phrase a human would actually say, and it mirrors the source outlier's shape and length. No character limit, never crush a line to save space (crushing kills the shape).
+8. **No invented numbers.** A specific figure in an idea line (minutes, percent, count) is either the borrowed shape's own number or a bracketed placeholder (`in [X] minutes`, `[N] lessons in [N] years`). Never invent one.
 
 ## The dial (Phase 3 postures)
 

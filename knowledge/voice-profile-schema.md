@@ -1,7 +1,7 @@
 ---
 type: reference
 scope: shared
-loaded_by: [vid-voice-capture, vid-segment, vid-intro, vid-ending, vid-structure]
+loaded_by: [vid-voice-capture, vid-segment, vid-intro, vid-ending, vid-structure, post-write]
 status: active
 tags: [reference, voice, schema]
 ---
@@ -96,7 +96,9 @@ Every source that fed the profile, with date and `voice_context` tag. One single
 
 `voice_context` is the delivery medium or mode the creator's voice is in. It is orthogonal to `format` (the structural template of the video). A `listicle` could be delivered as a screen-share `tutorial` or a talking-head `youtube-script`. Do not derive one from the other.
 
-Values: `youtube-script` | `tutorial` | `shorts` | `newsletter` | `linkedin` | `twitter` | `podcast` | `casual` | `talk`.
+Values: `youtube-script` | `tutorial` | `shorts` | `newsletter` | `linkedin` | `twitter` | `instagram` | `podcast` | `casual` | `talk`.
+
+`instagram` covers both carousel and caption deliveries. Those are layout sub-formats the writing skill handles (`post-write`), not separate voice contexts. The creator talks one way on Instagram; the carousel just chops that voice into slides.
 
 `piece.md` carries `voice_context:` (default `youtube-script`), set by `vid-framing` alongside `format`. Schema home: [[vault-integration]] piece.md schema.
 

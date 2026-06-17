@@ -119,11 +119,13 @@ If they're quiet between sub-skills but engaged in the previous one's content, t
 
 ### Step 5: Foundation complete
 
-When all 5 foundation interview skills have locked their sections, congratulate briefly and stop:
+When all 5 foundation interview skills have locked their sections, congratulate briefly:
 
 > "Foundation complete. Your avatar, Iceberg, pillars, credibility, and backstory are locked. More skills are coming for voice capture, content production, and pattern research. For now, this is your foundation."
 
-Do not invoke any further skill. The released foundation chain ends here.
+A full journey just completed, so this is a natural moment to ask whether anything was good or rough. If the `aaios-feedback` skill is available, offer feedback once via the end-of-journey path in `${CLAUDE_PLUGIN_ROOT}/knowledge/feedback-offer.md`, honoring its once-per-session guard. If the creator has something, invoke the `aaios-feedback` skill via the Skill tool. If not, or if the feedback capability is not present in this install, just close.
+
+Do not invoke any further skill beyond an accepted feedback handoff. The released foundation chain ends here.
 
 ## What this is NOT
 
