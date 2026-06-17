@@ -18,6 +18,8 @@ Loaded by `vid-title` for headline candidate generation, `vid-intro` for hook co
 
 This bank is comprehensive: mine every recurring power word from the FULL outlier title set, not a token few. A 100-plus-title set should produce a couple dozen words. "Lean" means no frequency junk, not a short list. Each entry is a word + when it lands + when it fails + a real worked example. No frequency counts, no raw channel counts: those numbers anchor the AI on "this appeared most" rather than "this fits the line being written." The decision is fit-by-context, not popularity. The creator edits this file in place, deleting words they would not use and adding words they prefer.
 
+One word or short phrase per entry. Never combine two distinct words with a slash (for example "REAL" / "TRUTH"). Distinct words land and fail under different conditions, so each needs its own when-it-lands and when-it-fails lines. Downstream title generation also pulls a single word per slot, so a slashed pair gives it nothing clean to select.
+
 ## Global power words
 
 Words that pull on virtually any audience. These transcend niches.
@@ -40,7 +42,11 @@ Words that pull on virtually any audience. These transcend niches.
 - When this fails: for sophisticated audiences who read "easy" as oversimplified.
 - Worked example: {populated}
 
-### "REAL" / "TRUTH"
+### "REAL"
+
+{when this lands / when this fails / worked example}
+
+### "TRUTH"
 
 {when this lands / when this fails / worked example}
 

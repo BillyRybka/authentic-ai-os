@@ -87,6 +87,8 @@ The creator rejects this pattern. Future runs should NOT re-surface it.
 - Pattern feels manipulative, gimmicky, or chasing trend rather than serving audience
 - Creator has already tested a similar pattern and it flopped on their channel
 
+**Do not pre-drop money or results patterns on positioning alone.** When a creator's positioning leans on trust or authenticity, it is tempting to drop revenue, money, or result-claim patterns (e.g. "How I Hit [Number] in [Time]") on reflex. Resist that. For many audiences, results and money are among the strongest reasons they watch. The guard is not removing the pattern, it is anchoring the claim to a real, defensible number the creator can stand behind. Surface it with Modify framing ("Keep the result hook, swap the placeholder for a number you can prove"), and only Drop it if the creator says it genuinely does not fit. This holds across niches, whether the number is a client weight cut, a revenue figure, or a measured outcome in any field.
+
 **Drop ALWAYS captures a one-line rationale.** This is critical for sticky-curation. Without rationale, future quarterly refreshes will re-surface the same pattern and the creator will have to drop it again. With rationale, the AI knows why and skips it next time.
 
 **Worked Drop dialogue:**

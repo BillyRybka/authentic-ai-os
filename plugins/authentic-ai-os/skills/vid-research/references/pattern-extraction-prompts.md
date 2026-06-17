@@ -105,6 +105,8 @@ Identify:
 
 Pull only from the actual titles. Never invent. Be comprehensive: pull EVERY recurring power word, not a token few. A large outlier set (100-plus titles) should yield 20 or more global and 10 or more audience-specific. A short list means you under-mined the set.
 
+Output one word or short phrase per entry. Never combine distinct words with a slash; split them into separate entries (for example, "fast/easy" becomes two entries, "fast" and "easy").
+
 Format:
 Global:
 - "{word}", {N} occurrences, example: "{title}"

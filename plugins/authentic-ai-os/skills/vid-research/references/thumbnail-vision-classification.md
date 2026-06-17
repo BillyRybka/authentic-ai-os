@@ -8,7 +8,7 @@ tags: [reference, vid-research, vision, thumbnails]
 
 # Thumbnail Vision Classification
 
-Vision prompt template + the 6 thumbnail strategies vid-research classifies outlier thumbnails into. Used in Phase 1, 2, 3 when running vision analysis on confirmed-outlier thumbnails.
+Vision prompt template + the thumbnail strategies vid-research classifies outlier thumbnails into (five primary levers, with Social Hack as an enhancer layered on top). Used in Phase 1, 2, 3 when running vision analysis on confirmed-outlier thumbnails.
 
 **Budget:** ~50 vision calls per full session (top 10 own + 25 across niche + 15 across adjacent). Mode 2 refresh ~15-25 calls. Mode 3 single-add: 1 call.
 
@@ -17,13 +17,16 @@ Vision prompt template + the 6 thumbnail strategies vid-research classifies outl
 ```
 Classify this YouTube outlier thumbnail. Extract:
 
-1. Strategy (one of):
+1. Primary lever (name ONE):
    - Cognitive Dissonance: contrarian framing, "wait what?" reaction
    - Result: prominent number, dollar figure, time period, or named outcome
-   - Social Hack: well-known person, brand, or symbol for borrowed authority
    - Curiosity: implies a secret/mystery without spoiling
    - Before/After: split or paired transformation imagery
    - Minimal: clean composition, leans on title legibility and one strong visual
+
+   A recognizable logo or a tool/brand mark is almost always an ENHANCER layered on top of a primary lever (Cognitive Dissonance, Result, or Curiosity), not a strategy by itself. Name the primary lever first.
+
+   Enhancers (list any that apply, after the primary lever): logo or brand mark, a number, an expression. A well-known person or symbol borrowing authority is an enhancer, not the primary lever.
 
 2. Hero element: face/expression, screenshot/UI, object/prop, text-only, infographic, comparison split, other
 
@@ -44,17 +47,21 @@ Channel context:
 
 Image: [thumbnail]
 
+Title and thumbnail are one unit. Judge the thumbnail together with its title, never in isolation.
+
 Output format:
-Strategy: {one of 6}
+Primary lever: {Cognitive Dissonance, Result, Curiosity, Before/After, or Minimal}
+Enhancers: {logo or brand, a number, an expression; or none}
 Hero element: {description}
 Color palette: {colors}
 Text content: "{verbatim}"
 Text positioning: {position}
 Expression: {if present}
+Packaging read: {one line on how the title and thumbnail work together: reinforce the same promise, set up and pay off, or mismatch}
 Notes: {distinctive details}
 ```
 
-## The 6 strategies
+## The strategies (five primary levers + Social Hack as an enhancer)
 
 ### 1. Cognitive Dissonance
 
@@ -82,9 +89,9 @@ Prominent number, dollar amount, time period, or named outcome.
 - Text: "$40K IN 3 MONTHS"
 - Dashboard screenshot lends visual proof; dollar figure dominates composition.
 
-### 3. Social Hack
+### 3. Social Hack (enhancer, not a primary lever)
 
-Leverages well-known person, brand, or recognizable symbol for borrowed authority.
+Leverages well-known person, brand, or recognizable symbol for borrowed authority. A recognizable logo or a tool/brand mark is almost always an enhancer layered on top of a primary lever (Cognitive Dissonance, Result, or Curiosity), not a strategy on its own. Name the primary lever first, then note this as an enhancer.
 
 **Visual cues:** recognizable face/logo/symbol, side-by-side with known figure, brand juxtaposition.
 
@@ -136,7 +143,7 @@ Clean, simple composition. Leans on title legibility + one strong visual element
 When vision surfaces these, flag rather than auto-classify:
 
 - **Polished but generic**, face + smile + bold text saying "MY BEST TIPS." No specific hook. Classify as `Strategy: Generic / no clear strategy` and flag. Shows up in flop analysis, not pattern extraction.
-- **Strategy stack**, multiple strategies piled (celebrity + dollar figure + before/after + curiosity text). Strategies dilute the click. Classify as `Strategy: Stacked / unclear primary` and flag.
+- **Strategy stack**, multiple levers piled with no clear primary (celebrity + dollar figure + before/after + curiosity text). Levers dilute the click. If one lever clearly leads, name it as the primary and list the rest as enhancers. If none leads, classify as `Primary lever: Stacked / unclear primary` and flag.
 - **Mismatch with title's promise**, title is Curiosity ("What Nobody Tells You") but thumbnail is Result ($500K). Title and thumbnail should reinforce, not compete. Flag misalignment.
 
 ## Signal weighting
@@ -149,6 +156,6 @@ When vision surfaces these, flag rather than auto-classify:
 ## Common mistakes
 
 - **Classifying every thumbnail.** Respect the prioritization (top 10 own / top 5 niche / top 3 adjacent). Lower-tier outliers get URL-saved without vision analysis.
-- **Forcing one of the 6 strategies when none fit.** Generic thumbnails happen. Classify as Generic and flag.
+- **Forcing one of the levers when none fit.** Generic thumbnails happen. Classify as Generic and flag.
 - **Confusing Curiosity with Cognitive Dissonance.** Curiosity withholds. Dissonance contradicts. "What nobody tells you" is Curiosity. "Stop doing this" is Dissonance.
 - **Hallucinating thumbnail content from the title alone.** If vision is unavailable (download failed, file corrupted), mark `vision: unavailable`, don't invent.

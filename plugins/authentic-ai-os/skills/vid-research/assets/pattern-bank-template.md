@@ -75,8 +75,9 @@ Every qualifying outlier from the window is listed below as a full inventory (th
 
 - [Watch on YouTube]({video_url}) | video_id: {11-char id} | @{channel} | {view_count} views ({multiplier}x median) | published {YYYY-MM-DD}
 - ![[thumbnail-{video_id}.jpg]]
-- thumbnail strategy: {one of 6} | thumbnail text: "{verbatim text}" | hero: {one-line description of primary visual element}
+- thumbnail strategy: {primary, one of 6} (+ enhancers: {0 or more of the 6 layered on top}) | thumbnail text: "{verbatim text}" | hero: {one-line description of primary visual element}
 - patterns: [[title-bank]] ({pattern_id}), [[power-words-bank#{word}]]
+- packaging read: {one line on how the title and thumbnail work together as one unit (what the title says vs. what the thumbnail shows, and the gap or payoff that pulls the click)}
 
 ### Direct competitor: @chan1
 
@@ -114,11 +115,12 @@ Patterns proven by the creator's own published videos. Future vid-measurement ap
 Per-outlier and per-pattern fields and why each is captured:
 
 - **Views / xMed**: raw reach and the multiple of that channel's own median. xMed is the real signal-strength field (avoids bias toward giant channels). vid-framing ranks anchors by `outlier_multiplier`, not raw views.
-- **Studied**: tagged outliers get thumbnail-vision classification (one of 6 strategies). Untagged outliers are URL-saved in the inventory for reference.
+- **Studied**: tagged outliers get thumbnail-vision classification (a primary strategy plus enhancers). Untagged outliers are URL-saved in the inventory for reference.
 - **Outlier floor (per channel)**: the scaled raw-view bar this channel used. Scaled to channel size and cadence, not a flat 2x.
 - **video_url / video_id**: stable identifier, clickable back to source for re-verification.
 - **published**: recency context. A recent outlier weighs more than an old one.
-- **thumbnail image / strategy / text / hero**: visual evidence + the 6-strategy classification + verbatim text + primary visual driver. Future vid-thumbnail-gen queries by strategy.
+- **thumbnail image / strategy / text / hero**: visual evidence + the 6-strategy classification (a primary strategy plus any enhancers layered on top) + verbatim text + primary visual driver. Future vid-thumbnail-gen queries by primary strategy.
+- **packaging read**: one line on how the title and thumbnail work as a single unit. Packaging is one unit, so the read captures the gap or payoff between what the title says and what the thumbnail shows, not the two pieces in isolation.
 - **spread**: `{N} of {M} channels`. How many of the analyzed channels used this pattern. The repeatability signal that replaces the old confidence label.
 - **channels**: Obsidian wikilinks to the channels where the pattern appeared. Attribution, clickable.
 - **own_channel_proven**: `true | false`. Did this pattern appear as a real outlier (or confirmed winner) on the creator's OWN channel. The strongest signal; vid-framing's Repeat-What-Works path keys on it.

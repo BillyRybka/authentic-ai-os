@@ -24,6 +24,8 @@ Pull each channel's videos from a set window. **Default is the last 12 months.**
 
 When computing the median, exclude shorts (60 seconds or less) and live streams. They have different view dynamics and would skew the picture.
 
+Note on Shorts. The fetch already excludes videos of 60 seconds or less, but platforms now allow longer short-form. So a video that runs far shorter than the channel's normal length should be surfaced as a possible Short rather than silently counted as an outlier, because short-form has different view dynamics.
+
 ## The rule: scale the floor to the channel
 
 For each channel, compute the **median** view count over the window (median, not mean, so the outliers do not inflate their own bar). Then set a raw-view floor that represents a genuine breakout for a channel THAT size. Three things move the floor:
@@ -31,7 +33,7 @@ For each channel, compute the **median** view count over the window (median, not
 1. **Start at 2x the median.** This is the floor of the floor. Below 2x is normal channel variance (a 1.5x video is just a good day). 2x is the minimum to even be a candidate.
 2. **For a normal-cadence channel, the real bar is closer to 3 to 4x the median.** A video that did 3 to 4x what the channel usually does clearly caught fire. That is the breakout, not a video that squeaked past 2x.
 3. **Push the floor higher when the channel posts constantly.** A channel that uploads near-daily drags its own median down with a pile of low-view videos, which makes 2x trivial to clear. For those, the floor climbs to 8x, 10x, more, until only the real breakouts survive.
-4. **For giant, fame-driven channels, only the mega-hits count.** A huge channel's median is already enormous, so 2x is a big number on its own. Keep the floor high (their biggest videos only). You are mining these for packaging shape, not benchmarking against them.
+4. **For giant, fame-driven channels, only the mega-hits count.** A huge channel's median is already enormous, so 2x is a big number on its own. Keep the floor high (their biggest videos only). Channels are channels: you still study a giant's packaging, the same as any other channel. The only adjustments are two. Do not expect or benchmark its view counts (a chunk of its reach is the name on the channel, not the packaging). And for each spike, check whether it is packaging-driven (a title and thumbnail you can learn from) or fame-driven (it would have spiked no matter the packaging). You are mining these for packaging shape, not benchmarking your reach against theirs.
 
 The AI proposes a floor per channel from the median plus the posting cadence (videos per window) and explains the reasoning. The creator confirms or adjusts. The creator's eye on "is that a real breakout for a channel that size" is the final call.
 
@@ -43,7 +45,7 @@ A second sanity check after the multiple: the raw view count has to be meaningfu
 
 **Hyper-cadence channel.** `@DailyFitTips`, posts near-daily, ~500 videos in the window, median 4k (dragged down by volume). Start: 2x = 8k, which dozens of videos clear, that is noise. Push the floor up: at ~12x median (48k) only the genuine breakouts remain. Set the floor where the real hits separate from the daily churn, then confirm with the creator.
 
-**Giant fame-driven channel.** `@MegaCreator`, 5M subs, median 300k. 2x = 600k. Keep the floor at the mega-hits only (say 1M+), because the goal is to study the shape of their biggest packaging, not to compare a smaller creator's reach to theirs. Mark this channel style-only: take title and thumbnail structure, never topics, never view benchmarks.
+**Giant fame-driven channel.** `@MegaCreator`, 5M subs, median 300k. 2x = 600k. Keep the floor at the mega-hits only (say 1M+), so you are studying the shape of their biggest packaging. You still learn from this channel, you just do not benchmark a smaller creator's reach against it, and for each mega-hit you check whether it spiked on packaging or on the name. Mark this channel style-only, meaning structure and packaging transfer but view counts do not: take title and thumbnail structure, never view benchmarks.
 
 **Tiny channel below the niche.** `@NewCoach`, median 1.5k. The multiples look huge (a 10k video is 6.7x), but 10k may still be too small to trust for the niche. Surface it to the creator: "this is 6.7x your normal but small for the niche, study it as your own data point knowing the pattern may be small-channel-specific?" The creator decides.
 
@@ -100,6 +102,6 @@ Anything that fails is skipped (default), surfaced for creator override, or move
 - **Using mean instead of median.** Outliers inflate the mean and hide themselves. Always median.
 - **Including shorts or live streams in the median.** Different view dynamics. Exclude them.
 - **Letting hyper-cadence channels flood the bank.** A daily-posting channel clears 2x dozens of times. Raise its floor until only the real breakouts remain.
-- **Benchmarking a small creator against a giant.** Giant channels are style-only references. Take their packaging shape, never their view counts or topics.
+- **Benchmarking a small creator against a giant.** Giant channels are style-only references, which means their structure and packaging transfer but their view counts do not. Study their packaging shape like any channel. Just do not benchmark your reach against theirs, and check whether each spike was packaging-driven or fame-driven.
 - **Auto-skipping flukes without surfacing them.** Sometimes the fluke reveals a real audience insight. Surface with context, let the creator decide.
 - **Stamping confidence labels.** Record spread (which channels, how many) instead. The count is the signal; the label skews.

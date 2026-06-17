@@ -33,6 +33,7 @@ Output (JSON to stdout):
           "thumbnail_url": "https://...",
           "published_at": "2025-08-12T...",
           "duration_seconds": 660,
+          "is_short_suspect": false,
           "clears_2x_floor": true
         },
         ...
@@ -44,6 +45,11 @@ Note: 2x median is the FLOOR, not the bar. `median_2x_reference` and
 `clears_2x_floor` are coarse hints. The skill scales the real per-channel
 outlier floor from the median plus `videos_per_month` (see
 outlier-identification-rules.md).
+
+Note: videos at or under 60 seconds are hard-excluded as Shorts. Longer
+short-form now exists, so `is_short_suspect` is true for any returned video at
+or under 120 seconds. The skill surfaces these for review rather than silently
+counting them in the outlier set.
 
 Quota usage (per call):
     channels.list (resolve handle):           1 unit
@@ -66,6 +72,14 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 
 YT_API_BASE = "https://www.googleapis.com/youtube/v3"
+
+# Videos at or under this duration are hard-excluded as Shorts.
+SHORTS_HARD_MAX_SECONDS = 60
+# Videos above the hard cut but at or under this duration are still returned,
+# flagged is_short_suspect=true. Longer short-form now exists, so very short
+# videos can slip past a 60s cut and pollute the outlier set. The skill surfaces
+# these rather than silently counting them.
+SHORT_SUSPECT_MAX_SECONDS = 120
 
 
 def load_env_file(path: str = ".env") -> None:
@@ -215,9 +229,12 @@ def fetch_video_details(video_ids: list, api_key: str) -> list:
             # Skip live streams (live, scheduled, or completed-but-flagged)
             if item.get("liveStreamingDetails"):
                 continue
-            # Skip shorts (≤ 60 seconds)
-            if duration_seconds <= 60:
+            # Hard-exclude Shorts (at or under SHORTS_HARD_MAX_SECONDS).
+            if duration_seconds <= SHORTS_HARD_MAX_SECONDS:
                 continue
+            # Flag borderline short-form (at or under SHORT_SUSPECT_MAX_SECONDS)
+            # so the skill can surface it instead of silently counting it.
+            is_short_suspect = duration_seconds <= SHORT_SUSPECT_MAX_SECONDS
             # Skip videos without view counts (private, deleted, processing)
             view_count = item.get("statistics", {}).get("viewCount")
             if view_count is None:
@@ -238,6 +255,7 @@ def fetch_video_details(video_ids: list, api_key: str) -> list:
                     "thumbnail_url": thumb_url,
                     "published_at": item["snippet"]["publishedAt"],
                     "duration_seconds": duration_seconds,
+                    "is_short_suspect": is_short_suspect,
                 }
             )
     return videos

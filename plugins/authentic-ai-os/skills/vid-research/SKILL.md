@@ -109,7 +109,7 @@ Ask the creator first, they know their world. You bring the expertise: pull real
    - **Adjacent**: same style or packaging, different topic or industry. Carries to Phase 3 (structure only, never topics).
    - **Skip**: no real outliers, or off the creator's niche.
 
-   Outliers are the signal. A channel with a modest typical view count but real breakout videos still has patterns worth studying, so don't write it off for being big or for low averages. Present the data and your read; the creator decides the bucket. Don't assert taste as fact ("elite packaging"); show what the data says and let them judge fit.
+   Outliers are the signal. A channel with a modest typical view count but real breakout videos still has patterns worth studying, so don't write it off for low averages. Big channels are not off-limits either. You study a big channel's packaging (titles, thumbnails, hooks, formats) exactly like any channel. The only difference is you do not benchmark their view counts (their reach rides on an audience the creator does not have yet) and you flag fame-driven spikes (a breakout that took off on the host's name or a guest's fame, not on its packaging) so the creator does not chase a number the packaging alone cannot reproduce. Present the data and your read; the creator decides the bucket. Don't assert taste as fact ("elite packaging"); show what the data says and let them judge fit.
 
 5. Confirm the set. Aim for about five direct competitors, but follow the creator.
 
@@ -236,6 +236,7 @@ Load `knowledge/interview-posture.md` and follow it: one question at a time, pla
 - **Data first.** When the creator names a channel, even a "maybe," pull the real numbers before judging it. Confirm on facts, not vibes. Never open with a list you generated, and don't hunt for new channels while they're still naming their own.
 - **Keep the machinery silent.** Medians, the scaled floor, posting cadence, the fluke filter, vision analysis, quota, draft states: that is how you think, not how you talk. Surface a number only when the creator has a decision to make, and say it plainly.
 - **Make curation fast.** Offer to bulk-keep the obvious winners and skip the obvious no's. Don't march the creator through thirty questions.
+- **Talk straight about big channels.** Channels are channels. A big channel's outliers still teach packaging (the titles, thumbnails, hooks, and formats transfer), so study them. Just never promise their reach. Say the packaging is worth stealing and the view count is theirs, not a target the creator can hit yet (a channel with a big following pulls numbers off that following, not off the thumbnail). Flag a fame-driven spike when you see one so the creator studies the move, not the magnitude.
 - **Obsidian output.** The bank files use Obsidian syntax (embedded thumbnails, callouts, wikilinks). The creator reads them there, not as raw text.
 - **Save after every phase**, so a dropped session resumes at `last_phase_completed + 1`.
 
