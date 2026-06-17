@@ -64,7 +64,7 @@ Two checks, in order. Both silent. Don't announce them. Only surface output if a
 
 If both present: continue to the foundation state check below.
 
-If either is missing: tell the creator in one short line, then invoke `creator-setup` via the Skill tool. Don't continue with foundation's routing until creator-setup completes. Be honest about state — if `foundation/` exists but `CLAUDE.md` doesn't (or vice versa), name what's actually missing. Don't claim "not set up" if it's partially set up.
+If either is missing: tell the creator in one short line, then invoke `creator-setup` via the Skill tool. Don't continue with foundation's routing until creator-setup completes. Be honest about state. If `foundation/` exists but `CLAUDE.md` doesn't (or vice versa), name what's actually missing. Don't claim "not set up" if it's partially set up.
 
 Shape (when nothing is set up):
 
@@ -72,7 +72,7 @@ Shape (when nothing is set up):
 
 Shape (when partially set up, e.g. `foundation/` missing but `CLAUDE.md` exists):
 
-> "Workspace is partially set up — I see `CLAUDE.md` but no `foundation/` folder. Running `creator-setup` to fix the structure before we go further."
+> "Workspace is partially set up. I see `CLAUDE.md` but no `foundation/` folder. Running `creator-setup` to fix the structure before we go further."
 
 Then immediately invoke `creator-setup` via the Skill tool. After it completes, the creator can re-invoke `/foundation` to start the interview chain.
 
@@ -119,11 +119,13 @@ If they're quiet between sub-skills but engaged in the previous one's content, t
 
 ### Step 5: Foundation complete
 
-When all 5 foundation interview skills have locked their sections, congratulate briefly and stop:
+When all 5 foundation interview skills have locked their sections, congratulate briefly:
 
 > "Foundation complete. Your avatar, Iceberg, pillars, credibility, and backstory are locked. More skills are coming for voice capture, content production, and pattern research. For now, this is your foundation."
 
-Do not invoke any further skill. The released foundation chain ends here.
+A full journey just completed, so this is a natural moment to ask whether anything was good or rough. If the `aaios-feedback` skill is available, offer feedback once via the end-of-journey path in `${CLAUDE_PLUGIN_ROOT}/knowledge/feedback-offer.md`, honoring its once-per-session guard. If the creator has something, invoke the `aaios-feedback` skill via the Skill tool. If not, or if the feedback capability is not present in this install, just close.
+
+Do not invoke any further skill beyond an accepted feedback handoff. The released foundation chain ends here.
 
 ## What this is NOT
 

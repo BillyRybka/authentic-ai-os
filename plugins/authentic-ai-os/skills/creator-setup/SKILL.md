@@ -90,7 +90,7 @@ Then route:
 
 ### Step 2A: Empty CWD, flat scaffold
 
-Read `manifest.md`. Create every folder listed at CWD.
+Read `manifest.md`. For each row in the current-release table, act on its class: **structure** rows create the named folder at CWD; **seed** rows copy the named template from `${CLAUDE_PLUGIN_ROOT}/knowledge/` into the workspace at the row's path, but only if that file does not already exist.
 
 Then write:
 - `assets/CLAUDE.md` → `./CLAUDE.md`
@@ -210,7 +210,7 @@ Go to **Step 4**.
 
 ### Step 3: Additive update
 
-The workspace already exists. Read `manifest.md`. For every folder the manifest now lists that does not yet exist in `TARGET`, create it. If `CLAUDE.md` or `.env.example` is missing at the workspace root, write it from `assets/`.
+The workspace already exists. Read `manifest.md`. For every **structure** row the manifest now lists that does not yet exist in `TARGET`, create the folder. For every **seed** row, copy its template from `${CLAUDE_PLUGIN_ROOT}/knowledge/` into `TARGET` at the named path, but only if that file does not already exist (never overwrite an edited bank). If `CLAUDE.md` or `.env.example` is missing at the workspace root, write it from `assets/`.
 
 Never read, modify, overwrite, or delete anything the creator authored (`foundation/*`, bank entries, `people/*`, their `.env`, their CLAUDE.md if they edited it).
 
@@ -229,14 +229,14 @@ Report plainly:
 **Then tailor the handoff to foundation state.** Read `TARGET/foundation/creator-foundation.md` if it exists and check which sections (Offer, Avatar, Top 3, Iceberg, Pillars, Credibility, Backstory) are filled vs `[to fill]`.
 
 - **Foundation is empty or missing:** offer, don't direct.
-  > "Want me to start `vid-foundation` now? It walks you through avatar, positioning, pillars, credibility, and backstory, one focused session each. Or come back to it when you're ready."
+  > "Want me to start `/foundation` now? It walks you through avatar, positioning, pillars, credibility, and backstory, one focused session each. Or come back to it when you're ready."
 
-  If yes, invoke `vid-foundation` via the Skill tool. If not now, friendly close.
+  If yes, invoke `/foundation` via the Skill tool. If not now, friendly close.
 
 - **Foundation is partially filled:** acknowledge what's locked, offer to resume.
-  > "Looks like your foundation is partway through. You have `[list locked sections in plain language]`. Want me to pick up with `vid-foundation` from where you left off? Or come back later."
+  > "Looks like your foundation is partway through. You have `[list locked sections in plain language]`. Want me to pick up with `/foundation` from where you left off? Or come back later."
 
-- **Foundation is complete:** do not suggest `vid-foundation`. Close with a status line:
+- **Foundation is complete:** do not suggest `/foundation`. Close with a status line:
   > "Workspace is current. Your foundation is locked. More skills are in development; you'll get them on the next plugin update."
 
   If Step 3 added new folders, name them. If nothing was added, say "Nothing new to add."
@@ -246,7 +246,7 @@ Do NOT mention skills that have not shipped (no `vid-voice-capture`, `vid-resear
 ## Safety rules
 
 - Only ever create or write inside the chosen `TARGET`. Never a sibling `people/`, `notes/`, or `foundation/` belonging to another system.
-- Creator content is untouchable. This skill scaffolds empty structure only.
+- Creator content is untouchable. This skill scaffolds empty structure and starter bank seeds (copied from plugin templates). It never overwrites a file the creator already has.
 - The client's existing root `claude.md` is never overwritten. Only additively appended, and only with explicit confirmation.
 - The workspace CLAUDE.md is always written. No exceptions, no rationalized skips. See "Why CLAUDE.md is mandatory" above.
 - If any write fails, stop and report the exact path. Do not continue blindly.
@@ -255,7 +255,7 @@ Do NOT mention skills that have not shipped (no `vid-voice-capture`, `vid-resear
 
 ## What this skill is NOT
 
-- An interview. It asks the creator nothing about their identity. That is `vid-foundation` and its sub-skills.
+- An interview. It asks the creator nothing about their identity. That is `/foundation` and its sub-skills.
 - A knowledge copier. `knowledge/` reference files ship with the plugin and are referenced from there; they never get copied into the workspace.
 
 ## Maintenance contract

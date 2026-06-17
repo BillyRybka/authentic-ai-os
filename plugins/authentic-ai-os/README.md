@@ -16,8 +16,8 @@ Five foundation interview skills plus an orchestrator command. Each skill runs a
 
 Plus:
 
-- `creator-setup` — one-time installer that scaffolds the workspace inside the creator's chosen content folder.
-- `/foundation` — orchestrator. Checks state, points the creator at the next skill, auto-invokes it.
+- `creator-setup`: one-time installer that scaffolds the workspace inside the creator's chosen content folder.
+- `/foundation`: orchestrator. Checks state, points the creator at the next skill, auto-invokes it.
 
 ## Installation
 
@@ -37,7 +37,7 @@ After setup, run `/foundation` to walk through the five interviews. Each intervi
 
 - A generic AI assistant. This is a content production system.
 - A vault scanner. Read on demand, never pre-emptively.
-- A finished product. More skills are in development: voice capture, content production, pattern research, packaging.
+- A finished product. More skills are in development: voice capture, content production, pattern research, and packaging.
 
 ## Support
 

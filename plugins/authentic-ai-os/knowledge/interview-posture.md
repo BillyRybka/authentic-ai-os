@@ -1,8 +1,8 @@
 # Interview posture
 
-The shared conversational posture for every interview-style skill in Authentic AI OS: `vid-avatar`, `vid-positioning`, `vid-pillars`, `vid-credibility`, `vid-backstory`, `vid-packaging`.
+The shared conversational posture for every interview-style skill in Authentic AI OS: `vid-avatar`, `vid-positioning`, `vid-pillars`, `vid-credibility`, `vid-backstory`.
 
-Every interview skill loads this file at session start. One source of truth. If the posture changes here, all six skills inherit it.
+Every interview skill loads this file at session start. One source of truth. If the posture changes here, all five skills inherit it.
 
 ## What this skill is
 

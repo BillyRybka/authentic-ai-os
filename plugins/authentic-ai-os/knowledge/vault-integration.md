@@ -20,7 +20,7 @@ Every skill in authentic-ai-os loads this file. It is the contract that makes th
 |---|---|
 | `foundation/` | Creator identity. creator-foundation.md, voice-profile.md, packaging-system.md, and `reference-pieces/` (full polished pieces preserved verbatim for piece-level voice rhythm). |
 | `banks/` | Evergreen material the creator builds over time. Stories, proofs, testimonials, metaphors, frameworks, packaging winners, plus single-file banks (title, hook, transition, pattern). |
-| `content/pieces/` | Per-video work. One folder per piece. brain-dump, reference-block, script, thumbnail-brief, pressure-test, per-platform derivatives. Single newsletters and one-off posts also live here as their own piece folder. |
+| `content/pieces/` | Per-video work. One folder per piece. brain-dump, piece, script, thumbnail-brief, per-platform derivatives. Single newsletters and one-off posts also live here as their own piece folder. |
 | `content/ideas/` | Swipe file for not-yet-built content. Raw ideas, hooks, framings the creator wants to come back to. |
 | `content/email-sequences/` | Multi-piece email sequences (welcome, nurture, launch, re-engagement). One folder per sequence. |
 | `people/` | One file per human in the creator's world. Clients, prospects, partners, community. Frontmatter-typed. |
@@ -384,7 +384,7 @@ project: authentic-ai-os
 slug: video-slug
 pillar: {pillar-slug}           # creator's content pillar
 format: short-process           # from the 7 formats: short-process | case-study | roast | deep-dive | interview | news | listicle
-voice_context: youtube-script   # delivery medium for voice: youtube-script (default) | tutorial | shorts | newsletter | linkedin | twitter | podcast | casual | talk. Orthogonal to format. Set by vid-framing. Drives which foundation/reference-pieces/{voice_context}.md a writing skill loads.
+voice_context: youtube-script   # delivery medium for voice: youtube-script (default) | tutorial | shorts | newsletter | linkedin | twitter | instagram | podcast | casual | talk. Orthogonal to format. Set by vid-framing (videos) or post-write (posts). Drives which foundation/reference-pieces/{voice_context}.md a writing skill loads.
 goal: sales                     # sales | emails | views (ONE only)
 status: ideating                # ideating | drafting | filming-ready | filmed | editing | published
 captured: YYYY-MM-DD
@@ -395,6 +395,22 @@ proofs_used: []
 tags: [piece, format-{slug}, pillar-{slug}, {other-tags}]
 ---
 ```
+
+### Ideas backlog
+
+Location: `content/ideas-backlog.md` (one per vault, created by `vid-ideas` on the first kept idea). A curated queue of ideas the creator liked, never an auto-dump of every generated batch.
+
+```yaml
+---
+type: ideas-backlog
+project: authentic-ai-os
+last_refreshed: YYYY-MM-DD
+status: active
+tags: [ideas, backlog]
+---
+```
+
+Body: a markdown table of kept ideas, one row each with `status` (kept | picked | used | dropped), `date`, `idea` (working title in the creator's voice), `pillar`, `problem` (1 | 2 | 3 | outlier_within_iceberg), and `signal anchor` (named pattern or outlier plus spread/multiplier, or "experimental swing"). `dropped` rows are sticky so `vid-ideas` never re-proposes them. Schema owned by `vid-ideas`; template at `.claude/skills-wip/vid-ideas/assets/ideas-backlog-template.md`.
 
 ## Wikilink patterns
 
@@ -718,7 +734,7 @@ Piece's `stories_used` updated correctly. Story's `used_in` failed to update (pe
 
 - Piece's `piece.md` doesn't exist: create it from the piece template, proceed.
 - Story/metaphor/proof bank folder doesn't exist: create the folder, proceed.
-- `foundation/creator-foundation.md` missing: hard stop. Tell creator to run vid-foundation first.
+- `foundation/creator-foundation.md` missing: hard stop. Tell creator to run /foundation first.
 
 **5. People profile missing when a bank entry mentions a client**
 

@@ -95,7 +95,7 @@ This is an Obsidian vault. Treat every note accordingly.
 
 | Creator says...                  | You do...                                  |
 |----------------------------------|--------------------------------------------|
-| "Set up my channel"              | Run `vid-foundation`                       |
+| "Set up my channel"              | Run `/foundation`                          |
 | "Build my avatar"                | Run `vid-avatar`                           |
 | "Lock my positioning"            | Run `vid-positioning`                      |
 | "Build my pillars"               | Run `vid-pillars`                          |

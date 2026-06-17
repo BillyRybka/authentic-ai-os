@@ -1,0 +1,25 @@
+{
+  "slug": "aaios-feedback",
+  "name": "Authentic AI OS feedback",
+  "headline": "Tell Billy what worked or what broke",
+  "subheadline": "Quick feedback on the Authentic AI OS skills. Good or rough, it all helps the system get better.",
+  "submitButtonLabel": "Send feedback",
+  "thanksHeading": "Got it",
+  "thanksBody": "This goes straight to Billy. Thanks for taking the time, it is how the system improves.",
+  "fields": [
+    { "id": "severity", "type": "radio", "label": "How would you rate this", "required": true, "options": ["blocker", "annoying", "nitpick", "idea", "praise"] },
+    { "id": "failureMode", "type": "text", "label": "Failure mode tag", "helpText": "Short tag for the kind of break if one is obvious: fabrication, wrong-voice, broken-wikilink, wrong-alignment, missing-input, other." },
+    { "id": "whatHappened", "type": "textarea", "label": "What happened", "required": true, "placeholder": "What went wrong, or what worked well." },
+    { "id": "whatTheyWanted", "type": "textarea", "label": "What you wanted instead", "placeholder": "Optional. What you expected or hoped for." },
+    { "id": "skillName", "type": "text", "label": "Which skill" },
+    { "id": "sessionMode", "type": "text", "label": "Mode, format, pillar", "helpText": "Which mode or dial the skill ran in, plus format and pillar where they apply." },
+    { "id": "pluginVersion", "type": "text", "label": "Plugin version" },
+    { "id": "reproductionCase", "type": "textarea", "label": "Reproduction case", "helpText": "A seeds.json-shaped JSON case reconstructed from the session: the raw input, the persona reveals and withholds, format, mode, distinctive phrases, banks pulled, fabrication traps. Drop into tests/corpus to replay." },
+    { "id": "fixturesSnapshot", "type": "textarea", "label": "Fixtures snapshot", "helpText": "The full content of the determinative vault files the skill read this run, each under a path header. Never include held-out quote files." },
+    { "id": "badOutputVerbatim", "type": "textarea", "label": "Bad output verbatim", "helpText": "The exact thing the skill produced that went wrong, pasted whole. Do not trim or paraphrase." },
+    { "id": "artifactsTouched", "type": "text", "label": "Artifacts touched", "helpText": "Comma-separated vault paths the skill wrote or was about to write." },
+    { "id": "runtime", "type": "text", "label": "Runtime" },
+    { "id": "creatorName", "type": "text", "label": "Your name", "width": "half" },
+    { "id": "creatorEmail", "type": "email", "label": "Your email", "width": "half", "helpText": "Only if you want Billy to follow up." }
+  ]
+}
