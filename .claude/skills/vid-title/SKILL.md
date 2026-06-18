@@ -74,7 +74,7 @@ If invoked with context from a caller (e.g. "title for video about X, format=cas
 - Past creator-own winners in packaging-bank as style anchors (if any)
 
 Each candidate must:
-- Be 50 characters or fewer (hard ceiling, YouTube cuts off after 50)
+- Be 55 characters or fewer (hard ceiling, YouTube cuts off after 55)
 - Hit at least one BENS letter (annotate which)
 - Use ONLY numbers from the lock list (no fabrication)
 - Be distinct from the others (different patterns, different BENS letters, different angles)
@@ -82,7 +82,7 @@ Each candidate must:
 **THE primary filter: read aloud test.** A title must read as ONE continuous thought spoken in natural English. Read it out loud. If it sounds like a human said it in conversation, it passes. If it sounds like fragments stitched together, REJECT.
 
 Examples that PASS the read-aloud test (real published titles):
-- "How I Added 50 Pounds To My Squat In 12 Weeks" (one breath, one thought)
+- "How I Added 55 Pounds To My Squat In 12 Weeks" (one breath, one thought)
 - "I QUIT My $120,000 Job After Learning 3 Things" (natural complex sentence)
 - "Why Looking Poor Is Important" (short, complete claim)
 - "I Made $12M Selling A Fruit" (subject plus verb plus specific)
@@ -103,7 +103,7 @@ If a candidate fails the read-aloud test, regenerate. Don't ship.
 **Hard filters (genuine constraints, auto-reject):**
 
 1. **Anti-fabrication.** Any number not in the lock list, REJECT. Fabricated numbers lie to the viewer; this is non-negotiable.
-2. **Over 50 characters.** REJECT. YouTube literally truncates after 50. Anything over is invisible to the user.
+2. **Over 55 characters.** REJECT. YouTube literally truncates after 55. Anything over is invisible to the user.
 3. **Invented compound nouns.** Phrases like "Unsticks 365s" / "100xs your X" / "Outperforms-A-Y" aren't English. If a Google search of the phrase returns zero hits, the phrase isn't real language. REJECT.
 4. **Read-aloud failure.** If the candidate doesn't sound like one continuous human thought when spoken aloud, REJECT. (This is the primary filter at the top of Phase 1.)
 
@@ -128,7 +128,7 @@ When showing candidates that triggered soft filters, surface the friction in the
 
 When generating, lean toward shapes that real winners use. These read as one human thought:
 
-- **"How I [verb] [specific thing] [in/after/before/etc] [context]"** for "How I Added 50 Pounds To My Squat In 12 Weeks"
+- **"How I [verb] [specific thing] [in/after/before/etc] [context]"** for "How I Added 55 Pounds To My Squat In 12 Weeks"
 - **"Why [subject] [verb-phrase]"** for "Why Looking Poor Is Important"
 - **"I [past-tense action] [object/number] [tag]"** for "I Made $12M Selling A Fruit" or "I QUIT My $120,000 Job After Learning 3 Things"
 - **"The [number/superlative] [thing] That [verb-phrase]"** for "The 21 Principles of the Top 0.01%"
@@ -184,7 +184,7 @@ If they want changes:
 **Push back when picks are weak:**
 - They want a generic option ("How To Build A Business"). Flag it: "This would fit 1000 other videos. Want me to add a specific number, named method, or contrarian angle from the script?"
 - They want a fabricated number. REJECT and explain. Only script-verbatim numbers allowed.
-- They want over 50 chars. REJECT (hard rule).
+- They want over 55 chars. REJECT (hard rule).
 
 ### Phase 3: Lock and save
 
@@ -221,7 +221,7 @@ If `vid-thumbnail` hasn't run yet, just lock the title. `vid-thumbnail` will res
 - **Creator drives, Claude structures.** The candidates draw from the creator's actual material: the angle, the numbers, the moments. Claude doesn't invent claims to make a title sound better.
 - **Specificity wins.** Real numbers over round numbers. Named methods over generic descriptions. Specific person/situation over "people."
 - **Fit the video AND the avatar.** A title that fits the video but not the avatar misses. A title that fits the avatar but doesn't reflect the video is bait. Both must hold.
-- **Under 50 chars is hard.** YouTube cuts off after 50. Don't ship something they won't see.
+- **Under 55 chars is hard.** YouTube cuts off after 55. Don't ship something they won't see.
 
 ## Reference index
 

@@ -16,6 +16,8 @@ Examples are in the strength-coach niche (busy founders, 30-minute training). Th
 
 ## Sub-format A: Carousel
 
+**First, is it a carousel at all?** A carousel needs four or five distinct beats in a real sequence. A single story or one belief is a caption, not a carousel. Run the worth-it gate in `references/carousel.md` before building slides, and follow its full method (decompose, do not slice; the cover; per-slide limits; the delete test) for anything you do build.
+
 ### Best for
 
 Structured, listy, one-point-at-a-time ideas. Checklists, frameworks, do-this-not-that, comparisons, mistakes. Anything that breaks into clean steps or rows.
@@ -23,14 +25,14 @@ Structured, listy, one-point-at-a-time ideas. Checklists, frameworks, do-this-no
 ### Structure
 
 - **Title slide.** The hook, and it has to face the reader, a belief they hold, a pain they feel, or a promise that opens a gap. A contrarian line or the one big idea, big and short. It earns the swipe or nothing else gets seen. See `references/hooks.md`.
-- **3 to 5 idea slides.** One point per slide. A few words to a short sentence. No paragraphs.
+- **Idea slides, one beat each.** As many as the beats earn, usually five to eight slides total, never padded to a number.
 - **Recap slide.** The takeaway compressed, or the list in one view. The screenshot-this slide.
 - **Caption.** Expands the idea, carries the nuance the slides dropped, and holds the CTA (save, comment, DM).
 
 ### Copy rules
 
 - One idea per slide. If a slide has two ideas, split it.
-- Short. The slide is a headline, not a paragraph. The caption carries the rest.
+- Short. One idea, 30 words max, two short sentences absolute ceiling. Three sentences is too much. The slide is a billboard, the caption carries the rest.
 - Strong title slide. If it does not earn the swipe, nothing else matters.
 - Clear hierarchy and rhythm across slides. They should feel like a sequence.
 

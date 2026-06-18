@@ -79,15 +79,19 @@ invented numbers; here, judge whether specificity is real and earned).
 Did the skill write a platform-agnostic core and then genuinely ADAPT it per
 platform, or did it reflow one version across all of them? Check that the core
 reads as a complete standalone piece, the LinkedIn version is hook-first short
-paragraphs, the carousel is sliced into a title slide, idea slides, a recap
-slide, and a caption with a text visual brief, and the caption is a warmer single
-thread. Same idea, different delivery, not the same text three times.
+paragraphs, the carousel is decomposed so each slide carries one idea in two
+short sentences or fewer (a slide with three sentences or a whole paragraph is a
+fail) with a cover that earns the swipe and a text visual brief, and the caption
+is a warmer single thread. A carousel forced onto an idea that is really a single
+story or one belief, which should be a caption, scores lower. Same idea, different
+delivery, not the same text three times, and never the core sliced at its
+paragraph breaks.
 
 | Score | What it looks like |
 |---|---|
 | 1 | The same block of text pasted under every platform. No real adaptation. |
 | 2 | Minor trimming between platforms, but structurally identical. |
-| 3 | Some adaptation, but one platform is just the core reflowed, or the carousel is not really sliced. |
+| 3 | Some adaptation, but one platform is just the core reflowed, or the carousel slides are wordy paragraphs instead of one idea each. |
 | 4 | Each platform is genuinely shaped for its delivery; the carousel is sliced with a visual brief. |
 | 5 | The core is complete and platform-agnostic, and every version is a true translation: LinkedIn argues, the carousel teaches slide by slide, the caption talks. Nothing is reflowed. |
 

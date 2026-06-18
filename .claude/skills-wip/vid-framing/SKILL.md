@@ -1,11 +1,11 @@
 ---
 name: vid-framing
-description: Pick the angle for one specific video. Surfaces 3 outlier-anchored angle candidates plus 1 experimental angle from the creator's pattern banks and brain-dump. Runs Person, Problem, Positioning filter, predicts audience temperature (cold/warm/hot), confirms format from the creator's current packaging defaults, locks goal (sales/email/views). Output: framing decisions appended to `content/pieces/{slug}/piece.md` with the four locked fields downstream skills consume (selected_angle, core_payoff, format, goal, viewer_stage). Anti-fabrication, every anchored angle cites a real bank entry. Standalone OR invoked by vid-pipeline. Phrases like "frame the video", "pick the angle", "frame this piece", "what's the angle for this", "lock the framing", "what should this video be about", "re-frame this piece", "what angles do I have on [topic]", or any downstream pipeline that needs an angle locked before structure starts should fire this skill.
+description: Pick the angle for one specific video. Surfaces 3 outlier-anchored angle candidates plus 1 experimental angle from the creator's pattern banks and brain-dump. Runs one iceberg fit check (is the angle inside the lane the creator serves), predicts audience temperature (cold/warm/hot), confirms format from the creator's current packaging defaults, locks goal (sales/email/views). Output: framing decisions appended to `content/pieces/{slug}/piece.md` with the four locked fields downstream skills consume (selected_angle, core_payoff, format, goal, viewer_stage). Anti-fabrication, every anchored angle cites a real bank entry. Standalone OR invoked by vid-pipeline. Phrases like "frame the video", "pick the angle", "frame this piece", "what's the angle for this", "lock the framing", "what should this video be about", "re-frame this piece", "what angles do I have on [topic]", or any downstream pipeline that needs an angle locked before structure starts should fire this skill.
 ---
 
 # Video Framing
 
-Picks the angle for one specific video. Surfaces 3-4 candidates anchored to real pattern-bank outliers (with one experimental slot for the creator's gut pick), runs Theory of One audience-fit filtering, locks the angle plus format plus goal plus predicted audience temperature, writes the framing decisions to `piece.md`. Downstream skills (vid-thumbnail, vid-title, vid-intro, vid-segment, vid-ending) read piece.md for their context.
+Picks the angle for one specific video. Surfaces 3-4 candidates anchored to real pattern-bank outliers (with one experimental slot for the creator's gut pick), runs one iceberg fit check, locks the angle plus format plus goal plus predicted audience temperature, writes the framing decisions to `piece.md`. Downstream skills (vid-thumbnail, vid-title, vid-intro, vid-segment, vid-ending) read piece.md for their context.
 
 **Scope boundary:** this skill produces the ANGLE only. It does not write titles (`vid-title`), thumbnail briefs (`vid-thumbnail`), scripts (`vid-structure` / `vid-intro` / `vid-segment` / `vid-ending`), or measurement (`vid-measurement`, future). It does not re-litigate iceberg or Top 3 problem alignment, those were locked upstream by `vid-intake`.
 
@@ -49,7 +49,7 @@ Soft requirements:
 
 ## Invocation modes
 
-**Standalone:** creator invokes directly with a slug ("frame the ADHD planning piece"). Skill loads the piece's brain-dump, surfaces 3+1 angles, walks Theory of One, locks the call, writes piece.md.
+**Standalone:** creator invokes directly with a slug ("frame the ADHD planning piece"). Skill loads the piece's brain-dump, surfaces 3+1 angles, runs the iceberg fit check, locks the call, writes piece.md.
 
 **Sub-skill:** vid-pipeline invokes after vid-intake completes. Skip the "which piece?" prompt, caller already passed the slug. Return a status packet on completion (`{piece_status: framed, selected_angle, outlier_anchor}`).
 
@@ -109,21 +109,19 @@ See `references/framing-conversation-examples.md` Example 1 for the worked surfa
 
 See `references/angle-anchor-rules.md` for the full anchor logic, fluke filter application, and the strong/moderate/weak/experimental strength definitions (derived from spread).
 
-### Phase 3: Theory of One filter
+### Phase 3: Fit check + temperature
 
-For each angle (or in bulk-keep mode, for the angle the creator pre-selects), walk the Person → Problem → Positioning test:
+For each angle (or in bulk-keep mode, for the angle the creator pre-selects), run two checks:
 
-- **Person:** does this angle fit the creator's iceberg (the audience the creator has built)?
-- **Problem:** which of Top 3 problems does it land on? (Or flag `outlier_within_iceberg` / `outlier`.)
-- **Positioning:** does this match the audience's expectation of what the creator solves?
-- **Predicted temperature:** what audience temperature will this angle attract? (cold / warm / hot, see `references/audience-temperature-fit.md`)
+- **Iceberg fit (the only fit gate):** is this angle inside the lane the creator serves (the iceberg)? Inside = keep. Outside = drop. That's the whole fit decision. Do NOT map the angle to a Top 3 problem, do NOT stamp it `outlier`. The angle plus the brain-dump already say what the video is about; the writing skills (vid-intro, vid-segment, vid-ending) pick which problem they poke at write time, from the foundation. Framing does not re-derive it.
+- **Predicted temperature:** what audience temperature will this angle attract? (cold / warm / hot, see `references/audience-temperature-fit.md`). This drives the `viewer_stage` field downstream skills read.
 
-Surface the four answers per angle. Creator confirms or pushes back.
+Surface the two answers per angle. Creator confirms or pushes back.
 
-**Bulk-keep mode:** if the creator says "this one's obvious, skip the filter," the AI still runs Theory of One INTERNALLY before surfacing. Only skip the conversation, not the check.
+**Bulk-keep mode:** if the creator says "this one's obvious, skip the check," the AI still runs the iceberg-fit + temperature check INTERNALLY before surfacing. Only skip the conversation, not the check.
 
-**Soft friction during filter:**
-- Angle doesn't land on Top 3 → "This angle is outlier-within-iceberg. Want to lock it anyway, or pick a Top 3 angle?"
+**Soft friction during the check:**
+- Angle sits outside the iceberg → "This angle is outside the lane you've built. Want to lock it anyway (a deliberate stretch), or pick one inside the iceberg?"
 
 ### Phase 4: Lock the call
 
@@ -166,7 +164,7 @@ Next: lock the title (vid-title), then the thumbnail (vid-thumbnail). Packaging 
 
 - **Listen during dumps.** If the creator drops 3+ sentences about what they want, hear it all before responding.
 - **Specificity in proposals.** Every anchored angle cites the bank entry by name (outlier title + channel + views). No "this pattern works in your niche" hand-waving. See the near-miss in `references/framing-conversation-examples.md` Example 1.
-- **Theory of One after candidates, not before.** Generate first, filter second.
+- **Fit check after candidates, not before.** Generate first, check fit second.
 - **Risk surfacing is mandatory.** Every candidate has a risk line.
 - **Bulk-keep mode for experienced creators.** Don't drag a 10-question dialogue through someone who pre-locked goal/format/temperature.
 - **Save partial state.** If session ends mid-flow, set `piece_status: angle-in-progress` so resume works at Phase {current+1}.
@@ -208,7 +206,7 @@ See `references/framing-conversation-examples.md` for the worked dialogues.
 
 - **Anchored beats invented.** AI-generated angles without evidence sound confident but flop at scale. Anchoring to a real outlier turns guesses into hypotheses backed by data.
 - **3 + 1 protects both discipline AND creativity.** Three anchored angles keep the creator from drift. One experimental slot protects intuition from being suppressed.
-- **The creator's judgment is irreplaceable.** AI surfaces candidates with evidence. The creator picks. Theory of One, does this fit MY audience?, only the creator can answer.
+- **The creator's judgment is irreplaceable.** AI surfaces candidates with evidence. The creator picks. Does this fit MY audience? Only the creator can answer.
 - **Repeat What Works is GOOD, not boring.** When the creator's own past winner anchors a new angle, surface that as a strong signal, not a "you already did this." Diminishing returns kick in around 3 repeats, until then, lean in.
 - **Temperature is a controllable dial.** The same brain-dump can frame cold, warm, or hot depending on specificity choices. vid-framing surfaces the dial; the creator picks the temperature that matches the goal.
 - **Drop nothing silently.** Every dropped angle gets a one-line rationale captured in piece.md. Sticky across runs. Prevents the AI from re-surfacing patterns the creator has already rejected.

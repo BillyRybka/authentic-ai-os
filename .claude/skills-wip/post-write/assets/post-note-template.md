@@ -77,6 +77,7 @@ Caption: {the caption that expands the idea and holds the CTA}
 - Provenance wikilinks are allowed here because this block stays in the vault. They never appear in any `## Publishable` block.
 - Cite bank entries and people in the vault convention: `[[bank-dir/slug]]` (no "banks/" prefix) and `[[Full Name]]` (no "people/" prefix). A wrong-format link breaks the graph and reads as a fabricated link to anything checking it.
 - Include only the platform blocks the creator asked for. Delete the rest. The `## Core` block is always present.
+- Carousel slides are billboards: one idea each, 30 words max, two short sentences ceiling. Decompose the core into beats per `references/carousel.md`, never slice it at the paragraph breaks. If the idea is a single story or one belief, it is a caption, not a carousel.
 - The note wikilinks its parent via `piece:`. Obsidian's backlink pane surfaces it on the parent, so the graph connects without leaking links into the copy.
 - For a standalone batch with no parent video, the skill creates a lightweight piece folder for the batch, and `piece:` points at that batch's own `piece.md`.
 - `hook_type` records the core's opening move so the batch-level hook-variety check (Phase 5) can scan for repeated openers.
