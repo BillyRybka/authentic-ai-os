@@ -37,8 +37,9 @@ All editing happens on `dev`. Shipping skills live in `plugins/authentic-ai-os/s
 2. Strip dev-only files so they never reach clients: `DECISIONS.md`, `WORKING-NOTES.md`, `scripts/__pycache__/`, any dev-only README.
 3. Convert the skill's `.md` files to LF (see the Cowork line-endings gotcha below).
 4. Add the update-check pre-flight blockquote after the frontmatter, matching the sibling skills.
-5. If it needs container structure in the client's vault, add a row to `creator-setup`'s manifest.
-6. Commit to `dev`. There is no allowlist array to edit; the whole plugin tree ships.
+5. Keep the frontmatter `description` at 1024 characters or fewer (hard plugin-validator limit; see the gotcha below). `release.ps1` enforces it.
+6. If it needs container structure in the client's vault, add a row to `creator-setup`'s manifest.
+7. Commit to `dev`. There is no allowlist array to edit; the whole plugin tree ships.
 
 ### 3. Cut the release
 
@@ -95,6 +96,10 @@ Fix: `.md` files in the plugin must use LF line endings. `.gitattributes` at `pl
 ```powershell
 $f = 'path\to\file.md'; $t = [IO.File]::ReadAllText($f) -replace "`r`n","`n"; [IO.File]::WriteAllText($f, $t, (New-Object Text.UTF8Encoding $false))
 ```
+
+### Description length: 1024-char hard cap
+
+The plugin validator rejects the entire plugin if any skill's frontmatter `description` exceeds 1024 characters (error: `field 'description' in SKILL.md must be at most 1024 characters`). It is the whole plugin that fails, not just that skill, so one long description blocks every skill from installing. v0.3.0 shipped with aaios-feedback at 1280 chars and failed validation; v0.3.1 fixed it. `scripts/release.ps1` now checks every shipping description before it builds and throws if any is over. Keep descriptions tight: what the skill does, when it triggers, a handful of trigger phrases. The foundation skills run 240 to 490 chars; that is the target range.
 
 ### Legacy `commands/` directory
 

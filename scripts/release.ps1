@@ -41,6 +41,24 @@ if ((git status --porcelain | Out-String).Trim()) {
     throw "Working tree is dirty. Commit or stash on 'dev' first."
 }
 
+# --- validate shipping skill descriptions (plugin validator caps at 1024) ----
+# Cowork/Claude Code reject the whole plugin if any skill's `description` field
+# exceeds 1024 chars. Catch it here, before the rebuild and publish, not after a
+# broken release reaches a client.
+$tooLong = @()
+foreach ($sk in (Get-ChildItem 'plugins/authentic-ai-os/skills' -Directory -ErrorAction SilentlyContinue)) {
+    $skFile = Join-Path $sk.FullName 'SKILL.md'
+    if (-not (Test-Path $skFile)) { continue }
+    $descLine = (Get-Content $skFile -Raw) -split "`n" | Where-Object { $_ -match '^description:\s' } | Select-Object -First 1
+    if ($descLine) {
+        $descLen = ($descLine -replace '^description:\s', '').TrimEnd("`r").Length
+        if ($descLen -gt 1024) { $tooLong += ('{0} ({1} chars)' -f $sk.Name, $descLen) }
+    }
+}
+if ($tooLong.Count) {
+    throw "Skill description over the 1024-char plugin-validator limit: $($tooLong -join ', '). Shorten it before releasing."
+}
+
 Write-Host "Releasing v$Version : rebuilding 'main' from 'dev'..." -ForegroundColor Cyan
 
 try {

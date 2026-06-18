@@ -51,8 +51,9 @@ Skills use relative paths. `foundation/...` lands wherever you launched Claude. 
 2. Strip dev-only files so they never reach clients: `DECISIONS.md`, `WORKING-NOTES.md`, `scripts/__pycache__/`, any dev-only README.
 3. Convert the skill's `.md` files to LF. Cowork's frontmatter parser breaks on CRLF. The plugin `.gitattributes` enforces LF for files under the plugin, but convert explicitly so a Windows re-save does not bite you.
 4. Add the update-check pre-flight blockquote right after the frontmatter, matching the sibling skills.
-5. Confirm the knowledge files it references exist at repo-root `knowledge/`. The release script relocates them into the plugin automatically.
-6. Commit on `dev`. That is the only edit needed. No allowlist to touch.
+5. Keep the frontmatter `description` at 1024 characters or fewer. The plugin validator rejects the whole plugin if any one skill's description is longer, so a single bloated description blocks every skill from installing. `release.ps1` checks this and fails the release if it finds one over, but write it short to begin with. The foundation skills run 240 to 490 chars; that is the target.
+6. Confirm the knowledge files it references exist at repo-root `knowledge/`. The release script relocates them into the plugin automatically.
+7. Commit on `dev`. That is the only edit needed. No allowlist to touch.
 
 ## Cutting a release
 
