@@ -37,7 +37,7 @@ After setup, run `/foundation` to walk through the five interviews. Each intervi
 
 - A generic AI assistant. This is a content production system.
 - A vault scanner. Read on demand, never pre-emptively.
-- A finished product. More skills are in development: voice capture, content production, pattern research, and packaging.
+- A finished product. The foundation and `vid-research` (pattern banks) have shipped; voice capture and content production are still in development.
 
 ## Support
 

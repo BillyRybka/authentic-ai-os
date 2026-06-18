@@ -39,7 +39,8 @@ All editing happens on `dev`. Shipping skills live in `plugins/authentic-ai-os/s
 4. Add the update-check pre-flight blockquote after the frontmatter, matching the sibling skills.
 5. Keep the frontmatter `description` at 1024 characters or fewer (hard plugin-validator limit; see the gotcha below). `release.ps1` enforces it.
 6. If it needs container structure in the client's vault, add a row to `creator-setup`'s manifest.
-7. Commit to `dev`. There is no allowlist array to edit; the whole plugin tree ships.
+7. Wire it into the system. Update whatever skill should hand off to this one (the foundation chain offers `vid-research` at its end, for example), and grep every shipping skill plus `README.md` and `CLAUDE.md` for stale references that still call it unreleased ("in development", "coming", "chain ends here", "do NOT mention {skill}"). A graduated skill that nothing points to, or that siblings still call work-in-progress, is a silent dead end. This is the step most often missed.
+8. Commit to `dev`. There is no allowlist array to edit; the whole plugin tree ships.
 
 ### 3. Cut the release
 

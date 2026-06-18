@@ -127,11 +127,15 @@ Write the full backstory and the 3-sentence version to `foundation/creator-found
 
 ## Closing the skill
 
-Backstory is the last foundation interview in this release. Announce the lock and that foundation identity is complete. Do NOT auto-invoke any next skill: the released foundation chain ends here.
+Backstory is the last foundation interview. Announce the lock, that foundation identity is complete, then offer `vid-research` as the next step (the foundation's natural follow-on, now shipped). Launch it only on the creator's go.
 
-> "Backstory locked. Full version plus the 3-sentence intro version. That completes your foundation identity. More skills are coming for voice capture, content production, and pattern research. For now, this is your foundation."
+> "Backstory locked. Full version plus the 3-sentence intro version. That completes your foundation identity.
+>
+> The next step is `vid-research`. It builds your pattern banks from real YouTube data, what's working in your niche, so every video you plan is grounded in evidence. It needs a free YouTube API key (I'll walk you through it) and runs a real session.
+>
+> Want to start it now, or come back to it later?"
 
-Stop. Do not point at unreleased skills.
+If the creator says yes, invoke `vid-research` via the Skill tool. If they want to wait, close warmly; they can run it whenever. Voice capture and content production are still in development, do not point at those.
 
 ## Edge cases
 

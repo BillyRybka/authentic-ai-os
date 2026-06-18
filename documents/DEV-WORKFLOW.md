@@ -53,7 +53,8 @@ Skills use relative paths. `foundation/...` lands wherever you launched Claude. 
 4. Add the update-check pre-flight blockquote right after the frontmatter, matching the sibling skills.
 5. Keep the frontmatter `description` at 1024 characters or fewer. The plugin validator rejects the whole plugin if any one skill's description is longer, so a single bloated description blocks every skill from installing. `release.ps1` checks this and fails the release if it finds one over, but write it short to begin with. The foundation skills run 240 to 490 chars; that is the target.
 6. Confirm the knowledge files it references exist at repo-root `knowledge/`. The release script relocates them into the plugin automatically.
-7. Commit on `dev`. That is the only edit needed. No allowlist to touch.
+7. Wire it into the system. Update whatever skill should hand off to this one (the foundation chain offers `vid-research` at its end, for example), and grep every shipping skill plus `README.md` and `CLAUDE.md` for stale references that still call it unreleased ("in development", "coming", "chain ends here", "do NOT mention {skill}"). A graduated skill that nothing points to, or that siblings still call work-in-progress, is a silent dead end. This is the step most often missed.
+8. Commit on `dev`. No allowlist to touch; a skill ships by living in the plugin folder.
 
 ## Cutting a release
 
