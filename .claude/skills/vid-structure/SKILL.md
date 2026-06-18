@@ -13,7 +13,7 @@ Builds the Tier 1 outline for one video. Takes raw brain-dump material plus the 
 
 `content/pieces/{slug}/script.md` with the outline skeleton: `## Intro` (empty, vid-intro fills), format-native body sections (each with one-line purpose anchored in brain-dump material + bullet outline + block candidates listed), `## Ending` (empty, vid-ending fills), and `## Blocks to capture` (the consolidated list of blocks the script needs that the banks do not have yet).
 
-`content/pieces/{slug}/piece.md` frontmatter updates: `piece_status: structured`, `segment_purposes` (material-anchored list), `tension_plan` (title-promise location + active threads), `structure_locked_at: {today}`.
+`content/pieces/{slug}/piece.md` frontmatter updates: `status: drafting` (the outline locks, writing begins), `segment_purposes` (material-anchored list), `segments_completed: []` (initialized empty; vid-segment appends to it as each body segment locks), `tension_plan` (title-promise location + active threads), `last_updated: {today}`.
 
 ## When to run this
 
@@ -38,9 +38,9 @@ Soft requirements (used when present, never blockers):
 
 **Standalone:** creator invokes directly with a slug ("structure the ADHD planning piece"). Skill loads inputs, mines brain-dump, surfaces outline proposal, locks, writes script.md.
 
-**Sub-skill:** vid-pipeline invokes after vid-framing (and packaging) completes. Caller passes the slug; skill skips the "which piece?" prompt. Returns a status packet on completion (`{piece_status: structured, segment_count, threads}`).
+**Sub-skill:** vid-pipeline invokes after vid-framing (and packaging) completes. Caller passes the slug; skill skips the "which piece?" prompt. Returns a status packet on completion (`{status: drafting, segment_count, threads}`).
 
-**Re-structure mode:** detected when piece.md already has `piece_status: structured`. Surface the prior segment purposes and ask: "Re-structure from scratch, or refine the existing outline?" Don't discard prior segment_purposes unless the creator says so. They may contain locked decisions worth preserving.
+**Re-structure mode:** detected when piece.md already has `segment_purposes`. Surface the prior segment purposes and ask: "Re-structure from scratch, or refine the existing outline?" Don't discard prior segment_purposes unless the creator says so. They may contain locked decisions worth preserving.
 
 ## The 2 phases
 
@@ -244,8 +244,8 @@ Every "no match" flag you write into a section must also get a row in the `## Bl
 **Update piece.md frontmatter:**
 
 ```yaml
-piece_status: structured
-structure_locked_at: {YYYY-MM-DD}
+status: drafting
+last_updated: {YYYY-MM-DD}
 
 segment_purposes:
   - "Item 1: The thumbnail mistake (the visible one)"
@@ -253,6 +253,8 @@ segment_purposes:
   - "Item 3: The hook mistake (the structural one)"
   - "Item 4: The promise mistake (the trust one)"
   - "Item 5: The retention mistake (the title-promise payoff)"
+
+segments_completed: []   # vid-segment appends each locked segment's label here
 
 tension_plan:
   central_question: "What are the mistakes killing my channel?"

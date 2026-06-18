@@ -22,14 +22,10 @@ goal: sales | email | views
 viewer_stage: cold | warm | hot
 outlier_anchor: "{outlier title} (@{channel}, {views})"   # null if experimental angle picked
 anchor_confidence: high | medium | low | experimental
-framed_at: {YYYY-MM-DD}
+last_updated: {YYYY-MM-DD}
 ```
 
-Update existing field:
-
-```yaml
-piece_status: framed
-```
+vid-framing does not set a separate status. The piece stays `status: ideating` through packaging; vid-structure advances it to `drafting`. The orchestrator knows framing is done because `selected_angle` is now present.
 
 ## Body sections to append
 
@@ -69,7 +65,7 @@ The dropped angles are STICKY, future runs of vid-framing on this piece (re-fram
 
 1. Read existing piece.md frontmatter. Confirm `type: piece` and `slug` match.
 2. Insert framing frontmatter fields after the last lifecycle field. Preserve all existing fields untouched.
-3. Update `piece_status: framed`.
+3. Set `last_updated` to today's date.
 4. Append `## Selected Angle`, `## Why This Angle Lands`, `## Considered + Dropped Angles` to the body. If sections already exist (re-framing case), REPLACE them with the new content; keep the dropped angles section APPEND-ONLY (never delete previous drops).
 5. Write the file.
 
@@ -78,4 +74,4 @@ The dropped angles are STICKY, future runs of vid-framing on this piece (re-fram
 - Never overwrite frontmatter fields owned by other skills (see piece.md schema in build-plan.md for the ownership matrix).
 - Never delete previous "Considered + Dropped" entries. Append only.
 - Never write `outlier_anchor` as a fabricated outlier. If experimental, write `null`. Real anchors only.
-- Always set `framed_at` to today's date in YYYY-MM-DD format.
+- Always set `last_updated` to today's date in YYYY-MM-DD format.

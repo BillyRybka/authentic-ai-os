@@ -190,7 +190,11 @@ pressure_test_audit:
       diagnosis: "..."
 pressure_test_status: passed | issues-flagged | resolved
 pressure_tested_at: {YYYY-MM-DD}
+status: filming-ready              # ONLY when the verdict is ready-to-film. Leave status: drafting for needs-revision or read-aloud-pending.
+last_updated: {YYYY-MM-DD}
 ```
+
+`status: filming-ready` is the pipeline's done signal: vid-pipeline reads it and stops. Set it only when the verdict is ready-to-film. For needs-revision or read-aloud-pending, leave `status: drafting` and bump `last_updated` only.
 
 Then surface a clean chat summary:
 

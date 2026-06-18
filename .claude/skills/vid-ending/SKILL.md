@@ -34,7 +34,7 @@ If `foundation/voice-profile.md` is missing, fall back to core voice rules from 
 
 **Standalone:** creator invokes directly. After lock, save the close into `script.md` (replacing any existing close) and update `piece.md`.
 
-**Sub-skill:** the orchestrator (vid-pipeline) invokes it in the script phase, after vid-segment has produced the body, with a context packet. Skip questions the caller has already answered. Return the ending packet to the caller; caller writes to script.md.
+**Sub-skill:** the orchestrator (vid-pipeline) invokes it in the script phase, after vid-segment has produced the body, with a context packet. Skip questions the caller has already answered. The save (script.md close + piece.md fields) still happens here, in both modes; also return the ending packet to the caller for assembly awareness.
 
 If invoked with caller context (e.g. "ending for case-study, goal=sales, transformation=client went from 0 to 80k/mo, next video={{slug}}"), skip prerequisite probing and go straight to draft.
 
@@ -180,7 +180,7 @@ If they want changes:
 
 Once locked:
 
-**If standalone mode:**
+**Always (both modes).** The fields below are how the pipeline knows the ending is done, so they always get written here:
 - Read `assets/ending-block-template.md` to get the fillable structure. Fill the bracketed slots ({Pivot}, {Gap}, {CTA}, {Bridge}, {{next-video-slug}}) with the locked content from the picked candidate. If `goal=views`, omit the CTA block entirely per the template's inline note.
 - Replace the existing close (if any) in `content/pieces/{slug}/script.md` with the filled template. The close goes at the end of the script. The `## Ending` heading from the template makes it scannable for editors.
 - Update `content/pieces/{slug}/piece.md`:
@@ -188,13 +188,13 @@ Once locked:
   - `next_video: "[[slug-of-next-video]]"` (wikilink)
   - `cta_shape: sales | emails | views` (matches goal)
   - `ending_be_pattern: BE-N` (which transition pattern was used)
-  - `last_refreshed: today`
+  - `last_updated: today`
 - **Update both sides on any bank pull.** If the close pulled a story (story-bank), proof (proof-bank), or testimonial (testimonial-bank) for the recap or Gap framing, update the bank entry's `used_in:` array to include `[[{this-piece-slug}]]`. The script citing the bank entry and the bank entry citing the script must be reciprocal. That is the wikilink contract from `knowledge/vault-integration.md`. Same rule vid-intro and vid-segment honor.
 - If the next-video wikilink target doesn't exist, do NOT save a broken link. Ask the creator: "The wikilink target `[[{slug}]]` doesn't resolve. Want me to (a) ask you for the right slug, (b) leave it as plain text and you fix later, or (c) skip the Bridge until the next video is created?"
 - Confirm: "Ending locked. Saved to script.md and piece.md. Next-video Bridge points to [[{slug}]]."
 
-**If sub-skill mode:**
-- Return the ending packet to the caller. Shape (matches the team-standard packet shape vid-intro returns):
+**Sub-skill mode also:**
+- Return the ending packet to the caller for assembly awareness. Shape (matches the team-standard packet shape vid-intro returns):
   ```yaml
   ending_packet:
     pivot: gap-bridge | result-bridge | submission-bridge | subscribe-pointer
@@ -210,7 +210,7 @@ Once locked:
     text: "{the full locked close, verbatim, ready to paste under ## Ending}"
   ```
 - If `next_video_status: next-stack-placeholder`, the new-problem reveal is a logical second-order problem the creator could plausibly cover next, but no real published piece exists yet. Flag this in `piece.md` so vid-pipeline can retro-link the close to a real piece once it's published.
-- Caller handles the script.md and piece.md writes.
+- The script.md and piece.md writes above still happen here. The packet is for the orchestrator's awareness, not a handoff of the write.
 
 **STOP.** Do not edit the body, do not regenerate the title, do not pre-write the next video's intro. Those are different skills.
 

@@ -242,7 +242,7 @@ Worked dialogues showing how vid-framing should run a session. Each example show
 4. **Risk surfacing is mandatory.** Every angle has a risk line. No risk = not enough thought put in.
 5. **Bulk-keep mode for experienced creators.** Don't drag a 10-question dialogue through someone who already knows what they want.
 6. **Soft friction surfaces math, doesn't block.** Goal/temperature mismatch is surfaced, explained, creator decides.
-7. **Save partial state.** If session ends mid-flow, frontmatter captures `piece_status: angle-in-progress` so resume works.
+7. **Save partial state.** If the session ends mid-flow before the angle locks, piece.md simply has no `selected_angle` yet, so re-running resumes here. No separate in-progress flag.
 8. **Capture dropped angles with one-line rationale.** Sticky for future runs on this piece, don't re-surface dropped angles unless asked.
 
 ## What NOT to do

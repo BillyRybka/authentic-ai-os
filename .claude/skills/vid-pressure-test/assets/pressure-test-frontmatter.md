@@ -32,6 +32,8 @@ pressure_test_audit:
       diagnosis: "Three-item-list rhythm; creator kept for emphasis."
 pressure_test_status: passed
 pressure_tested_at: 2026-05-14
+status: filming-ready
+last_updated: 2026-05-14
 ```
 
 ## Field definitions
@@ -69,11 +71,17 @@ Each object has `reviewer`, `location`, `quote`, `diagnosis`. Used by future re-
 
 ### Top-level fields
 
-**`pressure_test_status`** (enum)
-Mirrors `verdict` for cross-skill consumption. `passed` = ready-to-film. `issues-flagged` = needs-revision. `resolved` = the creator manually re-ran and resolved gaps.
+**`pressure_test_status`** (enum, skill-namespaced audit result, NOT the piece lifecycle)
+Records this audit's outcome for quick cross-skill reads: `passed` (verdict ready-to-film), `issues-flagged` (needs-revision), `resolved` (creator manually re-ran and closed gaps). It is deliberately prefixed so it never reads as a competing lifecycle status. The piece lifecycle is solely `status`; the orchestrator routes on `status: filming-ready`, never on this field. This field carries the finer detail `status` cannot: a piece can sit at `status: drafting` with `pressure_test_status: issues-flagged` (audited, found problems, not yet resolved).
 
 **`pressure_tested_at`** (date)
 Same as `ran_at`. Top-level for easy querying via Dataview or cross-skill reads.
+
+**`status`** (enum, the piece lifecycle field)
+Set to `filming-ready` ONLY when the verdict is `ready-to-film`. For `needs-revision` or `read-aloud-pending`, leave the existing `status: drafting`. This is the field vid-pipeline reads to know the piece is done. It is the one lifecycle field; there is no `piece_status`.
+
+**`last_updated`** (date)
+Bumped to today on every pressure-test run, per the vault-wide date rule.
 
 ## Append protocol
 
@@ -83,7 +91,9 @@ Same as `ran_at`. Top-level for easy querying via Dataview or cross-skill reads.
    - `pressure_test_audit` (full block)
    - `pressure_test_status`
    - `pressure_tested_at`
-4. Preserve every other field exactly as-is (do not touch `selected_angle`, `core_payoff`, `format`, `goal`, `viewer_stage`, `segment_purposes`, etc.)
+   - `status` (set to `filming-ready` ONLY when verdict is ready-to-film)
+   - `last_updated` (today)
+4. Preserve every other field exactly as-is (do not touch `selected_angle`, `core_payoff`, `format`, `goal`, `viewer_stage`, `segment_purposes`, `segments_completed`, etc.)
 5. Write piece.md back
 
 ## Re-audit overwrites previous block
@@ -96,48 +106,48 @@ If a creator wants to preserve audit history across runs, they can manually copy
 
 ```yaml
 ---
-type: piece
+type: content-piece
 slug: why-i-quit-posting-daily
 pillar: content-engine
-piece_status: pressure-tested
+status: filming-ready
 created: 2026-05-10
-youtube_publish: null
-
-# Written by vid-intake
-intake_mode: idea
-iceberg_aligned: true
-problem_addressed: 2
-intake_complete_at: 2026-05-10
+last_updated: 2026-05-14
+published: null
 
 # Written by vid-framing
 selected_angle: "Daily posting destroyed my quality and tanked retention"
 core_payoff: "A schedule that doubles quality without losing growth"
 format: short-process
+voice_context: youtube-script
 goal: views
 viewer_stage: warm
 outlier_anchor: "..."
 anchor_confidence: high
-framed_at: 2026-05-11
-
-# Written by vid-thumbnail
-thumbnail_strategy: cognitive-dissonance
-thumbnail_text: "Posted less, grew 10x"
-thumbnail_locked_at: 2026-05-12
 
 # Written by vid-title
 title: "Why I Quit Posting Daily And Grew 10x"
-title_locked_at: 2026-05-12
 
-# Written by vid-structure
-segment_count: 5
+# vid-thumbnail writes thumbnail-brief.md (sibling file), not piece.md. It only bumps last_updated here.
+
+# Written by vid-structure (advanced status to drafting)
 segment_purposes:
   - "The breaking point (when daily posting started costing me)"
   - "..."
-structure_locked_at: 2026-05-13
+segments_completed:
+  - "The breaking point (when daily posting started costing me)"
+  - "..."
+tension_plan:
+  central_question: "..."
+  title_promise_segment: 4
 
 # Written by vid-intro
-voice_pressure_test: passed
-intro_locked_at: 2026-05-13
+intro_locked: true
+intro_strategy: problem-poke
+intro_hook_type: contrarian
+intro_credibility_form: big-personal-result
+voice_pressure_test:
+  result: pass
+  read_aloud_confirmed: true
 
 # Written by vid-segment (per segment)
 stories_used:
@@ -146,11 +156,12 @@ proofs_used: []
 metaphors_used: []
 
 # Written by vid-ending
-ending_cta_shape: next-video
-next_video_pointer: "the-twice-weekly-system"
-ending_locked_at: 2026-05-14
+ending_locked: true
+next_video: "[[the-twice-weekly-system]]"
+cta_shape: views
+ending_be_pattern: BE-3
 
-# Written by vid-pressure-test (this block)
+# Written by vid-pressure-test (this block; advanced status to filming-ready)
 pressure_test_audit:
   ran_at: 2026-05-14
   mode: multi-agent

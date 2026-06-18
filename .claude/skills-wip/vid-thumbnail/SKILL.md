@@ -163,6 +163,8 @@ tags: [thumbnail, brief, strategy-{slug}]
 
 Body follows the Composition-brief template in `assets/thumbnail-brief-template.md`.
 
+Then bump `content/pieces/{slug}/piece.md` `last_updated:` to today's date. This happens in both standalone and pipeline mode. The presence of `thumbnail-brief.md` is how the pipeline knows the thumbnail step finished; vid-thumbnail writes no other piece.md field.
+
 ### Wrap up
 
 After saving:

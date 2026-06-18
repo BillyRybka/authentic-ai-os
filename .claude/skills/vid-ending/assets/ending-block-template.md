@@ -30,9 +30,5 @@ ending_locked: true
 next_video: "[[{{next-video-slug}}]]"
 cta_shape: sales | emails | views
 ending_be_pattern: BE-N
-ending_voice_pressure_test:
-  date: YYYY-MM-DD
-  result: pass | soft-warn | soft-reject
-  read_aloud_confirmed: true | false
-last_refreshed: YYYY-MM-DD
+last_updated: YYYY-MM-DD
 -->

@@ -62,13 +62,13 @@ A creator with a tight brain-dump on a clean angle. Outline proposal lands first
 
 > **AI:** "Outline locked. Writing script.md skeleton + updating piece.md."
 
-[script.md written with 3 body sections, intro+ending stubbed, piece.md gets piece_status: structured, tension_plan, segment_purposes.]
+[script.md written with 3 body sections, intro+ending stubbed, piece.md gets status: drafting, tension_plan, segment_purposes, segments_completed: [], last_updated.]
 
 **Why this worked:** AI surfaced the full outline with material anchors, block candidates, tension role, AND handoffs in one shot. Creator made one structural decision (cut Step 4), AI re-checked tension graph still holds, locked. No NPC-ticking through phases.
 
 ## Example 2: Re-structure mode
 
-A creator runs vid-structure on a piece that already has `piece_status: structured`. Wants to refine, not rebuild.
+A creator runs vid-structure on a piece that already has `segment_purposes`. Wants to refine, not rebuild.
 
 > **Creator:** "/vid-structure on the retention-mistakes piece."
 

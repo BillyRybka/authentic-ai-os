@@ -15,7 +15,7 @@ Captures whatever raw material the creator brings and produces a structured `con
 
 `content/pieces/{slug}/brain-dump.md` with creator's exact phrasing preserved, plus the iceberg fit and Top 3 problem alignment locked. Voice fuel for every downstream writing skill.
 
-When invoked as a sub-skill, returns the brain-dump packet to the caller and skips the save (caller writes it).
+When invoked as a sub-skill (e.g. by vid-pipeline to start a new piece), it also returns the brain-dump packet to the caller. The save (the piece folder, brain-dump.md, and piece.md) still happens here, in both modes.
 
 ## When to run this
 
@@ -38,7 +38,7 @@ If foundation is missing, tell the creator to run `/foundation` first. If founda
 
 **Standalone:** creator invokes directly. Skill runs the full conversation, creates the piece folder, saves brain-dump.md, hands off to `vid-framing` next.
 
-**Sub-skill:** another skill (`vid-pipeline`) invokes. Same conversation. Returns the brain-dump packet to the caller. Caller writes the file.
+**Sub-skill:** another skill (`vid-pipeline`) invokes. Same conversation. The save (piece folder, brain-dump.md, piece.md) still happens here, in both modes; it also returns the brain-dump packet to the caller for assembly awareness.
 
 If invoked with context from a caller (e.g. "intake for piece={slug}, mode=inspired-by, source-internal=[transcript text]"), skip the mode detection question and go straight to the matching conversation flow.
 
@@ -217,11 +217,14 @@ type: content-piece
 slug: {kebab-case-slug}
 pillar: {pillar-slug or null}
 status: ideating
-captured: YYYY-MM-DD
+created: YYYY-MM-DD              # today. Stamped once here, never changed.
+last_updated: YYYY-MM-DD          # today. Every downstream skill that writes piece.md bumps this.
 ---
 ```
 
-vid-framing appends `selected_angle`, `core_payoff`, `format`, `goal`, `viewer_stage`, `voice_context`; vid-title appends `title`; vid-thumbnail appends its picks; vid-structure appends `segment_purposes` + `tension_plan`; the writing skills append `stories_used` / `proofs_used` / `metaphors_used`; vid-pressure-test appends the audit block. Full schema in `knowledge/vault-integration.md`.
+Set both `created` and `last_updated` to today's date at creation. `created` is permanent; `last_updated` moves forward every time a later skill touches this file.
+
+vid-framing appends `selected_angle`, `core_payoff`, `format`, `goal`, `viewer_stage`, `voice_context`; vid-title appends `title`; vid-thumbnail produces `thumbnail-brief.md`; vid-structure appends `segment_purposes` + `tension_plan` and advances `status: drafting`; the writing skills append `stories_used` / `proofs_used` / `metaphors_used`; vid-segment appends `segments_completed`; vid-pressure-test appends the audit block and advances `status: filming-ready`. Full schema in `knowledge/vault-integration.md`.
 
 ## Conversational discipline
 

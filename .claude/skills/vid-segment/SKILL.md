@@ -214,6 +214,8 @@ Wait. The read-aloud test is the final voice gate. Loop until creator confirms.
 
 **Update piece.md.** Append the new bank wikilinks to `stories_used:`, `proofs_used:`, `metaphors_used:`, plus `frameworks_used:` if used. Wikilink format: `[[bank-slug]]`.
 
+**Mark the segment done.** Append this segment's label (the heading you saved under, e.g. `"Step 2: Refactor your week"`) to `segments_completed:` in piece.md, and bump `last_updated:` to today. This is the pipeline's body-progress counter: when `segments_completed` length reaches `segment_purposes` length, the body is finished and the orchestrator routes to vid-ending. This write happens in both standalone and pipeline mode.
+
 **Update each bank entry's `used_in:`.** Per the vault-integration "update both sides" rule. For every bank entry pulled in Phase 2 and surviving Phase 3, open the entry, append `[[piece-slug]]` to its `used_in:` array, and flip `status:` from `captured` to `used` if it was still `captured`.
 
 **Log visual proofs called out in piece.md.** Per the canonical schema in `knowledge/visual-proof-callouts.md`. For every `> [!important] Visual proof needed` callout written in this segment, append an entry to `visual_proofs_called_out:` so vid-pressure-test (future) can audit which claims have proof and which still need an asset captured:
@@ -253,7 +255,7 @@ segment_packet:
   outbound_transition_pattern: SS-3
 ```
 
-Caller writes the segment's location into the script.md skeleton.
+The script.md append, the `segments_completed` mark, and the bank updates above already happened here, in both modes. The packet is for the orchestrator's awareness, not a handoff of the write.
 
 **STOP.** Do not write the next segment. The creator (or orchestrator) re-invokes for the next one.
 

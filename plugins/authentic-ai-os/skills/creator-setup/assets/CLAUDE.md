@@ -90,6 +90,7 @@ This is an Obsidian vault. Treat every note accordingly.
 2. **Ask before scanning.** When a skill starts, ask the creator what they want to do. Don't pre-load foundation docs, banks, or content pieces.
 3. **Auto-save meaningful info.** When the creator says something worth keeping (a correction, a story, a decision), save it to the right file immediately. Report what was saved and where. Never ask permission.
 4. **People get profiles.** When a new human is mentioned, create `people/{Full Name}.md` as a stub even if details are thin.
+5. **Keep piece dates honest.** A content piece's `piece.md` carries `created` (stamped once by vid-intake, never changed) and `last_updated`. Any skill that writes a piece's `piece.md` bumps `last_updated` to today. The piece's `status` (ideating, drafting, filming-ready, then the post-production states) is the one lifecycle field; the pipeline advances it, you never hand-edit it.
 
 ## Quick reference
 

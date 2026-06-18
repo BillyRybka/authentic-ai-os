@@ -11,7 +11,7 @@ Produces the full 6-part intro for one video. Five phases: load context, derive 
 
 ## What this produces
 
-A full intro for one video, saved to `content/pieces/{slug}/script.md` under an `## Intro` section. When invoked as a sub-skill by `vid-pipeline`, returns the intro as a structured packet to the caller (see "Output packet" below) and skips the save.
+A full intro for one video, saved to `content/pieces/{slug}/script.md` under an `## Intro` section. The save (script.md section + piece.md fields) happens in both standalone and pipeline mode. When invoked as a sub-skill by `vid-pipeline`, it also returns the intro as a structured packet to the caller (see "Output packet" below) for assembly awareness.
 
 ## When to run this
 
@@ -34,7 +34,7 @@ If foundation is missing, tell the creator to run `/foundation` first. If the ti
 
 **Standalone:** creator invokes directly. After lock, save the intro to `content/pieces/{slug}/script.md` under `## Intro`, update piece.md `voice_pressure_test:`, end.
 
-**Sub-skill:** the orchestrator (vid-pipeline) invokes it in the script phase. Return the intro packet to the caller; skip the save. The caller writes it into the script as part of its own flow.
+**Sub-skill:** the orchestrator (vid-pipeline) invokes it in the script phase. The save (script.md `## Intro` + piece.md fields) still happens here, in both modes; also return the intro packet to the caller for assembly awareness.
 
 If invoked with context from a caller (e.g. "intro for piece={slug}, format=case-study, locked-title='X', thumbnail-text='Y'"), skip the load step's questions to creator and go straight to candidate generation.
 
@@ -220,7 +220,7 @@ If yes, drop back to Phase 2 or 3 with the specific beat the creator would chang
 
 ### Phase 5: Lock and save
 
-**If standalone mode:**
+**Always (both modes).** The intro fields below are how the pipeline knows the intro is done, so they always get written here:
 
 - Save the assembled intro to `content/pieces/{slug}/script.md` under `## Intro`
 - Update `content/pieces/{slug}/piece.md`:
@@ -229,14 +229,11 @@ If yes, drop back to Phase 2 or 3 with the specific beat the creator would chang
   - `intro_hook_type: question | contrarian | statement | fact | credibility`
   - `intro_credibility_form: vast-experience | volume-helped | big-personal-result | big-client-result | effort-signal | none`
   - `voice_pressure_test:` block (per voice-pressure-test.md schema)
-  - `last_refreshed:` to today's date
+  - `last_updated:` to today's date
 - If a story, proof, or testimonial got woven in, update both sides of the wikilink graph per `knowledge/vault-integration.md`: piece's `stories_used:`/`proofs_used:`/`testimonials_used:` AND the bank entry's `used_in:` and `status:`. Both sides. Always.
 - Confirm save: "Intro locked. Saved to `script.md`. Voice pressure test: pass."
 
-**If sub-skill mode:**
-
-- Return the output packet to the caller (see "Output packet" below)
-- Caller handles the save and the bank-update side
+**Sub-skill mode also:** return the output packet to the caller (see "Output packet" below) for assembly awareness. The piece.md write and the bank-update side above still happen here; the packet is not a handoff of the write.
 
 **STOP.** Do not generate body segments, the ending, the title, or the thumbnail. Those are different skills.
 

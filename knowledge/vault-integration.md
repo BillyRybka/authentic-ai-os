@@ -383,18 +383,35 @@ type: content-piece
 project: authentic-ai-os
 slug: video-slug
 pillar: {pillar-slug}           # creator's content pillar
-format: short-process           # from the 7 formats: short-process | case-study | roast | deep-dive | interview | news | listicle
+format: short-process           # from the 7 formats: short-process | case-study | roast | deep-dive | interview | news | listicle. Set by vid-framing.
 voice_context: youtube-script   # delivery medium for voice: youtube-script (default) | tutorial | shorts | newsletter | linkedin | twitter | instagram | podcast | casual | talk. Orthogonal to format. Set by vid-framing (videos) or post-write (posts). Drives which foundation/reference-pieces/{voice_context}.md a writing skill loads.
-goal: sales                     # sales | emails | views (ONE only)
-status: ideating                # ideating | drafting | filming-ready | filmed | editing | published
-captured: YYYY-MM-DD
+goal: sales                     # sales | emails | views (ONE only). Set by vid-framing.
+status: ideating                # ideating | drafting | filming-ready | filmed | editing | published. The one lifecycle field. See "Pipeline lifecycle" below.
+created: YYYY-MM-DD              # stamped once by vid-intake at piece creation, never changed
+last_updated: YYYY-MM-DD         # bumped to today by EVERY skill that writes this file
 published: null                 # YYYY-MM-DD when published
+segment_purposes: []            # set by vid-structure: the planned body segments
+segments_completed: []          # appended by vid-segment, one label per locked body segment. The pipeline compares its length to segment_purposes to know when the body is done.
 stories_used: []                # [[story-slug]] wikilinks added when writing skills use them
 metaphors_used: []
 proofs_used: []
 tags: [piece, format-{slug}, pillar-{slug}, {other-tags}]
 ---
 ```
+
+Skills append their own fields and never overwrite another skill's: vid-framing adds `selected_angle`, `core_payoff`, `outlier_anchor`, `anchor_confidence`; vid-title adds `title`; vid-structure adds `tension_plan`; vid-intro adds `intro_locked` + the `intro_*` fields; vid-ending adds `ending_locked`, `next_video`, `cta_shape`; vid-pressure-test adds the `pressure_test_audit` block + `pressure_test_status`.
+
+#### Pipeline lifecycle
+
+`status` is the single lifecycle field. The pipeline advances it at three points:
+
+- `ideating` set by vid-intake on creation
+- `drafting` set by vid-structure once the outline locks (writing has begun)
+- `filming-ready` set by vid-pressure-test when the script passes
+
+`filmed | editing | published` are set manually after production. There is no second status field. The old `piece_status` written by early vid-framing / vid-structure drafts is retired: the orchestrator never reads it.
+
+The `vid-pipeline` orchestrator decides the next writing step by reading which artifact already exists, not by a micro-status: `selected_angle` present? `title` present? `thumbnail-brief.md` present? `segments_completed` length vs `segment_purposes` length? `ending_locked` present? `pressure_test_status`? Each skill therefore writes its own distinguishing field in BOTH standalone and pipeline (sub-skill) mode, so the orchestrator can always read true state from the file.
 
 ### Ideas backlog
 

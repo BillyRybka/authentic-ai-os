@@ -223,6 +223,10 @@ The skills now split into three families: `vid-*` (the video pipeline), `aud-*` 
 **vid-voice-update** `WIP`
 - `knowledge/voice-profile-schema.md`
 
+**vid-pipeline** `WIP` (orchestrator)
+- `knowledge/update-check.md` (pre-flight only)
+- Loads no other knowledge files. It reads each piece's `piece.md` plus sibling-file presence and routes to the next writing skill. Pure router; the sub-skills own all knowledge-file loading. Routes on the canonical `status` lifecycle plus field-presence, never a `piece_status` micro-field.
+
 ---
 
 ## 2. Reverse map: knowledge file to consuming skills
@@ -357,6 +361,7 @@ When you ship a skill, confirm every box. The skill's own `SKILL.md`, `reference
 - [ ] **vid-voice-capture**: interview-posture, vault-integration, voice-extraction-methods, voice-pressure-test, voice-profile-schema, voice-rhythm (6)
 - [ ] **vid-voice-audit**: voice-pressure-test, voice-profile-schema, voice-rhythm (3)
 - [ ] **vid-voice-update**: voice-profile-schema (1)
+- [ ] **vid-pipeline**: update-check (1, pre-flight only; pure router, no other knowledge deps)
 
 ---
 

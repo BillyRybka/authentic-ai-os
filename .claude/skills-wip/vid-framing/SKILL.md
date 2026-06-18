@@ -23,8 +23,7 @@ Locked fields after vid-framing completes:
 - `viewer_stage`, cold | warm | hot (predicted audience temperature)
 - `outlier_anchor`, the specific pattern-bank outlier this angle anchors to, or null for experimental
 - `anchor_confidence`, high | medium | low | experimental (derived from the anchor's spread + own_channel_proven, not read from a stored label)
-- `piece_status: framed`
-- `framed_at: {today}`
+- `last_updated: {today}`
 
 Body sections appended: Selected Angle, Why This Angle Lands, Considered + Dropped Angles.
 
@@ -51,9 +50,9 @@ Soft requirements:
 
 **Standalone:** creator invokes directly with a slug ("frame the ADHD planning piece"). Skill loads the piece's brain-dump, surfaces 3+1 angles, runs the iceberg fit check, locks the call, writes piece.md.
 
-**Sub-skill:** vid-pipeline invokes after vid-intake completes. Skip the "which piece?" prompt, caller already passed the slug. Return a status packet on completion (`{piece_status: framed, selected_angle, outlier_anchor}`).
+**Sub-skill:** vid-pipeline invokes after vid-intake completes. Skip the "which piece?" prompt, caller already passed the slug. Return a status packet on completion (`{selected_angle, outlier_anchor, last_updated}`).
 
-**Re-frame mode:** detected when piece.md already has `piece_status: framed`. Surface the previously selected angle and the previously dropped angles. Ask: "Re-frame from scratch, or refine the existing angle?" Don't re-surface dropped angles unless the creator says so.
+**Re-frame mode:** detected when piece.md already has a `selected_angle`. Surface the previously selected angle and the previously dropped angles. Ask: "Re-frame from scratch, or refine the existing angle?" Don't re-surface dropped angles unless the creator says so.
 
 ## The 5 phases
 
@@ -140,14 +139,14 @@ The creator picks 1 of the 4 angles. Then:
 
 ### Phase 5: Update piece.md
 
-Append framing fields to piece.md frontmatter. Append body sections. Update `piece_status: framed`, `framed_at: today`. Capture dropped angles in `## Considered + Dropped Angles`.
+Append framing fields to piece.md frontmatter. Append body sections. Set `last_updated: today`. Capture dropped angles in `## Considered + Dropped Angles`.
 
 See `assets/piece-framing-additions.md` for the exact append protocol.
 
 **Append rules:**
 - Never overwrite fields owned by other skills (see piece.md schema in build-plan.md for ownership matrix)
 - Never delete previous Considered + Dropped entries (append only, sticky)
-- Set `framed_at` to today YYYY-MM-DD
+- Set `last_updated` to today YYYY-MM-DD
 
 After save, confirm with one-line summary plus next-skill prompt:
 
@@ -167,7 +166,7 @@ Next: lock the title (vid-title), then the thumbnail (vid-thumbnail). Packaging 
 - **Fit check after candidates, not before.** Generate first, check fit second.
 - **Risk surfacing is mandatory.** Every candidate has a risk line.
 - **Bulk-keep mode for experienced creators.** Don't drag a 10-question dialogue through someone who pre-locked goal/format/temperature.
-- **Save partial state.** If session ends mid-flow, set `piece_status: angle-in-progress` so resume works at Phase {current+1}.
+- **Save partial state.** If the session ends mid-flow before the angle locks, piece.md simply has no `selected_angle` yet. Re-running vid-framing (or vid-pipeline) resumes here. No separate in-progress flag.
 
 See `references/framing-conversation-examples.md` for the worked dialogues.
 

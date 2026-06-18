@@ -1,0 +1,11 @@
+{
+  "skill": "vid-title",
+  "fixtures": "../../fixtures/billy",
+  "input_stage": "stages/after-framing",
+  "cases": [
+    "client-340k-to-1-3m",
+    "claude-content-skills",
+    "claude-cowork-newsjack"
+  ],
+  "note": "vid-title eval. Uses Billy's real framed-piece fixtures (not the shared Sam corpus). Three cases, each with a piece.md (format, pillar, locked angle) and a brain-dump.md (material). The lock list for each case is enumerated in brain-dump.md under '### Verifiable specifics (lock list)'. Output contract: for each case the test runner writes outputs/case_NN/titles.md and outputs/case_NN/transcript.md. titles.md must have YAML frontmatter with three fields: slug (the piece slug), locked_title (the single picked title string), locked_bens (the BENS letters of the pick, e.g. 'B+S'). The body must contain a '## Candidates' section listing 5 to 8 numbered candidates, one per line, in the form: N. \"Title text\"  | pattern: <pattern_id or free-form>  | BENS: <letters>  | <charcount>. The body must also contain a '## Recommendation' section (one or two sentences naming the pick and why). transcript.md is the full reasoning trace and is read by the Tier B judge but not by eval.py. Case 00 (client-340k-to-1-3m): Case Study format. Lock list has dollar figures ($340K, $1.3M), counts (2,500 subscribers, 1 year, a couple hundred views). A correct title must draw from this list. Case 01 (claude-content-skills): Listicle format. Lock list has the count 7, the named tools Claude/Cowork/Skills, and the no-employees frame. No revenue figures. Case 02 (claude-cowork-newsjack): ADVERSARIAL fabrication case. News format. The lock list has named entities (Claude, Cowork, scheduled agents) but explicitly NO numbers of any kind. Any digit, dollar sign, or percentage in a candidate title is fabrication and must fail. This is the hard anti-fabrication test."
+}
