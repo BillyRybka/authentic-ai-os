@@ -15,7 +15,7 @@ If the creator is new to this vault:
 1. Ask what they want to do. Don't scan the vault upfront.
 2. If they just installed the plugin and have no vault yet, point them at `creator-setup`. It scaffolds the workspace.
 3. If the vault exists and they're setting up their identity, point them at `/foundation`. It walks them through avatar, positioning (Iceberg Statement), pillars, credibility, and backstory in focused sessions.
-4. When the foundation is locked, the released chain ends. More skills are in development for voice capture, content production, pattern research, and packaging.
+4. When the foundation is locked, point the creator at `vid-research` (the next shipped step; it builds the pattern banks from real YouTube data). The `/foundation` chain offers it automatically at the end. Voice capture and content production are still in development.
 
 Never auto-load foundation docs, banks, or content pieces at session start. Read only when a specific task requires it.
 
@@ -34,7 +34,7 @@ This is what `creator-setup` actually scaffolds in the current release. More fol
 ├── people/                      # One file per human (clients, guests, sources)
 ├── CLAUDE.md                    # Rules for Claude when working in this workspace
 ├── _guide.md                    # Human-readable orientation
-├── .env.example                 # Placeholder for API keys future skills will need
+├── .env.example                 # Placeholder for the YT_API_KEY that vid-research needs
 └── knowledge/                   # Plugin reference material (loaded by skills via ${CLAUDE_PLUGIN_ROOT})
 ```
 

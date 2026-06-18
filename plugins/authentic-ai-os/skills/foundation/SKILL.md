@@ -17,7 +17,7 @@ The actual interview work happens in five focused skills:
 4. `vid-credibility`. Three viewer-relevant brags.
 5. `vid-backstory`. Problem-Action-Outcome backstory.
 
-More skills are in development: voice capture, content production, pattern banks, packaging defaults. They will arrive in future plugin updates. This release ships the five foundation interview skills only.
+After the five foundation interviews, the next step is `vid-research`. It builds the creator's pattern banks from real YouTube data, and this skill offers it once the foundation is complete. Voice capture and content production are still in development and arrive in future updates.
 
 ## Response format
 
@@ -90,7 +90,7 @@ Use this routing table:
 | Iceberg Statement locked, Content pillars missing | `vid-pillars` |
 | Content pillars locked, Credibility brags missing | `vid-credibility` |
 | Credibility brags locked, Backstory missing | `vid-backstory` |
-| Backstory locked (foundation identity complete) | Foundation done. Acknowledge and stop. |
+| Backstory locked (foundation identity complete) | Foundation done. Acknowledge, then offer `vid-research` (Step 5). |
 
 ### Step 3: Tell the creator where they are, then auto-invoke
 
@@ -117,15 +117,21 @@ If the creator says any of these, halt the chain and don't invoke the next skill
 
 If they're quiet between sub-skills but engaged in the previous one's content, that's not a stop signal. Continue.
 
-### Step 5: Foundation complete
+### Step 5: Foundation complete, then offer vid-research
 
-When all 5 foundation interview skills have locked their sections, congratulate briefly:
+When all 5 foundation interview skills have locked their sections, congratulate briefly and offer the next step:
 
-> "Foundation complete. Your avatar, Iceberg, pillars, credibility, and backstory are locked. More skills are coming for voice capture, content production, and pattern research. For now, this is your foundation."
+> "Foundation complete. Your avatar, Iceberg, pillars, credibility, and backstory are locked.
+>
+> The natural next step is `vid-research`. It builds your pattern banks from real YouTube data, what's actually working in your niche, so the videos you plan are grounded in evidence instead of guesses. It needs a free YouTube API key (I'll walk you through it) and runs a real session, so do it when you have the time.
+>
+> Want to start it now, or come back to it later?"
 
-A full journey just completed, so this is a natural moment to ask whether anything was good or rough. If the `aaios-feedback` skill is available, offer feedback once via the end-of-journey path in `${CLAUDE_PLUGIN_ROOT}/knowledge/feedback-offer.md`, honoring its once-per-session guard. If the creator has something, invoke the `aaios-feedback` skill via the Skill tool. If not, or if the feedback capability is not present in this install, just close.
+If the creator says yes (or any clear go), invoke `vid-research` via the Skill tool.
 
-Do not invoke any further skill beyond an accepted feedback handoff. The released foundation chain ends here.
+If they want to wait, respect it and close. A completed journey is also a natural moment for feedback: if the `aaios-feedback` skill is available, offer it once via the end-of-journey path in `${CLAUDE_PLUGIN_ROOT}/knowledge/feedback-offer.md` (honor its once-per-session guard), and invoke `aaios-feedback` only if the creator has something to say.
+
+Voice capture and content production are still in development; do not route to them. `vid-research` is the only skill to offer after the foundation.
 
 ## What this is NOT
 
@@ -143,6 +149,6 @@ If the creator asks foundation questions during this skill ("can you write my Ic
 - Reading the references inside `vid-avatar`, `vid-positioning`, etc. Those belong to their skills.
 - Asking the creator to type the next command. Auto-invoke the next skill via the Skill tool.
 - Continuing to invoke skills after a clear stop signal.
-- Promising unreleased skills (voice capture, content production, pattern research) as immediate next steps. They are in development. Acknowledge them in the close, do not route to them.
+- Promising genuinely unreleased skills (voice capture, content production) as next steps. They are in development; acknowledge them, do not route to them. `vid-research` HAS shipped: offer it at the close and launch on consent (Step 5).
 - Surfacing jargon (Iceberg Statement, BENS, 3+1 rotation) without context. Translate when needed.
 - Lying about workspace state. If `foundation/` or `CLAUDE.md` is missing, say so. Don't proceed as if everything's there.

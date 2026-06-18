@@ -237,11 +237,11 @@ Report plainly:
   > "Looks like your foundation is partway through. You have `[list locked sections in plain language]`. Want me to pick up with `/foundation` from where you left off? Or come back later."
 
 - **Foundation is complete:** do not suggest `/foundation`. Close with a status line:
-  > "Workspace is current. Your foundation is locked. More skills are in development; you'll get them on the next plugin update."
+  > "Workspace is current. Your foundation is locked. The next step is vid-research, which builds your pattern banks from real YouTube data (it needs a free YouTube API key). Run it when you're ready. Voice capture and content production are still on the way."
 
   If Step 3 added new folders, name them. If nothing was added, say "Nothing new to add."
 
-Do NOT mention skills that have not shipped (no `vid-voice-capture`, `vid-research`, `vid-capture`). The principle: facilitate, do not prescribe. The creator's state determines the offer.
+Do NOT mention skills that have not shipped (no `vid-voice-capture`, `vid-capture`). `vid-research` HAS shipped and is the post-foundation step, so naming it is fine. The principle: facilitate, do not prescribe. The creator's state determines the offer.
 
 ## Safety rules
 
