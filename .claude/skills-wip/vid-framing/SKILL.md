@@ -39,7 +39,7 @@ Body sections appended: Selected Angle, Why This Angle Lands, Considered + Dropp
 Hard requirements:
 - `content/pieces/{slug}/brain-dump.md` exists with the raw material AND `iceberg_aligned: true` (vid-intake locked this)
 - `content/pieces/{slug}/piece.md` exists (created at piece-folder creation)
-- `foundation/creator-foundation.md` exists with iceberg + Top 3 problems + audience profile
+- `foundation/creator-foundation.md` exists with iceberg + audience profile
 - `foundation/packaging-system.md` exists with the starting format rotation (3 core + 1 experimental) and current thumbnail test strategies
 - `banks/pattern-bank.md` exists and is less than 120 days old (sticky-curated quarterly refresh)
 
@@ -63,7 +63,7 @@ Silent loads (do NOT paste into chat):
 
 1. `content/pieces/{slug}/brain-dump.md`, the raw material plus the locked `problem_addressed`, `iceberg_aligned`, `intake_mode` from vid-intake
 2. `content/pieces/{slug}/piece.md`, existing frontmatter (slug, pillar, created, any prior framing if re-framing)
-3. `foundation/creator-foundation.md`, iceberg statement, Top 3 problems, audience profile
+3. `foundation/creator-foundation.md`, iceberg statement, audience profile
 4. `foundation/voice-profile.md`, preferred_hook_types, opener pattern, energy baseline (style only)
 5. `foundation/packaging-system.md`, starting format rotation, current thumbnail test strategies
 6. `banks/pattern-bank.md` (synthesis sections + topic clusters folded into synthesis + per-outlier full-package rows). This is the only research bank vid-framing loads. The sub-banks (`title-bank.md`, `power-words-bank.md`) are loaded by vid-title at write time, not by vid-framing for angle selection. Format comes from `foundation/packaging-system.md` rotation, not a bank.
@@ -77,7 +77,7 @@ Silent loads (do NOT paste into chat):
 - `brain-dump.md` missing → "No brain-dump for this piece. Run vid-intake first to capture the raw material."
 - `pattern-bank.md` missing → "No pattern banks. Run vid-research first, first-build takes ~1.5 hours."
 - `pattern-bank.md` older than 120 days → soft friction: "Your pattern banks are {N} days old. Want to refresh first (30-45 min) or proceed with stale data?"
-- `creator-foundation.md` missing → "No foundation docs. Run /foundation first to lock iceberg + Top 3."
+- `creator-foundation.md` missing → "No foundation docs. Run /foundation first to lock the iceberg + audience profile."
 
 ### Phase 2: Angle generation
 
@@ -213,7 +213,7 @@ See `references/framing-conversation-examples.md` for the worked dialogues.
 
 ## Related skills
 
-- The `/foundation` chain produces creator-foundation.md (iceberg, Top 3, audience), vid-framing reads
+- The `/foundation` chain produces creator-foundation.md (iceberg, audience, and the Top 3 problems the writing skills use later), vid-framing reads the iceberg + audience for fit
 - `vid-voice-capture` produces voice-profile.md, vid-framing reads for mirroring style only
 - `vid-research` produces the 3 research banks (pattern-bank, title-bank, power-words-bank) vid-framing consumes, primary upstream contract
 - `vid-intake` produces brain-dump.md plus the locked `iceberg_aligned` + `problem_addressed` fields, vid-framing reads, does NOT re-derive

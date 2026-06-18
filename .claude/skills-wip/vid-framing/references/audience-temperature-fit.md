@@ -2,7 +2,7 @@
 name: Audience Temperature Fit
 type: skill-local-reference
 loaded_by: vid-framing
-when_to_read: Phase 3 (Theory of One filter) and Phase 4 (lock the call)
+when_to_read: Phase 3 (fit check + temperature) and Phase 4 (lock the call)
 ---
 
 # Audience Temperature Fit

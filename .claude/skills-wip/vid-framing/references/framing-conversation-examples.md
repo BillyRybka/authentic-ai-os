@@ -51,11 +51,9 @@ Worked dialogues showing how vid-framing should run a session. Each example show
 **Creator:** "Angle 2. I want to anchor on the past winner."
 
 **AI:**
-> Locked. Quick Theory of One check:
+> Locked. Quick fit check:
 >
-> - Iceberg fit: ADHD coaches scaling past $10k/mo (matches your iceberg)
-> - Top 3 problem: this lands on problem #2 (productivity systems made for neurotypical brains)
-> - Audience expectation: yes, this is exactly what they came back for
+> - Iceberg fit: ADHD coaches scaling past $10k/mo. Inside your lane, this is exactly what they came back for.
 > - Predicted temperature: hot (specific result + named framework + your past winner already pulled hot DPV)
 >
 > Goal: sales, email, or views?
@@ -77,7 +75,6 @@ Worked dialogues showing how vid-framing should run a session. Each example show
 > - viewer_stage: hot
 > - outlier_anchor: "How I Went from 12 to 28 Clients in 90 Days" (your own channel, 320k views, $4.20 DPV)
 > - anchor_confidence: high
-> - problem_addressed: 2
 >
 > Dropped angles captured. Ready for vid-structure.
 
@@ -106,10 +103,9 @@ Worked dialogues showing how vid-framing should run a session. Each example show
 **Creator:** "Keep it. But I want to add, it'll be about how I switched to energy-blocking."
 
 **AI:**
-> Got it. Keeping the curiosity-gap hook, payoff is your energy-blocking framework. Quick Theory of One check:
+> Got it. Keeping the curiosity-gap hook, payoff is your energy-blocking framework. Quick fit check:
 >
-> - Iceberg fit: ADHD coaches scaling
-> - Top 3 problem: #2 (neurotypical productivity systems)
+> - Iceberg fit: ADHD coaches scaling. Inside your lane.
 > - Predicted temperature: warm-hot (personal-story hook + specific framework body)
 > - Risk: no anchor means we're guessing on the title pattern's reach. Vid-title will need to use power-words-bank instead of a known title pattern.
 >
@@ -132,7 +128,6 @@ Worked dialogues showing how vid-framing should run a session. Each example show
 > - viewer_stage: warm
 > - outlier_anchor: null
 > - anchor_confidence: experimental
-> - problem_addressed: 2
 >
 > Dropped angles captured. Note: vid-title will run without a title-pattern anchor. It'll use your power-words-bank as the source. Heads up if you re-frame later.
 
@@ -189,7 +184,7 @@ Worked dialogues showing how vid-framing should run a session. Each example show
 **AI:**
 > Locked. piece.md written. Ready for vid-structure.
 
-*Note: power-user mode skips Theory of One conversation because the creator pre-locked goal/format/temperature. AI still ran the filter internally before surfacing.*
+*Note: power-user mode skips the fit-check conversation because the creator pre-locked goal/format/temperature. AI still ran the iceberg-fit + temperature check internally before surfacing.*
 
 ## Example 5: Mismatch surface (creator decides)
 
@@ -243,7 +238,7 @@ Worked dialogues showing how vid-framing should run a session. Each example show
 
 1. **Listen during dumps.** When the creator drops 3+ sentences about what they want, hear the whole thing before responding.
 2. **Specificity in proposals.** Every anchored angle cites the bank entry, outlier titles, view counts. No "this pattern works in your niche."
-3. **Theory of One filter runs after candidates surfaced.** Not before. Generate first, filter second.
+3. **Fit check runs after candidates surfaced.** Not before. Generate first, check fit second.
 4. **Risk surfacing is mandatory.** Every angle has a risk line. No risk = not enough thought put in.
 5. **Bulk-keep mode for experienced creators.** Don't drag a 10-question dialogue through someone who already knows what they want.
 6. **Soft friction surfaces math, doesn't block.** Goal/temperature mismatch is surfaced, explained, creator decides.

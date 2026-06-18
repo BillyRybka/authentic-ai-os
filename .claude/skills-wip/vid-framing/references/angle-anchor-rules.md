@@ -2,7 +2,7 @@
 name: Angle Anchor Rules
 type: skill-local-reference
 loaded_by: vid-framing
-when_to_read: Phase 2 (angle generation) and Phase 3 (Theory of One filter)
+when_to_read: Phase 2 (angle generation) and Phase 3 (fit check)
 ---
 
 # Angle Anchor Rules
@@ -78,7 +78,7 @@ Experimental angles MUST be flagged: `anchor_confidence: experimental`, `outlier
 >
 > Anchor: `stop-do-this` pattern. Worked outliers: "STOP Using These 5 Outdated Productivity Apps" (@CoachX, 1.4M), "STOP Planning Your Week Like This" (@CoachY, 800k).
 >
-> Why it could land: Brain-dump has the creator's specific story about abandoning time-blocking after burnout. The stop-do-this pattern lands consistently in this niche because the audience expects contrarian framing of common advice. Avatar's Top 3 problem #2 ("productivity systems made for neurotypical brains").
+> Why it could land: Brain-dump has the creator's specific story about abandoning time-blocking after burnout. The stop-do-this pattern lands consistently in this niche because the audience expects contrarian framing of common advice. It sits squarely inside the iceberg (the audience already lives this pain).
 >
 > Risk: Audience may push back if the alternative the video offers isn't strong. Brain-dump's alternative (energy-blocking) needs to be specific in execution.
 
@@ -140,7 +140,7 @@ If the pattern bank surfaces 10 strong anchored candidates, vid-framing picks th
 
 1. Widest spread (and own-channel-proven) first
 2. Best alignment to brain-dump material second
-3. Best fit to the Theory of One filter third
+3. Best iceberg fit third
 
 The other 7 candidates get noted internally but NOT surfaced. The creator doesn't see them unless they ask "are there other anchors I should consider?"
 

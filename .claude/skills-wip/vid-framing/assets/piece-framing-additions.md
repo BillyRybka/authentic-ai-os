@@ -42,8 +42,7 @@ Append these three sections to the body of piece.md. If piece.md already has con
 
 ## Why This Angle Lands
 
-- **Iceberg fit:** {how this angle ties to creator's iceberg statement}
-- **Top 3 fit:** Problem #{1|2|3|outlier}. {why this is the right problem to solve in this video}
+- **Iceberg fit:** {how this angle sits inside the lane the creator serves. This is the only fit gate. Do not map to a Top 3 problem here; the writing skills pick the problem at write time.}
 - **Outlier evidence:** {specific anchor outlier title + channel + view count + DPV if known. For experimental angles, write "no anchor, creator gut pick" and one-line rationale.}
 - **Format fit:** {why {format} is right for this angle, pull from packaging-system rotation rationale}
 - **Goal fit:** {why {goal} is the right call given the angle and audience temperature}
