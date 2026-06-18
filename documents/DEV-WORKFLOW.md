@@ -13,48 +13,84 @@ C:\Users\billr\projects\
 ## Two branches. Workshop and storefront.
 
 ```
-dev   = the workshop. ALL 19 skills, ALL knowledge, internal docs. You work here.
-main  = the storefront. Only the 7 shipping skills + the knowledge they use.
-        Clients install from main. NEVER edit main by hand.
+dev   = the workshop. Every skill, all knowledge, internal docs. You work here.
+main  = the storefront. Rebuilt from dev by the release script. Clients install from main.
+        NEVER edit main by hand.
 ```
 
-`dev` is your home branch. Stay on it. `git checkout dev` and forget the rest.
+`dev` is your home branch. `git checkout dev` and stay there.
 
-`main` is built only by the release script. It is an allowlist: nothing untested, no WIP, no internal docs can reach a client, because the script rebuilds `main` from scratch and copies only the 7 named skills plus the knowledge they reference.
+`main` is rebuilt, never edited. The release script wipes it and copies the whole plugin tree (`plugins/authentic-ai-os/`) plus the knowledge files those skills reference. Anything outside the plugin folder (WIP skills, internal docs, dev tooling) can never reach a client, because it was never copied.
+
+## Where skills live
+
+```
+plugins/authentic-ai-os/skills/   SHIPPING skills. Inside the plugin. These reach clients.
+.claude/skills/                   WIP under active test. Loaded when you run Claude in this repo. Never ships.
+.claude/skills-wip/               Deeper WIP, parked. Not loaded, not shipped.
+```
+
+A skill ships if and only if it sits in `plugins/authentic-ai-os/skills/`. That is the whole rule. The release script ships the entire plugin tree as a unit, so there is no list of skill names to maintain anywhere.
 
 ## Which folder do I open Claude in?
 
-- **Building the tool** (editing a skill): open Claude in `authentic-ai-os\`, on the `dev` branch.
+- **Building the tool** (editing a skill): open Claude in `authentic-ai-os\`, on `dev`.
 - **Using the tool** (making real content): open Claude in `Content Vault\Authentic-AI-OS\`.
 
-Skills use relative paths. `foundation/...` lands wherever you launched Claude. No skill ever points at a machine path.
+Skills use relative paths. `foundation/...` lands wherever you launched Claude. No skill points at a machine path.
 
 ## Daily loop
 
-1. **Use it:** open Claude in `Content Vault\Authentic-AI-OS\`. Run skills. Your real data piles up there, never in the repo.
+1. **Use it:** open Claude in `Content Vault\Authentic-AI-OS\`. Run skills. Real data piles up there, never in the repo.
 2. **Improve it:** open Claude in `authentic-ai-os\` on `dev`. Edit the skill. Commit to `dev`.
-3. **Ship it:** cut a release (below). Clients pick it up on their next `/plugin update`.
+3. **Ship it:** cut a release (below). Clients pick it up via the plugin's built-in update check.
+
+## Graduating a WIP skill (making it ship)
+
+1. Move the folder into the plugin: `.claude/skills/<skill>` (or `.claude/skills-wip/<skill>`) to `plugins/authentic-ai-os/skills/<skill>`.
+2. Strip dev-only files so they never reach clients: `DECISIONS.md`, `WORKING-NOTES.md`, `scripts/__pycache__/`, any dev-only README.
+3. Convert the skill's `.md` files to LF. Cowork's frontmatter parser breaks on CRLF. The plugin `.gitattributes` enforces LF for files under the plugin, but convert explicitly so a Windows re-save does not bite you.
+4. Add the update-check pre-flight blockquote right after the frontmatter, matching the sibling skills.
+5. Confirm the knowledge files it references exist at repo-root `knowledge/`. The release script relocates them into the plugin automatically.
+6. Commit on `dev`. That is the only edit needed. No allowlist to touch.
 
 ## Cutting a release
+
+Easiest path: the `peak-release` skill orchestrates graduation plus the release script. Or run the script directly.
 
 From `dev`, with a clean working tree:
 
 ```powershell
-pwsh scripts/release.ps1 -Version 0.2.0
+pwsh scripts/release.ps1 -Version 0.3.1            # add -DryRun to rehearse: builds locally, pushes nothing
 ```
 
-The script rebuilds `main` from `dev` using the allowlist in the script (`$ShipSkills`), auto-detects the knowledge those skills reference, bumps the version, commits `main`, and returns you to `dev`. It does not push. Review, then:
+The script switches to `main`, wipes it, copies the plugin tree, auto-detects and relocates the knowledge the skills reference, bumps the version in `plugin.json`, commits `main`, tags `vX.Y.Z`, builds the `.plugin` artifact in `dist/`, then:
 
-```
-git push origin main
-```
+- pushes `main` (with the tag) and `dev`,
+- creates a GitHub Release on the private source repo (internal record),
+- creates a GitHub Release on the public mirror `BillyRybka/aaios-releases` and uploads the `.plugin` (this is what clients install from),
+- syncs `dev`'s `plugin.json` forward so dev never lags main.
 
-**To graduate a WIP skill:** move it from `.claude/skills-wip/` into `.claude/skills/`, add its name to `$ShipSkills` at the top of `scripts/release.ps1`, commit to `dev`, then cut a release. That is the only edit needed.
+It returns you to `dev`. With `-DryRun` it does all the local build steps and pushes nothing.
+
+## Versioning (semver MAJOR.MINOR.PATCH)
+
+- **PATCH** (0.3.0 to 0.3.1): bug fix, doc edit, prompt tweak inside an existing skill.
+- **MINOR** (0.3.0 to 0.4.0): a skill graduates and ships, new knowledge, a new feature.
+- **MAJOR** (0.3.0 to 1.0.0): breaking change. Renaming or removing a skill, restructuring.
+
+When unsure, a new skill is a MINOR. v0.3.0 shipped vid-research and aaios-feedback.
+
+## Rolling back
+
+`main` is rebuilt, not merged, so a rollback is just another release from an earlier `dev` state.
+
+> Warning: the `-DryRun` output prints a rollback line ending in `git reset --hard origin/dev`. That is only safe when `dev` has no unpushed commits beyond the auto-generated sync commit. If you have real unpushed work on `dev`, that reset destroys it. Reset to the specific commit you want instead, or just push the build you already have.
 
 ## What never reaches a client
 
-- Anything not in the release allowlist: WIP skills, unused knowledge, `documents/`, `plans/`, `RELEASE.md`, `DEV-WORKFLOW.md`, `.vale/`, `.obsidian/`, the Vale hook.
-- Gitignored personal data: `foundation/`, `banks/`, `content/`, `people/`, `raw/`, `notes/`, `.env`. Bank schemas live in `knowledge/{bank}-schema.md`; the bank folders themselves are creator content and never ship.
+- Anything outside `plugins/authentic-ai-os/`: WIP skills in `.claude/`, `documents/`, `plans/`, `scripts/`, `.vale/`, `.obsidian/`, the Vale hook.
+- Gitignored personal data: `foundation/`, `banks/`, `content/`, `people/`, `raw/`, `notes/`, `.env`. Bank schemas live in `knowledge/{bank}-schema.md`; the bank folders are creator content and never ship.
 
 ## The one rule
 
@@ -62,4 +98,4 @@ Never edit `main` by hand. `main` is only ever written by `scripts/release.ps1`.
 
 ## The one plugin
 
-There is one plugin: `authentic-ai-os`. One install, one `/plugin update`. Never multiple.
+There is one plugin: `authentic-ai-os`. One install, one update path. Never multiple.

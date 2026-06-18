@@ -4,20 +4,22 @@ How to ship updates from `authentic-ai-os` to Inner Circle clients.
 
 ## The model: two branches, two repos
 
-- **`dev`** is the workshop. All 19 skills, all knowledge, internal docs. You work here, always.
-- **`main`** (in the private source repo) is the lean storefront branch. Only the shipping skills plus the knowledge they reference.
+- **`dev`** is the workshop. Every skill, all knowledge, internal docs. You work here, always.
+- **`main`** (in the private source repo) is the lean storefront branch. It carries the whole plugin tree (`plugins/authentic-ai-os/`) plus the knowledge files those skills reference, nothing else.
 - **`BillyRybka/authentic-ai-os`** is the **private** source repo. Internal records only. Clients never touch it.
 - **`BillyRybka/aaios-releases`** is the **public** distribution mirror. Just a README and a Releases page. Every release script run uploads the `.plugin` artifact here. The plugin's update-check fetches `https://api.github.com/repos/BillyRybka/aaios-releases/releases/latest`.
 
-`main` is never edited by hand. It is rebuilt from `dev` by `scripts/release.ps1`, which uses an allowlist: only the named skills and their auto-detected knowledge reach `main`. WIP skills, unused knowledge, and internal docs cannot leak to a client. The script also uploads the resulting `.plugin` to both the private repo's Releases (internal record) and the public mirror's Releases (client-facing).
+`main` is never edited by hand. It is rebuilt from `dev` by `scripts/release.ps1`, which wipes `main` and copies the whole plugin tree plus the knowledge the skills reference (auto-detected). A skill reaches clients only by living in `plugins/authentic-ai-os/skills/`. WIP skills in `.claude/`, unused knowledge, and internal docs sit outside the plugin folder, so they cannot leak to a client. The script also uploads the resulting `.plugin` to both the private repo's Releases (internal record) and the public mirror's Releases (client-facing).
 
 ## Versioning
 
 Semver `MAJOR.MINOR.PATCH`:
 
-- **PATCH** (`0.1.0` to `0.1.1`): bug fix, doc edit, prompt tweak inside an existing skill.
-- **MINOR** (`0.1.0` to `0.2.0`): a skill graduates and ships, new knowledge, new feature.
-- **MAJOR** (`0.1.0` to `1.0.0`): breaking change. Renaming a skill, restructuring, removing functionality.
+- **PATCH** (`0.3.0` to `0.3.1`): bug fix, doc edit, prompt tweak inside an existing skill.
+- **MINOR** (`0.3.0` to `0.4.0`): a skill graduates and ships, new knowledge, new feature.
+- **MAJOR** (`0.3.0` to `1.0.0`): breaking change. Renaming a skill, restructuring, removing functionality.
+
+When unsure, a new skill is a MINOR. The current released version is v0.3.0 (shipped vid-research and aaios-feedback).
 
 ## Workflow
 
@@ -27,55 +29,53 @@ Semver `MAJOR.MINOR.PATCH`:
 git checkout dev
 ```
 
-All editing happens on `dev`. WIP skills live in `.claude/skills-wip/` (version-controlled, but outside the plugin's discovery path). Shipping skills live in `.claude/skills/`.
+All editing happens on `dev`. Shipping skills live in `plugins/authentic-ai-os/skills/`. WIP under active test lives in `.claude/skills/` (loaded when you run Claude in the repo, never shipped). Deeper WIP is parked in `.claude/skills-wip/`.
 
 ### 2. Graduate a skill (when one becomes ready)
 
-1. Move the folder: `.claude/skills-wip/<skill>` to `.claude/skills/<skill>`.
-2. Add `<skill>` to the `$ShipSkills` array at the top of `scripts/release.ps1`.
-3. If it needs container structure, add a row to `.claude/skills/creator-setup/manifest.md`.
-4. Commit to `dev`.
+1. Move the folder into the plugin: `.claude/skills/<skill>` (or `.claude/skills-wip/<skill>`) to `plugins/authentic-ai-os/skills/<skill>`.
+2. Strip dev-only files so they never reach clients: `DECISIONS.md`, `WORKING-NOTES.md`, `scripts/__pycache__/`, any dev-only README.
+3. Convert the skill's `.md` files to LF (see the Cowork line-endings gotcha below).
+4. Add the update-check pre-flight blockquote after the frontmatter, matching the sibling skills.
+5. If it needs container structure in the client's vault, add a row to `creator-setup`'s manifest.
+6. Commit to `dev`. There is no allowlist array to edit; the whole plugin tree ships.
 
 ### 3. Cut the release
 
-From `dev`, clean working tree:
+Easiest path: the `peak-release` skill drives graduation plus the script. Or run the script directly. From `dev`, clean working tree:
 
 ```powershell
-pwsh scripts/release.ps1 -Version 0.2.0
+pwsh scripts/release.ps1 -Version 0.3.1            # add -DryRun to rehearse: builds locally, pushes nothing
 ```
 
-The script switches to `main`, rebuilds it from `dev` per the allowlist, auto-detects the knowledge the shipping skills reference, bumps the version in both manifests, commits `main`, and returns you to `dev`. It does not push.
+A real run (no `-DryRun`) does everything end to end:
 
-Review, then publish:
+- switches to `main`, wipes it, copies the plugin tree, relocates the referenced knowledge,
+- bumps the version in `plugin.json`, commits `main`, tags `vX.Y.Z`, builds `dist/authentic-ai-os-vX.Y.Z.plugin`,
+- pushes `main` (with the tag) and `dev`,
+- creates the GitHub Release on the private repo and on the public mirror, uploading the `.plugin` to both,
+- syncs `dev`'s `plugin.json` forward, and returns you to `dev`.
 
-```
-git checkout main
-git ls-files          # sanity-check the lean tree
-git checkout dev
-git push origin main
-```
-
-Also push `dev` so the workshop is backed up: `git push origin dev`.
+To rehearse first, run with `-DryRun`. It builds `main` and the artifact locally and pushes nothing, then prints inspect and rollback lines. Read the rollback warning under "Rolling back" before using it.
 
 ### 4. Notify clients (optional)
 
-Clients see the update on their next Cowork/Claude Code marketplace refresh. To accelerate:
+Clients get notified by the plugin's built-in update check on their next session, then install the new `.plugin`. To accelerate:
 
-- Post in the Inner Circle community: "v0.2.0 is live. Run `/plugin update authentic-ai-os`."
+- Post in the Inner Circle community: "v0.3.1 is live."
 - Major releases: a 60-second Loom of what changed.
 
 ## What ships vs what doesn't
 
-### Ships to clients (the `main` allowlist)
+### Ships to clients
 
-- `.claude-plugin/` (manifest). `.claude/skills/` declared via `"skills": "./.claude/skills"`.
-- The 7 (and growing) skills named in `$ShipSkills`.
-- `knowledge/` files those skills reference (auto-detected by the release script).
+- `.claude-plugin/` (marketplace manifest) and the plugin manifest at `plugins/authentic-ai-os/.claude-plugin/plugin.json`.
+- The whole `plugins/authentic-ai-os/` tree: every skill in `plugins/authentic-ai-os/skills/`, plus the knowledge files those skills reference (auto-detected and relocated under `plugins/authentic-ai-os/knowledge/` by the release script).
 - `CLAUDE.md`, `.gitignore`.
 
 ### Never ships
 
-- `.claude/skills-wip/` (WIP skills), unused `knowledge/` files, `.claude/hooks/` + `.claude/settings.json` (the machine-specific Vale hook), `documents/`, `plans/`, `scripts/`, `.vale/`, `.obsidian/`, `templates/`.
+- Everything outside `plugins/authentic-ai-os/`: WIP skills in `.claude/skills/` and `.claude/skills-wip/`, unused `knowledge/` files, `.claude/hooks/` + `.claude/settings.json` (the machine-specific Vale hook), `documents/`, `plans/`, `scripts/`, `.vale/`, `.obsidian/`, `templates/`.
 - Gitignored personal data: `foundation/`, `banks/`, `content/`, `people/`, `raw/`, `notes/`, `.env`. Bank schemas live in `knowledge/{bank}-schema.md`.
 
 ### How clients get a vault
@@ -90,7 +90,7 @@ Hard-won truths from real shipping. Add to the list whenever a new one bites.
 
 Cowork's YAML frontmatter parser does not handle CRLF. A `---\r\n` closing delimiter is not recognized, so the entire frontmatter block leaks into the body as raw text. Symptoms: skill shows no description in the Cowork UI, and the body opens with literal `name: my-skill description: ...`.
 
-Fix: `.md` files in the plugin must use LF line endings. `.gitattributes` at `plugins/authentic-ai-os/.gitattributes` enforces this for `*.md` and `*.json`. Do not remove it. If a file is edited on Windows with a tool that re-saves as CRLF, run:
+Fix: `.md` files in the plugin must use LF line endings. `.gitattributes` at `plugins/authentic-ai-os/.gitattributes` enforces this for `*.md` and `*.json`. Do not remove it. That attribute only covers files under the plugin folder, so a skill authored in `.claude/` is likely CRLF until you graduate it; convert it on the way in. If a file is edited on Windows with a tool that re-saves as CRLF, run:
 
 ```powershell
 $f = 'path\to\file.md'; $t = [IO.File]::ReadAllText($f) -replace "`r`n","`n"; [IO.File]::WriteAllText($f, $t, (New-Object Text.UTF8Encoding $false))
@@ -109,8 +109,9 @@ Tested 2026-05-27. A `SessionStart` hook configured via `hooks/hooks.json` does 
 Validated 2026-05-27. The shipping update-check pattern:
 
 - `knowledge/update-check.md` holds the full check logic, once-per-session guard, and the blocking flow when an update exists.
-- Every skill opens with a `> **STOP. PRE-FLIGHT IS MANDATORY.**` blockquote right after the H1, before the descriptive intro.
-- Wording must be unmistakably directive (all-caps "STOP," "non-negotiable," "before any tool use," "do not continue past"). Soft wording is treated as documentation and ignored.
+- Every skill opens with a pre-flight blockquote right after the frontmatter, before the descriptive intro.
+- Wording must be unmistakably directive ("mandatory," "before doing anything else," "halt"). Soft wording is treated as documentation and ignored.
+- aaios-feedback is the one deliberate exception: it runs mid-session after another skill already checked, so it skips the pre-flight to avoid interrupting a feedback report with an update notice.
 
 When the check finds a newer version, Claude halts and outputs the notice. The creator either drags in the new `.plugin` or says "continue without updating." Works reliably in Cowork.
 
@@ -120,17 +121,20 @@ In testing, installing via Cowork's GitHub URL flow gave a partial install (hook
 
 ### Plugin updates don't propagate
 
-Cowork does not auto-pull marketplace updates the way Claude Code does. Once a client installs a version, they stay on it until they manually drag-drop a newer `.plugin`. No "check for updates" or "refresh marketplace" action exists in the Cowork UI as of 2026-05-27. See `documents/audits/` for outreach to Cowork support if it exists.
+Cowork does not auto-pull marketplace updates the way Claude Code does. Once a client installs a version, they stay on it until they manually drag-drop a newer `.plugin`. No "check for updates" or "refresh marketplace" action exists in the Cowork UI as of 2026-05-27. The plugin's built-in update-check (above) is what bridges the gap: it notifies the client and delivers the new `.plugin` to install.
 
 ## Rolling back
 
-`main` is rebuilt, not merged, so rollback is just another rebuild:
+`main` is rebuilt, not merged, so a rollback is just another release from an earlier `dev` state:
 
 ```powershell
 git checkout dev
 git checkout dev~N -- .   # or check out the dev state you want to ship
-pwsh scripts/release.ps1 -Version 0.2.1
-git push origin main
+pwsh scripts/release.ps1 -Version 0.3.2
 ```
+
+The script pushes and publishes on its own; no manual `git push origin main` needed.
+
+> Warning about the `-DryRun` rollback line. The dry-run prints `git reset --hard origin/dev` as part of its rollback hint. That is only safe when `dev` has no unpushed commits beyond the auto-generated sync commit. If you have real unpushed work on `dev` (a freshly graduated skill, for instance), that reset destroys it. Reset to the specific commit you want instead, or simply push the build the dry-run already produced.
 
 Or `git revert` the bad release commit on `main` and bump a PATCH version. Clients get the fix on next update.
