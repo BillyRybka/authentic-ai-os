@@ -19,7 +19,7 @@ The skill works two ways:
 
 The five stage flows (S, M, P, T, F) are identical in both modes. The difference is only in the router and the session-close behavior.
 
-If invoked with context from the caller (e.g., "I need a metaphor about client onboarding for Problem 2"), skip the questions the caller has already answered and go straight to the stage.
+If invoked with context from the caller (e.g., "I need a metaphor about client onboarding"), skip the questions the caller has already answered and go straight to the stage.
 
 ## What this produces
 
@@ -48,7 +48,7 @@ Not for: soliciting testimonials from clients (out of scope, this skill captures
 
 ## Prerequisites
 
-Hard requirement: `foundation/creator-foundation.md` must exist with a readable "Top 3 problems" section. Every bank entry gets a `problem_illustrated` value mapping to one of those three (or "general"). If the file is missing, the skill exits and asks the creator to run `/foundation` first.
+No foundation dependency. Each entry is tagged from its own material: an `illustrates:` line (the lesson it proves, in the creator's voice) plus open `themes:`, drawn from what the creator actually said. There is no fixed problem list to map against, so capture works whether or not the foundation is built. Bank folders are created on demand.
 
 Optional but helpful:
 - The raw material the creator wants to capture (a memory, a Slack screenshot, a DM, a number from analytics)
@@ -57,7 +57,6 @@ Optional but helpful:
 ## Folder structure this uses or creates
 
 ```
-foundation/creator-foundation.md     (required, read not written)
 banks/story-bank/                    (created if missing)
 banks/metaphor-bank/                 (created if missing)
 banks/proof-bank/                    (created if missing)
@@ -72,10 +71,9 @@ people/                              (expected to exist, stubs created inside)
 At session start:
 
 1. Load `vault-integration.md` to lock the schemas.
-2. Load `foundation/creator-foundation.md` to pull the Top 3 problems.
-3. Ask the creator what they're capturing: story, metaphor, proof, testimonial, or framework.
-4. Route to the matching stage.
-5. After save, loop back to step 3. End when the creator says they're done.
+2. Ask the creator what they're capturing: story, metaphor, proof, testimonial, or framework.
+3. Route to the matching stage.
+4. After save, loop back to step 2. End when the creator says they're done.
 
 If the creator has multiple items in mind, process them one at a time. Do not batch multi-item captures.
 
@@ -91,9 +89,9 @@ Load `knowledge/story-capture-guide.md`.
    - Outcome: "What's the exact number, timeline, or result? What changed?"
    - Plan on 2-3 rounds. Loop until specificity emerges, then save. Flag in Notes if still thin.
 4. **Client mention check.** If the creator names a client, check `people/{Full Name}.md`. If missing, create the stub per the vault-integration template. Write `client: "[[Full Name]]"` in frontmatter and `[[Full Name]]` at first body mention.
-5. **Set `problem_illustrated`.** Ask which of the top 3 problems this story illustrates. Value is `1`, `2`, `3`, or `general`.
+5. **Set `illustrates` and `themes`.** Write one short line stating the lesson this story proves, as plain cause and effect, in the creator's voice. Read it aloud; if they wouldn't say it that way, rewrite it. Then tag a few open `themes:` (the angles it touches). No fixed problem number.
 6. **Propose a slug.** Lowercase, hyphenated, 3-6 words, descriptive. Creator approves or overrides.
-7. **Dedup check.** Scan `banks/story-bank/*.md` for matches on `problem_illustrated` plus theme tags plus slug proximity plus first-sentence overlap of the Problem section. If candidates found, show them and ask: update existing, save as new angle, or merge manually.
+7. **Dedup check.** Scan `banks/story-bank/*.md` for matches on `illustrates` overlap plus theme tags plus slug proximity plus first-sentence overlap of the Problem section. If candidates found, show them and ask: update existing, save as new angle, or merge manually.
 8. **Assemble the entry** using `assets/story-entry-template.md`. Fill frontmatter (including `used_in: []` empty). Body follows Problem, Action, Outcome, `> [!tip] Why this story lands`, Notes.
 9. **Read-aloud test.** Read the entry back to the creator: "Would you reword any of this if you were saying it out loud?" Edit to match their phrasing. Save only after they confirm.
 10. **Save** to `banks/story-bank/{slug}.md`.
@@ -114,7 +112,7 @@ The builder:
 2. **Problem and solution.** State the problem in the concept (what viewers get wrong) and the solution (what they should do instead). Both in the creator's voice.
 3. **Find the comparison.** Pull from everyday categories: food, cars, clothes, sports, travel. The reference shows 2 real metaphors. If the first attempt feels abstract or forced, push back: "Make it something anyone would recognize. What's the everyday version?"
 4. **Classify visual vs non-visual.** Ask: "Does this metaphor depend on a prop or graphic to land, or does pure speech carry it?" Set `visual: true` or `visual: false`. Visual metaphors capture TWO body sections (Spoken plus Shown); non-visual capture one (The metaphor).
-5. **Set `problem_illustrated`.** Which top-3 problem does this metaphor support?
+5. **Set `themes`.** Tag the open angles this metaphor touches. The `concept:` from step 1 is the metaphor's matching key; there is no fixed problem tag.
 6. **Propose a slug.** Creator approves.
 7. **Dedup check.** Scan `banks/metaphor-bank/*.md` for matches on `concept:` field value (same concept) OR same `category:` with similar metaphor text. If candidates found, show them and ask: update existing, save as new angle, or merge manually.
 8. **Assemble the entry** using `assets/metaphor-entry-template.md`. Body depends on `visual`: if true, include Spoken plus Shown subsections; if false, single "The metaphor" block.
@@ -133,7 +131,7 @@ Load `knowledge/proof-capture-guide.md`.
 4. **Capture what it proves.** One sentence. The claim this proof backs up.
 5. **Context.** When, where, who, enough that the creator will remember why this matters in six months.
 6. **Usage rules.** If there are NDA or permission constraints, add a `> [!warning] Usage rules` callout. If the client consented to stats but not their name, note it. Anonymization rules live in the body.
-7. **Set `problem_illustrated`.** Which top-3 problem does this proof support?
+7. **Set `illustrates` and `themes`.** One short line for the point this proof backs, in the creator's voice, plus open theme tags. No fixed problem number.
 8. **Propose a slug.** Creator approves.
 9. **Dedup check.** Scan `banks/proof-bank/*.md` for matches on `proof_type:` plus `client:` plus first-sentence overlap of "What it proves". If candidates found, show them and ask: update existing, save as new angle, or merge manually.
 10. **Assemble the entry** using `assets/proof-entry-template.md`. Fill frontmatter (`used_in: []` empty).
@@ -151,7 +149,7 @@ Testimonials are captured client voice, preserved verbatim. Different from stori
 3. **Client identification.** If the client is named and OK to be named, use their name. If anonymization applies, use "Anonymous" in `client:` and set `anonymized: true`. Note permission status in the body's Anonymization section.
 4. **People stub check.** If named, auto-create `people/{Full Name}.md` if missing.
 5. **Context.** What were they responding to? Which video or offer triggered this testimonial? Link to it with a wikilink if the piece exists.
-6. **Set `problem_illustrated`.** Which top-3 problem does this testimonial support? (Testimonials often map to `general` if the client isn't responding to a specific problem.)
+6. **Set `illustrates` and `themes`.** One short line for the point this quote backs, in the creator's voice, plus open theme tags. No fixed problem number.
 7. **Propose a slug.** Creator approves.
 8. **Dedup check.** Scan `banks/testimonial-bank/*.md` for matches on `client:` plus `source:` plus first-line of verbatim quote. If candidates found, show them and ask: update existing, save as new angle, or merge manually.
 9. **Assemble the entry** using `assets/testimonial-entry-template.md`. Body follows the `> [!quote]` callout with verbatim text, Context, Anonymization, Notes.
@@ -170,7 +168,7 @@ Stage F handles the LOG path: the creator already has a named system and wants t
 2. **Capture the problem it solves.** One sentence in the creator's voice. "Why does this framework exist? What's the failure mode it prevents?"
 3. **Capture the components.** Usually 3 (sometimes 4-5). Each component gets a name and a one-line "what it is, why it matters." Push back if the creator lists 6+; the framework probably hasn't crystallized yet.
 4. **Pick the shape.** Use the selection matrix in `framework-builder.md`. If components are sequential → arrows. Equal-and-stacking → pyramid. Looping → cycle. Overlapping → Venn. Broad-to-narrow → funnel. Share-a-letter → acronym. If the creator doesn't care about the shape, infer silently from the component relationships and confirm.
-5. **Set `problem_illustrated`.** Which of the Top 3 problems does this framework address? Value is `1`, `2`, `3`, or `general`.
+5. **Set `themes`.** Tag the open angles this framework touches. The `problem_it_solves:` from step 2 is the framework's matching key; there is no fixed problem tag.
 6. **Propose a slug.** Lowercase, hyphenated, 3-6 words, descriptive (e.g., `3-part-onboarding-system`, `hire-or-automate-matrix`). Creator approves.
 7. **Dedup check.** Scan `banks/framework-bank/*.md` for matches on `name:` proximity, `components:` overlap, or `problem_it_solves:` overlap. If candidates found, show them and ask: update existing, save as new angle, or merge manually.
 8. **Assemble the entry** using the schema in `framework-builder.md` "Entry schema + worked body example." Body follows: What problem does this solve? / The components / The shape / When to use it / Related assets / Origin. Fill frontmatter with `used_in: []` empty.
@@ -178,7 +176,7 @@ Stage F handles the LOG path: the creator already has a named system and wants t
 10. **Save** to `banks/framework-bank/{slug}.md`.
 11. Loop back to the router (standalone mode) OR return the new entry's wikilink to the caller (sub-skill mode).
 
-**Sub-skill invocation pattern.** When vid-segment routes here after inline crafting, the caller passes a context packet like: `{name: "The 3-Part Onboarding System", components: [...], shape: "arrows", problem_solved: "...", problem_illustrated: 2}`. Skip steps 1-4 (the caller already has the answers), go directly to step 5 (problem_illustrated, if not already passed), step 6 (slug), step 7 (dedup), step 8 (assemble), step 9 (read-aloud on name), step 10 (save), step 11 (return wikilink).
+**Sub-skill invocation pattern.** When vid-segment routes here after inline crafting, the caller passes a context packet like: `{name: "The 3-Part Onboarding System", components: [...], shape: "arrows", problem_solved: "...", themes: [onboarding, delegation]}`. Skip steps 1-4 (the caller already has the answers), go directly to step 5 (themes, if not already passed), step 6 (slug), step 7 (dedup), step 8 (assemble), step 9 (read-aloud on name), step 10 (save), step 11 (return wikilink).
 
 ## Contract behaviors (enforced every stage)
 
@@ -187,7 +185,7 @@ These come from `knowledge/vault-integration.md`. Non-negotiable.
 - **Frontmatter matches the schema exactly.** Field names, enum values, tag slugs are specified in the contract. Don't invent fields or alternate names.
 - **`used_in: []` starts empty.** Writing skills (vid-segment, vid-intro) update it later when they actually use the entry. Never touch it from here after initial creation.
 - **Client mention, People stub.** No exceptions. Orphan wikilinks break the graph.
-- **Tags per type:** Story gets `story`, `problem-{n}`, optional theme slug. Metaphor gets `metaphor`, `category-{slug}`, `problem-{n}`. Proof gets `proof`, `{proof-type-slug}`. Testimonial gets `testimonial`, `source-{slug}`. Framework gets `framework`, `{shape-slug}`, `problem-{n}`.
+- **Tags per type:** Story gets `story` plus theme slugs. Metaphor gets `metaphor`, `category-{slug}`, plus theme slugs. Proof gets `proof`, `{proof-type-slug}`, plus theme slugs. Testimonial gets `testimonial`, `source-{slug}`, plus theme slugs. Framework gets `framework`, `{shape-slug}`, plus theme slugs.
 - **File naming:** lowercase, hyphenated, 3-6 words, no dates in filename (dates live in frontmatter), no type prefix (folder carries that context).
 - **Read-aloud test.** Every entry that captures creator voice (stories, metaphor text, testimonials) must pass: creator reads it and doesn't reword a word.
 
@@ -195,10 +193,8 @@ These come from `knowledge/vault-integration.md`. Non-negotiable.
 
 From `vault-integration.md` Failure modes section. Never silent inconsistency.
 
-- **Missing `foundation/creator-foundation.md`:** hard stop. Tell the creator to run `/foundation` first. Do not proceed.
 - **Missing bank subfolders:** create them silently and proceed.
 - **People stub creation fails** (permission error, folder missing): do NOT save the bank entry with an unresolved `[[Client Name]]` wikilink. Report visibly, ask the creator to resolve, then retry save.
-- **`creator-foundation.md` frontmatter malformed** (Top 3 problems section unreadable): show the creator what was found vs what was expected. Ask: "Want to skip `problem_illustrated` this session (default to 'general'), or pause and fix creator-foundation first?"
 - **Re-save over a malformed existing entry:** show the diff. Don't overwrite silently.
 
 ## Session close
@@ -207,7 +203,7 @@ Before exiting, report:
 
 - Entries captured this session (as wikilinks to each new bank file)
 - People stubs created (names plus bucket)
-- Any fields skipped or defaulted (e.g., `problem_illustrated: general`)
+- Any fields still thin (e.g., an `illustrates:` line that needs sharpening)
 - Any unresolved warnings
 
 End with: "When you're ready to write a script, run `vid-pipeline` (or any specific writing sub-skill). These banks will be there."
@@ -217,7 +213,7 @@ End with: "When you're ready to write a script, run `vid-pipeline` (or any speci
 - **Preserve creator's exact phrasing.** Mine the creator's actual words. Do NOT polish into generic prose. Voice lives in word choice, rhythm, and specificity. The read-aloud test is the quality bar.
 - **Claude structures, Claude does not generate.** If a prompt gets no response, note "no story here yet" and move on. Never invent a client, number, result, or testimonial.
 - **Dig deeper before saving.** Push for specifics. Thin entries are worse than empty ones because they take up space without pulling weight.
-- **Honor the contract.** Every entry matches the vault-integration schema. Every client mention creates a People stub. Every entry gets a `problem_illustrated` value.
+- **Honor the contract.** Every entry matches the vault-integration schema. Every client mention creates a People stub. Every entry gets its matching line (`illustrates`, or `concept` / `problem_it_solves`) plus `themes`.
 - **Banks are written once, read many times.** Optimize entries for downstream retrieval, not the capture moment.
 - **One item at a time.** Batch captures encourage sloppy ones.
 - **Dedup before save.** Always check existing bank entries for overlap. Duplicates pollute future retrieval and make it harder for writing skills to find the right entry.

@@ -2,11 +2,12 @@
 type: story
 project: authentic-ai-os
 story_type: client
-problem_illustrated: 2
+illustrates: when the whole process lives in your head, you stay the bottleneck and it eats your week
+themes: [delegation, systems, time]
 client: "[[Marcus Lane]]"
 captured: 2026-01-08
 status: captured
-tags: [story, problem-2, delegation, fixture]
+tags: [story, delegation, systems, time, fixture]
 used_in: []
 ---
 

@@ -40,23 +40,23 @@ Why it misses: avatar can't see themselves in the protagonist. The before-state 
 
 ---
 
-## Criterion 2: Problem match
+## Criterion 2: Point match
 
-The story's `problem_illustrated` field must match the segment's avatar problem (1, 2, 3, or general).
+The story must illustrate the point this segment is making. Match the story's `illustrates` line and `themes` to the pain in the segment's emotional opening, by meaning, not by a fixed problem number.
 
-**Worked (segment is teaching solution to Problem 2, "I'm drowning in client work and can't grow"):**
+**Worked (segment is teaching "you can't grow while you're buried in client work"):**
 
-Pulled: a story tagged `problem_illustrated: 2` where a coach was working 60-hour weeks, pulled in a contractor on one engagement, and freed 15 hours a week without dropping quality.
+Pulled: a story whose `illustrates` line is "doing all the client work yourself is what caps your growth", where a coach was working 60-hour weeks, pulled in a contractor on one engagement, and freed 15 hours a week without dropping quality.
 
-Why it lands: direct match. The story's pain IS the segment's pain.
+Why it lands: direct match. The story's lesson IS the segment's point.
 
 **Near-miss (same segment):**
 
-Pulled: a story tagged `problem_illustrated: 1` where a coach figured out their pricing model. Story is great. Just doesn't match this segment's problem.
+Pulled: a story whose `illustrates` line is about figuring out a pricing model. Story is great. Just doesn't make this segment's point.
 
-Why it misses: the viewer is here for the time problem, not the pricing problem. Right story, wrong segment. Save it for the pricing-focused segment.
+Why it misses: the viewer is here for the time-and-delegation point, not the pricing one. Right story, wrong segment. Save it for the pricing segment.
 
-**The exception:** stories tagged `problem_illustrated: general` can pull for any problem if the story's actual content is on-target. But default to direct matches first.
+**Reuse, not buckets:** the same story can pull for any segment whose point it fits. A story is not owned by one category. Match on what it illustrates and let a strong entry surface across many videos.
 
 ---
 
@@ -139,7 +139,7 @@ Why it misses: regular viewers tag the repetition. Trust drops. Pull a different
 You'll often have N candidates and no single one passes all five criteria. Resolution order:
 
 1. **Stage match wins.** A criterion-1 mismatch breaks the segment harder than any other miss.
-2. **Problem match second.** A wrong-problem story is a wrong-segment story.
+2. **Point match second.** A story that makes a different point is a wrong-segment story.
 3. **Outcome specificity third.** If the bank entry is thin, route to vid-capture or skip the block.
 4. **Type and reuse are tiebreakers.** When two candidates pass 1-3, type and reuse pick the winner.
 
@@ -155,7 +155,7 @@ If NO candidate passes 1-3, the bank doesn't have what the segment needs. Two op
 The skill picks the top 1-3 candidates after applying the criteria. Surface them with one-line rationale each:
 
 ```
-Story candidates for this segment (problem 2, drowning in client work):
+Story candidates for this segment (the point: you can't grow while buried in client work):
 
 1. [[steve-9-weeks-to-2-week-vacation]]: client win, MRR $42k→$74k, stage match (avatar at $50k)
 2. [[anonymous-client-15-hour-week-cut]]: client win, freed 15hr/wk via contractor, stage match (avatar at 60hr/wk)
@@ -172,9 +172,9 @@ Three is the cap. More than three causes choice paralysis. If only one passes th
 
 At Phase 2 (structure pass):
 
-1. Read the segment's `problem_illustrated` from `piece.md`
-2. Query `banks/story-bank/*.md` filtering by `problem_illustrated` and theme tags
-3. Apply criteria 1-3 to filter to viable candidates (stage match, problem match, outcome specificity)
+1. Read the segment's point from its job and emotional opening (in `piece.md` and the locked skeleton), in the creator's words
+2. Query `banks/story-bank/*.md`, matching each entry's `illustrates` line and theme tags to that point by meaning
+3. Apply criteria 1-3 to filter to viable candidates (stage match, point match, outcome specificity)
 4. Apply criteria 4-5 to rank
 5. Surface top 1-3 to creator
 6. On creator pick, lock the candidate

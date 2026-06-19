@@ -165,9 +165,9 @@ At Phase 2, surface metaphor candidates with the visual flag visible:
 ```
 Metaphor candidates for this segment (concept: subscriber-vanity):
 
-1. [[jelly-bean-channels]]: visual metaphor (props required), category: food, problem-1
-2. [[restaurant-with-no-recipes]]: non-visual metaphor, category: food, problem-2
-3. [[wine-tasting-early-dating]]: non-visual metaphor, category: food, problem-general
+1. [[jelly-bean-channels]]: visual metaphor (props required), category: food, themes: vanity-metrics
+2. [[restaurant-with-no-recipes]]: non-visual metaphor, category: food, themes: systems
+3. [[wine-tasting-early-dating]]: non-visual metaphor, category: food, themes: commitment
 
 (Note: candidate 3 is a stretch. It's about commitment, not subscriber-vanity. Surfacing because of partial match.)
 
@@ -182,7 +182,7 @@ If the segment's format can't support a visual metaphor (e.g., news segment with
 
 At Phase 2 (structure pass), when the block is metaphor:
 
-1. Query `banks/metaphor-bank/*.md` by `concept:` field, `category:`, and `problem_illustrated`
+1. Query `banks/metaphor-bank/*.md` by `concept:` field, `category:`, and theme tags
 2. Filter visual metaphors based on format support (news / short process compress visual metaphors out)
 3. Surface 0-2 candidates with the visual flag visible
 

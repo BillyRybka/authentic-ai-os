@@ -36,10 +36,10 @@ Metaphors come from the creator, not Claude. Do not invent metaphors. They sound
 ---
 type: metaphor
 project: authentic-ai-os
-concept: "short concept name"   # what the metaphor clarifies
+concept: "short concept name"   # what the metaphor clarifies (the metaphor's matching key)
 category: everyday              # food | cars | clothes | sports | travel | everyday | other
 visual: false                   # true if metaphor depends on a prop/graphic; false if pure speech works
-problem_illustrated: 2          # 1 | 2 | 3 | general
+themes: [delegation, systems]   # open vocabulary, the angles this metaphor touches
 captured: YYYY-MM-DD
 status: captured
 tags: [metaphor, category-{slug}, visual-metaphor OR non-visual-metaphor, {theme-slug}]

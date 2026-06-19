@@ -39,6 +39,8 @@ Every testimonial preserves the exact wording. Do not paraphrase into "better" l
 type: testimonial
 project: authentic-ai-os
 source: comment                 # comment | dm | email | video
+illustrates: the system kept running after the client stepped back
+themes: [delegation, systems]   # open vocabulary, the angles this quote backs
 client: "[[Client Name]]"       # or "Anonymous" if anonymized
 anonymized: false               # true if identity removed for public use
 captured: YYYY-MM-DD

@@ -43,6 +43,7 @@ project: authentic-ai-os
 name: "The 3-part Onboarding System"
 framework_type: process         # process | categorization | decision-model | mental-model
 problem_it_solves: "short description"
+themes: [onboarding, delegation]   # open vocabulary, the angles this framework touches
 components: ["step-1", "step-2", "step-3"]
 maturity: active                # draft | active | retired
 captured: YYYY-MM-DD

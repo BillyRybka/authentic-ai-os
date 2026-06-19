@@ -2,11 +2,12 @@
 type: story
 project: authentic-ai-os
 story_type: client
-problem_illustrated: general
+illustrates: without systems and delegation, you drown in client work and never get time to grow
+themes: [delegation, systems, time]
 client: "[[Client Name]]"
 captured: YYYY-MM-DD
 status: captured
-tags: [story, problem-general]
+tags: [story, delegation, systems, time]
 used_in: []
 ---
 
@@ -40,11 +41,12 @@ used_in: []
 **Frontmatter fields:**
 
 - `story_type`: one of `client`, `own`, `viewer`
-- `problem_illustrated`: one of `1`, `2`, `3`, `general` (maps to top 3 problems in creator-foundation.md)
+- `illustrates`: one short line stating the lesson this story proves, plain cause and effect, in the creator's voice. Read it aloud; if the creator wouldn't say it that way, rewrite it. Unquoted unless a colon forces quotes.
+- `themes`: open list of the angles this lesson touches (e.g., `delegation`, `systems`, `time`). Multi-value, creator vocabulary.
 - `client`: wikilink to `people/{Full Name}.md`. Only present for client stories. Remove the line entirely for own stories or viewer stories.
 - `captured`: ISO date YYYY-MM-DD
 - `status`: starts `captured`. Writing skills change to `used` when first consumed.
-- `tags`: at minimum `story` and `problem-{n}` or `problem-general`. Add theme slugs as applicable (e.g., `pricing`, `positioning`, `delegation`).
+- `tags`: `story` plus the theme slugs mirrored for the Obsidian graph.
 - `used_in`: starts `[]`. Writing skills populate with `[[piece-slug]]` wikilinks.
 
 **Body rules:**

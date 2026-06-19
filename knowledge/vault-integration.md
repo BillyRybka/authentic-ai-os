@@ -105,11 +105,12 @@ Location: `banks/story-bank/{slug}.md`
 type: story
 project: authentic-ai-os
 story_type: client              # client | own | viewer
-problem_illustrated: 1          # 1 | 2 | 3 | general (from creator-foundation top 3 problems)
+illustrates: without systems and delegation, you drown in client work and never get time to grow
+themes: [delegation, systems, time]    # open vocabulary, the angles this lesson touches
 client: "[[Client Name]]"       # wikilink to people/ profile, only for client stories
 captured: YYYY-MM-DD
 status: captured                # captured | used | archived
-tags: [story, problem-{n}, {theme-slug}]
+tags: [story, {theme-slug}]
 used_in: []                     # populated by writing skills with [[piece-slug]] entries
 ---
 ```
@@ -122,10 +123,10 @@ Location: `banks/metaphor-bank/{slug}.md`
 ---
 type: metaphor
 project: authentic-ai-os
-concept: "short concept name"   # what the metaphor is clarifying
+concept: "short concept name"   # what the metaphor is clarifying (the metaphor's matching key)
 category: everyday              # food | cars | clothes | sports | travel | other
 visual: false                   # true if the metaphor depends on a prop/graphic to land, false if pure speech works
-problem_illustrated: 2          # 1 | 2 | 3 | general
+themes: [delegation, systems]   # open vocabulary, the angles this metaphor touches
 captured: YYYY-MM-DD
 status: captured
 tags: [metaphor, category-{slug}, visual-metaphor OR non-visual-metaphor, {theme-slug}]
@@ -144,6 +145,8 @@ Location: `banks/proof-bank/{slug}.md`
 type: proof
 project: authentic-ai-os
 proof_type: client-win          # personal-result | client-win
+illustrates: delegating one task gave back a full day every week
+themes: [delegation, time]      # open vocabulary, the angles this proof backs
 client: "[[Client Name]]"       # wikilink, only if client proof
 captured: YYYY-MM-DD
 status: captured
@@ -162,6 +165,8 @@ Location: `banks/testimonial-bank/{slug}.md` (separate top-level bank. Testimoni
 type: testimonial
 project: authentic-ai-os
 source: comment                 # comment | dm | email | video
+illustrates: the system kept running after the client stepped back
+themes: [delegation, systems]   # open vocabulary, the angles this quote backs
 client: "[[Client Name]]"       # or "Anonymous" if anonymized
 anonymized: false               # true if client identity removed
 captured: YYYY-MM-DD
@@ -184,6 +189,7 @@ project: authentic-ai-os
 name: "The 3-part Onboarding System"
 framework_type: process         # process | categorization | decision-model | mental-model
 problem_it_solves: "short description of the problem this framework addresses"
+themes: [onboarding, delegation]   # open vocabulary, the angles this framework touches
 components: ["step-1", "step-2", "step-3"]
 maturity: active                # draft | active | retired
 captured: YYYY-MM-DD
@@ -451,12 +457,9 @@ tags: [person, client]
 
 Never mention a client without creating the People profile.
 
-### When an entry illustrates one of the top 3 problems
+### What an entry illustrates
 
-The top 3 problems are defined in `foundation/creator-foundation.md` under the Avatar section.
-
-1. Frontmatter: `problem_illustrated: 1` (or 2, 3, or "general")
-2. Body prose (optional, for readability): `This illustrates [[creator-foundation#Top 3 problems|problem 1]]. "I'm drowning in emails..."`
+Story, proof, and testimonial entries carry an `illustrates:` line: the lesson the entry proves, as plain cause and effect, in the creator's voice (e.g. `illustrates: without systems and delegation, you drown in client work and never get time to grow`). Metaphors use `concept:` and frameworks use `problem_it_solves:` for the same matching role. Write it the way the creator would say it out loud, unquoted unless a colon forces quotes. Add open `themes:` for indexing. No fixed problem categories: an entry surfaces for any segment whose point it fits, and the same entry can be reused across many.
 
 ### When a writing skill USES a story (or proof, or metaphor)
 
@@ -487,8 +490,8 @@ Every tag is lowercase, hyphen-separated. No spaces. No capitals.
 ### Required tags per entry type
 
 - Every foundation doc: `foundation`
-- Every story: `story`, `problem-{n}`, plus theme slugs
-- Every metaphor: `metaphor`, `category-{slug}`, `problem-{n}` (if illustrates one)
+- Every story: `story`, plus theme slugs
+- Every metaphor: `metaphor`, `category-{slug}`, plus theme slugs
 - Every proof: `proof`, `{proof-type-slug}`
 - Every testimonial: `testimonial`, `source-{slug}`
 - Every piece: `piece`, `format-{slug}`, `pillar-{slug}`
@@ -504,14 +507,6 @@ Theme tags are creator-specific and emerge organically. Examples for a systems/a
 - `time-management`
 
 Add theme tags when they'll help future retrieval. Don't force every entry to have one.
-
-### Problem slugs
-
-From creator-foundation.md top 3 problems:
-- `problem-1`
-- `problem-2`
-- `problem-3`
-- `problem-general` (applies to all or none specifically)
 
 ### Proof type slugs
 
@@ -691,7 +686,7 @@ After any significant capture or write session, the creator should be able to:
 1. Open any story entry and see backlinks to the pieces that used it
 2. Open any piece's piece.md and see wikilinks to stories/metaphors/proofs used
 3. Open any client's People profile and see backlinks to every story/proof/piece that mentions them
-4. Filter the graph by tag (`problem-1`, `automation`, etc.) and see a meaningful cluster
+4. Filter the graph by theme tag (`delegation`, `automation`, etc.) and see a meaningful cluster
 
 If any of these don't work, something upstream broke the contract. Fix it in the skill that produced the broken entry.
 
@@ -724,15 +719,15 @@ This means: when a writing skill uses a story, it writes the piece FIRST (primar
 
 **1. Target bank entry not found by query**
 
-The writing skill asks for a story about problem 2, bank returns nothing.
+The writing skill asks for a story that illustrates this segment's point, bank returns nothing.
 
 - Do NOT fabricate a story.
-- Tell the creator: "No story in your bank illustrates problem 2. Do you want to capture one now, or skip this and use a different tension tool?"
+- Tell the creator: "No story in your bank illustrates this point yet. Do you want to capture one now, or skip this and use a different tension tool?"
 - Route to vid-capture if creator wants to capture.
 
 **2. Bank entry frontmatter malformed or missing required fields**
 
-Skill opens a story entry, `problem_illustrated` is missing or malformed.
+Skill opens a story entry, its `illustrates` line is missing or malformed.
 
 - Do NOT auto-fix.
 - Show the creator what was found vs. what the schema expects.

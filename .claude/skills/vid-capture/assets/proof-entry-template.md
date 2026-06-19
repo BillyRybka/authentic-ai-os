@@ -2,10 +2,12 @@
 type: proof
 project: authentic-ai-os
 proof_type: client-win
+illustrates: delegating one task gave back a full day every week
+themes: [delegation, time]
 client: "[[Client Name]]"
 captured: YYYY-MM-DD
 status: captured
-tags: [proof, client-win]
+tags: [proof, client-win, delegation, time]
 asset_path: "banks/proof-bank/assets/{file}"
 used_in: []
 ---
@@ -44,10 +46,12 @@ used_in: []
 **Frontmatter fields:**
 
 - `proof_type`: one of `personal-result` or `client-win` (about who the result belongs to, not how it's presented)
+- `illustrates`: one short line for the point this proof backs, plain cause and effect, in the creator's voice. Unquoted unless a colon forces quotes.
+- `themes`: open list of the angles this proof backs (e.g., `delegation`, `time`). Multi-value.
 - `client`: wikilink to `people/{Full Name}.md`. Only present for proof involving a client. Remove the line for personal-result proof.
 - `captured`: ISO date
 - `status`: starts `captured`
-- `tags`: at minimum `proof` and the proof-type slug (`personal-result` or `client-win`)
+- `tags`: at minimum `proof` and the proof-type slug (`personal-result` or `client-win`), plus the theme slugs.
 - `asset_path`: path to the asset file in `banks/proof-bank/assets/`. Omit if proof is inline.
 - `used_in`: starts `[]`
 

@@ -45,6 +45,8 @@ How the proof gets presented (static screenshot, before-after pairing, live vide
 type: proof
 project: authentic-ai-os
 proof_type: client-win          # personal-result | client-win
+illustrates: delegating one task gave back a full day every week
+themes: [delegation, time]      # open vocabulary, the angles this proof backs
 client: "[[Client Name]]"       # only if proof_type: client-win
 captured: YYYY-MM-DD
 status: captured                # captured | used | archived

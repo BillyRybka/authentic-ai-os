@@ -2,11 +2,13 @@
 type: testimonial
 project: authentic-ai-os
 source: dm
+illustrates: the system kept running after the client stepped back
+themes: [delegation, systems]
 client: "[[Client Name]]"
 anonymized: false
 captured: YYYY-MM-DD
 status: captured
-tags: [testimonial, source-dm]
+tags: [testimonial, source-dm, delegation, systems]
 used_in: []
 ---
 
@@ -36,11 +38,13 @@ used_in: []
 **Frontmatter fields:**
 
 - `source`: one of `comment`, `dm`, `email`, `video`
+- `illustrates`: one short line for the point this quote backs, plain cause and effect, in the creator's voice. Unquoted unless a colon forces quotes.
+- `themes`: open list of the angles this quote backs (e.g., `delegation`, `systems`). Multi-value.
 - `client`: wikilink to `people/{Full Name}.md` if named with permission. Otherwise "Anonymous".
 - `anonymized`: `true` if identifying details were removed, `false` if using real name with permission
 - `captured`: ISO date
 - `status`: starts `captured`
-- `tags`: at minimum `testimonial` and `source-{slug}` (e.g., `source-dm`, `source-comment`)
+- `tags`: at minimum `testimonial` and `source-{slug}` (e.g., `source-dm`, `source-comment`), plus the theme slugs.
 - `used_in`: starts `[]`
 
 **Body rules:**

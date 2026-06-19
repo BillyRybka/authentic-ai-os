@@ -36,11 +36,12 @@ One file per story. Anything narrative with a beginning, a tension, and a resolu
 type: story
 project: authentic-ai-os
 story_type: client              # client | own | viewer
-problem_illustrated: 1          # 1 | 2 | 3 | general
+illustrates: without systems and delegation, you drown in client work and never get time to grow
+themes: [delegation, systems, time]    # open vocabulary, the angles this lesson touches
 client: "[[Client Name]]"       # only for client stories
 captured: YYYY-MM-DD
 status: captured                # captured | used | archived
-tags: [story, problem-{n}, {theme-slug}]
+tags: [story, {theme-slug}]
 used_in: []
 ---
 ```
@@ -52,7 +53,7 @@ used_in: []
 ## How entries get used
 
 1. `vid-capture` writes entries at its Story stage.
-2. Per-video skills (intros, segments) pull stories by problem tag or theme.
+2. Per-video skills (intros, segments) pull stories by what they illustrate and theme tags.
 3. When used, `used_in` updates and `status` flips to `used`. Obsidian backlinks show which scripts pulled which stories.
 
 ## People links

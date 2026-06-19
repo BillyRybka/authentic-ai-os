@@ -221,11 +221,11 @@ framework_type: process
 shape: arrows
 components: ["welcome-call", "first-win-week", "30-day-rhythm"]
 problem_it_solves: "new clients drift in their first month if there's no rhythm"
-problem_illustrated: 2
+themes: [onboarding, delegation]
 maturity: active
 captured: 2026-05-11
 status: captured
-tags: [framework, arrows, problem-2, onboarding]
+tags: [framework, arrows, onboarding]
 used_in: []
 ---
 

@@ -4,10 +4,10 @@ project: authentic-ai-os
 concept: "short concept name"
 category: other
 visual: false
-problem_illustrated: general
+themes: [delegation, systems]
 captured: YYYY-MM-DD
 status: captured
-tags: [metaphor, category-other, non-visual-metaphor, problem-general]
+tags: [metaphor, category-other, non-visual-metaphor, delegation, systems]
 used_in: []
 ---
 
@@ -54,10 +54,10 @@ used_in: []
 - `concept`: short phrase naming what the metaphor clarifies (e.g., "niche vs broad channels")
 - `category`: one of `food`, `cars`, `clothes`, `sports`, `travel`, `other`
 - `visual`: boolean. `true` if the metaphor depends on a prop or graphic to land. `false` if pure speech carries it.
-- `problem_illustrated`: one of `1`, `2`, `3`, `general`
+- `themes`: open list of the angles this metaphor touches (e.g., `delegation`, `systems`). The `concept` above is the metaphor's matching key; there is no fixed problem tag.
 - `captured`: ISO date
 - `status`: starts `captured`
-- `tags`: at minimum `metaphor`, `category-{slug}`, `visual-metaphor` or `non-visual-metaphor`, and `problem-{n}` or `problem-general`
+- `tags`: at minimum `metaphor`, `category-{slug}`, `visual-metaphor` or `non-visual-metaphor`, plus the theme slugs.
 - `used_in`: starts `[]`
 
 **Body rules for non-visual metaphors:**

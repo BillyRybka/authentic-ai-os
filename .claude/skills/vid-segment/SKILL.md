@@ -94,9 +94,9 @@ Goal: the segment works AS A UNIT before any prose gets written. If the structur
 
 **Bank-pulling logic** (the differentiator of this skill). Given the segment's job, query the banks:
 
-- **Story.** Query `banks/story-bank/*.md` by `problem_illustrated` and theme tags. Filter to entries whose Problem section maps to the segment's emotional opening. Surface 0-3 candidates (not more; choice paralysis kills the flow).
+- **Story.** Query `banks/story-bank/*.md` by `illustrates` line and theme tags. Filter to entries whose `illustrates` lesson maps to the segment's point. Surface 0-3 candidates (not more; choice paralysis kills the flow).
 - **Proof.** Query `banks/proof-bank/*.md` by `proof_type` and theme tags. Filter to entries whose "What it proves" sentence backs the segment's framework or claim. Surface 0-2 candidates.
-- **Metaphor.** Query `banks/metaphor-bank/*.md` by `concept:` field and `problem_illustrated`. Filter to entries that clarify an abstract piece in the segment's logic. Surface 0-2 candidates.
+- **Metaphor.** Query `banks/metaphor-bank/*.md` by `concept:` field and theme tags. Filter to entries that clarify an abstract piece in the segment's logic. Surface 0-2 candidates.
 - **Testimonial.** Query `banks/testimonial-bank/*.md` for entries that match the claim being made. Use sparingly. Testimonials work best as social proof inside a segment, not as the segment's spine.
 - **Framework.** Query `banks/framework-bank/*.md` for the creator's named system the segment is teaching. If the segment is built around a creator-owned framework, name it explicitly in the structure draft.
 - **Visual Demo.** No bank to query. If the parable is Visual Demo (per the parable decision matrix), load `knowledge/visual-demo-builder.md` and run the 3-step brainstorm inline (name the point, pick sub-type, generate 2-3 candidate demo concepts, creator picks). The demo lands directly in the prose. No save target.
@@ -262,7 +262,7 @@ From `vault-integration.md` failure modes. Never silent inconsistency.
 | `content/pieces/{slug}/piece.md` | Format, voice_context, goal, pillar, locked title, prior banks pulled |
 | `content/pieces/{slug}/brain-dump.md` | The segment's actual creator-voice raw material |
 | `content/pieces/{slug}/script.md` | The locked skeleton section + prior segments (continuity for transitions) |
-| `banks/story-bank/*.md` | Story candidates by problem_illustrated and theme |
+| `banks/story-bank/*.md` | Story candidates by what they illustrate and theme |
 | `banks/proof-bank/*.md` | Proof candidates by proof_type and theme |
 | `banks/metaphor-bank/*.md` | Metaphor candidates by concept and category |
 | `banks/testimonial-bank/*.md` | Verbatim social proof candidates |

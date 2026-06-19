@@ -4,10 +4,10 @@ project: authentic-ai-os
 concept: "systems vs personal effort"
 category: food
 visual: false
-problem_illustrated: 1
+themes: [systems, delegation]
 captured: 2026-01-08
 status: captured
-tags: [metaphor, category-food, problem-1, fixture]
+tags: [metaphor, category-food, systems, delegation, fixture]
 used_in: []
 ---
 

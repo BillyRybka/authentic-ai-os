@@ -105,7 +105,7 @@ For each segment, query banks + brain-dump for candidate blocks. Surface, don't 
 
 Per segment, list (when available):
 - **Brain-dump material:** the actual lessons, stories, moments, quotes from the brain-dump that land here
-- **Story candidates:** `[[story-slug]]` matches from `banks/story-bank/` by `problem_illustrated` + theme
+- **Story candidates:** `[[story-slug]]` matches from `banks/story-bank/` by `illustrates` + theme
 - **Proof candidates:** `[[proof-slug]]` matches from `banks/proof-bank/` by claim being made
 - **Framework candidates:** `[[framework-slug]]` matches from `banks/framework-bank/` if a creator-owned system fits, OR flag "no framework yet, vid-segment may need to invent one inline" if a principle is needed
 - **Metaphor candidates:** `[[metaphor-slug]]` if an abstract concept needs clarification
@@ -173,7 +173,7 @@ Wait. Loop until outline locks.
 - Brain-dump material thin for a proposed segment → "Segment 3's material is light. Want to lock with a thinner segment, route back to vid-intake to capture more, or merge it into segment 2?"
 - Title-promise payoff lands in segment 1 or 2 → "This puts the named answer in segment 2 of 5. That's early-payoff territory, and most viewers will leave after segment 2. Want to push the named answer to segment 4 or restructure earlier segments?"
 - No threads identified → "I don't see a thread running across these segments. They read as disconnected lessons. Want me to propose a thread, or lock as-is?"
-- Bank candidates empty for a needed block → "Segment 3 wants a story block but the bank has no match for problem-2 + theme:retention. Want to skip the block, use a metaphor instead, or pause to capture a story first?"
+- Bank candidates empty for a needed block → "Segment 3 wants a story block but the bank has no match for this segment's point + theme:retention. Want to skip the block, use a metaphor instead, or pause to capture a story first?"
 
 ### Phase 2: Write script.md skeleton
 
@@ -228,7 +228,7 @@ last_refreshed: {today}
 *Open blocks the script needs that the banks do not have yet. Every "no match" flag from the sections above lands here. Fill them in a batch now, or inline as each segment gets written. Delete a row once its block is captured and wikilinked into its section. An empty list means the script is fully sourced.*
 
 - [ ] Item 2 / framework: pace-tension-rule (no bank match) needed for the pacing payoff
-- [ ] Item 3 / story: hook-gap example (problem-2, theme:retention) bank empty
+- [ ] Item 3 / story: hook-gap example (theme:retention) bank empty
 ```
 
 **Per body section, write:**
