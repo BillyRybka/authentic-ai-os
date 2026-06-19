@@ -52,9 +52,9 @@ last_refreshed: {YYYY-MM-DD}
 - Visual demo flag: {yes / no}
 
 **Bullet outline:**
-- {Setup: what opens this segment}
-- {Tension: the parable + principle movement}
-- {Payoff: the lesson the viewer walks away with}
+- {Parable: how this segment opens, the show (demo / story / metaphor), or "lean, principle-only" for a short-process step}
+- {Principle: the framework or lesson the viewer can action}
+- {Takeaway: the one line they walk away with}
 
 **Tension role:** {opens easy / midpoint / pre-payoff / title-promise payoff / post-payoff application}
 **Outbound handoff:** {the forward-hook into next segment, OR "to ending" if final body section}
@@ -71,7 +71,7 @@ last_refreshed: {YYYY-MM-DD}
 
 ## Ending
 
-*To be written by vid-ending. CTA shape per piece.md goal. Pivots to next problem in Top 3.*
+*To be written by vid-ending. CTA shape per piece.md goal. Ends on a Gap that bridges to the next video.*
 
 ## Blocks to capture
 
