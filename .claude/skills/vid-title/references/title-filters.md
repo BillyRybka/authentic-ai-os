@@ -4,6 +4,66 @@ Load this when judging an edge case, when a soft filter fires and you want the f
 
 The hard cuts (fabrication, over-ceiling without reason, invented compound nouns, read-aloud failure, AI-default openers) live in the SKILL.md body. Everything here is softer: it tends to under-perform, but the creator may have a reason, so flag it and let them decide.
 
+## Angle-lane frame menu
+
+A lane is one emotional or strategic frame on the video. These are the common frames, each
+mapped to the `title-bank` pattern(s) it uses and the typical spread for THIS creator's set
+(read the live `spread` from `title-bank.md` / `pattern-bank.md` each time, the notes below
+are the starting read). Crowded = you blend in. Underused + on-brand = the opportunity.
+
+- **Confession / reckoning.** "I got this wrong, here is what it cost, here is what changed."
+  Patterns: free-form, contrarian-correction. Spread: near-absent in the set, so underused.
+  On-brand: yes (authenticity is the whole positioning). The reliable opportunity lane.
+- **Contrarian / identity.** "Why [common belief or goal] is [a blunt negative]." Patterns:
+  contrarian-identity (spread 2, underused), contrarian-correction (spread 5, crowded).
+  On-brand: yes (against the grain, against the slop).
+- **Warning / mistake.** "Stop doing X." "The mistake that cost me." Pattern:
+  contrarian-correction. Spread: moderate. On-brand: yes.
+- **Authority / mastery.** "Master X." "Better than 99%." Patterns: better-than-masses
+  (spread 4), speed-mastery (spread 5). Crowded. On-brand but you sound like every AI-tips
+  channel.
+- **Result / money.** "$X in N (with tool)." Pattern: money-proof (spread 3). Watch the
+  iceberg: only with a real, defensible number. A fabricated money claim is off-brand.
+- **Speed / compression.** "X in N minutes." Pattern: speed-mastery (spread 5). Crowded, the
+  widest pattern in the set.
+- **Generosity / steal.** "N things I use (steal them)." Pattern: steal-these (spread 2).
+  Underused and on-brand. A strong second opportunity lane.
+- **Curiosity / withheld.** "What nobody tells you about X." Patterns: free-form, contrarian.
+  Spread: moderate. Earns the click only if the body actually withholds and pays off.
+- **News / release.** "X just dropped." Pattern: news-jack-release (spread 5). Crowded and
+  time-sensitive; decays fast.
+
+Derive the lanes for a given video from its tension (Phase 1) plus this menu. The gap analysis
+is just: which of the lanes you built are low-spread AND on-brand. Lead with that one.
+
+## Worked lane group (the target shape)
+
+Video: "21 AI Content Lessons I Learned the Hard Way" (lock list: 21, the lessons, the
+creator's own channel arc). Four lanes, opportunity first:
+
+```
+Recommended lane: Confession (on-brand, underused. The set leans hype/money; the
+honest-reckoning angle is wide open and only the creator can run it credibly.)
+  1. "21 AI Content Mistakes I Made So You Don't"   contrarian-correction  B+N  (44)
+  2. "I Got AI Content Wrong for 2 Years"           free-form              N+S  (37)
+  proof: "Why Growing A Personal Brand Is An AWFUL Idea" (@ed-lawrence, 7.0x)
+
+Contrarian lane (on-brand, underused)
+  3. "Most AI Content Advice Is Backwards"          contrarian-identity    N+B  (38)
+  proof: "Why Introverts Make the BEST Content Creators" (@thisisnickys, 22x)
+
+Authority lane (on-brand, CROWDED, you blend in)
+  4. "21 AI Content Lessons That Actually Work"     better-than-masses     E+B  (43)
+  proof: "How to Use Claude Cowork Better Than 99% of People" (@brockmesarich)
+
+Result lane (CROWDED, iceberg watch, real numbers only)
+  5. "The 21 Lessons Behind 100K Subscribers"       money-proof            B+S  (43)
+  proof: "How This Mom Makes $48K/Month With Claude" (@sabrina_ramonov)
+```
+
+The opportunity is not the highest-performing shape in the abstract. It is the on-brand lane
+the competitor set leaves open. That is what makes the title feel original instead of safe.
+
 ## Soft friction catalog
 
 Surface these in the candidate annotation so the creator sees the option and the concern together. Example: "5. 'Maybe You're Hiring Too Early', Why-X pattern, BENS: N (39). Soft flag: hedge word 'maybe'."

@@ -2,17 +2,32 @@
 slug: claude-content-skills
 locked_title: "7 Claude Skills I Can't Live Without (steal them)"
 locked_bens: E+N
+locked_lane: Steal-These
 ---
 
-## Candidates
+## Lanes
 
-1. "7 Claude Skills I Can't Live Without (steal them)"     | pattern: steal-these          | BENS: E+N | 50
-2. "DON'T Hire a Content Team, Use These 7 Skills"         | pattern: contrarian-correction | BENS: N+E | 46
-3. "Why You Don't Need a Content Team (7 Claude Skills)"   | pattern: contrarian-identity  | BENS: N   | 52  (over 50-char target, under 55-char ceiling)
-4. "How I Run a Content Team Alone (7 Claude Skills)"      | pattern: free-form            | BENS: S+E | 49  (soft flag: "How I" credibility on a new channel)
-5. "The 7 Claude Skills That Power a Solo Business"        | pattern: free-form            | BENS: B+E | 47
-6. "Run a Content Team Solo With 7 Claude Skills"          | pattern: speed-mastery        | BENS: E+N | 45
+### Steal-These | on-brand | underused | opportunity: yes
+1. "7 Claude Skills I Can't Live Without (steal them)"  | pattern: steal-these  | BENS: E+N  | 50
+2. "My 7 Claude Content Skills (steal them)"  | pattern: steal-these  | BENS: E+N  | 40
+proof: "15 Claude Cowork Skills I Can't Live Without (steal them)" (@brockmesarich, 9.5x)
+
+### Contrarian-Identity | on-brand | underused | opportunity: no
+1. "Why You Don't Need a Content Team (7 Claude Skills)"  | pattern: contrarian-identity  | BENS: N+E  | 52
+2. "Why Hiring a Content Team Is the Slow Way"  | pattern: contrarian-identity  | BENS: N  | 42
+proof: "Why Growing A Personal Brand Is An AWFUL Idea" (@ed-lawrence, 6.3x)
+
+### Contrarian-Correction | on-brand | crowded | opportunity: no
+1. "DON'T Hire a Content Team, Use These 7 Skills"  | pattern: contrarian-correction  | BENS: N+E  | 46
+proof: "DON'T Sell AI Agents, Sell AI Micro-Apps Instead!" (@duncanrogoff, 64.8x)
+
+### Solo-Leverage | on-brand | crowded | opportunity: no
+1. "I Run My Entire Content Operation Alone (7 Skills)"  | pattern: solo-leverage  | BENS: S+E  | 51
+proof: "I Built My Entire Content Team Inside Claude (No Employees)" (@thisisnickys, 4.8x)
+
+### Speed-Mastery | on-brand | crowded | opportunity: no
+1. "Run a Content Team Solo With 7 Claude Skills"  | pattern: speed-mastery  | BENS: E+N  | 45
+proof: "15 Claude Cowork Skills I Can't Live Without (steal them)" (@brockmesarich, 9.5x)
 
 ## Recommendation
-
-Pick: 1. "7 Claude Skills I Can't Live Without (steal them)" is the strongest candidate. The steal-these pattern is the most convergent shape for this exact material type in the bank, with direct proof from Brock's "15 Claude Cowork Skills I Can't Live Without (steal them)" at 9.5x median. Billy's version swaps the count to 7 (the exact lock-list number) and keeps the generosity signal intact. At 50 chars it hits the packaging-system target and the E+N BENS letters match the listicle format's natural bias exactly.
+The Steal-These lane is the pick. Spread 2 of 11 makes it underused, it is on-brand (the whole video hands over the skills, generosity is the premise), and the direct proof from Brock's same shape at 9.5x median confirms it works in this exact niche. "7 Claude Skills I Can't Live Without (steal them)" carries the exact count from the lock list, the generosity signal, and the tool name in one 50-character line.

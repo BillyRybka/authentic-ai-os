@@ -1,214 +1,189 @@
 ---
 name: vid-title
-description: Generate BENS-aligned title candidates for one video and lock 1 with the creator. Builds candidates from the creator's proven patterns in `banks/title-bank.md` and `banks/power-words-bank.md`, the video's specific material (brain-dump, framing, or script), and the BENS framework. Wide divergent pass, then a convergent cut. Anti-fabrication. Every claim backed by the script. Runnable standalone OR invoked by the orchestrator during the packaging phase (after framing, before structure). Triggers on "generate titles", "title options for [video]", "lock the title", "rename this video", or when a downstream pipeline needs a locked title.
+description: Package one video into a title by exploring distinct angle lanes, then leading with the underused on-brand angle competitors are not using (the opportunity), with real competitor proof pinned to each lane. Builds from the creator's `banks/pattern-bank.md`, `banks/title-bank.md`, and `banks/power-words-bank.md`, filtered by the iceberg positioning, grounded in the video's material. Anti-fabrication. Runnable standalone OR invoked by the orchestrator during packaging (after framing, before structure). Triggers on "generate titles", "title options for [video]", "lock the title", "rename this video", "give me angles for this", or when a downstream pipeline needs a locked title.
 ---
 
 # Video Title Generator
 
-Generates BENS-aligned title candidates for one video, then locks one with the creator.
+Packages one video into a title. It does NOT pick from a flat list of strings. It explores distinct angle lanes for the same video, finds the lane that is on-brand AND underused by competitors, and leads with that as the recommendation. The creator picks.
 
-**Scope boundary:** this skill produces THE title only. It does not write thumbnails (that is `vid-thumbnail`), hooks (`vid-intro`), or scripts. If the creator wants thumbnail text too, they run `vid-thumbnail` separately or via the orchestrator.
+**Scope boundary:** this skill produces THE title. It coordinates with the thumbnail but does not write thumbnail text (that is `vid-thumbnail`), hooks (`vid-intro`), or scripts.
 
 ## What this produces
 
-A locked title for one video, saved to `content/pieces/{slug}/piece.md` (the `title:` field). The save happens in both standalone and pipeline mode. When invoked as a sub-skill by `vid-pipeline`, it also returns the title string to the caller for assembly awareness.
+A locked title for one video, saved to `content/pieces/{slug}/piece.md` (the `title:` field), plus the `title_lane:` it came from. The save happens in standalone and pipeline mode. In pipeline mode it also returns the title string to the caller for assembly awareness.
 
 ## When to run this
 
-- A video is framed and needs its title locked before structure and scripting (the packaging step)
-- Creator wants to re-title an existing piece based on a better read of the angle
-- Orchestrator (`vid-pipeline`) invokes during the packaging phase, after framing and before structure
+- A video is framed and needs its title locked before structure and scripting
+- The creator wants to re-title an existing piece or see fresh angles on it
+- `vid-pipeline` invokes during packaging, after framing and before structure
 
 ## Prerequisites
 
 Hard requirements:
-- `foundation/creator-foundation.md` exists with avatar plus Top 3 problems (so candidates align with what the audience cares about)
-- `foundation/packaging-system.md` exists with current packaging defaults and format guidance
-- `content/pieces/{slug}/` exists with at minimum `piece.md` OR a brain-dump / framing artifact that explains what the video is about
+- `foundation/creator-foundation.md` exists with the iceberg, avatar, and Top 3 problems (the iceberg is the filter that finds the on-brand angle)
+- `foundation/packaging-system.md` exists with format guidance and packaging defaults
+- `content/pieces/{slug}/` exists with at minimum `piece.md` OR a brain-dump / framing artifact explaining what the video is about
 
 If the foundation docs are missing, hard stop. Tell the creator to run `/foundation` first.
 
-If `banks/title-bank.md` is missing, fall back to BENS-framework patterns plus the title-bank seed at `${CLAUDE_PLUGIN_ROOT}/skills/vid-research/assets/title-bank-template.md` (or `.claude/skills/vid-research/assets/title-bank-template.md` in the dev workspace). Note in the brief: "Title bank not yet scaffolded. Using seed patterns only." Without a real bank the output will skew generic, so say so.
+If `banks/pattern-bank.md` is missing you cannot do the gap analysis (which lanes are crowded vs underused). Say so, fall back to the `title-bank` patterns plus the BENS framework, and warn that without the competitor data the output will skew safe.
 
-## Invocation modes
+## The engine: differentiation over safety
 
-**Standalone:** creator invokes directly. After lock, save the title to `content/pieces/{slug}/piece.md` and end.
+The safe title is the one every competitor is already using. This skill's job is the opposite: find the angle that fits the creator's positioning AND that the competitor set underuses, because that is the angle nobody else can run and the one that stands out in the feed.
 
-**Sub-skill:** the orchestrator invokes mid-pipeline during packaging. The save to `piece.md` still happens here; also return the locked title string (and the BENS letters it hits) to the caller for assembly awareness.
+This is computable, not a vibe. Use this order:
 
-If invoked with context from a caller (e.g. "title for video about X, format=case-study, locked angle=Y"), skip questions the caller has already answered and go straight to generation.
+1. **The iceberg is the filter.** Read `creator-foundation.md`. An angle that contradicts the creator's positioning is off-brand, no matter how well it performs for someone else. For this creator ("AI should enhance you, not replace you, no slop, you lead"), a pure hype or fake-money angle is off-brand even if it is a proven outlier elsewhere.
+2. **The creator's own material leads.** The lock list (below) and any working title from `vid-ideas` come first. Specifics from the video are the raw material every lane is built from.
+3. **Competitor data is evidence AND the gap signal.** `banks/pattern-bank.md` records, per pattern, `spread: N of 11 channels`, and per outlier the channel and the view multiplier (xMed). High spread (5+ of 11) means the lane is crowded: proven, but generic, and you blend in. Low spread (1 to 2 of 11) on a lane that still fits the iceberg is the underused angle: the opportunity.
 
-## The engine: build from proven patterns
+**The target is the lane that is on-brand AND underused. Lead with it.** Mark the crowded lanes as the safe alternative so the creator sees the tradeoff and chooses. Never bury the original angle under the safe ones.
 
-The creativity lives in the creator's own researched winners, not in free-form invention. `banks/title-bank.md` holds fill-in-the-blank patterns, each with worked examples drawn from real outlier titles (and the channels and view counts behind them). `banks/power-words-bank.md` holds the words that move this audience, each with when-it-lands and when-it-fails notes. These two files are the source you generate FROM, not optional reference you glance at.
+**This skill is a conversation, not a document.** Keep messages short. Do not paste bank contents into chat. The references are what you think with. The creator sees the lane groups and your recommendation.
 
-Most candidates should be a named bank pattern with its slots filled by this video's actual material, using power words selected by the land/fail criteria. Free-form BENS titles are allowed, but they are the minority. Lean on the patterns with the widest spread (used across the most channels) and the strongest worked examples first, because those are the most proven.
-
-**This skill is a conversation, not a document.** Keep messages short. Do not paste bank contents or reference material into chat. The references are what you think with. The creator sees the candidate list and your recommendation.
-
-## Phase 1: Load context and build the lock list
+## Phase 1: Load context, build the lock list, find the tension
 
 **Silent loads** (do NOT paste into chat):
 
-1. `foundation/creator-foundation.md` (avatar, Top 3 problems, credibility brags)
-2. `foundation/packaging-system.md` (format guidance, current packaging defaults)
-3. `knowledge/BENS-framework.md` (Big / Easy / New / Safe rules and examples)
-4. `banks/title-bank.md` (the patterns and worked examples you build from)
-5. `banks/power-words-bank.md` (words selected by when-it-lands / when-it-fails, not by raw frequency)
-6. `content/pieces/{slug}/piece.md` (the video's format, goal, pillar)
-7. `content/pieces/{slug}/brain-dump.md` AND/OR `script.md`, whatever exists. Pull the actual angle, the specific numbers, named methods, story moments.
-8. `banks/packaging-bank/*.md` filtered to `source: own`, if any exist. Past winning titles as style anchors for THIS creator.
+1. `foundation/creator-foundation.md` (iceberg, avatar, Top 3 problems, credibility brags)
+2. `foundation/packaging-system.md` (format guidance, packaging defaults)
+3. `banks/pattern-bank.md` (the competitor outliers, their spreads and view multipliers: the gap-finder and the proof source)
+4. `banks/title-bank.md` (the fill-in patterns, each tagged with its `pattern_id` and `spread`)
+5. `banks/power-words-bank.md` (words selected by when-it-lands / when-it-fails, not by frequency)
+6. `knowledge/BENS-framework.md` (Big / Easy / New / Safe)
+7. `content/pieces/{slug}/piece.md` (format, goal, pillar, locked angle if framing ran)
+8. `content/pieces/{slug}/brain-dump.md` AND/OR `script.md`, whatever exists (the actual material)
 
-**Build the lock list.** Every verifiable specific that actually appears in the material: numbers, dollar figures, percentages, timeframes, AND named methods, tools, products, frameworks, and people. Candidates may only use specifics from this lock list. If it is not in the material, it cannot go in a title.
+**Build the lock list.** Every verifiable specific in the material: numbers, dollar figures, percentages, timeframes, AND named methods, tools, products, frameworks, and people. Titles may use only what is on this list. If it is not in the material, it cannot go in a title.
 
-**Name the avatar problem this video addresses** (1, 2, or 3 from creator-foundation). Candidates should hook into that problem.
+**Find the tension, not the topic.** Read the material and name the emotional cores it actually carries. A "21 lessons I learned the hard way" video is not one thing: it holds credibility (I have done this), confession (I got things wrong), warning (here is what to avoid), and payoff (here is what works). Each core is a candidate lane. Lead from the tension, because that is what the viewer feels before they read the words.
 
-**Read the format's natural BENS bias** from packaging-system:
-- Case Study: S (specific receipts) plus B (transformation size)
-- Short Process: E (achievable, defined steps) plus B
-- Roast: N (contrarian) plus B
-- Deep Dive: B plus N plus S (authority through depth)
-- Interview: S (borrowed credibility) plus N (unexpected take)
-- News: N (timely) plus B (stakes)
-- Listicle: E (numbered, digestible) plus N
+## Phase 2: Build the angle lanes (divergent, go wide)
 
-## Phase 2: Divergent pass (go wide, internal)
+Build 4 to 5 distinct lanes for the SAME video. A lane is one emotional or strategic frame, not one title. Pull frames from the tension you found plus the menu in `references/title-filters.md` (confession, warning, contrarian, authority, result, curiosity, generosity). Reach for frames you would not normally pick; this is where freshness comes from.
 
-Generate a wide pool of rough title directions for your own thinking. Do NOT show this pool to the creator and do NOT polish it yet.
+For each lane, draft:
+- The frame in one line (what this lane leans on)
+- 2 to 3 title options built in it, filling the slots with lock-list specifics
+- The title-bank `pattern_id` each option draws on (or free-form)
+- One real competitor proof from `pattern-bank.md`: the outlier title, the channel, and its xMed multiplier. The proof shows the shape works; it is not a title to copy.
 
-In this pass, go for spread, not finish:
-- Pull from many DIFFERENT title-bank patterns, not your first favorite. Aim to touch at least 5 or 6 distinct patterns.
-- Hit different angles: different problems from the Top 3, different BENS letters, different power words.
-- Ignore the character ceiling and read-aloud polish for now. A clunky-but-fresh direction is worth keeping at this stage.
+The one rule that never relaxes here: anti-fabrication. Going wide means trying more real angles, never inventing a number, tool, or name.
 
-The one constraint that never relaxes, even here: anti-fabrication. Never invent a number, method, tool, or name. Everything still comes from the lock list.
+## Phase 3: Gap analysis and craft cut (converge)
 
-Aim for roughly 15 to 20 rough directions. The point is to escape the safe center before any constraint pulls you back to it. If every direction rhymes, you have not gone wide enough; reach for patterns and power words you skipped.
+For each lane, label two things from the data:
+- **Crowded or underused:** read the `spread` of the pattern(s) the lane uses. 5+ of 11 is crowded. 1 to 2 of 11 is underused.
+- **On-brand or off-brand:** does the lane fit the iceberg? An off-brand lane is cut or flagged, however well it performs elsewhere.
 
-## Phase 3: Convergent pass (bring constraints back, cut)
+**Name the opportunity.** The lane that is on-brand AND underused is the opportunity. That is the recommendation. If two qualify, prefer the one whose tension is sharpest for this specific video.
 
-Now bring the constraints back and cut the pool down to the 5 to 8 strongest, polished candidates. Force them to be distinct from each other.
+Then put every surviving title through the craft gates:
+- Lock-list only (no fabrication)
+- Aim for 50 characters, 55 hard ceiling. Flag 51 to 55 as over target but allowed; cut over 55 unless it is clearly strongest, and say why
+- Hits at least one BENS letter (annotate which)
+- Passes the read-aloud test: one continuous thought a person would say out loud, not stitched fragments, not an invented compound noun, not a mid-title period smash-up
+- Carries a lock-list specific that makes it impossible to paste onto another video
+- **Title and thumbnail unit check:** prefer titles that leave the thumbnail room to add weight (a face, the number, a bold word) instead of saying the same thing the thumbnail will. If the title and the obvious thumbnail would be the same beat twice, sharpen one of them
 
-Each surviving candidate must:
-- Use only specifics from the lock list (no fabrication)
-- Aim for 50 characters or fewer, with 55 as the hard ceiling. The packaging-system checklist sets ~50 as the target, because punch and front-loading carry the click (mobile and search show fewer characters than the field allows). Flag any candidate of 51 to 55 as over target but allowed; cut anything over 55 unless it is clearly the strongest, in which case surface it and say why.
-- Hit at least one BENS letter (annotate which)
-- Pass the read-aloud test (below)
-- Carry one specific element that makes it impossible to paste onto another video. If you cannot name that element, the candidate is generic; cut it or pull a sharper specific from the material.
+Trim each lane to its 1 to 2 strongest titles.
 
-**Diversity of the final set:** the 5 to 8 should draw from at least 3 distinct title-bank patterns, and no more than 2 should share the same primary BENS letter. This is what stops the list from being one idea reworded.
+## Phase 4: Present, opportunity first
 
-**The read-aloud test (the primary gate).** A title must read as one continuous thought spoken in natural English. Say it out loud. If it sounds like a person said it in conversation, it passes. If it sounds like fragments stitched together, cut it.
+Lead with the opportunity lane, marked Recommended, with one or two sentences on why: it fits the positioning, the competitor set underuses it, and here is the proof. Then list the other lanes, each labeled crowded or underused and on-brand or off-brand, each with its proof. Be a creative partner with a point of view, not a stenographer.
 
-Examples that PASS (real published titles):
-- "How I Added 55 Pounds To My Squat In 12 Weeks" (one breath, one thought)
-- "I QUIT My $120,000 Job After Learning 3 Things" (natural complex sentence)
-- "Why Looking Poor Is Important" (short, complete claim)
-- "I Made $12M Selling A Fruit" (subject plus verb plus specific)
-- "The 21 Principles of the Top 0.01%" (defined number plus specific group, one phrase)
-- "Top 10 Most HARMFUL Foods People Keep EATING" (superlative plus specific group, flows)
-
-Examples that FAIL (and why):
-- "365 To 405 In 11 Weeks (3 Changes)" (three fragments plus a tag-on parenthetical, no human says this)
-- "I Hired A VA. Revenue Dropped 30%." (a mid-title period splits it into two failed sentences)
-- "The Pause Squat Rule That Unsticks 365s" ("Unsticks 365s" is an invented compound, not English)
-- "The 12-SOP Rule" ("12-SOP" is a label, not a duration. Compare "The 90 Minute Rule", where "90 minute" describes time and reads as a system)
-
-**Two more hard cuts** (genuinely broken, not preference):
-- **Invented compound nouns.** "Unsticks 365s", "100xs your X". If the phrase returns nothing when you imagine searching it, it is not real language. Cut.
-- **AI-default openers.** "The truth about", "Everything you need to know about", "Why you should", "The ultimate guide to", "Discover the secret to", and vague benefit stacks ("faster, easier, better"). These are the on-distribution center the model drifts toward. They could front a thousand videos. Cut and pull a real specific from the material instead.
-
-Everything else (hedge words, stock phrases, colons, parentheticals, credibility-mismatch, number-stuffing, and the rest) is soft friction: it tends to under-perform but the creator may have a reason. Flag it in the annotation and let them decide. The full soft-filter catalog, the natural-language pattern shapes, and the deeper craft notes live in `references/title-filters.md`. Load it when you are judging an edge case or want to widen the divergent pass; do not paste it into chat.
-
-**Final check before you present.** Run the surviving set through these gates and fix any miss before the creator sees it. These enforce the rules above, which are easy to state and easy to skip under generation pressure.
-
-- Every candidate is 55 characters or fewer. Rewrite or cut any that run over.
-- No more than 2 candidates share the same primary BENS letter. If 3 or more share one (case-study sets drift to B and S), swap one for a different pattern and a different letter so the set spans the avatar's angles, not just the obvious one.
-- A clear majority are built from a named title-bank pattern, not free-form. For a set of 5, at least 4 should name a pattern. Free-form is the minority, not the filler.
-- The candidate you will recommend carries a lock-list specific that makes it impossible to paste onto another video. "Claude Cowork Can Now Run Without You" is weaker than "Claude Cowork Scheduled Agents Run Without You" because the first drops the one detail (the named feature) that ties it to this video. If your top pick is generic on that test, sharpen it or pick another.
-
-## Phase 4: Present with a recommendation
-
-Show the surviving candidates as a numbered list. For each: the title, the bank pattern it came from (or "free-form"), the BENS letters, and the character count. Where a soft filter fired, name it in one short clause so the creator sees the option and the concern together.
-
-Present as a creative partner with a point of view, not a stenographer. Lead with your pick and one sentence on why it is the strongest for this video and this avatar. Example shape:
+Shape:
 
 ```
-My pick: 3. It is the only one that names the $1.3M number and reads in one breath.
+Recommended lane: Confession (on-brand, underused. Your direct competitors lean hype and
+money. Almost nobody in the set runs the honest-reckoning angle, so it stands out and only
+you can run it credibly.)
 
-1. "I Hired A VA. Then Lost 30% Revenue"        free-form        B+S  (47)
-2. "Don't Hire Until You Have These 12 SOPs"    DON'T-do-instead  E+N  (43)
-3. "The Mistake That Cost Me 6 Weeks Of Revenue" cost-me-pattern  B+N  (44)
-4. "Why Your First VA Hire Tanks Revenue"        Why-X-is         B+N  (40)
+  1. "21 AI Content Mistakes I Made So You Don't"   contrarian-correction  B+N  (44)
+  2. "I Got AI Content Wrong for 2 Years"           free-form              N+S  (37)
+  proof: "Why Growing A Personal Brand Is An AWFUL Idea" (@ed-lawrence, 7.0x) shows the
+  contrarian-honesty shape lands in this niche.
+
+Authority lane (on-brand, CROWDED. Proven, but you blend in with every AI-tips channel.)
+  3. "21 AI Content Lessons That Actually Work"     better-than-masses     E+B  (43)
+  proof: "Master 95% of Claude Design in 17 Minutes" (@brockmesarich, 28x)
+
+Result lane (CROWDED, watch the iceberg. Only with a real, defensible number.)
+  4. "The 21 Lessons Behind a $1.3M Channel"        money-proof            B+S  (42)
+  proof: "How This Mom Makes $48K/Month With Claude" (@sabrina_ramonov, 17x)
 ```
 
 Then ask:
 
-> "Which one? Or want me to go wider, push a different problem, or hit different BENS letters?"
-
-Wait for the creator. If they pick, go to Phase 5.
+> "Which lane feels closest? I can go wider on the opportunity lane, or push a different tension."
 
 If they want changes:
-- "Different angle" means re-run the divergent pass weighted toward a different audience problem or angle
-- "Different BENS" means weight toward the letters they want (e.g. more N, less B)
+- "Different tension" means rebuild lanes from a different emotional core
+- "Go wider" means more options inside the chosen lane
 - "Shorter" means re-cut under 40 characters
-- "More specific" means pull more lock-list specifics into the candidates
-- "Scrap it" means re-run Phase 1, often with the creator pasting new framing
+- "Play it safer" means surface the crowded high-spread lane as the lead instead
+- "More specific" means pull more lock-list specifics into the options
 
 **Push back when a pick is weak:**
-- Generic pick ("How To Build A Business"): "That would fit a thousand videos. Want me to anchor it to the $1.3M number or the named method from the script?"
-- Fabricated number: refuse and explain. Only lock-list specifics are allowed.
-- Over the ceiling with no good reason: flag it and offer a tighter cut.
+- A crowded generic pick: name that it blends in, and offer the on-brand underused lane instead
+- A fabricated number or claim: refuse and explain. Only lock-list specifics are allowed
+- An off-brand hype pick: flag that it contradicts the positioning and will pull the wrong viewer
 
 ## Phase 5: Lock and save
 
-Once picked, save in BOTH modes. The `title:` field is how the pipeline knows packaging advanced, so the write always happens here; never hand it to the caller:
+Once picked, save in BOTH modes (the `title:` field is how the pipeline knows packaging advanced, so the write always happens here):
 - Save the title to `content/pieces/{slug}/piece.md` `title:` field
-- Bump `piece.md` `last_updated:` to today's date
-- Confirm: "Title locked: '{title}'. Saved to piece.md."
+- Save the lane it came from to `title_lane:`
+- Bump `piece.md` `last_updated:` to today
+- Confirm: "Title locked: '{title}' (from the {lane} lane). Saved to piece.md."
 
-**Sub-skill mode** also returns the title string (and the BENS letters it hits) to the caller for assembly. The piece.md write above still happens here regardless of mode.
+Pipeline mode also returns the title string and BENS letters to the caller for assembly. The piece.md write still happens here.
 
 **Stop.** Do not generate the thumbnail, hook, or script. Those are different skills.
 
 ## Anti-fabrication discipline
 
-Every number, name, method, tool, framework, or specific phrase in a title MUST trace to the script, brain-dump, or foundation docs. If it is not in the material, the title cannot claim it. This holds in the divergent pass too: going wide means trying more real angles, never inventing facts.
+Every number, name, method, tool, framework, or specific phrase in a title MUST trace to the material or foundation docs. If it is not there, the title cannot claim it, in any lane, including the divergent pass.
 
-If the creator wants a number-driven title and the material has no usable number, kick it back: "The script has no number to ground this. Either drop the number-driven angle or add the number to the script first." Same rule as `vid-thumbnail`, kept consistent across the writing skills.
+If the creator wants a number-driven title and the material has no usable number, kick it back: "The script has no number to ground this. Add the number to the script first, or pick a lane that does not lean on one." A made-up number is the exact slop this brand is built against.
 
 ## Title and thumbnail pairing
 
-Title and thumbnail pair eventually (`vid-thumbnail` produces the thumbnail text), and they should not repeat words. If `vid-thumbnail` has already produced a `thumbnail-brief.md` for this piece, read its picks and avoid repeating their key words in the title.
+The title and thumbnail are one unit. They make the same promise and they do not repeat the same words. Two coordination rules:
+- In Phase 3, run the unit check: prefer a title that leaves the thumbnail room to add a different beat (a face, the number, a bold word), not one the thumbnail will only echo.
+- If `vid-thumbnail` already produced a `thumbnail-brief.md` for this piece, read its picks and avoid repeating their key words in the title.
 
-If `vid-thumbnail` has not run yet, just lock the title. The thumbnail will respect the title's lock-words later (the rule lives in `knowledge/thumbnail-text-patterns.md`). vid-title runs first; it does not wait on the thumbnail.
+vid-title runs first, does not wait on the thumbnail, and does not write thumbnail text. If the thumbnail has not run, just lock the title; `vid-thumbnail` will respect the title's words later (the rule lives in `knowledge/thumbnail-text-patterns.md`).
 
 ## Principles
 
-- **Build from the bank, not from a blank page.** The proven patterns and power words are the engine. Free-form is the minority.
-- **Go wide before you cut.** The divergent pass is where freshness comes from. Skipping it is why title lists drift into one idea reworded.
+- **Differentiation over safety.** The widest-spread pattern is the crowded center. Lead with the on-brand angle the competitor set underuses.
+- **Lead with the tension, not the topic.** The viewer feels the frame before they read the words.
+- **The iceberg is the filter.** On-brand first. An off-brand outlier is still off-brand.
+- **Prove the shape.** Pin a real competitor outlier and its multiplier to every lane, so a recommendation is evidence, not taste.
 - **Specificity wins.** Real numbers over round numbers. Named methods over generic verbs. A specific person or situation over "people."
-- **Fit the video AND the avatar.** A title that fits the video but not the avatar misses. One that fits the avatar but misreads the video is bait. Both must hold.
 - **Read aloud is the voice test.** If the creator would reword it speaking it, it is wrong.
-- **Creator drives, Claude structures.** Never invent claims to make a title sound bigger.
+- **Creator drives, Claude structures.** Never invent a claim to make a title sound bigger.
 
 ## Reference index
 
-- `knowledge/BENS-framework.md`: Big / Easy / New / Safe rules and examples
-- `banks/title-bank.md`: the patterns and worked examples you build from
-- `banks/power-words-bank.md`: words selected by when-it-lands / when-it-fails
-- `references/title-filters.md`: the full soft-filter catalog, natural-language pattern shapes, and craft notes (load on demand)
-- `vid-research/assets/title-bank-template.md`: fallback patterns if the bank is not scaffolded
-- `foundation/creator-foundation.md`: avatar, Top 3 problems
+- `banks/pattern-bank.md`: competitor outliers with spread and xMed multipliers (gap-finder + proof)
+- `banks/title-bank.md`: fill-in patterns, each with `pattern_id` and `spread`
+- `banks/power-words-bank.md`: words by when-it-lands / when-it-fails
+- `references/title-filters.md`: the angle-lane frame menu, the soft-filter catalog, pattern shapes, and craft notes (load on demand)
+- `knowledge/BENS-framework.md`: Big / Easy / New / Safe
+- `foundation/creator-foundation.md`: iceberg (the on-brand filter), avatar, Top 3
 - `foundation/packaging-system.md`: format guidance, packaging defaults
-- `content/pieces/{slug}/*`: the video's actual material
-- `banks/packaging-bank/*.md` (own): past winning titles as style anchors
+- `content/pieces/{slug}/*`: the video's material
 
 ## Related skills
 
-- The `/foundation` chain produces `creator-foundation.md`; `vid-research` produces `packaging-system.md`, `title-bank.md`, and `power-words-bank.md`, the files this skill builds from
-- `vid-thumbnail` pairs with this skill; coordinate to avoid word repeats
-- `vid-framing` runs before this skill and locks the angle plus format the title is built on
-- `vid-ideas` may have surfaced a provisional working title. If `piece.md` carries one, treat it as a single input candidate, not a locked answer. This skill does the real craft and is free to beat it or discard it.
-- `vid-pipeline` (future) orchestrates and calls this skill during packaging
-- `vid-measurement` (future) does post-publish analysis and logs winning titles back into `banks/title-bank.md` and `banks/packaging-bank/`
+- `/foundation` produces `creator-foundation.md`; `vid-research` produces `packaging-system.md`, `pattern-bank.md`, `title-bank.md`, and `power-words-bank.md`, the files this skill reads
+- `vid-framing` runs before this skill and locks the CONTENT angle (the argument). This skill packages that content into a title: it explores PACKAGING lanes, it does not re-argue the video
+- `vid-thumbnail` is a separate skill that runs after and writes the thumbnail text. This skill only coordinates with it, it never writes thumbnail text
+- `vid-ideas` may have surfaced a provisional working title; treat it as one input, free to beat or discard
+- `vid-pipeline` orchestrates and calls this skill during packaging
+- `vid-measurement` (future) logs winning titles and their lanes back into the banks

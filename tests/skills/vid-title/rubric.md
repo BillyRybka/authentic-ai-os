@@ -9,17 +9,20 @@ requires the criterion to be clearly met, not arguably met.
 ## What you receive per case
 
 - `titles.md`, the note the skill produced: YAML frontmatter (slug,
-  locked_title, locked_bens), a `## Candidates` section (5-8 numbered
-  candidates, each annotated with pattern, BENS, and char count), and a
-  `## Recommendation` section (1-2 sentences naming the pick and why)
+  locked_title, locked_bens, locked_lane), a `## Lanes` section (4 to 5 lane
+  headings, each annotated on-brand/off-brand, crowded/underused, and
+  opportunity: yes/no; under each heading 1 to 2 numbered candidates annotated
+  with pattern, BENS, and char count; under each heading a proof: line), and a
+  `## Recommendation` section (1-2 sentences naming the locked lane and why)
 - `transcript.md`, the full reasoning trace showing the divergent pass,
-  convergent cut, and creator exchange
+  gap analysis, convergent cut, and creator exchange
 - The frozen fixture for this case: `piece.md` (format, pillar, locked angle)
   and `brain-dump.md` (material, lock list)
-- The creator's banks: `title-bank.md` (9 named patterns) and
+- The creator's banks: `title-bank.md` (9 named patterns, each with spread) and
   `power-words-bank.md`
-- The foundation: `creator-foundation.md` (avatar, Top 3 problems) and
-  `voice-profile.md` (refusals and fingerprint)
+- The gap-finder data: `pattern-bank.md` (competitor outliers, spreads, xMed
+  multipliers per channel)
+- The foundation: `creator-foundation.md` (iceberg, avatar, Top 3 problems)
 
 Only run Tier B on cases that already passed Tier A. If a case failed Tier A,
 do not score it. The mechanical floor was not met.
@@ -80,16 +83,19 @@ parenthetical tag-on that turns a flowing title into a stop-start structure
 
 ### 2. bank_anchored
 
-**What it measures:** The majority of the candidate set is visibly built from
-the creator's 9 named title-bank patterns, not from free-form invention. The
-skill's job is to fill proven shapes with real material, not to free-style.
+**What it measures:** The majority of lane titles are visibly built from the
+creator's 9 named title-bank patterns, not from free-form invention. The skill's
+job is to fill proven shapes with real material, not to free-style. The pattern
+annotation on each candidate is the signal; the transcript shows whether the
+divergent pass actually pulled multiple patterns.
 
-**How to judge:** Look at the `pattern:` annotation for each candidate. At
-least 4 of the 5-8 candidates should reference a real pattern_id from
-`title-bank.md` (contrarian-identity, contrarian-correction, solo-leverage,
-news-jack-release, speed-mastery, better-than-masses, money-proof, steal-these,
-definitive-resource). "Free-form" is allowed but it must be the minority. A set
-where most candidates say "free-form" failed to build from the bank.
+**How to judge:** Look at the `pattern:` annotation for each candidate across
+all lanes. At least 4 of the total 5 to 10 candidates should reference a real
+pattern_id from `title-bank.md` (contrarian-identity, contrarian-correction,
+solo-leverage, news-jack-release, speed-mastery, better-than-masses,
+money-proof, steal-these, definitive-resource). "Free-form" is allowed but it
+must be the minority. A set where most candidates say "free-form" failed to
+build from the bank.
 
 Check the transcript: did the divergent pass actually pull multiple patterns, or
 did it stay in one shape?
@@ -102,10 +108,11 @@ transcript shows the divergent pass was effectively free-form invention with
 pattern labels retrofitted after the fact.
 
 **Calibration examples:**
-- Pass (6 candidates): contrarian-correction, solo-leverage, speed-mastery,
-  steal-these, news-jack-release, contrarian-identity. Six real shapes.
-- Fail (5 candidates): free-form, free-form, free-form, contrarian-correction,
-  free-form. One real pattern in five.
+- Pass (6 candidates across 4 lanes): contrarian-correction, solo-leverage,
+  speed-mastery, steal-these, news-jack-release, contrarian-identity. Six real
+  shapes across different lanes.
+- Fail (5 candidates across 3 lanes): free-form, free-form, free-form,
+  contrarian-correction, free-form. One real pattern in five.
 
 ---
 
@@ -199,35 +206,41 @@ E with no N).
 
 ### 5. set_diverse
 
-**What it measures:** The candidate set spans genuinely different angles, not
-one idea reworded across 5-8 lines. A diverse set gives the creator real
-choices: different BENS weights, different avatar problems, different pattern
-shapes, different specifics.
+**What it measures:** The lanes are genuinely different frames for the same
+video, not one idea relabeled across multiple headings. A diverse lane set gives
+the creator real choices: different emotional frames, different BENS weights,
+different pattern shapes, different aspects of the material emphasized.
 
-**How to judge:** Read all candidates together. If you could describe the set
-as "six ways of saying the same thing," it fails. Look for: different primary
-BENS letters, different pattern shapes (not just different fill words in one
-template), different aspects of the video's material emphasized.
+**How to judge:** Read all lane headings and their candidate titles together. If
+you could describe the set as "four ways of saying the same thing," it fails.
+Look for: different lane names that each point at a distinct emotional or
+strategic frame (confession vs. authority vs. contrarian vs. result), different
+primary BENS letters across lanes, different pattern shapes across lanes. The
+lane heading names themselves are part of the evidence: if two headings name
+frames that are functionally identical (e.g. "warning" and "mistake"), that is
+relabeling, not diversity.
 
-The pattern_diversity Tier A check already enforced the mechanical minimum (3
-distinct patterns, no more than 2 candidates sharing a primary BENS letter).
-Here you judge whether the set feels genuinely diverse in creative angle, not
-just mechanically distinct.
+The lane_diversity Tier A check already enforced the mechanical minimum (3
+distinct lane headings). Here you judge whether the set feels genuinely diverse
+in creative angle, not just mechanically distinct.
 
-**Score 1 if:** The set feels like distinct creative options. A creator reading
-it would have a real decision to make, not just pick a phrasing they prefer.
+**Score 1 if:** The lanes feel like distinct creative options drawing on
+different emotional frames. A creator reading the set would have a real decision
+to make, not just pick a phrasing they prefer.
 
-**Score 0 if:** Most candidates are one template with different fill words, OR
-the angles all hit the same avatar problem from the same direction, OR the set
-reads as "one idea, six phrasings."
+**Score 0 if:** Most lane headings point at the same emotional frame with
+different words, OR the candidate titles across lanes all hit the same avatar
+problem from the same direction, OR removing the headings would make the set
+indistinguishable from a flat list of near-synonyms.
 
 **Calibration examples:**
-- Pass: one candidate leads with the dollar arc (B+S), one frames it as a
-  contrarian system argument (N), one offers a "steal the system" angle (E),
-  one uses the 2,500-sub anchor (S), one is a "why X is wrong" reversal (N).
-  Different directions.
-- Fail: all six candidates start with "$340K to $1.3M" and vary only in the
-  trailing phrase. Same anchor, same direction, six phrasings.
+- Pass: one lane leads with the dollar arc (confession of a client result),
+  one frames it as a contrarian system argument (authority reversal), one
+  offers a "steal the system" generosity angle, one uses the 2,500-sub anchor
+  as a warning about chasing reach. Different frames, different pulls.
+- Fail: "Result lane," "Proof lane," "Outcome lane," and "Numbers lane" all
+  surface the $340K to $1.3M figure with minor wording variation. One idea,
+  four headings.
 
 ---
 
@@ -270,6 +283,95 @@ the adversarial case has any digit in any candidate title.
 - Case 02 fail: "Cowork's New Feature Saves 2 Hours a Day" invents "2 Hours"
   which does not exist in the lock list.
 
+---
+
+### 7. surfaces_differentiated_angle
+
+**What it measures:** The recommended opportunity lane is genuinely on-brand
+AND underused in the competitor set (low spread), not a relabeled safe or
+crowded pick dressed up as an opportunity. This is the headline criterion: it
+is what stops the output being generic.
+
+**How to judge:** Find the lane(s) marked `opportunity: yes`. Check two things:
+
+First, check the iceberg alignment. The lane's frame must fit the positioning in
+`creator-foundation.md` ("AI should enhance you, not replace you, no slop, you
+lead"). A hype-money frame or a pure tool-speed frame is off-brand even if it
+performs elsewhere. Check whether the lane name and its candidate titles fit the
+iceberg.
+
+Second, check the spread claim. Open `title-bank.md` and `pattern-bank.md`. The
+opportunity lane's pattern(s) should have a spread of 1 to 2 of 11 channels
+(underused). If the lane's pattern is one of the high-spread patterns (spread 5
+of 11: contrarian-correction, news-jack-release, speed-mastery) and the skill
+still labels it `opportunity: yes`, that is a false claim. Check whether the
+`underused` label in the heading is actually supported by the spread data.
+
+**Score 1 if:** The opportunity lane is both on-brand per the iceberg AND its
+pattern(s) have a spread of 1 to 3 of 11 channels in the bank data (genuinely
+underused), AND the candidate titles in that lane draw on material that only
+this creator can credibly use.
+
+**Score 0 if:** The opportunity lane's pattern is crowded (spread 4+ of 11 in
+the bank data), OR the lane is off-brand per the iceberg (hype, fabricated
+money, pure speed framing), OR the lane's titles are generic enough that any
+competitor could run them without modification.
+
+**Calibration examples:**
+- Pass (case 00): the opportunity lane is "confession" or "contrarian-identity"
+  (spread 2 of 11 each). The candidates use lock-list specifics ($340K to
+  $1.3M, 2,500 subs) that only this creator's client result can back. On-brand
+  (authentic reckoning, not hype). Score 1.
+- Fail (case 00): the opportunity lane is "speed-mastery" (spread 5 of 11,
+  crowded). Marking it `underused` is false. Score 0.
+- Fail (any case): the opportunity lane's titles are "How to Build a Content
+  System That Converts." Generic. Any competitor could run this. Score 0.
+- Pass (case 02): the opportunity lane is "contrarian-identity" (spread 2 of
+  11). The candidates name Claude Cowork and scheduled agents specifically.
+  The framing is honest-and-skeptical, which fits the iceberg. Score 1.
+
+---
+
+### 8. competitor_proof_real
+
+**What it measures:** Each lane's `proof:` line traces to a real entry in
+`tests/fixtures/billy/banks/pattern-bank.md`. The title and channel cited in
+the proof line must actually exist in the pattern-bank outlier tables, not be
+invented. This is the evidence-not-taste rule: a lane recommendation without
+traceable proof is just an opinion.
+
+**How to judge:** For every lane's `proof:` line, extract the quoted title and
+the @handle. Search `pattern-bank.md` for that @handle's section and look for a
+row containing that title (or a clear match allowing for minor quoting
+differences). The title does not need to be verbatim, but the channel handle
+must appear in pattern-bank.md and the title must be recognizable as one of its
+listed outliers.
+
+Do not accept a proof line that cites a channel handle which does not appear in
+pattern-bank.md at all. Do not accept a proof line where the quoted title is
+plausible but not traceable to any row in that channel's outlier table.
+
+**Score 1 if:** Every lane's proof: line cites a title-and-channel pair where
+the channel appears in pattern-bank.md AND the cited title matches a row in
+that channel's outlier table.
+
+**Score 0 if:** Any lane's proof: line cites a channel handle absent from
+pattern-bank.md, OR cites a title that is not traceable to any row in that
+channel's listed outliers (i.e. the title appears invented rather than pulled
+from the research data).
+
+**Calibration examples:**
+- Pass: `proof: "Why Growing A Personal Brand Is An AWFUL Idea" (@ed-lawrence,
+  6.3x)`. @ed-lawrence appears in pattern-bank.md and that exact title is in
+  the ed-lawrence outlier table at 6.3x. Score 1.
+- Pass: `proof: "15 Claude Cowork Skills I Can't Live Without (steal them)"
+  (@brockmesarich, 9.5x)`. @brockmesarich is in the bank and that title is in
+  the brockmesarich outlier table. Score 1.
+- Fail: `proof: "How I Quit My Job Using Claude" (@ed-lawrence, 4.5x)`. The
+  @ed-lawrence section in pattern-bank.md has no such title. Invented. Score 0.
+- Fail: `proof: "AI Changed Everything For Solo Creators" (@somechannel, 8x)`.
+  @somechannel does not appear in pattern-bank.md at all. Score 0.
+
 ## Output format
 
 Return JSON only:
@@ -286,10 +388,12 @@ Return JSON only:
         "specific_unrepeatable": 1,
         "avatar_format_fit": 1,
         "set_diverse": 1,
-        "fabrication_resistant": 1
+        "fabrication_resistant": 1,
+        "surfaces_differentiated_angle": 1,
+        "competitor_proof_real": 1
       },
-      "passed": 6,
-      "reasoning": "one or two sentences, concrete, cite the specific candidate or move that determined the score"
+      "passed": 8,
+      "reasoning": "one or two sentences, concrete, cite the specific lane, candidate, or proof line that determined the score"
     }
   ],
   "criteria_pass_rate": {
@@ -298,21 +402,23 @@ Return JSON only:
     "specific_unrepeatable": 0.0,
     "avatar_format_fit": 0.0,
     "set_diverse": 0.0,
-    "fabrication_resistant": 0.0
+    "fabrication_resistant": 0.0,
+    "surfaces_differentiated_angle": 0.0,
+    "competitor_proof_real": 0.0
   },
   "quality_score": 0.0
 }
 ```
 
-`passed` is the count of criteria that scored 1 for that case (out of 6).
+`passed` is the count of criteria that scored 1 for that case (out of 8).
 
 `criteria_pass_rate` is the fraction of cases where each criterion scored 1
 (e.g. if 2 of 3 cases passed fabrication_resistant, that rate is 0.6667).
 
 `quality_score` is the total number of 1s across all scored cases divided by
-the total possible (cases_scored x 6). This is the single number the optimizer
+the total possible (cases_scored x 8). This is the single number the optimizer
 reads. A per-criterion pass rate below 0.67 tells the optimizer where to spend
 the next iteration.
 
-One `reasoning` sentence per case. Be concrete: name the candidate or the move
-that determined the score, not abstract adjectives.
+One `reasoning` sentence per case. Be concrete: name the lane, candidate, or
+proof line that determined the score, not abstract adjectives.

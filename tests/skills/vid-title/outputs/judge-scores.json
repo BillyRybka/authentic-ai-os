@@ -7,12 +7,14 @@
         "reads_aloud_natural": 0,
         "bank_anchored": 1,
         "specific_unrepeatable": 1,
-        "avatar_format_fit": 0,
+        "avatar_format_fit": 1,
         "set_diverse": 1,
-        "fabrication_resistant": 1
+        "fabrication_resistant": 1,
+        "surfaces_differentiated_angle": 1,
+        "competitor_proof_real": 1
       },
-      "passed": 4,
-      "reasoning": "Candidate 2 ('$340K to $1.3M With 2,500 Subscribers') has no verb and reads as a stat card rather than a continuous spoken sentence, failing reads_aloud_natural; the locked title's BENS annotation is N+B but Case Study format's natural bias is S+B, so avatar_format_fit fails on the format-alignment condition even though the reach-myth hook is present."
+      "passed": 7,
+      "reasoning": "Candidate 3 ('$340K to $1.3M With a Tiny Channel') is a verbless fragment stat card that stumbles on the read-aloud test, failing reads_aloud_natural; all other criteria pass, the Contrarian-Identity opportunity lane is spread 2 of 11 with three lock-list specifics (2,500 subs, $1.3M, 1 year) in the locked title, and every proof line traces exactly to the correct pattern-bank outlier row."
     },
     {
       "case": 1,
@@ -23,33 +25,39 @@
         "specific_unrepeatable": 1,
         "avatar_format_fit": 1,
         "set_diverse": 1,
-        "fabrication_resistant": 1
+        "fabrication_resistant": 1,
+        "surfaces_differentiated_angle": 1,
+        "competitor_proof_real": 1
       },
-      "passed": 5,
-      "reasoning": "The locked title '7 Claude Skills I Can't Live Without (steal them)' contains a parenthetical tag-on that turns a flowing title into a stop-start structure, which the rubric explicitly marks as a reads_aloud_natural failure; all other criteria are cleanly satisfied including 4-of-6 named patterns, the exact lock-list count of 7, and E+N BENS matching the Listicle format bias."
+      "passed": 7,
+      "reasoning": "Four candidates use a parenthetical tag-on structure ('steal them', '7 Claude Skills') that is the rubric's named fail pattern for stop-start reads, failing reads_aloud_natural; the Steal-These opportunity lane is spread 2 of 11, on-brand, and its proof ('15 Claude Cowork Skills I Can't Live Without (steal them)' @brockmesarich 9.5x) is verified in the pattern-bank."
     },
     {
       "case": 2,
       "slug": "claude-cowork-newsjack",
       "criteria": {
-        "reads_aloud_natural": 1,
+        "reads_aloud_natural": 0,
         "bank_anchored": 1,
         "specific_unrepeatable": 1,
         "avatar_format_fit": 1,
         "set_diverse": 1,
-        "fabrication_resistant": 1
+        "fabrication_resistant": 1,
+        "surfaces_differentiated_angle": 1,
+        "competitor_proof_real": 1
       },
-      "passed": 6,
-      "reasoning": "All six candidates read as complete English sentences with no period smash-ups or parenthetical tag-ons; the adversarial fabrication constraint is fully satisfied with zero digits in any candidate; the locked title 'Claude Cowork Just Dropped Scheduled Agents' names both lock-list specifics, hits N+B matching the News format bias, and speaks directly to the time/babysitting avatar problem."
+      "passed": 7,
+      "reasoning": "The Steal-These candidate 'How I Set Up Cowork Scheduled Agents (steal it)' has the parenthetical tag-on the rubric explicitly names as a stop-start failure, so reads_aloud_natural fails; zero digits appear anywhere in the set (adversarial constraint satisfied), the Contrarian-Identity opportunity lane is spread 2 of 11 with the babysitting frame from the brain-dump's strongest raw line, and all five proof lines verified in the pattern-bank."
     }
   ],
   "criteria_pass_rate": {
-    "reads_aloud_natural": 0.3333,
+    "reads_aloud_natural": 0.0,
     "bank_anchored": 1.0,
     "specific_unrepeatable": 1.0,
-    "avatar_format_fit": 0.6667,
+    "avatar_format_fit": 1.0,
     "set_diverse": 1.0,
-    "fabrication_resistant": 1.0
+    "fabrication_resistant": 1.0,
+    "surfaces_differentiated_angle": 1.0,
+    "competitor_proof_real": 1.0
   },
-  "quality_score": 0.8333
+  "quality_score": 0.875
 }
