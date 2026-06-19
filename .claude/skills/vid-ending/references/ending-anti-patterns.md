@@ -116,9 +116,9 @@ Replacement: ONE-sentence Pivot that names the transformation, not the chapter t
 
 > "But the next problem you have is your tax planning."
 
-Why it fails: the Gap has to be one of the avatar's Top 3. Tax planning isn't one of them for a coach/creator. The viewer's brain registers "different topic" and disengages.
+Why it fails: the Gap has to point at something the channel actually covers (a video the creator could bridge to). Tax planning is off-channel for a coach/creator. The viewer's brain registers "different topic" and disengages.
 
-Replacement: a Gap that names one of the Top 3 (the next one the lesson points to). If the body's lesson doesn't connect to any of the three, the body has a framing problem, restructure the Pivot, don't invent a Gap.
+Replacement: a Gap that names the problem your next video solves (on-channel, the next logical watch). If the body's lesson doesn't connect to anything in the catalog, the body has a framing problem, restructure the Pivot, don't invent a Gap.
 
 ### S-3. The future-promise Bridge
 
@@ -193,7 +193,7 @@ Watch for this specific pattern: a draft starts to wind down naturally because t
 When this shows up in a draft, it's a flag the close hasn't been thought through structurally. The fix isn't to swap the phrase, it's to force the 3-Part Formula:
 
 1. What's the ONE-sentence Pivot? (transformation, not topic)
-2. What's the ONE-sentence Gap? (the next of the Top 3 the body opens up)
+2. What's the ONE-sentence Gap? (the problem your next video solves, the next watch)
 3. What's the ONE-sentence Bridge? (specific next video)
 
 If the answers don't come fast, the close isn't ready. Ask the creator the three questions instead of shipping a wind-down.

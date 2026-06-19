@@ -85,7 +85,7 @@ If invoked with caller context (e.g. "ending for case-study, goal=sales, transfo
 
 If the planner conflicts with the goal the creator picked, surface the conflict: "Format=interview defaults goal=views or emails. You picked sales. Interviews tank for sales (credibility flows to the guest). Want me to switch to emails or override?"
 
-**Identify which of the avatar's Top 3 problems the Gap should reveal.** Ed's rule: what they just learned isn't enough on its own, so you call out one of the three big problems the channel solves as the next thing standing in their way. Pick the NEXT logical one given the lesson, which is usually a DIFFERENT problem than the video was about (Ed's own example pivots a clarity lesson to "your intro doesn't hook people"). Then point to the video that solves it. **Critical:** the Gap must be one of the Top 3, not an off-channel problem. Jumping to something the channel doesn't cover ("I thought we were talking about channel growth, why are we now on Roth IRAs?") reads as gaslighting. Next logical problem, drawn from the three. Do NOT force it to be the same problem the intro poked.
+**Pick the next video first, then derive the Gap from it.** Ed's rule: don't map a perfect chain in advance. Look at what the creator has ALREADY published, especially what converts for this goal (per `references/end-screen-design.md`: the best sales/email/lead converter, or a same-format winner), and pick the one that's the most logical next watch after this video's topic. Then write the Gap as the problem THAT video solves: what they just learned isn't enough on its own, the next thing in their way is what the next video covers. The next problem lands on one of the channel's recurring problems naturally (the catalog orbits them), so you are bridging to a real video, not scanning an abstract list. **Critical:** point only to a video that exists and converts. If nothing the creator has made is a close-enough next step, do NOT invent a problem or promise an unmade video, fall back to a subscribe pointer (Ed's first-video rule). Do not force the Gap to be the same problem the intro poked (Ed's own example pivots a clarity lesson to "your intro doesn't hook people").
 
 **Decide CTA shape from goal:**
 
@@ -95,7 +95,7 @@ If the planner conflicts with the goal the creator picked, surface the conflict:
 
 **Callback rules (intro coordination).** The close has to feel like the same video closing, not a different video starting. Honor these when drafting:
 
-1. **Same problem anchor.** Gap reveals the second-order layer of the SAME Top-3 problem the intro poked. Read `problem_result.top_3_problem_anchored` from the intro packet (sub-skill) or infer from the intro section in script.md (standalone). Pivoting to a fresh problem breaks coherence.
+1. **Coherent pivot, not a topic jump.** The Gap can move to a different problem than the intro poked (Ed pivots a clarity lesson to hooks), but it has to read as the logical next step from what this video taught, not a jarring jump to an unrelated topic. The bridge to a real next video is what carries the coherence. Read `problem_result.top_3_problem_anchored` for context on where the viewer started; you are not required to stay on that same problem.
 2. **Pay off the Setup contract.** The Pivot recaps the Setup near-verbatim. If the Setup said "I'm going to show you the formula, why it works, and how to use it," the Pivot tracks: "you now know the formula, why it works, and how to use it." Mismatched recap reads as a different video. Read `setup.text` and `setup.top_3_questions_used` to get the language.
 3. **Don't reopen with the intro's hook lane.** If the intro opened with a Question Hook, don't re-open the close with another question. Same for Statement, Contrarian, Fact, Credibility. Reusing the lane signals "the video restarted." Read `hook.type` and pick a different shape. The Bridge stays declarative regardless.
 4. **Don't re-cite the credibility receipt.** If the intro wove a credibility line (a personal result number, a notable client, a volume stat), the close references the LESSON, not the same receipt. Cold viewers already heard it; re-citing burns trust. Read `credibility.text` and route around its specific number/name.
@@ -128,7 +128,7 @@ Length budget: 30-60 seconds when read aloud. Roughly 60-150 spoken words. Longe
 7. **Tier 2 banned phrases (derived patterns).** "If you liked this please subscribe," "Smash that like button," "Stay tuned," "Without further ado," "Today's video was about." Each has an override case (see `transition-bank.md` Section 4 Tier 2). Surface the failure mechanism and the override; the creator decides whether their voice or format earns it.
 
 8. **Pivot too long.** If Pivot is 3+ sentences, the close starts to feel like a wind-down. Flag.
-9. **Gap not on the Top 3.** If the Gap problem is novel (not from creator-foundation), flag, viewers connect more strongly when the Gap is a problem the avatar already feels.
+9. **Gap with no video behind it.** If the Gap points at a problem the creator has no published video for, flag it, the Bridge needs a real next watch. Either pick a Gap a real converting video solves, or fall back to a subscribe pointer.
 10. **Bridge to underperforming video.** If the creator picks a next-video that previously flopped, flag the trade-off.
 11. **CTA placement mismatched to goal.** E.g., a sales CTA on a news video. Surface the format-planner's warning.
 12. **Hedge words.** "Maybe" / "Possibly" / "I think you should". The Bridge should be confident, not tentative. Flag.
@@ -154,7 +154,7 @@ Ask:
 Wait. If they pick, go to Phase 4.
 
 If they want changes:
-- "Different Gap" means re-generate with a different one of the Top 3 (a different next-link)
+- "Different Gap" means re-generate around a different next-video (and the problem that video solves)
 - "Different next video" means swap the Bridge target, ask which past video and verify it actually exists and converts (per `references/end-screen-design.md` rules)
 - "Shorter" means tighten under 40 seconds
 - "Different rhythm" means regenerate weighted to the creator's voice profile defaults
@@ -164,7 +164,7 @@ If they want changes:
 
 - They want to point to a video that hasn't been published yet. REJECT and explain (per source-backed rule: never link to a video you haven't made; viewers get confused and don't return).
 - They want to point to an underperforming video because it's the most recent. Flag and ask: "This one underperformed. Per the rule, point to one that converted. Want me to ask which past video hit the goal?"
-- They want a generic Gap ("there's still more to learn"). Flag: "This is too vague to drive a click. Pick a Gap from the Top 3."
+- They want a generic Gap ("there's still more to learn"). Flag: "This is too vague to drive a click. Name the specific problem your next video solves."
 - They want to add "thanks for watching". REJECT (Tier 1, source-explicit "Never end a video" rule).
 - They want to add "smash that like button" or "if you liked this please subscribe". Surface as Tier 2 soft friction with the failure mechanism and override case from `transition-bank.md` Section 4. The creator decides whether their voice earns the override; don't auto-reject.
 

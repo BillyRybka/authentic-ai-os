@@ -356,7 +356,7 @@ When auditing a draft, sanity-check against this bank. If the creator's Top 3 pr
 
 ## How to use the avatar downstream
 
-The Top 3 is positioning. It decides the lane and the kind of problems the channel keeps solving. It earns its keep at three moments: picking what to make (the ideas step), locking once that a video fits the lane (intake), and the ending, where you point the viewer at the next of those three problems to set up the next video.
+The Top 3 is positioning. It decides the lane and the kind of problems the channel keeps solving. It earns its keep at three moments: picking what to make (the ideas step), locking once that a video fits the lane (intake), and the ending, where you bridge to your most logical next video (which sets up the next of those problems).
 
 It is NOT a filter that every title, hook, thumbnail, script, and CTA has to pass. Front-loading the Top 3 into every writing step is how originality dies. Everything starts bending toward the same three pains. Between the lane lock and the ending, the writing runs on the creator's actual material and the per-video viewer questions.
 

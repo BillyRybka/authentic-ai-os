@@ -78,7 +78,7 @@ Why this misses: tells the viewer the video is over. Burns the close. Doesn't re
 
 ## 2. Gap shapes (reveal the new problem)
 
-The Gap is ONE sentence. Names one of the avatar's Top 3 problems, the next one the body's lesson points to (what they just learned isn't enough without it). The lesson opened a new gap, it didn't close all of them.
+The Gap is ONE sentence. Names the problem your next video solves, the thing they need after this lesson (what they just learned isn't enough without it). It lands on one of the channel's recurring problems naturally, because that's what the catalog covers. The lesson opened a new gap, it didn't close all of them.
 
 ### Worked: "but here's the thing..."
 
@@ -108,7 +108,7 @@ Why this lands: implies the body's lesson alone isn't enough, names the specific
 
 > "The next problem is your tax planning."
 
-Why this misses: tax planning isn't one of the avatar's Top 3 (the avatar is a creator/coach, not an accountant). The Gap has to be one of the channel's three problems. A problem outside the three breaks the connection, the viewer's brain registers "different topic" and clicks away.
+Why this misses: tax planning is off-channel for a creator/coach. There's no video to bridge to, and it isn't a problem the catalog covers. The Gap has to point at something the channel actually addresses. An off-channel problem breaks the connection, the viewer's brain registers "different topic" and clicks away.
 
 ### Near-miss: vague gap
 
@@ -126,7 +126,7 @@ Why this misses: contradicts the body's lesson (which just spent 12 minutes teac
 
 - 1 sentence ideal
 - 2 sentences acceptable when the Gap needs a stake clause ("won't survive if X")
-- The Gap problem MUST be one of the Top 3 (the next logical one the lesson points to, usually different from what the video taught). If none of the three connect to the body, the Pivot may be off; regenerate it.
+- The Gap problem MUST be one the channel actually covers (you have, or could point to, a video for it). It's usually a different problem than the video taught, the next logical watch. If nothing in the catalog connects to the body, the Pivot may be off, regenerate it, or fall back to a subscribe pointer.
 
 ---
 
