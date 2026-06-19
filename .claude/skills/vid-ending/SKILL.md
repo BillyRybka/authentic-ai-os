@@ -22,7 +22,7 @@ A locked ending block, saved as the closing section of `content/pieces/{slug}/sc
 ## Prerequisites
 
 Hard requirements:
-- `foundation/creator-foundation.md` exists with the avatar's Top 3 problems (the Gap reveals one of them)
+- `foundation/creator-foundation.md` exists with the avatar's Top 3 problems (the Gap names one of them, the next one the body lesson points to)
 - `content/pieces/{slug}/piece.md` exists with `format`, `goal`, and a `pillar` set
 - `content/pieces/{slug}/script.md` has the full body written (every segment) AND a non-stub `## Intro` (the close's Pivot calls back to the intro's Setup contract, so the opening must already be written)
 
@@ -46,7 +46,7 @@ If invoked with caller context (e.g. "ending for case-study, goal=sales, transfo
 
 **Silent loads** (do NOT paste into chat):
 
-1. `foundation/creator-foundation.md` (avatar, Top 3 problems. Gap reveals one of these)
+1. `foundation/creator-foundation.md` (avatar, Top 3 problems. The Gap is one of the Top 3, the next one the body lesson points to)
 2. `foundation/voice-profile.md` (the thin guardrail, always loaded) and `foundation/reference-pieces/{voice_context}.md` (the voice engine: real intact passages to write the close from, as `## ` sections in one file matched to piece.md `voice_context`, default `youtube-script`. Contract in `knowledge/voice-profile-schema.md`). **Voice only, not structure:** passages carry cadence, word choice, register, and signature moves. Closing architecture (Pivot/Gap/Bridge, CTA, push to next video, sign-off shape) is fixed by THIS skill's spec. If a passage's structural arc conflicts with the spec, follow the spec. Reproduce the grain, not the order of moves.
 3. `knowledge/vault-integration.md` (frontmatter schema for the piece.md update)
 4. `knowledge/voice-rhythm.md` and `knowledge/voice-pressure-test.md` (line-level voice and end-of-skill validation)
@@ -62,7 +62,7 @@ If invoked with caller context (e.g. "ending for case-study, goal=sales, transfo
 14. **Sub-skill mode only:** the intro packet returned by `vid-intro` to the caller. Key fields you read:
     - `setup.text` (literal Setup contract; your Pivot pays this off near-verbatim)
     - `setup.top_3_questions_used` (the three viewer questions your Pivot has to confirm got answered)
-    - `problem_result.top_3_problem_anchored` (1, 2, or 3; your Gap anchors to the SAME problem, not a fresh one)
+    - `problem_result.top_3_problem_anchored` (1, 2, or 3; the problem the intro poked. Your Gap reveals the next logical problem the body exposes, usually a different one of the three, not forced to be this same one)
     - `hook.text` and `hook.type` (so you don't reopen with the same hook lane at the close)
     - `credibility.text` if present (so you don't re-cite the same receipt; reference the lesson, not the receipt)
 15. **Conditional shared loads** (load only when the close leans on the relevant material; endings are claim-light by design, so most runs skip these):
@@ -75,7 +75,7 @@ If invoked with caller context (e.g. "ending for case-study, goal=sales, transfo
 
 **Decide format-aware shape.** Each format has a default close pattern. The planner is authoritative. Common defaults:
 
-- **Short Process:** tight Pivot (one sentence recap of the system) → Gap (one of Top 3 problems the system doesn't solve) → Bridge to a related process video. CTA per goal.
+- **Short Process:** tight Pivot (one sentence recap of the system) → Gap (the next of the Top 3 the system surfaces but doesn't solve) → Bridge to a related process video. CTA per goal.
 - **Case Study:** Pivot recaps the transformation in plain language ("That's how Steve went from 0 clients to 80k/mo"). Gap reveals the second-order problem (delivery, retention, scale). Bridge often points to a deep-dive that walks the methodology.
 - **Roast:** Pivot recaps the universal lesson across the contestants. Gap = "yours is probably making one of these mistakes too". Bridge = submission CTA + a related fix video. The submission CTA is non-optional for this format.
 - **Deep Dive:** Pivot is short (the body did the heavy lift). Gap names the next-stage problem the deep-dive opens up. Bridge close is **aggressive for sales**, the format's audience is the warmest of any format.
@@ -85,7 +85,7 @@ If invoked with caller context (e.g. "ending for case-study, goal=sales, transfo
 
 If the planner conflicts with the goal the creator picked, surface the conflict: "Format=interview defaults goal=views or emails. You picked sales. Interviews tank for sales (credibility flows to the guest). Want me to switch to emails or override?"
 
-**Identify the avatar's top problem the Gap should reveal.** This is one of the Top 3 from creator-foundation. **Critical:** if the intro packet (sub-skill mode) or the `## Intro` section (standalone mode) anchors a specific problem (1, 2, or 3), the Gap reveals the LOGICAL second-order problem of THAT same one. Pivoting to a different Top-3 problem reads as gaslighting the viewer ("I thought we were talking about channel growth, why are we now on Roth IRAs?"). Same anchor, deeper layer.
+**Identify which of the avatar's Top 3 problems the Gap should reveal.** Ed's rule: what they just learned isn't enough on its own, so you call out one of the three big problems the channel solves as the next thing standing in their way. Pick the NEXT logical one given the lesson, which is usually a DIFFERENT problem than the video was about (Ed's own example pivots a clarity lesson to "your intro doesn't hook people"). Then point to the video that solves it. **Critical:** the Gap must be one of the Top 3, not an off-channel problem. Jumping to something the channel doesn't cover ("I thought we were talking about channel growth, why are we now on Roth IRAs?") reads as gaslighting. Next logical problem, drawn from the three. Do NOT force it to be the same problem the intro poked.
 
 **Decide CTA shape from goal:**
 
@@ -154,7 +154,7 @@ Ask:
 Wait. If they pick, go to Phase 4.
 
 If they want changes:
-- "Different Gap" means re-generate with a different one of the Top 3 problems
+- "Different Gap" means re-generate with a different one of the Top 3 (a different next-link)
 - "Different next video" means swap the Bridge target, ask which past video and verify it actually exists and converts (per `references/end-screen-design.md` rules)
 - "Shorter" means tighten under 40 seconds
 - "Different rhythm" means regenerate weighted to the creator's voice profile defaults
@@ -254,11 +254,11 @@ If the creator's draft pulls toward "and now to wrap up", that's the signal the 
 | `knowledge/visual-proof-callouts.md` (rare, pending loaded_by add) | Callout SYNTAX (callout AFTER claim, never before) when a numeric Pivot needs an on-screen callout. Currently `loaded_by: [vid-intro, vid-segment]`; ask team-lead to extend to vid-ending. |
 | `knowledge/metaphor-integration.md` (conditional) | Splice rules when a metaphor frames the transformation. Shared with vid-intro, vid-segment. |
 | `knowledge/parable-decision-matrix.md` (rare) | Used only if the close opens with a fresh emotional beat. Shared with vid-intro, vid-segment. |
-| `foundation/creator-foundation.md` | Avatar Top 3 problems (Gap source) |
+| `foundation/creator-foundation.md` | Avatar Top 3 problems (the Gap names the next logical one) |
 | `foundation/voice-profile.md` | The thin guardrail (fingerprint, signature phrases, refusals, POV/energy) |
 | `foundation/reference-pieces/{voice_context}.md` | The voice engine (voice only, not structure): real intact passages as `## ` sections, matched to piece.md `voice_context` |
 | `content/pieces/{slug}/script.md` + `piece.md` | The video being closed |
-| `content/pieces/{slug}/script.md` `## Intro` section | Standalone-mode source for Setup contract, hook lane, and which Top-3 problem the intro anchored. Drives the callback rules. |
+| `content/pieces/{slug}/script.md` `## Intro` section | Standalone-mode source for Setup contract, hook lane, and which problem the intro anchored. Drives the callback rules. |
 | Intro packet from `vid-intro` (sub-skill mode) | Sub-skill source for the same fields: `setup.text`, `setup.top_3_questions_used`, `problem_result.top_3_problem_anchored`, `hook.text`, `hook.type`, `credibility.text`. Schema in vid-intro SKILL.md "Output packet" section. |
 | `assets/ending-block-template.md` | Fillable structure read at lock time, filled with the locked content, then written into script.md |
 

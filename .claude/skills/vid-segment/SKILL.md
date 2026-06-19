@@ -99,7 +99,7 @@ Goal: the segment works AS A UNIT before any prose gets written. If the structur
 
 **Draft the segment structure.** A structure draft is bullets and slot fills, not prose. Three blocks:
 
-1. **Setup (the open).** What problem, claim, or question does this segment open on? What does the viewer need to feel BEFORE the explanation arrives? Pulls from: brain-dump phrasing, the avatar's Top 3 problems, the locked title's promise. Setup typically opens on the segment's parable OR a forward-hook off the prior segment's closing line.
+1. **Setup (the open).** What problem, claim, or question does this segment open on? What does the viewer need to feel BEFORE the explanation arrives? Pulls from: brain-dump phrasing, the locked title's promise, and the segment's own material. Setup typically opens on the segment's parable OR a forward-hook off the prior segment's closing line.
 
 2. **Tension (the middle).** What raises curiosity? The parable (visual demo / story / metaphor / contrast) goes here. The principle's first move (the framework piece, the proof shown after the framework lands) follows. Use the parable decision matrix in `knowledge/parable-decision-matrix.md` to pick the block type.
 

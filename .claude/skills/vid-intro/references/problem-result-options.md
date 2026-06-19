@@ -16,7 +16,7 @@ Examples-first contrastive: every option pairs a worked match with a near-miss.
 
 `vid-intro` cross-references three things:
 
-1. **Avatar pain intensity** (from `creator-foundation.md` Top 3 problems): how acute is the problem?
+1. **Avatar pain intensity** (for the problem this video addresses): how acute is it? The avatar's Top 3 in `creator-foundation.md` are a useful gauge, but score the actual problem the video pokes, even an adjacent one.
 2. **Result drama** (from brain dump's lock list): how impressive is the receipt?
 3. **Format identity** (from format planner): what does the format expect?
 
@@ -112,7 +112,7 @@ Each format planner's intro-adaptation Problem/Result row gives the format defau
 
 ## The decision short-list (run silently in Phase 2)
 
-1. **Read the avatar's Top 3 problems.** Identify which problem this video addresses. Score the pain intensity (acute / moderate / mild)
+1. **Identify the problem this video addresses.** It was chosen at framing, usually one of the avatar's Top 3 (in `creator-foundation.md`), sometimes an adjacent one. Score its pain intensity for the avatar (acute / moderate / mild)
 2. **Read the brain dump's lock list.** Score the result drama (dramatic / moderate / mild)
 3. **Read the format planner's Problem/Result default.** Note what the format usually does
 4. **Cross-reference:** acute-pain + moderate-result → Poke. moderate-pain + dramatic-result → Tease. acute-pain + dramatic-result → Combine. mild-pain + mild-result → reconsider whether the video is worth making

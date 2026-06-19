@@ -149,7 +149,7 @@ Then ask:
 Wait for the creator. If they pick, go to Phase 5.
 
 If they want changes:
-- "Different angle" means re-run the divergent pass weighted to a different Top 3 problem
+- "Different angle" means re-run the divergent pass weighted toward a different audience problem or angle
 - "Different BENS" means weight toward the letters they want (e.g. more N, less B)
 - "Shorter" means re-cut under 40 characters
 - "More specific" means pull more lock-list specifics into the candidates

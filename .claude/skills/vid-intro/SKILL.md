@@ -109,7 +109,7 @@ Confirm hook-type lane with creator in one short message, then move to Phase 2.
 - **Option 2: Tease the Result** (pivot phrase "I used to until...")
 - **Option 3: Combine Both** (pivot phrase "But...")
 
-The problem poked needs to be one of the avatar's Top 3 problems (from creator-foundation). When the poke matches a real problem the avatar lives, the viewer feels seen and stays. When the poke matches a problem the avatar doesn't actually have, the viewer feels disconnected and leaves. If candidates can't anchor in the Top 3, regenerate from a different angle.
+The problem poked needs to be a real problem the avatar actually lives. Usually that's the problem this video was framed around (often one of the Top 3 from creator-foundation, sometimes a fresh angle on a related one). When the poke matches a problem the avatar lives, the viewer feels seen and stays. When it matches a problem the avatar doesn't actually have, the viewer feels disconnected and leaves. Poke the video's problem, don't re-pick from the list; only regenerate if the poke rings false for the audience.
 
 **Surface options as a short numbered list** with annotation. Example shape:
 
@@ -133,7 +133,7 @@ Wait.
 
 - They pick a Hook with a fabricated number → REJECT, name the hard rule, regenerate
 - They pick a Hook over 5 seconds → flag, ask if they want shorter
-- They pick a Problem/Result that doesn't anchor in their Top 3 problems → flag, ask if they want a different angle
+- They pick a Problem/Result the avatar wouldn't actually feel → flag, ask if they want a different angle
 - They pick a Hook plus Problem/Result combo where the energy clashes (e.g. high-conviction Statement Hook followed by Pure Tease) → flag, suggest a tighter pairing
 
 **Decide where credibility gets woven.** Of the three slots (Hook / Problem-Result / Setup), credibility most often weaves into the Problem/Result section because that's where claims earn it. Pick the slot AND the credibility form (one of 5 from intro-architecture step 6):

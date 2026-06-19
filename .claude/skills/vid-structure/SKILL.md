@@ -26,7 +26,7 @@ Builds the Tier 1 outline for one video. Takes raw brain-dump material plus the 
 Hard requirements:
 - `content/pieces/{slug}/brain-dump.md` exists with raw material AND `iceberg_aligned: true`
 - `content/pieces/{slug}/piece.md` exists with `selected_angle`, `core_payoff`, `format`, `goal`, `viewer_stage` (all written by vid-framing)
-- `foundation/creator-foundation.md` exists with iceberg + Top 3 problems
+- `foundation/creator-foundation.md` exists (iceberg + avatar, for lane and voice context; alignment was already locked at intake)
 - `knowledge/format-planners/{format}.md` exists for the locked format
 
 Soft requirements (used when present, never blockers):
@@ -52,7 +52,7 @@ This is the conversation phase. The skill behaves as a creative sparring partner
 
 1. `content/pieces/{slug}/brain-dump.md`, the raw material plus locked intake fields
 2. `content/pieces/{slug}/piece.md`, locked framing (`selected_angle`, `core_payoff`, `format`, `voice_context`, `goal`, `viewer_stage`, `outlier_anchor`)
-3. `foundation/creator-foundation.md`, iceberg statement, Top 3 problems, avatar, credibility brags
+3. `foundation/creator-foundation.md`, iceberg statement, avatar, credibility brags (lane + voice context, not re-checked against the Top 3)
 4. `foundation/voice-profile.md`, the thin guardrail (fingerprint and energy, for skeleton style orientation only, no prose written here). The reference pieces in `foundation/reference-pieces/{voice_context}.md` are loaded by the prose skills, not this one. Contract in `knowledge/voice-profile-schema.md`
 5. `knowledge/format-planners/{format}.md`, the body shape for THIS format
 6. `knowledge/script-tension-architecture.md`, cross-segment tension flow + thread planning + handoff rules

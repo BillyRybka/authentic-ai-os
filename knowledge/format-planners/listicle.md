@@ -83,7 +83,7 @@ The biggest structural challenge of listicles is keeping viewers engaged between
 **Strong transition:** "Lesson number one is gonna get you more consistent sales and leads."
 **Strong transition:** "Lesson number one is gonna stop you from worrying about people who comment on your videos ever again."
 
-The pattern: every transition between points should **promise a result** the viewer cares about, tying the next point back to one of the avatar's Top 3 problems.
+The pattern: every transition between points should **promise a result** the viewer cares about.
 
 If the transition is just an announcement ("here's number 4"), viewers drop. If it's a forward hook ("number 4 is the one that finally got me consistent leads"), they stay.
 
@@ -106,7 +106,7 @@ That's parable, then principle, then forward-hook transition.
 - Burying a 20-step process inside one listicle point (too dense)
 - Padding the count to hit a number (10 mediocre points kill more than 5 great ones)
 - Aggressive shock-value title without content that delivers (creators copy the loudest titles they see, then the script doesn't deliver, viewers churn faster than the average video would)
-- Including points that don't tie to the avatar's Top 3 problems
+- Keeping points the average viewer wouldn't action (the refine test from step 5)
 
 ## Output format
 
