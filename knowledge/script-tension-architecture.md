@@ -9,21 +9,21 @@ last_updated: 2026-05-13
 
 How tension rises, falls, and connects across the WHOLE script, not just within one segment.
 
-This file is the cross-segment complement to `references/setup-tension-payoff-shapes.md` inside vid-segment. That file owns the internal Setup-Tension-Payoff arc of a single segment. This file owns the arc across all segments: how segment 1 sets something up that segment 4 pays off, why early payoff kills retention, how each segment hands tension to the next without letting it sag, and how the title's promise stays unresolved until the moment it lands.
+This file is the cross-segment complement to `references/parable-principle-shapes.md` inside vid-segment. That file owns the parable + principle of a single segment (the content). This file owns the tension arc across all segments: how segment 1 sets something up that segment 4 pays off, why early payoff kills retention, how each segment hands tension to the next without letting it sag, and how the title's promise stays unresolved until the moment it lands.
 
 Every skill that makes a structural decision about the script as a whole loads this. vid-structure plans the cross-segment arc. vid-segment reads it to understand where the current segment sits in the larger tension graph. vid-pressure-test audits for retention risk.
 
-## Per-segment vs cross-segment (the split)
+## Two separate layers (the split)
 
-Two different STP layers run in every script.
+A script runs two separate things at once. Ed keeps them apart, and so do we.
 
-**Per-segment STP (lives in vid-segment).** Inside one segment: Setup opens the segment, Tension raises curiosity, Payoff closes with the lesson. Each segment is its own small arc, complete in itself. The viewer learns one thing per segment.
+**Per-segment content (lives in vid-segment).** Inside one segment: a parable (the show, the emotion brick) then a principle (the tell, the logic brick). Each segment teaches one thing. This is NOT a Setup/Tension/Payoff skeleton; it is the two bricks. See `references/parable-principle-shapes.md`.
 
-**Cross-segment tension (this file).** Across all segments: the title makes a promise, the intro raises the central question, segments deliver pieces of the answer in an order that withholds the BIG payoff until the moment of maximum tension, and the ending pivots to the next problem. The viewer stays through 5+ minutes of content because the central promise hasn't fully paid off yet.
+**Cross-segment tension (this file).** Across all segments: the title makes a promise, the intro raises the central question, segments deliver pieces of the answer in an order that withholds the BIG payoff until the moment of maximum tension, and the ending pivots to the next problem. Setups and payoffs live HERE, not inside a segment. The intro is one big setup; transitions are little setups; the points pay off curiosity one by one. The viewer stays through 5+ minutes because the central promise hasn't fully paid off yet.
 
-A script with good per-segment STP but flat cross-segment tension feels like a series of disconnected lessons. The viewer learns, but they don't binge. A script with good cross-segment tension but weak per-segment STP feels exciting but empty. The viewer binges, but they don't learn.
+A script with strong parable + principle per segment but flat cross-segment tension feels like a series of disconnected lessons. The viewer learns, but they don't binge. Strong cross-segment tension but weak parable + principle feels exciting but empty. The viewer binges, but they don't learn.
 
-Both layers run at once. Plan them at different moments. vid-structure plans the cross-segment shape. vid-segment delivers the per-segment shape.
+Both run at once, planned and checked at different moments. vid-structure plans the cross-segment shape (title-promise location, threads, handoffs). vid-segment delivers the parable + principle. vid-pressure-test audits the cross-segment tension after the script is assembled.
 
 ## The script-level tension graph
 
@@ -118,7 +118,7 @@ Single rising arc through the story. Problem (setup) raises tension. Action segm
 
 ### Listicle
 
-Multiple small arcs (one per item) running inside one big arc rising toward the "biggest" or "most surprising" item. Each item has its own STP. The cross-segment thread is positional. The viewer expects item N+1 to be more interesting than item N.
+Multiple small arcs (one per item) running inside one big arc rising toward the "biggest" or "most surprising" item. Each item has its own parable + principle. The cross-segment thread is positional. The viewer expects item N+1 to be more interesting than item N.
 
 **Title-promise location:** the final item (if the list ends on the biggest) OR the item that delivers the title's core promise. Either way, viewers expect the named lesson to land near the end of the list, not at the open.
 
@@ -200,7 +200,7 @@ When writing one segment, vid-segment loads this file to understand context the 
 - **Does this segment open or close a thread?** If opens, plant the seed prominently. If closes, deliver the resolution with weight.
 - **Outbound transition.** Forward-hook into the next segment's setup, not into the ending.
 
-The per-segment STP shapes are still in `references/setup-tension-payoff-shapes.md`. This file just tells vid-segment where the current segment sits in the larger arc.
+The per-segment parable + principle shapes are in `references/parable-principle-shapes.md`. This file just tells vid-segment where the current segment sits in the larger arc.
 
 ## How vid-pressure-test uses this
 
@@ -217,7 +217,7 @@ Findings get surfaced as ranked issues in pressure-test.md.
 ## Principles
 
 - **Tension and curiosity are the fuel.** Information without tension doesn't retain. Most "boring videos" have good information but no curiosity arc.
-- **Two layers, planned at different moments.** Per-segment STP at vid-segment. Cross-segment tension at vid-structure. Both matter.
+- **Two separate layers.** Parable + principle per segment at vid-segment. Cross-segment tension planned at vid-structure and audited at vid-pressure-test. Both matter.
 - **Title-promise late.** The named answer to the central question lands 60-80% through the body, not earlier. Early-payoff is the most common failure.
 - **Threads make scripts feel woven.** One open loop running across the body is the difference between "five lessons stacked" and "one experience."
 - **Every handoff forward-hooks.** Segment ends with a question, name, or gap that lifts into the next segment's setup. No closed-payoff endings except the very last.

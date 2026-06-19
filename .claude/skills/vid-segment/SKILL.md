@@ -1,11 +1,11 @@
 ---
 name: vid-segment
-description: Build one body segment of a video script using a per-segment Setup → Tension → Payoff arc. Format-aware (deep dive, listicle, case study, short process, news, roast, interview), bank-pulling (story, proof, metaphor, testimonial, framework), and runs an internal two-pass review (structure first, then prose) before saving. Standalone OR invoked by vid-pipeline once per body segment in the script phase. Triggers on "write segment", "draft point", "build the next point", "write point [N]", "expand step [N]", "next body segment", or when an orchestrator asks for one segment of script body.
+description: Build one body segment of a video script as a parable + principle (emotion brick then logic brick). Format-aware (deep dive, listicle, case study, short process, news, roast, interview), bank-pulling (story, proof, metaphor, testimonial, framework), and runs an internal two-pass review (structure first, then prose) before saving. Standalone OR invoked by vid-pipeline once per body segment in the script phase. Triggers on "write segment", "draft point", "build the next point", "write point [N]", "expand step [N]", "next body segment", or when an orchestrator asks for one segment of script body.
 ---
 
 # Video Segment Writer
 
-Build ONE body segment with its own Setup / Tension / Payoff arc, in the creator's voice, pulling from the evergreen banks. Two passes: structure first (does the segment work as a unit?), prose second (does it sound like the creator?). Save only when both pass.
+Build ONE body segment as a parable then a principle (show, then tell), in the creator's voice, pulling from the evergreen banks. Two passes: structure first (does the segment work as a unit?), prose second (does it sound like the creator?). Save only when both pass.
 
 **Scope boundary:** this skill writes ONE segment at a time. It does not write the intro (`vid-intro`), the ending (`vid-ending`), the title (`vid-title`), or the thumbnail (`vid-thumbnail`). It also does not assemble the full skeleton (`vid-structure`). If the creator wants a multi-segment body, they (or the orchestrator) run this skill once per segment.
 
@@ -36,7 +36,7 @@ Hard requirements:
 Optional but used when present:
 
 - `foundation/reference-pieces/{voice_context}.md` (the voice engine, voice only not structure: real intact passages as `## ` sections, matched to piece.md `voice_context`)
-- `content/pieces/{slug}/script.md` (so prior segments inform setup/payoff continuity)
+- `content/pieces/{slug}/script.md` (so prior segments inform transition continuity)
 - The relevant bank folders (`banks/story-bank/`, `banks/proof-bank/`, `banks/metaphor-bank/`, `banks/testimonial-bank/`, `banks/framework-bank/`)
 
 If foundation docs are missing, hard stop. Tell the creator to run `/foundation` and `vid-voice-capture` first.
@@ -62,7 +62,7 @@ This skill is a conversation, not a document. Keep messages short. Never paste r
 1. `knowledge/vault-integration.md` (schemas, wikilink contract, "update both sides" rule)
 2. `foundation/creator-foundation.md` (avatar, Top 3 problems, credibility brags)
 3. `foundation/voice-profile.md` (the thin guardrail: fingerprint, signature phrases, refusals, POV/energy. Always loaded. See `knowledge/voice-profile-schema.md` for the load contract)
-4. `foundation/reference-pieces/{voice_context}.md` (the voice engine: real intact passages to write from, as `## ` sections in one file matched to piece.md `voice_context`, default `youtube-script`. If absent, seed from the guardrail fingerprint and note the gap). **Voice only, not structure:** the passages carry cadence, word choice, register, and signature moves. Segment architecture (Setup/Tension/Payoff, the format-planner shape) is fixed by THIS skill's spec and the format planner. If a passage's structural arc conflicts, follow the spec.
+4. `foundation/reference-pieces/{voice_context}.md` (the voice engine: real intact passages to write from, as `## ` sections in one file matched to piece.md `voice_context`, default `youtube-script`. If absent, seed from the guardrail fingerprint and note the gap). **Voice only, not structure:** the passages carry cadence, word choice, register, and signature moves. Segment architecture (parable then principle, the format-planner shape) is fixed by THIS skill's spec and the format planner. If a passage's structural arc conflicts, follow the spec.
 5. `knowledge/format-planners/{format}.md` (matched to `piece.md` `format:` field)
 6. `knowledge/voice-rhythm.md` (the lens for hearing rhythm in the reference pieces and the draft; no stored numbers)
 7. `knowledge/voice-pressure-test.md` (the validation pass to run before save)
@@ -70,7 +70,7 @@ This skill is a conversation, not a document. Keep messages short. Never paste r
 9. `content/pieces/{slug}/piece.md` (format, goal, pillar, locked title, prior `stories_used` / `proofs_used` / `metaphors_used`)
 10. `content/pieces/{slug}/brain-dump.md` and `piece.md` (the segment's raw material: locked angle, core payoff, point list)
 11. `content/pieces/{slug}/script.md` (if it exists, so prior-segment closing line and prior banks pulled inform setup continuity, AND the `## Blocks to capture` list so you know which open blocks this segment still owes)
-12. Skill-local references: `references/setup-tension-payoff-shapes.md`, `references/framework-shapes.md` (uniquely this skill's runtime decision logic). Plus shared knowledge files used across writing skills: `knowledge/parable-decision-matrix.md`, `knowledge/story-pulling-criteria.md`, `knowledge/proof-placement-rules.md`, `knowledge/metaphor-integration.md`, `knowledge/framework-builder.md` (for inline framework crafting when the segment's principle is a framework and no bank match exists), `knowledge/visual-demo-builder.md` (for inline visual demo crafting when the segment's parable is a Visual Demo, since there is no Visual Demo bank)
+12. Skill-local references: `references/parable-principle-shapes.md`, `references/framework-shapes.md` (uniquely this skill's runtime decision logic). Plus shared knowledge files used across writing skills: `knowledge/parable-decision-matrix.md`, `knowledge/story-pulling-criteria.md`, `knowledge/proof-placement-rules.md`, `knowledge/metaphor-integration.md`, `knowledge/framework-builder.md` (for inline framework crafting when the segment's principle is a framework and no bank match exists), `knowledge/visual-demo-builder.md` (for inline visual demo crafting when the segment's parable is a Visual Demo, since there is no Visual Demo bank)
 13. `knowledge/visual-proof-callouts.md` (canonical `> [!important] Visual proof needed` callout convention. Load when the segment's principle makes a numbered, named, or before/after claim that the editor must put on screen)
 14. `banks/transition-bank.md` (Section 2 segment-to-segment patterns plus Section 4 banned phrases for the segment's outbound transition)
 15. `content/pieces/{slug}/async-block-notes.md` (if it exists). Unstructured jot pad for ideas about OTHER segments that surfaced during prior writing. Check this file for any notes tagged with the current segment's purpose before brainstorming from scratch. If notes don't exist, create the file lazily when the creator drops the first note.
@@ -81,15 +81,15 @@ This skill is a conversation, not a document. Keep messages short. Never paste r
 
 Wait. Lock segment job. If the creator sharpens, update the framing then continue.
 
-**Identify the format's segment shape.** Different formats use Setup / Tension / Payoff differently. Defaults from the format planner:
+**Identify the format's segment shape.** Different formats weight the parable and principle differently. Defaults from the format planner:
 
-- **Deep dive.** Heavy STP per segment (each step IS a sub-cycle), proof woven after each step's logic.
-- **Short process.** One big STP up front (in intro), individual steps run lean principle-only unless a step is hard enough to need its own parable.
-- **Listicle.** Full STP per point, every point gets parable-then-principle, transition forward-hooks.
-- **Case study.** One STP across the whole body (the narrative IS the segment), one big lesson plus 1-3 steps as the payoff.
-- **News.** Tight STP: what happened (setup), why it matters (tension), what to do (payoff). Speed beats depth.
-- **Roast.** Per-review STP: show what they have (setup), show what's wrong (tension), show the fix (payoff).
-- **Interview.** Segment = one question. Setup is the host's framing line, tension is the guest's story, payoff is the actionable insight.
+- **Deep dive.** Full parable + principle per step, proof woven in after the principle's framework lands.
+- **Short process.** Steps run lean principle-only by default. Add a parable inside a step only when it's hard or the viewer won't believe it.
+- **Listicle.** Parable then principle per point, varying the parable type point to point, transition forward-hooks.
+- **Case study.** The whole body is one parable (the story arc); the principle (the lesson plus 1-3 steps) lands at the end.
+- **News.** Tight 3-part: what happened, why it matters, what to do. Principle-led, parable only if a quick demo earns it. Speed beats depth.
+- **Roast.** Per-review: show what they have and what's wrong (parable), then show the fix and name the principle.
+- **Interview.** Segment = one question. The guest's story is the parable, the guest's actionable insight is the principle. The host's framing line opens it.
 
 If the format planner conflicts with the segment job the creator just confirmed, surface the conflict. Don't silently override either.
 
@@ -97,13 +97,13 @@ If the format planner conflicts with the segment job the creator just confirmed,
 
 Goal: the segment works AS A UNIT before any prose gets written. If the structure is broken, no amount of voice polish saves it.
 
-**Draft the segment structure.** A structure draft is bullets and slot fills, not prose. Three blocks:
+**Draft the segment structure.** A structure draft is bullets and slot fills, not prose. Two bricks plus the handoff:
 
-1. **Setup (the open).** What problem, claim, or question does this segment open on? What does the viewer need to feel BEFORE the explanation arrives? Pulls from: brain-dump phrasing, the locked title's promise, and the segment's own material. Setup typically opens on the segment's parable OR a forward-hook off the prior segment's closing line.
+1. **Parable (the show).** The emotional open: how this segment shows the problem, the transformation, or the proof. Visual demo / story / metaphor / contrast / breakdown. Use the parable decision matrix in `knowledge/parable-decision-matrix.md` to pick the type. The parable IS the open; it carries what the viewer feels before the lesson arrives. Pulls from brain-dump phrasing and the segment's own material. (Lean steps can skip the parable and run principle-only, per the format shapes above.)
 
-2. **Tension (the middle).** What raises curiosity? The parable (visual demo / story / metaphor / contrast) goes here. The principle's first move (the framework piece, the proof shown after the framework lands) follows. Use the parable decision matrix in `knowledge/parable-decision-matrix.md` to pick the block type.
+2. **Principle (the tell).** The lesson the viewer can action: the framework and its components, the proof shown AFTER the framework lands, and the one sharp takeaway line they walk away with.
 
-3. **Payoff (the close).** What does the viewer leave the segment knowing or able to do? One clear lesson the viewer walks away with. The outbound transition forward-hooks the next segment (per `banks/transition-bank.md` Section 2) OR sets up the body-to-ending bridge if this is the final body segment.
+3. **Transition out (the handoff).** The forward-hook into the next segment (per `banks/transition-bank.md` Section 2), or the body-to-ending bridge if this is the final body segment. This is the segment's contribution to the script's tension, the little setup that pulls the viewer forward. Whether this segment carries the title-promise payoff or opens/closes a thread is planned in vid-structure and recorded in piece.md; read it, don't re-derive it.
 
 **Bank-pulling logic** (the differentiator of this skill).
 
@@ -135,15 +135,12 @@ Never invent client names, numbers, results, or specific phrasings. The brain du
 ```
 SEGMENT: {short label, e.g. "Step 2: Refactor your week"}
 
-SETUP. {one bullet: emotional open or forward-hook off prior segment}
-TENSION
-  - Parable: {Visual Demo (Show-the-Problem | Contrast | Breakdown) | Story | Metaphor | Contrast}
-    - Bank candidates: [[story-slug-1]] (problem-2, theme: scheduling) | [[story-slug-2]] (problem-2, theme: deep-work)
-  - Principle: {framework move + proof position}
-    - Framework: [[framework-slug]] (or "no framework, single lesson")
-    - Proof candidates: [[proof-slug]] (client-win) | [[proof-slug-2]] (personal-result)
-PAYOFF. {one bullet: the lesson the viewer walks away with}
-TRANSITION OUT. {one of the Section 2 patterns from transition-bank, slot-filled with this segment's payoff}
+PARABLE (the show): {Visual Demo (Show-the-Problem | Contrast | Breakdown) | Story | Metaphor | none for a lean step}
+  - Bank candidates: [[story-slug-1]] (problem-2, theme: scheduling) | [[story-slug-2]] (problem-2, theme: deep-work)
+PRINCIPLE (the tell): {framework move + proof position + the one-line takeaway}
+  - Framework: [[framework-slug]] (or "no framework, single lesson")
+  - Proof candidates: [[proof-slug]] (client-win) | [[proof-slug-2]] (personal-result)
+TRANSITION OUT. {one of the Section 2 patterns from transition-bank, slot-filled with this segment's takeaway}
 ```
 
 Then ask:
@@ -164,13 +161,13 @@ Now write the segment in the creator's voice. The structure is locked; this phas
 
 **Per-block writing.**
 
-- **Setup prose.** Pull verbatim from brain dump where possible. If the creator wrote "I was staring at my inbox at 2am wondering when this stopped being fun," that line goes in. Match the opener move the reference pieces for this `voice_context` use (declaration / question / anecdote / contrarian). Setup runs short: 1-3 sentences for tight formats (news, short process), 3-6 for listicle/deep-dive.
+- **Parable prose (the show).** The segment opens on the parable. Pull verbatim from the brain dump where possible. If the creator wrote "I was staring at my inbox at 2am wondering when this stopped being fun," that line goes in. Match the opener move the reference pieces for this `voice_context` use (declaration / question / anecdote / contrarian). For visual demos, the bank entry's body sections give you both layers: the spoken layer goes in script, the shown layer goes in a `> [!note] visual:` callout for the production team (production instructions, not claim-proof). For stories, follow the bank entry's Problem-Action-Outcome verbatim. Preserve the creator's specific language. For metaphors, drop the metaphor in clean (no "let me give you an analogy" announcement; just say it), then use the bank's pivot phrase to bridge to the principle. Lean steps skip the parable and open straight on the principle. The open runs short: 1-3 sentences for tight formats (news, short process), 3-6 for listicle/deep-dive.
 
-- **Tension prose.** Write the parable first (the show), then the principle (the tell). For visual demos, the bank entry's body sections give you both layers: the spoken layer goes in script, the shown layer goes in a `> [!note] visual:` callout for the production team (production instructions, not claim-proof). For stories, follow the bank entry's Problem-Action-Outcome verbatim. Preserve the creator's specific language. For metaphors, drop the metaphor in clean (no "let me give you an analogy" announcement; just say it), then use the bank's pivot phrase to bridge to the principle. For frameworks, name the framework, walk the components, then immediately drop in the proof candidate selected.
+- **Principle prose (the tell).** Name the framework, walk the components, then immediately drop in the proof candidate selected.
 
 - **Claim-proof callouts.** When the principle contains a CLAIM (number, named outcome, before/after, volume signal, named person), drop a `> [!important] Visual proof needed` callout immediately AFTER the line carrying the claim, naming what the editor must put on screen. Follow the canonical convention in `knowledge/visual-proof-callouts.md` so vid-intro and vid-pressure-test audit against the same shape. Production-only instructions (visual demo prop setup, metaphor staging, on-screen text overlays) use `> [!note] visual:`. Keep the two distinct.
 
-- **Payoff prose.** One clear sentence of takeaway. The "what they walk away with." Match the punch-out the reference pieces use (often a short sentence after a longer one; hear it via `voice-rhythm.md` short-short-long, snap back).
+- **Takeaway (closes the principle).** One clear sentence of takeaway, the "what they walk away with." Match the punch-out the reference pieces use (often a short sentence after a longer one; hear it via `voice-rhythm.md` short-short-long, snap back).
 
 - **Transition prose.** Pull the slot-filled Section 2 pattern from Phase 2's structure draft. Verify against Section 4 banned phrases. If the candidate trips a banned phrase ("anyway, moving on" / "let's dive in" / etc.), regenerate from a different Section 2 pattern.
 
@@ -189,11 +186,11 @@ Now write the segment in the creator's voice. The structure is locked; this phas
 ```
 {SEGMENT LABEL}
 
-{Setup paragraph(s)}
+{Parable paragraph(s): the show. Visual notes in callouts where applicable}
 
-{Tension paragraph(s): parable then principle. Visual notes in callouts where applicable}
+{Principle paragraph(s): the tell, framework then proof}
 
-{Payoff sentence}
+{Takeaway sentence}
 
 {Transition out (one sentence)}
 ```
@@ -309,7 +306,7 @@ From `vault-integration.md` Failure modes section. Never silent inconsistency.
 | `banks/testimonial-bank/*.md` | Verbatim social proof candidates |
 | `banks/framework-bank/*.md` | Creator's named systems |
 | `banks/transition-bank.md` | Section 2 segment-to-segment patterns + Section 4 banned phrases |
-| `references/setup-tension-payoff-shapes.md` | Per-format STP shapes, contrastive examples (skill-local) |
+| `references/parable-principle-shapes.md` | Per-format parable + principle shapes, contrastive examples (skill-local) |
 | `references/framework-shapes.md` | Arrows / pyramids / cycles / Venns / funnels: when to use each (skill-local) |
 | `knowledge/parable-decision-matrix.md` | Which block type for which problem (visual demo / story / metaphor / contrast). Shared with vid-intro and vid-ending. |
 | `knowledge/story-pulling-criteria.md` | How to pick the right story from N candidates. Shared with vid-intro and vid-ending. |
@@ -324,7 +321,7 @@ From `vault-integration.md` Failure modes section. Never silent inconsistency.
 - `vid-capture` produces bank entries this skill reads and may be invoked mid-skill if a bank gap blocks the segment
 - `vid-intake` produces brain-dump.md
 - `vid-framing` produces piece.md
-- `vid-intro` writes the intro segment (different shape: 6-part architecture, not STP)
+- `vid-intro` writes the intro segment (different shape: 6-part architecture, not parable + principle)
 - `vid-ending` writes the ending segment (different shape: body-to-ending bridge plus CTA)
 - `vid-structure` (future) assembles the skeleton this skill fills, once per body section (the orchestrator runs the loop in the script phase)
 - `vid-pipeline` (future) orchestrates the full per-video pipeline

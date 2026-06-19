@@ -179,7 +179,7 @@ Writes the `## Intro` section with the 6-part intro structure.
 - **NEXT**: vid-segment (hands to vid-voice-update on a creator voice reaction)
 
 ### vid-segment `WIP`
-Writes one body section at a time (Setup/Tension/Payoff). Loops once per segment.
+Writes one body section at a time (parable + principle). Loops once per segment.
 - **READS**: `piece.md`, `brain-dump.md`, `script.md`, `voice-profile.md`, `reference-pieces/`, `creator-foundation.md`, `banks/transition-bank.md`, all 5 evidence banks, the parable/proof/story/metaphor/visual knowledge set, voice set, and `knowledge/format-planners/{format}.md` (see the dependency map for the full 15 + 7 list)
 - **WRITES**: `script.md` (one body section), `piece.md` (banks used)
 - **NEXT**: vid-segment again until done, then vid-ending (hands to vid-voice-update on a voice reaction)

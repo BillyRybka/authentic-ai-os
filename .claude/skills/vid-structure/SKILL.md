@@ -89,10 +89,10 @@ Per `knowledge/script-tension-architecture.md`:
 
 Load the format planner. Use the format's prescribed shape, NOT a generic "N segments" template:
 
-- **Case Study:** narrative arc. `## Setup` → `## Problem` → `## Action` → `## Outcome` → `## Lesson + Steps`. These are story beats, not 5 abstract segments. One STP across the whole body.
+- **Case Study:** narrative arc. `## Setup` → `## Problem` → `## Action` → `## Outcome` → `## Lesson + Steps`. These are story beats, not 5 abstract segments. The whole body is one parable (the story); the principle lands at the Lesson beat.
 - **Listicle:** N items, each its own segment. `## Item 1: {name}` ... `## Item N: {name}`. Big arc rising to "biggest" or "most surprising."
-- **Short Process:** N steps. `## Step 1: {action}` ... `## Step N: {action}`. One big STP up front (in intro), each step lean.
-- **Deep Dive:** 3-5 major lessons. `## Lesson 1: {concept}` ... `## Lesson N: {concept}`. Each lesson its own STP cycle.
+- **Short Process:** N steps. `## Step 1: {action}` ... `## Step N: {action}`. One big parable up front (in the intro), each step runs lean principle-only.
+- **Deep Dive:** 3-5 major lessons. `## Lesson 1: {concept}` ... `## Lesson N: {concept}`. Each lesson its own parable + principle.
 - **News:** tight 3-part. `## What Happened` → `## Why It Matters` → `## What To Do`.
 - **Roast:** per-subject reviews. `## Subject 1: {name}` ... `## Subject N: {name}`. Same internal shape per subject.
 - **Interview:** per-question. `## Q1: {question}` ... `## QN: {question}`. Host pulls a through-line.
@@ -235,7 +235,7 @@ last_refreshed: {today}
 - Section header with one-line purpose (material-anchored, not abstract)
 - **Material:** what brain-dump entries land here
 - **Block candidates:** listed wikilinks per category, plus "no match" flags
-- **Bullet outline:** 3-5 bullets covering setup, tension, payoff for this segment (working draft, not prose)
+- **Bullet outline:** 3-5 bullets covering the parable and principle for this segment (working draft, not prose)
 - **Tension role:** where this segment sits in the cross-segment arc
 - **Outbound handoff:** the forward-hook into the next segment (or to ending)
 

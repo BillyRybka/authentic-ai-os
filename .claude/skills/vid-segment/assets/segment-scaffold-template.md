@@ -12,23 +12,21 @@ Used by vid-segment Phase 2 to surface a structure draft to the creator. Slot-fi
 
 ---
 
-### SETUP (the open)
+### PARABLE (the show)
 
-{One bullet: emotional open OR forward-hook off prior segment's closing line}
+**Type:** {Visual Demo (Show-the-Problem | Contrast | Breakdown) | Story | Metaphor | none for a lean step}
 
-Source: {brain-dump phrase / prior-segment payoff / avatar's Top 3 problem #N}
-
----
-
-### TENSION (the middle)
-
-**Parable:** {Visual Demo (Show-the-Problem | Contrast | Breakdown) | Story | Metaphor | none}
+The emotional open: how this segment shows the problem, the transformation, or the proof. Pulls from brain-dump phrasing and the segment's own material.
 
 Bank candidates:
 - {bank-slug-1}: {one-line rationale: stage match, problem match, type, etc.}
 - {bank-slug-2}: {one-line rationale}
 
-**Principle:** {framework name OR single-lesson description}
+---
+
+### PRINCIPLE (the tell)
+
+**Framework:** {framework name OR single-lesson description}
 
 Framework: {[[framework-slug]] OR "no framework, single lesson"}
 Framework shape: {arrows | pyramid | triangle | cycle | venn | funnel | acronym | n/a}
@@ -39,13 +37,7 @@ Proof candidates:
 
 Testimonial (optional): {[[testimonial-slug]] OR none}
 
----
-
-### PAYOFF (the close)
-
-{One bullet: the lesson the viewer walks away with}
-
-The "what they remember when the video ends."
+**Takeaway:** {one line: the lesson the viewer walks away with, what they remember when the video ends}
 
 ---
 
@@ -53,7 +45,7 @@ The "what they remember when the video ends."
 
 Pattern (from banks/transition-bank.md Section 2): {pattern slug, e.g. SS-3 or HF-5}
 
-Slot-filled with this segment's payoff: "{filled transition sentence}"
+Slot-filled with this segment's takeaway: "{filled transition sentence}"
 
 (Verify against Section 4 banned phrases. If it trips one, regenerate from a different pattern.)
 
@@ -68,7 +60,7 @@ Ask the creator:
 1. Does the segment's job match what piece.md says?
 2. Is the block type the right shape for THIS segment (not just a default)?
 3. Did the right bank candidates surface? Want to swap any?
-4. Does the payoff name what the viewer should walk away knowing?
+4. Does the principle's takeaway name what the viewer should walk away knowing?
 5. Does the outbound transition forward-hook the next segment or set up the ending?
 
 Lock structure ONLY when the creator confirms. Then move to Phase 3 (prose pass).
