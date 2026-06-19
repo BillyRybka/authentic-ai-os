@@ -8,7 +8,6 @@ Used by vid-segment Phase 2 to surface a structure draft to the creator. Slot-fi
 
 **Format:** {short-process | case-study | listicle | deep-dive | news | roast | interview}
 **Segment job (from piece.md):** {one-line restatement}
-**Avatar problem this segment addresses:** {1 | 2 | 3 | general}
 
 ---
 
