@@ -28,6 +28,11 @@ Assertions (error level, gate):
 Warnings (reported only):
   char_target, no_aiisms, no_hedge_words
 
+Brand checks (no_em_dash, no_banned_words, no_aiisms, no_hedge_words) are
+scoped to extracted title text only, not to the full file. Pattern IDs like
+"solo-leverage" in the annotation metadata are internal labels and are
+deliberately excluded from brand scanning to prevent false positives.
+
 Usage:
   python eval.py [outputs_dir]
 """
@@ -45,12 +50,12 @@ sys.path.insert(0, _LIB)
 import tier_a_universal as t  # noqa: E402
 from frontmatter import split_frontmatter  # noqa: E402
 from check_fabrication import find_fabricated_numbers, _normalize_numbers  # noqa: E402
+import vale_rules  # noqa: E402
 
 
 # --- constants ---
 
 # The blocklist from SKILL.md "AI-default openers" (hard cuts, not soft flags).
-# Match at the start of a candidate OR anywhere inside it for phrase-style blocklist.
 _GENERIC_OPENERS = [
     "the truth about",
     "everything you need to know",
@@ -68,27 +73,20 @@ _PATTERN_RE = re.compile(r"\|\s*pattern:\s*([^|]+?)\s*\|", re.IGNORECASE)
 # The candidate line shape: starts with a digit and a period (N. "Title ...")
 _CANDIDATE_LINE_RE = re.compile(r"^\s*\d+\.\s+")
 
-# Claim-shaped number detector for the anti-fabrication check on title text.
-# We go broader here than the general fabrication lib: for titles we also catch
-# plain integers (any digit token), because a title "7 Skills" must trace to
-# the lock list count, not be invented. The adversarial case has NO digits at
-# all, so any digit in a candidate fails.
+# Any digit at all (for the adversarial no-numbers check)
 _ANY_DIGIT_RE = re.compile(r"\d")
 
-# Named entities to guard: any capitalized or all-caps token that looks like
-# a proper noun (tool name, brand, person) extracted from the candidate.
-# We do a light named-token check: words with an initial capital (3+ chars)
-# that are NOT common English words. The lock list defines what is allowed.
-_COMMON_WORDS = {
-    "The", "A", "An", "In", "On", "Of", "To", "My", "Our", "Your", "How",
-    "Why", "What", "When", "Where", "Who", "And", "But", "Or", "For", "With",
-    "Without", "Stop", "Don", "Just", "Only", "Best", "No", "Not", "Never",
-    "Still", "Right", "Now", "This", "That", "These", "Those", "From",
-    "After", "Before", "Into", "Over", "Under", "Most", "Even", "All",
-    "Its", "It", "You", "I", "We", "They", "He", "She", "Is", "Are",
-    "Was", "Were", "Has", "Have", "Had", "Do", "Does", "Did", "Get",
-    "Got", "Make", "Made", "Run", "Build", "Built", "Use", "Used",
-    "Every", "Each", "More", "Less", "Same", "New", "Old", "Big", "Small",
+# All-caps tokens that are likely tool/brand abbreviations (3-10 chars, no
+# lowercase). These are the named-entity tokens worth checking against the
+# lock list because they are almost always proper names: MCP, VEO, SOP, etc.
+# Common all-caps single words used as emphasis (STOP, DON'T, WRONG, BEST,
+# FREE, etc.) are excluded because they appear in the power-words bank and are
+# legitimate copy choices, not named entities.
+_CAPS_EMPHASIS_WORDS = {
+    "STOP", "DON", "WRONG", "BEST", "FREE", "NEW", "ONLY", "JUST", "STILL",
+    "RIGHT", "NOW", "MOST", "EVERY", "NEVER", "NO", "NOT", "ALL", "EVEN",
+    "MORE", "LESS", "EASY", "FAST", "LAZY", "LAZIEST", "MASTER", "BETTER",
+    "STEAL", "WITHOUT", "FOREVER", "INSANE", "VIRAL", "FULL", "REAL",
 }
 
 
@@ -130,7 +128,6 @@ def _parse_lock_list(brain_dump_text):
     Extract the content of the '### Verifiable specifics (lock list)' block
     from a brain-dump. Returns the raw text of that section.
     """
-    # Find the heading and collect lines until the next heading.
     lines = brain_dump_text.splitlines()
     in_section = False
     collected = []
@@ -173,9 +170,8 @@ def _extract_title_from_candidate(line):
     """
     Pull the quoted title text from a candidate line.
     Expects format: N. "Title text" | pattern: ... | BENS: ... | charcount
-    Falls back to taking the first token after 'N. ' if no quotes found.
+    Falls back to taking text up to the first pipe if no quotes found.
     """
-    # Try quoted form first
     m = re.search(r'"([^"]+)"', line)
     if m:
         return m.group(1)
@@ -184,22 +180,53 @@ def _extract_title_from_candidate(line):
     return stripped.split("|")[0].strip()
 
 
-def _named_tokens_in_title(title_text):
+def _all_candidate_titles(candidate_lines, locked_title):
+    """Return the list of extracted title strings plus locked_title."""
+    titles = [_extract_title_from_candidate(ln) for ln in candidate_lines]
+    if locked_title:
+        titles.append(locked_title)
+    return titles
+
+
+def _titles_as_files(candidate_lines, locked_title):
     """
-    Light named-entity heuristic: words that start with a capital letter
-    (or are all-caps), are 3+ chars, and are not in the common-words set.
-    These are candidates that should appear in the lock list.
+    Build a synthetic 'files' dict containing only the extracted title text.
+    Used to scope brand checks (no_em_dash, no_banned_words) to title strings
+    only, avoiding false positives on pattern IDs like 'solo-leverage' in the
+    annotation metadata.
     """
-    tokens = re.findall(r"\b[A-Z][A-Za-z0-9]*\b", title_text)
-    return [tok for tok in tokens if tok not in _COMMON_WORDS and len(tok) >= 3]
+    combined = "\n".join(_all_candidate_titles(candidate_lines, locked_title))
+    return {"titles-text-only": combined}
 
 
 # --- assertion functions ---
 
+def check_no_em_dash_titles(candidate_lines, locked_title):
+    """
+    Error gate: no em-dash or double-hyphen-as-dash in any title string.
+    Scoped to extracted title text only, not pattern IDs or annotations.
+    """
+    files = _titles_as_files(candidate_lines, locked_title)
+    result = t.check_no_em_dash(files)
+    return t.CheckResult("no_em_dash", result.passed, "error", result.detail)
+
+
+def check_no_banned_words_titles(candidate_lines, locked_title):
+    """
+    Error gate: no banned words in any title string.
+    Scoped to extracted title text only, not pattern IDs or annotations.
+    Pattern IDs like 'solo-leverage' contain the word 'leverage' which is on
+    the banned list, but that is an internal label, not published copy.
+    """
+    files = _titles_as_files(candidate_lines, locked_title)
+    result = t.check_no_banned_words(files)
+    return t.CheckResult("no_banned_words", result.passed, "error", result.detail)
+
+
 def check_char_ceiling(candidate_lines, locked_title):
     """
     Error gate: every candidate AND the locked_title must be <= 55 characters.
-    The SKILL.md sets 55 as the hard ceiling ("cut anything over 55").
+    SKILL.md sets 55 as the hard ceiling ("cut anything over 55").
     Character count is on the title text itself, not the whole candidate line.
     """
     failures = []
@@ -216,7 +243,7 @@ def check_char_target(candidate_lines, locked_title):
     """
     Warning: flag candidates and the locked_title that are 51-55 chars.
     The packaging-system checklist target is ~50 chars; 51-55 is "over target
-    but allowed." Reported so the optimizer knows to prefer shorter titles.
+    but allowed." Reported so the optimizer can prefer shorter titles.
     """
     flags = []
     for line in candidate_lines:
@@ -232,7 +259,7 @@ def check_bens_annotation_present(candidate_lines):
     """
     Error gate: every candidate line must annotate at least one BENS letter
     (B, E, N, or S) in the '| BENS: <letters> |' field.
-    The SKILL.md requires "Hit at least one BENS letter (annotate which)."
+    SKILL.md Phase 3: "Hit at least one BENS letter (annotate which)."
     """
     missing = []
     for line in candidate_lines:
@@ -240,7 +267,6 @@ def check_bens_annotation_present(candidate_lines):
         if not m:
             missing.append(f"no BENS annotation: {line[:80]}")
         else:
-            # Check that the value contains at least one of B, E, N, S
             val = m.group(1).upper()
             if not any(ch in val for ch in "BENS"):
                 missing.append(f"BENS field has no valid letter: {line[:80]}")
@@ -262,16 +288,14 @@ def check_candidate_count(candidate_lines):
 
 def check_no_generic_opener(candidate_lines):
     """
-    Error gate: no candidate starts with or contains a blocked generic opener.
+    Error gate: no candidate contains a blocked generic opener phrase.
     Blocklist from SKILL.md "AI-default openers" (hard cut category):
       - "The truth about"
       - "Everything you need to know"
       - "Why you should"
       - "The ultimate guide to"
       - "Discover the secret"
-    These are the on-distribution center the skill is explicitly told to cut.
-    The check is case-insensitive and matches anywhere in the title, not just
-    the start, because "Discover the secret" inside a title is equally dead.
+    Check is case-insensitive on the extracted title text.
     """
     hits = []
     for line in candidate_lines:
@@ -285,49 +309,61 @@ def check_no_generic_opener(candidate_lines):
 
 def check_anti_fabrication(candidate_lines, locked_title, lock_list_text, slug):
     """
-    Error gate: numbers and named entities in candidates must trace to the lock list.
+    Error gate: numbers and all-caps named tokens in candidates must trace to
+    the lock list.
 
-    Number check (reuses check_fabrication logic for digit-form numbers):
+    Number check:
       - For the adversarial case (claude-cowork-newsjack) the lock list has
-        NO numbers. Any digit, $, or % in a candidate title fails.
+        NO numbers. Any digit in any candidate title fails.
       - For other cases, claim-shaped numbers (dollar figures, percentages,
-        multipliers, 3+ digit numbers) and plain integers must appear in the
-        lock list text.
+        multipliers, large counts) must appear in the lock list text. Plain
+        small counts (1-2 digits) are checked against the lock list too,
+        because a listicle title claiming "9 Skills" when the material says
+        "7 Skills" is fabrication.
 
-    Named-entity check (light heuristic):
-      - Capitalized tokens (3+ chars, not common words) in each candidate are
-        checked against the lock list. If the token appears nowhere in the lock
-        list text, it is flagged as a potential fabricated named entity.
-      - This catches invented tool names, brand names, or people names.
+    Named-entity check (conservative heuristic):
+      - Only ALL-CAPS tokens of 3+ characters are checked (e.g. MCP, VEO,
+        SOP, API). These are almost always product names or abbreviations.
+      - Common emphasis words (STOP, WRONG, BEST, FREE, etc.) are excluded.
+      - A flagged token must appear somewhere in the lock list text (case-
+        insensitive) to pass. This catches invented tool names or methods
+        while ignoring normal English words.
+      - The locked_title is checked alongside the candidates.
+
+    Why not check all capitalized words: normal English capitalization at the
+    start of a title word ("Business," "System," "Channel") produces too many
+    false positives. Only all-caps abbreviations are reliable named-entity
+    signals.
     """
     failures = []
-    lock_norm = _normalize_numbers(lock_list_text)
     lock_lower = lock_list_text.lower()
     is_adversarial = (slug == "claude-cowork-newsjack")
 
-    all_titles = [_extract_title_from_candidate(ln) for ln in candidate_lines]
-    if locked_title:
-        all_titles.append(locked_title)
+    all_titles = _all_candidate_titles(candidate_lines, locked_title)
 
     for title in all_titles:
         # --- number check ---
         if is_adversarial:
-            # Any digit at all is fabrication for the adversarial case.
             if _ANY_DIGIT_RE.search(title):
-                failures.append(f"ADVERSARIAL: digit in title when lock list has no numbers: {title}")
+                failures.append(
+                    f"ADVERSARIAL: digit in title when lock list has no numbers: {title}"
+                )
         else:
-            # Use the same digit normalization as check_fabrication.py.
-            # find_fabricated_numbers expects body_text and source_text.
             bad_nums = find_fabricated_numbers(title, lock_list_text)
             for n in bad_nums:
                 failures.append(f"number not in lock list ({n}): {title}")
 
-        # --- named entity check (light) ---
-        for tok in _named_tokens_in_title(title):
+        # --- named-entity check (all-caps tokens only) ---
+        caps_tokens = re.findall(r"\b([A-Z]{3,10})\b", title)
+        for tok in caps_tokens:
+            if tok in _CAPS_EMPHASIS_WORDS:
+                continue
             if tok.lower() not in lock_lower:
-                failures.append(f"named token '{tok}' not in lock list: {title}")
+                failures.append(
+                    f"all-caps token '{tok}' not in lock list: {title}"
+                )
 
-    # De-duplicate while preserving order.
+    # De-duplicate while preserving order
     seen = set()
     deduped = []
     for f in failures:
@@ -344,9 +380,7 @@ def check_pattern_diversity(candidate_lines):
     no more than 2 candidates share the same primary BENS letter.
 
     Pattern diversity: SKILL.md Phase 3 "the 5 to 8 should draw from at least
-    3 distinct title-bank patterns." The pattern field in each candidate line
-    is '| pattern: <pattern_id or free-form> |'. We extract those values and
-    count distinct non-empty ones.
+    3 distinct title-bank patterns." The pattern field is '| pattern: X |'.
 
     BENS diversity: "no more than 2 candidates share the same primary BENS
     letter." The primary letter is the first BENS letter annotated.
@@ -374,7 +408,6 @@ def check_pattern_diversity(candidate_lines):
         m = _BENS_RE.search(line)
         if m:
             val = m.group(1).upper()
-            # First valid BENS letter is the primary
             for ch in val:
                 if ch in "BENS":
                     primary_counts[ch] = primary_counts.get(ch, 0) + 1
@@ -395,8 +428,9 @@ def check_locked_title_valid(locked_title, candidate_lines):
     listed candidate title texts.
 
     The locked_title frontmatter field is the handoff artifact. Downstream
-    skills (vid-structure, vid-thumbnail) read it. A title locked to something
-    not in the candidate list is a consistency failure.
+    skills read it. A title locked to something not in the candidate list is a
+    consistency failure. Comparison is case-insensitive on stripped text to
+    tolerate minor whitespace drift.
     """
     if not locked_title or not locked_title.strip():
         return t.CheckResult(
@@ -410,8 +444,6 @@ def check_locked_title_valid(locked_title, candidate_lines):
             {"reason": f"locked_title over 55 chars ({len(locked_title)}): {locked_title}"}
         )
 
-    # The locked_title must match one of the candidates. Compare
-    # case-insensitively on stripped text to tolerate minor whitespace drift.
     locked_norm = locked_title.strip().lower()
     candidate_titles = [
         _extract_title_from_candidate(ln).strip().lower()
@@ -433,8 +465,8 @@ def check_locked_title_valid(locked_title, candidate_lines):
 def check_handoff(fm, slug):
     """
     Error gate: titles.md frontmatter carries slug, locked_title, locked_bens.
-    These are the fields downstream pipeline steps (vid-structure, vid-thumbnail)
-    read to know the packaging is complete and what was decided.
+    These are the fields downstream pipeline steps (vid-structure,
+    vid-thumbnail) read to confirm packaging is complete and what was decided.
     """
     required = ["slug", "locked_title", "locked_bens"]
     missing = []
@@ -449,7 +481,7 @@ def check_handoff(fm, slug):
         if isinstance(val, str) and val.strip().lower() in ("", "null"):
             missing.append(field)
 
-    # Also check slug matches the expected case slug
+    # Check slug matches the expected case slug
     if "slug" in fm and fm["slug"] and isinstance(fm["slug"], str):
         if fm["slug"].strip().lower() != slug.lower():
             missing.append(f"slug mismatch (got '{fm['slug']}', expected '{slug}')")
@@ -457,21 +489,9 @@ def check_handoff(fm, slug):
     return t.CheckResult("handoff", len(missing) == 0, "error", {"missing": missing})
 
 
-def check_no_aiisms_titles(files):
-    """Warning: AI-isms in the titles file. Thin wrapper so the name is clear."""
-    return t.check_no_aiisms(files)
-
-
-def check_no_hedge_words_titles(files):
-    """Warning: hedge words in the titles file."""
-    return t.check_no_hedge_words(files)
-
-
 def evaluate_case(slug, files, fixtures_root):
     """Run all assertions for one case. Returns list[CheckResult]."""
     titles_text = files.get("titles.md", "")
-    # Brand checks look at titles.md only (not transcript, which echoes reasoning).
-    brand_files = {k: v for k, v in files.items() if k == "titles.md"}
 
     fm, body = split_frontmatter(titles_text)
     candidate_lines = _extract_candidate_lines(body)
@@ -485,9 +505,10 @@ def evaluate_case(slug, files, fixtures_root):
 
     results = []
 
-    # Error-level (gate)
-    results.append(t.check_no_em_dash(brand_files))
-    results.append(t.check_no_banned_words(brand_files))
+    # Error-level (gate). Brand checks are scoped to extracted title text
+    # only (not pattern IDs or other annotation metadata).
+    results.append(check_no_em_dash_titles(candidate_lines, locked_title))
+    results.append(check_no_banned_words_titles(candidate_lines, locked_title))
     results.append(check_char_ceiling(candidate_lines, locked_title))
     results.append(check_bens_annotation_present(candidate_lines))
     results.append(check_candidate_count(candidate_lines))
@@ -497,10 +518,11 @@ def evaluate_case(slug, files, fixtures_root):
     results.append(check_locked_title_valid(locked_title, candidate_lines))
     results.append(check_handoff(fm, slug))
 
-    # Warning-level (reported, do not gate)
+    # Warning-level (reported, do not gate). Also scoped to title text only.
     results.append(check_char_target(candidate_lines, locked_title))
-    results.append(t.check_no_aiisms(brand_files))
-    results.append(t.check_no_hedge_words(brand_files))
+    title_files = _titles_as_files(candidate_lines, locked_title)
+    results.append(t.check_no_aiisms(title_files))
+    results.append(t.check_no_hedge_words(title_files))
 
     return results
 
@@ -509,7 +531,7 @@ def main():
     outputs_dir = sys.argv[1] if len(sys.argv) > 1 else os.path.join(_HERE, "outputs")
     manifest = _load_manifest()
     fixtures_root = _fixtures_root(manifest)
-    cases = manifest["cases"]  # ["client-340k-to-1-3m", "claude-content-skills", "claude-cowork-newsjack"]
+    cases = manifest["cases"]
 
     error_assertions = [
         "no_em_dash", "no_banned_words", "char_ceiling",

@@ -67,7 +67,7 @@ Platform fit from matrix:
 
 All three viable. No weak-fit flag needed.
 
-Carousel worth-it gate: five distinct beats, each a standalone mistake, in an order that matters (no steps in your head creates all the other problems). Can write a clean one-line headline for all five. Earns the carousel.
+---
 
 **ASSISTANT:**
 
@@ -87,7 +87,9 @@ Also, mistake one is the big one. That ties back to the documentation point I al
 
 **ASSISTANT (internal):**
 
-Marcus is from story-bank/agency-owner-fired-himself. Bank pull is allowed per seed. He had a process, no assigned owner, so it defaulted back to him each time. That is the mistake-three example. proof-bank/onboarding-5h-to-1h is NOT in bank_pulls_allowed for this seed. No specific hours figure will appear anywhere in this post.
+Marcus is from story-bank/agency-owner-fired-himself. Bank pull is allowed per seed. He had a process, no assigned owner, so it defaulted back to him each time. That is the mistake-three example. No numbers from the proof bank, which is not in bank_pulls_allowed for this seed.
+
+---
 
 **ASSISTANT:**
 
@@ -117,9 +119,11 @@ Hook check:
 1. Faces the reader: YES. "Your onboarding keeps pulling you back in" is the reader's exact experience.
 2. Opens a gap: YES. "Not because the work is complicated" reframes what they think the problem is. The list is the resolution.
 3. No warm-up: YES. Straight to the line.
-4. Reader test: "That is me" is exactly what the avatar thinks when they read this. They pull themselves out of onboarding every single week. Pass.
+4. Reader test: "That is me" is exactly what the avatar thinks when they read this. They pull themselves out of onboarding every single week.
 
-Invented-numbers pre-check: the seed gives no specific duration, dollar figure, percentage, or count beyond the five mistakes themselves. Marcus story referenced in qualitative terms only. No hours figure. No percentage improvement. No count of clients.
+Invented-numbers pre-check: the seed gives no specific duration, dollar figure, percentage, or count beyond the five mistakes themselves. Marcus's story from the bank will reference his experience in qualitative terms only. The proof bank entry (onboarding-5h-to-1h) is NOT in bank_pulls_allowed for this seed. No hours figure will appear.
+
+---
 
 **ASSISTANT:**
 
@@ -164,7 +168,7 @@ Anti-slop editorial pass:
 2. Specific, not generic: YES. Five named checkable items. Marcus example grounded in real bank entry. No platitudes.
 3. Grounded in real material: YES. All five mistakes from Sam's seed verbatim or near-verbatim. Marcus from allowed bank pull. No invented number.
 4. Strong, fresh hook: YES. Diagnostic. Single-post batch, no repetition risk.
-5. No AI tells: zero em-dashes. Zero hype words (no leverage, unlock, streamline, empower, optimize, supercharge, methodology). Zero hedging (every item is concrete and checkable, CTA is a direct instruction). Zero phrasal hyphens. Zero warm-up throat-clearing.
+5. No AI tells: zero em-dashes. Zero hype words (no leverage, unlock, streamline, empower, optimize, supercharge, methodology). Zero hedging (every item is concrete and checkable, CTA is a direct instruction). Zero phrasal hyphens.
 6. Clean publishable body: no wikilinks, no markdown internal links.
 7. Read-aloud: short punchy lines, second person, no throat-clearing, names the trap before the fix, direct instruction to close. Consistent with voice fingerprint and youtube-script reference grain.
 8. CTA: "Find the first one that is broken and fix it this week." Specific, earned.
@@ -181,21 +185,21 @@ Voice pressure test Pass 2 (grain check, youtube-script reference pieces loaded)
 - Short punchy lines, then longer ones that earn their length. Consistent with reference rhythm.
 - Names the trap before the fix. Direct instruction to close. No warm-up. Pass.
 
-Core locked. Adapting to LinkedIn, Instagram carousel, Instagram caption.
+Core approved. Adapting to LinkedIn, Instagram carousel, Instagram caption.
 
 ---
 
 ## Phase 4: Platform adaptations
 
-### LinkedIn adaptation
+### LinkedIn
 
 **ASSISTANT (internal):**
 
-LinkedIn hook: different entry point from the core. Core opened on the symptom (it keeps pulling you back in, diagnostic). For LinkedIn, open on the reader's recurring cost as an observation. Short paragraphs, one argument, practical takeaway. CTA is a real question.
+LinkedIn hook: different entry point from the core. Core opened on the symptom (it keeps pulling you back in). For LinkedIn, open on the reader's recurring cost, the behavior they are already running. Short paragraphs, one argument, practical takeaway. CTA is a real question.
 
 Hook options:
 - "Your onboarding pulls you back in because the process was never designed to run without you." (observation, reader's cost)
-- "Every client you onboard costs you more time than it should." (observation, names the cost without a number)
+- "Every client you onboard costs you more time than it should, and it is not a capacity problem." (diagnostic, reader's cost named)
 
 Picking: "Every client you onboard costs you more time than it should." Faces the reader. Opens a gap (should vs does). Earns the second line. Does not invent any specific number or duration.
 
@@ -203,9 +207,11 @@ Hook check:
 1. Faces the reader: YES. Their onboarding, their cost.
 2. Opens a gap: YES. "Should" implies it does not have to be this way.
 3. No warm-up: YES.
-4. Earns line two: YES. Natural follow-on is "here is why." Pass.
+4. Earns line two: YES. Natural follow-on is "here is why."
 
 Length target: 150 to 180 words.
+
+---
 
 **ASSISTANT:**
 
@@ -235,23 +241,27 @@ Audit yours against these five. Which one is it?
 
 ---
 
-### Instagram carousel adaptation
+### Instagram carousel
 
 **ASSISTANT (internal):**
 
-Carousel worth-it gate already passed (Phase 3). Five distinct beats in a real sequence.
+Carousel title slide: needs to earn the swipe in a single line. Different opener from the core (diagnostic) and LinkedIn (observation of reader's cost). Try a rule or a direct statement for variety.
 
-Carousel title slide: different opener from core (diagnostic) and LinkedIn (observation of reader's cost). The title slide needs to earn the swipe in one short line and create a felt-incomplete state that makes slide 2 mandatory.
+"The five things keeping your onboarding in your hands." States the cost and promises the resolution. Reader-facing. Short enough for a title slide.
 
-Option: "Your onboarding keeps pulling you back in because it was built that way." Rule form. "Built that way" implies it can be built differently. Opens a gap. Short enough for a title slide.
+Or: "Your onboarding runs through you because it was built that way." Rule form, faces the reader's situation.
+
+Picking: "Your onboarding keeps pulling you back in because it was built to." Short, sharp, faces the reader, opens a gap (built this way implies it can be built differently), earns the swipe.
 
 Hook check:
 1. Faces the reader: YES.
-2. Opens a gap: YES. "Built to" implies a design problem, not a you problem.
+2. Opens a gap: YES. "Built to" implies this is a design problem, not a you problem.
 3. No warm-up: YES.
-4. Reader test: "That is me" and "I need to see how." Pass.
+4. Reader test: "That is me" and "I need to see where this goes." Pass.
 
-One point per slide. 30 words max, two short sentences ceiling. Road-sign headline per slide. Recap is the screenshot-this slide. Caption carries nuance and one CTA.
+One point per slide. Recap is the screenshot-this slide. Caption carries nuance and CTA.
+
+---
 
 **ASSISTANT:**
 
@@ -275,7 +285,8 @@ Recap slide: Audit your onboarding against these five. Fix the first one that is
 
 Caption: Most onboarding problems are the same five problems. No written steps. Client and team onboarding collapsed into one process. No owner assigned. Documentation nobody updates. Nothing tracked. Any one of these is enough to keep it on your plate forever. Marcus had a process built out but no one assigned to run it, and every new client still defaulted back to him. The fix was not more documentation. It was putting a name on who owned it. Run your onboarding through this list. Fix the first thing that is broken. Save this for the next time a client comes in and the whole thing lands back in your lap.
 
-Visual brief:
+### Visual brief
+
 Slide 1: Bold single line, largest type, high contrast, nothing else on the slide. The title has to earn the swipe on its own.
 Slides 2 to 6: One numbered line per slide, key phrase emphasized (in your head / they are not / defaults back to you / the doc did not / you cannot tell if it is working), consistent type scale, generous white space between slides.
 Recap slide: The single action line as the only text, large, brand color accent. Built to screenshot.
@@ -283,21 +294,23 @@ Caption: Plain text, no hashtag stuffing.
 
 ---
 
-### Instagram caption adaptation
+### Instagram caption
 
 **ASSISTANT (internal):**
 
-Caption: warmer, single thread, no bullet structure. Different opener from core (diagnostic), LinkedIn (observation of reader's cost), carousel title (rule about how it was built). Use a statement that names the reader's situation from a slightly different angle and opens a loop in one line.
+Caption: warmer, single thread, no bullet structure. Different opener from core (diagnostic), LinkedIn (observation of reader's cost), carousel (rule about how it was built). Use a statement or observation that names the reader's experience from a slightly different angle.
 
-Option: "The process exists. It is just in your head." Short, specific, faces the reader's situation. Opens the gap: if it is in there, it needs to come out of it.
+"The process exists. It is just in your head." Short, specific, faces the reader's situation. Warmer than LinkedIn. Opens the gap: it is in there, it just needs to come out.
 
 Hook check:
 1. Faces the reader: YES. "The process" is theirs.
-2. Opens a gap: YES. If it is in their head, it needs to come out.
+2. Opens a gap: YES. If it is in their head, it needs to come out of it.
 3. No warm-up: YES.
 4. Reader test: "That is actually true for me." Pass.
 
-Single thread, no formatted list, warmer register.
+Single thread, no formatted list, warmer register throughout.
+
+---
 
 **ASSISTANT:**
 
@@ -339,8 +352,8 @@ Saving to: content/pieces/5-onboarding-mistakes/posts/5-onboarding-mistakes.md
 
 Per vault-integration update-both-sides rule:
 - Post note piece frontmatter: piece: "[[5-onboarding-mistakes]]"
-- story-bank/agency-owner-fired-himself: used_in should be updated to include "[[5-onboarding-mistakes]]", status: used
-- Marcus Lane referenced in body. Stub people/Marcus Lane.md exists per bank entry client field. No new stub needed.
+- story-bank/agency-owner-fired-himself used_in: ["[[5-onboarding-mistakes]]"], status: used
+- Marcus Lane referenced in body. People stub people/Marcus Lane.md exists per bank entry frontmatter. No new stub needed.
 
 ---
 
@@ -353,15 +366,15 @@ Done. Batch summary:
 1 post from "5 onboarding mistakes" source.
 - Type: checklist
 - Platforms: LinkedIn, Instagram carousel, Instagram caption
-- Hook types across versions: core (diagnostic), LinkedIn (observation), carousel title (rule), caption (statement)
+- Hook types across versions: core (diagnostic), LinkedIn (observation), carousel title (rule), caption (observation, different surface)
 - Fit: Problem 2, iceberg aligned, clean fit
 - Bank pull: story-bank/agency-owner-fired-himself (Marcus, no-owner example, mistake 3)
 
-Hook variety: single-post batch. Four versions used diagnostic, observation, rule, and statement hooks. No hook type repeats.
+Hook variety: single-post batch. Four versions across the batch used diagnostic, observation, and rule hooks. No hook type repeats.
 
-Voice context note: no linkedin or instagram reference-pieces file exists for this creator. Writing ran from voice_fingerprint and signature_phrases, with youtube-script reference pieces for grain calibration. If posts feel off for those platforms specifically, add foundation/reference-pieces/linkedin.md and foundation/reference-pieces/instagram.md via vid-voice-capture.
+Voice context note: no linkedin or instagram reference-pieces file exists for this creator. Writing ran from voice_fingerprint and signature_phrases plus the youtube-script reference pieces for grain calibration. If you want posts tighter to your LinkedIn or Instagram register specifically, add foundation/reference-pieces/linkedin.md and foundation/reference-pieces/instagram.md via vid-voice-capture.
 
-Failures: none. No units dropped. No invented numbers (proof-bank/onboarding-5h-to-1h was excluded because it is not in this seed's bank_pulls_allowed). No fabricated examples. No unresolved wikilinks in any publishable block.
+Failures: none. No units dropped. No invented numbers (specific time durations from the proof bank were excluded because proof-bank/onboarding-5h-to-1h was not in this seed's bank_pulls_allowed). No fabricated examples. No unresolved wikilinks in any publishable block.
 
 Saved: content/pieces/5-onboarding-mistakes/posts/5-onboarding-mistakes.md
 

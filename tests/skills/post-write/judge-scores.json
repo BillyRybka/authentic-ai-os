@@ -7,12 +7,12 @@
         "voice_fidelity": 4,
         "commitment_no_hedging": 5,
         "specificity_grounded": 5,
-        "platform_adaptation": 4,
+        "platform_adaptation": 5,
         "one_idea_clarity": 5,
         "hook_strength": 4
       },
-      "average": 4.50,
-      "reasoning": "Seed phrases ('the goal is not to do more', 'stayed the same while making me a worse overall person', restaurant kitchen) land intact and the LinkedIn opener ('Hustle is not the answer to being slammed. It is the reason you stay slammed.') is a strong reader-facing gap. Instagram caption opener ('I worked 80-hour weeks...') is the one subject-facing hook, keeping hook_strength at 4. LinkedIn and core share near-identical kitchen paragraph language, holding platform_adaptation at 4."
+      "average": 4.67,
+      "reasoning": "Borrows the kitchen passage cadence and the 80-hour confession cleanly; all specifics trace to seed and allowed bank pulls (Marcus, 5h-to-1h, restaurant kitchen). LinkedIn and caption are genuinely adapted; carousel is crisp one-idea-per-slide with a detailed visual brief. Caption opener ('I worked 80-hour weeks') is slightly subject-facing before pivoting, which costs one hook point."
     },
     {
       "case": 1,
@@ -20,13 +20,13 @@
       "scores": {
         "voice_fidelity": 4,
         "commitment_no_hedging": 5,
-        "specificity_grounded": 4,
+        "specificity_grounded": 5,
         "platform_adaptation": 4,
         "one_idea_clarity": 5,
         "hook_strength": 4
       },
-      "average": 4.33,
-      "reasoning": "'Delegation is not about trust. It is about documentation' preserved verbatim and the post never retreats from it. Marcus, the 5h-to-1h proof, six weeks, and the coordinator are all from seed reveals and bank_pulls_allowed with no invented revenue figures as the withhold required. LinkedIn and core share most beats in the same order, keeping platform_adaptation at 4."
+      "average": 4.50,
+      "reasoning": "'Delegation is not about trust. It is about documentation' holds throughout with zero retreat; Marcus + 5h-to-1h and six-weeks correctly traced to allowed bank pulls, no revenue invented as the withhold required. Slide 4 stacks three short statements which marginally overloads one carousel card; core and LinkedIn share most beats in the same order, holding platform_adaptation at 4."
     },
     {
       "case": 2,
@@ -34,41 +34,41 @@
       "scores": {
         "voice_fidelity": 4,
         "commitment_no_hedging": 5,
-        "specificity_grounded": 3,
-        "platform_adaptation": 4,
+        "specificity_grounded": 4,
+        "platform_adaptation": 5,
         "one_idea_clarity": 5,
         "hook_strength": 4
       },
-      "average": 4.17,
-      "reasoning": "'Now you are the bottleneck with a dashboard' is sharp Sam grain and the position holds throughout. Specificity scores 3 because beyond the kitchen-appliance metaphor (bank-allowed) the vivid team-behavior detail ('still have to walk back to you to ask what the task actually means') is elaborated inference, not creator-owned material. Caption hook ('If you bought the new scheduling tool and you are still slammed six weeks later, the tool is not why') is the strongest in the case; carousel title front-loads the answer but core and LinkedIn openers both face the reader."
+      "average": 4.50,
+      "reasoning": "'Now you are the bottleneck with a dashboard' is pure Sam grain and the position never retreats. Carousel, LinkedIn, and caption are each genuinely reshaped for their platform; visual brief is present and specific. The 'six weeks later' in the caption opener is a small invented timeframe absent from the seed, nudging specificity to 4. Core opener introduces the product before the reader's problem, making it slightly weaker than the LinkedIn and caption hooks."
     },
     {
       "case": 3,
       "slug": "5-onboarding-mistakes",
       "scores": {
         "voice_fidelity": 4,
-        "commitment_no_hedging": 4,
-        "specificity_grounded": 4,
+        "commitment_no_hedging": 5,
+        "specificity_grounded": 5,
         "platform_adaptation": 4,
         "one_idea_clarity": 4,
-        "hook_strength": 3
+        "hook_strength": 5
       },
-      "average": 3.83,
-      "reasoning": "Seed phrases ('it all lives in your head', 'you measure nothing so you cannot tell if it is working') land correctly and Marcus is used for mistake 3 per the reveals. Carousel title ('Your onboarding keeps pulling you back in because it was built that way') is slightly subject-facing and caption opener ('The process exists. It is just in your head.') is a mild observation rather than a gap, pulling hook_strength to 3. The listicle format inherently spreads attention across five sub-points, holding one_idea_clarity at 4."
+      "average": 4.50,
+      "reasoning": "All five mistakes are verbatim from seed; Marcus no-owner example correctly drawn from allowed bank pull; proof-bank entry correctly excluded per provenance. Caption hook 'The process exists. It is just in your head.' is one of the sharpest reader-facing openers in the batch. LinkedIn reformats as paragraphs but reads more as a reflowed listicle than a true argument-first LinkedIn shape, and five distinct items make the takeaway slightly diffuse."
     },
     {
       "case": 4,
       "slug": "thin-pricing-dump",
       "scores": {
         "voice_fidelity": 4,
-        "commitment_no_hedging": 4,
-        "specificity_grounded": 3,
+        "commitment_no_hedging": 5,
+        "specificity_grounded": 4,
         "platform_adaptation": 3,
         "one_idea_clarity": 5,
-        "hook_strength": 3
+        "hook_strength": 4
       },
-      "average": 3.67,
-      "reasoning": "TODOs are correctly placed in all three platform versions and no numbers or client stories are fabricated, which is exactly right for this adversarial thin seed. LinkedIn is structurally near-identical to the core (same sentences, same order, one line removed), holding platform_adaptation at 3. Core and LinkedIn openers ('People undercharge and it kills them') are topic-facing fact statements rather than reader-facing gap-openers; carousel and caption openers are stronger but cannot rescue hook_strength above 3."
+      "average": 4.17,
+      "reasoning": "Correct adversarial behavior: visible TODO placeholders in all three platform versions, no fabricated numbers or client stories. 'You call it a hustle problem. It is a pricing problem.' is committed and sharp throughout. LinkedIn version is nearly word-for-word the core (expected symptom of a thin seed but still registers as weak platform adaptation); carousel is properly decomposed and the caption diagnostic opener is genuinely distinct."
     },
     {
       "case": 5,
@@ -77,21 +77,21 @@
         "voice_fidelity": 4,
         "commitment_no_hedging": 4,
         "specificity_grounded": 4,
-        "platform_adaptation": 4,
+        "platform_adaptation": 3,
         "one_idea_clarity": 5,
-        "hook_strength": 2
+        "hook_strength": 3
       },
       "average": 3.83,
-      "reasoning": "'It was honestly wild how fast it moved' lands at the right beat-drop and 'boring is not the obstacle. Boring is the engine.' is sharp Sam rhythm. TODOs correctly replace the withheld result number across all versions. Hook_strength is a 2 because every platform version opens on the creator's or client's experience ('The fastest growth I have ever seen', 'Boring systems grew this business', 'The most boring system I have ever helped build') rather than on a belief or pain the reader holds; this is subject-facing by the rubric's definition throughout."
+      "reasoning": "Correct adversarial behavior: visible TODO for the withheld result in every version, Jordan's details match seed, no invented revenue or percentages. 'Boring is not the obstacle. Boring is the engine' is strong Sam rhythm, but 'sometimes it comes from the thing you kept skipping' in the caption is a soft hedge. Carousel slide 2 carries three sentences (rubric fail). Every hook opens on the creator's or client's experience rather than on the reader's belief or pain, holding hook_strength to 3."
     }
   ],
   "dimension_averages": {
     "voice_fidelity": 4.00,
-    "commitment_no_hedging": 4.50,
-    "specificity_grounded": 3.83,
-    "platform_adaptation": 3.83,
+    "commitment_no_hedging": 4.83,
+    "specificity_grounded": 4.50,
+    "platform_adaptation": 4.00,
     "one_idea_clarity": 4.83,
-    "hook_strength": 3.33
+    "hook_strength": 4.00
   },
-  "quality_score": 0.8111
+  "quality_score": 0.8722
 }

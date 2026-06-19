@@ -9,7 +9,7 @@ problem_addressed: 1
 iceberg_aligned: true
 hook_type: contrarian
 status: draft
-captured: 2026-06-18
+captured: 2026-06-16
 published: null
 source_unit: "the tool is the kitchen appliance, the system is the recipe"
 tags: [post, type-contrarian, pillar-systems, problem-1]
@@ -50,8 +50,6 @@ A kitchen appliance does not give you the recipe. A better blender only makes th
 Write the process down before you buy any tool to run it. Every step. In plain language. If you cannot write it down, you do not have a process. You have a habit only you can run.
 
 Write the system first. Then buy the tool.
-
-What would you document first?
 
 ## Publishable: Instagram carousel
 
@@ -99,4 +97,4 @@ Build the recipe first.
 - Fit: [[creator-foundation#Top 3 perceived problems|problem 1]], clean fit
 - Source unit: "the tool is the kitchen appliance, the system is the recipe"
 - Drew on: [[metaphor-bank/restaurant-kitchen-systems]]
-- Voice note: linkedin and instagram reference-pieces files are absent from foundation/reference-pieces/. Adaptations seeded from voice_fingerprint, signature_phrases, and youtube-script reference passages. Add linkedin and instagram reference-pieces via vid-voice-capture to tighten future matching.
+- Voice note: linkedin and instagram reference-pieces files are absent from foundation/reference-pieces/. Adaptations seeded from voice_fingerprint, signature_phrases, and youtube-script reference passages. Add linkedin and instagram reference-pieces files via vid-voice-capture to tighten future matching.

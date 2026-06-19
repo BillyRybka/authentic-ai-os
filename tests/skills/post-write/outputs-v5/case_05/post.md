@@ -3,7 +3,7 @@ type: post
 project: authentic-ai-os
 piece: "[[tempting-numbers-client-story]]"
 post_type: story
-platforms: [linkedin, instagram-caption]
+platforms: [linkedin, instagram-carousel, instagram-caption]
 pillar: systems
 problem_addressed: 1
 iceberg_aligned: true
@@ -61,6 +61,27 @@ That is the thing nobody wants to hear. Boring is not the obstacle. Boring is th
 
 If you are staring at a growth problem right now: what is the one repeatable thing that should run without you, but does not?
 
+## Publishable: Instagram carousel
+
+Slide 1 (title): Boring systems grew this business faster than any hack could.
+Slide 2: Jordan runs a coaching business. Everything lived in their head. Every new client was a scramble.
+Slide 3: We built two things. A documented onboarding. A weekly review.
+Slide 4: Nothing fancy. Written steps that ran the same way every time.
+Slide 5: [Specific result: TODO. Pull your screenshot before publishing this slide.]
+Recap slide: The growth hack you are looking for is a boring system you keep skipping.
+
+Caption: Most service owners are looking for the clever move. The new offer. The viral thing they have not tried. I watched a coaching business grow fast by doing the opposite. Documented onboarding, weekly review, written down, same steps every week. Jordan did not hire more people or pivot the offer. They just built the boring system. It was honestly wild how fast it moved. If your business keeps depending on you being in the room, you do not have a growth problem. You have a missing system. What is the one repeatable thing that should run without you, but still lives only in your head?
+
+### Visual brief
+
+Slide 1: Bold single line, largest type, high contrast. Nothing else on the slide. The word "boring" emphasized in size or weight if the brand allows it.
+Slide 2: One line, Jordan's business type named. Light background, clean readable type. The setup beat.
+Slide 3: Two items stacked as a short list, each on its own row. "A documented onboarding." and "A weekly review." Equal visual weight.
+Slide 4: Short single line, minimal. No clutter.
+Slide 5: Clearly bracketed TODO placeholder. Designer note: this slide is not final. Leave space for a result metric or screenshot to drop in before publish.
+Recap slide: One bold centered line. Screenshot-this format. Brand color if applicable.
+Caption: Plain text, no hashtag stuffing. One to two relevant tags maximum if used.
+
 ## Publishable: Instagram caption
 
 The most boring system I have ever helped build turned into a client's fastest growth period.
@@ -82,9 +103,9 @@ What is the boring thing in your business that should already be written down?
 ## Provenance
 
 - Source: [[tempting-numbers-client-story]]
-- Post-type: story | Platforms: linkedin, instagram-caption | Hook: tension (core/LinkedIn), tension variant (Instagram caption)
+- Post-type: story | Platforms: linkedin, instagram-carousel, instagram-caption | Hook: tension (core/LinkedIn), contrarian claim (carousel title slide), tension variant (Instagram caption)
 - Fit: [[creator-foundation#Top 3 perceived problems|problem 1]], clean fit
 - Source unit: "the growth came from the boring system, not from a growth hack"
-- Drew on: [[Jordan]] (people stub not yet created in vault; create people/Jordan.md before publishing). No story-bank or proof-bank entry for Jordan exists. Specific result is a visible TODO in all platform versions. Do not publish any version until the real proof is captured.
-- Carousel declined: the skill ran the worth-it gate and recommended a caption because this is a single client story with no confirmed result figure. Creator accepted the recommendation.
-- Platform voice note: no linkedin or instagram reference-pieces exist for this creator. Both platform versions written from voice fingerprint and signature phrases, calibrated against youtube-script grain. Add foundation/reference-pieces/linkedin.md and foundation/reference-pieces/instagram.md to improve platform-specific voice fidelity on future runs.
+- Drew on: [[Jordan]] (people stub not yet created in vault; create people/Jordan.md before publishing). No story-bank or proof-bank entry for Jordan exists. Specific result is a visible TODO in all three platform versions. Do not publish any version until the real proof is captured.
+- Carousel fit note: story is a Medium fit for Instagram carousel per the format rubric. Creator approved the carousel. The boring-system vs growth-hack contrast gives the slides enough structure to earn the swipe.
+- Platform voice note: no linkedin or instagram reference-pieces exist for this creator. All versions written from voice fingerprint and signature phrases, calibrated against youtube-script grain. Add foundation/reference-pieces/linkedin.md and foundation/reference-pieces/instagram.md to improve platform-specific voice fidelity on future runs.

@@ -85,7 +85,10 @@ fail) with a cover that earns the swipe and a text visual brief, and the caption
 is a warmer single thread. A carousel forced onto an idea that is really a single
 story or one belief, which should be a caption, scores lower. Same idea, different
 delivery, not the same text three times, and never the core sliced at its
-paragraph breaks.
+paragraph breaks. If the skill correctly declined to build a carousel for a single
+story or one belief and delivered a strong caption instead, that is correct
+behavior: judge the adaptation across the blocks that exist and do not penalize
+the absent carousel.
 
 | Score | What it looks like |
 |---|---|

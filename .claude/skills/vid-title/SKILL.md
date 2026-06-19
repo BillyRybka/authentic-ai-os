@@ -120,6 +120,13 @@ Examples that FAIL (and why):
 
 Everything else (hedge words, stock phrases, colons, parentheticals, credibility-mismatch, number-stuffing, and the rest) is soft friction: it tends to under-perform but the creator may have a reason. Flag it in the annotation and let them decide. The full soft-filter catalog, the natural-language pattern shapes, and the deeper craft notes live in `references/title-filters.md`. Load it when you are judging an edge case or want to widen the divergent pass; do not paste it into chat.
 
+**Final check before you present.** Run the surviving set through these gates and fix any miss before the creator sees it. These enforce the rules above, which are easy to state and easy to skip under generation pressure.
+
+- Every candidate is 55 characters or fewer. Rewrite or cut any that run over.
+- No more than 2 candidates share the same primary BENS letter. If 3 or more share one (case-study sets drift to B and S), swap one for a different pattern and a different letter so the set spans the avatar's angles, not just the obvious one.
+- A clear majority are built from a named title-bank pattern, not free-form. For a set of 5, at least 4 should name a pattern. Free-form is the minority, not the filler.
+- The candidate you will recommend carries a lock-list specific that makes it impossible to paste onto another video. "Claude Cowork Can Now Run Without You" is weaker than "Claude Cowork Scheduled Agents Run Without You" because the first drops the one detail (the named feature) that ties it to this video. If your top pick is generic on that test, sharpen it or pick another.
+
 ## Phase 4: Present with a recommendation
 
 Show the surviving candidates as a numbered list. For each: the title, the bank pattern it came from (or "free-form"), the BENS letters, and the character count. Where a soft filter fired, name it in one short clause so the creator sees the option and the concern together.

@@ -76,6 +76,8 @@ Shape:
 
 Then invoke `{skill}`. When that sub-skill finishes and the creator wants to keep going, re-read `piece.md` and route again. The whole video can run end-to-end unless the creator stops.
 
+**Pre-flight and prerequisites run once, here, and never again this session.** You ran pre-flight at the top of this skill and verified foundation + voice in Step 1. A sub-skill must not repeat either. Pass a short context line with every invocation so it goes straight to the work: `[pipeline session: pre-flight done, foundation verified, voice {present|absent}, slug={slug}. Skip pre-flight and prerequisite re-checks; do not re-announce them.]` And keep your own between-step messages to the one-line state plus next-skill shape above. Never recap "foundation and voice both exist" or "pre-flight already ran." That recap is exactly the noise the creator does not want.
+
 For the segment loop: after each `vid-segment` lock, `segments_completed` grows by one. Re-route. While the count is below `segment_purposes`, the next route is `vid-segment` again (the next unwritten segment). When they're equal, the route advances to `vid-ending`.
 
 ### Step 5: Handle stop signals
@@ -103,6 +105,7 @@ Do not invoke anything further. Post-production states (`filmed`, `editing`, `pu
 - Writing `piece.md` yourself. The sub-skills own their fields and write them in both standalone and pipeline mode. The orchestrator only reads. If a route keeps firing for the same skill, the sub-skill isn't persisting its field; fix the sub-skill, don't patch it here.
 - Reading a sub-skill's reference docs (format planners, tension architecture, the banks). Those belong to the skill that needs them.
 - Asking the creator to type the next command. Always auto-invoke via the Skill tool.
+- Re-running or re-narrating pre-flight or prerequisite checks between steps. You verified them once (pre-flight at the top, foundation + voice in Step 1). Sub-skills skip them silently because you pass them the pipeline-session context line. Every step starts on the work, never on a status recap.
 - Continuing after a clear stop signal.
 - Silently picking a piece when several are in progress. Always surface the choice.
 - Inventing a second status field. `status` is the one lifecycle field. The next step is decided by which artifact exists, not by a parallel micro-status.

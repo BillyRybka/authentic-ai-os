@@ -9,7 +9,7 @@ problem_addressed: 2
 iceberg_aligned: true
 hook_type: diagnostic
 status: draft
-captured: 2026-06-18
+captured: 2026-06-16
 published: null
 source_unit: "No written steps, it all lives in your head"
 tags: [post, type-checklist, pillar-delegation, problem-2, client-onboarding]
@@ -99,7 +99,7 @@ Which one is yours?
 ## Provenance
 
 - Source: [[5-onboarding-mistakes]]
-- Post-type: checklist | Platforms: linkedin, instagram-carousel, instagram-caption | Hook: diagnostic (core), observation (LinkedIn), rule (carousel title), statement (caption)
+- Post-type: checklist | Platforms: linkedin, instagram-carousel, instagram-caption | Hook: diagnostic (core), observation (LinkedIn), rule (carousel title), observation (caption)
 - Fit: [[creator-foundation#Top 3 perceived problems|problem 2]], clean fit
 - Source unit: "No written steps, it all lives in your head"
 - Drew on: [[story-bank/agency-owner-fired-himself]] (Marcus, no-owner example, mistake 3). People stub: [[Marcus Lane]]. proof-bank/onboarding-5h-to-1h was not in bank_pulls_allowed for this seed and was excluded.

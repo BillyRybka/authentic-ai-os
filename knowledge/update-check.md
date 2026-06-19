@@ -6,15 +6,15 @@ This is the first thing every skill does on the first message of a session. Not 
 
 ## Once-per-session guard
 
-Before running this check, scan the conversation so far:
+Pre-flight runs ONCE per session, by whichever skill goes first. Every skill invoked after that skips it. Before running the check, look for any sign it already ran this session:
 
-- Has any earlier message in this session already mentioned checking for updates? Skip.
-- Has the creator already been shown a "v{latest} is available" notice this session? Skip.
-- Has any earlier turn confirmed "you're up to date"? Skip.
+- **Your own earlier tool calls already did it.** If earlier this session you read `plugin.json` or hit the releases endpoint for an update check, it ran. This is the most reliable signal and it holds even when that earlier run was silent (which it usually is). You can see your own earlier tool calls in this conversation; trust them.
+- **An orchestrator or earlier skill already ran it.** If `vid-pipeline` (or any skill) invoked you this session, pre-flight already ran at the top of that session. A sub-skill NEVER re-runs pre-flight the caller already did. If the invocation context says pre-flight is done, that is authoritative.
+- **An earlier message referenced it:** a "v{latest} is available" notice, a "you're up to date" confirmation, or any mention of checking for updates.
 
-If any of the above is true: do NOT run the check again. Proceed directly to the skill's actual job. The check is per-session, not per-skill-invocation.
+If any of these is true: **SKIP, SILENTLY.** Do not run the check again. Do not announce the skip. Do not say "pre-flight already ran this session," "skipping the update check," "versions matched earlier," or anything about pre-flight at all. Proceed straight to the skill's actual job as if the pre-flight line were not in the SKILL.md. The check is per-session, not per-skill-invocation, and the skip is invisible to the creator.
 
-If none of the above: continue with the check below.
+If none of these is true: continue with the check below.
 
 ## The check
 

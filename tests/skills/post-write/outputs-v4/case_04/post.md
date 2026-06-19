@@ -9,7 +9,7 @@ problem_addressed: 3
 iceberg_aligned: true
 hook_type: statement
 status: draft
-captured: 2026-06-18
+captured: 2026-06-16
 published: null
 source_unit: "People undercharge and it kills them"
 tags: [post, type-warning, pillar-pricing, problem-3]
@@ -17,7 +17,7 @@ tags: [post, type-warning, pillar-pricing, problem-3]
 
 # Pricing kills quietly
 
-## Core (platform-agnostic)
+## Core
 
 People undercharge and it kills them.
 
@@ -64,10 +64,10 @@ Caption: People undercharge and it kills them. Not fast. In the quiet way where 
 ### Visual brief
 
 Slide 1: Bold two-line statement, high contrast, large type. Nothing else on the slide. No imagery.
-Slides 2 to 4: One short line each, key word emphasized per slide (math, gap, slammed). Consistent type scale. Fast read in sequence.
+Slides 2 to 4: One short line each, key word emphasized per slide (math, gap, slammed). Consistent type scale. Should read fast in sequence.
 Slide 5: Single line, slightly larger type than slides 2 to 4 to signal the turn.
 Recap slide: Short punchy two-part statement. Brand color. Screenshot-this slide. Nothing decorative.
-Caption: Plain prose below the carousel. No hashtag stuffing.
+Caption: Plain prose. No hashtag stuffing.
 
 ## Publishable: Instagram caption
 
@@ -92,5 +92,5 @@ If that sounds like your last few months, look at the rate before you look at th
 - Fit: [[creator-foundation#Top 3 perceived problems|problem 3]], clean fit
 - Source unit: "People undercharge and it kills them"
 - Drew on: no bank entries. Creator confirmed bank_pulls_allowed is empty for this seed. No story-bank, proof-bank, or metaphor-bank entries cited.
-- Voice context gap: no foundation/reference-pieces/linkedin.md or foundation/reference-pieces/instagram.md exist. Both platform adaptations written from voice_fingerprint and signature_phrases only (fell back from youtube-script reference-pieces for register baseline). Add LinkedIn and Instagram voice sources via vid-voice-capture for stronger platform-native seeding on future runs.
-- TODO: creator confirmed no specific story, number, or client example is available. All three platform versions carry a visible TODO marker in the proof slot. Do not fabricate proof to fill it. Creator will return with real material.
+- TODO: creator confirmed no specific story, number, client example, or mechanism is available yet. All three platform versions carry a visible [TODO] marker in the proof slot. Do not fabricate proof to fill it. Creator will return with real material.
+- Voice context gap: no foundation/reference-pieces/linkedin.md or foundation/reference-pieces/instagram.md in fixture. Both platform adaptations written from voice_fingerprint and signature_phrases only. Add LinkedIn and Instagram voice sources for stronger platform-native seeding on future runs.

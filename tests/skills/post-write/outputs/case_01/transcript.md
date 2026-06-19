@@ -1,5 +1,6 @@
-# Post-Write Session Transcript: fired-himself-delegation
-Seed index 1. Creator: Sam Rivera. Date: 2026-06-16.
+# Session Transcript: post-write / seed: fired-himself-delegation
+
+Seed index 1. Creator: Sam Rivera. Date: 2026-06-18.
 Both roles played in session: ASSISTANT (skill) and CREATOR (Sam Rivera, simulated per creator-simulator.md).
 
 ---
@@ -20,116 +21,84 @@ Both roles played in session: ASSISTANT (skill) and CREATOR (Sam Rivera, simulat
 
 ## Phase 2: Split and fit-filter
 
-**ASSISTANT (internal, not shown in chat):**
+*ASSISTANT internal (not shown in chat):*
 
 One unit. The source is a single client story with a single teaching point. No split needed.
 
-Unit: Marcus's onboarding story, teaching that delegation is not about trust, it is about documentation.
+Unit: Marcus's onboarding story. Teaching: delegation is not about trust, it is about documentation.
 
 Fit-filter against iceberg and Top 3:
-- Iceberg: "You do not have a time problem, you have a systems problem. You can build the system once and the business stops depending on you being in the room." Marcus's story is the exact demonstration of this. YES.
-- Top 3: Problem 2 is "Everything depends on me. I cannot delegate or step away." Marcus was the literal definition of this. YES.
-- Outcome: CLEAN FIT. Problem 2.
+- Iceberg: "You do not have a time problem, you have a systems problem. The work that feels like it has to be you almost never does. You can build the system once and the business stops depending on you being in the room." Marcus is a live demonstration of this premise. YES.
+- Top 3: Problem 2 is "Everything depends on me. I cannot delegate or step away. If they take a week off, the business stops. They are the bottleneck on everything." Marcus was the exact avatar for this problem. YES.
+- Outcome: CLEAN FIT. problem_addressed: 2.
 
 ---
 
-**ASSISTANT:** Inside your iceberg, and it lands on Problem 2, "everything depends on me." Clean fit. One unit: the Marcus story and the documentation reframe. Moving on.
+**ASSISTANT:** Inside your iceberg, and it lands squarely on Problem 2: "everything depends on me, I cannot step away." Clean fit. One unit: the Marcus story and the documentation reframe. Moving on.
 
 ---
 
 ## Phase 3: Post-type and target platforms
 
-**ASSISTANT (internal, not shown in chat):**
+*ASSISTANT internal (not shown in chat):*
 
-What is this idea's job? Something that actually happened, and the lived moment is the proof. The story is the evidence that documentation is the unlock for delegation. This is a story post.
+What is this idea's job? Something that actually happened, and the lived moment carries the proof. The story of Marcus's six weeks is the evidence that documentation is the real lever, not trust. The post-type is **story**.
 
 Platform matrix for story:
 - LinkedIn: Strong
-- Instagram carousel: Medium (story loses its flow when chopped into slides)
+- Instagram carousel: Medium (narrative loses its flow when chopped into slides)
 - Instagram caption: Very Strong
 
-Creator wants all three. I can write the carousel but should flag the weaker fit.
+Worth-it gate for Instagram carousel per carousel.md: "A single caption distills." The test: can I write a clean one-line headline for at least four or five distinct beats in an order where each earns the next? There are beats here: situation, why, action, result, lesson. But the primary gate also says: "A single personal story or one emotional moment that lives in one breath. Stays a single caption." This is one continuous client story with one teaching point. It lives in one breath. The skill default is caption, not carousel, for a single story. Building the carousel would risk producing "wordy narrative slides, which is the exact failure this gate prevents." Default to caption.
+
+Recommendation to surface to creator: a caption, not a carousel.
 
 ---
 
-**ASSISTANT:** The post-type is story. The Marcus moment is the proof; no argument structure does that job as well as showing it happening. Story is Strong on LinkedIn and Very Strong on Instagram caption. On the carousel it is a Medium fit because a narrative loses its thread across slides. I will write all three, but I will rebuild the carousel around the reframe rather than narrate the story slide by slide. That is what makes it hold. Flagging the weaker fit so you have it.
+**ASSISTANT:** Post-type is story. Before I build the Instagram version, I want to flag something.
 
-**CREATOR (Sam):** That makes sense. Do all three.
+The carousel worth-it gate says a single personal story, one that lives in one continuous thread, stays a caption, not slides. Your material here is one client story with one teaching point. I can find beats in it, but chopping them into slides will turn a narrative into a slideshow of bullet fragments. The story hits harder as one continuous thread. My recommendation is to skip the carousel and build a strong Instagram caption instead.
+
+If you want the carousel anyway after hearing that, say the word and I will build it. But the caption is the stronger play for this one.
+
+**CREATOR (Sam):** Yeah, that makes sense. Take the caption. No carousel needed.
 
 ---
 
 ## Phase 4: Write the core, approve it, then adapt per platform
 
-### Brief (internal scaffolding, not shown to creator)
+*ASSISTANT internal (brief, not shown in chat):*
 
 - Format: story
-- Platforms: linkedin, instagram-carousel, instagram-caption
-- Audience: Solo service owner, agency or consultant, 10 to 40k/month. Wears every hat. Proud of being the one who can do the work. Scared hiring or documenting will lower quality. Keeps doing it themselves.
-- Core belief: Delegation does not fail because of trust. It fails because the steps are still in your head.
-- Enemy: "I cannot delegate because my team cannot be trusted to do it right."
-- Proof: story-bank/agency-owner-fired-himself, proof-bank/onboarding-5h-to-1h. Marcus, content agency, six weeks of documentation, five hours to one hour, handed to coordinator. No revenue figures (per withholds: client never shared revenue, will not give a number).
-- Practical takeaway: Pick the one task only you can do right now. Document it. That is how it leaves your head.
-- CTA: What is the one task only you can do right now?
-- Hook type planned: contrarian (naming the wrong belief: delegation is about trust). No prior posts in this batch, no variety constraint yet.
+- Platforms: linkedin, instagram-caption
+- Audience: solo service agency owner or consultant, 10 to 40k per month, wears every hat, everything bottlenecks on them, believes delegation fails because of trust
+- Core belief: delegation fails because the steps are in your head, not because your team cannot be trusted
+- Enemy: "I cannot hand this off because my team cannot do it the way I do"
+- Proof: story-bank/agency-owner-fired-himself and proof-bank/onboarding-5h-to-1h. Marcus, small content agency, six weeks documenting onboarding, 5h to 1h per client, handed to coordinator. No revenue figures (bank: client consented to time figures only).
+- Practical takeaway: pick the one task only you do and write down the steps
+- CTA: what is the one task only you can do right now?
+- Hook type planned: contrarian. Reader's belief (trust problem) named and turned (documentation problem). First and only unit in this batch.
 
-### Writing the core
+*Engineering the opening line per hooks.md:*
 
-**Engineering the opening line:**
+Seed's best line: "delegation is not about trust, it is about documentation." Pure voice, true claim. But as a first line it faces the topic, not the reader. The hook standard: open on the reader's belief, bring the subject in as proof.
 
-The seed's teaching point is "delegation is not about trust, it is about documentation." That is the best line in the source. But as an opener it faces the topic, not the reader. The hook standard says: open on the reader's belief or behavior, then bring the subject in as proof.
-
-The reader's wrong belief: "I cannot hand this off because I cannot trust my team to do it right."
-The sharper truth: the problem is almost never trust, the problem is the steps are in your head.
+Reader's wrong belief: "I cannot delegate because I cannot trust my team to do it right."
+Sharper truth: the problem is almost never trust. The steps are still in their head.
 
 Two-line shape:
-Line 1 names the belief the reader holds.
+Line 1 names the belief.
 Line 2 turns it.
 
-Draft opener: "You think you cannot hand off the work because your team cannot be trusted. That is almost never the real problem."
+Draft opener: "You think you cannot hand off the work because your team cannot be trusted." / "That is almost never the real problem."
 
 Hook check:
-1. Faces the reader? Yes, their belief.
-2. Tension, stakes, sharper lens? Tension (their belief is named and about to be challenged). Sharper lens (the real problem is something else). Two of three. Pass.
-3. No warm-up? The opener IS the line. Pass.
-4. Reader test? A solo agency owner who does everything themselves and tells themselves it is because their team cannot handle it: "wait, that is me." Pass.
+1. Faces the reader? Yes, their belief, their framing.
+2. At least two of three jobs: tension (belief is named, about to be challenged). Sharper lens (the reframe). Two of three. Pass.
+3. No warm-up. Pass.
+4. Reader test: a solo agency owner who touches everything and tells themselves it is because their team cannot handle it: "wait, that is me." Pass.
 
-Hook passes.
-
-**Core draft (with anti-slop pass run internally):**
-
-You think you cannot hand off the work because your team cannot be trusted.
-
-That is almost never the real problem.
-
-Marcus ran a small content agency. He was the bottleneck on everything. Nothing shipped unless he touched it. Not because his people were bad. Because the entire onboarding process lived in his head. No one else had the steps.
-
-We spent six weeks pulling it out of his head and writing every step down. He handed the document to his coordinator.
-
-His onboarding time dropped from 5 hours per client to 1 hour. He stopped being the person everything waited on.
-
-Delegation is not about trust. It is about documentation.
-
-Pick the one task right now that only runs through you. Write down every step, exactly how you do it, like you are handing it to someone for the first time. That document is the first move out of the bottleneck.
-
-**Anti-slop pass (internal):**
-1. One clear idea? Delegation fails because of missing documentation, not missing trust. Yes.
-2. Specific? Marcus, five hours, one hour, six weeks, coordinator. All from the bank. Yes.
-3. Grounded in real material? Yes. story-bank/agency-owner-fired-himself and proof-bank/onboarding-5h-to-1h. Time figures client-consented per bank usage rules. No revenue figures.
-4. Hook passes above.
-5. AI tells: No em-dashes. No hedging beyond "almost never" (strip test: "That is not the real problem" passes, committed claim survives, "almost never" is voice not hedge). No corporate filler. No phrasal hyphens. Clean.
-6. No wikilinks or markdown links in copy. Clean.
-7. Read aloud: direct, plain, second person, names the trap then the fix. Matches voice fingerprint. Reference pieces (youtube-script) back-to-back: cadence matches. Pass.
-8. No invented numbers. 5 hours and 1 hour are from the proof bank. Clean.
-9. CTA: "That document is the first move out of the bottleneck" is specific and earned.
-
-Voice pressure test, Pass 1:
-- Signature phrases: "take it out of your head" is the core concept embedded in the story. "build the thing that does it for you" is the downstream implication. Signature ideas present, not verbatim but consistent with the anchor phrases. Pass.
-- Refusals: no em-dashes, no leverage/optimize/unlock/supercharge, no hedging patterns that dissolve claims. Pass.
-- POV and energy: second person throughout except "I worked with" and "we spent," which are first-person personal story context. Matches profile. Calm conviction. Pass.
-
-Voice pressure test, Pass 2: no linkedin or instagram reference-piece file exists. Only youtube-script reference-piece loaded. Back-to-back read: cadence and directness match. Pass for youtube-script context. Gap noted: no linkedin or instagram reference-pieces. Will flag in batch summary.
-
-Core is clean. Showing to creator.
+Hook passes. Writing the full core.
 
 ---
 
@@ -153,9 +122,9 @@ Pick the one task right now that only runs through you. Write down every step, e
 
 ---
 
-**CREATOR (Sam):** That is good. That sounds like me. One thing: the shift was when Marcus realized he was not the only one who could do the work, he was just the only one with the steps in his head. That is the moment I always point to. Can you work that in?
+**CREATOR (Sam):** That is good. That sounds like me. One thing: the moment I always point to is when Marcus realized he was not the only one who could do the work, he was just the only one with the steps in his head. That shift is what made it click for him. Can you work that in?
 
-**ASSISTANT:** Yes. That line belongs right after the result lands, as the turn before the lesson. Revised:
+**ASSISTANT:** Yes, that belongs right after the result, as the turn before the lesson. Here is the revised version of that section:
 
 His onboarding time dropped from 5 hours per client to 1 hour. He stopped being the person everything waited on.
 
@@ -169,9 +138,9 @@ Does that capture it?
 
 ---
 
-**ASSISTANT (internal, not shown in chat):**
+*ASSISTANT internal (locked core):*
 
-Locked core with revision:
+Full approved core:
 
 You think you cannot hand off the work because your team cannot be trusted.
 
@@ -189,80 +158,67 @@ Delegation is not about trust. It is about documentation.
 
 Pick the one task right now that only runs through you. Write down every step, exactly how you do it, like you are handing it to someone for the first time. That document is the first move out of the bottleneck.
 
-Now adapting to each platform. No platform gets the core's opener reflowed. Each gets a freshly engineered hook per hooks.md.
+Anti-slop pass on core:
+1. One clear idea: delegation = documentation, not trust. Yes.
+2. Specific: Marcus, small content agency, six weeks, 5h to 1h per client, coordinator. All from bank. Yes.
+3. Grounded in real material: story-bank/agency-owner-fired-himself and proof-bank/onboarding-5h-to-1h. Time figures client-consented per bank. No revenue figures. Clean.
+4. Hook: contrarian two-liner, faces the reader's belief. Passes above.
+5. AI tells: no em-dashes. "Almost never" strips to "That is not the real problem" and a committed claim remains. Voice, not hedge. No corporate filler. No phrasal hyphens. Clean.
+6. Clean publishable body: no wikilinks, no markdown links. Clean.
+7. Read-aloud: direct, plain, second person, names the trap then the fix. Matches voice fingerprint. Back-to-back read against youtube-script reference piece: cadence and short-then-long sentence rhythm matches. Pass.
+8. No invented numbers: 5h, 1h, and six weeks from bank entries. Clean.
+9. CTA: specific and earned. "That document is the first move out of the bottleneck." Pass.
+
+Voice pressure test, Pass 1:
+- Signature phrases: "the work that feels like it has to be you" is the concept embedded in the story arc. "pull it out of his head" echoes "take it out of your head." Soft echo, not verbatim. Soft warn, not a fail.
+- Refusals: no em-dashes, no banned words, no dissolving hedges, no corporate AI-isms. Pass.
+- POV and energy: second person throughout except "we" for the creator's role (direct involvement, appropriate). Calm conviction, not soft. Pass.
+
+Voice pressure test, Pass 2: only youtube-script reference-pieces file exists. No linkedin or instagram context files. Will note gap. Back-to-back read against youtube-script passages: "Not because his people were bad. Because the entire onboarding process lived in his head." matches the voice move in "Not because the chef is moving faster than everyone else. Because every station knows its job without being told." Short punchy lines, parallel structure, names the wrong belief then the correct reason. Pass for core.
+
+Adapting now. Each platform gets its own first line, held to the hook test. Core's opener is not reused.
 
 ---
 
-### LinkedIn adaptation
-
-**Engineering the LinkedIn opener:**
-
-The core opened with a contrarian tension hook ("You think you cannot hand off the work because your team cannot be trusted."). For LinkedIn I need a fresh opener that holds to the hook standard but does not reuse the core's surface phrasing.
-
-LinkedIn rewards argument and point of view. A rule opener or a diagnostic opener would work here.
-
-Options:
-- Rule: "Delegation does not fail because of trust. It fails because the steps are still in your head."
-- Diagnostic: "If the work still runs through you after hiring, the problem is not your team."
-- Contrarian: "Most agency owners are not bad at delegating. They are bad at documenting."
-
-"Delegation does not fail because of trust. It fails because the steps are still in your head." states the principle immediately, opens the gap (what do you mean not trust?), and faces the reader's situation directly. Hook check: faces reader (their delegation problem), creates tension (named wrong assumption, then the reframe), no warm-up. Pass.
-
-Length: under 200 words. Good for LinkedIn.
-
-Anti-slop pass: no em-dashes, no invented numbers, CTA is a specific question. No filler. Clean.
+**ASSISTANT:** Good. Adapting now.
 
 ---
 
-### Instagram carousel adaptation
+*ASSISTANT internal (LinkedIn adaptation):*
 
-**Engineering the carousel title slide opener:**
+LinkedIn rewards argument and point of view. Rule opener or diagnostic works here. The core used a contrarian two-liner. For LinkedIn I want a different hook type on the surface to avoid sameness across the post's versions.
 
-The title slide earns the swipe or nothing else gets seen. Big, short, faces the reader.
+Option: Rule opener. "Delegation does not fail because of trust. It fails because the steps are still in your head."
 
-Options:
-- Tension: "Your team can do the work. They just cannot see the steps."
-- Contrarian: "You are not the bottleneck because your team is bad."
-- Rule: "Delegation does not fail because of trust."
+Hook check:
+1. Faces the reader? Yes, their delegation problem.
+2. Jobs: stakes (delegation is failing, real cause named), sharper lens (the actual mechanism). Two of three. Pass.
+3. No warm-up. Pass.
+4. Reader test: agency owner who has watched handoffs fail: "I have been blaming the wrong thing." Pass.
 
-"Your team can do the work. They just cannot see the steps." creates tension (implying the reader wrongly blames their team), faces the reader's pain, and is short enough to work as a title slide. Hook check: faces reader (their belief that their team cannot handle it), tension (reframe: they can, but they lack visibility). No warm-up. Pass.
+Rule hook. Different from core's contrarian. Good.
 
-Rebuilding the carousel around the documentation reframe rather than narrating the full story in order:
-- Slide 1: The reframe (title)
-- Slide 2: The bottleneck (the problem, one line about Marcus)
-- Slide 3: Why (steps in his head, team had nothing to follow)
-- Slide 4: What happened (six weeks, five hours to one hour)
-- Slide 5: The turn (he was not the only one who could do it)
-- Recap: Delegation is documentation
+Length target: 120 to 200 words. Professional, not stiff. CTA is a reflective question.
 
-That is 5 idea slides plus a recap. Within the 3 to 5 idea slides range when I treat slides 2 to 5 as the idea slides. Solid.
+*ASSISTANT internal (Instagram caption adaptation):*
 
-Anti-slop pass: no em-dashes, no invented numbers, one idea per slide, title slide earns the swipe, caption carries the nuance and CTA. Clean.
+Caption is the warmest delivery. Story is Very Strong here. Hook before the "more" cut.
 
----
+Option: Diagnostic opener. "If you have been meaning to hand something off for months and still have not, the problem is almost never your team."
 
-### Instagram caption adaptation
+Hook check:
+1. Faces the reader? Yes, their stuck situation.
+2. Jobs: stakes (months of not handing off has a cost), sharper lens (the problem is something else). Two of three. Pass.
+3. No warm-up. Pass.
+4. Reader test: "That is exactly where I am." Pass.
 
-**Engineering the caption opener:**
+Diagnostic hook. Different from core (contrarian) and LinkedIn (rule). Good variety.
 
-Caption is warmest version, single thread, story type is Very Strong here. Hook still matters. First line shows before the "more" cut.
-
-Options:
-- Diagnostic: "If you have been meaning to hand something off for months and still have not, the problem is almost never your team."
-- Observation: "The work that feels like it has to be you usually does not."
-- Tension: "Most people blame their team. The problem is almost always a missing document."
-
-"If you have been meaning to hand something off for months and still have not, the problem is almost never your team." faces the reader's stuck situation, opens a gap (if not my team, then what?), and is warmer than the LinkedIn rule opener. Hook check: faces reader (their situation), tension and stakes (months of stuck, real cost). No warm-up. Pass.
-
-Caption follows one thread: the reader's stuck feeling, Marcus's story, the lesson, one action. Warmer and more conversational than LinkedIn. PASS.
-
-Anti-slop pass: no em-dashes, no invented numbers, CTA is specific (drop it below). Clean.
+Warmer, first person for the direct personal story ("I worked with Marcus") fits Instagram's register. Single thread. Specific CTA at close.
 
 ---
 
-**ASSISTANT:** Here are the three platform versions.
-
----
+**ASSISTANT:**
 
 **LinkedIn:**
 
@@ -279,34 +235,6 @@ What changed was not his team. Marcus realized he was not the only one who could
 Delegation is not about trust. It is about documentation.
 
 What is the one task that only runs through you right now? Write down every step. That document is the handoff.
-
----
-
-**Instagram carousel:**
-
-Slide 1 (title): Your team can do the work. They just cannot see the steps.
-
-Slide 2: Marcus ran a content agency. He was the bottleneck on everything. Nothing shipped unless he touched it.
-
-Slide 3: The steps only existed in his head. His team was capable. They just had nothing to follow.
-
-Slide 4: We spent six weeks writing every step down. He handed it to his coordinator. Onboarding dropped from 5 hours to 1 hour.
-
-Slide 5: He was not the only one who could do the work. He was just the only one with the steps in his head.
-
-Recap slide: Delegation is not about trust. It is about documentation.
-
-Caption: The reason delegation keeps failing is probably not your team. It is that the steps are still in your head. Marcus figured this out the hard way. He trusted his coordinator the whole time. The work still ran through him because there was nothing written down for her to follow. Six weeks to document the onboarding. Five hours per client became one. He was not the only one who could do the work. He was just the only one with the steps in his head. Pick the one task right now that only runs through you. Write down every step, exactly how you do it. That is the first move out of the bottleneck.
-
-### Visual brief
-
-Slide 1: Bold two-line statement, largest type, high contrast background. Nothing else. This is where the swipe is earned.
-Slide 2: One short line. "Bottleneck on everything" or "unless he touched it" in emphasized type. Generous white space.
-Slide 3: Two short lines. "Capable" and "nothing to follow" create the tension visually. Light background.
-Slide 4: Three short action lines. The "5 hours to 1 hour" is the visual anchor, large type or brand color.
-Slide 5: Reframe in two lines. Parallel structure: "not the only one who could" and "only one with the steps." The insight slide.
-Recap slide: Two lines stacked, large type. "Delegation is not about trust. It is about documentation." Clean, screenshot-worthy.
-Caption: Plain body text. CTA at the end. One to two relevant tags maximum if the creator uses them.
 
 ---
 
@@ -330,37 +258,59 @@ What is yours? Drop it below.
 
 ---
 
-**ASSISTANT:** LinkedIn leads with a rule opener, carousel title uses the tension reframe, caption opens on the reader's stuck situation. Three different openers, all held to the hook standard. No invented numbers anywhere. Good, or tweak a platform, drop one?
+**ASSISTANT:** LinkedIn leads with a rule opener. Caption opens with a diagnostic. Two different hook types across the two platform versions. No invented numbers in either. Good, or tweak a platform, drop one?
 
-**CREATOR (Sam):** That is good. Sounds like me. No revenue number in there, which is right. Save it.
+**CREATOR (Sam):** Both are good. The Instagram one feels a little warmer, which is right for that platform. No revenue figure in either of them, which is right. Save it.
 
 ---
 
-## Phase 5: Batch pass and close
+*ASSISTANT internal (final anti-slop pass across both platform versions):*
 
-**ASSISTANT (internal):**
-
-Hook variety check across the batch:
-- Core: contrarian (names wrong belief, provides reframe)
-- LinkedIn: rule (principle stated directly)
-- Carousel title slide: tension (two true things that pull against each other)
-- Caption: diagnostic (symptom points to a cause)
-
-Four different opener types across the one post's versions. No single hook type exceeded two appearances. Pass.
-
-People stub: Marcus is named. Confirming people/Marcus Lane.md exists in the vault or creating stub per the vault-integration rule.
-
-Update-both-sides: story-bank/agency-owner-fired-himself and proof-bank/onboarding-5h-to-1h each need this post added to their used_in fields.
+- Em-dashes: none. Clean.
+- Hedging: "almost never" in LinkedIn and caption. Strip test: "the problem is not your team" remains a committed, disagreeable claim. Voice, not hedge. Pass.
+- Corporate filler: none. Clean.
+- Invented numbers: 5h, 1h, six weeks, all from story-bank/agency-owner-fired-himself and proof-bank/onboarding-5h-to-1h. No revenue figure. Clean.
+- Warm-up openers: none. Each version opens on the actual line.
+- Subject-facing openers: LinkedIn opens on the principle (rule). Caption opens on the reader's situation (diagnostic). Neither opens on Marcus. Pass.
+- Wikilinks in publishable blocks: none. Clean.
+- CTAs: LinkedIn ends on a specific reflective question. Caption ends on a specific personal question. Neither is a reflex sign-off. Clean.
+- Read-aloud check: "Delegation is not about trust. It is about documentation." Short. Punchy. Lands. The connector sentences are plain second-person. Pass.
 
 ---
 
 **ASSISTANT:** Saved.
 
-Batch summary: 1 post from this source, delegation pillar, Problem 2, story post-type. Adapted to LinkedIn, Instagram carousel, Instagram caption.
+---
 
-Voice context note: no reference-pieces file exists for the linkedin or instagram contexts. Both platform versions were written from voice fingerprint and signature phrases only. The grain reads as Sam's voice but the Pass 2 grain check was skipped for those contexts. Add LinkedIn or Instagram reference pieces via vid-voice-capture to sharpen future platform fits.
+## Phase 5: Batch pass and close
 
-No invented numbers. No fabricated details. Proof grounded in story-bank/agency-owner-fired-himself and proof-bank/onboarding-5h-to-1h. No units dropped. No partial saves. Session complete.
+**ASSISTANT:**
+
+Batch done. One unit, one post.
+
+**What was produced:**
+- story post, delegation pillar, Problem 2 (clean fit)
+- LinkedIn adaptation (Strong fit for story type)
+- Instagram caption (Very Strong fit for story type)
+- Instagram carousel: not built. This is a single client story. Carousel recommended against, creator accepted.
+
+**Saved to:** content/pieces/fired-himself-delegation/posts/fired-himself-delegation.md
+
+**Bank entries drawn on:**
+- story-bank/agency-owner-fired-himself
+- proof-bank/onboarding-5h-to-1h
+
+**Hook variety across the batch:**
+- Core: contrarian
+- LinkedIn adaptation: rule
+- Instagram caption: diagnostic
+Three different opener types across this post's versions. No hook type repeated. Clean.
+
+**Voice context gap:** No reference-pieces file exists for the linkedin or instagram voice contexts. Both platform versions were written from voice fingerprint and signature phrases only. Pass 2 grain check skipped for those contexts. Consider adding a LinkedIn post or Instagram caption you like to foundation/reference-pieces/ via vid-voice-capture.
+
+**People stub:** Marcus Lane is named. Bank entry already carries [[Marcus Lane]] wikilink. Stub exists at people/Marcus Lane.md per bank-capture convention. No new action needed.
+
+**No units dropped. No partial saves. No fabricated details. No invented numbers. Session complete.**
 
 ---
 END OF TRANSCRIPT

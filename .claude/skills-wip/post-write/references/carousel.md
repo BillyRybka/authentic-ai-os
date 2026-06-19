@@ -32,7 +32,7 @@ The test: can you write a clean one-line headline for at least four or five dist
 - A single personal story or one emotional moment that lives in one breath.
 - A time-sensitive announcement where instant clarity beats swiping.
 
-When an idea the creator asked to carousel is really a single story or one belief, say so and offer the caption instead. A forced carousel underperforms a clean caption.
+When an idea the creator asked to carousel is really a single story or one belief, do not build the carousel. Default to the caption (plus LinkedIn if they wanted it), tell the creator plainly why a single story hits harder as one continuous caption than as slides, and build slides only if the creator explicitly insists after hearing that. The recommendation is the default, not a footnote. A forced story-carousel comes out as wordy narrative slides, which is the exact failure this gate prevents.
 
 ## Build it: decompose, do not slice
 

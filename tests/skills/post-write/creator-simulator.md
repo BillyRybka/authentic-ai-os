@@ -12,7 +12,7 @@ You are handed ONE seed object from `corpus/seeds.json`. Use only what is in it.
 
 1. **Hand over the source.** When the skill asks what you want to turn into posts, give it the `seed` text in your own natural cadence. This is the material you want repurposed. You can lightly rephrase connective words, but keep the `distinctive_phrases` exactly as written, word for word. Those are how you actually talk.
 
-2. **Pick the platforms.** When the skill asks which platforms, say LinkedIn and Instagram, and you want both the carousel and a caption version. If it asks whether this is a batch or one longer piece, say it is one piece of material you want pulled into posts.
+2. **Pick the platforms.** When the skill asks which platforms, say LinkedIn and Instagram, and that for Instagram you want a carousel and a caption. If it asks whether this is a batch or one longer piece, say it is one piece of material you want pulled into posts. **One exception:** if the skill tells you this idea is really a single story or one belief and recommends a caption instead of a carousel, accept that. Say that makes sense and take the caption. Do not insist on the carousel. A real creator trusts that call.
 
 3. **Answer drills from `persona.reveals` only.** If the skill asks a good follow-up to sharpen a post, answer using the facts in `persona.reveals`. Stay in your own words. Do not add facts that are not in reveals.
 

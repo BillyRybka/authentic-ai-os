@@ -9,7 +9,7 @@ problem_addressed: 1
 iceberg_aligned: true
 hook_type: contrarian
 status: draft
-captured: 2026-06-18
+captured: 2026-06-16
 published: null
 source_unit: "the goal is not to do more, the goal is to build the thing that does it for you"
 tags: [post, type-contrarian, pillar-systems, problem-1]
@@ -87,7 +87,7 @@ Save this for the week you are about to grind your way through it.
 - Slide 3: Two-part structure: "The problem:" in lighter weight, the rest of the line bold.
 - Slide 4: Two-part structure: "The move:" in lighter weight. "5 hours to 1 hour" as the visual anchor, emphasized in larger or contrasting type.
 - Slide 5: Single clean line, text-only or a minimal kitchen icon. Calm note before the recap.
-- Recap slide: Two lines stacked, second line in slightly larger type or brand color. This is the screenshot-this slide.
+- Recap slide: Two lines stacked, second line ("Build the thing that does it for you") in slightly larger type or brand color. This is the screenshot-this slide.
 
 ## Publishable: Instagram caption
 
