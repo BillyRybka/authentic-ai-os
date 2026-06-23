@@ -11,7 +11,7 @@ Used by vid-segment Phase 2 to surface a structure draft to the creator. Slot-fi
 
 ---
 
-### PARABLE (the show)
+### PARABLE
 
 **Type:** {Visual Demo (Show-the-Problem | Contrast | Breakdown) | Story | Metaphor | none for a lean step}
 
@@ -23,7 +23,7 @@ Bank candidates:
 
 ---
 
-### PRINCIPLE (the tell)
+### PRINCIPLE 
 
 **Framework:** {framework name OR single-lesson description}
 
