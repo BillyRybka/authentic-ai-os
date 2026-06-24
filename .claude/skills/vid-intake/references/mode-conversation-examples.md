@@ -10,7 +10,7 @@ tags: [reference, vid-intake, mode-examples, dialogue]
 
 Mock dialogues showing how each of the 7 vid-intake modes should run. Examples-first. Each mode has a worked example (the conversational shape that lands) and a near-miss (what NOT to do, with one-line "why this fails"). Read this before running vid-intake. Calibrate your conversational shape from these, do not invent your own.
 
-The creator in these examples is a fitness coach. Iceberg statement: "I help busy founders build sustainable strength training habits in 30 minutes a day." Top 3 problems: (1) Time scarcity makes routines collapse, (2) Cardio-bias misallocates effort, (3) Inconsistency under stress.
+The creator in these examples is a fitness coach. Iceberg statement: "I help busy founders build sustainable strength training habits in 30 minutes a day." The lane covers time scarcity that collapses routines, cardio-bias that misallocates effort, and inconsistency under stress.
 
 ## Mode 1: Idea + dump
 
@@ -30,7 +30,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Creator:** "That's it."
 
-**Skill (alignment):** "This is inside your iceberg, helping busy founders build sustainable strength habits. Lands on Problem 2: cardio-bias misallocates effort. Sound right?"
+**Skill (fit check):** "This is inside your iceberg, helping busy founders build sustainable strength habits. The cardio-bias lane. Sound right?"
 
 **Creator:** "Yes."
 
@@ -81,7 +81,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Creator:** "Day 47. I'd been waking at 4:45am for cold plunges and a 20-min run. Came down with a flu, kept pushing through, ended up bedridden for a week. Lost 8 lbs of muscle. Took me 2 months to rebuild."
 
-**Skill (alignment):** "Inside your iceberg. Problem 3: inconsistency under stress, but flipped. This is over-doing-it under stress. Same thread. Sound right?"
+**Skill (fit check):** "Inside your iceberg. This is over-doing-it under stress, the consistency lane flipped. Same thread. Sound right?"
 
 **Creator:** "Exactly."
 
@@ -119,7 +119,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Creator:** "Yeah. The 80% number I'm not sure about. I think it was a Bodybuilding.com survey. Flag that one."
 
-**Skill (alignment):** "Inside your iceberg. Problem 3: inconsistency under stress, the 80% number flagged as TODO for fact-check. Sound right?"
+**Skill (fit check):** "Inside your iceberg, the consistency-under-stress lane. The 80% number flagged as TODO for fact-check. Sound right?"
 
 **Creator:** "Yes."
 
@@ -161,7 +161,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Creator:** "Frequency is for entertainers. Founders should treat YouTube like a portfolio of evidence pieces. One deep video a month outperforms 12 shallow ones because each piece compounds."
 
-**Skill (alignment):** "Inside your iceberg, helping founders build sustainable habits, applied to content. Problem 1: time scarcity makes routines collapse, applied to YouTube routine specifically. Sound right?"
+**Skill (fit check):** "Inside your iceberg, helping founders build sustainable habits, applied to content. The time-scarcity lane, applied to a YouTube routine. Sound right?"
 
 **Creator:** "Yes."
 
@@ -197,7 +197,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Creator:** "I don't think Whoop's algorithm is right yet. They're undercounting strain on compound lifts. But the directional move matters."
 
-**Skill (alignment):** "Inside your iceberg. Problem 2: cardio-bias misallocates effort, validated by a wearable that's catching up. Sound right?"
+**Skill (fit check):** "Inside your iceberg, the cardio-bias lane, validated by a wearable that's catching up. Sound right?"
 
 **Creator:** "Yes."
 
@@ -235,7 +235,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Creator:** "Squat, bench, deadlift, overhead press. 5x5 for the first 3, 5x3 for OHP. Once a week each, fully recovered."
 
-**Skill (alignment):** "Inside your iceberg. Problem 2: cardio-bias misallocates effort, with James as the proof case. Lesson: 4 compound lifts, 30 min, 3x/week, beats cardio + accessories. Sound right?"
+**Skill (fit check):** "Inside your iceberg, the cardio-bias lane, with James as the proof case. Lesson: 4 compound lifts, 30 min, 3x/week, beats cardio + accessories. Sound right?"
 
 **Creator:** "Yes."
 
@@ -257,7 +257,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Creator:** "OK this thing happened yesterday and I want to make a video about it. I'm at a coffee shop, this founder I've coached for 6 months walks in, and he's 30 lbs lighter than when I last saw him in January. We talk for 20 minutes. He says the thing that finally worked was when I made him cut his program from 4 days to 2 days."
 
-**Skill (mode confirm):** "Mode 7, story-first. We capture the moment in P-A-O shape, then locate the lesson, then check it lands on one of your Top 3."
+**Skill (mode confirm):** "Mode 7, story-first. We capture the moment in P-A-O shape, then locate the lesson, then check it fits your channel."
 
 **Skill (P-A-O capture):** "Problem first. What was his state in January? Specific."
 
@@ -275,19 +275,19 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Creator:** "Less is more for stressed founders. Recovery is the lever. Higher frequency without recovery just digs the hole."
 
-**Skill (alignment):** "Inside your iceberg. Problem 3: inconsistency under stress. The lesson lands on 'reduce frequency to maintain consistency.' Sound right?"
+**Skill (fit check):** "Inside your iceberg, the consistency-under-stress lane. The lesson lands on 'reduce frequency to maintain consistency.' Sound right?"
 
 **Creator:** "Yes."
 
 **Skill:** "Slug: `cut-frequency-to-stay-consistent`. Save?"
 
-**Why this works:** story captured in P-A-O without forcing the lesson first. Skill captures the moment THEN asks "what's the lesson?" The story comes first, the teaching comes second. Alignment check at the end naturally locates the Top 3 thread.
+**Why this works:** story captured in P-A-O without forcing the lesson first. Skill captures the moment THEN asks "what's the lesson?" The story comes first, the teaching comes second. The fit check at the end naturally confirms the iceberg lane.
 
 ### Near-miss
 
 **Creator:** "OK this thing happened yesterday and I want to make a video about it."
 
-**Skill:** "Which Top 3 problem does this story teach?"
+**Skill:** "What's the lesson this story teaches?"
 
 **Why this fails:** asking for the lesson before the story is told means the creator either invents a fit or skips the actual emotion of the moment. Capture the story first. The lesson surfaces from the story, not the other way.
 
@@ -298,7 +298,7 @@ Things every mode does the same way:
 1. **Confirm the detected mode in one short message before running the flow.** Don't assume.
 2. **Open the door, then shut up.** Whatever the dump shape is for that mode, give the creator space to land it without interrupting.
 3. **Reflect back in the creator's own language.** Mirror what they said, do not paraphrase into your own words.
-4. **Run the iceberg + Top 3 check fast (10 seconds).** Surface the fit, creator confirms, move on.
+4. **Run the iceberg fit check fast (10 seconds).** Surface the fit, creator confirms, move on.
 5. **Drill ONLY where the material is thin.** Never run an exhaustive question battery.
 6. **Save with a clean confirmation.** "Saved to [path]. Run vid-framing next."
 

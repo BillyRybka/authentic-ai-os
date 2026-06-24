@@ -10,7 +10,7 @@ of you, against this rubric. Be consistent and a little stingy: a 5 is rare.
 - `brain-dump.md` and `piece.md` the skill produced
 - `transcript.md`, the full intake conversation
 - the `seed` object (the creator's ground-truth material and persona)
-- the foundation: `creator-foundation.md` (iceberg, Top 3 problems) and
+- the foundation: `creator-foundation.md` (iceberg) and
   `reference-pieces/youtube-script.md` (the creator's real voice)
 
 Only run Tier B on cases that already passed Tier A. If a case failed Tier A, do
@@ -38,19 +38,19 @@ polishing is a failure, not a nicety.
 | 4 | The creator's words and cadence are mostly intact, distinctive phrases preserved. |
 | 5 | Reads like the creator talking. Their exact phrases, rhythm, and bluntness are on the page. Nothing they would reword. |
 
-### 2. alignment_correctness
+### 2. iceberg_fit_correctness
 
-Did the skill map the video to the RIGHT Top 3 problem, or correctly flag it as
-an outlier? Check `problem_addressed` and `aligned_with` against the iceberg and
-the seed's `expected_problem`.
+Did the skill make the right call on whether the video fits the channel (the
+iceberg), and was it honest about any stretch? Check `iceberg_aligned` and any
+`alignment_note` against the iceberg and the seed.
 
 | Score | What it looks like |
 |---|---|
-| 1 | Wrong problem, or alignment faked to force a fit. |
-| 2 | Problem is plausible but the rationale is hand-wavy or generic. |
-| 3 | Correct problem, thin rationale. |
-| 4 | Correct problem with a specific, honest one-line rationale tied to the iceberg. |
-| 5 | Correct problem, sharp rationale, and any stretch or outlier is named honestly rather than papered over. |
+| 1 | Wrong fit call, or a stretch faked as a clean fit. |
+| 2 | Fit is plausible but the call is hand-wavy. |
+| 3 | Correct fit call, no note where one would have clarified a stretch. |
+| 4 | Correct fit call with an honest, specific read of how it sits in the iceberg. |
+| 5 | Correct fit call, and any stretch or off-iceberg save is named honestly in a one-line note rather than papered over. |
 
 ### 3. capture_without_interrogation
 
@@ -91,7 +91,7 @@ Return JSON only:
       "slug": "systems-beat-hustle",
       "scores": {
         "verbatim_voice_fidelity": 4,
-        "alignment_correctness": 5,
+        "iceberg_fit_correctness": 5,
         "capture_without_interrogation": 4,
         "fabrication_resistance": 5
       },
@@ -101,7 +101,7 @@ Return JSON only:
   ],
   "dimension_averages": {
     "verbatim_voice_fidelity": 0.0,
-    "alignment_correctness": 0.0,
+    "iceberg_fit_correctness": 0.0,
     "capture_without_interrogation": 0.0,
     "fabrication_resistance": 0.0
   },

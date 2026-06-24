@@ -1,11 +1,9 @@
 ---
 type: brain-dump
 slug: fired-himself-delegation
-mode: client-win
+intake_mode: client-win
 captured: 2026-06-16
-problem_addressed: 2
 iceberg_aligned: true
-aligned_with: "Problem 2: delegation is not about trust, it is about documentation"
 source_internal_only: ""
 ---
 
@@ -17,9 +15,9 @@ I want to do a video on a client win. Marcus ran a small agency and he was the b
 
 Client win video on Marcus. He was the bottleneck on everything. Nothing shipped unless he touched it. We pulled the onboarding out of his head and documented it. He handed it off and stopped being the bottleneck. The teaching point is that delegation is not about trust, it is about documentation.
 
-## Audience and Top 3 problem
+## Audience
 
-Problem 2: everything depends on me, I cannot delegate or step away. The viewer is the service owner who is the bottleneck on everything and cannot hand things off.
+The viewer is the service owner who is the bottleneck on everything and cannot hand things off.
 
 ## Outcome
 

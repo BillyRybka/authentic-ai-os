@@ -25,7 +25,7 @@ for fname, text in files.items():
 
 # 2) frontmatter completeness
 bd_fm, _ = split_frontmatter(brain)
-bd_required = ["type", "slug", "mode", "captured", "problem_addressed", "iceberg_aligned", "aligned_with"]
+bd_required = ["type", "slug", "intake_mode", "captured", "iceberg_aligned"]
 ok, missing = has_fields(bd_fm, bd_required)
 if not ok:
     failures.append(f"brain-dump frontmatter missing/empty: {missing}")

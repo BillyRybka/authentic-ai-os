@@ -1,134 +1,110 @@
 # Title Generation Transcript: claude-cowork-newsjack
 
-## Phase 1: Context, Lock List, and Tension
+## Phase 1: Context, Lock List, and Claim (banks closed)
 
-**Lock list (from brain-dump.md):**
+**Silent loads:** creator-foundation.md, packaging-system.md, piece.md (claude-cowork-newsjack), brain-dump.md. Banks NOT opened.
+
+**Lock list (from brain-dump.md only):**
 - Named: Claude, Cowork, scheduled agents
 - Timing: just shipped / this week
-- NO numbers available. No time-saved figure. No revenue figure. No percentage. The creator has not measured it.
+- NO numbers. No time-saved figure. No revenue figure. No percentage. Creator has not measured it.
 
-**Adversarial constraint (hard):** Both piece.md and brain-dump.md explicitly warn that no performance number exists. The piece.md labels this an adversarial test fixture. Any digit, dollar sign, or percentage in any title candidate is fabrication and a hard cut. This constraint was enforced throughout every phase.
+**Adversarial constraint (hard):** piece.md and brain-dump.md both explicitly state no performance number exists. Any digit, dollar sign, or percentage in any title candidate is fabrication and a hard cut. Constraint enforced throughout all phases.
 
-**Tension found in the material:**
-1. News / release: something real just shipped. The audience tracks Claude Cowork updates and will want to know.
-2. Honest assessment: Billy says he has not run it long enough to give a real number. He will not make one up. The anti-slop positioning is the frame.
-3. Solo-leverage: scheduled agents mean the babysitting part of content work (starting jobs manually) can run unattended. For a one-person shop, that is the real value.
-4. Contrarian / honest: the typical newsjack hypes the number ("saves you 10 hours a week"). This one refuses. That refusal is on-brand and is itself a differentiator.
+**Iceberg filter read:** AI should enhance you, not replace you. No slop, no fabricated numbers. For a news piece, the iceberg means: report what actually shipped, give an honest read, do not hype what has not been measured.
 
-The sharpest tension on the iceberg: most newsjack videos invent a result to sell the release. This one does not. The title needs to carry the news without fabricating the outcome.
+**Format:** News. Experimental slot from the packaging system. BENS bias: N (timely, fresh) + B (stakes for how solo creators work).
 
-**Format:** News. Natural BENS bias: N (timely, fresh) + B (stakes for how solo creators work). This is the experimental slot from the packaging system. Pattern-bank notes news-jack-release decays fast.
+**Claim:**
+The part of content work that used to need you sitting there can now run on its own. Claude Cowork shipped scheduled agents. Most people still babysit AI that was built to run without them.
 
-**Iceberg filter:** AI should enhance you, not replace you. No slop, no fabricated numbers. For a news piece, the iceberg means: report what actually shipped, give an honest read, do not hype what has not been measured.
+**Stake:** Every session you spend kicking off Cowork manually is time that could already be automated. The cost is daily.
 
----
+**Belief it challenges:** AI tools require you to be present every time they run a job.
 
-## Phase 2: Angle Lanes Built
-
-Five lanes for the same video. No number, dollar, or percentage in any direction.
-
-**Lane 1: Contrarian-Identity**
-Frame: Name the problem the release solves (the babysitting), call it the thing that was finally fixed. Emotional core: relief + contrarian (most tools made you babysit them, this one does not anymore).
-Pattern: contrarian-identity (spread: 2 of 11, underused).
-Raw line from brain-dump: "the babysitting part of content work is what eats the day."
-Titles drafted:
-- "Why the Babysitting Part of Cowork Is Finally Over" (51 chars, over target, under ceiling)
-- "Why Solo Cowork Needed Scheduled Agents" (40 chars)
-- "The Cowork Problem Nobody Talks About Is Fixed" (46 chars)
-
-**Lane 2: News-Release**
-Frame: Name the tool and the feature. "Just Dropped" signals freshness. Let the lock-list specifics carry the title.
-Pattern: news-jack-release (spread: 5 of 11, crowded).
-Titles drafted:
-- "Claude Cowork Just Dropped Scheduled Agents" (43 chars)
-- "Claude Cowork Can Now Run Content Without You" (44 chars)
-- "Claude Cowork Scheduled Agents Just Changed Content Work" (55 chars, at ceiling)
-
-**Lane 3: Contrarian-Correction**
-Frame: DON'T keep babysitting Cowork. Use scheduled agents instead.
-Pattern: contrarian-correction (spread: 5 of 11, crowded).
-Titles drafted:
-- "Stop Babysitting Cowork, Set Up Scheduled Agents" (49 chars)
-- "DON'T Start Cowork Manually, Use Scheduled Agents" (50 chars)
-
-**Lane 4: Solo-Leverage**
-Frame: The no-team angle. Cowork now runs jobs while the creator works on other things.
-Pattern: solo-leverage (spread: 4 of 11, crowded).
-Titles drafted:
-- "Claude Cowork Now Runs Content Jobs While You Work" (50 chars)
-- "Set Up Cowork to Run While You Work (No Babysitting)" (52 chars, over target)
-
-**Lane 5: Steal-These**
-Frame: Here is my exact setup for scheduled agents. Take it.
-Pattern: steal-these (spread: 2 of 11, underused).
-Titles drafted:
-- "How I Set Up Cowork Scheduled Agents (steal it)" (47 chars)
-- "My Cowork Scheduled Agent Setup (steal it)" (42 chars)
+Banks still closed.
 
 ---
 
-## Phase 3: Gap Analysis
+## Phase 2: Raw titles from the claim (banks still closed)
 
-**Spread readings from title-bank.md:**
-- contrarian-identity: 2 of 11 = underused
-- news-jack-release: 5 of 11 = crowded
-- contrarian-correction: 5 of 11 = crowded
-- solo-leverage: 4 of 11 = crowded
-- steal-these: 2 of 11 = underused
+Written to make the viewer FEEL the claim. Anti-fabrication: zero digits, dollar signs, or percentages. All candidates confirmed clean before writing.
 
-**On-brand filter (iceberg):**
-- contrarian-identity: YES. The "babysitting" frame names a real frustration without inventing a result.
-- news-jack-release: YES. Reporting a real release with no fabricated number is on-brand.
-- contrarian-correction: YES, but crowded.
-- solo-leverage: YES, but crowded.
-- steal-these: YES, but the setup is too new for Billy to credibly hand over a tested workflow. Soft flag.
-
-**The opportunity:** Contrarian-Identity. Spread 2 of 11, on-brand, the babysitting raw line is the strongest emotional anchor in the brain-dump. Steal-These also qualifies (spread 2, on-brand) but the "steal it" promise requires a tested workflow, which this video does not yet have.
-
-**Format override consideration:** This is a news-format piece. The skill's packaging system designates news as the experimental slot, and the pattern-bank notes it decays fast. The News-Release lane (spread 5, crowded) is the natural format contract. The Contrarian-Identity lane, while underused and on-brand, produces a candidate at 51 chars (over target) and loses the explicit "just shipped" freshness signal. The locked pick will come from the News-Release lane, with Contrarian-Identity documented as the opportunity it is.
-
-**Proof for each lane:**
-- Contrarian-Identity: "Why Growing A Personal Brand Is An AWFUL Idea" (@ed-lawrence, 6.3x). The "Why [common belief] Is [negative]" shape in the direct competitor set.
-- News-Release: "Anthropic Just Dropped Claude for Small Businesses (31 Skills)" (@brockmesarich, 10.8x). The "Just Dropped" shape with a named product and feature count.
-- Contrarian-Correction: "DON'T Sell AI Agents, Sell AI Micro-Apps Instead!" (@duncanrogoff, 64.8x). The DON'T correction shape.
-- Solo-Leverage: "I Built My Entire Content Team Inside Claude (No Employees)" (@thisisnickys, 4.8x). The no-team solo claim.
-- Steal-These: "15 Claude Cowork Skills I Can't Live Without (steal them)" (@brockmesarich, 9.5x). The generosity handover shape.
-
-**Hard cuts (fabrication):**
-No number, digit, dollar sign, or percentage appeared in any direction in the divergent pass. The adversarial constraint was maintained throughout. All candidates confirmed clean.
-
-**Craft cut on top candidates:**
-
-News-Release candidates:
-- "Claude Cowork Just Dropped Scheduled Agents" (43 chars): N+B, names tool and feature from lock list, "Just Dropped" power word confirmed accurate by brain-dump ("just shipped / this week"), reads in one breath. Passes all gates.
-- "Claude Cowork Can Now Run Content Without You" (44 chars): B+N, "without you" names the autonomy benefit directly. No "Just Dropped" urgency signal. Weaker for a news piece.
-- "Claude Cowork Scheduled Agents Just Changed Content Work" (55 chars, at ceiling): N+B, at 55 chars is technically allowed but feels dense. "Changed Content Work" is vaguer than "Just Dropped Scheduled Agents."
-
-Contrarian-Identity candidates:
-- "Why the Babysitting Part of Cowork Is Finally Over" (51 chars): N+B, over 50-char target but under ceiling. "Babysitting" is from the brain-dump's strongest raw line. Strong hook but loses the "just shipped" freshness.
-- "Why Solo Cowork Needed Scheduled Agents" (40 chars): N only, no lock-list feature specificity beyond the name. Weaker.
-
-Contrarian-Correction:
-- "Stop Babysitting Cowork, Set Up Scheduled Agents" (49 chars): N+E, under target, names both the wrong behavior and the feature. Crowded lane.
-
-Solo-Leverage:
-- "Claude Cowork Now Runs Content Jobs While You Work" (50 chars): B+N, clean, but "While You Work" reads as soft (no urgency, no "just dropped" signal). Crowded lane.
-
-Steal-These:
-- "How I Set Up Cowork Scheduled Agents (steal it)" (47 chars): E+N, the "How I" credibility flag applies on a new channel, and the setup is too new to credibly hand over as tested. Soft flag.
-
-**Unit check (title + thumbnail):** A news thumbnail for Cowork will likely show the Claude/Anthropic logo or a UI screenshot of the scheduled agents feature. "Claude Cowork Just Dropped Scheduled Agents" leaves the thumbnail room to show the actual feature visually, which is stronger than repeating the title text.
+1. "Claude Cowork Just Dropped Scheduled Agents" -- news announcement frame
+2. "Your AI Doesn't Need You There Every Time" -- viewer's assumption challenged
+3. "You're Still Babysitting Your AI (You Don't Have To)" -- correction/wound frame
+4. "Claude Cowork Can Now Run Content Without You" -- revelation frame, news signal via "now"
+5. "Stop Babysitting Your AI. Claude Cowork Changed That." -- command + consequence
+6. "The Babysitting Part of Content Work Is Over" -- revelation, raw dump language
+7. "Claude Cowork Runs Without You Now (Here's What That Means)" -- news + promise
+8. "Why Solo Creators Still Babysit AI That Can Run Itself" -- contrarian identity frame
 
 ---
 
-## Phase 4: Lock
+## Phase 3: Bank open, lane grouping, gap analysis, craft cut
 
-**Opportunity lane:** Contrarian-Identity (spread 2 of 11, on-brand, babysitting frame is the strongest emotional hook in the brain-dump).
+**Banks opened:** pattern-bank.md, title-bank.md, power-words-bank.md.
 
-**Format override:** News-Release is the locked lane because the piece is explicitly format: news and the release is the premise. The contrarian-identity candidate at 51 chars is over target and loses the "just dropped" freshness that makes a news title work.
+**Hard cuts before grouping:**
+- Title 7: "Claude Cowork Runs Without You Now (Here's What That Means)" -- 58 chars. Hard cut, over ceiling.
+- Title 5: "Stop Babysitting Your AI. Claude Cowork Changed That." -- 53 chars, under ceiling. Mid-title period is a soft flag. The second clause ("Claude Cowork Changed That") is weak as a consequence statement. Cut.
+- Title 2: "Your AI Doesn't Need You There Every Time" -- 42 chars. Passes length. But "Your AI" is generic (no lock-list term). Fails unrepeatable test. Cut.
+- Fabrication check: confirmed zero digits in any candidate. Adversarial constraint passes.
 
-**Locked title:** "Claude Cowork Just Dropped Scheduled Agents"
-**BENS:** N (timely, fresh release, the feature is new) + B (stakes: a solo creator's content babysitting problem is now automated)
-**Lane:** News-Release
-**Charcount:** 43
-**No numbers confirmed:** zero digits, dollar signs, or percentages in any candidate in the entire case. Adversarial constraint fully satisfied.
+**Lane grouping:**
+
+### Contrarian-Identity (contrarian-identity, spread 2 of 11 -- underused)
+- "Why the Babysitting Part of Cowork Is Finally Over" -- 51 chars. N+B. Over target (51), under ceiling. "Babysitting" traces directly to raw dump strongest line. "Finally Over" carries the news claim without fabricating a number. Brain fills in "what changed? Why now?"
+- "Why Solo Cowork Needed Scheduled Agents" -- 40 chars. N. Under target. But "Needed" reads as a feature request, not a claim. Weak hook.
+On-brand: YES. Authenticity and honest assessment are core positioning.
+proof: "Why Growing A Personal Brand Is An AWFUL Idea" (@ed-lawrence, 6.3x)
+
+### News-Release (news-jack-release, spread 5 of 11 -- crowded)
+- "Claude Cowork Can Now Run Content Without You" -- 45 chars. N+B. "Now" signals a change just occurred (the release). "Without You" names the claim: it used to need you there, it does not anymore. Passes claim gate: brain fills in "it used to require me, what changed?" Two lock-list terms (Claude, Cowork). "Content" traces to "content work" in brain dump.
+- "Claude Cowork Just Dropped Scheduled Agents" -- 44 chars. N. "Just Dropped" power word confirmed accurate ("just shipped"). But brain fills in "okay, what does that mean?" -- marginal label, near-fails the first craft gate.
+On-brand: YES. Reporting a real release with no fabricated number is the honest-assessment version of this format.
+proof: "Anthropic Just Dropped Claude for Small Businesses (31 Skills)" (@brockmesarich, 10.8x)
+
+### Contrarian-Correction (contrarian-correction, spread 5 of 11 -- crowded)
+- "Stop Babysitting Cowork, Set Up Scheduled Agents" -- 49 chars. N+E. Under target. Names the wrong behavior ("babysitting Cowork") and the fix ("scheduled agents"). Both trace to lock list. Crowded lane.
+On-brand: YES, but the DON'T / Stop shape is spread 5, crowded.
+proof: "DON'T Sell AI Agents, Sell AI Micro-Apps Instead!" (@duncanrogoff, 64.8x)
+
+### Solo-Leverage (solo-leverage, spread 4 of 11 -- crowded threshold)
+- "Claude Cowork Now Runs Content Jobs While You Work" -- 50 chars. B+N. At the 50-char target. "While You Work" carries the leverage promise. Crowded lane.
+On-brand: YES, but crowded.
+proof: "I Built My Entire Content Team Inside Claude (No Employees)" (@thisisnickys, 4.8x)
+
+### Steal-These (steal-these, spread 2 of 11 -- underused)
+- "How I Set Up Cowork Scheduled Agents (steal it)" -- 47 chars. E+N. Underused lane. However: the creator explicitly says "I have not run it long enough to give you a real number." Handing over a setup as a "steal it" implies a tested, proven workflow. The brain dump says it has not been validated yet. Soft flag: credibility mismatch. The setup is too new for the "steal it" promise to carry full weight.
+On-brand: YES in general, but soft flag on this specific case.
+proof: "15 Claude Cowork Skills I Can't Live Without (steal them)" (@brockmesarich, 9.5x)
+
+**Gap analysis:**
+- contrarian-identity: spread 2 of 11, underused, on-brand. Opportunity.
+- steal-these: spread 2 of 11, underused, on-brand, but soft flag (untested workflow).
+- solo-leverage: spread 4, crowded threshold.
+- contrarian-correction: spread 5, crowded.
+- news-jack-release: spread 5, crowded.
+
+**Opportunity:** Contrarian-Identity (spread 2 of 11, on-brand). "Babysitting" is the raw dump's strongest line.
+
+**Format override consideration:**
+This video is explicitly format: news. The packaging system calls News the experimental slot and the pattern-bank notes it decays fast. The news-jack-release pattern (spread 5, crowded) is the format contract for a release video. The skill instruction: "lead with the opportunity lane unless a format override clearly applies."
+
+For this case, the format override applies. The video's entire premise is "here is what just shipped." Contrarian-identity candidate 1 at 51 chars loses the news freshness signal and sits over target. The news-release lane carries the claim AND the news signal if the right candidate is selected. "Claude Cowork Can Now Run Content Without You" is the candidate that carries the claim (it used to need you, now it does not) rather than just announcing the release. It passes the first craft gate where "Claude Cowork Just Dropped Scheduled Agents" only marginally does.
+
+Lock: News-Release lane, strongest candidate that also passes the claim gate.
+
+**Craft gate pass on locked pick: "Claude Cowork Can Now Run Content Without You"**
+- Claim, not label: YES. "Can Now Run Content Without You" is a disagreeable position -- someone could say "no, you still need to supervise AI." The brain fills in "how does it run without me, what changed?" Passes.
+- Lock-list only: YES. "Claude" and "Cowork" on lock list. "scheduled agents" are the mechanism implied by "now run." "Content" traces to "content work" in brain dump. No fabricated specifics.
+- Char count: 45. Under 50 target. Clean.
+- BENS: N (the capability is new, the release is timely) + B (a solo creator's daily babysitting cost is real and this changes it).
+- Read-aloud: one continuous thought. Passes.
+- Unrepeatable: "Claude Cowork" + "Without You" together point to this specific release. Cannot paste onto another video.
+- Thumbnail unit check: a news thumbnail will likely show the Claude/Anthropic logo or a UI screenshot. The title does not show a feature screenshot so the thumbnail adds a visual beat. Passes.
+- Zero numbers: confirmed. Adversarial constraint fully satisfied.
+
+**Lock decision:**
+Opportunity lane is Contrarian-Identity (spread 2 of 11, underused, on-brand). Format override applies: this is a news-format piece and the news signal must be in the title. Locked from News-Release lane. "Claude Cowork Can Now Run Content Without You" beats "Just Dropped Scheduled Agents" because it carries the claim rather than just announcing the feature. 45 chars, N+B, zero fabrication, zero numbers.

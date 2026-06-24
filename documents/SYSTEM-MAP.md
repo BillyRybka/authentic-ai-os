@@ -1,6 +1,6 @@
 # Authentic AI OS System Map
 
-How the system works, skill by skill. Built from a full audit of all three skill roots (`plugins/authentic-ai-os/skills/`, `.claude/skills/`, `.claude/skills-wip/`), plus `knowledge/`, `banks/`, and `CLAUDE.md`, on 2026-06-16.
+How the system works, skill by skill. Built from a full audit of all three skill roots (`plugins/authentic-ai-os/skills/`, `.claude/skills/`, `.claude/skills-wip/`), plus `knowledge/`, `banks/`, and `CLAUDE.md`, on 2026-06-19. vid-intake card refreshed 2026-06-24 (Top-3 removal, cold-open lazy-load, voice drop).
 
 **How to read a card:** each skill is a card. `READS` = the context loaded in. `WRITES` = what it produces. `NEXT` = what runs after. `STATUS` = the packaging tier.
 
@@ -10,13 +10,15 @@ How the system works, skill by skill. Built from a full audit of all three skill
 - `STAGED` lives in `.claude/skills/`. Works in this repo, not yet released.
 - `WIP` lives in `.claude/skills-wip/`. Not ready to ship.
 
-**Three families.** The system now runs three skill lines:
+**Three families.** The system runs three skill lines:
 
 - `vid-*` the video pipeline (the backbone: idea to filming-ready script).
 - `aud-*` the synthetic-audience pipeline (build avatars from real audience data, then panel-review content).
 - `post-*` distribution (turn finished material into platform posts).
 
 Plus one cross-cutting skill, `aaios-feedback`, available throughout.
+
+> This map is a release-process artifact. It is regenerated as a mandatory step whenever a skill graduates (WIP to STAGED to RELEASED) or is parked. See the graduation checklist in `documents/RELEASE.md`, `documents/DEV-WORKFLOW.md`, and the `peak-release` skill.
 
 ---
 
@@ -30,18 +32,19 @@ flowchart TD
 
     A["0. SETUP<br/>creator-setup"]:::released
     B["1. IDENTITY<br/>avatar to positioning to pillars<br/>to credibility to backstory"]:::released
-    C["2. VOICE<br/>vid-voice-capture"]:::wip
-    D["3. BANKS<br/>vid-capture + vid-research"]:::wip
-    E["4. PRE-SCRIPT<br/>ideas to intake to framing<br/>to title + thumbnail"]:::wip
-    F["5. SCRIPT<br/>structure to intro to<br/>segment to ending"]:::wip
-    G["6. REVIEW<br/>vid-pressure-test + vid-voice-audit"]:::wip
+    D["3. BANKS<br/>vid-research (released)<br/>+ vid-capture (staged)"]:::released
+    C["2. VOICE<br/>vid-voice-capture"]:::staged
+    E["4. PRE-SCRIPT<br/>ideas to intake to framing<br/>to title + thumbnail"]:::staged
+    F["5. SCRIPT<br/>structure to intro to<br/>segment to ending"]:::staged
+    G["6. REVIEW<br/>vid-pressure-test + vid-voice-audit"]:::staged
 
-    A --> B --> C --> D --> E --> F --> G
+    A --> B --> D --> E --> F --> G
+    B -.optional.-> C
 
     note["Blue = released. Green = staged. Tan = WIP.<br/>Stages 0-3 are one-time setup.<br/>Stages 4-6 repeat for every video."]
 ```
 
-Build the creator's identity and voice once, fill the reusable banks once, then run stages 4-6 for each video. Inside the video pipeline, `vid-ideas`, `vid-intake`, and `vid-research` are STAGED (work in this repo, not yet released); the rest of stages 2-6 are WIP.
+Build the creator's identity once, then the shipped handoff sends them to `vid-research` to fill the pattern banks. Voice capture and per-video stages 4-6 are STAGED (work in this repo, not yet released). The `aud-*` and `post-*` lines are WIP.
 
 ---
 
@@ -62,8 +65,8 @@ Scaffolds the empty vault so every other skill has somewhere to write, and seeds
 ### /foundation `RELEASED` · orchestrator
 Points the creator at the next foundation step. Holds no content itself.
 - **READS**: `creator-foundation.md`, `packaging-system.md` (to see what's done), `knowledge/feedback-offer.md`, `knowledge/update-check.md`
-- **WRITES**: nothing (offers `aaios-feedback` at Step 5)
-- **NEXT**: runs avatar to positioning to pillars to credibility to backstory
+- **WRITES**: nothing (offers `vid-research` at Step 5, and `aaios-feedback` via the end-of-journey path)
+- **NEXT**: runs avatar to positioning to pillars to credibility to backstory, then offers vid-research
 
 ### vid-avatar `RELEASED` · identity 1 of 5
 Locks who the viewer is: offer summary, avatar description, Top 3 perceived problems.
@@ -93,17 +96,17 @@ Locks three viewer-relevant credibility brags for intros.
 Locks the Problem-Action-Outcome backstory, plus a 3-sentence compressed version.
 - **READS**: `creator-foundation.md` (Avatar, Iceberg, Top 3), `knowledge/interview-posture.md`, `knowledge/vault-integration.md`, `knowledge/update-check.md`
 - **WRITES**: `creator-foundation.md` (Backstory section)
-- **NEXT**: vid-voice-capture
+- **NEXT**: vid-research (offers it at the close, launches on the creator's go). Voice capture is still in development and is not part of the shipped handoff
 
 ---
 
 ## Stage 2: Foundation Voice
 
-### vid-voice-capture `WIP`
+### vid-voice-capture `STAGED`
 Captures the creator's voice as a two-part contract: curated reference passages plus a thin guardrail.
 - **READS**: `creator-foundation.md`, `raw/voice-sources/` (creator's transcripts/scripts), `knowledge/voice-profile-schema.md`, `knowledge/voice-extraction-methods.md`, `knowledge/voice-pressure-test.md`, `knowledge/voice-rhythm.md`, `knowledge/interview-posture.md`, `knowledge/vault-integration.md`
 - **WRITES**: `foundation/reference-pieces/{voice_context}.md` (verbatim passages, the voice engine), `foundation/voice-profile.md` (thin guardrail)
-- **NEXT**: vid-research (points the creator there to build banks; does not auto-invoke)
+- **NEXT**: optional. Not yet wired into the released handoff chain
 
 ---
 
@@ -111,16 +114,16 @@ Captures the creator's voice as a two-part contract: curated reference passages 
 
 Two skills fill the reusable banks. Done once, then topped up over time.
 
-### vid-capture `WIP`
+### vid-research `RELEASED`
+Studies winning content to build pattern banks and the packaging system. The shipped next step after the foundation identity chain.
+- **READS**: `foundation/creator-foundation.md`, `packaging-system.md`, `knowledge/three-circle-research.md`, `knowledge/outlier-identification-rules.md`, `knowledge/format-rotation-guide.md`, `knowledge/packaging-system-template.md`, `knowledge/theory-of-one-curation.md`, `knowledge/interview-posture.md`, `knowledge/thumbnail-text-patterns.md`, `knowledge/update-check.md` (pre-flight), YouTube API key from `.env`
+- **WRITES**: `banks/pattern-bank.md`, `banks/title-bank.md`, `banks/power-words-bank.md`, `foundation/packaging-system.md`
+- **NEXT**: vid-framing (its close points the creator there for the next video)
+
+### vid-capture `STAGED`
 Captures stories, proofs, metaphors, testimonials, and frameworks into the evidence banks.
 - **READS**: `creator-foundation.md`, `voice-profile.md` (alignment checks), `knowledge/story-capture-guide.md`, `knowledge/proof-capture-guide.md`, `knowledge/metaphor-builder.md`, `knowledge/testimonial-capture.md`, `knowledge/framework-builder.md`, `knowledge/vault-integration.md`
 - **WRITES**: `banks/story-bank/`, `banks/proof-bank/`, `banks/metaphor-bank/`, `banks/testimonial-bank/`, `banks/framework-bank/`, `people/{Name}.md` stubs
-- **NEXT**: vid-intake
-
-### vid-research `STAGED`
-Studies winning content to build pattern banks and the packaging system.
-- **READS**: `foundation/creator-foundation.md`, `packaging-system.md`, `knowledge/three-circle-research.md`, `knowledge/outlier-identification-rules.md`, `knowledge/format-rotation-guide.md`, `knowledge/packaging-system-template.md`, `knowledge/theory-of-one-curation.md`, `knowledge/interview-posture.md`, `knowledge/thumbnail-text-patterns.md`, YouTube API key from `.env`
-- **WRITES**: `banks/pattern-bank.md`, `banks/title-bank.md`, `banks/power-words-bank.md`, `foundation/packaging-system.md`
 - **NEXT**: vid-intake
 
 ---
@@ -131,29 +134,29 @@ From here, work happens inside one video folder: `content/pieces/{slug}/`. `piec
 
 ### vid-ideas `STAGED` · optional front-door
 Generates a batch of signal-backed video ideas when the creator is blank on what to make. Skip it when the creator already has a topic.
-- **READS**: `creator-foundation.md` (iceberg, pillars, avatar, Top 3), `banks/pattern-bank.md`, `content/ideas-backlog.md` (if present), `knowledge/iceberg-and-top-3-alignment.md`, `knowledge/theory-of-one-curation.md`
+- **READS**: `creator-foundation.md` (iceberg, pillars, avatar, Top 3), `banks/pattern-bank.md`, `content/ideas-backlog.md` (if present), `knowledge/iceberg-and-top-3-alignment.md`, `knowledge/theory-of-one-curation.md`, `knowledge/update-check.md` (pre-flight), `knowledge/vault-integration.md`
 - **WRITES**: `content/ideas-backlog.md` (kept ideas only). Writes no piece folder
 - **NEXT**: vid-intake (hands the picked idea as a seed packet)
 
 ### vid-intake `STAGED`
-Takes raw material (7 intake modes) and locks the brain-dump for one video.
-- **READS**: `creator-foundation.md`, `voice-profile.md`, `knowledge/iceberg-and-top-3-alignment.md`, `knowledge/story-capture-guide.md`, `knowledge/vault-integration.md`
+Takes raw material (7 intake modes) and locks the brain-dump for one video. Cold open: loads nothing until a phase needs it. Iceberg-only fit check (no Top 3). No voice load.
+- **READS**: `creator-foundation.md` (Phase 4 fit check, not cold), `knowledge/story-capture-guide.md` (only when a thin story needs drilling), `knowledge/update-check.md` (pre-flight), `knowledge/vault-integration.md` (at save). `references/mode-conversation-examples.md` is fallback-only
 - **WRITES**: `pieces/{slug}/brain-dump.md`, `pieces/{slug}/piece.md` (standalone). As a sub-skill, returns the packet to the caller and skips the save
 - **NEXT**: vid-framing
 
-### vid-framing `WIP`
+### vid-framing `STAGED`
 Picks the angle, core payoff, and format for the video.
 - **READS**: `brain-dump.md`, `piece.md`, `creator-foundation.md`, `banks/pattern-bank.md`, `knowledge/three-circle-research.md`, `knowledge/outlier-identification-rules.md`, `knowledge/audience-temperature-model.md`, `knowledge/format-planners/{format}.md`
 - **WRITES**: `piece.md` (angle, payoff, format, goal, viewer stage)
 - **NEXT**: vid-title (packaging: title then thumbnail, locked before structure)
 
-### vid-title `WIP`
-Writes the video title using BENS and validated patterns.
-- **READS**: `creator-foundation.md`, `packaging-system.md`, `knowledge/BENS-framework.md`, `knowledge/thumbnail-text-patterns.md`, `banks/title-bank.md`, `piece.md`, `brain-dump.md`
+### vid-title `STAGED`
+Packages the video into a title by exploring angle lanes and leading with the underused on-brand angle, with competitor proof per lane.
+- **READS**: `creator-foundation.md`, `packaging-system.md`, `knowledge/BENS-framework.md`, `knowledge/thumbnail-text-patterns.md`, `banks/pattern-bank.md`, `banks/title-bank.md`, `banks/power-words-bank.md`, `piece.md`, `brain-dump.md`
 - **WRITES**: `piece.md` (title field)
 - **NEXT**: vid-thumbnail (coordinates to avoid repeating words)
 
-### vid-thumbnail `WIP`
+### vid-thumbnail `STAGED`
 Writes the thumbnail brief: text picks, strategy, BENS rationale.
 - **READS**: `packaging-system.md`, `knowledge/thumbnail-strategy-menu.md`, `knowledge/thumbnail-text-patterns.md`, `knowledge/thumbnail-examples-library.md`, `knowledge/thumbnail-composition-guide.md`, `knowledge/BENS-framework.md`, `knowledge/gift-framework.md`, `knowledge/vault-integration.md`, `piece.md`, `banks/packaging-bank/`
 - **WRITES**: `pieces/{slug}/thumbnail-brief.md`
@@ -165,32 +168,32 @@ Writes the thumbnail brief: text picks, strategy, BENS rationale.
 
 `script.md` is built up incrementally: structure lays the skeleton, intro/segment/ending fill it in.
 
-### vid-structure `WIP`
+### vid-structure `STAGED`
 Builds the script skeleton: intro, format-native body sections, ending.
 - **READS**: `brain-dump.md`, `piece.md`, `creator-foundation.md`, `voice-profile.md`, `thumbnail-brief.md`, `knowledge/format-planners/{format}.md`, `knowledge/script-tension-architecture.md`, `knowledge/voice-profile-schema.md`, `knowledge/framework-builder.md` (via `assets/script-skeleton-template.md`), all 5 evidence banks
 - **WRITES**: `pieces/{slug}/script.md` (skeleton + `## Blocks to capture` manifest), `piece.md` (structure status)
 - **NEXT**: gap-fill decision (batch now or inline), then vid-intro. Title and thumbnail are already locked in Pre-Script
 - Note: vid-structure does not load `vault-integration.md`, unlike the other writing skills
 
-### vid-intro `WIP`
+### vid-intro `STAGED`
 Writes the `## Intro` section with the 6-part intro structure.
-- **READS**: `piece.md`, `thumbnail-brief.md`, `brain-dump.md`, `creator-foundation.md`, `voice-profile.md`, `reference-pieces/`, `banks/hook-bank.md`, `knowledge/intro-architecture.md`, `knowledge/parable-decision-matrix.md`, `knowledge/story-pulling-criteria.md`, `knowledge/proof-placement-rules.md`, `knowledge/metaphor-integration.md`, `knowledge/visual-proof-callouts.md`, `knowledge/voice-profile-schema.md`, `knowledge/voice-pressure-test.md`, `knowledge/voice-rhythm.md`, `knowledge/vault-integration.md`, `knowledge/format-planners/{format}.md`
+- **READS**: `piece.md`, `thumbnail-brief.md`, `brain-dump.md`, `creator-foundation.md`, `voice-profile.md`, `reference-pieces/`, `banks/hook-bank.md`, `knowledge/intro-architecture.md`, `knowledge/parable-decision-matrix.md`, `knowledge/story-pulling-criteria.md`, `knowledge/proof-placement-rules.md`, `knowledge/metaphor-integration.md`, `knowledge/visual-proof-callouts.md`, `knowledge/thumbnail-text-patterns.md`, `knowledge/voice-profile-schema.md`, `knowledge/voice-pressure-test.md`, `knowledge/voice-rhythm.md`, `knowledge/vault-integration.md`, `knowledge/format-planners/{format}.md`
 - **WRITES**: `script.md` (`## Intro`)
 - **NEXT**: vid-segment (hands to vid-voice-update on a creator voice reaction)
 
-### vid-segment `WIP`
+### vid-segment `STAGED`
 Writes one body section at a time (parable + principle). Loops once per segment.
-- **READS**: `piece.md`, `brain-dump.md`, `script.md`, `voice-profile.md`, `reference-pieces/`, `creator-foundation.md`, `banks/transition-bank.md`, all 5 evidence banks, the parable/proof/story/metaphor/visual knowledge set, voice set, and `knowledge/format-planners/{format}.md` (see the dependency map for the full 15 + 7 list)
+- **READS**: `piece.md`, `brain-dump.md`, `script.md`, `voice-profile.md`, `reference-pieces/`, `creator-foundation.md`, `banks/transition-bank.md`, all 5 evidence banks, the parable/proof/story/metaphor/visual knowledge set (including `emotion-brick-decision-matrix.md` and `script-tension-architecture.md`), voice set, and `knowledge/format-planners/{format}.md` (see the dependency map for the full 17 + 7 list)
 - **WRITES**: `script.md` (one body section), `piece.md` (banks used)
 - **NEXT**: vid-segment again until done, then vid-ending (hands to vid-voice-update on a voice reaction)
 
-### vid-ending `WIP`
+### vid-ending `STAGED`
 Writes the `## Ending` section with the Pivot/Gap/Bridge formula.
-- **READS**: `piece.md`, `script.md` (full), `voice-profile.md`, `reference-pieces/`, `creator-foundation.md`, `banks/transition-bank.md`, `knowledge/parable-decision-matrix.md`, `knowledge/story-pulling-criteria.md`, `knowledge/proof-placement-rules.md`, `knowledge/metaphor-integration.md`, `knowledge/visual-proof-callouts.md`, the voice set, `knowledge/vault-integration.md`, `knowledge/format-planners/{format}.md`
+- **READS**: `piece.md`, `script.md` (full), `voice-profile.md`, `reference-pieces/`, `creator-foundation.md`, `banks/transition-bank.md`, `knowledge/emotion-brick-decision-matrix.md`, `knowledge/parable-decision-matrix.md`, `knowledge/intro-architecture.md`, `knowledge/story-pulling-criteria.md`, `knowledge/proof-placement-rules.md`, `knowledge/metaphor-integration.md`, `knowledge/visual-proof-callouts.md`, the voice set, `knowledge/vault-integration.md`, `knowledge/format-planners/{format}.md`
 - **WRITES**: `script.md` (`## Ending`), `piece.md` (ending status)
 - **NEXT**: vid-pressure-test
 
-### vid-voice-update `WIP` · writing sibling
+### vid-voice-update `STAGED` · writing sibling
 Triages a mid-draft voice reaction and surgically updates the voice profile when the correction is permanent.
 - **READS**: the flagged line + the creator's reaction, `foundation/voice-profile.md`, `knowledge/voice-profile-schema.md`
 - **WRITES**: `foundation/voice-profile.md` (refusals only, and only when the correction is permanent). One-time edits rewrite the line in place and save nothing
@@ -200,17 +203,28 @@ Triages a mid-draft voice reaction and surgically updates the voice profile when
 
 ## Stage 6: Review (per video)
 
-### vid-pressure-test `WIP`
+### vid-pressure-test `STAGED`
 Audits the assembled script with parallel reviewers, then a read-aloud gate.
-- **READS**: `script.md` (full), `piece.md`, `creator-foundation.md`, `voice-profile.md`, `knowledge/script-tension-architecture.md`, `knowledge/voice-profile-schema.md`, `knowledge/intro-architecture.md` (via references/), `knowledge/audience-temperature-model.md` (via references/), `knowledge/format-planners/{format}.md`
+- **READS**: `script.md` (full), `piece.md`, `creator-foundation.md`, `voice-profile.md`, `knowledge/script-tension-architecture.md`, `knowledge/voice-profile-schema.md`, `knowledge/intro-architecture.md` (via references/), `knowledge/audience-temperature-model.md` (via references/)
 - **WRITES**: `piece.md` (pressure-test audit block), issue comments in `script.md`
 - **NEXT**: filming (pipeline ends). Invokes vid-voice-audit as its voice reviewer
+- Note: vid-pressure-test no longer loads the `format-planners/` (it did in a prior build)
 
-### vid-voice-audit `WIP` · review sibling
+### vid-voice-audit `STAGED` · review sibling
 The single source of voice-truth. Reads the assembled draft against the creator's actual past sentences and flags every line that fails the read-aloud test.
 - **READS**: `script.md` (full), `foundation/voice-profile.md`, `foundation/reference-pieces/`, `brand.md`, optional raw transcript samples, `knowledge/voice-pressure-test.md`, `knowledge/voice-profile-schema.md`, `knowledge/voice-rhythm.md`
 - **WRITES**: a voice findings list (severity, location, quote, suggested rewrite) plus a per-beat verdict (passes / soft-flag / would-reword)
 - **NEXT**: returns control. Runs as the last gate before filming (standalone) or as the voice reviewer inside vid-pressure-test (sub-skill)
+
+---
+
+## The video orchestrator
+
+### vid-pipeline `STAGED` · orchestrator
+Thin router for one video, idea to filming-ready script. Reads where a piece is and auto-invokes the next writing skill. Never writes content itself.
+- **READS**: `piece.md` and sibling-file presence in `content/pieces/{slug}/`, `knowledge/update-check.md` (pre-flight only). No other knowledge files; the sub-skills own all knowledge loading
+- **WRITES**: nothing (delegates to the skill it routes to)
+- **ROUTES** (state to next skill): no framing → vid-intake; framed, no format → vid-ideas; format locked, no angle → vid-framing; angle locked, no title → vid-title; title locked, no thumbnail-brief → vid-thumbnail; thumbnail locked, no structure → vid-structure; structure locked, no intro → vid-intro; intro locked, segments incomplete → vid-segment (loop); segments complete, no ending → vid-ending; ending locked, not filming-ready → vid-pressure-test; filming-ready → done
 
 ---
 
@@ -285,7 +299,7 @@ A few files carry context across many skills. If you understand these, you under
 | `voice-profile.md` | capture + every writing skill + post-write | The thin voice guardrail, loaded before any prose |
 | `foundation/reference-pieces/` | every writing skill, vid-voice-audit, post-write | The verbatim voice engine, the passages prose is written from |
 | `piece.md` | every Stage 4-6 skill | Per-video frontmatter hub. Status flags gate the pipeline |
-| `knowledge/vault-integration.md` | 19 skills | The routing, frontmatter, and wikilink rules contract |
+| `knowledge/vault-integration.md` | 20 skills | The routing, frontmatter, and wikilink rules contract |
 | `knowledge/voice-profile-schema.md` | 9 skills | The voice-profile structure, loaded by everything that touches voice |
 
 The **5 evidence banks** (story, proof, metaphor, testimonial, framework) are filled once by `vid-capture` and pulled as blocks by `vid-structure` and `vid-segment`. The **audience-data bank** is filled by `aud-intake` and consumed by the rest of the `aud-*` line.
@@ -294,20 +308,21 @@ The **5 evidence banks** (story, proof, metaphor, testimonial, framework) are fi
 
 ## Audit findings
 
-Every skill, knowledge file, and bank was grep-verified on 2026-06-16 against all three skill roots. The wiring is sound. The gaps are all expected for a work-in-progress build.
+Every skill, knowledge file, and bank was grep-verified on 2026-06-19 against all three skill roots. The wiring is sound. The gaps are all expected for a work-in-progress build.
 
 **Open gaps (expected for a WIP build):**
 
-- **No pipeline orchestrators exist yet.** WIP skills reference `vid-pipeline` as the orchestrator that would chain stages 4-6, but there is no `vid-pipeline/` skill folder. The `aud-*` and `post-*` lines likewise have no orchestrator. Stages run as manual invokes until the orchestrators are written. Expected, not a defect.
+- **The video orchestrator exists; the other two lines have none yet.** `vid-pipeline` chains the per-video stages 4-6 and is STAGED. The `aud-*` and `post-*` lines have no orchestrator, so they run as manual invokes until one is written. Expected, not a defect.
 - **Five bank-schema files are orphaned** (`framework-bank-schema`, `metaphor-bank-schema`, `packaging-bank-schema`, `story-bank-schema`, `testimonial-bank-schema`). They are staged ahead of `vid-capture`, which currently loads the matching `-builder` and `-capture` guides instead. They wire up when vid-capture is finished. See the dependency map, section 3.
-- **`aaios-feedback` skips the update-check pre-flight** that the other seven released skills run. Likely intentional for a terminal cross-cutting skill, flagged for the maintainer to confirm.
+- **`aaios-feedback` skips the update-check pre-flight** that the other eight released skills run. Intentional for a terminal cross-cutting skill that runs mid-session after another skill already checked.
+- **Two decision-matrix files coexist** (`parable-decision-matrix.md`, `emotion-brick-decision-matrix.md`), both consumed by vid-segment and vid-ending. The `emotion-brick-*` name predates the Block System rename to parable/principle and may be legacy. Worth a content audit before either skill ships.
 
 **Verified as correct (not issues):**
 
 - **Knowledge files all wired, with five known exceptions.** Every file in `knowledge/` except the five orphaned bank-schemas is referenced by at least one skill. The capture/placement guides load conditionally deep in skill bodies, not always in header read-lists.
-- **`thumbnail-composition-guide.md` is now loaded** by vid-thumbnail. It was an intentional orphan in the prior map; it no longer is.
+- **`thumbnail-composition-guide.md` is loaded** by vid-thumbnail. It was an intentional orphan in an early map; it no longer is.
 - **The `hook-bank` / `transition-bank` references resolve.** They were re-architected as vault banks (`banks/hook-bank.md`, `banks/transition-bank.md`) seeded by creator-setup from `hook-bank-template.md` and `transition-bank-template.md`. No broken references remain.
-- **`/foundation` to `vid-voice-capture` handoff is correct.** The chain points the creator at vid-voice-capture but does not auto-invoke it, because that skill needs source material the creator brings. Intentional.
+- **`/foundation` and `vid-backstory` both hand off to `vid-research`.** The shipped foundation chain offers vid-research at the close and launches it on the creator's go. Voice capture is STAGED and not yet part of the released handoff.
 - **`vid-avatar` reading `voice-profile.md` is correctly guarded** with "if it exists". Voice capture runs later, and the skill handles its absence cleanly.
 
 **Note on the `foundation/` folder:** in this dev repo `creator-foundation.md` sits at the root with no `foundation/` directory. That is expected. The client installer scaffolds `foundation/` on setup. Not a bug.

@@ -1,11 +1,9 @@
 ---
 type: brain-dump
 slug: ai-content-lessons
-mode: notes
+intake_mode: notes
 captured: 2026-06-16
-problem_addressed: 1
 iceberg_aligned: true
-aligned_with: "AI slop will ruin the trust of your business, the person they thought they knew is now not there"
 source_internal_only: ""
 ---
 
@@ -19,9 +17,9 @@ A great story for the trust one is my friend Omar. He paid a company a decent am
 
 I want to make a listicle of the lessons I have learned creating content with AI. The big one, the thesis, is that AI should enhance you, not replace you. A bunch of the lessons under that.
 
-## Audience and Top 3 problem
+## Audience
 
-Problem 1. AI slop will ruin the trust of your business, the person they thought they knew is now not there. Don't let AI make you sound like AI, ruthlessly remove the hedging and the talking in circles.
+AI slop will ruin the trust of your business, the person they thought they knew is now not there. Don't let AI make you sound like AI, ruthlessly remove the hedging and the talking in circles.
 
 ## Outcome
 

@@ -40,7 +40,8 @@ All editing happens on `dev`. Shipping skills live in `plugins/authentic-ai-os/s
 5. Keep the frontmatter `description` at 1024 characters or fewer (hard plugin-validator limit; see the gotcha below). `release.ps1` enforces it.
 6. If it needs container structure in the client's vault, add a row to `creator-setup`'s manifest.
 7. Wire it into the system. Update whatever skill should hand off to this one (the foundation chain offers `vid-research` at its end, for example), and grep every shipping skill plus `README.md` and `CLAUDE.md` for stale references that still call it unreleased ("in development", "coming", "chain ends here", "do NOT mention {skill}"). A graduated skill that nothing points to, or that siblings still call work-in-progress, is a silent dead end. This is the step most often missed.
-8. Commit to `dev`. There is no allowlist array to edit; the whole plugin tree ships.
+8. Regenerate the two maps. A skill changing roots (or any edit to its knowledge references) makes `documents/skill-knowledge-map.md` and `documents/SYSTEM-MAP.md` stale: their tier labels, counts, diagrams, and handoff notes drift from reality. Re-grep all three roots per each map's section-7 procedure, re-tier every skill that moved, fix any handoff/NEXT lines you changed in step 7, and bump the "Built" date. They never ship, but they are the packaging contract (which `knowledge/` file each skill needs), so a stale map is how a knowledge file gets forgotten at release time.
+9. Commit to `dev`. There is no allowlist array to edit; the whole plugin tree ships.
 
 ### 3. Cut the release
 

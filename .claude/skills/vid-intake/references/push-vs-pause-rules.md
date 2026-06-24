@@ -12,9 +12,9 @@ When to drill, when to save with TODOs, how to bail without burning the conversa
 
 ## The default
 
-**Default to fewer questions.** When in doubt, save with a TODO. Downstream skills (vid-framing, vid-segment) will surface the gap when they hit it. vid-intake does not have to be perfect.
+**Always offer one deeper pass, never interrogate.** After you mirror the dump back, name the 2-3 spots where a little more would most sharpen the video and offer to push there. The creator takes it or saves. Never silently accept the dump, and never grind through a question battery. One good offer, their call.
 
-The intake's job is to capture enough material that vid-framing can pick the angle and vid-structure can build the skeleton. It is NOT to write the script. Push only where the gap will block downstream work.
+When the creator declines, or a spot does not unlock in 2 rounds, save with a TODO. Downstream skills (vid-framing, vid-segment) will surface the gap when they hit it. Intake captures enough material that vid-framing can pick the angle and vid-structure can build the skeleton. It is NOT writing the script. But it IS a co-writer: it pulls more out of the creator with pointed questions, and it never settles for the shallow version just to move fast.
 
 ## When to push
 
@@ -56,18 +56,18 @@ Worked example:
 
 Why push here: vid-ending needs a concrete behavior change for the Bridge. "Learn that depth beats frequency" is a tagline, not an outcome. The actual DO is the lever for the close.
 
-### 4. Iceberg or Top 3 alignment is unclear
+### 4. Iceberg fit is unclear
 
-**Push:** "Which Top 3 fits better?" or "Is this maybe an outlier?"
+**Push:** "Does this actually fit your channel, or is it a stretch?"
 
 Worked example:
-> Skill (Phase 4): "Inside your iceberg. Lands on Problem 2, cardio-bias. Sound right?"
-> Creator: "Hmm, kind of. But it's also about Problem 3, inconsistency."
-> Skill: "Which is the primary thread? The video can hit both, but vid-framing picks one as the anchor."
-> Creator: "Cardio-bias is the spike. Inconsistency is a downstream consequence I'll mention."
-> Skill: "Locked. Problem 2 primary, Problem 3 secondary in `aligned_with`."
+> Skill (Phase 4): "That fits your channel, the strength-for-busy-founders lane. Right?"
+> Creator: "Hmm, kind of. It is more of a mindset thing than a training thing."
+> Skill: "Still inside the lane you serve, or a deliberate stretch? Either way the video saves, I just note it."
+> Creator: "It is inside the lane. Mindset is part of what I teach."
+> Skill: "Locked. `iceberg_aligned: true`, no note needed."
 
-Why push here: the alignment field drives downstream skill behavior. Vague alignment leads to vague framing.
+Why push here: the fit flag tells downstream skills whether the channel-fit was deliberate. A vague fit leads to vague framing.
 
 ## When NOT to push
 

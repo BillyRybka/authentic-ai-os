@@ -5,6 +5,12 @@ locked_bens: E+N
 locked_lane: Steal-These
 ---
 
+## Claim
+
+Claim: One person can run a full content operation solo. Not by working harder, but by having 7 specific Claude skills that each own one job. You do not need a content team. You need the skills.
+Stake: Without these skills you either hire a team you cannot afford or you stay stuck doing the slow, manual version of content work indefinitely.
+Belief: Running a content operation solo means accepting lower output or burning more hours than a team would.
+
 ## Lanes
 
 ### Steal-These | on-brand | underused | opportunity: yes
@@ -30,4 +36,5 @@ proof: "I Built My Entire Content Team Inside Claude (No Employees)" (@thisisnic
 proof: "15 Claude Cowork Skills I Can't Live Without (steal them)" (@brockmesarich, 9.5x)
 
 ## Recommendation
-The Steal-These lane is the pick. Spread 2 of 11 makes it underused, it is on-brand (the whole video hands over the skills, generosity is the premise), and the direct proof from Brock's same shape at 9.5x median confirms it works in this exact niche. "7 Claude Skills I Can't Live Without (steal them)" carries the exact count from the lock list, the generosity signal, and the tool name in one 50-character line.
+
+Steal-These is the pick: spread 2 of 11 makes it underused, the entire video is a literal handover of the 7 skills, and direct proof from Brock's identical shape at 9.5x median confirms this exact pattern converts in the niche. "7 Claude Skills I Can't Live Without (steal them)" carries the exact count, the tool name, and the generosity signal in exactly 50 chars.

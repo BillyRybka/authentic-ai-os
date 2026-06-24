@@ -35,13 +35,12 @@ from check_handoff import check_handoff  # noqa: E402
 
 # --- required frontmatter per the vid-intake SKILL.md output schema ---
 BRAIN_DUMP_FIELDS = [
-    "type", "slug", "mode", "captured",
-    "problem_addressed", "iceberg_aligned", "aligned_with",
+    "type", "slug", "intake_mode", "captured", "iceberg_aligned",
 ]
 PIECE_FIELDS = ["type", "slug", "status", "captured"]  # pillar may be null
-ALIGNMENT_FIELDS = ["problem_addressed", "iceberg_aligned", "aligned_with"]
+ALIGNMENT_FIELDS = ["iceberg_aligned"]
 REQUIRED_SECTION_KEYS = [
-    "topic", "top 3 problem", "outcome", "material", "open questions",
+    "topic", "audience", "outcome", "material", "open questions",
 ]
 
 

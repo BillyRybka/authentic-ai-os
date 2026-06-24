@@ -1,11 +1,9 @@
 ---
 type: brain-dump
 slug: boring-system-not-a-growth-hack
-mode: story-first
+intake_mode: story-first
 captured: 2026-06-16
-problem_addressed: 1
 iceberg_aligned: true
-aligned_with: "Problem 1"
 source_internal_only: ""
 ---
 
@@ -27,9 +25,9 @@ Viewer outcome is to see that the growth came from the boring system, not from a
 
 So this thing happened with a client named [[Jordan]]. We built out their systems and it grew a ton, it was honestly wild how fast it moved. I want to tell that story as a case study. The growth came from the boring system, not from a growth hack.
 
-## Audience and Top 3 problem
+## Audience
 
-Problem 1. The viewer is someone whose business runs on their personal effort. The lesson from Jordan lands on that problem directly.
+The viewer is someone whose business runs on their personal effort. The lesson from Jordan lands on that problem directly.
 
 ## Outcome
 

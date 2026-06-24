@@ -7,7 +7,7 @@ description: Pick the angle for one specific video. Surfaces 3 outlier-anchored 
 
 Picks the angle for one specific video. Surfaces 3-4 candidates anchored to real pattern-bank outliers (with one experimental slot for the creator's gut pick), runs one iceberg fit check, locks the angle plus format plus goal plus predicted audience temperature, writes the framing decisions to `piece.md`. Downstream skills (vid-thumbnail, vid-title, vid-intro, vid-segment, vid-ending) read piece.md for their context.
 
-**Scope boundary:** this skill produces the ANGLE only. It does not write titles (`vid-title`), thumbnail briefs (`vid-thumbnail`), scripts (`vid-structure` / `vid-intro` / `vid-segment` / `vid-ending`), or measurement (`vid-measurement`, future). It does not re-litigate iceberg or Top 3 problem alignment, those were locked upstream by `vid-intake`.
+**Scope boundary:** this skill produces the ANGLE only. It does not write titles (`vid-title`), thumbnail briefs (`vid-thumbnail`), scripts (`vid-structure` / `vid-intro` / `vid-segment` / `vid-ending`), or measurement (`vid-measurement`, future). It does not re-litigate iceberg fit, that was locked upstream by `vid-intake`.
 
 ## What this produces
 
@@ -60,7 +60,7 @@ Soft requirements:
 
 Silent loads (do NOT paste into chat):
 
-1. `content/pieces/{slug}/brain-dump.md`, the raw material plus the locked `problem_addressed`, `iceberg_aligned`, `intake_mode` from vid-intake
+1. `content/pieces/{slug}/brain-dump.md`, the raw material plus the locked `iceberg_aligned` and `intake_mode` from vid-intake
 2. `content/pieces/{slug}/piece.md`, existing frontmatter (slug, pillar, created, any prior framing if re-framing)
 3. `foundation/creator-foundation.md`, iceberg statement, audience profile
 4. `foundation/voice-profile.md`, preferred_hook_types, opener pattern, energy baseline (style only)
@@ -215,7 +215,7 @@ See `references/framing-conversation-examples.md` for the worked dialogues.
 - The `/foundation` chain produces creator-foundation.md (iceberg, audience, and the Top 3 problems the writing skills use later), vid-framing reads the iceberg + audience for fit
 - `vid-voice-capture` produces voice-profile.md, vid-framing reads for mirroring style only
 - `vid-research` produces the 3 research banks (pattern-bank, title-bank, power-words-bank) vid-framing consumes, primary upstream contract
-- `vid-intake` produces brain-dump.md plus the locked `iceberg_aligned` + `problem_addressed` fields, vid-framing reads, does NOT re-derive
+- `vid-intake` produces brain-dump.md plus the locked `iceberg_aligned` field, vid-framing reads, does NOT re-derive
 - `vid-thumbnail` reads piece.md `format` + `selected_angle` for thumbnail brief
 - `vid-title` reads piece.md `selected_angle` + `outlier_anchor` plus `title-bank.md` and `power-words-bank.md` (uses anchor's title pattern if anchored, falls back to power-words-bank if experimental)
 - `vid-structure` reads piece.md + brain-dump.md and builds the script.md skeleton (title + thumbnail already locked in packaging; structure does not invoke them)

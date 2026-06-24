@@ -1,0 +1,67 @@
+{
+  "per_case": [
+    {
+      "case": 0,
+      "slug": "client-340k-to-1-3m",
+      "criteria": {
+        "makes_a_claim": 1,
+        "reads_aloud_natural": 1,
+        "bank_anchored": 1,
+        "specific_unrepeatable": 1,
+        "avatar_format_fit": 1,
+        "set_diverse": 1,
+        "fabrication_resistant": 1,
+        "surfaces_differentiated_angle": 1,
+        "competitor_proof_real": 1
+      },
+      "passed": 9,
+      "reasoning": "Locked title 'Why a 2,500-Sub Channel Hit $1.3M in a Year' makes a clear disagreeable claim (reach is not the lever), carries three lock-list specifics, sits in an underused lane (contrarian-identity, spread 2 of 11), and all five proof lines trace exactly to real rows in pattern-bank.md."
+    },
+    {
+      "case": 1,
+      "slug": "claude-content-skills",
+      "criteria": {
+        "makes_a_claim": 0,
+        "reads_aloud_natural": 1,
+        "bank_anchored": 1,
+        "specific_unrepeatable": 1,
+        "avatar_format_fit": 1,
+        "set_diverse": 1,
+        "fabrication_resistant": 1,
+        "surfaces_differentiated_angle": 1,
+        "competitor_proof_real": 1
+      },
+      "passed": 8,
+      "reasoning": "Opportunity-lane candidate 2, 'My 7 Claude Content Skills (steal them)', is a label not a claim: the brain fills in 'what are they' but no disagreeable position is asserted, failing the makes_a_claim gate; all other criteria pass cleanly."
+    },
+    {
+      "case": 2,
+      "slug": "claude-cowork-newsjack",
+      "criteria": {
+        "makes_a_claim": 1,
+        "reads_aloud_natural": 1,
+        "bank_anchored": 1,
+        "specific_unrepeatable": 1,
+        "avatar_format_fit": 1,
+        "set_diverse": 1,
+        "fabrication_resistant": 1,
+        "surfaces_differentiated_angle": 1,
+        "competitor_proof_real": 1
+      },
+      "passed": 9,
+      "reasoning": "Locked title 'Claude Cowork Can Now Run Content Without You' passes the claim gate ('you still need to supervise' is a real disagreeable counter), zero digits appear in any of the 7 candidates satisfying the adversarial fabrication constraint, and the opportunity lane (contrarian-identity, spread 2 of 11) is correctly identified as underused with all proof lines verified against pattern-bank.md."
+    }
+  ],
+  "criteria_pass_rate": {
+    "makes_a_claim": 0.6667,
+    "reads_aloud_natural": 1.0,
+    "bank_anchored": 1.0,
+    "specific_unrepeatable": 1.0,
+    "avatar_format_fit": 1.0,
+    "set_diverse": 1.0,
+    "fabrication_resistant": 1.0,
+    "surfaces_differentiated_angle": 1.0,
+    "competitor_proof_real": 1.0
+  },
+  "quality_score": 0.9630
+}

@@ -10,6 +10,11 @@ every error-level check passes. Warnings are reported but never gate.
 Output contract (what the test runner writes for each case):
   outputs/case_NN/titles.md
     - YAML frontmatter: slug, locked_title, locked_bens, locked_lane
+    - ## Claim section (placed BEFORE ## Lanes): exactly three labeled lines:
+        Claim: <the disagreeable true thing the video argues>
+        Stake: <what it costs the viewer to not get this>
+        Belief: <what the avatar currently assumes that the claim cuts against>
+      All three lines must be present and non-empty.
     - ## Lanes section: 4 to 5 lane headings, each in the form:
         ### <Lane name> | <on-brand|off-brand> | <crowded|underused> | opportunity: <yes|no>
       Under each lane heading: 1 to 2 numbered candidate lines in the form:
@@ -27,7 +32,8 @@ Case layout (matches test_cases.json):
 Assertions (error level, gate):
   no_em_dash, no_banned_words, char_ceiling, bens_annotation_present,
   candidate_count, no_generic_opener, anti_fabrication, lane_diversity,
-  opportunity_named, proof_attached, locked_title_valid, handoff
+  opportunity_named, proof_attached, locked_title_valid, handoff,
+  claim_section_present
 
 Warnings (reported only):
   char_target, no_aiisms, no_hedge_words
@@ -618,6 +624,52 @@ def check_handoff(fm, slug):
     return t.CheckResult("handoff", len(missing) == 0, "error", {"missing": missing})
 
 
+def check_claim_section_present(body_text):
+    """
+    Error gate: titles.md must contain a '## Claim' heading AND all three
+    required labels (Claim:, Stake:, Belief:) must be present and non-empty.
+
+    This is a structural check only. It does NOT judge the quality of the claim.
+    It verifies that the section exists and that the skill filled in all three
+    fields. An empty or missing label is the same failure as a missing section.
+
+    The ## Claim section must appear in the body (after frontmatter). The check
+    scans for the heading then looks for the three labeled lines anywhere in the
+    file after the heading. The labels can appear in any order.
+
+    Why these three labels: Claim names the disagreeable point the video argues,
+    Stake gives the viewer the cost of ignoring it, and Belief surfaces the
+    assumption the claim is cutting against. All three are required because a
+    Claim without a Stake is just an opinion, and a Claim without a Belief has
+    no tension to resolve.
+    """
+    # Check ## Claim heading is present
+    if not re.search(r"^##\s+claim\b", body_text, re.IGNORECASE | re.MULTILINE):
+        return t.CheckResult(
+            "claim_section_present", False, "error",
+            ["## Claim heading not found in titles.md body"]
+        )
+
+    failures = []
+
+    # Check each required label is present and non-empty
+    for label in ("Claim", "Stake", "Belief"):
+        pattern = re.compile(
+            r"^" + label + r":\s*(.+)", re.IGNORECASE | re.MULTILINE
+        )
+        m = pattern.search(body_text)
+        if not m:
+            failures.append(f"{label}: label missing or has no value")
+        else:
+            value = m.group(1).strip()
+            if not value:
+                failures.append(f"{label}: label present but value is empty")
+
+    return t.CheckResult(
+        "claim_section_present", len(failures) == 0, "error", failures
+    )
+
+
 def evaluate_case(slug, files, fixtures_root):
     """Run all assertions for one case. Returns list[CheckResult]."""
     titles_text = files.get("titles.md", "")
@@ -648,6 +700,7 @@ def evaluate_case(slug, files, fixtures_root):
     results.append(check_proof_attached(lanes))
     results.append(check_locked_title_valid(locked_title, lanes))
     results.append(check_handoff(fm, slug))
+    results.append(check_claim_section_present(body))
 
     # Warning-level (reported, do not gate). Also scoped to title text only.
     results.append(check_char_target(lanes, locked_title))
@@ -669,6 +722,7 @@ def main():
         "bens_annotation_present", "candidate_count", "no_generic_opener",
         "anti_fabrication", "lane_diversity", "opportunity_named",
         "proof_attached", "locked_title_valid", "handoff",
+        "claim_section_present",
     ]
     warn_assertions = ["char_target", "no_aiisms", "no_hedge_words"]
 

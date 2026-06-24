@@ -37,13 +37,26 @@ Voice is never a blocker.
 
 ### Step 2: Pick the piece
 
-**If the creator named a slug** (`/vid-pipeline {slug}`, or "work on the retention piece"): load `content/pieces/{slug}/piece.md` and go to Step 3.
+First, two fast paths that skip the menu, because the intent is already clear:
 
-**If no slug:** scan `content/pieces/*/piece.md`. An in-progress piece has `status` that is NOT `filming-ready`, `filmed`, `editing`, or `published`.
+- **The creator named a slug** (`/vid-pipeline {slug}`, or "work on the retention piece"): load `content/pieces/{slug}/piece.md` and go to Step 3.
+- **The creator led with material** (a brain dump, "I want to make a video about X", a pasted transcript): treat it as a new piece, invoke `vid-intake` via the Skill tool, and stop here. Do not also run the scan below.
 
-- **Zero in-progress pieces:** start fresh. Invoke `vid-intake` via the Skill tool.
+**Otherwise the intent is ambiguous** (a bare `/vid-pipeline`, "work on my video", "what's next" with no piece named and no material). Surface the entry menu with `AskUserQuestion`. Three options, plus the always-available Other escape:
+
+- **"New video, I have an idea or material"** → invoke `vid-intake`. This is the single authoritative path that starts a new piece; when it is chosen, do NOT also fire the zero-in-progress branch below, or intake double-fires.
+- **"Pick up where I left off"** → run the in-progress scan below.
+- **"I have a script, just pressure-test it"** → run the in-progress scan below to resolve which piece, then follow the pressure-test shortcut note below.
+
+If the creator picks Other and just tells you what they want, follow it. The menu is a convenience, never a cage. A stop signal (Step 5) at the menu halts cleanly. If the runtime does not render a selectable menu, present the same three options as a short numbered list and wait for a typed reply.
+
+**The in-progress scan** (used by the two resume options, or whenever a slug was not named): scan `content/pieces/*/piece.md`. An in-progress piece has `status` that is NOT `filming-ready`, `filmed`, `editing`, or `published`.
+
+- **Zero in-progress pieces:** nothing to resume or test. Say so, and offer to start a new piece with `vid-intake` via the Skill tool.
 - **One in-progress piece:** name it and continue. "Picking up `{slug}` ({current phase}, last touched {last_updated})." Go to Step 3.
 - **More than one:** list them and ask. One line each: slug, derived phase, `last_updated`. End with "Which one, or start a new piece?" Wait for the answer. Never silently pick.
+
+**Pressure-test shortcut.** If the creator chose "just pressure-test it," resolve the piece first (the scan above), then route it through Step 3. Do not jump straight to `vid-pressure-test`. If Step 3 lands on the `vid-pressure-test` row (the script is complete), invoke it. If Step 3 lands on any earlier row (the piece is not script-complete yet), tell the creator where it actually is and route to the correct next skill instead. The pipeline never drops a half-written piece into an audit that will reject it.
 
 Derive the phase label for the list from the same signals Step 3 routes on (e.g. "framed, no title yet", "drafting, 3/5 segments", "body done, needs pressure-test"). The stored `status` is the coarse lifecycle; the derived label is the fine detail. Do not invent a status field to store the detail.
 

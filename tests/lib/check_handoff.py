@@ -19,8 +19,7 @@ HANDOFF_CONTRACTS = {
     # vid-intake -> vid-framing
     "intake->framing": {
         "brain-dump.md": [
-            "type", "slug", "mode", "captured",
-            "problem_addressed", "iceberg_aligned", "aligned_with",
+            "type", "slug", "intake_mode", "captured", "iceberg_aligned",
         ],
         "piece.md": ["type", "slug", "status", "captured"],
     },

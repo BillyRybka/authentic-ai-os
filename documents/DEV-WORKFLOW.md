@@ -54,7 +54,8 @@ Skills use relative paths. `foundation/...` lands wherever you launched Claude. 
 5. Keep the frontmatter `description` at 1024 characters or fewer. The plugin validator rejects the whole plugin if any one skill's description is longer, so a single bloated description blocks every skill from installing. `release.ps1` checks this and fails the release if it finds one over, but write it short to begin with. The foundation skills run 240 to 490 chars; that is the target.
 6. Confirm the knowledge files it references exist at repo-root `knowledge/`. The release script relocates them into the plugin automatically.
 7. Wire it into the system. Update whatever skill should hand off to this one (the foundation chain offers `vid-research` at its end, for example), and grep every shipping skill plus `README.md` and `CLAUDE.md` for stale references that still call it unreleased ("in development", "coming", "chain ends here", "do NOT mention {skill}"). A graduated skill that nothing points to, or that siblings still call work-in-progress, is a silent dead end. This is the step most often missed.
-8. Commit on `dev`. No allowlist to touch; a skill ships by living in the plugin folder.
+8. Regenerate the two maps. Any time a skill changes roots (WIP to staged, staged to released) or you edit its knowledge references, `documents/skill-knowledge-map.md` and `documents/SYSTEM-MAP.md` go stale: their tier labels, counts, diagrams, and handoff notes no longer match reality. Re-grep all three roots per each map's section-7 procedure, update the tier of every skill that moved, fix any handoff/NEXT lines you changed in step 7, and bump the "Built" date. These are internal `documents/` files (they never ship), but they are the source of truth for what must ship, so a stale map is how a knowledge file gets forgotten at release time.
+9. Commit on `dev`. No allowlist to touch; a skill ships by living in the plugin folder.
 
 ## Cutting a release
 

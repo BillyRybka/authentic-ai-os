@@ -6,7 +6,6 @@
     "mode": "notes",
     "audience_temp": "warm",
     "is_adversarial": false,
-    "expected_problem": "1",
     "expected_iceberg_aligned": true,
     "real_creator": true,
     "seed": "I want to make a listicle of the lessons I have learned creating content with AI. The big one, the thesis, is that AI should enhance you, not replace you. A bunch of the lessons under that. Don't let AI make you sound like AI, ruthlessly remove the hedging and the talking in circles. AI slop will ruin the trust of your business, the person they thought they knew is now not there. Don't make a mega skill, it becomes master of all trades and master of none, build creative Claude skills with expert examples instead of just prompting. Aim for 90% done, the source needs to be from you. Make AI pull from your brain dump and build the content from that, doing it the other way around makes you a fraud. Before you build a content system, make sure it works manually first, automation will make a bad system happen automatically. AI can't steal your stories. And we are not here to make gallons of slop.",

@@ -6,10 +6,17 @@ The hard cuts (fabrication, over-ceiling without reason, invented compound nouns
 
 ## Angle-lane frame menu
 
-A lane is one emotional or strategic frame on the video. These are the common frames, each
-mapped to the `title-bank` pattern(s) it uses and the typical spread for THIS creator's set
-(read the live `spread` from `title-bank.md` / `pattern-bank.md` each time, the notes below
-are the starting read). Crowded = you blend in. Underused + on-brand = the opportunity.
+A lane is one emotional way to make the viewer FEEL the claim, not a sentence template you
+pour the video's nouns into. The claim comes first (Phase 1): the disagreeable true thing the
+video argues. Then each lane is a different angle on that same claim. Frame the claim and the
+title opens a loop; frame the topic and it just describes the video. Test every line by what
+the viewer's brain fills in. If the answer is "nothing, it says what the video is about," it
+is a label, not a title.
+
+These are the common frames, each mapped to the `title-bank` pattern(s) it uses and the
+typical spread for THIS creator's set (read the live `spread` from `title-bank.md` /
+`pattern-bank.md` each time, the notes below are the starting read, and the bank stays closed
+until Phase 3). Crowded = you blend in. Underused + on-brand = the opportunity.
 
 - **Confession / reckoning.** "I got this wrong, here is what it cost, here is what changed."
   Patterns: free-form, contrarian-correction. Spread: near-absent in the set, so underused.
@@ -39,7 +46,19 @@ is just: which of the lanes you built are low-spread AND on-brand. Lead with tha
 ## Worked lane group (the target shape)
 
 Video: "21 AI Content Lessons I Learned the Hard Way" (lock list: 21, the lessons, the
-creator's own channel arc). Four lanes, opportunity first:
+creator's own channel arc).
+
+Phase 1, the claim before any pattern:
+- **Claim:** most of what people are taught about AI content is what kept the creator stuck.
+- **Stake:** every month following that advice is a month of output nobody watches.
+- **Belief it challenges:** that the "best practices" everyone repeats actually work.
+
+Phase 2, raw titles written from that claim, bank closed:
+"I Followed AI Content Advice for 2 Years (Big Mistake)", "Most AI Content Advice Is
+Backwards", "21 Things I Wish Someone Told Me About AI Content", "Stop Taking AI Content
+Advice From People Who Don't Post".
+
+Phase 3, grouped into lanes with proof pinned, opportunity first:
 
 ```
 Recommended lane: Confession (on-brand, underused. The set leans hype/money; the
@@ -61,8 +80,10 @@ Result lane (CROWDED, iceberg watch, real numbers only)
   proof: "How This Mom Makes $48K/Month With Claude" (@sabrina_ramonov)
 ```
 
-The opportunity is not the highest-performing shape in the abstract. It is the on-brand lane
-the competitor set leaves open. That is what makes the title feel original instead of safe.
+Every line above frames the claim (the advice was wrong), not the topic (21 lessons). That is
+why they open a loop instead of describing a video. The opportunity is not the highest-
+performing shape in the abstract. It is the on-brand lane the competitor set leaves open. That
+is what makes the title feel original instead of safe.
 
 ## Soft friction catalog
 

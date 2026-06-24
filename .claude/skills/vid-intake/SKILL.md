@@ -1,19 +1,19 @@
 ---
 name: vid-intake
-description: Capture raw video material into a structured brain-dump.md for one video. Auto-detects which of 7 intake modes the creator is in (idea + dump, outline paste, own transcript, inspired-by, news-jacking, client win, story-first), runs the matching short conversation, confirms iceberg fit and Top 3 problem alignment, saves to content/pieces/{slug}/brain-dump.md. The creator's exact phrasing is preserved verbatim because the brain dump IS the voice for every downstream writing skill. Anti-fabrication. Adaptive drilling. Target time 5-10 minutes per video, never an interrogation. Runnable standalone OR invoked by vid-pipeline at the start of the SCRIPT phase. Use this skill whenever a creator brings video material that has not yet been captured into a piece folder, even if they don't explicitly say "intake". Phrases like "I want to make a video about X", "I have a brain dump for this video", "here's a transcript I want to turn into a video", "I saw this competitor video and want my own take", "I had this thing happen and want to make a video", "I want to do a video on my client win", "there's a new feature I want to cover", "let's start a new video", "let's plan this one out", or any downstream pipeline that needs the raw material captured should fire this skill.
+description: Capture raw video material into a structured brain-dump.md for one video. Auto-detects which of 7 intake modes the creator is in (idea + dump, outline paste, own transcript, inspired-by, news-jacking, client win, story-first), runs the matching short conversation, confirms the idea fits the channel (iceberg), saves to content/pieces/{slug}/brain-dump.md. The creator's exact phrasing is preserved verbatim because the brain dump IS the voice for every downstream writing skill. Anti-fabrication. Adaptive drilling. Target 5-10 minutes, never an interrogation. Runnable standalone OR invoked by vid-pipeline. Use whenever a creator brings video material not yet captured into a piece folder, even if they don't say "intake": "I want to make a video about X", "here's a transcript I want to turn into a video", "I saw this competitor video and want my own take", "I had this thing happen", "a video on my client win", "there's a new feature to cover", "let's start a new video", "let's plan this one out".
 ---
 
 > 🔄 **Pre-flight (mandatory).** Before doing anything else, read `${CLAUDE_PLUGIN_ROOT}/knowledge/update-check.md` and follow it. If a newer version exists, halt and tell the creator. If you're up to date, continue with the skill below.
 
 # Video Intake
 
-Captures whatever raw material the creator brings and produces a structured `content/pieces/{slug}/brain-dump.md` that downstream skills (`vid-framing`, `vid-structure`, `vid-segment`, `vid-intro`, `vid-ending`) read at runtime. Seven intake modes covering the realistic ways a creator starts a video. Auto-detects mode, runs the matching short conversation, locks iceberg fit and Top 3 problem alignment, saves.
+Captures whatever raw material the creator brings and produces a structured `content/pieces/{slug}/brain-dump.md` that downstream skills (`vid-framing`, `vid-structure`, `vid-segment`, `vid-intro`, `vid-ending`) read at runtime. Seven intake modes covering the realistic ways a creator starts a video. Auto-detects mode, runs the matching short conversation, locks iceberg fit, saves.
 
-**Scope boundary:** vid-intake captures raw material only. It does NOT pick the format (`vid-framing` does that), does NOT generate angle framings (`vid-framing`), does NOT write any script content (`vid-intro`, `vid-segment`, `vid-ending`). Light alignment check (iceberg + Top 3) happens here so downstream skills don't waste time on a video that does not fit the channel. Full angle framing and Core Payoff selection happen in `vid-framing` next.
+**Scope boundary:** vid-intake captures raw material only. It does NOT pick the format (`vid-framing` does that), does NOT generate angle framings (`vid-framing`), does NOT write any script content (`vid-intro`, `vid-segment`, `vid-ending`). Light fit check (iceberg) happens here so downstream skills don't waste time on a video that does not fit the channel. Full angle framing and Core Payoff selection happen in `vid-framing` next.
 
 ## What this produces
 
-`content/pieces/{slug}/brain-dump.md` with creator's exact phrasing preserved, plus the iceberg fit and Top 3 problem alignment locked. Voice fuel for every downstream writing skill.
+`content/pieces/{slug}/brain-dump.md` with creator's exact phrasing preserved, plus the iceberg fit locked. Voice fuel for every downstream writing skill.
 
 When invoked as a sub-skill (e.g. by vid-pipeline to start a new piece), it also returns the brain-dump packet to the caller. The save (the piece folder, brain-dump.md, and piece.md) still happens here, in both modes.
 
@@ -21,18 +21,17 @@ When invoked as a sub-skill (e.g. by vid-pipeline to start a new piece), it also
 
 - Creator has a video to start and the piece folder does not exist yet
 - Creator wants to dump material for a video they have been thinking about
-- Orchestrator (`vid-pipeline`) invokes at the start of the SCRIPT phase
+- Orchestrator (`vid-pipeline`) invokes it to start a new piece
 - Creator just had an experience or got a client win and wants to capture it before it fades
-- `vid-ideas` hands over a picked-idea seed packet (the front-door, when the creator started blank). Run the matching mode (usually idea + dump) seeded from `{idea_title, pillar, top_3_problem, iceberg_fit, anchor}`, then drill for the material.
+- `vid-ideas` hands over a picked-idea seed packet (the front-door, when the creator started blank). Run the matching mode (usually idea + dump) seeded from `{idea_title, pillar, iceberg_fit, anchor}`, then drill for the material.
 
 ## Prerequisites
 
-Hard requirements:
+Hard requirement:
 
-- `foundation/creator-foundation.md` exists (iceberg + Top 3 problems + audience). vid-intake reads these to run the alignment check.
-- `foundation/voice-profile.md` exists. vid-intake reads opener pattern, energy baseline, words avoided so it mirrors back in the creator's voice.
+- `foundation/creator-foundation.md` exists (iceberg + audience). vid-intake checks that it exists at the top, so a creator with no foundation bails before investing a full dump. It loads the iceberg content later, at the fit check (Phase 4), not up front.
 
-If foundation is missing, tell the creator to run `/foundation` first. If foundation exists but voice-profile.md does not, tell them to run `vid-voice-capture` next so downstream writing skills have voice context, but proceed with intake (it can run on creator-foundation alone).
+If foundation is missing, tell the creator to run `/foundation` first.
 
 ## Invocation modes
 
@@ -52,7 +51,7 @@ If invoked with context from a caller (e.g. "intake for piece={slug}, mode=inspi
 6. **Client win**: creator wants a video around a specific result. Skill captures the proof and forces the pivot to a teaching arc, not a client biography.
 7. **Story-first**: creator opens with a moment they had. Skill captures the moment, then locates the lesson that fits the channel.
 
-Mode detection happens from the creator's opening message. If ambiguous, surface a short menu and ask. See `references/mode-conversation-examples.md` for full mock dialogues showing each mode in action with worked examples and near-misses.
+Mode detection happens from the creator's opening message. If ambiguous, surface a short menu and ask. The one-line cues above are enough to route on a normal run. Open `references/mode-conversation-examples.md` (full mock dialogues per mode, worked examples and near-misses) only as a fallback, when a conversation stalls and you need calibration.
 
 ## The walkthrough
 
@@ -60,17 +59,9 @@ Same shape every mode runs. The body of each mode varies (see references), but t
 
 Every quoted line below shows register and length, not a script. Respond to what the creator actually said. Never paste one verbatim. The point is the feel: short, human, one move per message.
 
-### Phase 1: Detect mode and load context
+### Phase 1: Detect mode (cold open)
 
-Silent loads (do NOT paste into chat):
-
-1. `foundation/creator-foundation.md` (iceberg statement, Top 3 problems, audience)
-2. `foundation/voice-profile.md` (opener pattern, words avoided, energy)
-3. `knowledge/vault-integration.md` (frontmatter schema for brain-dump.md)
-4. `knowledge/story-capture-guide.md` (the 6 dynamic story prompts, used in story-first mode and to drill thin stories in any mode)
-5. `references/mode-conversation-examples.md` (your calibration anchors per mode)
-6. `knowledge/iceberg-and-top-3-alignment.md` (the 2-layer alignment gate)
-7. `references/push-vs-pause-rules.md` (when to drill vs when to save with TODOs)
+Load nothing at open. The brain dump is the creator's raw words, you do not need their identity or a schema to start listening. Every reference this skill uses loads later, only at the phase that needs it (see the Reference index). When vid-pipeline routed you here, foundation existence was already verified, so do not re-check it here.
 
 Detect the mode from the creator's first message. If they paste a wall of text → Mode 2 or Mode 3 (ask: yours or someone else's?). If they describe an idea conversationally → Mode 1. If they drop a URL or describe an outside source → Mode 4. If they open with "this thing happened" → Mode 7. If they open with a number or client name → Mode 6. If they reference a fresh feature/release → Mode 5.
 
@@ -98,36 +89,42 @@ After the dump, mirror back what was captured. Use the creator's own language. S
 
 Creator confirms or corrects. This step takes 30 seconds. It builds trust (the creator hears their thinking organized) and surfaces gaps (the AI flags what it could not catch).
 
-### Phase 4: Iceberg and Top 3 alignment check
+### Phase 4: Iceberg fit + pillar
 
-Two-layer alignment, fast. The detail is in `knowledge/iceberg-and-top-3-alignment.md`. Surface format:
+Load `foundation/creator-foundation.md` now (the iceberg statement and the pillars) and run one fast check that does two jobs at once: does this fit the channel, and which pillar does it sit in. This is the first heavy load in the skill, and it lands after the dump, where it is actually used. (When vid-pipeline routed you here, foundation was already verified to exist; that guard skips the existence re-check, never this content load.) Surface format, proposing the most likely pillar in the same breath as the fit:
 
-> "That's Problem [N], the [specific Top 3 thread] one, inside your iceberg. Right?"
+> "That fits your channel, looks like your [pillar] pillar. Right?"
 
 Possible creator responses:
 
-- YES → confirmed, lock alignment in frontmatter, move to Phase 5.
-- NO, wrong Top 3 → ask which one fits better, confirm.
-- NO, doesn't fit any Top 3 but does fit iceberg → flag as `outlier_within_iceberg`, ask for a one-line rationale, allow override.
-- NO, doesn't fit iceberg → harder flag. Ask "wrong channel for this one, or has your iceberg shifted?" If shifted, point at /foundation refresh. Otherwise capture rationale and let creator decide whether to save anyway.
+- YES → confirmed. Set `iceberg_aligned: true` and lock the pillar they confirmed. Move to Phase 5. Do NOT ask the pillar again at save.
+- YES on fit, different pillar → set `iceberg_aligned: true`, lock the pillar they name instead.
+- NO, fits the iceberg but feels like a stretch → set `iceberg_aligned: true`, add a one-line `alignment_note` in the creator's words, settle the pillar, move on.
+- NO, does not fit the iceberg → set `iceberg_aligned: false`. Ask "wrong channel for this one, or has your iceberg shifted?" If shifted, point at /foundation refresh. Otherwise capture a one-line `alignment_note` and let the creator decide whether to save anyway.
 
-Never block the save. The creator's call. The flag in frontmatter signals to downstream skills that alignment was deliberate.
+Never block the save. The creator's call. If no pillar maps cleanly, leave it open (null is fine, not a blocker). The `iceberg_aligned` flag plus any `alignment_note` signal to downstream skills that the call was deliberate.
 
-### Phase 5: Drill ONLY where needed
+### Phase 5: Offer one deeper pass
 
-Scan the dumped material. If the dump is rich and clear, skip drilling, go to Phase 6. If the dump has thin spots, ask 1-3 surgical questions max. The detail on push vs pause lives in `references/push-vs-pause-rules.md`. Quick rules.
+You are a co-writer, not a stenographer. Never silently accept the dump and move on. After the reflect-back, scan the material, pick the 2-3 spots where a little more would most sharpen the video, and offer:
 
-**Push when:**
-- A claim is made with no proof attached ("Where's that number from?")
-- A story is referenced but not told ("Tell me the moment, not the lesson.")
-- The viewer outcome is mushy ("What does the viewer go and DO after watching?")
-- Iceberg or Top 3 alignment was unclear in Phase 4
+> "This is solid. I can push on a couple things to sharpen it: [spot A], [spot B]. Want to, or save as-is?"
 
-**Don't push when:**
-- The dump is rich and clear. Confirm + move on
-- The creator already said "I'll come back to that". Respect, mark TODO
-- 2 rounds of drilling on one point have not unlocked. Bail, mark TODO
-- Creator says "stop, just save". Save with TODOs, end
+If the creator says save, go to Phase 6. If they want to go, ask the pointed questions one at a time, fast. This is an offer, not an interrogation, and it is theirs to decline.
+
+**What makes a spot worth pushing on (pick the 2-3 highest-leverage, never all of them):**
+- A claim stated without its mechanism. "Why is that actually true, what's the reason underneath it?"
+- A story referenced but not landed. "What was the exact moment it turned? Tell me that, not the lesson."
+- The viewer's objection left unanswered. "What's the pushback on this, and your answer to it?"
+- A nuance the creator gestured at but did not open. "You said [X] like there's more there. What's the rest?"
+- The contrarian edge under-sharpened. "What's the disagreeable version, the part people argue with?"
+- The stakes or the "why now" missing. "Why does this matter to them right now?"
+
+These pull more out of the creator. They never invent content; the creator supplies every answer.
+
+**Verify, don't replace.** When the creator brings something real but uncertain (a metaphor, a stat, a claim), do NOT dismiss it, water it down, or swap it for something safer. That safe-generic reach is the exact instinct that makes slop. Verify the real thing first. Spawn an isolated verification sub-agent (its own context window, so the research never clutters this conversation) using the template in `references/verify-subagent.md`, and act on what it returns: holds → keep the material verbatim plus a one-line verified note and sources; does not hold → tell the creator in one line what is actually true, let them adjust or drop it; can't confirm → mark a TODO, keep the material. Never research inline.
+
+**When to stop:** the creator says "stop, just save", or "I'll come back to that" (respect it, mark a TODO), or 2 rounds on one spot have not unlocked (bail, mark a TODO). The detail on pacing lives in `references/push-vs-pause-rules.md`.
 
 When drilling on a thin story, use the dynamic 6 prompts from `knowledge/story-capture-guide.md`. Do not run all 6. Pick the prompt that fits the topic and the avatar's pain. If the first prompt does not unlock in 1-2 rounds, pivot to the next-best prompt. If 3 prompts in a row do not land, save the dump with a TODO that says "story missing for [point X], capture next session."
 
@@ -137,9 +134,9 @@ Once the dump is captured and aligned:
 
 1. Propose a kebab-case slug. Source from the topic the creator named, not from the iceberg (the iceberg is generic, the slug is specific to this video).
 2. Confirm slug with creator in one short message: `slug: "frequency-vs-depth-on-youtube"`, sound right?
-3. Create `content/pieces/{slug}/` directory.
-4. Write `content/pieces/{slug}/brain-dump.md` per the schema below.
-5. Ask which content pillar this video lands under. Offer the pillars from `creator-foundation.md`; the creator picks one or leaves it open (null is fine, it is not a blocker). Then create `content/pieces/{slug}/piece.md` with the intake frontmatter (the per-piece identity ledger every downstream skill appends to). See the piece.md schema below.
+3. Find where this vault's pieces already live, and create the new `{slug}/` folder alongside them. The default layout is `content/pieces/{slug}/`, but the existing pieces are the source of truth: if a `pieces/` directory already sits at the vault root (the root is itself the content folder), put the new piece there, do NOT stack a second `content/` on top of it. List the directory and confirm against what exists rather than blind-stacking the literal path or letting `mkdir -p` invent a wrong parent.
+4. Write `brain-dump.md` into that folder per the schema below. Load `knowledge/vault-integration.md` now (at save) for the frontmatter schema and the wikilink rules for bank pulls.
+5. Write `piece.md` into the same folder with the intake frontmatter (the per-piece identity ledger every downstream skill appends to), including the `pillar` settled in the fit check (Phase 4). Do NOT ask the pillar again; if the fit check left it open, it stays null (not a blocker). See the piece.md schema below.
 6. Confirm save in one line: "Saved. `vid-framing` next to lock the angle."
 
 Do not create the folder before slug is confirmed. No orphan empty folders.
@@ -150,11 +147,10 @@ Do not create the folder before slug is confirmed. No orphan empty folders.
 ---
 type: brain-dump
 slug: {kebab-case-slug}
-mode: idea | notes | own-transcript | inspired-by | news-jacking | client-win | story-first
+intake_mode: idea | notes | own-transcript | inspired-by | news-jacking | client-win | story-first
 captured: YYYY-MM-DD
-problem_addressed: 1 | 2 | 3 | outlier_within_iceberg | outlier
 iceberg_aligned: true | false
-aligned_with: "{The problem this maps to. Use the bare mapping (e.g. 'Problem 1'), optionally followed by the creator's VERBATIM phrase for that problem from their dump. Never paraphrase, summarize, or add a justification or channel-fit clause. If you cannot quote it from what they actually said, just write the bare mapping.}"
+alignment_note: "{Optional. Only when the fit is a deliberate stretch or an off-iceberg save. One line in the creator's own words on why it was kept. Omit the field entirely for a clean fit. Never paraphrase or add an AI-meta justification.}"
 source_internal_only: "{Optional. For inspired-by mode: brief internal note about source piece. NEVER referenced in productized video.}"
 ---
 
@@ -166,9 +162,9 @@ source_internal_only: "{Optional. For inspired-by mode: brief internal note abou
 
 {The topic and angle in the creator's OWN words and sentence shapes, not a summary of them. Use what they actually said. Do not open with "The angle is that..." or any narrative framing.}
 
-## Audience and Top 3 problem
+## Audience
 
-{Capture only. State which Top 3 problem this lands on (e.g. "Problem 1"). Then add only what the creator actually said about who this is for and why it matters to them, in their words. Do NOT invent a "why this avatar feels this pain right now" rationale they did not say. If they did not describe the audience, the problem mapping alone is enough.}
+{Capture only. Add only what the creator actually said about who this is for and why it matters to them, in their words. Do NOT invent a "why this avatar feels this pain right now" rationale they did not say. If they did not describe the audience, write "Not described in the dump."}
 
 ## Outcome
 
@@ -233,7 +229,7 @@ vid-framing appends `selected_angle`, `core_payoff`, `format`, `goal`, `viewer_s
 - **Use the creator's exact phrasing.** When mirroring back, when saving, when asking follow-ups. The brain dump IS the voice. Polishing kills it.
 - **Bank the raw lines verbatim.** As the creator talks, pull their most vivid, quotable lines into `## Strongest raw lines` exactly as said (stutters cleaned only, never reworded). Paraphrasing into tidy bullets is the most common way the voice gets lost. The Material bullets organize the thinking. The raw lines preserve the voice.
 - **No narrative framing in the body.** Do NOT rewrite the creator's material into summary prose. Never write "The angle is that...", "This lesson is about...", "The viewer sees that...". Write Topic, Outcome, and Material in the creator's own words and sentence shapes, the way they said it. If they said "everyone thinks the answer is to grind harder, that is the trap," save that, not "The angle is that grinding harder is a trap." Reflect-back in chat can paraphrase for confirmation. The saved dump never does. The dump is raw capture, not a summary of raw capture.
-- **No AI-meta narration anywhere, including frontmatter.** Fields like `aligned_with` and the Audience and Top 3 problem section read plainly or in the creator's words. Never write "the thesis of this is...", "Reinforces X", or similar AI-meta phrasing. If you would not say it out loud to the creator, do not write it.
+- **No AI-meta narration anywhere, including frontmatter.** Fields like `alignment_note` and the Audience section read plainly or in the creator's words. Never write "the thesis of this is...", "Reinforces X", or similar AI-meta phrasing. If you would not say it out loud to the creator, do not write it.
 - **Proof is not Story.** Proof is evidence that something WORKS: a result, what you did, a testimonial of what worked for a client or for you. An anecdote, including a cautionary one (someone got burned by slop), is a Story. Never file a story under Proof.
 - **Bank wikilink format.** Bank pulls use the `bank-dir/slug` form, like `[[proof-bank/onboarding-5h-to-1h]]` or `[[story-bank/agency-owner-fired-himself]]`. Never put the banks folder in the path.
 - **Capture the full dump first, organize second.** Put the creator's complete dump verbatim in `## Raw dump (verbatim)` before sorting anything into Material. The organized sections are an index built from the raw dump; they never drop, reorder, or contradict it. Raw is the source of truth, structure is the convenience layer.
@@ -246,40 +242,38 @@ vid-framing appends `selected_angle`, `core_payoff`, `format`, `goal`, `viewer_s
 
 1. **Fabricated content.** Anything not in the creator's dump or already in their banks. The brain dump is the creator's words plus what they explicitly pull from banks. Never invent stories, numbers, clients, results, or proof.
 2. **Foundation missing.** Don't run vid-intake without `creator-foundation.md`. Tell the creator to run `/foundation` first.
-3. **No alignment captured.** Never save brain-dump.md without iceberg fit and Top 3 alignment fields populated, even if `outlier`. Frontmatter has to be honest.
+3. **No fit captured.** Never save brain-dump.md without the `iceberg_aligned` field populated. Frontmatter has to be honest.
 4. **Em-dashes.** Brand-level no. Use commas, periods, parens. Every save passes a Vale check.
 5. **"Avatar" replaced with vague terms.** Avatar is specific. Do not soften to "audience" in foundation references. It's the constructed profile of the viewer/buyer per `creator-foundation.md`.
 
 ## Soft friction (surface and explain, creator decides)
 
-1. **Outlier video.** If `iceberg_aligned: false` or `problem_addressed: outlier`, flag at save time. Explain consequence (channel coherence drops over time if outliers stack). Creator decides.
-2. **Stretching to fit.** If the alignment feels forced ("kind of fits Problem 2 if we squint"), say so. Better to capture as outlier than fake the fit.
+1. **Outlier video.** If `iceberg_aligned: false`, flag at save time. Explain consequence (channel coherence drops over time if outliers stack). Creator decides.
+2. **Stretching to fit.** If the fit feels forced ("kind of fits your lane if we squint"), say so. Better to capture as an off-iceberg save than fake the fit.
 3. **Thin material with no banks to pull from.** If 3 drill rounds have not surfaced specifics and the banks are empty for this angle, save with TODOs and suggest running `vid-capture` to fill banks before `vid-framing`.
 
 ## Reference index
 
 | Reference file | When to read it |
 |---|---|
-| `references/mode-conversation-examples.md` | Every run. Mock dialogues per mode (good + bad examples) so you calibrate the conversational shape before running it. |
-| `knowledge/iceberg-and-top-3-alignment.md` | Phase 4. The 2-layer alignment gate decision flow with worked examples and near-misses. |
+| `references/mode-conversation-examples.md` | Fallback only. Open if a conversation stalls and you need calibration. The one-line mode cues in the skill are enough on a normal run. |
 | `references/push-vs-pause-rules.md` | Phase 5. When to drill, when to save with TODOs, how to bail without burning the conversation. |
+| `references/verify-subagent.md` | Phase 5, when the creator brings uncertain but checkable material. The isolated verification sub-agent prompt and how to act on its verdict. |
 | `knowledge/story-capture-guide.md` | Mode 7 (story-first) and any mode where a thin story needs drilling. The 6 dynamic prompts plus reframes plus pivots. |
-| `knowledge/vault-integration.md` | Phase 6. Frontmatter schema for `brain-dump.md`. Wikilink rules for bank pulls. |
-| `foundation/creator-foundation.md` | Every run. Iceberg statement + Top 3 problems + audience. Drives the alignment check. |
-| `foundation/voice-profile.md` | Every run. Words avoided, opener pattern, energy. Drives the AI's mirroring style. |
+| `knowledge/vault-integration.md` | Phase 6 (save). Frontmatter schema for `brain-dump.md`. Wikilink rules for bank pulls. |
+| `foundation/creator-foundation.md` | Phase 4. The iceberg statement, for the fit check. Loaded after the dump, never at open. |
 
 ## Principles (the why behind the rules)
 
 - **The brain dump IS the voice.** Every word the creator says is voice fuel for downstream writing skills. Polish it and you erase the voice. Mirror back, save verbatim where you can.
 - **Fast and pleasurable beats thorough and exhausting.** A 5-minute conversation that captures 80% of what the creator has is better than a 20-minute conversation that captures 95% but burns them out. Downstream skills can chase gaps.
-- **Alignment is a sanity check, not a tax.** Iceberg + Top 3 alignment takes 10 seconds to confirm if the dump fits. The check exists to catch wrong-channel videos early, not to interrogate every dump.
+- **The fit check is a sanity check, not a tax.** The iceberg fit check takes 10 seconds to confirm if the dump belongs on the channel. It exists to catch wrong-channel videos early, not to interrogate every dump.
 - **Outliers are creator decisions, not AI blocks.** Flag, explain consequence, let the creator override. The frontmatter records what was deliberate.
 
 ## Related skills
 
-- `/foundation` produces the iceberg + Top 3 + audience this skill reads
+- `/foundation` produces the iceberg + audience this skill reads
 - `vid-ideas` (optional front-door) hands this skill a picked-idea seed when the creator started blank on what to make
-- `vid-voice-capture` produces the voice profile this skill reads
 - `vid-capture` fills the story / proof / metaphor / testimonial banks this skill pulls from
 - `vid-framing` reads the brain-dump.md this skill produces and locks the angle, format, goal
-- `vid-pipeline` (future) invokes this skill at the start of the SCRIPT phase
+- `vid-pipeline` invokes this skill to start a new piece

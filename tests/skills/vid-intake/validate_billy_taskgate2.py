@@ -24,7 +24,7 @@ for fname, text in files.items():
         failures.append(f"{fname}:{ln} double-hyphen-as-dash: {snip}")
 
 # 2) frontmatter completeness
-bd_required = ["type", "slug", "mode", "captured", "problem_addressed", "iceberg_aligned", "aligned_with"]
+bd_required = ["type", "slug", "intake_mode", "captured", "iceberg_aligned"]
 pc_required = ["type", "slug", "pillar", "status", "captured"]
 bd_fm, _ = split_frontmatter(brain)
 pc_fm, _ = split_frontmatter(piece)

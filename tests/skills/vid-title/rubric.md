@@ -9,11 +9,15 @@ requires the criterion to be clearly met, not arguably met.
 ## What you receive per case
 
 - `titles.md`, the note the skill produced: YAML frontmatter (slug,
-  locked_title, locked_bens, locked_lane), a `## Lanes` section (4 to 5 lane
-  headings, each annotated on-brand/off-brand, crowded/underused, and
-  opportunity: yes/no; under each heading 1 to 2 numbered candidates annotated
-  with pattern, BENS, and char count; under each heading a proof: line), and a
-  `## Recommendation` section (1-2 sentences naming the locked lane and why)
+  locked_title, locked_bens, locked_lane), a `## Claim` section (placed before
+  `## Lanes`) with three labeled lines: `Claim:` (the disagreeable true thing
+  the video argues), `Stake:` (what it costs the viewer to not get this), and
+  `Belief:` (what the avatar currently assumes that the claim cuts against), a
+  `## Lanes` section (4 to 5 lane headings, each annotated on-brand/off-brand,
+  crowded/underused, and opportunity: yes/no; under each heading 1 to 2 numbered
+  candidates annotated with pattern, BENS, and char count; under each heading a
+  proof: line), and a `## Recommendation` section (1-2 sentences naming the
+  locked lane and why)
 - `transcript.md`, the full reasoning trace showing the divergent pass,
   gap analysis, convergent cut, and creator exchange
 - The frozen fixture for this case: `piece.md` (format, pillar, locked angle)
@@ -50,7 +54,46 @@ This is binary. "Mostly yes" is a 0. Score what is in front of you.
 
 ## Criteria
 
-### 1. reads_aloud_natural
+### 1. makes_a_claim [PRIMARY GATE]
+
+**What it measures:** The locked_title AND every candidate in the opportunity
+lane make a CLAIM or open a loop, rather than just describing the topic. The
+test: read the title and ask what the viewer's brain has to fill in. If the
+answer is "nothing, it just states what the video is about," it is a label, not
+a claim. Score 0.
+
+**How to judge:** Read the locked_title and every candidate in the lane(s) marked
+`opportunity: yes`. Ask of each one: does it make a point a viewer could
+disagree with, or does it open a curiosity loop (an implied problem, cost,
+reversal, or revelation)? The viewer must feel a reason to click beyond simply
+knowing the subject. If it only announces what the video covers with no tension
+for the mind to resolve, it is a label.
+
+Anti-fabrication still applies: a claim must trace to the material. This
+criterion is not license to invent a claim the video does not make.
+
+**Score 1 if:** The locked title and the opportunity-lane candidates each make a
+point a viewer could disagree with, or open a curiosity loop. The viewer's mind
+has something to resolve.
+
+**Score 0 if:** The locked title (or any opportunity-lane candidate) merely names
+the subject or announces a fact with nothing the viewer's mind has to work on.
+A pure product announcement, a topic label, or a factual description with no
+implied tension all score 0.
+
+**Calibration examples (case 02, claude-cowork-newsjack):**
+- Fail: "Claude Cowork Just Dropped Scheduled Agents" is a pure product
+  announcement. Nobody can disagree. The viewer's brain fills in nothing. Label,
+  not claim.
+- Pass: "Your AI Can Finally Work Without You Watching" implies you have been
+  babysitting it (a claim about the viewer's current situation) and opens the
+  loop "how." Same facts, same lock list, but it makes a point.
+- Pass: "You're Still Babysitting Your AI (You Don't Have To)" is a direct
+  claim about the viewer that opens a resolution loop.
+
+---
+
+### 2. reads_aloud_natural
 
 **What it measures:** Every candidate in the set reads as one continuous human
 thought said out loud, not as stitched fragments, invented compound nouns, or a
@@ -81,7 +124,7 @@ parenthetical tag-on that turns a flowing title into a stop-start structure
 
 ---
 
-### 2. bank_anchored
+### 3. bank_anchored
 
 **What it measures:** The majority of lane titles are visibly built from the
 creator's 9 named title-bank patterns, not from free-form invention. The skill's
@@ -116,7 +159,7 @@ pattern labels retrofitted after the fact.
 
 ---
 
-### 3. specific_unrepeatable
+### 4. specific_unrepeatable
 
 **What it measures:** The locked title carries at least one concrete specific
 from the case's lock list that makes it impossible to paste onto a different
@@ -156,7 +199,7 @@ list):**
 
 ---
 
-### 4. avatar_format_fit
+### 5. avatar_format_fit
 
 **What it measures:** The locked title hooks one of the avatar's Top-3 problems
 AND fits the case format's natural BENS bias. Both conditions must hold.
@@ -204,7 +247,7 @@ E with no N).
 
 ---
 
-### 5. set_diverse
+### 6. set_diverse
 
 **What it measures:** The lanes are genuinely different frames for the same
 video, not one idea relabeled across multiple headings. A diverse lane set gives
@@ -244,7 +287,7 @@ indistinguishable from a flat list of near-synonyms.
 
 ---
 
-### 6. fabrication_resistant
+### 7. fabrication_resistant
 
 **What it measures:** No candidate invents a number, name, tool, or claim
 absent from the lock list. For the adversarial News case this is the primary
@@ -285,7 +328,7 @@ the adversarial case has any digit in any candidate title.
 
 ---
 
-### 7. surfaces_differentiated_angle
+### 8. surfaces_differentiated_angle
 
 **What it measures:** The recommended opportunity lane is genuinely on-brand
 AND underused in the competitor set (low spread), not a relabeled safe or
@@ -332,7 +375,7 @@ competitor could run them without modification.
 
 ---
 
-### 8. competitor_proof_real
+### 9. competitor_proof_real
 
 **What it measures:** Each lane's `proof:` line traces to a real entry in
 `tests/fixtures/billy/banks/pattern-bank.md`. The title and channel cited in
@@ -383,6 +426,7 @@ Return JSON only:
       "case": 0,
       "slug": "client-340k-to-1-3m",
       "criteria": {
+        "makes_a_claim": 1,
         "reads_aloud_natural": 1,
         "bank_anchored": 1,
         "specific_unrepeatable": 1,
@@ -392,11 +436,12 @@ Return JSON only:
         "surfaces_differentiated_angle": 1,
         "competitor_proof_real": 1
       },
-      "passed": 8,
+      "passed": 9,
       "reasoning": "one or two sentences, concrete, cite the specific lane, candidate, or proof line that determined the score"
     }
   ],
   "criteria_pass_rate": {
+    "makes_a_claim": 0.0,
     "reads_aloud_natural": 0.0,
     "bank_anchored": 0.0,
     "specific_unrepeatable": 0.0,
@@ -410,13 +455,13 @@ Return JSON only:
 }
 ```
 
-`passed` is the count of criteria that scored 1 for that case (out of 8).
+`passed` is the count of criteria that scored 1 for that case (out of 9).
 
 `criteria_pass_rate` is the fraction of cases where each criterion scored 1
 (e.g. if 2 of 3 cases passed fabrication_resistant, that rate is 0.6667).
 
 `quality_score` is the total number of 1s across all scored cases divided by
-the total possible (cases_scored x 8). This is the single number the optimizer
+the total possible (cases_scored x 9). This is the single number the optimizer
 reads. A per-criterion pass rate below 0.67 tells the optimizer where to spend
 the next iteration.
 

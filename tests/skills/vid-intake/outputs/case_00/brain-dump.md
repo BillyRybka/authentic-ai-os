@@ -1,11 +1,9 @@
 ---
 type: brain-dump
 slug: systems-beat-hustle
-mode: idea
+intake_mode: idea
 captured: 2026-06-16
-problem_addressed: 1
 iceberg_aligned: true
-aligned_with: "Problem 1. It stayed the same while making me a worse overall person."
 source_internal_only: ""
 ---
 
@@ -17,9 +15,9 @@ I want to make a video about why systems beat hustle. Everyone in my world think
 
 Why systems beat hustle. Everyone in my world thinks the answer to being slammed is to wake up earlier and grind harder. That is the trap. I worked 80 hour weeks for two years and my business did not grow. It stayed the same while making me a worse overall person. What actually changed was that I built a system for client onboarding. The goal is not to do more, the goal is to build the thing that does it for you.
 
-## Audience and Top 3 problem
+## Audience
 
-Problem 1. Creator did not describe the audience specifically in the dump; alignment confirmed in conversation.
+Creator did not describe the audience specifically in the dump; iceberg fit confirmed in conversation.
 
 ## Outcome
 

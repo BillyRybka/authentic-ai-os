@@ -1,11 +1,11 @@
 ---
 name: vid-title
-description: Package one video into a title by exploring distinct angle lanes, then leading with the underused on-brand angle competitors are not using (the opportunity), with real competitor proof pinned to each lane. Builds from the creator's `banks/pattern-bank.md`, `banks/title-bank.md`, and `banks/power-words-bank.md`, filtered by the iceberg positioning, grounded in the video's material. Anti-fabrication. Runnable standalone OR invoked by the orchestrator during packaging (after framing, before structure). Triggers on "generate titles", "title options for [video]", "lock the title", "rename this video", "give me angles for this", or when a downstream pipeline needs a locked title.
+description: Package one video into a title by first naming the video's sharpest claim (the disagreeable true thing it argues), writing titles that make the viewer feel that claim, then leading with the underused on-brand angle competitors are not using (the opportunity), with real competitor proof as the filter. Builds from the creator's `banks/pattern-bank.md`, `banks/title-bank.md`, and `banks/power-words-bank.md`, filtered by the iceberg positioning, grounded in the video's material. Anti-fabrication. Runnable standalone OR invoked by the orchestrator during packaging (after framing, before structure). Triggers on "generate titles", "title options for [video]", "lock the title", "rename this video", "give me angles for this", or when a downstream pipeline needs a locked title.
 ---
 
 # Video Title Generator
 
-Packages one video into a title. It does NOT pick from a flat list of strings. It explores distinct angle lanes for the same video, finds the lane that is on-brand AND underused by competitors, and leads with that as the recommendation. The creator picks.
+Packages one video into a title. It starts from the single most interesting true thing the video argues (the claim), not the topic. It writes titles that make the viewer feel that claim, explores distinct angle lanes on it, finds the lane that is on-brand AND underused by competitors, and leads with that as the recommendation. The creator picks.
 
 **Scope boundary:** this skill produces THE title. It coordinates with the thumbnail but does not write thumbnail text (that is `vid-thumbnail`), hooks (`vid-intro`), or scripts.
 
@@ -30,11 +30,17 @@ If the foundation docs are missing, hard stop. Tell the creator to run `/foundat
 
 If `banks/pattern-bank.md` is missing you cannot do the gap analysis (which lanes are crowded vs underused). Say so, fall back to the `title-bank` patterns plus the BENS framework, and warn that without the competitor data the output will skew safe.
 
-## The engine: differentiation over safety
+## The engine: the claim first, then differentiation over safety
 
-The safe title is the one every competitor is already using. This skill's job is the opposite: find the angle that fits the creator's positioning AND that the competitor set underuses, because that is the angle nobody else can run and the one that stands out in the feed.
+Two failures make a title flat. The first is describing the topic instead of making a claim: "Claude Cowork Just Dropped Scheduled Agents" announces a product, nobody can disagree with it, so nobody feels anything. The second is reaching for the safe pattern every competitor already runs. This skill fixes both, in that order.
 
-This is computable, not a vibe. Use this order:
+**Idea first, pattern second.** A title is downstream of having something to say. Before any pattern or competitor title is touched, name the video's sharpest claim: the disagreeable true thing it argues. The test is simple, can someone disagree with it? "Scheduled agents dropped in Cowork" is a fact, a label, dead. "Most business owners babysit AI that was built to run without them" is a point of view, alive. Titles get written from the claim. Patterns come in afterward as the filter, never as the seed.
+
+**Quarantine the bank during generation.** Do NOT read `pattern-bank.md`, `title-bank.md`, the power-words bank, or any competitor title until the raw titles are written (Phase 3). The nearest competitor title is gravity: read it early and the output becomes that title with the nouns swapped. Generate cold from the claim, bring the bank in only to pressure-test.
+
+Then, differentiation over safety. The safe title is the one every competitor is already using. The on-brand opposite is the angle that fits the creator's positioning AND that the competitor set underuses, because that is the angle nobody else can run and the one that stands out in the feed.
+
+This is computable, not a vibe, and it happens in Phase 3. Use this order:
 
 1. **The iceberg is the filter.** Read `creator-foundation.md`. An angle that contradicts the creator's positioning is off-brand, no matter how well it performs for someone else. For this creator ("AI should enhance you, not replace you, no slop, you lead"), a pure hype or fake-money angle is off-brand even if it is a proven outlier elsewhere.
 2. **The creator's own material leads.** The lock list (below) and any working title from `vid-ideas` come first. Specifics from the video are the raw material every lane is built from.
@@ -44,44 +50,55 @@ This is computable, not a vibe. Use this order:
 
 **This skill is a conversation, not a document.** Keep messages short. Do not paste bank contents into chat. The references are what you think with. The creator sees the lane groups and your recommendation.
 
-## Phase 1: Load context, build the lock list, find the tension
+## Phase 1: Load context, build the lock list, find the claim
 
 **Silent loads** (do NOT paste into chat):
 
 1. `foundation/creator-foundation.md` (iceberg, avatar, Top 3 problems, credibility brags)
 2. `foundation/packaging-system.md` (format guidance, packaging defaults)
-3. `banks/pattern-bank.md` (the competitor outliers, their spreads and view multipliers: the gap-finder and the proof source)
-4. `banks/title-bank.md` (the fill-in patterns, each tagged with its `pattern_id` and `spread`)
-5. `banks/power-words-bank.md` (words selected by when-it-lands / when-it-fails, not by frequency)
-6. `knowledge/BENS-framework.md` (Big / Easy / New / Safe)
-7. `content/pieces/{slug}/piece.md` (format, goal, pillar, locked angle if framing ran)
-8. `content/pieces/{slug}/brain-dump.md` AND/OR `script.md`, whatever exists (the actual material)
+3. `content/pieces/{slug}/piece.md` (format, goal, pillar, locked angle if framing ran)
+4. `content/pieces/{slug}/brain-dump.md` AND/OR `script.md`, whatever exists (the actual material)
+
+**Do NOT open the banks yet.** `pattern-bank.md`, `title-bank.md`, `power-words-bank.md`, and the BENS framework load in Phase 3, as the filter. Reading competitor titles now is what makes the output derivative. Quarantine them.
 
 **Build the lock list.** Every verifiable specific in the material: numbers, dollar figures, percentages, timeframes, AND named methods, tools, products, frameworks, and people. Titles may use only what is on this list. If it is not in the material, it cannot go in a title.
 
-**Find the tension, not the topic.** Read the material and name the emotional cores it actually carries. A "21 lessons I learned the hard way" video is not one thing: it holds credibility (I have done this), confession (I got things wrong), warning (here is what to avoid), and payoff (here is what works). Each core is a candidate lane. Lead from the tension, because that is what the viewer feels before they read the words.
+**Find the claim, not the topic.** Read the material and the locked angle from framing, then write three plain-English lines a person would say out loud:
 
-## Phase 2: Build the angle lanes (divergent, go wide)
+- **The claim:** the single most interesting true thing this video argues. The test is, can someone disagree with it? A fact nobody can argue ("scheduled agents dropped in Cowork") is a label, push past it. A point of view ("most people babysit AI that should run without them") is a claim, keep it.
+- **The stake:** what it costs the viewer to not get this. The wound the claim presses on.
+- **The belief it challenges:** what the avatar currently does or assumes that the claim cuts against.
 
-Build 4 to 5 distinct lanes for the SAME video. A lane is one emotional or strategic frame, not one title. Pull frames from the tension you found plus the menu in `references/title-filters.md` (confession, warning, contrarian, authority, result, curiosity, generosity). Reach for frames you would not normally pick; this is where freshness comes from.
+These three lines are the seed for every title. Anti-fabrication holds: the claim traces to the material and the framing, it is never invented to sound bigger. If the material has no real claim, only a topic, kick it back to framing rather than dress up a description.
 
-For each lane, draft:
-- The frame in one line (what this lane leans on)
-- 2 to 3 title options built in it, filling the slots with lock-list specifics
-- The title-bank `pattern_id` each option draws on (or free-form)
-- One real competitor proof from `pattern-bank.md`: the outlier title, the channel, and its xMed multiplier. The proof shows the shape works; it is not a title to copy.
+## Phase 2: Write titles from the claim (divergent, bank still closed)
 
-The one rule that never relaxes here: anti-fabrication. Going wide means trying more real angles, never inventing a number, tool, or name.
+Write 6 to 8 raw titles that each make the viewer FEEL the claim. The bank stays closed. Generate cold, from the claim and the stake, in language the creator would say out loud.
 
-## Phase 3: Gap analysis and craft cut (converge)
+Vary the emotional framing, not the topic. The same claim can be felt as:
+- the viewer's problem ("You're still doing X")
+- a correction ("Stop doing X")
+- a confession ("I did X wrong for years")
+- a revelation ("Nobody tells you X")
+- a cost ("X is quietly costing you Y")
+- an identity line ("Real operators don't do X")
 
-For each lane, label two things from the data:
-- **Crowded or underused:** read the `spread` of the pattern(s) the lane uses. 5+ of 11 is crowded. 1 to 2 of 11 is underused.
-- **On-brand or off-brand:** does the lane fit the iceberg? An off-brand lane is cut or flagged, however well it performs elsewhere.
+These framings are the lanes. The difference from a flat pattern fill is that each one frames the CLAIM, not the subject. "Why the Babysitting Part of Cowork Is Finally Over" frames the topic and falls flat. "You're Still Babysitting Your AI (You Don't Have To)" frames the claim and opens a wound.
 
-**Name the opportunity.** The lane that is on-brand AND underused is the opportunity. That is the recommendation. If two qualify, prefer the one whose tension is sharpest for this specific video.
+Reach. The point of going wide here is to find the framing that makes the claim land hardest, before any pattern narrows you. The one rule that never relaxes: anti-fabrication. Going wide means trying more real framings, never inventing a number, tool, or name.
 
-Then put every surviving title through the craft gates:
+## Phase 3: Open the bank, prove the shapes, gap analysis and craft cut (converge)
+
+Now load `pattern-bank.md`, `title-bank.md`, `power-words-bank.md`, and the BENS framework. Group the raw titles into 4 to 5 lanes by their framing. For each lane:
+
+- Map its titles to the `title-bank` `pattern_id` they match (or free-form). A raw title that maps to no proven shape is not auto-cut; flag it as untested and let the creator weigh it.
+- Pin one real competitor proof from `pattern-bank.md`: the outlier title, the channel, and its xMed multiplier. The proof shows the shape lands in this niche. Prefer proof whose topic is closest to this video; when only a shape match exists, say so, because a multiplier on an unrelated topic proves the shape, not the title.
+- Label **crowded or underused** from the pattern `spread` (5+ of 11 crowded, 1 to 2 underused) and **on-brand or off-brand** from the iceberg.
+
+**Name the opportunity.** The lane that is on-brand AND underused is the opportunity. That is the recommendation. If two qualify, prefer the one whose claim is sharpest for this specific video.
+
+Then put every surviving title through the craft gates, in this order:
+- **Claim, not label (first gate):** read the title and ask what the viewer's brain fills in. If the answer is "nothing, it just says what the video is about," cut it. A title that only describes the topic is dead no matter how proven its pattern is.
 - Lock-list only (no fabrication)
 - Aim for 50 characters, 55 hard ceiling. Flag 51 to 55 as over target but allowed; cut over 55 unless it is clearly strongest, and say why
 - Hits at least one BENS letter (annotate which)
@@ -93,7 +110,7 @@ Trim each lane to its 1 to 2 strongest titles.
 
 ## Phase 4: Present, opportunity first
 
-Lead with the opportunity lane, marked Recommended, with one or two sentences on why: it fits the positioning, the competitor set underuses it, and here is the proof. Then list the other lanes, each labeled crowded or underused and on-brand or off-brand, each with its proof. Be a creative partner with a point of view, not a stenographer.
+Open with the claim in one line so the creator sees what every title is framing. Then lead with the opportunity lane, marked Recommended, with one or two sentences on why: it fits the positioning, the competitor set underuses it, and here is the proof. Then list the other lanes, each labeled crowded or underused and on-brand or off-brand, each with its proof. Be a creative partner with a point of view, not a stenographer.
 
 Shape:
 
@@ -160,6 +177,8 @@ vid-title runs first, does not wait on the thumbnail, and does not write thumbna
 
 ## Principles
 
+- **Claim, not label.** A title that only describes the topic is dead. Make a point someone could disagree with.
+- **Generate before you reference.** Write titles from the claim with the bank closed. Bring competitor data in only to pressure-test, never to seed.
 - **Differentiation over safety.** The widest-spread pattern is the crowded center. Lead with the on-brand angle the competitor set underuses.
 - **Lead with the tension, not the topic.** The viewer feels the frame before they read the words.
 - **The iceberg is the filter.** On-brand first. An off-brand outlier is still off-brand.

@@ -1,11 +1,9 @@
 ---
 type: brain-dump
 slug: thin-pricing-dump
-mode: idea
+intake_mode: idea
 captured: 2026-06-16
-problem_addressed: 3
 iceberg_aligned: true
-aligned_with: "Problem 3"
 status: incomplete
 source_internal_only: ""
 ---
@@ -20,9 +18,9 @@ I want to do something on pricing. People undercharge and it kills them. I think
 
 TODO: angle not locked. Creator said "I am not sure of the exact angle yet." Return to intake before running vid-framing.
 
-## Audience and Top 3 problem
+## Audience
 
-Problem 3.
+Not described in the dump; iceberg fit confirmed in conversation.
 
 ## Outcome
 

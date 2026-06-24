@@ -1,108 +1,105 @@
 # Title Generation Transcript: client-340k-to-1-3m
 
-## Phase 1: Context, Lock List, and Tension
+## Phase 1: Context, Lock List, and Claim (banks closed)
 
-**Lock list (from brain-dump.md):**
+**Silent loads:** creator-foundation.md, packaging-system.md, piece.md (client-340k-to-1-3m), brain-dump.md. Banks NOT opened.
+
+**Lock list (from brain-dump.md only):**
 - $340K (starting revenue)
 - $1.3M (ending revenue)
 - 1 year (timeframe)
-- 2,500 subscribers (channel size)
+- 2,500 subscribers (channel size at time of result)
 - a couple hundred views per video
-- Named: the content system, Claude
+- Named tools/systems: the content system, Claude
 
-No fabricated numbers allowed. Every title candidate must draw only from the above.
+No fabricated numbers. Every title candidate must trace to the above.
 
-**Tension found in the material:**
-This video holds four emotional cores simultaneously.
-1. Contrarian / reversal: the audience size everyone chases is not the lever. Revenue grew, channel did not.
-2. Credibility / proof: a real client, a real result, a number Billy can stand behind.
-3. Confession / reckoning: the reach myth is how most creators spend their energy. The video admits most advice points the wrong direction.
-4. Generosity: the system that converted a small right audience is the thing being handed over.
-
-The sharpest tension is the reversal. A viewer who has been told "grow your audience first" hears "2,500 subscribers, $1.3M" and the cognitive gap forces the click.
+**Iceberg filter read:** AI should enhance you, not replace you. Content systems that compound. The avatar chases reach. The iceberg argues against the reach myth directly. Every lane that names system-over-subscribers is on-brand.
 
 **Format:** Case Study. Natural BENS bias: S (specific receipts) + B (transformation size).
 
-**Iceberg filter:** AI should enhance the creator, not replace them. Content systems that compound. The reach myth is exactly what the iceberg argues against. Every lane that names the system-over-subscribers frame is on-brand.
+**Claim:**
+A 2,500-subscriber channel with a couple hundred views per video grew revenue from $340K to $1.3M in one year. The channel barely grew. What changed was the content system that converted the right viewers into buyers. Reach is not the lever. The system is.
+
+**Stake:** Keep optimizing for subscribers and the revenue never scales, even as the audience grows. The avatar is spending energy on the wrong variable.
+
+**Belief it challenges:** You need a big audience to make real money from content. Revenue is a function of reach.
+
+These three lines are the seed. Banks still closed.
 
 ---
 
-## Phase 2: Angle Lanes Built
+## Phase 2: Raw titles from the claim (banks still closed)
 
-Five lanes for the same video, built from the tension plus the title-filters frame menu.
+Written to make the viewer FEEL the claim across different emotional frames. Anti-fabrication: every number traces to lock list.
 
-**Lane 1: Contrarian-Identity**
-Frame: Name the thing everyone is chasing, call it the wrong goal, let the specific result carry the proof.
-Pattern: contrarian-identity (spread: 2 of 11, underused).
-Titles drafted: "Why a 2,500-Sub Channel Hit $1.3M in a Year", "Why Subscribers Are the Wrong Goal", "Why Reach Is Not the Lever".
-
-**Lane 2: Confession**
-Frame: Billy made the same mistake with clients before, the video is the honest reckoning.
-Pattern: free-form (spread: variable, low for this shape in the set).
-Titles drafted: "$340K to $1.3M With a Tiny Channel", "The Channel That Barely Grew and Made $1.3M", "I Chased Reach. The System Made $1.3M."
-
-**Lane 3: Money-Proof**
-Frame: Lead with the dollar arc. The result is the headline.
-Pattern: money-proof (spread: 3 of 11, moderate/crowded threshold).
-Titles drafted: "The System Behind $340K to $1.3M in One Year", "From $340K to $1.3M Without Growing the Channel", "How a 2,500-Sub Channel Did $340K to $1.3M".
-
-**Lane 4: Solo-Leverage**
-Frame: One channel, tiny audience, the output of a machine.
-Pattern: solo-leverage (spread: 4 of 11, crowded threshold).
-Titles drafted: "How One Channel Made $1.3M With 2,500 Subs".
-
-**Lane 5: Contrarian-Correction**
-Frame: DON'T chase subscribers, build the system instead.
-Pattern: contrarian-correction (spread: 5 of 11, crowded).
-Titles drafted: "DON'T Chase Subscribers, Build the $1.3M System", "Stop Growing the Audience, Grow the Revenue".
+1. "You Don't Need More Subscribers (You Need This System)" -- viewer's problem frame
+2. "2,500 Subscribers, $1.3M in Revenue" -- revelation, juxtaposition
+3. "How a 2,500-Sub Channel Hit $1.3M (No Audience Growth)" -- case study frame with the contrarian fact
+4. "Subscribers Don't Make You Rich. This Does." -- correction frame
+5. "I Took a Client From $340K to $1.3M Without Growing Their Audience" -- confession/proof frame
+6. "Stop Chasing Subscribers. Start Building This." -- command frame
+7. "A Couple Hundred Views a Video. $1.3M a Year." -- revelation, two-line punch
+8. "The Content System That Made $340K Into $1.3M" -- mechanism frame
 
 ---
 
-## Phase 3: Gap Analysis
+## Phase 3: Bank open, lane grouping, gap analysis, craft cut
 
-**Spread readings from title-bank.md:**
-- contrarian-identity: 2 of 11 = underused
-- contrarian-correction: 5 of 11 = crowded
-- solo-leverage: 4 of 11 = crowded
-- money-proof: 3 of 11 = moderate (below crowded threshold of 5)
-- free-form / confession: near-absent in the set = underused
+**Banks opened:** pattern-bank.md, title-bank.md, power-words-bank.md.
 
-**On-brand filter (iceberg):**
-- contrarian-identity: YES. Directly argues the reach myth.
-- confession: YES. Authenticity and honest reckoning are core to positioning.
-- money-proof: YES, with the real number. The iceberg says keep your judgment at the center. Using Billy's actual client result is exactly that.
-- solo-leverage: YES. System doing the work is on-brand.
-- contrarian-correction: YES, but it is the most crowded lane. Five channels run DON'T shapes.
+**Hard cuts before grouping:**
+- Title 5: 66 chars. Over 55 hard ceiling. Cut.
+- Title 4 / 6: "This Does" / "Building This" -- "this" is vague, fails claim gate (brain fills in nothing specific). Cut.
 
-**The opportunity:** Contrarian-Identity. Spread 2 of 11, on-brand, and the sharpest emotional match to the tension (the reversal of the reach myth). Confession is also underused but less focused on the specific result.
+**Lane grouping:**
 
-**Proof for each lane:**
-- Contrarian-Identity: "Why Growing A Personal Brand Is An AWFUL Idea" (@ed-lawrence, 6.3x). The same "Why [common goal] Is [negative]" shape, proven in the direct competitor set.
-- Confession: "Why Introverts Make the BEST Content Creators (Nobody Talks About This)" (@thisisnickys, 22.0x). Honest-reckoning contrarian shape, direct competitor.
-- Money-Proof: "The EXACT System To make $10k From YouTube In 7 Days" (@ed-lawrence, 2.6x). Dollar arc with a system attached.
-- Solo-Leverage: "I Built My Entire Content Team Inside Claude (No Employees)" (@thisisnickys, 4.8x). The solo output claim.
-- Contrarian-Correction: "DON'T Sell AI Agents, Sell AI Micro-Apps Instead!" (@duncanrogoff, 64.8x). The DON'T correction shape.
+### Contrarian-Identity (contrarian-identity, spread 2 of 11 -- underused)
+From raw titles plus one correction: title 1 is borderline contrarian-identity but also fits correction. Generated a cleaner identity-first candidate for this lane.
+- "Why a 2,500-Sub Channel Hit $1.3M in a Year" -- 45 chars. Frames the claim as a "why" reversal. B+S. Two lock-list specifics in one line. Passes claim gate: "wait, if it's not reach, what is it?"
+- "Why Subscribers Are the Wrong Goal" -- 35 chars. N. No lock-list specific. Any video could wear this. Fails unrepeatable test. Kept as lane filler, not a lock candidate.
+On-brand: YES. Directly argues the reach myth.
+proof: "Why Growing A Personal Brand Is An AWFUL Idea" (@ed-lawrence, 6.3x)
 
-**Craft cut on top candidates:**
+### Confession (free-form, near-absent in set -- underused)
+- "The Channel That Barely Grew and Made $1.3M" -- 44 chars. N+B. "Barely grew" drops the 2,500 specific, but traces to raw dump ("the channel barely grew"). Passes.
+- "I Got the Content Lever Wrong ($340K to $1.3M)" -- 47 chars. N+S. Traces to "everyone thinks the move is get more subscribers -- that is backwards." "Got wrong" is the honest-reckoning read of "backwards." Passes anti-fabrication.
+On-brand: YES.
+proof: "Why Introverts Make the BEST Content Creators (Nobody Talks About This)" (@thisisnickys, 22.0x)
 
-- "Why a 2,500-Sub Channel Hit $1.3M in a Year" (45 chars): hits B+S, carries both lock-list specifics, reads in one breath, on-brand, no "How I" credibility risk. Passes all gates.
-- "Why Subscribers Are the Wrong Goal" (36 chars): N only, no lock-list specific. Weaker because any video could paste this title.
-- "$340K to $1.3M With a Tiny Channel" (37 chars): B+S, no verb, reads like a stat card. Soft flag.
-- "The Channel That Barely Grew and Made $1.3M" (44 chars): N+B, "barely grew" drops the 2,500 specific. Weaker than lane 1 candidate.
-- "The System Behind $340K to $1.3M in One Year" (46 chars): B+S, strong money-proof shape but more crowded lane.
-- "From $340K to $1.3M Without Growing the Channel" (49 chars): B+S, near target ceiling, "without growing" is clear.
-- "How One Channel Made $1.3M With 2,500 Subs" (44 chars): B+S but solo-leverage is spread 4, crowded.
-- "DON'T Chase Subscribers, Build the $1.3M System" (49 chars): N+B but contrarian-correction is spread 5, crowded.
+### Money-Proof (money-proof, spread 3 of 11 -- moderate, below crowded threshold)
+- "The System Behind $340K to $1.3M in One Year" -- 46 chars. B+S. Strong specificity. Claim implied (system = cause). Brain fills in "what is this system?"
+- "From $340K to $1.3M Without Growing the Channel" -- 49 chars. B+S. "Without growing" is the contrarian claim in compressed form. Near the 50-char target.
+On-brand: YES, with real numbers from lock list. Iceberg note: this is exactly the kind of defensible number the positioning is built for.
+proof: "The EXACT System To make $10k From YouTube In 7 Days" (@ed-lawrence, 2.6x)
 
-**Unit check (title + thumbnail):** The thumbnail for a case study will likely show the revenue arc or Billy's face with the numbers. "Why a 2,500-Sub Channel Hit $1.3M in a Year" leaves the thumbnail room to show the numbers visually rather than repeat them as text.
+### Solo-Leverage (solo-leverage, spread 4 of 11 -- crowded threshold)
+- "How One Channel Made $1.3M With 2,500 Subs" -- 44 chars. B+S. Crowded lane.
+On-brand: YES, but you blend in with four channels running this shape.
+proof: "I Built My Entire Content Team Inside Claude (No Employees)" (@thisisnickys, 4.8x)
 
----
+### Contrarian-Correction (contrarian-correction, spread 5 of 11 -- crowded)
+- "DON'T Chase Subscribers, Build the $1.3M System" -- 49 chars. N+B. Under target. But crowded lane, five channels run DON'T shapes.
+On-brand: YES, but crowded.
+proof: "DON'T Sell AI Agents, Sell AI Micro-Apps Instead!" (@duncanrogoff, 64.8x)
 
-## Phase 4: Lock
+**Gap analysis:**
+- Contrarian-Identity: spread 2, underused, on-brand. Opportunity.
+- Confession: near-absent, underused, on-brand. Second opportunity.
+- Money-Proof: spread 3, moderate. On-brand with real numbers.
+- Solo-Leverage: spread 4. Crowded threshold.
+- Contrarian-Correction: spread 5. Crowded.
 
-**Opportunity lane winner:** Contrarian-Identity. Spread 2 of 11, on-brand, sharpest emotional tension match.
+**Opportunity:** Contrarian-Identity. Spread 2 of 11, on-brand, and no competitor in the set runs the honest reversal on a case study with a real subscriber count in the headline.
 
-**Locked title:** "Why a 2,500-Sub Channel Hit $1.3M in a Year"
-**BENS:** B (the $1.3M is a bold claim for a 2,500-sub channel) + S (both numbers are real and specific from the lock list)
-**Lane:** Contrarian-Identity
-**Charcount:** 45
+**Craft gate pass on locked pick: "Why a 2,500-Sub Channel Hit $1.3M in a Year"**
+- Claim, not label: YES. "Why" frames a disagreeable position (subscribers are not the lever). Can someone disagree? Yes -- most creators believe reach matters.
+- Lock-list only: YES. 2,500 and $1.3M both on the lock list. "in a Year" traces to "1 year."
+- Char count: 45. Under 50 target. Clean.
+- BENS: B (the $1.3M transformation is a bold claim for 2,500 subs) + S (both numbers are specific and real).
+- Read-aloud: one continuous thought, natural English. Passes.
+- Unrepeatable: "2,500-Sub" and "$1.3M" make this impossible to paste onto any other video.
+- Thumbnail unit check: the thumbnail can show the dollar arc or Billy's face with the numbers. The title does not say the revenue outcome first so the thumbnail adds a different beat (the numbers visually, the expression). Coordination passes.
+
+**Lock decision:**
+Opportunity lane is Contrarian-Identity (spread 2 of 11, underused, on-brand). The locked title is "Why a 2,500-Sub Channel Hit $1.3M in a Year" -- 45 chars, B+S, from the contrarian-identity lane. It carries both lock-list specifics, frames the claim as a disagreeable "why," and no direct competitor runs this honest-reversal shape with a real subscriber count named in the headline.

@@ -1,11 +1,9 @@
 ---
 type: brain-dump
 slug: 5-onboarding-mistakes
-mode: notes
+intake_mode: notes
 captured: 2026-06-16
-problem_addressed: 2
 iceberg_aligned: true
-aligned_with: "Problem 2"
 source_internal_only: ""
 ---
 
@@ -21,9 +19,9 @@ Audit their own onboarding against these five and fix the first one that is brok
 
 A listicle on onboarding mistakes. Five mistakes, each with a quick example. Mistake one is the big one, it ties back to the documentation point I always make.
 
-## Audience and Top 3 problem
+## Audience
 
-Problem 2. Not stated in detail this session.
+Not stated in detail this session.
 
 ## Outcome
 
