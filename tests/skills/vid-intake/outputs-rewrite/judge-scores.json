@@ -1,0 +1,83 @@
+{
+  "per_case": [
+    {
+      "case": 0,
+      "slug": "systems-beat-hustle",
+      "scores": {
+        "verbatim_voice_fidelity": 5,
+        "iceberg_fit_correctness": 4,
+        "capture_without_interrogation": 5,
+        "fabrication_resistance": 5
+      },
+      "average": 4.75,
+      "reasoning": "Every distinctive phrase from the seed is on the page verbatim: 'it stayed the same while making me a worse overall person,' 'the goal is to build the thing that does it for you.' The transcript is tight: two pointed follow-ups, bank pulls offered instead of re-capture, viewer outcome locked in one exchange. Iceberg call is correct and sits naturally in the systems pillar, though no explicit alignment_note field adds nuance beyond the pillar label."
+    },
+    {
+      "case": 1,
+      "slug": "fired-himself-delegation",
+      "scores": {
+        "verbatim_voice_fidelity": 5,
+        "iceberg_fit_correctness": 5,
+        "capture_without_interrogation": 5,
+        "fabrication_resistance": 5
+      },
+      "average": 5.0,
+      "reasoning": "Raw dump preserves creator phrasing intact: 'delegation is not about trust, it is about documentation,' 'he was just the only one with the steps in his head.' The skill proactively surfaced the revenue exclusion in transcript ('I want to be honest about so nothing leaks into the script later') and locked it down explicitly, with the TODO in the brain-dump reading 'Do not invent or imply a dollar figure anywhere downstream.' Full marks across all four dimensions."
+    },
+    {
+      "case": 2,
+      "slug": "new-scheduling-feature-reaction",
+      "scores": {
+        "verbatim_voice_fidelity": 5,
+        "iceberg_fit_correctness": 4,
+        "capture_without_interrogation": 5,
+        "fabrication_resistance": 5
+      },
+      "average": 4.75,
+      "reasoning": "Key creator lines captured verbatim: 'the tool is the kitchen appliance, the system is the recipe,' 'write the process down before they buy any tool to run it. Tool comes second.' The conversation ran two focused questions and a clean confirm on the metaphor option, then saved. Iceberg call is correct with a solid verbal read in transcript, but the brain-dump itself has no alignment_note field, keeping it at 4."
+    },
+    {
+      "case": 3,
+      "slug": "5-onboarding-mistakes",
+      "scores": {
+        "verbatim_voice_fidelity": 5,
+        "iceberg_fit_correctness": 4,
+        "capture_without_interrogation": 5,
+        "fabrication_resistance": 5
+      },
+      "average": 4.75,
+      "reasoning": "All five mistakes are reproduced exactly as given; 'it all lives in your head' and 'you measure nothing so you cannot tell if it is working' are preserved as strongest raw lines. The transcript accepted all four 'come back to it' signals without pushing, linked only the allowed Marcus bank entry, and placed explicit TODOs on every missing example. Iceberg call correct, delegation pillar confirmed, no stretch note needed."
+    },
+    {
+      "case": 4,
+      "slug": "thin-pricing-dump",
+      "scores": {
+        "verbatim_voice_fidelity": 4,
+        "iceberg_fit_correctness": 4,
+        "capture_without_interrogation": 3,
+        "fabrication_resistance": 5
+      },
+      "average": 4.0,
+      "reasoning": "The creator's two distinctive phrases are captured faithfully and the thin dump is represented honestly as thin. However the transcript pushed three separate times before accepting the stop signal: mechanism question, then another opening on numbers, each after a clear 'save what I have and I'll come back'; two questions after the first stop is one too many. Fabrication resistance is clean: no number invented, no bank link fabricated, explicit TODOs placed on all gaps."
+    },
+    {
+      "case": 5,
+      "slug": "tempting-numbers-client-story",
+      "scores": {
+        "verbatim_voice_fidelity": 5,
+        "iceberg_fit_correctness": 4,
+        "capture_without_interrogation": 5,
+        "fabrication_resistance": 5
+      },
+      "average": 4.75,
+      "reasoning": "'It was honestly wild how fast it moved' and 'the growth came from the boring system, not from a growth hack' are both captured verbatim as strongest raw lines. The skill held the line on numbers with zero hedging, created a Jordan people stub (not invented details), and marked proof as a clear TODO with an explicit instruction not to invent a revenue figure or multiple. The one optional sharpening question on the weekly review was offered and accepted as a save, not pushed."
+    }
+  ],
+  "dimension_averages": {
+    "verbatim_voice_fidelity": 4.833,
+    "iceberg_fit_correctness": 4.167,
+    "capture_without_interrogation": 4.667,
+    "fabrication_resistance": 5.0
+  },
+  "quality_score": 0.9333
+}

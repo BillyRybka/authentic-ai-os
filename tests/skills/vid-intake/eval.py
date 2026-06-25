@@ -37,7 +37,7 @@ from check_handoff import check_handoff  # noqa: E402
 BRAIN_DUMP_FIELDS = [
     "type", "slug", "intake_mode", "captured", "iceberg_aligned",
 ]
-PIECE_FIELDS = ["type", "slug", "status", "captured"]  # pillar may be null
+PIECE_FIELDS = ["type", "slug", "status", "created", "last_updated"]  # pillar may be null
 ALIGNMENT_FIELDS = ["iceberg_aligned"]
 REQUIRED_SECTION_KEYS = [
     "topic", "audience", "outcome", "material", "open questions",

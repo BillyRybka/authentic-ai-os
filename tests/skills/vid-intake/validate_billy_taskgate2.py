@@ -25,7 +25,7 @@ for fname, text in files.items():
 
 # 2) frontmatter completeness
 bd_required = ["type", "slug", "intake_mode", "captured", "iceberg_aligned"]
-pc_required = ["type", "slug", "pillar", "status", "captured"]
+pc_required = ["type", "slug", "pillar", "status", "created", "last_updated"]
 bd_fm, _ = split_frontmatter(brain)
 pc_fm, _ = split_frontmatter(piece)
 ok_bd, missing_bd = has_fields(bd_fm, bd_required)

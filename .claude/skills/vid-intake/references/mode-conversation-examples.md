@@ -8,7 +8,9 @@ tags: [reference, vid-intake, mode-examples, dialogue]
 
 # Mode Conversation Examples
 
-Mock dialogues showing how each of the 7 vid-intake modes should run. Examples-first. Each mode has a worked example (the conversational shape that lands) and a near-miss (what NOT to do, with one-line "why this fails"). Read this before running vid-intake. Calibrate your conversational shape from these, do not invent your own.
+Mock dialogues showing how each of the 7 vid-intake modes can run. Optional depth: the modes table in SKILL.md is enough for a normal run. Open this when you want to see a full mode run end to end, or when a conversation stalls and you need calibration. Each mode has a worked example (the shape that lands) and a near-miss (what not to do, with a one-line "why this fails").
+
+The skill routes modes silently. The creator never hears a mode number. These examples show the opener and the distinctive moves for each mode, not a label you announce.
 
 The creator in these examples is a fitness coach. Iceberg statement: "I help busy founders build sustainable strength training habits in 30 minutes a day." The lane covers time scarcity that collapses routines, cardio-bias that misallocates effort, and inconsistency under stress.
 
@@ -17,10 +19,6 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 ### Worked
 
 **Creator:** "I want to make a video about why founders shouldn't run for cardio. Most of my clients waste 4 hours a week on zone 2 they could be using for strength."
-
-**Skill (mode confirm):** "Sounds like you have an idea you want to think through together. Going Mode 1, idea + dump. Sound right?"
-
-**Creator:** "Yep."
 
 **Skill (open the door):** "Dump everything you've got. The points you want to make, anything kicking around, raw. I'll listen."
 
@@ -73,7 +71,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 - My current routine takes 22 minutes
 - Clients report better focus when they cut the journaling step
 
-**Skill (mode confirm):** "Mode 2, notes paste. 5 bullets. Quick scan: 3 are full thoughts, 2 are placeholders waiting for your specifics. Want to expand the placeholders or save what you have and let vid-framing chase later?"
+**Skill (scan the bullets):** "5 bullets. Quick scan: 3 are full thoughts, 2 are placeholders waiting for your specifics. Want to expand the placeholders, or save what you have and let the next step chase them later?"
 
 **Creator:** "Expand the 5am Hard 75 one. That's the story I want to anchor on."
 
@@ -107,7 +105,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 [creator pastes ~800 words]
 
-**Skill (mode confirm + ownership check):** "Mode 3, transcript paste. Quick check: this is your own recording, not someone else's? Confirm before I treat the contents as your voice fuel."
+**Skill (ownership check):** "Quick check: this is your own recording, not someone else's? I treat the contents as your voice fuel, so I want to be sure."
 
 **Creator:** "Yep, mine."
 
@@ -141,7 +139,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Creator:** "I just watched a video on YouTube growth by some guru. He said you have to post 3x a week, use clickbait titles, engage with comments, cross-promote. I think most of this is bad advice for founders building real businesses."
 
-**Skill (mode confirm):** "Mode 4, inspired-by. The source is invisible in your video, you never reference the original. We capture their points, then your evidence-based take on each, then YOUR method. Sound right?"
+**Skill (set the contract):** "Before we start, the contract: the source stays invisible, you never reference the original in your video. We capture their points, then your evidence-based take on each, then YOUR method. Sound right?"
 
 **Creator:** "Yes."
 
@@ -183,7 +181,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Creator:** "Whoop just released their new strength training tracking. I want to do a video on it."
 
-**Skill (mode confirm):** "Mode 5, news-jacking. Fast capture. 3 questions, then save."
+**Skill (set the pace):** "Fast capture on this one. Three quick questions, then we save."
 
 **Skill:** "What's the news? One sentence."
 
@@ -219,7 +217,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Creator:** "I want to do a video around James. He went from 135 to 225 squat in 12 weeks while losing 14 lbs of fat. Only 30 minutes a day."
 
-**Skill (mode confirm):** "Mode 6, client win. We'll capture the proof, then pivot to the lesson. Case study videos can't be biographies, they have to teach. Cool?"
+**Skill (frame the capture):** "Let's capture the proof, then pivot to the lesson. A case study can't be a biography, it has to teach. Cool?"
 
 **Creator:** "Yes."
 
@@ -257,7 +255,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Creator:** "OK this thing happened yesterday and I want to make a video about it. I'm at a coffee shop, this founder I've coached for 6 months walks in, and he's 30 lbs lighter than when I last saw him in January. We talk for 20 minutes. He says the thing that finally worked was when I made him cut his program from 4 days to 2 days."
 
-**Skill (mode confirm):** "Mode 7, story-first. We capture the moment in P-A-O shape, then locate the lesson, then check it fits your channel."
+**Skill (frame the capture):** "Let's capture the moment first, the problem, what you did, what changed. Then we'll find the lesson and check it fits your channel."
 
 **Skill (P-A-O capture):** "Problem first. What was his state in January? Specific."
 
@@ -295,7 +293,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 Things every mode does the same way:
 
-1. **Confirm the detected mode in one short message before running the flow.** Don't assume.
+1. **Route the mode silently.** Detect it and open the door in that mode's shape. The creator never hears a mode number. Surface the menu below only when you genuinely cannot tell.
 2. **Open the door, then shut up.** Whatever the dump shape is for that mode, give the creator space to land it without interrupting.
 3. **Reflect back in the creator's own language.** Mirror what they said, do not paraphrase into your own words.
 4. **Run the iceberg fit check fast (10 seconds).** Surface the fit, creator confirms, move on.

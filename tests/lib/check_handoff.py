@@ -21,7 +21,7 @@ HANDOFF_CONTRACTS = {
         "brain-dump.md": [
             "type", "slug", "intake_mode", "captured", "iceberg_aligned",
         ],
-        "piece.md": ["type", "slug", "status", "captured"],
+        "piece.md": ["type", "slug", "status", "created"],
     },
     # vid-framing -> vid-structure (added when the rollout reaches framing)
     "framing->structure": {

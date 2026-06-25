@@ -31,7 +31,7 @@ if not ok:
     failures.append(f"brain-dump frontmatter missing/empty: {missing}")
 
 pc_fm, _ = split_frontmatter(piece)
-pc_required = ["type", "slug", "pillar", "status", "captured"]
+pc_required = ["type", "slug", "pillar", "status", "created", "last_updated"]
 ok2, missing2 = has_fields(pc_fm, pc_required)
 if not ok2:
     failures.append(f"piece frontmatter missing/empty: {missing2}")
