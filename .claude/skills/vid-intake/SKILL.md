@@ -1,75 +1,52 @@
 ---
 name: vid-intake
-description: Capture raw video material into a structured brain-dump.md for one video, in the creator's exact words. Auto-detects which of 7 intake modes the creator is in (idea, notes or outline, own transcript, inspired-by a competitor, news-jacking, client win, story-first) and runs the matching short conversation. Runs standalone or via vid-pipeline. Use whenever a creator brings video material not yet captured into a piece folder, even if they don't say "intake": "I want to make a video about X", "here's a transcript I want to turn into a video", "I saw this competitor video and want my own take", "I had this thing happen", "a video on my client win", "there's a new feature to cover", "let's start a new video", "let's plan this one out".
+description: Capture raw video material into a structured brain-dump.md for one video, in the creator's exact words. One short capture conversation whether the creator talks the idea through or pastes notes or a transcript, then hands off to vid-framing. Runs standalone or via vid-pipeline. Use whenever a creator brings video material not yet captured into a piece folder, even if they don't say "intake": "I want to make a video about X", "here's a transcript I want to turn into a video", "I had this thing happen", "a video on my client win", "there's a new feature to cover", "let's start a new video", "let's plan this one out".
 ---
 
 > 🔄 **Pre-flight (mandatory).** Before anything else, read `${CLAUDE_PLUGIN_ROOT}/knowledge/update-check.md` and follow it. If a newer version exists, halt and tell the creator. Otherwise continue.
 
 # Video Intake
 
-Capture the raw material for one video into `content/pieces/{slug}/brain-dump.md`, in the creator's exact words, in 5-10 minutes. The brain dump is the voice fuel every downstream writing skill reads, so the words stay verbatim, never polished. Intake captures only. It does not frame, title, or write. `vid-framing` runs next.
+Capture the raw material for one video into `content/pieces/{slug}/brain-dump.md`, in the creator's exact words (minus obvious mistakes). Intake captures only. It does not frame, title, or write. `vid-framing` runs next.
 
 ## What loads, and when
-
-Cold open. You do not need the creator's identity or a schema to start listening, so load nothing up front.
 
 - **Check at startup:** `foundation/creator-foundation.md` exists. If it does not, tell the creator to run `/foundation` first, and stop. (If `vid-pipeline` routed you here, it already verified this. Skip the re-check.)
 - **Load on-demand, only at the phase that needs it:**
 
 | File | Phase | For |
 |---|---|---|
+| `references/digging-deeper.md` | 3 (deeper pass) | which spots to push, when to save with a TODO |
+| `references/verify-subagent.md` | 3, uncertain claim | the isolated verification sub-agent |
+| `knowledge/story-capture-guide.md` | 3, thin story | the 6 drill prompts |
 | `foundation/creator-foundation.md` | 4 (fit) | the iceberg statement and pillars |
-| `knowledge/story-capture-guide.md` | 5, thin story | the 6 drill prompts |
-| `references/push-vs-pause-rules.md` | 5 | when to drill, when to save with a TODO |
-| `references/verify-subagent.md` | 5, uncertain claim | the isolated verification sub-agent |
-| `knowledge/vault-integration.md` | 6 (save) | frontmatter schema and bank wikilink rules |
-| `references/mode-conversation-examples.md` | optional | full worked dialogues for any mode |
-
-## How it runs
-
-**Standalone:** the creator invokes directly. Run the flow, create the piece folder, save, point them to `vid-framing`.
-
-**As a sub-skill:** `vid-pipeline` invokes it, often with context (`intake for piece={slug}, mode=inspired-by, source=[...]`). Skip mode detection and go straight to the flow, then return the brain-dump packet to the caller.
-
-The save (piece folder, `brain-dump.md`, `piece.md`) happens here either way.
+| `knowledge/vault-integration.md` | 2 (checkpoint save) | frontmatter schema and bank wikilink rules |
+| `references/mode-conversation-examples.md` | optional | worked example dialogues of the capture flow |
 
 ## The flow
 
-Six phases, same spine for every mode. The body of each phase varies by mode (see the modes table). Quoted lines show register and length, not a script: short, human, one move per message. Never paste one verbatim.
+Five phases, one spine, every time. What the creator hands you shifts how you open, never the spine. Each move is one short, human message in your own words, never a script.
 
-1. **Detect the mode, silently.** Read the creator's first message and route using the modes table. Do not announce the mode or make the creator confirm it. Just open the door. Surface the menu only when you genuinely cannot tell.
+1. **Open the door.** Clock what they brought and open to match, silently, never naming a category. If they are talking it through, tell them in your own words to dump everything raw and to flag if they want help digging in, then stop and let them land it without interrupting. If they pasted notes or a transcript, read it once and do not make them re-say what they wrote (for a transcript, confirm it is actually theirs first, so you treat it as their voice). If a caller handed you material to start from (for example `vid-ideas` passing a picked idea), run with it. Read once, respond once.
 
-2. **Open the door, then listen.** "Brain dump whenever you're ready, I'll capture as you go." Then stop. Do not interrupt mid-dump. Read-once, respond-once.
+2. **Reflect back, then checkpoint the dump.** Mirror what landed in the creator's own language, the points, stories, claims, proof, metaphors, and any gaps, and ask if you missed anything. Then get their words on disk before you dig, so a dropped session never loses the dump. Derive a kebab-case slug from the topic they named (not the generic iceberg), and find where this vault's pieces live (default `content/pieces/{slug}/`; if a `pieces/` directory sits at the vault root, use that). List the directory and check against what exists, never blind-stack a path or let `mkdir -p` invent a parent. Write `brain-dump.md` and `piece.md` with `status: ideating` (schema in `knowledge/vault-integration.md`), leaving `iceberg_aligned` unset until the fit step so the checkpoint cannot trigger anything downstream. Save quietly, no confirmation round.
 
-3. **Reflect back.** Mirror what landed, in the creator's own language: the points, stories, claims, proof, metaphors, and any gaps. "Got [point 1], [point 2], plus the [thing] story. Miss anything?" Thirty seconds. It builds trust and surfaces what you missed.
+3. **Offer one deeper pass, updating as you go.** Open `references/digging-deeper.md` now; it calibrates which spots are worth pushing and when to pause. You are a co-writer, not a stenographer: name the 2-3 highest-leverage spots and offer once to push or save as-is. If they say go, ask in flow, one question at a time, no re-asking permission before each. Every answer that lands is new material: add it to `brain-dump.md` as it comes, in their words, and clear or add TODOs. Stop the moment they signal done (save it, I'll come back, that's it), never push one spot more than twice, and never invent to fill a gap, a gap is a TODO. If the creator brings something uncertain, verify it with `references/verify-subagent.md` rather than swapping in something safer; never research inline. For a thin story, use the prompts in `knowledge/story-capture-guide.md`.
 
-4. **Fit and pillar, in one move.** Load `creator-foundation.md` now. Run one check that does both jobs at once, does this fit the iceberg and which pillar: "That fits your channel, looks like your [pillar] pillar. Right?" Set `iceberg_aligned` and lock the pillar from their answer. If it is a deliberate stretch, set `true` plus a one-line `alignment_note` in their words. If it does not fit, set `false`, ask "wrong channel, or has your iceberg shifted?", and let them decide whether to save anyway. Never block the save. The flag plus any note tells downstream skills the call was deliberate.
-
-5. **Offer one deeper pass, then flow.** You are a co-writer, not a stenographer, so do not just bank the dump and move on. Scan it, pick the 2-3 spots where a little more would sharpen the video most, and offer once: "This is solid. I can push on [spot A] and [spot B], or save as-is?" Theirs to decline. If they say go, just ask the questions, one at a time, in the flow of the conversation. Do not re-ask permission before each one. Asking "can I ask another?" right after they already said yes is what breaks the flow. Keep pulling while they stay engaged and the answers keep coming back richer; a strong dump here pays off in every downstream skill. Worth pushing on:
-   - A claim with no mechanism. "Why is that actually true, what's underneath it?"
-   - A story referenced but not landed. "What was the exact moment it turned?"
-   - The viewer's objection left unanswered. "What's the pushback, and your answer?"
-   - The contrarian edge under-sharpened. "What's the version people argue with?"
-
-   These pull more out of the creator. They never invent. **Verify, do not replace:** when the creator brings something real but uncertain (a stat, a claim, a metaphor), do not water it down or swap in something safer. That safe-generic reach is what makes slop. Spawn the isolated verification sub-agent (`references/verify-subagent.md`) and act on its verdict: holds, keep it verbatim with a note and sources; does not hold, tell them what's true in one line and let them adjust; can't confirm, mark a TODO and keep it. Never research inline. **Stop the moment they signal done** (save it, I'll come back, that's it): respect it, mark a TODO for anything left open, and save. Do not reopen a spot they closed, and never push one spot more than twice. For a thin story, use the prompts in `knowledge/story-capture-guide.md`; if 3 in a row don't land, save with a TODO.
+4. **Fit and pillar, in one move.** Load `creator-foundation.md` now. In one line, confirm it fits the iceberg and name the most likely pillar, and let them correct either. Set `iceberg_aligned` and lock the pillar in `piece.md` from their answer. If it is a deliberate stretch, set `true` plus a one-line `alignment_note` in their words. If it does not fit, set `false`, ask whether it is the wrong channel or their iceberg has shifted, and let them decide whether to save anyway. Never block the save. The flag plus any note tells downstream skills the call was deliberate.
    
-6. **Slug, folder, save.** Propose a kebab-case slug from the topic they named (not the generic iceberg) and fold the confirm into the save rather than a separate round. Find where this vault's pieces already live and create the new `{slug}/` folder alongside them: the default is `content/pieces/{slug}/`, but if a `pieces/` directory already sits at the vault root, put it there. List the directory and confirm against what exists. Do not blind-stack a path or let `mkdir -p` invent a wrong parent. Write `brain-dump.md` and `piece.md` (load `knowledge/vault-integration.md` for the schema). Do not create the folder before the slug is settled (no orphan folders). Close in one line: "Saved as `cardio-vs-strength-for-founders`. vid-framing next."
+5. **Finalize and hand off.** The piece is already on disk from the checkpoint, so this is the close, not a first write. Make sure `brain-dump.md` holds everything the deeper pass surfaced and `piece.md` carries the fit and pillar, then confirm the save in one line and point to vid-framing as next. If the creator bailed earlier, their words are already safe from the checkpoint; leave it at `status: ideating` with the open TODOs, and the missing fit (`iceberg_aligned` still unset) is what tells the pipeline the piece still needs intake when they come back.
 
-## The 7 modes (internal routing, never shown to the creator)
+## What's in the dump (internal, never shown to the creator)
 
-Route on the creator's opening message. Every mode runs the same spine. Only the opener and the one or two distinctive moves change.
+There is one intake: the creator's own material, talked through or pasted. The spine never changes. As you capture and reflect, watch for these shapes and handle them. They are not separate flows, just the things you would otherwise get wrong.
 
-| Mode | Opening signal | What differs from the default |
-|---|---|---|
-| **Idea + dump** | Talks a topic through conversationally | The default. Open the door, let them dump freely. |
-| **Notes / paste** | Pastes bullets or a doc | Scan it. Only drill the placeholders, or the bullet they flag as the anchor. Leave the full thoughts alone. |
-| **Own transcript** | Pastes a wall of text | Ask "yours, or someone else's?" first (this splits it from inspired-by). Read silently, once. Reflect what's there and what's missing. |
-| **Inspired-by** | Points at a competitor video, article, or podcast | Set the contract up front: the source is invisible, never named in the video. Capture source points into `source_internal_only`. Get the creator's take per point, then force "what's the lesson you teach?" |
-| **News-jacking** | A fresh release, feature, or event | Skip the dump. Three fast questions: what's the news, what it means for the audience, their angle. Speed wins. |
-| **Client win** | Opens with a result or a client name | Capture the proof fast, then force the pivot: "what's the principle the viewer can DO?" A case study teaches; it is not a client biography. |
-| **Story-first** | "This thing happened..." | Capture the moment in P-A-O (problem, action, outcome) before anything else. Then locate the lesson. Never ask for the lesson first. |
+- **A story** ("this thing happened") → capture the moment in P-A-O (problem, action, outcome) first, locate the lesson second. Never ask for the lesson first.
+- **A client win or result** → capture the proof fast, then force the pivot to the principle the viewer can DO. A case study teaches; it is not a client biography.
+- **Fresh news or a release** → keep it fast. What is the news, what it means for the audience, their angle. Speed wins; do not force a full dump.
+- **A claim with no proof** → get the source, or mark it a TODO. Never invent one.
 
-When you cannot tell, ask once: "Quick check, which is this: an idea to think through, notes you have, a transcript you recorded, something you saw and want your own take on, fresh news, a client win, or a story?" Then run the matching row. Full worked dialogues for any mode live in `references/mode-conversation-examples.md`.
+Stamp `intake_mode` for what the material turned out to be (idea, notes, own-transcript, news-jacking, client-win, story-first). It is a record, not a routing decision, and the creator never hears it. Worked example dialogues live in `references/mode-conversation-examples.md`.
 
 ## Output: brain-dump.md
 
@@ -77,28 +54,27 @@ When you cannot tell, ask once: "Quick check, which is this: an idea to think th
 ---
 type: brain-dump
 slug: {kebab-case-slug}
-intake_mode: idea | notes | own-transcript | inspired-by | news-jacking | client-win | story-first
+intake_mode: idea | notes | own-transcript | news-jacking | client-win | story-first
 captured: YYYY-MM-DD
 iceberg_aligned: true | false
 alignment_note: "{Only when the fit is a deliberate stretch or an off-iceberg save. One line in the creator's words. Omit the field entirely for a clean fit.}"
-source_internal_only: "{Inspired-by mode only: a brief internal note on the source. Never referenced in the video.}"
 ---
 
 ## Raw dump (verbatim)
 
-{The creator's complete dump, exactly as said. Nothing cut, reordered, or cleaned beyond obvious transcription fixes. This is the lossless source of truth; every section below is an index built from it. For paste modes (own-transcript, inspired-by) this is the pasted text in full.}
+{The creator's complete dump, exactly as said. Nothing cut, reordered, or cleaned beyond obvious transcription fixes. This is the lossless source of truth and the voice reservoir every downstream skill pulls from; the sections below are a light index built from it. For a pasted transcript or doc, this is the pasted text in full.}
 
-## Topic + angle
+## Topic
 
-{The topic and angle in the creator's own words and sentence shapes, not a summary. No "The angle is that..." framing.}
+{What the video is about, in the creator's own words and sentence shapes, not a summary. Capture the topic only. The angle is vid-framing's job; do not name one here.}
 
 ## Audience
 
-{Capture only. What the creator said about who this is for and why it matters to them, in their words. If they did not describe it, write "Not described in the dump." Do not invent a pain rationale.}
+{Only if the creator described who this is for and why it matters to them, in their words. Omit the section entirely if they did not raise it. Never invent a pain rationale.}
 
 ## Outcome
 
-{Capture only. What they want the viewer to walk away with, in their words. If unstated, write "Not stated. vid-framing sets the core payoff." Never synthesize one, and never reduce a listicle to a single action.}
+{Only if the creator stated what they want the viewer to walk away with, in their words. Omit the section if unstated; vid-framing sets the core payoff. Never synthesize one, and never reduce a listicle to a single action.}
 
 ## Material
 
@@ -117,17 +93,9 @@ source_internal_only: "{Inspired-by mode only: a brief internal note on the sour
 ### Claims (no proof attached yet)
 - {Claim}. TODO: source proof from [bank or new capture]
 
-## Strongest raw lines
-
-- "{The creator's most vivid, quotable lines, verbatim. Stutters cleaned only, never reworded. This is the voice reservoir downstream skills pull from.}"
-
 ## Open questions / TODOs
 
 - {Anything thin or missing the creator wants to chase later, or that vid-framing / vid-segment will need.}
-
-## Source notes (internal only, never appears in the video)
-
-{Inspired-by: the source's points, for the creator's reference. Own-transcript: the original transcript, lightly cleaned. Otherwise empty.}
 ```
 
 ## Output: piece.md

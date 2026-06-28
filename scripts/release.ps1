@@ -59,6 +59,17 @@ if ($tooLong.Count) {
     throw "Skill description over the 1024-char plugin-validator limit: $($tooLong -join ', '). Shorten it before releasing."
 }
 
+# --- block temporary debug instrumentation from shipping ---------------------
+# DEBUG-TRACE blocks are builder-only tracing. They are fine in .claude/skills
+# (which never ships) but must never reach a client. If one survived graduation
+# into the plugin tree, stop the release here so it cannot ship.
+$traceHits = Get-ChildItem 'plugins/authentic-ai-os' -Recurse -File -ErrorAction SilentlyContinue |
+    Select-String -Pattern 'DEBUG-TRACE' -List |
+    Select-Object -ExpandProperty Path -Unique
+if ($traceHits) {
+    throw "DEBUG-TRACE instrumentation found in the shipping tree, remove it before releasing:`n  $($traceHits -join "`n  ")"
+}
+
 Write-Host "Releasing v$Version : rebuilding 'main' from 'dev'..." -ForegroundColor Cyan
 
 try {

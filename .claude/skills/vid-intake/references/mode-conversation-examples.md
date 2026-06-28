@@ -3,18 +3,18 @@ type: reference
 scope: skill-local
 loaded_by: [vid-intake]
 status: active
-tags: [reference, vid-intake, mode-examples, dialogue]
+tags: [reference, vid-intake, capture-examples, dialogue]
 ---
 
-# Mode Conversation Examples
+# Capture Examples
 
-Mock dialogues showing how each of the 7 vid-intake modes can run. Optional depth: the modes table in SKILL.md is enough for a normal run. Open this when you want to see a full mode run end to end, or when a conversation stalls and you need calibration. Each mode has a worked example (the shape that lands) and a near-miss (what not to do, with a one-line "why this fails").
+Worked dialogues showing the one vid-intake capture flow running on different kinds of material. Optional depth: the flow and the watch-list in SKILL.md are enough for a normal run. Open this when you want to see a full run end to end, or when a conversation stalls and you need calibration on the feel. Each example pairs the shape that lands with a near-miss and a one-line "why this fails."
 
-The skill routes modes silently. The creator never hears a mode number. These examples show the opener and the distinctive moves for each mode, not a label you announce.
+There is one flow. What changes is the material the creator brings and the one or two things to get right with it. The creator never hears a category; you open to match.
 
 The creator in these examples is a fitness coach. Iceberg statement: "I help busy founders build sustainable strength training habits in 30 minutes a day." The lane covers time scarcity that collapses routines, cardio-bias that misallocates effort, and inconsistency under stress.
 
-## Mode 1: Idea + dump
+## An idea, talked through
 
 ### Worked
 
@@ -28,13 +28,13 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Creator:** "That's it."
 
-**Skill (fit check):** "This is inside your iceberg, helping busy founders build sustainable strength habits. The cardio-bias lane. Sound right?"
-
-**Creator:** "Yes."
-
 **Skill (drill once on the thin spot):** "James story is the strongest piece. Quick: how long did he run for, how long until you saw the body comp shift?"
 
 **Creator:** "He ran 4x a week for 18 months, lost 6 lbs of fat. Switched to my program. 12 weeks later he was down 14 lbs and his squat went from 135 to 225."
+
+**Skill (fit check):** "That all sits inside your iceberg, the cardio-bias lane of helping founders build sustainable strength. Sound right?"
+
+**Creator:** "Yes."
 
 **Skill (save):** "Locked. Slug: `cardio-vs-strength-for-founders`. Sound right?"
 
@@ -42,7 +42,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Skill:** "Saved to `content/pieces/cardio-vs-strength-for-founders/brain-dump.md`. Run vid-framing next to lock the angle and format."
 
-**Why this works:** the creator dumped freely without interruption. Skill mirrored back the structure they already had. Alignment check took 10 seconds. One drill question on the weakest spot (James story specifics) unlocked the proof. Save was clean. Total conversation: under 5 minutes.
+**Why this works:** the creator dumped freely without interruption. Skill mirrored back the structure they already had, drilled the one weakest spot (James story specifics) to unlock the proof, then ran a single-exchange fit check on the way out. Save was clean. The whole thing stayed in flow, no interrogation.
 
 ### Near-miss
 
@@ -60,7 +60,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Why this fails:** skill ran an interrogation instead of letting the creator dump. Asked questions that belong in `vid-framing`, not intake. Creator's enthusiasm for the topic dies in the questionnaire.
 
-## Mode 2: Outline / notes paste
+## Notes or bullets, pasted
 
 ### Worked
 
@@ -95,9 +95,9 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Skill:** "Let's go through each bullet and expand. Bullet 1: Most morning routines are aesthetic, not functional. Why? Who told you that? What's the proof? Worked example? Counter-example?"
 
-**Why this fails:** the creator already wrote bullet 1 as a full thought. Drilling it wastes time. Only drill the placeholders or the bullets the creator flags as anchors.
+**Why this fails:** the creator already wrote bullet 1 as a full thought. Drilling it is wasted effort. Only drill the placeholders or the bullets the creator flags as anchors.
 
-## Mode 3: Own transcript
+## Their own transcript
 
 ### Worked
 
@@ -123,7 +123,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Skill:** "Slug: `february-gym-attrition`. Save?"
 
-**Why this works:** ownership check first ("yours or theirs?") because Mode 3 vs Mode 4 changes everything. Skill read the transcript once silently rather than echoing it. Reflection surfaced what was there AND what was missing (the 80% claim flagged as TODO).
+**Why this works:** ownership check first ("yours or theirs?") so the words get treated as the creator's own voice. Skill read the transcript once silently rather than echoing it. Reflection surfaced what was there AND what was missing (the 80% claim flagged as TODO).
 
 ### Near-miss
 
@@ -133,49 +133,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Why this fails:** skill jumped past intake into framing. The job here is capture, not strategy. Hooks, format, and goal belong in `vid-framing`, not vid-intake.
 
-## Mode 4: Inspired-by
-
-### Worked
-
-**Creator:** "I just watched a video on YouTube growth by some guru. He said you have to post 3x a week, use clickbait titles, engage with comments, cross-promote. I think most of this is bad advice for founders building real businesses."
-
-**Skill (set the contract):** "Before we start, the contract: the source stays invisible, you never reference the original in your video. We capture their points, then your evidence-based take on each, then YOUR method. Sound right?"
-
-**Creator:** "Yes."
-
-**Skill (capture source points internally):** "Got their 4 points captured: post 3x/week, clickbait titles, comment engagement, cross-promote. These go in `source_internal_only`, never appear in your video. Your turn. Walk me through your take on each, start with whichever you have the strongest opinion on."
-
-**Creator:** "Frequency. Posting 3x a week is the worst advice for founders. I posted 18 videos in 6 months when I started, got 200 subs. Switched to 1 deep video a month, made $40k in 3 months. Depth is the lever."
-
-**Skill (drill on proof):** "Strong claim. Where's the $40k from?"
-
-**Creator:** "Stripe screenshot. Already in my proof bank as `40k-three-months`."
-
-**Skill:** "Wikilinked. Onto point 2, clickbait titles."
-
-[skill walks through points 2, 3, 4 with creator giving their take, drilling only where proof or specifics are missing]
-
-**Skill (after all 4):** "Got your take on all 4. What's the LESSON the video teaches instead? Not 'they're wrong about everything', what's the principle YOUR audience walks away with?"
-
-**Creator:** "Frequency is for entertainers. Founders should treat YouTube like a portfolio of evidence pieces. One deep video a month outperforms 12 shallow ones because each piece compounds."
-
-**Skill (fit check):** "Inside your iceberg, helping founders build sustainable habits, applied to content. The time-scarcity lane, applied to a YouTube routine. Sound right?"
-
-**Creator:** "Yes."
-
-**Skill:** "Slug: `frequency-vs-depth-on-youtube`. Save?"
-
-**Why this works:** ownership check ("source is invisible, your video is your take") sets the contract upfront. Source points captured for creator reference but flagged as internal. Each point gets the creator's opinion + a proof check. The lesson question forces a teaching arc, not a takedown. Alignment ties the YouTube content topic back to the creator's actual iceberg (sustainable habits).
-
-### Near-miss
-
-**Creator:** "I just watched a video by Steve. He said post 3x a week."
-
-**Skill:** "Got it. So in your video you should mention that Steve's advice is wrong because..."
-
-**Why this fails:** the source creator's name appears in the conversation as if it will be in the video. The contract should be set immediately: the source is invisible, the creator's take stands on its own evidence. Never reference the source in productized output.
-
-## Mode 5: News-jacking
+## Fresh news, fast
 
 ### Worked
 
@@ -201,7 +159,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Skill:** "Slug: `whoop-strength-tracking-finally`. Save?"
 
-**Why this works:** 3 fast questions, no dumping needed. News-jacking is about angle, not material depth. Speed wins.
+**Why this works:** three fast questions, no dumping needed. News is about the angle, not material depth. Speed wins.
 
 ### Near-miss
 
@@ -209,9 +167,9 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Skill:** "Let's dump everything you know about Whoop. When did they start, what's their pricing, what's the company history, who's their CEO?"
 
-**Why this fails:** news-jacking is about the angle on the news, not a deep dive into the company. Save material gathering for if/when the creator wants to make a long-form review.
+**Why this fails:** a news take is about the angle on the news, not a deep dive into the company. Save material gathering for if/when the creator wants to make a long-form review.
 
-## Mode 6: Client win → case study teaching arc
+## A client win
 
 ### Worked
 
@@ -247,9 +205,9 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Skill:** "Great. Let's capture James's full backstory. When did he start? What was his life like before? What was his job? What was his weight at start? What did he eat? Walk me through the first 4 weeks."
 
-**Why this fails:** the skill is making a James documentary. The video is a teaching piece with James as evidence. Capture proof in 60 seconds, then pivot HARD to the lesson.
+**Why this fails:** the skill is making a James documentary. The video is a teaching piece with James as evidence. Capture the proof fast, then pivot HARD to the lesson.
 
-## Mode 7: Story-first
+## A story that happened
 
 ### Worked
 
@@ -289,28 +247,15 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Why this fails:** asking for the lesson before the story is told means the creator either invents a fit or skips the actual emotion of the moment. Capture the story first. The lesson surfaces from the story, not the other way.
 
-## Common patterns across modes
+## What every run does the same
 
-Things every mode does the same way:
-
-1. **Route the mode silently.** Detect it and open the door in that mode's shape. The creator never hears a mode number. Surface the menu below only when you genuinely cannot tell.
-2. **Open the door, then shut up.** Whatever the dump shape is for that mode, give the creator space to land it without interrupting.
+1. **Open to match what they brought, silently.** Clock whether they are talking or pasting, and what kind of material it is, then open to fit. The creator never hears a category.
+2. **Open the door, then shut up.** Give the creator space to land the dump without interrupting.
 3. **Reflect back in the creator's own language.** Mirror what they said, do not paraphrase into your own words.
-4. **Run the iceberg fit check fast (10 seconds).** Surface the fit, creator confirms, move on.
+4. **Run the iceberg fit check fast.** Surface the fit, creator confirms, move on.
 5. **Drill ONLY where the material is thin.** Never run an exhaustive question battery.
 6. **Save with a clean confirmation.** "Saved to [path]. Run vid-framing next."
 
-## When you can't tell which mode
+## When you can't tell what they brought
 
-If the creator's opening message is ambiguous, surface a short menu:
-
-> "Quick check on what you're bringing. Pick one:
-> 1. An idea I want to think through
-> 2. Notes or bullets I have already
-> 3. A transcript I recorded (mine)
-> 4. A video / article / podcast I saw and want my own take on
-> 5. Fresh news I want to cover
-> 6. A client win I want to anchor a video around
-> 7. A story or moment I had"
-
-Wait for selection. Run the matching flow.
+If the opening message is ambiguous, ask once in plain language: is this an idea to talk through, notes or a transcript they already have, a client win, fresh news, or a story? Then open to match. No numbered menu, no category named back to them.

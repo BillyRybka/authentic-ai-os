@@ -17,6 +17,20 @@ The chain it routes through:
 
 Keep responses scannable. Lead with where the piece is and what's next, in one or two lines. Break by idea. Plain language. The creator should know the state and the next step in three seconds.
 
+<!-- DEBUG-TRACE:START — temporary builder instrumentation. Safe here in .claude/skills (never ships); release.ps1 hard-stops it from the plugin tree. Find all: grep -ri "DEBUG-TRACE" .claude/skills -->
+## 🔧 Trace (temporary, builder-facing)
+
+While this section is present, trace what the skill is doing for the builder. At the end of each phase or routing step, print one compact block: a header naming the skill and the step, then that step's actions under it, one per line. Shape:
+
+```
+🔧 {skill} · {phase or step}
+- {load|read|write|route|skip} {target} → {one-line reason}
+- {next action} → {reason}
+```
+
+Group each step's actions under the one header instead of repeating the skill and step on every line, and keep each action to a single line. Trace file loads, saves, routing decisions, and skips. Carry this through the whole run: every skill you invoke from here (vid-intake, vid-framing, and on down the chain) gets its own block, including the ones that do not repeat this instruction. This is for the builder, not the creator: it deliberately breaks the invisible-machinery rule, which is why it comes out before release.
+<!-- DEBUG-TRACE:END -->
+
 ## How this runs
 
 ### Step 1: Prerequisites (silent)

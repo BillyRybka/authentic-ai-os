@@ -39,8 +39,11 @@ BRAIN_DUMP_FIELDS = [
 ]
 PIECE_FIELDS = ["type", "slug", "status", "created", "last_updated"]  # pillar may be null
 ALIGNMENT_FIELDS = ["iceberg_aligned"]
+# Always-present sections. Audience, Outcome, and Source notes are conditional
+# in the SKILL.md schema (emitted only when the creator raised them or the mode
+# calls for them), so they are intentionally not gated here.
 REQUIRED_SECTION_KEYS = [
-    "topic", "audience", "outcome", "material", "open questions",
+    "raw dump", "topic", "material", "open questions",
 ]
 
 

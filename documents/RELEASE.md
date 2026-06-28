@@ -34,7 +34,7 @@ All editing happens on `dev`. Shipping skills live in `plugins/authentic-ai-os/s
 ### 2. Graduate a skill (when one becomes ready)
 
 1. Move the folder into the plugin: `.claude/skills/<skill>` (or `.claude/skills-wip/<skill>`) to `plugins/authentic-ai-os/skills/<skill>`.
-2. Strip dev-only files so they never reach clients: `DECISIONS.md`, `WORKING-NOTES.md`, `scripts/__pycache__/`, any dev-only README.
+2. Strip dev-only files so they never reach clients: `DECISIONS.md`, `WORKING-NOTES.md`, `scripts/__pycache__/`, any dev-only README. Also delete any `DEBUG-TRACE` blocks (temporary builder tracing); `release.ps1` hard-stops the release if any survive into the plugin tree.
 3. Convert the skill's `.md` files to LF (see the Cowork line-endings gotcha below).
 4. Add the update-check pre-flight blockquote after the frontmatter, matching the sibling skills.
 5. Keep the frontmatter `description` at 1024 characters or fewer (hard plugin-validator limit; see the gotcha below). `release.ps1` enforces it.
