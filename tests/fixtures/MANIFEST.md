@@ -55,7 +55,7 @@ input fixture for the vid-framing loop.
 
 | Boundary | Produced by | Date | Status |
 |---|---|---|---|
-| after-intake/{slug}/ | vid-intake | pending | freeze after the intake loop stabilizes |
+| after-intake/{slug}/ | vid-intake | 2026-06-29 | hand-authored to current vid-intake schema, 2026-06-29 |
 | after-framing/{slug}/ | vid-framing | pending | not yet reached (shared/Sam corpus) |
 | after-structure/{slug}/ | vid-structure | pending | not yet reached |
 

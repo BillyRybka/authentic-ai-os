@@ -405,7 +405,7 @@ tags: [piece, format-{slug}, pillar-{slug}, {other-tags}]
 ---
 ```
 
-Skills append their own fields and never overwrite another skill's: vid-framing adds `selected_angle`, `core_payoff`, `outlier_anchor`, `anchor_confidence`; vid-title adds `title`; vid-structure adds `tension_plan`; vid-intro adds `intro_locked` + the `intro_*` fields; vid-ending adds `ending_locked`, `next_video`, `cta_shape`; vid-pressure-test adds the `pressure_test_audit` block + `pressure_test_status`.
+Skills append their own fields and never overwrite another skill's: vid-framing adds `selected_angle`, `core_payoff`; vid-title adds `title`; vid-structure adds `tension_plan`; vid-intro adds `intro_locked` + the `intro_*` fields; vid-ending adds `ending_locked`, `next_video`, `cta_shape`; vid-pressure-test adds the `pressure_test_audit` block + `pressure_test_status`.
 
 #### Pipeline lifecycle
 

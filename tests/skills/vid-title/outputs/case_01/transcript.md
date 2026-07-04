@@ -1,105 +1,147 @@
 # Title Generation Transcript: claude-content-skills
 
-## Phase 1: Context, Lock List, and Claim (banks closed)
+## Phase 1: Viewer Mindset and Claim (banks closed)
 
-**Silent loads:** creator-foundation.md, packaging-system.md, piece.md (claude-content-skills), brain-dump.md. Banks NOT opened.
+Silent loads: creator-foundation.md, packaging-system.md, piece.md (claude-content-skills), brain-dump.md. Banks NOT opened.
 
-**Lock list (from brain-dump.md only):**
-- 7 (the exact number of skills; brain-dump notes "count is exactly 7, do not round or inflate")
+Lock list (from brain-dump.md only):
+- 7 (exact count; brain-dump notes "count is exactly 7, do not round or inflate")
 - Named: Claude, Cowork, Skills
 - Named jobs: brain-dump capture, title generation, thumbnail text
 - No employees / one person (the leverage frame)
 
-No dollar figures, time figures, or percentages in the lock list. Every candidate must stay within these.
+No dollar figures, time figures, or percentages in the lock list. Every candidate must stay within these specifics.
 
-**Iceberg filter read:** AI should enhance you, not replace you. Build systems, keep your voice at the center, compound over time. A 7-skill listicle that hands over the exact tools Billy runs on is the definition of this positioning.
+Iceberg read (creator-foundation.md): AI should enhance you, not replace you. Build content systems that compound. Keep your voice at the center. A 7-skill listicle that hands over the exact tools Billy runs solo on is the clearest expression of on-brand positioning in the vault.
 
-**Format:** Listicle. Natural BENS bias: E (numbered, digestible) + N (fresh tools, new system framing).
+Format: Listicle. BENS bias from piece.md: E (numbered, digestible) + N (fresh tools, new system framing).
 
-**Claim:**
-One person can run a full content operation solo. Not by working harder, but by having 7 specific Claude skills that each own one job. Most people think solo means lower output. The skills prove it does not.
+Avatar localized to this video: the solo creator or business owner who produces all content themselves, no team, constantly aware that channels with teams can outproduce them. Problem in play: content takes too much time (Top 3 problem 1 from creator-foundation.md).
 
-**Stake:** Without these skills you either hire a team you cannot afford or you stay stuck doing the slow, manual version of content work indefinitely.
+Viewer block:
+- Viewer: solo creator or business owner who makes all their own content with no team
+- Wants: a content team's output without hiring anyone or spending more hours
+- Fears: that they will always be slower and thinner than channels with real teams, and that keeping up means eventually hiring
+- Driver: identity. They want to be the person who runs a serious content operation solo. The proof that it is possible is what makes them click.
 
-**Belief it challenges:** Running a content operation solo means accepting lower output or burning more hours than a team would.
+Claim reasoning: the brain-dump gives the clearest raw line: "You do not need to hire a content team. You need the skills." That is a claim someone can disagree with (most people assume output at scale requires a team). The test passes. The claim is: you do not need a content team, you need 7 specific Claude skills. That claim hits the identity driver squarely.
 
-Banks still closed.
+Claim block:
+- Claim: you do not need a content team, you need 7 specific Claude skills
+- Stake: without these skills, you keep trading time for output, falling behind, and eventually hiring or quitting
+- Belief it challenges: that serious solo content output requires a team to sustain at any real quality or volume
 
----
-
-## Phase 2: Raw titles from the claim (banks still closed)
-
-Written to make the viewer FEEL the claim. Anti-fabrication: no numbers outside the lock list.
-
-1. "7 Claude Skills That Run My Whole Content Operation" -- mechanism frame
-2. "I Run a Content Team's Output Alone (7 Claude Skills)" -- solo-leverage, confession frame
-3. "No Employees, No Problem: 7 Claude Skills I Use Every Week" -- cost frame
-4. "7 Claude Content Skills (Steal Them)" -- generosity frame
-5. "How I Run My Entire Content Operation Solo with 7 Claude Skills" -- process frame
-6. "You Don't Need a Content Team. You Need These 7 Skills." -- correction frame
-7. "The 7 Claude Skills That Replaced My Content Team" -- revelation, mechanism frame
-8. "I Don't Have a Content Team. I Have These 7 Skills." -- identity/confession frame
+Banks still closed. Proceeding to Phase 2.
 
 ---
 
-## Phase 3: Bank open, lane grouping, gap analysis, craft cut
+## Phase 2: Raw Titles from the Claim (banks still closed)
 
-**Banks opened:** pattern-bank.md, title-bank.md, power-words-bank.md.
+Written cold from the claim, the stake, and the identity driver. Anti-fabrication enforced: no numbers outside the lock list.
 
-**Hard cuts before grouping:**
-- Title 5: "How I Run My Entire Content Operation Solo with 7 Claude Skills" -- 62 chars. Hard cut, over ceiling.
-- Title 6: "You Don't Need a Content Team. You Need These 7 Skills." -- 55 chars, at ceiling. Mid-title period is a soft flag and "These 7 Skills" reads as tag-on. Cut.
-- Title 3: "No Employees, No Problem: 7 Claude Skills I Use Every Week" -- colon flag, "I Use Every Week" is weak. Cut.
-- Title 8: "I Don't Have a Content Team. I Have These 7 Skills." -- 51 chars, mid-period smash, and on a new channel the "I Don't Have" credibility read is soft. Cut.
+Six emotional framings applied to the same claim:
 
-**Lane grouping:**
+1. Viewer's problem frame: "You Don't Need a Content Team. You Need 7 Claude Skills."
+2. Solo confession/proof frame: "I Run My Entire Content Operation Alone With 7 Claude Skills"
+3. Mechanism/replacement frame: "The 7 Claude Skills I Use to Replace a Content Team"
+4. Contrarian command frame: "Stop Hiring. These 7 Claude Skills Do It Solo"
+5. Past-proof/result frame: "7 Claude Skills That Replaced My Content Team"
+6. Identity challenge frame: "I Have No Content Team. Here Are the 7 Skills Why."
+7. Pure process frame: "How I Run a Full Content Operation With No Employees"
+8. Authority frame: "The 7 Claude Content Skills Every Solo Creator Needs"
 
-### Steal-These (steal-these, spread 2 of 11 -- underused)
-- "7 Claude Skills I Can't Live Without (steal them)" -- 50 chars. E+N. Exact count from lock list. "Claude" from lock list. "Can't Live Without" signals high-value repeated use. "steal them" is the generosity signal. At the 50-char target exactly.
-- "My 7 Claude Content Skills (steal them)" -- 40 chars. E+N. Shorter but drops "Can't Live Without" which carries the credibility of repeated real use. Weaker hook.
-On-brand: YES. Generosity frame is the whole positioning.
-proof: "15 Claude Cowork Skills I Can't Live Without (steal them)" (@brockmesarich, 9.5x)
+Emotional check (banks still closed):
+- Title 1: "You Don't Need... You Need..." presses the identity driver hard, opens a challenge. Passes.
+- Title 2: solo proof, names the scale ("entire content operation"), opens the "how?" loop. Passes.
+- Title 3: present-tense mechanism, "replace a content team" is a strong claim. Passes.
+- Title 4: contrarian command, "Stop Hiring" presses the implied next step the viewer is dreading. Passes.
+- Title 5: past-tense result, "replaced my content team" is the strongest claim form. Passes.
+- Title 6: "Here Are the 7 Skills Why" is awkward on read-aloud. Soft fail on read-aloud test.
+- Title 7: "How I Run" is a how-to frame, describes the video more than it claims something. Inert.
+- Title 8: "Every Solo Creator Needs" is a label. Fails claim gate.
 
-### Contrarian-Identity (contrarian-identity, spread 2 of 11 -- underused)
-- "Why You Don't Need a Content Team (7 Claude Skills)" -- 52 chars. N+E. Over target, under ceiling. The count is in the parenthetical, which is a soft flag (tag-on read). But it names the specific count so it passes unrepeatable test.
-- "Why Hiring a Content Team Is the Slow Way" -- 42 chars. N. No lock-list specific. "The Slow Way" is on-brand (system over shortcuts) but any video could paste this. Weak.
-On-brand: YES.
-proof: "Why Growing A Personal Brand Is An AWFUL Idea" (@ed-lawrence, 6.3x)
+Inert or failing: titles 6, 7, 8. Kept: 1, 2, 3, 4, 5 for Phase 3.
 
-### Contrarian-Correction (contrarian-correction, spread 5 of 11 -- crowded)
-- "DON'T Hire a Content Team, Use These 7 Skills" -- 46 chars. N+E. Crowded lane (5 of 11). Blends in.
-On-brand: YES, but the DON'T shape is the most crowded pattern in the set.
-proof: "DON'T Sell AI Agents, Sell AI Micro-Apps Instead!" (@duncanrogoff, 64.8x)
+---
 
-### Solo-Leverage (solo-leverage, spread 4 of 11 -- crowded threshold)
-- "I Run My Entire Content Operation Alone (7 Skills)" -- 51 chars. S+E. Over target. "I Run" on a new/growing channel has a credibility-mismatch soft flag.
-On-brand: YES, but crowded.
-proof: "I Built My Entire Content Team Inside Claude (No Employees)" (@thisisnickys, 4.8x)
+## Phase 3: Banks Open, Lane Grouping, Gap Analysis, Craft Cut
 
-### Speed-Mastery (speed-mastery, spread 5 of 11 -- crowded)
-- "Run a Content Team Solo With 7 Claude Skills" -- 45 chars. E+N. Clean and under target. But speed-mastery is the widest pattern in the entire set. Blends in most.
-On-brand: YES, but crowded.
-proof: "15 Claude Cowork Skills I Can't Live Without (steal them)" (@brockmesarich, 9.5x)
+Banks opened: pattern-bank.md, title-bank.md, power-words-bank.md.
 
-**Gap analysis:**
-- steal-these: spread 2 of 11, underused, on-brand. Opportunity.
-- contrarian-identity: spread 2 of 11, underused, on-brand. Second opportunity.
-- contrarian-correction: spread 5, crowded.
-- solo-leverage: spread 4, crowded threshold.
-- speed-mastery: spread 5, crowded.
+Hard char cut before lane grouping:
+- Title 1: 56 chars, over 55 ceiling. Not auto-discarded but needs a trim before locking. Flagged.
+- Title 2: 61 chars, over ceiling. Hard cut unless clearly strongest. Carry to the authority lane for reference but do not lock.
+- Title 3: 52 chars, within 51-55 allowed range. Flagged as over target, allowed.
+- Title 4: 46 chars. Clean.
+- Title 5: 46 chars. Clean.
 
-**Opportunity:** Steal-These. Spread 2 of 11, on-brand, and the generosity frame matches the video's premise exactly (the skills are literally being handed over). Contrarian-Identity also qualifies as underused but steal-these matches the tension more precisely.
+Lane mapping:
 
-**Craft gate pass on locked pick: "7 Claude Skills I Can't Live Without (steal them)"**
-- Claim, not label: YES. The title argues you can run an entire content operation solo with these 7. The brain fills in "what are they, I want them." Not just a description.
-- Lock-list only: YES. "7" from lock list. "Claude" from lock list. "Skills" from lock list.
-- Char count: 50. At the target exactly. Clean.
-- BENS: E (7 is digestible, a defined count, you know what you're getting) + N (fresh framing of a solo-content system, feels new because it is Billy's specific set not repackaged advice).
-- Read-aloud: one continuous thought. Passes.
-- Unrepeatable: "7 Claude Skills" names the exact count from this video's material. Cannot paste onto another video.
-- Thumbnail unit check: a listicle thumbnail will likely show "7" prominently. The number appears in both. For this format, the number is the organizing principle, so repetition is expected and acceptable. The thumbnail can layer in visual skill names or Billy's face for a different beat.
+Pattern bank spread reference:
+- solo-leverage: spread 4 of 11 channels. Below the 5+ crowded threshold. Underused.
+- contrarian-identity: spread 2 of 11. Underused.
+- contrarian-correction: spread 5 of 11. Crowded.
+- better-than-masses: spread 4 of 11. Borderline.
+- steal-these: spread 2 of 11. Underused.
+- speed-mastery: spread 5 of 11. Crowded.
 
-**Hard fabrication check:** "99%" and any time-saving figure were not generated in the divergent pass. Lock-list has no percentages. Clean.
+Title 5 "7 Claude Skills That Replaced My Content Team" -> solo-leverage
+Title 3 "The 7 Claude Skills I Use to Replace a Content Team" -> solo-leverage
+Title 1 "You Don't Need a Content Team. You Need 7 Claude Skills." -> contrarian-identity
+Title 4 "Stop Hiring. These 7 Claude Skills Do It Solo" -> contrarian-correction
+Title 2 "I Run My Entire Content Operation Alone With 7 Claude Skills" -> authority/solo-leverage (crowded variant)
+Title 8 "The 7 Claude Content Skills Every Solo Creator Needs" -> authority (but failed claim gate, cut)
 
-**Lock decision:**
-Opportunity lane is Steal-These (spread 2 of 11, underused, on-brand). The locked title is "7 Claude Skills I Can't Live Without (steal them)" -- 50 chars, E+N. Carries the exact count, the tool name, the generosity signal. Direct proof from Brock's identical shape at 9.5x confirms the pattern converts in this niche.
+Lane summary:
+- Solo Leverage (spread 4, underused, on-brand): titles 5, 3. Opportunity.
+- Contrarian Identity (spread 2, underused, on-brand): title 1 (needs trim). Second opportunity.
+- Contrarian Correction (spread 5, crowded, on-brand): title 4.
+- Authority (spread 4, crowded, on-brand): title 2 (over ceiling).
+
+Gap analysis: two opportunity lanes. Solo Leverage and Contrarian Identity are both on-brand and underused. Per the skill: prefer the one whose claim is sharpest for this specific video.
+
+Solo Leverage lane claim: "7 Claude Skills That Replaced My Content Team." The viewer's brain fills in: "wait, the skills literally replaced an entire team?" That is a point of view. Disagreeable (most think you need a real team). Sharp.
+
+Contrarian Identity lane claim: "You Don't Need a Content Team." Also disagreeable and strong. But it requires trimming from 56 chars (1 over ceiling) and the period smash-up is a soft flag. The Solo Leverage option delivers the same claim without the ceiling problem.
+
+Lead with Solo Leverage.
+
+Craft gates applied to Solo Leverage candidates:
+
+Candidate 1: "7 Claude Skills That Replaced My Content Team" (46 chars)
+- Gate 1, claim not label: YES. "Replaced my content team" is a point of view. Someone can disagree with it ("you still need humans for that"). Opens the loop.
+- Gate 2, touches the driver: YES. Presses the identity driver directly. "Replaced my content team" tells the viewer a solo person already did the thing they are trying to figure out how to do.
+- Lock-list only: YES. "7" from lock list. "Claude" from lock list. "Skills" from lock list. "Content team" from lock list (leverage frame in brain-dump.md).
+- Char: 46. Under 50 target. Clean.
+- BENS: B (bold claim: a team replaced by 7 skills). E (numbered, digestible count). N (fresh framing: skills as team replacement). B+E+N.
+- Read-aloud: "Seven Claude skills that replaced my content team." One continuous thought. Passes.
+- Unrepeatable: "7 Claude Skills" pins this to the exact count. Cannot paste onto another video.
+- Thumbnail unit: a listicle thumbnail will naturally show the numeral 7 prominently. The thumbnail can add Billy's face or the word "SOLO" or "NO TEAM" as a different beat. No echo conflict.
+
+Candidate 2: "The 7 Claude Skills I Use to Replace a Content Team" (52 chars)
+- Gate 1, claim not label: YES. Present-tense "use to replace" makes a claim.
+- Gate 2, touches the driver: YES. Same driver hit as candidate 1.
+- Char: 52. Over target (aim 50), within ceiling (55). Flagged allowed.
+- BENS: B+E+N. Same logic.
+- Read-aloud: passes.
+- Verdict: passes both gates but is a weaker second candidate. "That Replaced" (past tense) is a stronger claim than "I Use to Replace" (ongoing process). Carry as second option, but candidate 1 is the pick.
+
+Contrarian Identity lane: title 1 at 56 chars (1 over ceiling). Trim options:
+- "You Don't Need a Content Team (7 Claude Skills)" -> 48 chars. Parenthetical is tag-on type but it passes because the count is a lock-list specific. Both gates pass. Could be the pick if the contrarian-identity lane is preferred. Not the lead.
+
+Contrarian Correction lane: "Stop Hiring. These 7 Claude Skills Do It Solo" (46 chars)
+- Gate 1: "Stop Hiring" + "Claude Skills Do It Solo" is a claim. Passes.
+- Gate 2: "Stop Hiring" presses the identity driver (the viewer is considering hiring, this says stop). Passes.
+- Spread 5 of 11 = crowded. This lane blends in. Keep as secondary for safety, not the recommendation.
+
+Authority lane: "I Run My Entire Content Operation Alone With 7 Claude Skills" (61 chars). Over ceiling. Hard cut.
+
+Trim decision:
+- Solo Leverage: 2 candidates survive both gates. Candidate 1 (46 chars) is the lock. Candidate 2 (52 chars) carried as second option per the output contract.
+- Contrarian Identity: 1 candidate (over ceiling flag). Not the pick for this run.
+- Contrarian Correction: 1 candidate. Crowded lane. Secondary.
+- Authority: hard cut.
+
+No inert filler in the opportunity lane. Both Solo Leverage candidates make the claim and press the driver. The trim rule is satisfied: candidate 2 survives because it passes both gates with a different tense framing, not because it fills a slot.
+
+Lock: "7 Claude Skills That Replaced My Content Team" (solo-leverage, 46 chars, B+E+N).

@@ -10,7 +10,13 @@ every error-level check passes. Warnings are reported but never gate.
 Output contract (what the test runner writes for each case):
   outputs/case_NN/titles.md
     - YAML frontmatter: slug, locked_title, locked_bens, locked_lane
-    - ## Claim section (placed BEFORE ## Lanes): exactly three labeled lines:
+    - ## Viewer section (placed BEFORE ## Claim): exactly four labeled lines:
+        Viewer: <one phrase naming the specific avatar person who clicks this video>
+        Wants:  <the outcome they are chasing on this topic>
+        Fears:  <what is painful, stuck, or embarrassing for them right now>
+        Driver: <the single dominant emotion in play>
+      All four lines must be present and non-empty.
+    - ## Claim section (placed AFTER ## Viewer, BEFORE ## Lanes): exactly three labeled lines:
         Claim: <the disagreeable true thing the video argues>
         Stake: <what it costs the viewer to not get this>
         Belief: <what the avatar currently assumes that the claim cuts against>
@@ -33,7 +39,7 @@ Assertions (error level, gate):
   no_em_dash, no_banned_words, char_ceiling, bens_annotation_present,
   candidate_count, no_generic_opener, anti_fabrication, lane_diversity,
   opportunity_named, proof_attached, locked_title_valid, handoff,
-  claim_section_present
+  viewer_section_present, claim_section_present
 
 Warnings (reported only):
   char_target, no_aiisms, no_hedge_words
@@ -624,6 +630,55 @@ def check_handoff(fm, slug):
     return t.CheckResult("handoff", len(missing) == 0, "error", {"missing": missing})
 
 
+def check_viewer_section_present(body_text):
+    """
+    Error gate: titles.md must contain a '## Viewer' heading AND all four
+    required labels (Viewer:, Wants:, Fears:, Driver:) must be present and
+    non-empty.
+
+    This is a structural existence check only. It does NOT judge the quality
+    of the viewer analysis. It verifies that the section exists and that the
+    skill filled in all four fields before writing the Claim and titles.
+
+    Why this section: titles that are accurate but emotionally inert fail
+    because no driver was named before writing. Requiring the Viewer section
+    forces the skill to name the dominant emotion (Driver:) the titles must
+    press. An empty or missing label is the same failure as a missing section.
+
+    The four labels:
+      Viewer: who specifically clicks this video (the actual avatar, not "everyone")
+      Wants:  the outcome they are chasing on this topic
+      Fears:  what is painful, stuck, or embarrassing for them right now
+      Driver: the single dominant emotion in play (fear, frustration, hope,
+              aspiration, or identity)
+    """
+    # Check ## Viewer heading is present
+    if not re.search(r"^##\s+viewer\b", body_text, re.IGNORECASE | re.MULTILINE):
+        return t.CheckResult(
+            "viewer_section_present", False, "error",
+            ["## Viewer heading not found in titles.md body"]
+        )
+
+    failures = []
+
+    # Check each required label is present and non-empty
+    for label in ("Viewer", "Wants", "Fears", "Driver"):
+        pattern = re.compile(
+            r"^" + label + r":\s*(.+)", re.IGNORECASE | re.MULTILINE
+        )
+        m = pattern.search(body_text)
+        if not m:
+            failures.append(f"{label}: label missing or has no value")
+        else:
+            value = m.group(1).strip()
+            if not value:
+                failures.append(f"{label}: label present but value is empty")
+
+    return t.CheckResult(
+        "viewer_section_present", len(failures) == 0, "error", failures
+    )
+
+
 def check_claim_section_present(body_text):
     """
     Error gate: titles.md must contain a '## Claim' heading AND all three
@@ -700,6 +755,7 @@ def evaluate_case(slug, files, fixtures_root):
     results.append(check_proof_attached(lanes))
     results.append(check_locked_title_valid(locked_title, lanes))
     results.append(check_handoff(fm, slug))
+    results.append(check_viewer_section_present(body))
     results.append(check_claim_section_present(body))
 
     # Warning-level (reported, do not gate). Also scoped to title text only.
@@ -722,7 +778,7 @@ def main():
         "bens_annotation_present", "candidate_count", "no_generic_opener",
         "anti_fabrication", "lane_diversity", "opportunity_named",
         "proof_attached", "locked_title_valid", "handoff",
-        "claim_section_present",
+        "viewer_section_present", "claim_section_present",
     ]
     warn_assertions = ["char_target", "no_aiisms", "no_hedge_words"]
 

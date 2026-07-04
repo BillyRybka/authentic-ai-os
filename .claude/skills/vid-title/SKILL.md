@@ -50,7 +50,7 @@ This is computable, not a vibe, and it happens in Phase 3. Use this order:
 
 **This skill is a conversation, not a document.** Keep messages short. Do not paste bank contents into chat. The references are what you think with. The creator sees the lane groups and your recommendation.
 
-## Phase 1: Load context, build the lock list, find the claim
+## Phase 1: Get into the viewer's head, build the lock list, find the claim
 
 **Silent loads** (do NOT paste into chat):
 
@@ -63,17 +63,26 @@ This is computable, not a vibe, and it happens in Phase 3. Use this order:
 
 **Build the lock list.** Every verifiable specific in the material: numbers, dollar figures, percentages, timeframes, AND named methods, tools, products, frameworks, and people. Titles may use only what is on this list. If it is not in the material, it cannot go in a title.
 
-**Find the claim, not the topic.** Read the material and the locked angle from framing, then write three plain-English lines a person would say out loud:
+**Get into the viewer's head first.** Before the claim, inhabit the one person who clicks this specific video. This is silent reasoning from the avatar and Top 3 problems in `creator-foundation.md`, localized to THIS video's topic. Do not interrogate the creator. Write four plain lines:
 
-- **The claim:** the single most interesting true thing this video argues. The test is, can someone disagree with it? A fact nobody can argue ("scheduled agents dropped in Cowork") is a label, push past it. A point of view ("most people babysit AI that should run without them") is a claim, keep it.
+- **Viewer:** who specifically clicks this, in one phrase. Not "everyone", the actual person from the avatar.
+- **Wants:** the outcome they are chasing on this topic. What a win looks like to them.
+- **Fears or fights:** what is painful, stuck, or embarrassing for them right now. The thing they would not say out loud.
+- **The driver:** the single dominant emotion in play, the nerve. One of: a fear, a frustration, a hope, an aspiration, an identity they want to claim or shed.
+
+This is the mindset, and it is grounded in the foundation and the material, never invented. If you cannot name the driver, you do not understand the video yet. Slow down.
+
+**Find the claim that lands on the driver.** Now write three plain-English lines a person would say out loud:
+
+- **The claim:** the single most interesting true thing this video argues, aimed straight at the driver. The test is, can someone disagree with it? A fact nobody can argue ("scheduled agents dropped in Cowork") is a label, push past it. A point of view that presses the viewer's nerve ("most people babysit AI that should run without them") is a claim, keep it.
 - **The stake:** what it costs the viewer to not get this. The wound the claim presses on.
-- **The belief it challenges:** what the avatar currently does or assumes that the claim cuts against.
+- **The belief it challenges:** what the viewer currently does or assumes that the claim cuts against.
 
-These three lines are the seed for every title. Anti-fabrication holds: the claim traces to the material and the framing, it is never invented to sound bigger. If the material has no real claim, only a topic, kick it back to framing rather than dress up a description.
+The driver and the claim are the seed for every title. Anti-fabrication holds: both trace to the material and the foundation, never invented to sound bigger. If the material has no real claim, only a topic, kick it back to framing rather than dress up a description.
 
 ## Phase 2: Write titles from the claim (divergent, bank still closed)
 
-Write 6 to 8 raw titles that each make the viewer FEEL the claim. The bank stays closed. Generate cold, from the claim and the stake, in language the creator would say out loud.
+Write 6 to 8 raw titles that each make the viewer FEEL the claim and press the driver from Phase 1. The bank stays closed. Generate cold, from the claim, the stake, and the nerve, in language the creator would say out loud. If a title is accurate but would not make the viewer feel the want or fear you named, it is inert, throw it back.
 
 Vary the emotional framing, not the topic. The same claim can be felt as:
 - the viewer's problem ("You're still doing X")
@@ -99,6 +108,7 @@ Now load `pattern-bank.md`, `title-bank.md`, `power-words-bank.md`, and the BENS
 
 Then put every surviving title through the craft gates, in this order:
 - **Claim, not label (first gate):** read the title and ask what the viewer's brain fills in. If the answer is "nothing, it just says what the video is about," cut it. A title that only describes the topic is dead no matter how proven its pattern is.
+- **Touches the driver (second gate):** the title presses the viewer's dominant driver from Phase 1 (the want, the fear, the identity). A title can be accurate, short, and even make a small claim and still be emotionally inert, like "My 7 Claude Content Skills", which names the contents but touches no nerve. Cut the inert ones, including the tidy short ones. Brevity is not the goal. Hitting the nerve is.
 - Lock-list only (no fabrication)
 - Aim for 50 characters, 55 hard ceiling. Flag 51 to 55 as over target but allowed; cut over 55 unless it is clearly strongest, and say why
 - Hits at least one BENS letter (annotate which)
@@ -106,11 +116,11 @@ Then put every surviving title through the craft gates, in this order:
 - Carries a lock-list specific that makes it impossible to paste onto another video
 - **Title and thumbnail unit check:** prefer titles that leave the thumbnail room to add weight (a face, the number, a bold word) instead of saying the same thing the thumbnail will. If the title and the obvious thumbnail would be the same beat twice, sharpen one of them
 
-Trim each lane to its 1 to 2 strongest titles.
+Trim each lane to its 1 to 2 strongest titles. One is fine. Never keep a second candidate that fails the claim gate or the driver gate just to fill the slot, a shorter tidy variant is not a second option, it is filler. In the opportunity lane especially, every candidate that survives must pass both gates. A lane with one sharp title beats a lane with one sharp title and one label.
 
 ## Phase 4: Present, opportunity first
 
-Open with the claim in one line so the creator sees what every title is framing. Then lead with the opportunity lane, marked Recommended, with one or two sentences on why: it fits the positioning, the competitor set underuses it, and here is the proof. Then list the other lanes, each labeled crowded or underused and on-brand or off-brand, each with its proof. Be a creative partner with a point of view, not a stenographer.
+Open with the viewer's dominant driver and the claim, one line each, so the creator sees who every title is aimed at and what it argues. Then lead with the opportunity lane, marked Recommended, with one or two sentences on why: it fits the positioning, the competitor set underuses it, and here is the proof. Then list the other lanes, each labeled crowded or underused and on-brand or off-brand, each with its proof. Be a creative partner with a point of view, not a stenographer.
 
 Shape:
 
@@ -177,6 +187,7 @@ vid-title runs first, does not wait on the thumbnail, and does not write thumbna
 
 ## Principles
 
+- **Inhabit the viewer first.** Name who clicks this, what they want, what they fear, and the one driver underneath, before writing a single title. A title that presses no real want or fear is inert, however accurate or short.
 - **Claim, not label.** A title that only describes the topic is dead. Make a point someone could disagree with.
 - **Generate before you reference.** Write titles from the claim with the bank closed. Bring competitor data in only to pressure-test, never to seed.
 - **Differentiation over safety.** The widest-spread pattern is the crowded center. Lead with the on-brand angle the competitor set underuses.

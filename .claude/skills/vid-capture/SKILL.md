@@ -29,7 +29,7 @@ Bank entries in the creator's workspace, each following the vault-integration sc
 - `banks/metaphor-bank/{slug}.md`: metaphors tied to the concept they clarify
 - `banks/proof-bank/{slug}.md`: screenshots, numbers, results (optionally with asset files in `banks/proof-bank/assets/`)
 - `banks/testimonial-bank/{slug}.md`: verbatim client quotes with source tagging
-- `banks/framework-bank/{slug}.md`: named systems with components, shape, problem solved
+- `banks/frameworks/{slug}.md`: named systems with components, shape, problem solved
 - `people/{Full Name}.md`: auto-created stubs for any client mentioned
 
 The skill is looped. Capture one item, save it, loop back to the menu, capture another. End when the creator is done.
@@ -62,7 +62,7 @@ banks/metaphor-bank/                 (created if missing)
 banks/proof-bank/                    (created if missing)
 banks/proof-bank/assets/             (created if missing, for screenshots/videos)
 banks/testimonial-bank/              (created if missing)
-banks/framework-bank/                (created if missing)
+banks/frameworks/                (created if missing)
 people/                              (expected to exist, stubs created inside)
 ```
 
@@ -170,10 +170,10 @@ Stage F handles the LOG path: the creator already has a named system and wants t
 4. **Pick the shape.** Use the selection matrix in `framework-builder.md`. If components are sequential → arrows. Equal-and-stacking → pyramid. Looping → cycle. Overlapping → Venn. Broad-to-narrow → funnel. Share-a-letter → acronym. If the creator doesn't care about the shape, infer silently from the component relationships and confirm.
 5. **Set `themes`.** Tag the open angles this framework touches. The `problem_it_solves:` from step 2 is the framework's matching key; there is no fixed problem tag.
 6. **Propose a slug.** Lowercase, hyphenated, 3-6 words, descriptive (e.g., `3-part-onboarding-system`, `hire-or-automate-matrix`). Creator approves.
-7. **Dedup check.** Scan `banks/framework-bank/*.md` for matches on `name:` proximity, `components:` overlap, or `problem_it_solves:` overlap. If candidates found, show them and ask: update existing, save as new angle, or merge manually.
+7. **Dedup check.** Scan `banks/frameworks/*.md` for matches on `name:` proximity, `components:` overlap, or `problem_it_solves:` overlap. If candidates found, show them and ask: update existing, save as new angle, or merge manually.
 8. **Assemble the entry** using the schema in `framework-builder.md` "Entry schema + worked body example." Body follows: What problem does this solve? / The components / The shape / When to use it / Related assets / Origin. Fill frontmatter with `used_in: []` empty.
 9. **Read-aloud test on the NAME.** "Read the framework name out loud. Would you say this on camera without rewording it?" If they'd reword it, rename before saving. (The components and shape don't need a full read-aloud test; the name does.)
-10. **Save** to `banks/framework-bank/{slug}.md`.
+10. **Save** to `banks/frameworks/{slug}.md`.
 11. Loop back to the router (standalone mode) OR return the new entry's wikilink to the caller (sub-skill mode).
 
 **Sub-skill invocation pattern.** When vid-segment routes here after inline crafting, the caller passes a context packet like: `{name: "The 3-Part Onboarding System", components: [...], shape: "arrows", problem_solved: "...", themes: [onboarding, delegation]}`. Skip steps 1-4 (the caller already has the answers), go directly to step 5 (themes, if not already passed), step 6 (slug), step 7 (dedup), step 8 (assemble), step 9 (read-aloud on name), step 10 (save), step 11 (return wikilink).

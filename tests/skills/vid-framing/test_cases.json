@@ -1,0 +1,7 @@
+{
+  "skill": "vid-framing",
+  "corpus": "../../corpus/seeds.json",
+  "fixtures": "../../fixtures/shared",
+  "input_stage": "../../fixtures/stages/after-intake",
+  "note": "vid-framing is the second per-video step. Its input fixtures are the shared foundation + banks plus the frozen after-intake state for each seed (brain-dump.md + piece.md per slug). The after-intake stage folders live at tests/fixtures/stages/after-intake/{slug}/. The test runner drives the vid-framing skill once per seed with the creator-simulator playing Sam Rivera, loading the appropriate after-intake brain-dump.md and piece.md as the starting context. The runner writes each run to outputs/case_NN/ containing piece.md (the framing-appended version) and transcript.md. eval.py scores piece.md against the corpus and the after-intake source text; transcript.md is not scored for fabrication or brand rules because it legitimately echoes the creator's own words."
+}

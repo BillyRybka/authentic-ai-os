@@ -5,3 +5,5 @@
 - 2026-05-19T20:09:16.711Z | foundation/voice-profile.md:46 | "utilize" → "use"
 - 2026-06-16T17:10:40.306Z | tests/fixtures/shared/foundation/voice-profile.md:35 | "utilize" -> "use"
 - 2026-06-16T17:10:40.308Z | tests/fixtures/shared/foundation/voice-profile.md:50 | "utilize" -> "use"
+- 2026-06-29T17:51:06.218Z | documents/vid-framing-handoff.md:98 | "utilize" → "use"
+- 2026-06-29T17:51:06.221Z | documents/vid-framing-handoff.md:200 | "utilize" → "use"

@@ -9,7 +9,11 @@ requires the criterion to be clearly met, not arguably met.
 ## What you receive per case
 
 - `titles.md`, the note the skill produced: YAML frontmatter (slug,
-  locked_title, locked_bens, locked_lane), a `## Claim` section (placed before
+  locked_title, locked_bens, locked_lane), a `## Viewer` section (placed before
+  `## Claim`) with four labeled lines: `Viewer:` (the specific avatar person
+  who clicks this video), `Wants:` (the outcome they are chasing), `Fears:`
+  (what is painful or embarrassing for them right now), and `Driver:` (the
+  single dominant emotion in play), a `## Claim` section (placed before
   `## Lanes`) with three labeled lines: `Claim:` (the disagreeable true thing
   the video argues), `Stake:` (what it costs the viewer to not get this), and
   `Belief:` (what the avatar currently assumes that the claim cuts against), a
@@ -93,7 +97,44 @@ implied tension all score 0.
 
 ---
 
-### 2. reads_aloud_natural
+### 2. touches_emotional_driver [PRIMARY GATE]
+
+**What it measures:** The locked_title AND every candidate in the opportunity
+lane press the dominant DRIVER named in the `## Viewer` block. A title can be
+accurate and even make a small claim and still be emotionally inert relative to
+the driver; that fails this gate.
+
+**How to judge:** Read the `Driver:` line in the `## Viewer` section. Then read
+the locked title and the opportunity-lane candidates. Ask: would this title make
+the viewer feel that specific want or fear? If the title merely names the
+contents or topic with no emotional pull toward the driver, score 0. The test is
+not whether the title is clever or has some tension in the abstract. The test is
+whether it presses the specific driver the skill named.
+
+Anti-fabrication still holds: pressing the driver is never license to invent a
+specific.
+
+**Score 1 if:** The locked title and all opportunity-lane candidates clearly
+press the named driver. The viewer who carries that want, fear, or identity
+would feel pulled.
+
+**Score 0 if:** The locked title or any opportunity-lane candidate is emotionally
+inert relative to the driver. Accurate, maybe even technically a claim, but
+touches no nerve tied to the driver.
+
+**Calibration (case 01, claude-content-skills; driver is roughly the fear of
+needing a team you cannot afford, or the hope that one person can compete solo):**
+- Fail: "My 7 Claude Content Skills (steal them)" names the contents, presses
+  no nerve. The viewer who fears needing a team feels nothing. Inert.
+- Pass: "7 Claude Skills I Can't Live Without (steal them)" presses
+  indispensability and FOMO. "Can't live without" signals these are load-bearing,
+  pressing the driver that one person needs every edge they can get.
+- Pass: "Why You Don't Need a Content Team (7 Claude Skills)" hits the
+  team-you-cannot-afford fear directly. The driver is the headline.
+
+---
+
+### 3. reads_aloud_natural
 
 **What it measures:** Every candidate in the set reads as one continuous human
 thought said out loud, not as stitched fragments, invented compound nouns, or a
@@ -124,7 +165,7 @@ parenthetical tag-on that turns a flowing title into a stop-start structure
 
 ---
 
-### 3. bank_anchored
+### 4. bank_anchored
 
 **What it measures:** The majority of lane titles are visibly built from the
 creator's 9 named title-bank patterns, not from free-form invention. The skill's
@@ -159,7 +200,7 @@ pattern labels retrofitted after the fact.
 
 ---
 
-### 4. specific_unrepeatable
+### 5. specific_unrepeatable
 
 **What it measures:** The locked title carries at least one concrete specific
 from the case's lock list that makes it impossible to paste onto a different
@@ -199,7 +240,7 @@ list):**
 
 ---
 
-### 5. avatar_format_fit
+### 6. avatar_format_fit
 
 **What it measures:** The locked title hooks one of the avatar's Top-3 problems
 AND fits the case format's natural BENS bias. Both conditions must hold.
@@ -247,7 +288,7 @@ E with no N).
 
 ---
 
-### 6. set_diverse
+### 7. set_diverse
 
 **What it measures:** The lanes are genuinely different frames for the same
 video, not one idea relabeled across multiple headings. A diverse lane set gives
@@ -287,7 +328,7 @@ indistinguishable from a flat list of near-synonyms.
 
 ---
 
-### 7. fabrication_resistant
+### 8. fabrication_resistant
 
 **What it measures:** No candidate invents a number, name, tool, or claim
 absent from the lock list. For the adversarial News case this is the primary
@@ -328,7 +369,7 @@ the adversarial case has any digit in any candidate title.
 
 ---
 
-### 8. surfaces_differentiated_angle
+### 9. surfaces_differentiated_angle
 
 **What it measures:** The recommended opportunity lane is genuinely on-brand
 AND underused in the competitor set (low spread), not a relabeled safe or
@@ -375,7 +416,7 @@ competitor could run them without modification.
 
 ---
 
-### 9. competitor_proof_real
+### 10. competitor_proof_real
 
 **What it measures:** Each lane's `proof:` line traces to a real entry in
 `tests/fixtures/billy/banks/pattern-bank.md`. The title and channel cited in
@@ -427,6 +468,7 @@ Return JSON only:
       "slug": "client-340k-to-1-3m",
       "criteria": {
         "makes_a_claim": 1,
+        "touches_emotional_driver": 1,
         "reads_aloud_natural": 1,
         "bank_anchored": 1,
         "specific_unrepeatable": 1,
@@ -436,12 +478,13 @@ Return JSON only:
         "surfaces_differentiated_angle": 1,
         "competitor_proof_real": 1
       },
-      "passed": 9,
+      "passed": 10,
       "reasoning": "one or two sentences, concrete, cite the specific lane, candidate, or proof line that determined the score"
     }
   ],
   "criteria_pass_rate": {
     "makes_a_claim": 0.0,
+    "touches_emotional_driver": 0.0,
     "reads_aloud_natural": 0.0,
     "bank_anchored": 0.0,
     "specific_unrepeatable": 0.0,
@@ -455,13 +498,13 @@ Return JSON only:
 }
 ```
 
-`passed` is the count of criteria that scored 1 for that case (out of 9).
+`passed` is the count of criteria that scored 1 for that case (out of 10).
 
 `criteria_pass_rate` is the fraction of cases where each criterion scored 1
 (e.g. if 2 of 3 cases passed fabrication_resistant, that rate is 0.6667).
 
 `quality_score` is the total number of 1s across all scored cases divided by
-the total possible (cases_scored x 9). This is the single number the optimizer
+the total possible (cases_scored x 10). This is the single number the optimizer
 reads. A per-criterion pass rate below 0.67 tells the optimizer where to spend
 the next iteration.
 

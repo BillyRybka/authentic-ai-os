@@ -1,77 +1,52 @@
 ---
 type: asset-template
 loaded_by: vid-framing
-purpose: The frontmatter fields + body sections vid-framing APPENDS to content/pieces/{slug}/piece.md
+purpose: The frontmatter fields + body section vid-framing APPENDS to content/pieces/{slug}/piece.md
 ---
 
 # piece.md framing additions
 
-vid-framing does NOT create piece.md. The file already exists (created at piece-folder creation by vid-intake or whatever made the folder). vid-framing APPENDS framing decisions to the existing piece.md without overwriting lifecycle fields.
+vid-framing does NOT create piece.md. vid-intake created it. vid-framing appends its framing decisions to the existing file without touching another skill's fields.
 
 ## Frontmatter fields to add
 
-Insert these fields under the existing frontmatter (after lifecycle fields like `slug`, `pillar`, `created`). Do NOT touch fields written by other skills.
+Insert under the existing frontmatter (after the lifecycle fields `slug`, `pillar`, `created`, `status`). Do not touch fields owned by other skills.
 
 ```yaml
 # Written by vid-framing
-selected_angle: "{one-sentence angle in creator's voice}"
-core_payoff: "{what the viewer gets in one sentence}"
-format: case-study | short-process | deep-dive | listicle | roast | interview | news
-voice_context: youtube-script   # delivery medium for voice. Default youtube-script. Set to tutorial | shorts | newsletter | linkedin | twitter | podcast | casual | talk only if this piece is genuinely that medium. Orthogonal to format. Drives which foundation/reference-pieces/{voice_context}.md the writing skills load.
-goal: sales | email | views
-viewer_stage: cold | warm | hot
-outlier_anchor: "{outlier title} (@{channel}, {views})"   # null if experimental angle picked
-anchor_confidence: high | medium | low | experimental
+selected_angle: "{the picked angle, one sentence in the creator's voice}"
+core_payoff: "{what the viewer walks away able to do, one sentence}"
+format: short-process | case-study | roast | deep-dive | interview | news | listicle
+goal: sales | emails | views
+voice_context: youtube-script   # default. Set to another medium (tutorial | shorts | newsletter | linkedin | twitter | instagram | podcast | casual | talk) only if this piece genuinely is one. Drives which foundation/reference-pieces/{voice_context}.md the writing skills load.
 last_updated: {YYYY-MM-DD}
 ```
 
-vid-framing does not set a separate status. The piece stays `status: ideating` through packaging; vid-structure advances it to `drafting`. The orchestrator knows framing is done because `selected_angle` is now present.
+vid-framing does not set a status. The piece stays `status: ideating` until vid-structure moves it to `drafting`. The orchestrator knows framing is done because `selected_angle` is present.
 
-## Body sections to append
-
-Append these three sections to the body of piece.md. If piece.md already has content from earlier phases (idea description, intake notes), append AFTER existing content. Do not delete existing body.
+## Body section to append
 
 ```markdown
-## Selected Angle
-
-{the selected angle written out in full, 1-3 sentences. Specific, concrete, in the creator's voice.}
-
-## Why This Angle Lands
-
-- **Iceberg fit:** {how this angle sits inside the lane the creator serves. This is the only fit gate. Do not map to a Top 3 problem here; the writing skills pick the problem at write time.}
-- **Outlier evidence:** {specific anchor outlier title + channel + view count + DPV if known. For experimental angles, write "no anchor, creator gut pick" and one-line rationale.}
-- **Format fit:** {why {format} is right for this angle, pull from packaging-system rotation rationale}
-- **Goal fit:** {why {goal} is the right call given the angle and audience temperature}
-- **Temperature fit:** {predicted viewer_stage and the four-choice score that produced it}
-
 ## Considered + Dropped Angles
 
-> [!quote] Angle: {dropped angle 1}
-> Rationale: {one-line, usually "too broad", "didn't match brain-dump material", "wrong temperature for stated goal", "anchor confidence too low"}
-> Date: {YYYY-MM-DD}
-
-> [!quote] Angle: {dropped angle 2}
-> Rationale: {one-line}
-> Date: {YYYY-MM-DD}
-
-> [!quote] Angle: {dropped angle 3}
-> Rationale: {one-line}
+> [!quote] Angle: {dropped angle}
+> Why: {one line, e.g. "didn't match the brain-dump material", "wrong audience", "weaker than the pick"}
 > Date: {YYYY-MM-DD}
 ```
 
-The dropped angles are STICKY, future runs of vid-framing on this piece (re-framing) should NOT re-surface these dropped angles unless the creator explicitly asks.
+Sticky. A re-frame must not resurface these unless the creator asks.
 
 ## Append protocol
 
-1. Read existing piece.md frontmatter. Confirm `type: piece` and `slug` match.
-2. Insert framing frontmatter fields after the last lifecycle field. Preserve all existing fields untouched.
-3. Set `last_updated` to today's date.
-4. Append `## Selected Angle`, `## Why This Angle Lands`, `## Considered + Dropped Angles` to the body. If sections already exist (re-framing case), REPLACE them with the new content; keep the dropped angles section APPEND-ONLY (never delete previous drops).
+1. Read the existing piece.md frontmatter. Confirm `type: content-piece` and the `slug` match.
+2. Insert the framing frontmatter fields after the last lifecycle field. Preserve every existing field untouched.
+3. Set `last_updated` to today.
+4. Append `## Considered + Dropped Angles` to the body. On a re-frame, keep the section append-only (never delete previous drops).
 5. Write the file.
 
 ## Hard rules
 
-- Never overwrite frontmatter fields owned by other skills (see piece.md schema in build-plan.md for the ownership matrix).
+- Never overwrite frontmatter fields owned by other skills. The field-ownership map lives in `knowledge/vault-integration.md`.
 - Never delete previous "Considered + Dropped" entries. Append only.
-- Never write `outlier_anchor` as a fabricated outlier. If experimental, write `null`. Real anchors only.
-- Always set `last_updated` to today's date in YYYY-MM-DD format.
+- Never fabricate. The angle and payoff trace to the brain-dump and foundation; a gap is named, never invented.
+- Always set `last_updated` to today in YYYY-MM-DD.
