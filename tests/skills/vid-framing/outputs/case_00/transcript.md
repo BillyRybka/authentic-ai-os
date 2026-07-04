@@ -2,61 +2,61 @@
 type: framing-transcript
 slug: systems-beat-hustle
 skill: vid-framing
-date: 2026-07-01
+date: 2026-07-04
 ---
 
 # Framing Conversation Transcript: systems-beat-hustle
 
 ---
 
-**SKILL:** I read the brain-dump. Before I build anything, let me reflect back what I think this video is really for.
+**SKILL:** I read the brain-dump. Before anything gets built, let me reflect back what I think this video is really for.
 
-The viewer is a solo service owner grinding every week. Not someone who is lazy. Someone who is proud of the work ethic and exhausted from it. They believe the answer to being slammed is to push harder, wake up earlier, take on more. That belief is what keeps them stuck. The main problem is not a lack of hours. It is that they are pouring effort into a business that has no system underneath it, so the effort does not compound.
+The one viewer who clicks this is a solo service owner, agency or consultant, ten to forty thousand a month. They are not lazy. They are proud of the work ethic. They believe the answer to being slammed is to push harder, wake up earlier, grind through it. That belief is what keeps them exactly where they are.
 
-The transformation: they realize the hustle is the trap, not the solution. The goal is not to do more, it is to build the thing that does it for them.
+Main problem: they are pouring effort into a business with no system underneath it. The hours accumulate, the business doesn't grow.
 
-Core payoff: they leave the video with one concrete action. Pick one repeatable task this week and write the steps down so someone else can run it.
+Transformation: they realize the hustle is not the solution. It is the symptom. The goal is not to do more, it is to build the thing that does the work for them.
 
-Is that the video, or is there something to sharpen?
+Core payoff: pick one repeatable task this week, write the steps down, and hand it off.
 
----
-
-**SAM:** Yeah, that is the video. I would add one thing though. The cost wasn't just the hours. The business stayed the same while making me a worse overall person. That part matters.
+Is that the video, or do you want to sharpen the problem or the transformation?
 
 ---
 
-**SKILL:** Good sharpening. The hustle cost more than time. Two years of 80-hour weeks and the business did not grow and you came out worse for it. That goes in the angle.
+**SAM:** Yeah, that is the video.
 
-Pulling the pattern bank and reframe toolkit now.
+---
 
-The bank has a grounded directional signal: the anti-grind framing consistently outperforms tactical how-to on this channel. Strongest performers in the niche name the trap the viewer is proud of (hustle, being indispensable) before offering the fix. No single named outlier with a view count here, but it is consistent directional signal across the channel's own data.
+**SKILL:** Good. Now let's find the angle.
 
-You also have real material. Marcus cut his onboarding from 5 hours to 1 hour by writing the steps down and handing them off. That is in the proof bank. And you have the restaurant kitchen metaphor, which is yours: a good kitchen runs because every station knows its job, not because the chef is faster than everyone else.
+I pulled the pattern bank and the reframe toolkit. Here is what I have.
 
-Here are the angles:
+The bank has directional signal: the anti-grind framing consistently outperforms tactical how-to on this channel. The strongest performers in the niche name the trap the viewer is proud of, the hustle, the being-indispensable, before offering the fix. That backs a contrarian flip here. No single named outlier with a view count in the bank, but it is consistent directional signal from your own channel data.
 
-**Angle A (contrarian flip plus named problem, grounded in the anti-grind pattern):**
-"You don't have a time problem, you have a systems problem."
-This names the trap first (hustle, the thing they are proud of), flips the diagnosis, and reframes the whole problem. BENS: strong N because it repositions the problem the viewer thought they understood. Strong B because it means the last two years of effort was aimed at the wrong thing. Backed by the personal story (80-hour weeks, no growth, personal cost), Marcus as proof, and the kitchen metaphor inside the body. The bank confirms trap-naming outperforms tactical how-to for this audience.
+You also have real material to land the angle. Your own 80-hour-week story, Marcus cutting onboarding from 5 hours to 1 hour by writing the steps down (proof-bank/onboarding-5h-to-1h), and the restaurant kitchen metaphor (metaphor-bank/restaurant-kitchen-systems).
 
-**Angle B (creator's story as the frame):**
-"I worked 80-hour weeks for two years and my business didn't grow. Here's what actually changed."
-Opens on Sam's personal stakes. The pain is the hook, the onboarding system is the reveal. BENS: solid S (specific time frame, real story), decent N through the specificity of the cost. Weaker than A on N because the "tried harder and it didn't work" arc is familiar without the sharper diagnosis. Works better on a bigger channel where Sam's name carries the click.
+Three angles:
 
-**Gut pick (no bank pattern behind it):**
-"If the chef leaving breaks your business, you don't have a business, you have a job." Built entirely around the restaurant kitchen metaphor. Strong for a thumbnail or a chapter header. No data behind it as a standalone angle for the video. Flagged as the gut pick.
+**Angle A: Contrarian flip, grounded in the anti-grind pattern.**
+You don't have a time problem. You have a systems problem. This names the trap the viewer is proud of and flips the diagnosis. BENS: strong N because it repositions a problem they thought they understood. Strong B because two years of effort aimed at the wrong thing is a big claim that holds. The personal story opens the dismantling, Marcus is the proof, the kitchen metaphor is the picture inside the body. Bank confirms the trap-naming approach works for this audience.
 
-Point of view: Angle A is the strongest for this audience and this goal. The diagnosis flip (not a time problem, a systems problem) is what makes it feel new. Angle B is real but leans on creator credibility a cold audience does not give yet. The gut pick is better as a visual or chapter hook inside the body.
+**Angle B: Creator's story as the lead frame.**
+"I worked 80-hour weeks for two years and my business didn't grow. Here's what actually changed." Opens on personal stakes. Pain is the hook, the onboarding system is the reveal. Solid S from the specific time frame. Weaker on N because the "tried harder and it didn't work" arc is familiar without the sharper diagnosis. Also leans on creator credibility a cold audience hasn't given yet.
+
+**Gut pick (no bank pattern):**
+"If the chef leaving breaks your kitchen, you don't have a kitchen, you have a one-person show." Built around the restaurant kitchen metaphor as the primary frame. Strong as a visual element or chapter hook inside the body. No outlier data behind it as the lead angle. Flagging it as the gut pick.
+
+Point of view: Angle A is the strongest for this audience. The diagnosis flip is where the N lives. The bank points here, the material backs it, and it works for a cold audience without relying on creator credibility.
 
 Which one do you want to go with?
 
 ---
 
-**SAM:** I want to go with Angle A. "You don't have a time problem, you have a systems problem" is exactly how I say it. That is the video.
+**SAM:** I want to go with Angle A. "You don't have a time problem, you have a systems problem" is exactly how I say it.
 
 ---
 
-**SKILL:** Good. What is the goal for this one? Sales, emails, or views?
+**SKILL:** Good. What is the goal for this video? Sales, emails, or views?
 
 ---
 
@@ -66,22 +66,20 @@ Which one do you want to go with?
 
 **SKILL:** Views. Now the format.
 
-The frame discredits the old way (hustle, effort as the answer) at length and proves a new one (systems as the fix). That maps directly to deep-dive. Score: Views 4, Sales 5, Trust 5. For a cold audience with a views goal, deep-dive earns trust that converts later, and the belief-shift premise sustains the runtime. The material backs it: personal story, Marcus proof, restaurant kitchen metaphor. Enough to go deep and deliver.
+The frame discredits the old way (hustle, more effort) at length and proves a new one (the system is what was missing). That is a deep-dive shape: dismantle the old belief, prove the alternative with evidence woven through. Format scores Views 4, Sales 5, Trust 5. For a cold views goal, deep-dive earns trust that converts later, and the belief-shift premise sustains the runtime. Your story, Marcus's proof, and the kitchen metaphor give you enough to go deep and deliver.
 
 Does deep-dive work, or do you want a different format?
 
 ---
 
-**SAM:** Deep-dive works.
+**SAM:** Deep-dive fits.
 
 ---
 
-**SKILL:** Locked.
+**SKILL:** Locked. Dropping the other angles before saving.
 
-Dropping the other angles:
-
-- **Angle B (creator's story as the lead frame):** Same material, weaker N. Opens on personal story without the sharper diagnosis. For a cold audience, the diagnosis flip carries better than the personal stakes hook.
-- **Gut pick (restaurant kitchen as standalone angle):** No pattern behind it. Better as a visual element inside the body, not the primary frame.
+- Angle B (creator's story as the lead frame): same material, weaker N for a cold audience. The personal story without the sharper diagnosis leans on credibility that isn't there yet.
+- Gut pick (kitchen metaphor as the primary frame): no bank pattern behind it. Better as a visual or chapter hook inside the body than as the lead angle.
 
 Does that work?
 
@@ -91,12 +89,10 @@ Does that work?
 
 ---
 
-**SKILL:** Done. Writing to piece.md.
+**SKILL:** Writing to piece.md now. Handing off to vid-title.
 
-Locked framing:
-- **Angle:** You don't have a time problem, you have a systems problem, and there's one move that fixes it.
-- **Core payoff:** Pick one repeatable task this week, write the steps down, and hand it off.
-- **Format:** deep-dive
-- **Goal:** views
-
-Handing off to vid-title.
+Locked:
+- Angle: You don't have a time problem, you have a systems problem.
+- Core payoff: Pick one repeatable task this week, write the steps down, and hand it off.
+- Format: deep-dive
+- Goal: views

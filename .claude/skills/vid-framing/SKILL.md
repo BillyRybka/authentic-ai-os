@@ -39,22 +39,22 @@ Re-frame: if piece.md already has a `selected_angle`, ask whether to re-frame fr
 ## Rules (and why)
 
 - **Psychology first, evidence second.** The angle comes out of understanding the person. The pattern bank shapes and grounds it; it does not generate it. An angle pulled from a bank with no viewer behind it is the generic AI angle this brand is built against.
-- **The frame, not the facts.** The angle makes a known idea feel new. If it only restates the topic, it is a label. The reframe toolkit and the BENS N-test are how you get there.
+- **The frame, not the facts.** The angle makes a known idea feel new. If it only restates the topic, it is a label. The reframe toolkit and the BENS N-test are how you get there. The frame is the idea, not the title; vid-title turns it into the click. Do not force it into a headline here.
 - **Confirm before building.** The creator says yes to the problem and the transformation before any angle is shaped. It stops a whole session aimed at the wrong video.
 - **Anchored beats invented.** An angle backed by a real pattern is a hypothesis, not a guess. But never invent the pattern to make the angle sound bigger.
-- **Anti-fabrication.** No invented outliers, numbers, results, or bank entries. A gap is named, never filled with a guess.
+- **Anti-fabrication.** No invented outliers, numbers, results, or bank entries. A gap is named, never filled with a guess. A withheld proof point becomes a one-line TODO in the body, never a number in the angle.
 - **Creator picks.** You surface the read and the angles with a point of view. The creator decides. "Does this fit MY audience" is theirs to answer.
 - **Drop nothing silently.** Every dropped angle gets a one-line reason in piece.md, sticky across re-frames, so the same rejected angle never comes back.
 - **No em-dashes, no corporate filler.** Commas, periods, parentheses, never an em-dash. And keep the brand's banned words out of every line, including the dropped angles: leverage, optimize, unlock, unleash, utilize, supercharge, empower, methodology, streamline. Every save passes a Vale check.
-- **Read aloud.** If the creator would reword the angle saying it out loud, it is wrong.
+- **Read aloud, second person.** If the creator would reword the angle or the payoff saying it out loud, it is wrong. The core payoff is spoken straight to the viewer ("pick the one task only you can do this week and write the steps down"), never a description of them ("the viewer picks a task").
 
 ## Output: piece.md
 
 vid-framing appends to the existing piece.md (created by vid-intake). It never overwrites another skill's fields; the field-ownership map lives in `knowledge/vault-integration.md`.
 
 Frontmatter:
-- `selected_angle` the picked angle, one sentence in the creator's voice
-- `core_payoff` what the viewer walks away able to do, one sentence
+- `selected_angle` the picked angle, one clean sentence a person would say out loud, in the creator's voice. No explanation clause, no colon-and-summary, no TODO text inside it. If proof is missing, the angle stays clean and the gap goes in the body.
+- `core_payoff` the one move the viewer should make, written as a direct instruction spoken to them (second person), like "pick the one task only you can do this week and write down every step." Never "the viewer does X."
 - `format` short-process | case-study | roast | deep-dive | interview | news | listicle
 - `goal` sales | emails | views
 - `voice_context` default `youtube-script`; set to another medium (tutorial, shorts, newsletter, ...) only if this piece genuinely is one. Drives which `foundation/reference-pieces/{voice_context}.md` the writing skills load
@@ -62,6 +62,7 @@ Frontmatter:
 
 Body:
 - `## Considered + Dropped Angles` one line each (angle + why), append-only, sticky across re-frames
+- Any withheld proof or unresolved gap gets a one-line `> [!todo]` in the body, kept out of `selected_angle` and `core_payoff`, so the gap is flagged without polluting the locked lines
 
 Then confirm in one line (angle, format, goal) and point to vid-title.
 

@@ -49,18 +49,24 @@ transcript: was the confirm gate real or skipped?
 
 ### 2. angle_quality
 
-**What it measures:** Is `selected_angle` sharp and specific, does it deliver
-the `core_payoff` confirmed in the viewer read, and does it press the tension
-in the main problem? Generic angles ("how to be more productive") score 1
-regardless of how well they are written. Specificity and tension are the test.
+**What it measures:** Does `selected_angle` make the known idea feel new? The
+frame is the IDEA behind the video, not the clickable hook. Scoring a frame as
+if it were a headline, or penalizing it for not "signaling why someone clicks,"
+is wrong. That is vid-title's job. Score only whether the frame is a real
+reframe (a fresh comparison or metaphor, a contrarian flip, a named system, a
+visual framework, the creator's own story), specific to THIS creator's material
+and THIS viewer's problem, pressing the confirmed tension, and expressible as
+one clean idea a person would say out loud. A sharp, specific, feel-new idea in
+the creator's plain spoken voice is a 5 even if it is not packaged as a title. A
+generic restatement of the topic is a 1 regardless of how it is worded.
 
 | Score | Description | Example |
 |-------|-------------|---------|
-| 1 | The angle is generic, could belong to any video on this topic, or does not connect to the named core payoff. | "Why Systems Beat Hustle (And What To Do Instead)" |
-| 2 | The angle names the topic and hints at tension, but does not press the specific problem or payoff the viewer read named. | "Your Systems Are Not Working (Here Is Why)" |
-| 3 | The angle is specific to the seed's material, names real tension, but either the payoff connection is loose or the wording is still broad enough to fit multiple different videos. | "Stop Planning Harder When Your System Fights Your Brain" |
-| 4 | The angle is specific to this creator's material and this viewer's problem, presses the exact tension named in the viewer read, and points toward the confirmed payoff. Reads like one video, not a category. | "The Real Reason Your Onboarding Still Lives In Your Head (And It Is Not Trust)" |
-| 5 | All of 4, and the angle sounds like the creator talking (passes the read-aloud test against the reference pieces). No viewer who clicks it could doubt what the transformation is. | "You Are Not the Bottleneck. The Missing Document Is." with core_payoff "pick the one task only you can do and write the steps so it is no longer only you" |
+| 1 | Restates the topic with no reframe. Could be the subtitle of any video in the category. Does not connect to the confirmed core payoff. | "why systems beat hustle" (just names the category) |
+| 2 | Hints at a reframe but stays in category language. The known idea does not feel new; swap the creator's name for any other creator and nothing changes. | "your hustle habit is actually a systems problem" (names the flip but does not land it specifically) |
+| 3 | A real reframe is present, but it is still broad enough to belong to several different videos, or the connection to the confirmed tension and payoff is loose. One tighter detail would lock it. | "your brain is not broken, your system is designed for someone else's brain" (feel-new, but not yet anchored to this creator's specific material or viewer) |
+| 4 | The reframe is specific to this creator's material and this viewer's confirmed problem. Makes the known idea feel new. Presses the exact tension the viewer read named. Points toward the confirmed payoff. Reads like one video, not a category. | "the system kept failing because it was built for a 40-hour week and yours is 22" (fresh comparison, locked to this creator's data, one video only) |
+| 5 | All of 4, and the frame is expressed as one clean idea a person would say out loud. No headline packaging required. The reframe is so specific that restating the topic now sounds obviously wrong. | "every system you have tried was designed for someone who does not have kids at home" (spoken plain, feel-new, specific, one clean idea, passes read-aloud without needing a title wrapper) |
 
 ### 3. grounding_honesty
 

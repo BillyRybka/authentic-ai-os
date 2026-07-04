@@ -2,7 +2,7 @@
 type: framing-transcript
 slug: tempting-numbers-client-story
 skill: vid-framing
-date: 2026-07-01
+date: 2026-07-04
 ---
 
 # Framing Conversation: tempting-numbers-client-story
@@ -11,78 +11,97 @@ date: 2026-07-01
 
 **SKILL:** I read the brain-dump. Here is my read on the viewer before I build anything.
 
-The one person clicking this is a solo service owner doing solid revenue but still slammed. They're watching because a coaching business grew fast and they want to know how. The problem they're actually stuck on: they believe growth is a function of the right tactic, the right marketing push, the right channel. They have never seriously considered that an operational system could be the thing that moved the needle.
+The one person clicking this is a solo service owner doing ten to forty thousand a month. They have seen results before. The problem they are actually stuck on: when the business moved, they credited luck, hustle, or raw skill. They do not see that the boring, documented system they built is what did the work. The system is invisible when it works.
 
-The transformation: they watch a real client story and see that the growth came from the boring work. Documented onboarding plus a weekly review. Not a growth hack.
+The transformation: they watch a real client story and see that the growth came from the boring system, not from a growth hack or personal talent.
 
-Core payoff: they walk away with one concrete system to build first, the thing currently living only in their head.
+Core payoff: look back at one result you got and trace it to the system behind it, not the grind in front of it.
 
 Is that the video, or do you want to sharpen the problem or the transformation?
 
 ---
 
-**SAM:** Yeah, that is the video. Jordan thought they needed more marketing too. That's actually part of the story. They came in expecting that, and what moved the needle was the system instead.
+**SAM:** Mostly right, but the tension is a little different. They are not really hunting for a hack out there. They already ran the systems play. They built the documented onboarding, the weekly review. But when they saw results, their brain said "this moved because I got lucky" or "I am just good at this." They do not credit the system. The video is really about that blind spot: the growth came from the boring system and they still do not believe it.
 
 ---
 
-**SKILL:** Good, that sharpens it. The mismatch between what Jordan expected and what actually worked is a real story beat. I'll carry that into the angle.
+**SKILL:** Got it. Sharper version:
 
-One note before I build: the brain-dump flags that the exact numbers are not captured yet and Jordan has no story or proof bank entry. I am not going to invent a revenue figure or a multiple. The angle will stay qualitative and the proof goes in as a TODO for when you pull the screenshot. That stays the case regardless of what angles we look at.
+The viewer is a service owner who has already done some of the systems work. They got results. But they are attributing it to luck, hustle, or raw skill, not to the documented process. The main problem: they cannot see their own system working because the system is invisible when it works.
 
-Now hunting the angle.
+The transformation: they recognize that the boring, repeatable thing they built is what actually moved the result, not a growth hack or personal talent.
 
-The material leans toward the creator's own story move: a client story as the frame, the lesson inside it. That is the natural shape for a case study.
+Core payoff: look back at one result you got and trace it to the system behind it, not the grind in front of it.
 
-Pulling the pattern bank. The bank has two signals that are useful here:
+Is that the video?
 
-First: personal-stakes and client-story opens outperform listicles in this niche. Story-first is the proven open pattern. No named outlier with a view count for a case-study at this specific angle. The bank is thin for this topic, so I'll name the directional signal and not fabricate a specific pull.
+---
 
-Second: the strongest performers name the trap the viewer is proud of before offering the fix. Jordan came in wanting a marketing push, which is the trap this audience is proud of. That maps directly.
+**SAM:** Yeah, that is the video.
+
+---
+
+**SKILL:** Good. Now angles. Let me look at what we have to work with.
+
+The material: Jordan, a coaching business, built out the documented onboarding plus a weekly review. Business grew. The result is real but the exact proof numbers are not captured yet. What the brain-dump gives us: the story itself, and the framing idea that the growth came from the boring system, not from a growth hack.
+
+One ground rule before I build: the brain-dump is explicit that the exact numbers are not captured and Jordan has no story or proof bank entry yet. I will not invent a revenue figure or a multiple. The angle stays qualitative and the proof goes in as a TODO.
+
+Pulling the pattern bank. Two signals:
+
+First: personal-stakes and story-first opens outperform listicles in this niche. The bank names this as a directional pattern. No named outlier with a view count for a case-study at this specific angle, so I will name the directional signal and not fabricate a specific pull.
+
+Second: the strongest performers name the trap the viewer is proud of before offering the fix. The blind-spot credit flip fits this shape: the viewer is proud of their hustle or skill, and the video cuts to show the system was the actual driver.
 
 Here are two angles:
 
-**Angle A: Story-first case study (gut pick, directional bank signal behind the open pattern, no named outlier)**
-Lead with Jordan. The coaching business that grew fast because of two boring things: a documented onboarding and a weekly review. The framing tension is between what Jordan expected (a marketing push) and what actually worked (the boring system). No numbers in the angle. Proof is TODO. BENS read: N is strong (boring system as growth driver feels genuinely new to this audience), B is present (the growth implication), S is softer without the number but the real client story carries it. This is the natural case-study pick.
+**Angle A: Creator's own story / client transformation.**
+Lead with Jordan. A coaching business that built a documented onboarding plus a weekly review and grew. The reframe: the credit-flip. They did not grow because of hustle or talent. They grew because of two boring things they almost ignored. No number in the angle. BENS read: N is strong (the blind-spot frame is not the usual "build systems" angle), B is present (coaching business growth implied), E is high (if Jordan can do it, you can do it on purpose). Grounded in the material and the channel's known story-open pattern. No named bank outlier for Jordan; that entry has not been captured yet, so this is partial ground, not a hard pattern pull.
 
-**Angle B: Contrarian flip, then Jordan as evidence**
-Open with the idea: "The thing that grew my client's coaching business was not marketing. It was boring." Walk the principle, then bring Jordan in as the proof. Same system, same payoff, but the opening is conceptual and Jordan becomes the example rather than the lead character. Format: case-study.
+**Angle B: Named system / contrarian flip. Gut pick.**
+"The boring system is the growth hack." Contrarian open: everyone is hunting for the trick; the trick is the thing you already built and dismissed. BENS: N is high, B is high. No specific bank outlier, flagged as the gut pick. Risk: without Jordan's proof numbers, this angle has to deliver on the idea alone. Conceptually strong but thinner on evidence.
 
-For a hot audience and a case-study format, Angle A is the stronger pick. Leading with the client story hits harder for people already close to buying. Angle B works better for cold audiences who need the idea first.
+The bank favors story-opens for this audience. Angle A rides that. Angle B is the better fit for cold audiences who need the concept first. For a hot audience, the story lands harder.
 
-Which one do you want?
-
----
-
-**SAM:** Angle A. Jordan story first. And I genuinely do not remember the exact numbers. Do not invent a revenue figure or a multiple. Mark the proof as a TODO so I can pull the real screenshot later. Do not link a story or proof bank entry for Jordan, I have not captured one yet.
+Which one pulls you?
 
 ---
 
-**SKILL:** Confirmed. No number invented, no bank link for Jordan, proof is TODO. The angle and everything downstream will stay qualitative until you pull the screenshot.
+**SAM:** I want to go with Angle A. The Jordan story is the thing. The credit-flip is the teaching point.
 
-What is the goal for this video? Sales, emails, or views?
-
----
-
-**SAM:** Sales. These people are close.
+One thing though: do not put a number in the angle. I do not have the exact proof yet. Mark that as a TODO and I will pull the real screenshot later.
 
 ---
 
-**SKILL:** Sales it is. The case-study format scores 5/5 on both Sales and Trust in the format index. That is the right call for a hot audience where the client story is meant to close, not just build awareness.
+**SKILL:** Locked. Angle A, no number in the angle. The proof gap gets a TODO in the body.
 
-Locking the format: case-study.
+Now the format. This material is a client transformation told as a story. That is a case study. The format index gives case-study a 5/5/5 on Views, Sales, and Trust. Your audience is hot, so sales is the natural goal.
 
-Dropping Angle B: principle-first opening is better suited to cold or warm audiences. For a hot audience, leading with the story lands harder and moves faster than a conceptual open.
+What is the goal for this one: sales, emails, or views?
 
-Let me confirm the locked fields before writing:
+---
 
-- **Selected angle:** My client came in wanting a marketing push. What grew their coaching business was two boring things: a documented onboarding and a weekly review.
-- **Core payoff:** The viewer sees that the boring system is the play and walks away knowing the one process to document first.
-- **Format:** case-study
-- **Goal:** sales
-- **Voice context:** youtube-script
-- **Proof:** TODO, to be filled when you pull the screenshot. No number, no multiple, no bank entry for Jordan.
+**SAM:** Sales. These people are ready.
 
-Writing to piece.md now. Pointing to vid-title next.
+---
+
+**SKILL:** Sales it is. Case-study at 5/5 on Sales and Trust is the right call for a hot audience where the story is meant to close, not just build awareness. Format confirmed: case-study.
+
+Dropping Angle B: works conceptually but thinner without the proof numbers, and Angle A is the stronger story pick for a case-study frame.
+
+Locking:
+
+- selected_angle: "My client Jordan grew their coaching business, and neither of us realized at the time that the system we built was why."
+- core_payoff: "Look back at one result you got and trace it to the system behind it, not the grind in front of it."
+- format: case-study
+- goal: sales
+- voice_context: youtube-script
+
+Proof gap flagged as a TODO in the body. Writing to piece.md now. Pointing to vid-title next.
+
+---
+
+**SAM:** Go ahead.
 
 ---
 
