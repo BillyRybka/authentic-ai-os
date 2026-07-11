@@ -93,6 +93,14 @@ The last pass was making whatever survived read like a person talking instead of
 
 **How to apply:** When you see a pile of variations, ask "do these actually end somewhere different, or do they all lead to the same place?" Same place means it is one thing in a costume, so cut it down. Before you cut, ask the other question too: "if I remove this, does a reader or a later skill lose something they need?" If yes, it is real, keep it. If it is real but not needed yet, park it in a plan doc, do not delete it. Then say what is left the way you would say it out loud.
 
+### 17. An incomplete handoff shows up downstream as a redundant interview. [structural]
+
+**Principle:** If a downstream skill re-plans work an upstream skill was supposed to hand it, the handoff is incomplete. Fix the upstream output, not the downstream skill.
+
+**What happened (vid-structure, 2026-07-01):** vid-structure handed vid-segment a half-finished outline: the points were named, but the parable and principle were left as "candidates to pick later." So vid-segment re-queried the banks, re-picked the blocks, and re-confirmed the structure with the creator one segment at a time. That per-segment structure interview felt broken because it was re-doing planning that should have happened once. The fix was to make vid-structure lock the complete plan (parable type plus the specific block, principle plus proof, per point), so vid-segment just writes.
+
+**How to apply:** When a downstream skill re-interviews the user or re-derives a decision, look upstream. The prior skill's output is incomplete. Complete the plan in the planner. A writer that re-plans is a boundary bug, not a feature.
+
 ---
 
 ## Flow and voice (creative skills)
@@ -139,6 +147,8 @@ The last pass was making whatever survived read like a person talking instead of
 We swept both the SKILL.md flow and `digging-deeper.md` (then named `push-vs-pause-rules.md`) to this style: keep the creator-side situations as illustration, drop the skill's locked quotes.
 
 **How to apply:** Describe the move's goal and the gap it targets, not the literal sentence. Examples should show the situation (the creator's gap) and the why, not a script for the skill to read. An illustrative line is fine only if labeled as register, not a quote to paste.
+
+**The boundary (added 2026-07-04, vid-intro audit).** This rule is not absolute, and the first version over-generalized it. It governs the creative and interview surface, the questions that pull material, anything shaping the words the creator will speak. There, scripting reads rigid and a dynamic line fit to what just came up is better. It does NOT govern process gates: a save confirmation, a "pick 1 or 2," a hard-rule kickback. Billy: "Scripted questions aren't bad, this seems fine. If it's an interview I'd prefer it to have some guidance but be dynamic based on what's needed." So: interview and capture moments get guidance plus room to adapt; mechanical gates can stay scripted. When an audit flags a scripted line, first ask which surface it is. A scripted gate is not a finding.
 
 ### 12. Don't put a clock on a creative conversation. [creative]
 
@@ -188,3 +198,11 @@ We swept both the SKILL.md flow and `digging-deeper.md` (then named `push-vs-pau
 **What happened (vid-intake):** Before the rewrite we pushed a checkpoint, staged everything except an accidental `SYSTEM-MAP copy.md`, and caught that `verify-subagent.md` was untracked. The skill referenced that file, so the committed tree pointed at a file that did not exist in the repo, a real distribution bug we would have shipped.
 
 **How to apply:** Commit a baseline first so the rewrite is a clean diff. Inspect untracked files before staging; a referenced-but-untracked file is a shipping bug, and a stray "copy" file is junk to leave out. Billy runs parallel sessions, so stage only your paths.
+
+### 18. Verify against the source before collapsing two concepts into one. [process]
+
+**Principle:** When a rewrite hinges on "these two things are the same," read the domain source before you merge them. Assumed synonyms are where canon gets quietly corrupted.
+
+**What happened (vid-structure, 2026-07-01):** I argued we should kill the word "tension" because it was just "setup and payoff" renamed, and told Billy to cut it. Billy sent the source (Ed Lawrence's `naming-untangle.md`) and said not to jump to conclusions. The source is explicit: setup/payoff is the mechanism you plan, tension is the meter (the curiosity gauge) that mechanism moves, and they are NOT the same axis. Collapsing them would have corrupted the model. The real fix was to rename the artifact from "tension" to "setup and payoff" (the thing you actually plan) and keep tension as the meter, referenced once as the why.
+
+**How to apply:** Before collapsing or renaming a concept, read the authority. If the rewrite depends on two labels meaning the same thing, prove it from the source first. When the user says "don't jump to conclusions" and hands you a doc, the doc usually contradicts the shortcut you were about to take.
