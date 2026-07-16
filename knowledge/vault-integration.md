@@ -20,7 +20,7 @@ Every skill in authentic-ai-os loads this file. It is the contract that makes th
 |---|---|
 | `foundation/` | Creator identity. creator-foundation.md, voice-profile.md, packaging-system.md, and `reference-pieces/` (full polished pieces preserved verbatim for piece-level voice rhythm). |
 | `banks/` | Evergreen material the creator builds over time. Stories, proofs, testimonials, metaphors, frameworks, packaging winners, plus single-file banks (title, hook, transition, pattern). |
-| `content/pieces/` | Per-video work. One folder per piece. brain-dump, piece, script, thumbnail-brief, per-platform derivatives. Single newsletters and one-off posts also live here as their own piece folder. |
+| `content/pieces/` | Per-video work. One folder per piece: piece.md (all locked decisions), brain-dump.md (raw material), script.md (the deliverable), plus per-platform derivatives. Single newsletters and one-off posts also live here as their own piece folder. |
 | `content/ideas/` | Swipe file for not-yet-built content. Raw ideas, hooks, framings the creator wants to come back to. |
 | `content/email-sequences/` | Multi-piece email sequences (welcome, nurture, launch, re-engagement). One folder per sequence. |
 | `people/` | One file per human in the creator's world. Clients, prospects, partners, community. Frontmatter-typed. |
@@ -407,7 +407,7 @@ tags: [piece, format-{slug}, pillar-{slug}, {other-tags}]
 ---
 ```
 
-Skills append their own fields and never overwrite another skill's: vid-framing adds `selected_angle`, `core_payoff`; vid-title adds `title`; vid-structure adds `tension_plan`; vid-intro adds `intro_locked`; vid-ending adds `ending_locked`, `next_video`; vid-pressure-test adds the `pressure_test_audit` block.
+Skills append their own fields and never overwrite another skill's: vid-framing adds `selected_angle`, `core_payoff`; vid-title adds `title`; vid-thumbnail adds `thumbnail_text` (+ `thumbnail_shape`); vid-structure adds `tension_plan`; vid-intro adds `intro_locked`; vid-ending adds `ending_locked`, `next_video`; vid-pressure-test adds the `pressure_test_audit` block.
 
 piece.md holds decisions a later skill or the pipeline reads, not a diary of how each skill worked. Skills do NOT write process-journal fields (hook type, credibility form, title lane, transition pattern, cta shape, and the like): those had no reader. A journal field returns only when a real consumer exists (e.g. a future vid-measurement correlating hook type against retention), added then with that reader on the other end.
 

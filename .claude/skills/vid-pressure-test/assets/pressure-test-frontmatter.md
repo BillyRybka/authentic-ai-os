@@ -127,7 +127,9 @@ anchor_confidence: high
 # Written by vid-title
 title: "Why I Quit Posting Daily And Grew 10x"
 
-# vid-thumbnail writes thumbnail-brief.md (sibling file), not piece.md. It only bumps last_updated here.
+# Written by vid-thumbnail
+thumbnail_text: ["STOP HIRING"]
+thumbnail_shape: [imperative]
 
 # Written by vid-structure (advanced status to drafting)
 segment_purposes:

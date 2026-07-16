@@ -83,8 +83,8 @@ Read `piece.md` frontmatter plus the presence of sibling files. Match top-to-bot
 | No `piece.md` for the slug | `vid-intake` |
 | No `selected_angle` | `vid-framing` |
 | `selected_angle` set, no `title` | `vid-title` |
-| `title` set, no `thumbnail-brief.md` sibling | `vid-thumbnail` |
-| `thumbnail-brief.md` present, no `segment_purposes` | `vid-structure` |
+| `title` set, no `thumbnail_text` | `vid-thumbnail` |
+| `thumbnail_text` set, no `segment_purposes` | `vid-structure` |
 | `segment_purposes` set, no `intro_locked` | `vid-intro` |
 | `intro_locked`, `segments_completed` count < `segment_purposes` count | `vid-segment` (next unwritten segment) |
 | `segments_completed` count == `segment_purposes` count, no `ending_locked` | `vid-ending` |

@@ -22,7 +22,7 @@ This is reference material for Claude. Do not paste it into chat. Use it to thin
 
 ## The 6-step architecture
 
-The full intro contains 6 elements. Steps 1-5 are produced in order. Step 6 (credibility line) gets woven into one of 1-3.
+The full intro contains 6 elements. Steps 1-5 are produced in order. Step 6 (credibility line) gets woven into the Hook, the Problem/Result, or the Setup (steps 2-4), matching the diagram below.
 
 ```
 1. TOP 3 VIEWER QUESTIONS (derived from thumbnail + title, drives Setup)
@@ -44,7 +44,7 @@ The full intro contains 6 elements. Steps 1-5 are produced in order. Step 6 (cre
 Before writing the intro, identify the top 3 questions a viewer would have answered in this video, derived from the locked title plus thumbnail combination.
 
 **How to derive them:**
-- Read the title and the thumbnail brief together
+- Read the title and the locked thumbnail text together (piece.md `title` + `thumbnail_text`)
 - Imagine the cold viewer just clicked
 - What does the viewer most want to know in the next 30 seconds?
 - The 3 questions feed directly into the Setup (step 4)
@@ -263,7 +263,7 @@ When `vid-intro` runs, it should:
 1. Load this file silently (Claude-internal reference)
 2. Load the matching format planner from `knowledge/format-planners/{format}.md` for adaptation rules
 3. Load `foundation/voice-profile.md` for creator-specific preferences (which hook types they default to, transitions they avoid, energy level)
-4. Load the locked title and `thumbnail-brief.md` to derive the Top 3 viewer questions
+4. Load the locked title and `thumbnail_text` from piece.md to derive the Top 3 viewer questions
 5. Generate options at each step:
    - Top 3 questions: usually 1 set, surface for creator approval
    - Hook: 2-3 candidates across allowed hook types (filtered by format, voice, credibility-match check)

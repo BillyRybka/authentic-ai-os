@@ -1,214 +1,87 @@
 ---
 name: vid-thumbnail
-description: Generate thumbnail TEXT options for one video and help the creator pick 1-2 winners. The skill is a TEXT planner only. It does NOT design the visual (no layouts, hero choices, expressions, color application, or AI prompts). Those live in the future vid-thumbnail-gen skill or in the creator's own design process. Outputs a brief with the locked text picks plus rationale (strategy, BENS letters, why it lands). Use when the title is locked and you are packaging the video, or when the creator says "let's do the thumbnail text", "thumbnail options for [video]", or a downstream pipeline invokes it right after vid-title and before vid-structure.
+description: Generate thumbnail TEXT options for one video and lock 1-2 picks with the creator. TEXT planner only, it does NOT design the visual (no layouts, hero choices, expressions, color, or AI prompts). Writes the locked picks into the video's piece.md. Use when the title is locked and you are packaging the video, or when the creator says "let's do the thumbnail text", "thumbnail options for [video]", "thumbnail copy", or a pipeline invokes it right after vid-title.
 ---
 
 # Video Thumbnail Text Planner
 
-Generates thumbnail TEXT candidates for one video and locks 1-2 picks with the creator. Three phases: load context plus generate 5-10 text candidates, creator picks 1-2, save brief with picks plus rationale.
+Title and thumbnail are ONE package. Typically the title comes first, and this skill writes the other half. Three moves: read the title, mine the video's most compelling material for what complements it, shape that into text options. The creator picks 1-2, the picks save to piece.md.
 
-**Scope boundary:** this skill produces text only. Layout, hero element, expression, color application, AI image prompts are OUT OF SCOPE. Handled by `vid-thumbnail-gen` (a future skill) or by the creator using their chosen creation path. Do not drift into designing the visual.
+**Scope: text only.** Layout, hero element, expression, color, and AI image prompts are out of scope. Do not drift into designing the visual.
 
-**At session start, load `knowledge/vault-integration.md`.** Every artifact this skill produces follows that contract: frontmatter, wikilinks, tags.
+**This is a conversation, not a document.** Short messages. References are for your thinking; never paste them at the creator. They scan options and pick.
 
-**This skill is a conversation, not a document.** Keep messages short. Never dump reference content into chat. The references (BENS framework, thumbnail strategy menu, gift framework, packaging-system.md, past winners in packaging-bank) are for YOUR thinking. Pull from them selectively.
+## What loads, and when
 
-## What this produces
+Load each file at the step that needs it. Do not front-load.
 
-One file in the creator's workspace:
+| Step | Load | For |
+|---|---|---|
+| 1. Title + mine | `content/pieces/{slug}/piece.md` | the title (the anchor), format, goal |
+| 1. Title + mine | `content/pieces/{slug}/script.md` IF it exists and is complete, ELSE `brain-dump.md` | the material. The script wins when it exists; don't read the brain dump if a finished script supersedes it |
+| 2. Shape | `knowledge/thumbnail-text-patterns.md` | the 5 text patterns, anti-patterns, title-pairing rules, examples library, BENS lens. The one craft reference |
+| 2. Shape | `foundation/packaging-system.md` IF it exists | the channel's packaging SETTINGS (written by vid-research): the thumbnail strategy currently being tested, casing preference |
+| 2. Shape | `banks/packaging-bank/*.md` IF entries exist | packaging RECEIPTS: title+thumbnail combos that already won. Holds the creator's own winners AND studied outliers from other channels; each entry's `source` field says which |
+| 3-5 | nothing | filter, pick, and save load no files |
 
-- `content/pieces/{slug}/thumbnail-brief.md`, the packaging brief: title pairing, 1-2 locked thumbnail text picks, strategy, BENS rationale, and notes for the creator's chosen creation path.
+No hard dependency on `packaging-system.md`. A fresh creator makes a thumbnail on day one: defaults are ALL CAPS and no strategy constraint. When the file exists, honor it.
 
-## When to run this
+Prerequisite: a `title` in piece.md. Text can't pair against a title that doesn't exist, so if there is none yet, run `vid-title` first.
 
-- A video's title is locked (thumbnail is the next packaging step, before structure)
-- Creator asks for thumbnail options for an existing piece
-- A pipeline orchestrator invokes this in the packaging phase, after vid-title and before vid-structure
+## Step 1: Read the title, then mine for its partner
 
-## Prerequisites
+Read the title FIRST. Name to yourself what hook it carries (the question it plants) and its tone: failure, success, mystery, contrarian, instructive, news. Everything generated next must work WITH this title as one package: the thumbnail adds a second, different hook, it never repeats the title's.
 
-Hard requirement: `foundation/packaging-system.md` must exist with:
-- Current thumbnail strategy (or 2 strategies in test)
-- Design guardrails (color, font, hero element, expression rules)
-- Creation path picked (Photoshop / AI workflow / batch photos / outsource)
+Open with one short line to the creator: name the title, say you're pulling the strongest material to pair with it.
 
-If `packaging-system.md` is missing, hard stop. Tell the creator to run `vid-research` first (it authors packaging-system.md from real outlier evidence).
+Then mine the script (or brain dump) for the most compelling assets the video actually contains, looking specifically for what the title does NOT already say:
 
-Also hard: the video `slug` argument, or an existing `content/pieces/{slug}/piece.md` with a locked title.
+- verbatim numbers, dollar figures, percentages, timeframes (these are also the **lock list**: candidates may use ONLY numbers that appear here, nothing invented)
+- belief-clashes and paradoxes the video argues
+- named systems, rules, methods
+- the single most dramatic moment or claim
 
-## The walkthrough (3 phases)
+## Step 2: Shape into candidates
 
-Each phase ends with creator approval before moving on. Do not batch phases. Do not dump references into chat.
+Load `knowledge/thumbnail-text-patterns.md` and turn the mined assets into **5-10 candidates spanning at least 3 of the 5 patterns** so the set has real range. Generate from THIS video's material, calibrated by the patterns file, not by inventing generic thumbnail lines.
 
-### Phase 1: Load context and generate text options
+Every candidate is built as a pair: say it to yourself as "title + this text, seen together in one glance." If the pair reads as the same beat twice, the candidate is dead on arrival.
 
-**Silent loads** (do NOT paste into chat):
+The patterns are lenses, not cages. If the material begs for a text that fits none of the 5, keep it, show it, and say why it works. Never kill a compelling option because it lacks a label.
 
-1. `foundation/packaging-system.md` (current strategy, design guardrails, creation path)
-2. `knowledge/thumbnail-strategy-menu.md` (the 6 strategies plus format-strategy pairing)
-3. `knowledge/thumbnail-text-patterns.md`. **The playbook for what good thumbnail text actually looks like.** 5 winning patterns with examples, anti-patterns, title-thumbnail pairing rules. **Generation candidates must come from these patterns.**
-4. `knowledge/thumbnail-examples-library.md`. **26 annotated real-world title+thumbnail combinations**, organized by category (Curiosity heavy / Comparison / Result / Social Hacking). Each entry has hero element, why it works, and design notes. Use to find the closest analog to the target video and match the SHAPE, not the literal content.
-5. `knowledge/BENS-framework.md` (Big / Easy / New / Safe, for thumbnail text logic)
-6. `knowledge/gift-framework.md` (packaging philosophy)
-7. `content/pieces/{slug}/piece.md` (locked title, format, goal, hook/payoff)
-8. `content/pieces/{slug}/script.md` if it exists. Pulls specific lines, numbers, moments worth foregrounding.
-9. `banks/packaging-bank/*.md` (past winners and studied outliers, used as TEXT anchors for what wording worked for this creator, NOT for visual style)
+If packaging-system names a current strategy test, bias part of the set toward it and mark which candidates serve the test. If the packaging-bank has winners, echo what already worked for this creator over generic best practice.
 
-Note: `knowledge/thumbnail-composition-guide.md` exists but is NOT loaded here. It's reserved for `vid-thumbnail-gen` (future) which actually designs the visual.
+## Step 3: Filter hard, then show
 
-**Empty packaging-bank fallback.** If the bank is empty (fresh creator, no own winners and no logged outliers, exactly the case for first-time users), proceed using design guardrails alone. Note this in the brief's "Notes" section so the creator knows to log a winner post-publish to feed future runs. Do not silently skip the past-winners step. Flag it.
+Reject before the creator ever sees:
 
-**Opening message** (brief, creator-facing):
+1. **Fabrication.** Any number not on the lock list.
+2. **Spoiler.** If the text alone gives away the video's central insight, it kills the click. The thumbnail makes them want to know; it doesn't tell them.
+3. **Package break.** Repeats the title's key words (parentheticals count), or its tone fights the title instead of matching or productively contrasting. One package, two hooks.
+4. **Generic.** Text that would fit 100 other videos in the niche. It must signal THIS story.
+5. **Anti-pattern.** Per the patterns file: visual-metaphor words, vague paradoxes, hedges, stock phrases.
 
-> "Thumbnail for *{title}*. Current strategy: {strategy from packaging-system}. Pulling the hook and payoff from the script now. Back with 5-10 text options in a sec."
+**Length:** 2-4 words preferred, 5 is the ceiling, 6+ auto-rejects. One high-curiosity word is valid. A pure number or arc counts as one unit, never rejected on word count. **Casing:** ALL CAPS unless the creator's guardrails say otherwise.
 
-Then silently:
-- Re-confirm the current strategy (or 2 strategies if testing)
-- Pull the script's specific numbers, named methods, paradoxes, and imperatives. These are the raw material.
-- **Build a "lock list" from the script:** every number, percentage, dollar figure, timeframe, and named method that actually appears verbatim. Candidates may ONLY use numbers from this lock list. No fabrication.
-- **Identify the title's tone:** failure, success, mystery, contrarian, instructive, news. Candidates must pair with this tone (match or productively contrast).
-- **Generate 5-10 candidates DRAWING FROM `knowledge/thumbnail-text-patterns.md`.** Use AT LEAST 3 of the 5 winning patterns (cognitive-dissonance / number-hero / named-system / single-word / imperative) so the option set isn't all clustered. Pure number-hero options are valid. Don't always pad numbers with words.
+Show a plain numbered list: each line is the text in quotes plus its pattern name, nothing else. No lecture, no rationale paragraphs. They scan and pick.
 
-**Quality filters (apply BEFORE showing candidates to the creator):**
+**Kill criteria.** If after one full regeneration the options are still weak, the problem is upstream: the title is too vague or the material lacks the specific number or moment thumbnails need. Say so and stop. Don't grind weak text from a thin source.
 
-1. **Anti-fabrication check.** Scan every number/figure in every candidate. If a number isn't in the script's lock list, REJECT the candidate. Don't invent dollar arcs, percentages, or transformations the script doesn't state.
-2. **Curiosity vs Spoiler test.** Read each candidate alone. Can a viewer guess the video's central insight from it? If yes, it's a spoiler. REJECT. The thumbnail's job is to make them want to know, not tell them. "STOP DELEGATING" creates curiosity; "SOPs BEFORE PEOPLE" delivers the payoff.
-3. **Tonal pairing check.** Does the candidate's emotional register pair with the title's tone? Failure-framed title plus positive-result thumbnail equals mismatch. REJECT. Either match the tone or productively contrast (same dark register, different angle).
-4. **Distinctiveness test.** For single-word and named-system options: would this exact word or name fit 100 other videos in the niche? If yes (e.g. "BOTTLENECK" for any founder video), REJECT. The thumbnail must signal *this specific story*, not the channel's general theme.
-5. **Anti-pattern filter.** Visual metaphors (ROADMAP / BLUEPRINT / UNLOCK), vague paradoxes, hedge words, generic claims, stock phrases. All REJECT.
-6. **Title-overlap rule** (with exception clause). Default: don't repeat the title's key noun-plus-verb pair. Singular/plural variations or related word forms are OK ONLY if the thumbnail adds a meaningfully different angle (e.g. "VAs suck" as opinion, against title's "Why Hiring a VA Tanked My Revenue" as story). Mark borderline candidates explicitly so the creator sees the trade-off.
+## Step 4: Pick
 
-**Word count: 2-4 words preferred. 5 is the absolute ceiling.** 6 or more is automatic reject. Single words are valid when they're high-curiosity (LIAR / STOP / BREAKFAST / BACKWARDS).
+Ask which 1-2 the creator would actually test, by number. If they pick two, push for meaningfully different ones (different tension, different pattern) so a test teaches something. If they want two variants of one idea as a copy test, fine, note it.
 
-**Pure-number carve-out:** A candidate that's just a number, currency amount, or transformation arc ("$712,921.88", "+40%", "275 to 175", "23:07 to 19:42") counts as 1 unit regardless of character count. Don't reject these on word-count rules. That's the number-hero pattern.
+Before locking, check each pick one last time as a package against the pairing rules in the patterns file, and confirm the video actually delivers what the text implies. Clickbait is fine only if delivered; if it isn't, kick it back.
 
-**Title-overlap rule includes parentheticals.** If the title is "Why Hiring a VA Tanked My Revenue (Fix Inside)", lock-words include VA, HIRING, REVENUE, TANKED, FIX, INSIDE. Parenthetical words count.
+## Step 5: Save
 
-**Casing rule:** ALL CAPS is the default. Lowercase ("work less," "this is.... Almost 30") is acceptable when the creator's design guardrails specify it (typically millennial / casual / lifestyle aesthetic). Match the casing in the packaging-system guardrails.
-
-**BENS notation:** Single-letter joined format with `+`: `B+N`, `B+E+S`. No spaces, no commas.
-
-**Pattern annotation:** Each candidate gets `pattern: {name}` so the creator can scan for variety. The 5 patterns: `cognitive-dissonance | number-hero | named-system | single-word | imperative`.
-
-**Present options as a numbered list** with pattern plus BENS annotation:
-
-```
-1. "STOP HIRING"               pattern: imperative, BENS: B+N
-2. "-30% IN 6 WEEKS"           pattern: number-hero, BENS: B+S
-3. "BACKWARDS"                 pattern: single-word, BENS: N
-4. "THE PRE-HIRE RULE"         pattern: named-system, BENS: E+N
-5. "DELEGATION FAILS"          pattern: cognitive-dissonance, BENS: N
-6. "+40%"                      pattern: number-hero (single), BENS: B+S
-...
-```
-
-Keep annotations short. Creator doesn't need a lecture. They need to scan and pick. Don't cluster all options in one pattern. Span at least 3 of the 5 so the creator sees real range.
-
-**Kill criteria.** If after one full regeneration the options still feel weak (every text generic, no clear strategy fit, the title or script doesn't give you enough specific material to work with), stop generating and tell the creator the issue is upstream. The title may be too vague. The script may be missing the specific number or moment that thumbnails need. Don't keep producing weak text trying to make a thin source work.
-
-**Push back on weak drafts if the creator reviews/rejects options:**
-- Over 5 words, trim
-- Passive voice, rewrite in active
-- Generic "HOW TO" / "THE TRUTH ABOUT", swap for specific language
-- Doesn't pair with the thumbnail strategy, flag it and regenerate
-
-### Phase 2: Pick 1-2 winners
-
-**Ask:**
-
-> "Which 1 or 2 would you actually want to test? Pick by number. If two, they should be meaningfully different, not variations of the same idea (different strategy, different tension)."
-
-Wait.
-
-If they pick two that are too similar, push back:
-> "#2 and #5 are both result-strategy packages. If you want to A/B test, one should hit a different strategy so the data tells you something useful. Want to swap one?"
-
-If they want to keep both similar ones anyway (edge case where they're testing copy variants within same strategy), OK, note it in the brief.
-
-### Phase 3: Lock the picks and save
-
-**Scope reminder:** this skill is a TEXT planner, not a designer. The job ends when the creator has 1-2 thumbnail texts they want to test. The skill does NOT pick layouts, hero elements, expressions, color application, or generate AI prompts. Those decisions live in the creator's head or in the future `vid-thumbnail-gen` skill, not here.
-
-For each pick, capture a tight rationale (1-2 lines, NOT a composition spec):
-
-1. **The text**, verbatim, with casing matching the creator's guardrails
-2. **Strategy plus BENS**: which strategy this hits and which BENS letters
-3. **Why it lands**: one sentence on the cognitive gap or proof angle. (Not how to design it. Just why this text works as a hook.)
-
-That's the whole brief content per pick. No layout, no hero choice, no expression, no AI prompt. The creator takes their picks and designs the thumbnail themselves (or runs `vid-thumbnail-gen` later).
-
-**Cross-check each pick against the title-pairing rules in `thumbnail-text-patterns.md`:**
-- Text and title carry different curiosity hooks (no word repeats unless the exception clause applies)
-- Thumbnail tone pairs with title tone (failure-framed title pairs with failure-tone or productively-contrasting thumbnail)
-- The video actually delivers the promise. Clickbait is OK if delivered. If you can't honestly say the script delivers what the thumbnail implies, kick it back to the creator.
-
-### Save
-
-Save to `content/pieces/{slug}/thumbnail-brief.md` with this frontmatter:
+Append to `content/pieces/{slug}/piece.md` (never overwrite another skill's fields):
 
 ```yaml
----
-type: thumbnail-brief
-project: authentic-ai-os
-piece: "[[{slug}]]"
-title_paired: "The exact title this thumbnail pairs with"
-strategies_tested: [cognitive-dissonance, result]
-picks: 2
-creation_path: ai-workflow          # pulled from packaging-system.md
-captured: YYYY-MM-DD
-status: brief-ready                 # brief-ready | in-production | published | winner-logged
-tags: [thumbnail, brief, strategy-{slug}]
----
+thumbnail_text: ["{pick verbatim}"]   # 1-2 locked picks
+thumbnail_shape: [{pattern name}]     # same order as the picks
 ```
 
-Body follows the Composition-brief template in `assets/thumbnail-brief-template.md`.
+Bump `last_updated:`. This write happens in BOTH standalone and pipeline mode; `thumbnail_text` present is how the pipeline knows this step is done. Candidates and rationale stay in chat; piece.md holds only the locked picks.
 
-Then bump `content/pieces/{slug}/piece.md` `last_updated:` to today's date. This happens in both standalone and pipeline mode. The presence of `thumbnail-brief.md` is how the pipeline knows the thumbnail step finished; vid-thumbnail writes no other piece.md field.
-
-### Wrap up
-
-After saving:
-1. Confirm file saved at `content/pieces/{slug}/thumbnail-brief.md`
-2. Quick next-step prompt based on `creation_path`:
-   - AI workflow: "Prompt is ready. Paste into your image tool, iterate until it matches the brief. If a version wins after publishing, log it in `banks/packaging-bank/`."
-   - Photoshop/DIY: "Shot list is in the brief. Execute it. When it wins, log it in packaging-bank."
-   - Batch photos: "The pose is noted. Grab that shot from your batch, assemble per the layout. Log a winner post-publish."
-   - Outsource: "Designer brief is ready to send. When they deliver, QA against the checklist in the brief. Log a winner post-publish."
-
-## Principles
-
-- **Conversation, not document.** Short messages. Never dump the full reference docs at the creator. The creator scans options and picks. They don't read lessons.
-- **Creator drives, Claude structures.** Don't invent packaging ideas the creator would reject. Pull from the script, the hook, the past winners. Anchor every option in real content.
-- **Test within strategy, not against it.** If two options are picked, they should teach the creator something different. Don't A/B test variants of the same strategy unless explicitly requested.
-- **Every pick must pass the one-pager checklist** before the brief saves. Skip the QA and you ship broken packaging.
-- **Past winners are the creator's proven style.** When in doubt, copy the patterns that already worked for them, not generic best practice.
-- **No fabrication.** Don't invent specific numbers, client names, or quotes for thumbnail text. Pull only what exists in the script or foundation docs.
-
-## Reference index
-
-**Shared** (loaded from `knowledge/`):
-
-| Phase | Reference | Why |
-|-------|-----------|-----|
-| 1 | `knowledge/thumbnail-strategy-menu.md` | 6 strategies plus when each fits |
-| 1 | `knowledge/BENS-framework.md` | Title/thumbnail text logic |
-| 1 | `knowledge/gift-framework.md` | Packaging philosophy |
-| 1 | `knowledge/vault-integration.md` | Frontmatter, wikilinks, tags |
-
-**From the creator's workspace**:
-
-| Phase | File | Why |
-|-------|------|-----|
-| 1 | `foundation/packaging-system.md` | Current strategy, design guardrails, creation path |
-| 1 | `content/pieces/{slug}/piece.md` | Locked title, format, goal |
-| 1 | `content/pieces/{slug}/script.md` | Hook lines, payoff, specific numbers to foreground |
-| 1 | `banks/packaging-bank/*.md` | Past winners, the creator's proven packaging style |
-
-Template lives in `assets/`:
-- `thumbnail-brief-template.md`
-
-## Related skills
-
-- `vid-research` authors the `packaging-system.md` this skill reads (from outlier evidence)
-- `vid-thumbnail-gen` (future) takes a brief from this skill and produces actual images via the creator's AI tool
-- `vid-measurement` (future) post-publish analysis that flags winning packaging, creator logs a `packaging-bank/` entry
+Close with one line: picks saved.
