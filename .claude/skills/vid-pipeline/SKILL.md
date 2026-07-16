@@ -64,7 +64,7 @@ First, two fast paths that skip the menu, because the intent is already clear:
 
 If the creator picks Other and just tells you what they want, follow it. The menu is a convenience, never a cage. A stop signal (Step 5) at the menu halts cleanly. If the runtime does not render a selectable menu, present the same three options as a short numbered list and wait for a typed reply.
 
-**The in-progress scan** (used by the two resume options, or whenever a slug was not named): scan `content/pieces/*/piece.md`. An in-progress piece has `status` that is NOT `filming-ready`, `filmed`, `editing`, or `published`.
+**The in-progress scan** (used by the two resume options, or whenever a slug was not named): scan `content/pieces/*/piece.md`, and consider ONLY files whose frontmatter has `type: content-piece`. A vault can hold `piece.md` files created by other systems; skip any without that type so they are never mistaken for in-progress videos. Among the real pieces, an in-progress one has `status` that is NOT `filming-ready`, `filmed`, `editing`, or `published`.
 
 - **Zero in-progress pieces:** nothing to resume or test. Say so, and offer to start a new piece with `vid-intake` via the Skill tool.
 - **One in-progress piece:** name it and continue. "Picking up `{slug}` ({current phase}, last touched {last_updated})." Go to Step 3.

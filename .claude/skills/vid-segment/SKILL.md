@@ -194,7 +194,7 @@ Wait. The read-aloud test is the final voice gate. Loop until the creator confir
 
 **Save the prose.** Append to `content/pieces/{slug}/script.md` under a heading naming the segment (e.g. `## Step 2: Refactor your week`). Preserve any prior segments. Do NOT overwrite.
 
-**Update piece.md.** Append the new bank wikilinks to `stories_used:`, `proofs_used:`, `metaphors_used:`, plus `frameworks_used:` if used. Wikilink format: `[[bank-slug]]`.
+**Update piece.md.** Append the new bank wikilinks to whichever of `stories_used:`, `proofs_used:`, `metaphors_used:`, `testimonials_used:`, `frameworks_used:` this segment pulled. Wikilink format: `[[bank-slug]]`.
 
 **Mark the segment done.** Append this segment's label (the heading you saved under) to `segments_completed:` in piece.md, and bump `last_updated:` to today. This is the pipeline's body-progress counter: when `segments_completed` length reaches `segment_purposes` length, the body is finished and the orchestrator routes to vid-ending. This write happens in both standalone and pipeline mode.
 
@@ -211,7 +211,7 @@ visual_proofs_called_out:
 
 If `bank_link: null` for any callout (claim is real but no bank asset is linked), surface it to the creator at save time so they can decide whether to capture the proof before filming or rephrase the claim.
 
-**Log the voice-check result in piece.md.** Per the `voice-pressure-test.md` schema (`voice_pressure_test:` block: date, result, pass1_guardrail, voice_context, pass2_grain, flags, read_aloud_confirmed). This log feeds vid-voice-capture drift detection.
+**Surface the voice-check result in chat** (pass / soft-warn / soft-reject) so the creator sees it live at save time. It is not written to piece.md. The check protects the prose in the moment; permanent voice rules get captured by `vid-voice-update` when the creator reacts to a line.
 
 **If sub-skill mode**, return to the caller a `segment_packet` (segment_label, prose string, banks_pulled wikilinks, voice_check result, outbound_transition_pattern). The script.md append, the `segments_completed` mark, and the bank updates already happened here in both modes. The packet is for the orchestrator's awareness, not a handoff of the write.
 

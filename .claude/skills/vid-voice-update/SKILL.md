@@ -166,8 +166,8 @@ Treating as one-time. If the same reaction comes up again, I will surface the pa
 ## References
 
 - `knowledge/voice-profile-schema.md`: refusal shape, section structure, words-avoided reason requirement.
-- `.claude/skills-wip/vid-voice-audit/SKILL.md`: the audit invoked after a hard-rule append.
-- `.claude/skills-wip/vid-voice-capture/SKILL.md`: the heavy-rebuild sibling. Same target file, different scale.
+- `vid-voice-audit` (skill): the audit invoked after a hard-rule append.
+- `vid-voice-capture` (skill): the heavy-rebuild sibling. Same target file, different scale.
 
 ## Related skills
 

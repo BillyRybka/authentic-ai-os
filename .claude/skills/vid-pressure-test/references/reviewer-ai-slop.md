@@ -25,10 +25,10 @@ The signature of unedited LLM output. Common shapes:
 
 ## Sources of truth
 
-1. `Context/brand.md`: banned words section + AI-isms section
+1. `foundation/voice-profile.md` `refusals`: the creator's words-avoided and anti-patterns
 2. `banks/transition-bank.md` Section 4: Tier 1 banned phrases (auto-reject)
 3. `knowledge/intro-architecture.md`: banned transitions
-4. Feedback memories in MEMORY.md: `feedback_no_vague_ai_language`, `feedback_no_weak_verbs`, plus the em-dash brand rule
+4. The universal AI-slop list in the severity tiers below (vague AI language, weak verbs, and the em-dash hard rule apply to every creator, no file needed)
 
 ## Severity tiers
 

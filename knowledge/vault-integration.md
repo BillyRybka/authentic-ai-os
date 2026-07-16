@@ -401,11 +401,15 @@ segments_completed: []          # appended by vid-segment, one label per locked 
 stories_used: []                # [[story-slug]] wikilinks added when writing skills use them
 metaphors_used: []
 proofs_used: []
+testimonials_used: []           # [[testimonial-slug]] wikilinks added when a writing skill weaves a testimonial
+frameworks_used: []             # [[framework-slug]] wikilinks added when a segment teaches a creator framework
 tags: [piece, format-{slug}, pillar-{slug}, {other-tags}]
 ---
 ```
 
-Skills append their own fields and never overwrite another skill's: vid-framing adds `selected_angle`, `core_payoff`; vid-title adds `title`; vid-structure adds `tension_plan`; vid-intro adds `intro_locked` + the `intro_*` fields; vid-ending adds `ending_locked`, `next_video`, `cta_shape`; vid-pressure-test adds the `pressure_test_audit` block + `pressure_test_status`.
+Skills append their own fields and never overwrite another skill's: vid-framing adds `selected_angle`, `core_payoff`; vid-title adds `title`; vid-structure adds `tension_plan`; vid-intro adds `intro_locked`; vid-ending adds `ending_locked`, `next_video`; vid-pressure-test adds the `pressure_test_audit` block.
+
+piece.md holds decisions a later skill or the pipeline reads, not a diary of how each skill worked. Skills do NOT write process-journal fields (hook type, credibility form, title lane, transition pattern, cta shape, and the like): those had no reader. A journal field returns only when a real consumer exists (e.g. a future vid-measurement correlating hook type against retention), added then with that reader on the other end.
 
 #### Pipeline lifecycle
 
@@ -417,7 +421,7 @@ Skills append their own fields and never overwrite another skill's: vid-framing 
 
 `filmed | editing | published` are set manually after production. There is no second status field. The old `piece_status` written by early vid-framing / vid-structure drafts is retired: the orchestrator never reads it.
 
-The `vid-pipeline` orchestrator decides the next writing step by reading which artifact already exists, not by a micro-status: `selected_angle` present? `title` present? `thumbnail-brief.md` present? `segments_completed` length vs `segment_purposes` length? `ending_locked` present? `pressure_test_status`? Each skill therefore writes its own distinguishing field in BOTH standalone and pipeline (sub-skill) mode, so the orchestrator can always read true state from the file.
+The `vid-pipeline` orchestrator decides the next writing step by reading which artifact already exists, not by a micro-status: `selected_angle` present? `title` present? thumbnail picks present? `segments_completed` length vs `segment_purposes` length? `ending_locked` present? `status` at `filming-ready`? Each skill therefore writes its own distinguishing field in BOTH standalone and pipeline (sub-skill) mode, so the orchestrator can always read true state from the file.
 
 ### Ideas backlog
 
@@ -433,7 +437,7 @@ tags: [ideas, backlog]
 ---
 ```
 
-Body: a markdown table of kept ideas, one row each with `status` (kept | picked | used | dropped), `date`, `idea` (working title in the creator's voice), `pillar`, `problem` (1 | 2 | 3 | outlier_within_iceberg), and `signal anchor` (named pattern or outlier plus spread/multiplier, or "experimental swing"). `dropped` rows are sticky so `vid-ideas` never re-proposes them. Schema owned by `vid-ideas`; template at `.claude/skills-wip/vid-ideas/assets/ideas-backlog-template.md`.
+Body: a markdown table of kept ideas, one row each with `status` (kept | picked | used | dropped), `date`, `idea` (working title in the creator's voice), `pillar`, `problem` (1 | 2 | 3 | outlier_within_iceberg), and `signal anchor` (named pattern or outlier plus spread/multiplier, or "experimental swing"). `dropped` rows are sticky so `vid-ideas` never re-proposes them. Schema owned by `vid-ideas`; template at `.claude/skills/vid-ideas/assets/ideas-backlog-template.md`.
 
 ## Wikilink patterns
 
@@ -472,7 +476,7 @@ Story, proof, and testimonial entries carry an `illustrates:` line: the lesson t
 
 Both sides. Always. This is what makes "which videos used this story?" answerable. It's also what makes the Obsidian graph view show real connections.
 
-Same rule for metaphors (`metaphors_used` in piece, `used_in` in metaphor) and proofs (`proofs_used` in piece, `used_in` in proof).
+Same rule for all five bank types: metaphors (`metaphors_used`), proofs (`proofs_used`), testimonials (`testimonials_used`), and frameworks (`frameworks_used`) each get the piece-side wikilink AND the bank-side `used_in`. Every type a script can pull is tracked both directions, so the graph is complete no matter which block type was woven in.
 
 ### Cross-references between bank entries
 

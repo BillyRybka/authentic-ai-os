@@ -28,7 +28,7 @@ Hard requirements:
 
 If the body is missing or only partially written, hard stop. Tell the creator: "I need the full body locked first. Run `vid-segment` for every section, then re-invoke." If the `## Intro` section is still a stub (`*To be written by vid-intro...*`), hard stop. Tell the creator: "The intro isn't written yet. Run `vid-intro` first so the close can call back to the opening, then re-invoke."
 
-If `foundation/voice-profile.md` is missing, fall back to core voice rules from `Context/brand.md` and note in the brief: "Voice profile not captured. Using brand defaults. Run `vid-voice-capture` for sharper voice fit."
+If `foundation/voice-profile.md` is missing, fall back to the universal hard rules (no em-dashes, no AI-isms, no hedging) and note in the brief: "Voice profile not captured. Using default guardrails. Run `vid-voice-capture` for sharper voice fit."
 
 ## Invocation modes
 
@@ -186,8 +186,6 @@ Once locked:
 - Update `content/pieces/{slug}/piece.md`:
   - `ending_locked: true`
   - `next_video: "[[slug-of-next-video]]"` (wikilink)
-  - `cta_shape: sales | emails | views` (matches goal)
-  - `ending_be_pattern: BE-N` (which transition pattern was used)
   - `last_updated: today`
 - **Update both sides on any bank pull.** If the close pulled a story (story-bank), proof (proof-bank), or testimonial (testimonial-bank) for the recap or Gap framing, update the bank entry's `used_in:` array to include `[[{this-piece-slug}]]`. The script citing the bank entry and the bank entry citing the script must be reciprocal. That is the wikilink contract from `knowledge/vault-integration.md`. Same rule vid-intro and vid-segment honor.
 - If the next-video wikilink target doesn't exist, do NOT save a broken link. Ask the creator: "The wikilink target `[[{slug}]]` doesn't resolve. Want me to (a) ask you for the right slug, (b) leave it as plain text and you fix later, or (c) skip the Bridge until the next video is created?"
@@ -206,7 +204,7 @@ Once locked:
     cta_type: subscribe | watch-next | lead-magnet | sales-link
     bridge_line: "{the Bridge sentence}"
     be_pattern: BE-N
-    voice_pressure_test: pass | warn | fail
+    voice_check: pass | warn | fail
     text: "{the full locked close, verbatim, ready to paste under ## Ending}"
   ```
 - If `next_video_status: next-stack-placeholder`, the new-problem reveal is a logical second-order problem the creator could plausibly cover next, but no real published piece exists yet. Flag this in `piece.md` so vid-pipeline can retro-link the close to a real piece once it's published.

@@ -17,7 +17,7 @@ A full intro for one video, saved to `content/pieces/{slug}/script.md` under an 
 
 - A video has a locked title and thumbnail and now needs the opening written
 - Creator wants to rewrite the intro because the current one feels off
-- Orchestrator (vid-pipeline) invokes during the SCRIPT phase, after structure and gap-fill
+- Orchestrator (vid-pipeline) invokes it after the outline (vid-structure) is done, when `segment_purposes` is set and `intro_locked` is not
 
 ## Prerequisites
 
@@ -32,7 +32,7 @@ If foundation is missing, tell the creator to run `/foundation` first. If the ti
 
 ## Invocation modes
 
-**Standalone:** creator invokes directly. After lock, save the intro to `content/pieces/{slug}/script.md` under `## Intro`, update piece.md `voice_pressure_test:`, end.
+**Standalone:** creator invokes directly. After lock, save the intro to `content/pieces/{slug}/script.md` under `## Intro`, write the intro's piece.md fields (see Phase 5), end.
 
 **Sub-skill:** the orchestrator (vid-pipeline) invokes it in the script phase. The save (script.md `## Intro` + piece.md fields) still happens here, in both modes; also return the intro packet to the caller for assembly awareness.
 
@@ -206,7 +206,7 @@ Show the creator the assembled intro as a clean block. No annotations, no labels
 
 Hard rejects: don't save. Restructure and re-loop.
 
-Soft rejects: surface as a short list ("Spotted: 'dive in' in the transition. Replace with 'show'?"). Auto-swap when the swap is clean (per `Context/brand.md` swaps). Otherwise ask creator.
+Soft rejects: surface as a short list ("Spotted: 'dive in' in the transition. Replace with 'show'?"). Auto-swap when the swap is clean (per the voice-profile `refusals` required swaps). Otherwise ask creator.
 
 Soft warns: surface in the meta save but allow.
 
@@ -225,13 +225,9 @@ If yes, drop back to Phase 2 or 3 with the specific beat the creator would chang
 - Save the assembled intro to `content/pieces/{slug}/script.md` under `## Intro`
 - Update `content/pieces/{slug}/piece.md`:
   - `intro_locked: true`
-  - `intro_strategy: problem-poke | result-tease | combined`
-  - `intro_hook_type: question | contrarian | statement | fact | credibility`
-  - `intro_credibility_form: vast-experience | volume-helped | big-personal-result | big-client-result | effort-signal | none`
-  - `voice_pressure_test:` block (per voice-pressure-test.md schema)
   - `last_updated:` to today's date
 - If a story, proof, or testimonial got woven in, update both sides of the wikilink graph per `knowledge/vault-integration.md`: piece's `stories_used:`/`proofs_used:`/`testimonials_used:` AND the bank entry's `used_in:` and `status:`. Both sides. Always.
-- Confirm save: "Intro locked. Saved to `script.md`. Voice pressure test: pass."
+- Confirm save in chat, including the voice-check result you actually got (pass / soft-warn / soft-reject), e.g. "Intro locked, saved to `script.md`. Voice check: clean." The result surfaces here in chat; it is not written to piece.md.
 
 **Sub-skill mode also:** return the output packet to the caller (see "Output packet" below) for assembly awareness. The piece.md write and the bank-update side above still happen here; the packet is not a handoff of the write.
 
@@ -268,14 +264,7 @@ intro_packet:
     - "[[proof-slug]]"
   stories_used:
     - "[[story-slug]]"
-  voice_pressure_test:
-    date: YYYY-MM-DD
-    result: pass | soft-warn | soft-reject | hard-reject
-    pass1_guardrail: true | false
-    voice_context: youtube-script
-    pass2_grain: true | false | skipped-no-reference
-    flags: []
-    read_aloud_confirmed: true | false
+  voice_check: pass | soft-warn | soft-reject | hard-reject
 ```
 
 The packet keeps downstream context narrow. Don't pass entire reference files. Pass the locked decisions.
@@ -296,7 +285,7 @@ These get blocked at candidate-generation time. Creator never sees them.
 2. **Tier 1 banned transition phrases.** B-1, B-2, B-3, B-6 in `transition-bank.md` Section 4 (source-explicit bans). REJECT and substitute. Tier 2 phrases (B-4, B-5, B-7-B-13) surface as soft friction in the prior section, not here.
 3. **Bolted-on self-introduction.** ("Hi, I'm Bob. I've been doing this for 10 years...") REJECT. Credibility weaves into a claim moment, never as a separate intro.
 4. **Setup that doesn't answer any of the Top 3 viewer questions.** REJECT. The intro is misaligned with the title/thumbnail promise.
-5. **Em-dashes in the intro.** REJECT (per `Context/brand.md` and Vale enforcement).
+5. **Em-dashes in the intro.** REJECT (universal hard rule; Vale enforces on save).
 6. **Generic curiosity bait** ("You won't believe what happened next") is Tier 2 soft friction, not auto-reject. Surface with the explanation; creator decides whether the format and tone earn it.
 
 ## Soft friction (flag and explain, creator decides)
@@ -383,5 +372,5 @@ These are the deeper principles. Use them to judge candidates internally before 
 - `vid-thumbnail` locks the thumbnail before this skill runs (drives Top 3 viewer-question derivation)
 - `vid-segment` (sister skill) writes body segments after the intro is locked
 - `vid-ending` (sister skill) writes the ending close, consumes a different section of transition-bank
-- `vid-pressure-test` (future) does adversarial review on the full assembled script
-- `vid-pipeline` (future) is the orchestrator that calls this skill during STRUCTURE or SCRIPT phase
+- `vid-pressure-test` does adversarial review on the full assembled script
+- `vid-pipeline` is the orchestrator that routes to this skill once the outline exists and the intro is not yet locked

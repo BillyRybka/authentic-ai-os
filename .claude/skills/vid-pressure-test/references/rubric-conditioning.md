@@ -7,13 +7,13 @@ tags: [rubric-weighting, conditioning]
 
 # Rubric Conditioning Matrix
 
-How piece.md fields (goal, format, viewer_stage) shape what each reviewer weights heavier. Weights are not numbers; they are which checks fire harder when conditions align. Reviewers still run full rubrics; weighting only affects ranking and severity.
+How piece.md fields (goal, format) plus the audience temperature the retention reviewer derives from the script shape what each reviewer weights heavier. Weights are not numbers; they are which checks fire harder when conditions align. Reviewers still run full rubrics; weighting only affects ranking and severity.
 
 ## By goal
 
 - **sales** → source-traceability heavier (claim accuracy = buyer trust). retention-logic Gate 5 heavier (ending CTA must reference offer; vague closes fail).
 - **views** → retention-logic Gates 1-4 heavier (hold attention across whole video). AI-slop heavier (cold view-seeking viewers leave fastest on slop).
-- **email** → retention-logic Gate 5 heavier (lead magnet specificity in CTA). source-traceability heavier (lead magnet promises must match delivery).
+- **emails** → retention-logic Gate 5 heavier (lead magnet specificity in CTA). source-traceability heavier (lead magnet promises must match delivery).
 
 ## By format
 
@@ -25,7 +25,9 @@ How piece.md fields (goal, format, viewer_stage) shape what each reviewer weight
 - **roast** → retention-logic: each call-out serves the central premise. AI-slop: stricter on hedge stacks (roasts cannot hedge).
 - **interview** → retention-logic: questions promised get answered by guest; host setups hand off cleanly. source-traceability: guest credibility traces to guest's actual bio.
 
-## By viewer_stage
+## By audience temperature (derived from the script, not a stored field)
+
+Judge cold/warm/hot from the finished script itself: topic breadth, how much prior trust the framing assumes, whether the CTA presumes the viewer already knows the creator.
 
 - **cold** → AI-slop tighter (zero trust to spend on weak prose). retention-logic Gate 1 tighter for first segment (cold viewers leave when Setup promise isn't visibly being delivered). voice-authenticity: rhythm matters more (off-rhythm reads as inauthentic to first-time viewers).
 - **warm** → all reviewers run at standard weight.
@@ -36,7 +38,7 @@ How piece.md fields (goal, format, viewer_stage) shape what each reviewer weight
 When spawning each reviewer in Phase 2, include in its system prompt:
 
 ```
-You are reviewing a video script for {goal}, format {format}, viewer_stage {viewer_stage}.
+You are reviewing a video script for {goal}, format {format}. (The retention reviewer derives audience temperature from the script itself.)
 
 Apply your standard rubric, but tighten on these checks:
 - {tightened check 1}

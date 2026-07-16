@@ -16,7 +16,7 @@ Read `script.md` sentence by sentence. For each sentence, ask:
 2. Does the phrasing match the grain of the reference pieces for this piece's `voice_context`?
 3. Does it use any word from the voice-profile guardrail's `refusals` (words avoided)?
 4. Does it match any anti-pattern or breach a creator hard rule in the guardrail's `refusals`?
-5. Does it use a banned word from `Context/brand.md` without applying the required swap?
+5. Does it use a word that the guardrail's `refusals` marks for a required swap, without applying the swap?
 
 ## Sources of truth
 
@@ -24,8 +24,7 @@ In priority order:
 
 1. **`foundation/reference-pieces/{voice_context}.md`**: the creator's real intact passages for this delivery medium, as `## ` sections. The gold standard and the seed. Read `voice_context` from `piece.md` (default `youtube-script`). If a line reads sharper or weaker than the reference pieces in the same context, that is a calibration signal. Rhythm is judged by ear against them, never against stored numbers.
 2. **Raw transcript samples from `raw/voice-sources/`**: if the audit sampled 2-3 raw passages for this run, use them as a calibration check against the curated set. Curated passages can drift toward what the creator likes to see; raw transcripts are unfiltered. A rhythm habit absent from the curated set but present in the raw samples is a real signal.
-3. **`foundation/voice-profile.md`**: the thin guardrail (fingerprint, signature phrases, refusals, POV/energy). Constraints only. Contract in `knowledge/voice-profile-schema.md`.
-4. **`Context/brand.md`**: banned words and required swaps. Global product rules (em-dashes, etc.) plus creator-specific bans.
+3. **`foundation/voice-profile.md`**: the thin guardrail (fingerprint, signature phrases, refusals including words-avoided and required swaps, POV/energy). Constraints only. Contract in `knowledge/voice-profile-schema.md`. Global hard rules that apply to every creator (em-dashes above all) are stated in the severity tiers, not read from a file.
 
 ## Severity tiers
 

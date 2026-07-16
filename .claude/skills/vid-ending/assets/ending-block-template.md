@@ -28,7 +28,5 @@ Frontmatter update written to content/pieces/{slug}/piece.md alongside this bloc
 
 ending_locked: true
 next_video: "[[{{next-video-slug}}]]"
-cta_shape: sales | emails | views
-ending_be_pattern: BE-N
 last_updated: YYYY-MM-DD
 -->

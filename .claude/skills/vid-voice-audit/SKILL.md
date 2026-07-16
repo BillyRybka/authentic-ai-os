@@ -37,8 +37,7 @@ Nothing else is written. No file is created. The audit is a read-and-report oper
 
 Hard requirements:
 - `content/pieces/{slug}/script.md` exists with no stub sections (intro + all segments + ending all written)
-- `foundation/voice-profile.md` exists (the guardrail: refusals, signature phrases, POV/energy)
-- `Context/brand.md` exists (banned phrases, required swaps)
+- `foundation/voice-profile.md` exists (the guardrail: refusals, including words-avoided and any required swaps, plus signature phrases and POV/energy)
 
 Soft requirements:
 - `foundation/reference-pieces/{voice_context}.md` exists for the piece's voice_context. If absent, voice-fingerprint and refusals carry the audit alone and the gap is noted in the output (the creator needs to capture sources for that context).
@@ -54,9 +53,8 @@ Silent loads (do NOT paste into chat):
 2. `content/pieces/{slug}/script.md` (the audit target)
 3. `foundation/voice-profile.md` (the guardrail)
 4. `foundation/reference-pieces/{voice_context}.md` (the gold-standard passages, `## ` sections inside; the seed for rhythm comparison)
-5. `Context/brand.md` (banned phrases, required swaps)
-6. `knowledge/voice-profile-schema.md` (refusal shape, signature-phrase definition)
-7. `references/voice-fault-rubric.md` (severity tiers, output schema, worked examples)
+5. `knowledge/voice-profile-schema.md` (refusal shape, signature-phrase definition)
+6. `references/voice-fault-rubric.md` (severity tiers, output schema, worked examples)
 
 Deferred load: raw-source sampling happens in Stage 1 only if `raw/voice-sources/` exists.
 
@@ -90,7 +88,7 @@ Read `script.md` sentence by sentence. For each sentence, apply the `references/
 - Word from `voice-profile.md` `refusals` words-avoided used in the line
 - Anti-pattern from `voice-profile.md` `refusals` present (contrast-template, hedge stack, etc.)
 - Creator hard rule breached (a never-script moment scripted, a peak intensity device carpet-bombed)
-- Banned word from `Context/brand.md` used without its required swap
+- Word with a required swap in `voice-profile.md` `refusals` used without applying the swap
 - Em-dash anywhere
 
 **Soft severity** (worth flagging, creator may keep):
@@ -178,7 +176,6 @@ Sub-skill mode: hand the schema back to pressure-test and exit. Pressure-test co
 - `knowledge/voice-profile-schema.md`: the voice-profile.md contract (refusal shape, signature phrases).
 - `knowledge/voice-pressure-test.md`: how validation works system-wide (this skill is the validation, but the broader contract lives there).
 - `knowledge/voice-rhythm.md`: the by-ear lens for judging rhythm mismatch.
-- `Context/brand.md`: banned phrases and required swaps.
 
 ## Related skills
 

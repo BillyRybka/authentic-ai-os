@@ -142,24 +142,18 @@ tension_plan:
 
 # Written by vid-intro
 intro_locked: true
-intro_strategy: problem-poke
-intro_hook_type: contrarian
-intro_credibility_form: big-personal-result
-voice_pressure_test:
-  result: pass
-  read_aloud_confirmed: true
 
 # Written by vid-segment (per segment)
 stories_used:
   - "[[banks/story-bank/breaking-point]]"
 proofs_used: []
 metaphors_used: []
+testimonials_used: []
+frameworks_used: []
 
 # Written by vid-ending
 ending_locked: true
 next_video: "[[the-twice-weekly-system]]"
-cta_shape: views
-ending_be_pattern: BE-3
 
 # Written by vid-pressure-test (this block; advanced status to filming-ready)
 pressure_test_audit:

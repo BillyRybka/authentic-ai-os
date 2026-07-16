@@ -58,22 +58,11 @@ After the checks:
 
 This overrides every mechanical pass. Numbers and pattern-matching can pass while the output still feels off. The creator's mouth knows. If they would reword: drop back to the brain dump, find what got over-polished, restructure preserving the creator's exact phrasing for that beat.
 
-## Logging
+## Reporting the result
 
-Each writing skill logs its result in the piece's `piece.md`:
+Each writing skill surfaces its voice-check result to the creator in chat (pass / soft-warn / soft-reject / hard-reject, plus any flags) at save time, so the creator sees it live. It is NOT persisted to `piece.md`.
 
-```yaml
-voice_pressure_test:
-  date: YYYY-MM-DD
-  result: pass | soft-warn | soft-reject | hard-reject
-  pass1_guardrail: true | false
-  voice_context: youtube-script | tutorial | shorts | newsletter | etc
-  pass2_grain: true | false | skipped-no-reference
-  flags: [list of any soft warnings or rejects]
-  read_aloud_confirmed: true | false
-```
-
-This log feeds future `vid-voice-capture` refreshes. Repeated drift on the same thing signals the profile or the reference set needs updating.
+The check's job is to protect the prose in the moment. Sharpening voice over time is a separate mechanism: when the creator reacts to a line ("I'd never say that", "drop that word"), `vid-voice-update` catches the reaction and writes the rule into `foundation/voice-profile.md`. That live reaction, not a stored log, is what improves the profile. If a persisted history is ever needed (for a future `vid-measurement` or a `vid-voice-capture` drift report), add the field back then, with that reader on the other end.
 
 ## Failure modes
 

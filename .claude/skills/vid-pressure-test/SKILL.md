@@ -17,16 +17,15 @@ A script.md that is filmable. The skill EDITS the script in place during the int
 
 - The full script (intro + all segments + ending) is written and the creator is preparing to film
 - The creator wants to rewrite specific sections after critique and re-verify
-- `vid-pipeline` (future) invokes after `vid-ending` completes and before filming
+- `vid-pipeline` invokes after `vid-ending` completes and before filming
 
 ## Prerequisites
 
 Hard requirements:
 - `content/pieces/{slug}/script.md` exists with intro + all body segments + ending all written (no stub sections)
-- `content/pieces/{slug}/piece.md` exists with `selected_angle`, `format`, `goal`, `viewer_stage` locked
+- `content/pieces/{slug}/piece.md` exists with `selected_angle`, `format`, `goal` locked
 - `content/pieces/{slug}/brain-dump.md` exists (claim traceability source)
-- `foundation/creator-foundation.md`, `foundation/voice-profile.md`
-- `Context/brand.md` (banned phrases, required swaps)
+- `foundation/creator-foundation.md`, `foundation/voice-profile.md` (the refusals section carries the banned phrases and required swaps)
 
 Soft requirements:
 - `foundation/reference-pieces/{voice_context}.md` (the gold-standard passages as `## ` sections, loaded by `vid-voice-audit` when reviewer 2 runs, matched to piece.md `voice_context`)
@@ -48,13 +47,12 @@ Soft requirements:
 Silent loads (do NOT paste into chat):
 
 1. `content/pieces/{slug}/script.md` (the full audit target)
-2. `content/pieces/{slug}/piece.md` (goal, format, voice_context, viewer_stage drive rubric weighting)
+2. `content/pieces/{slug}/piece.md` (goal, format, voice_context drive rubric weighting)
 3. `content/pieces/{slug}/brain-dump.md` (traceability source)
 4. `foundation/creator-foundation.md` (avatar, Top 3, credibility brags)
 5. `foundation/voice-profile.md` (the thin guardrail: refusals, signature phrases, POV/energy. Contract in `knowledge/voice-profile-schema.md`)
 6. `foundation/reference-pieces/{voice_context}.md` (the voice engine: real intact passages as `## ` sections, matched to piece.md `voice_context`, default `youtube-script`. The gold standard for the read-aloud test)
-7. `Context/brand.md` (banned phrases, required swaps)
-8. `knowledge/script-tension-architecture.md` (retention-logic source)
+7. `knowledge/script-tension-architecture.md` (retention-logic source)
 
 Deferred load: `knowledge/format-planners/{format}.md` loads only when the retention-logic reviewer fires in Phase 2 (it is the only consumer; no point loading at Phase 1).
 
@@ -71,14 +69,13 @@ Adjust each reviewer's emphasis based on piece context. Weights are not numbers;
 
 - `goal: sales` → source-traceability and retention-logic weighted heavier (claim accuracy matters for buyer trust; ending CTA clarity scrutinized)
 - `goal: views` → retention-logic and AI-slop weighted heavier (cold viewers leave fast on slop and on flat retention curves)
-- `goal: email` → retention-logic + ending lead-magnet specificity scrutinized
+- `goal: emails` → retention-logic + ending lead-magnet specificity scrutinized
 - `format: case-study` → narrative arc retention rules apply (one rising arc, outcome lands late, story traceability strict)
 - `format: listicle` → item-progression retention rules apply (N+1 > N expectation; named lesson lands late)
 - `format: short-process` → step compounding retention rules (each step a small payoff; full method at step-end)
 - `format: deep-dive` → cross-lesson thread tracking strict (concept threads layered)
 - `format: news` → tight retention compression (named answer can't wait as long)
-- `viewer_stage: cold` → AI-slop tighter (cold viewers have no trust to spend on weak prose)
-- `viewer_stage: hot` → CTA scrutiny tighter (hot viewers need clear next step)
+- Audience temperature is DERIVED, not read from a field: judge cold/warm/hot from the finished script itself (topic breadth, how much trust the framing assumes, whether the CTA presumes the viewer knows the creator). Cold → AI-slop tighter (cold viewers have no trust to spend on weak prose). Hot → CTA scrutiny tighter (hot viewers need a clear next step).
 
 See `references/rubric-conditioning.md` for the full conditioning matrix.
 
@@ -253,15 +250,15 @@ vid-pipeline (future) reads `pressure_test_audit` from piece.md frontmatter dire
 | File | When to read it |
 |---|---|
 | `references/reviewer-source-traceability.md` | Phase 2, reviewer 1 rubric and worked examples for claim-tracing failures |
-| `.claude/skills-wip/vid-voice-audit/SKILL.md` | Phase 2, reviewer 2 (invoked as sub-skill). Voice check with full findings + per-beat verdict |
+| `vid-voice-audit` (skill, invoked by name as a sub-skill) | Phase 2, reviewer 2. Voice check with full findings + per-beat verdict |
 | `references/reviewer-ai-slop.md` | Phase 2, reviewer 3 rubric, banned-phrase list pointers, AI-tell examples |
 | `references/reviewer-retention-logic.md` | Phase 2, reviewer 4 rubric, format-aware retention checks |
-| `references/rubric-conditioning.md` | Phase 1, the goal × format × viewer_stage weighting matrix |
+| `references/rubric-conditioning.md` | Phase 1, the goal × format weighting matrix (temperature is derived from the script, not a stored field) |
 | `references/interactive-fix-loop.md` | Phase 4, worked dialogues for Approve / Deny / Skip / Mark-as-gap / light-vet violations |
 | `assets/pressure-test-frontmatter.md` | Phase 6, the exact YAML block appended to piece.md |
 | `knowledge/script-tension-architecture.md` | Phase 1 + Phase 2 reviewer 4, cross-segment tension rules |
 | `knowledge/format-planners/{format}.md` | Phase 2 reviewer 4, format-native retention arc |
-| `Context/brand.md` | Phase 2 reviewer 2 + reviewer 3, banned words and required swaps |
+| `foundation/voice-profile.md` `refusals` | Phase 2 reviewer 2 + reviewer 3, the creator's banned words and required swaps |
 
 ## Principles (the why)
 

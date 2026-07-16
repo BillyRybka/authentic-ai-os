@@ -15,7 +15,7 @@ This is the ONLY reviewer that reads the whole script in one go to catch emergen
 
 1. `knowledge/script-tension-architecture.md`: the three load-bearing tactics: title-promise lock, setup-payoff threading, segment handoffs
 2. `knowledge/format-planners/{format}.md`: format-native tension arc for this piece (Case Study, Listicle, Short Process, Deep Dive, News, Roast, Interview)
-3. `content/pieces/{slug}/piece.md`: locked title, selected_angle, format, goal, viewer_stage
+3. `content/pieces/{slug}/piece.md`: locked title, selected_angle, format, goal (audience temperature is judged from the script itself, not read from a field)
 4. `content/pieces/{slug}/script.md`: the full script being audited
 
 ## What to check (the 5 retention gates + 3 anti-patterns)
@@ -40,14 +40,14 @@ Walk the script and find every open loop. "We'll come back to this." "More on th
 
 Read piece.md `selected_angle`. Walk each segment. Does the segment material serve THAT angle, or did it drift to a related but different angle? Off-angle segments fragment the piece. They feel like tangents the creator could not resist.
 
-### Gate 5: Ending pivots correctly per goal × viewer_stage
+### Gate 5: Ending pivots correctly per goal × audience temperature
 
-Read piece.md `goal` and `viewer_stage`. Cross-check against `knowledge/audience-temperature-model.md` matrix and the format planner's ending guidance.
+Read piece.md `goal`. Judge audience temperature (cold/warm/hot) from the script itself, then cross-check against `knowledge/audience-temperature-model.md` and the format planner's ending guidance.
 
 - `goal: sales` → ending CTA should reference offer / sales link. Clear ask.
-- `goal: email` → ending CTA should reference lead magnet / list signup. Specific to the piece's challenge.
+- `goal: emails` → ending CTA should reference lead magnet / list signup. Specific to the piece's challenge.
 - `goal: views` → ending should pivot to next video. No external links that kill recommendations.
-- `viewer_stage: cold` → CTA tighter, less ask. `viewer_stage: hot` → ask harder.
+- Cold temperature → CTA tighter, less ask. Hot temperature → ask harder.
 
 If the ending CTA mismatches goal or temperature, retention of intent dies even when retention of attention held.
 
