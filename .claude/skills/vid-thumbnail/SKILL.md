@@ -65,6 +65,12 @@ Reject before the creator ever sees:
 4. **Generic.** Text that would fit 100 other videos in the niche. It must signal THIS story.
 5. **Anti-pattern.** Per the patterns file: visual-metaphor words, vague paradoxes, hedges, stock phrases.
 
+**Then run the three tests on every survivor, in this order, judged through the ideal buyer's eyes, never a generic viewer's. Answer each silently, pass or fail. A fail cuts the candidate:**
+
+1. **Context.** Would the buyer instantly understand what the video is about from the title and this text together? If the pair doesn't carry the topic, the image would have to; that's allowed only for a standout candidate, and the need gets noted when the pick locks.
+2. **Curiosity.** Does the pair make the buyer think what, why, or how?
+3. **Clarity.** Is it one idea, readable in a single glance? Two ideas fused into one text is a cut, not a rewrite.
+
 **Length:** 2-4 words preferred, 5 is the ceiling, 6+ auto-rejects. One high-curiosity word is valid. A pure number or arc counts as one unit, never rejected on word count. **Casing:** ALL CAPS unless the creator's guardrails say otherwise.
 
 Show the package, not a list in a vacuum: the title on the first line, then the numbered candidates beneath it, so the creator reads each one the way a viewer would, next to the title. Each line is the text in quotes plus its pattern name, nothing else. No rationale paragraphs, no self-grading (no "serves the strategy test" tags). They scan and pick.
