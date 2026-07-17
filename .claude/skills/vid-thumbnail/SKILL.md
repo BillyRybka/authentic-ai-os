@@ -43,15 +43,19 @@ Then mine the script (or brain dump) for the most compelling assets the video ac
 
 ## Step 2: Shape into candidates
 
-Load `knowledge/thumbnail-text-patterns.md` and turn the mined assets into **5-10 candidates spanning at least 3 of the 5 patterns** so the set has real range. Generate from THIS video's material, calibrated by the patterns file, not by inventing generic thumbnail lines.
+Load `knowledge/thumbnail-text-patterns.md` and shape the mined assets into candidates. **Generate against the title, never in a vacuum:** write the title at the top of your working space and draft every candidate directly beneath it, reading each one as "title + this text, seen together in one glance." If the pair reads as the same beat twice, the candidate is dead on arrival.
 
-Every candidate is built as a pair: say it to yourself as "title + this text, seen together in one glance." If the pair reads as the same beat twice, the candidate is dead on arrival.
+Generate wide privately; count doesn't matter, strength does. The creator only ever sees the survivors of Step 3. For each candidate, know WHY it makes someone click before it earns a spot.
+
+**One point is enough.** A candidate doesn't summarize the video or carry the whole format's stakes. In a listicle, one contrarian point or one dramatic claim can be the entire thumbnail, IF it hits emotionally on its own. Strength beats coverage, always. Generate from THIS video's material, calibrated by the patterns file, not by inventing generic thumbnail lines.
 
 The patterns are lenses, not cages. If the material begs for a text that fits none of the 5, keep it, show it, and say why it works. Never kill a compelling option because it lacks a label.
 
 If packaging-system names a current strategy test, bias part of the set toward it and mark which candidates serve the test. If the packaging-bank has winners, echo what already worked for this creator over generic best practice.
 
 ## Step 3: Filter hard, then show
+
+Only the strongest 3-5 survive, ranked, strongest first. If only two are strong, show two. Never pad the list with a candidate you already know is weak, and never show one while flagging its own weakness; a candidate with a known flaw gets cut, not caveated.
 
 Reject before the creator ever sees:
 
@@ -63,7 +67,7 @@ Reject before the creator ever sees:
 
 **Length:** 2-4 words preferred, 5 is the ceiling, 6+ auto-rejects. One high-curiosity word is valid. A pure number or arc counts as one unit, never rejected on word count. **Casing:** ALL CAPS unless the creator's guardrails say otherwise.
 
-Show a plain numbered list: each line is the text in quotes plus its pattern name, nothing else. No lecture, no rationale paragraphs. They scan and pick.
+Show the package, not a list in a vacuum: the title on the first line, then the numbered candidates beneath it, so the creator reads each one the way a viewer would, next to the title. Each line is the text in quotes plus its pattern name, nothing else. No rationale paragraphs, no self-grading (no "serves the strategy test" tags). They scan and pick.
 
 **Kill criteria.** If after one full regeneration the options are still weak, the problem is upstream: the title is too vague or the material lacks the specific number or moment thumbnails need. Say so and stop. Don't grind weak text from a thin source.
 
