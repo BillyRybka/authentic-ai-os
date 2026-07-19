@@ -5,7 +5,7 @@ description: Build one body segment of a video script as a parable then a princi
 
 # Video Segment Writer
 
-Build ONE body segment: a parable (the show), then a principle (the tell), then a transition (the handoff), in the creator's voice, pulling from the evergreen banks. Two passes, and the order is the core rule: **lock the structure first, then write the prose.** Structure dictates voice, never the other way around.
+Build ONE body segment in the creator's voice, pulling from the evergreen banks. The full shape is a parable (the show), then a principle (the tell), then a transition (the handoff), but the format decides how much of that shape each segment uses. Two passes, and the order is the core rule: **lock the structure first, then write the prose.** Structure dictates voice, never the other way around.
 
 **Scope: one segment at a time.** Intro, ending, title, thumbnail, and the full skeleton are other skills. For a multi-segment body, this skill runs once per segment.
 
@@ -49,11 +49,13 @@ Confirm the frame with the creator in one short message: the segment's job, the 
 
 ## Phase 2: Structure pass
 
+**Shape before slots.** The format planner already decided this segment's shape; honor it. A listicle point runs the full parable-principle cycle. A short-process or deep-dive step defaults to NO parable: state the step, teach it, move on. A parable enters a lean step only when that step is complex or the viewer would be skeptical it matters; then it earns its place, otherwise it's drag. Case study is one arc across the whole body, not per-segment cycles. The first question is never "which parable?", it's "does this segment need one at all?"
+
 The segment must work AS A UNIT before any prose exists. A structure draft is bullets and slot fills:
 
-1. **Parable (the show).** The emotional open: visual demo, story, or metaphor, picked via the decision matrix, anchored in the brain dump's material. Lean steps may skip it per the format planner.
+1. **Parable (the show), when the shape calls for one.** The emotional open: visual demo, story, or metaphor, picked via the decision matrix, anchored in the brain dump's material.
 2. **Principle (the tell).** The actionable lesson: the framework and its components, proof placed AFTER the framework lands, one sharp takeaway line.
-3. **Transition (the handoff).** The forward hook into the next point (transition-bank Section 2), or the body-to-ending bridge if this is the last segment.
+3. **Transition (the handoff).** Signals the shift AND promises a result the viewer cares about: "here's step 4" is dead, "step 4 is the one that got me consistent leads" lives. Patterns in transition-bank Section 2, or the body-to-ending bridge if this is the last segment.
 
 **Bank pulling** (this skill's differentiator). Query only the banks this segment's block types need, by their match keys (story `illustrates`, proof `proof_type` + what it proves, metaphor `concept`, framework name, testimonial claim-match). Surface 0-3 candidates per type, each as: slug + one line + WHY it matches this segment's job. More than 3 is choice paralysis. Testimonials are seasoning inside a segment, never its spine.
 
@@ -65,6 +67,8 @@ The segment must work AS A UNIT before any prose exists. A structure draft is bu
 **Clear the gap manifest.** If `## Blocks to capture` has a row tagged to this segment, it names exactly what to capture. Capture it or consciously cut it, then delete the row and replace the skeleton's placeholder with the real `[[wikilink]]`.
 
 **Mid-write ideas for OTHER segments** don't break flow: jot one line into `async-block-notes.md` (`- [Segment M, block type]: idea`) and keep going.
+
+**The segment test.** Before surfacing the draft, run three silent pass/fail checks on the plan, judged through the avatar's eyes. NEW: would they say "heard it before"? EASY: is this the vital 20% that gets 80% of the result, with nothing that makes their brain strain? INSPIRING: does it make them want to act, not just understand? A fail is a structure problem; fix it here, not in prose.
 
 Surface the structure draft as a compact block (segment label, parable pick + bank candidates, principle + framework/proof candidates, transition pattern) and ask: lock it, swap a block, pull a different candidate, sharpen the payoff, or scrap. **Loop until the structure locks. No prose before lock.**
 
