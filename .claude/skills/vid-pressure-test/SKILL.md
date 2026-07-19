@@ -93,7 +93,7 @@ Invoke `vid-voice-audit`. It loads `foundation/reference-pieces/{voice_context}.
 
 **Reviewer 3: AI-slop** (`references/reviewer-ai-slop.md`)
 
-Scans for banned phrases (transition-bank Tier 1 + brand.md hard rules), vague hedges, announcing transitions, AI tells (em-dashes, three-item-list crutch, generic value language). Returns top 3 worst offenders with quote + suggested removal or replacement.
+Scans for banned phrases (transition-patterns Tier 1 + brand.md hard rules), vague hedges, announcing transitions, AI tells (em-dashes, three-item-list crutch, generic value language). Returns top 3 worst offenders with quote + suggested removal or replacement.
 
 **Reviewer 4: retention-logic** (`references/reviewer-retention-logic.md`)
 

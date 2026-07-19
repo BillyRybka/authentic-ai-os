@@ -12,7 +12,7 @@ Examples-first reference for the specific phrases, structures, and habits that k
 
 This file is reference material for Claude to think with at draft time. Banned phrases never appear in candidates surfaced to the creator.
 
-The companion list of banned transitions lives in `banks/transition-bank.md` Section 4. This file expands the ending-specific anti-patterns and the structural failure modes that aren't single phrases.
+The companion list of banned transitions lives in `knowledge/transition-patterns.md` Section 4. This file expands the ending-specific anti-patterns and the structural failure modes that aren't single phrases.
 
 ---
 
@@ -24,7 +24,7 @@ Every phrase below is auto-rejected at candidate generation. The creator never s
 
 Why it fails: telegraphs the end of the video. Tells the viewer "the value is over, time to leave." Viewers stop watching instead of clicking the end-screen card. Source-backed: this is the golden rule's specific banned phrase.
 
-Replacement: pivot to the next problem. Use BE-1 through BE-8 patterns from `banks/transition-bank.md` Section 3.
+Replacement: pivot to the next problem. Use BE-1 through BE-8 patterns from `knowledge/transition-patterns.md` Section 3.
 
 ### B-2. "Thanks for watching."
 
@@ -227,7 +227,7 @@ When generating candidates, scan against this informal list. Any hit auto-reject
 - `don't forget to`
 - `hit the bell` / `(turn on|enable) notifications`
 
-Plus everything in `banks/transition-bank.md` Section 4 (B-1 through B-13).
+Plus everything in `knowledge/transition-patterns.md` Section 4 (B-1 through B-13).
 
 Plus em-dashes anywhere (brand-level hard no per CLAUDE.md rule 25 in the parent vault and the locked decisions in build-plan.md).
 

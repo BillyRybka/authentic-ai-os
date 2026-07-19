@@ -161,7 +161,7 @@ AI: Hard issue 1 of 3
     Reviewer: ai-slop
     Location: Intro line 6
     Quote: "Let me dive into the first thing."
-    Issue: "dive into" is a Tier 1 banned phrase per transition-bank.
+    Issue: "dive into" is a Tier 1 banned phrase per transition-patterns.
 
     Suggested rewrite:
       "Here is the first thing."

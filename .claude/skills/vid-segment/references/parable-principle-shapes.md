@@ -101,7 +101,7 @@ Why this lands: different parable type than Point 4 (metaphor vs. story), so the
 
 **Near-miss (every point opens "Lesson number X is..."):**
 
-Why it misses: pure announcement. No forward hook. No promise. Listicle viewers get bored fast and bounce. See `banks/transition-bank.md` Section 2 for forward-hook patterns.
+Why it misses: pure announcement. No forward hook. No promise. Listicle viewers get bored fast and bounce. See `knowledge/transition-patterns.md` Section 2 for forward-hook patterns.
 
 ---
 
@@ -201,7 +201,7 @@ These fail across every format shape. If you see them in a structure draft, rest
 - **Parable that announces a topic instead of opening on emotion or stakes.** "Now we're going to talk about X" is the topic-label trap. Replace with the actual emotional or stakes-based open for THIS segment.
 - **Principle with no parable when the point needs one.** Most segments need both bricks. Pure principle = research summary. Pure parable = drama without a lesson. (Lean-segment exception below.)
 - **Takeaway that's a topic-label echo of the open.** "And that's outbound" closes nothing. The takeaway names what the viewer walks AWAY with: the lesson, not the topic.
-- **Transition that's pure announcement ("now point 4").** See `banks/transition-bank.md` Section 2 for forward-hook patterns. Pure announcement loses 5-10% retention per transition.
+- **Transition that's pure announcement ("now point 4").** See `knowledge/transition-patterns.md` Section 2 for forward-hook patterns. Pure announcement loses 5-10% retention per transition.
 - **A parable where the format planner says none.** Every step of a short process getting its own parable contradicts the format's identity (fast action). Trust the planner.
 
 ---

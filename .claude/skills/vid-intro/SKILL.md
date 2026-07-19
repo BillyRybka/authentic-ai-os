@@ -22,13 +22,13 @@ Load each file at the phase that needs it. Do not front-load.
 | 1 | `knowledge/format-planners/{format}.md` | how THIS format trims, expands, or reorders the intro |
 | 1 | `references/hook-type-selection-flow.md` | the hook-lane decision: format x voice x channel size x material |
 | 1 | `foundation/voice-profile.md` (see fallback below) | guardrail + optional `preferred_hook_types` |
-| 2 | `banks/hook-bank.md` | fill-in patterns for the chosen hook lane |
+| 2 | `knowledge/hook-patterns.md` | fill-in patterns for the chosen hook lane |
 | 2 | `references/problem-result-options.md` | reading pain-acuteness vs result-drama to pick Poke / Tease / Combine |
 | 2 | `references/credibility-line-weaving.md` | which slot (Hook / Problem-Result / Setup) the credibility line weaves into |
 | 2, conditional | `banks/story-bank/` + `knowledge/story-pulling-criteria.md` | only if a credibility candidate weaves a story; stage-match is the top filter here |
 | 2, conditional | `banks/proof-bank/`, `banks/testimonial-bank/` + `knowledge/proof-placement-rules.md` | only if the credibility line cites a number, screenshot, or testimonial |
 | 2, conditional | `knowledge/metaphor-integration.md` | only if a Hook candidate uses metaphor framing (drop clean, 3-sentence cap) |
-| 3 | `banks/transition-bank.md` Sections 1 + 4 | hook-forward patterns and the banned-phrase tiers |
+| 3 | `knowledge/transition-patterns.md` Sections 1 + 4 | hook-forward patterns and the banned-phrase tiers |
 | 4 | `foundation/reference-pieces/{voice_context}.md` | the voice engine for the grain check |
 | 4 | `knowledge/voice-pressure-test.md` + `knowledge/voice-rhythm.md` | the two-pass voice check, judged by ear |
 | 4 | `knowledge/visual-proof-callouts.md` | callout syntax for claims needing visual proof |
@@ -56,7 +56,7 @@ Load each file at the phase that needs it. Do not front-load.
 
 ## Phase 2: Hook + Problem/Result
 
-**Generate 2-3 Hook candidates** from `banks/hook-bank.md` patterns in the chosen lane, slots filled from the lock list only. Each: under 5 seconds spoken (roughly 15 words), distinct from the others, sayable by THIS creator. If a pattern's slot can't be filled from the lock list, skip the pattern.
+**Generate 2-3 Hook candidates** from `knowledge/hook-patterns.md` patterns in the chosen lane, slots filled from the lock list only. Each: under 5 seconds spoken (roughly 15 words), distinct from the others, sayable by THIS creator. If a pattern's slot can't be filled from the lock list, skip the pattern.
 
 **Generate 2-3 Problem/Result candidates.** Pick per `references/problem-result-options.md`: acute lived pain → Poke the Problem; a dramatic receipt → Tease the Result; both loud → Combine. The poked problem must be one the avatar actually lives (usually the problem this video was framed around). A poke the avatar doesn't feel loses them; only regenerate if it rings false.
 
@@ -70,7 +70,7 @@ Push back on weak picks: fabricated number (hard reject, regenerate), over 5 sec
 
 **Setup:** "So in this video, I'm going to show you [Q1], [Q2], [Q3]." Each clause maps to one locked viewer question. Maximum 3 (the format planner may trim to 1 or extend for long Deep Dives). Verbs: "show you" / "walk you through," never "talk about" / "tell you." Push back if a clause maps to no locked question or promises something the outline doesn't deliver. The Setup is a contract; the body pays it.
 
-**Transition:** 1-2 candidates from `transition-bank.md` Section 1 (hook-forward). Each forwards into the outline's FIRST body point with a result the avatar cares about, and signals the content has started. Tier 1 banned phrases (Section 4) never surface as options; Tier 2 phrases surface flagged with the failure mechanism, creator decides. If a picked transition forwards to something the first body point doesn't deliver, flag it.
+**Transition:** 1-2 candidates from `transition-patterns.md` Section 1 (hook-forward). Each forwards into the outline's FIRST body point with a result the avatar cares about, and signals the content has started. Tier 1 banned phrases (Section 4) never surface as options; Tier 2 phrases surface flagged with the failure mechanism, creator decides. If a picked transition forwards to something the first body point doesn't deliver, flag it.
 
 ## Phase 4: Assemble + pressure-test
 
@@ -98,7 +98,7 @@ Always, both modes:
 ## Hard rules (candidates never shown when violated)
 
 1. **No fabrication.** Numbers, names, claims: lock list only. If the creator wants a number-driven hook and no number exists, kick it back: add the number to the brain dump or drop the angle.
-2. **Tier 1 banned transition phrases** (transition-bank Section 4: B-1, B-2, B-3, B-6). Substitute silently.
+2. **Tier 1 banned transition phrases** (transition-patterns Section 4: B-1, B-2, B-3, B-6). Substitute silently.
 3. **No bolted-on self-introduction.** Credibility weaves into a claim moment.
 4. **Setup clauses map to locked viewer questions.** Otherwise the intro breaks the title/thumbnail promise.
 5. **No em-dashes.** Universal hard rule; Vale enforces on save.

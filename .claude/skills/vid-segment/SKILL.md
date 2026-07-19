@@ -26,7 +26,7 @@ Load each file at the phase that needs it. Do not front-load.
 | 2 | `knowledge/parable-decision-matrix.md` | picking the parable type (visual demo / story / metaphor) |
 | 2, on demand | ONE bank folder at a time as the segment queries it, plus that bank's filter file: `story-bank/` → `knowledge/story-pulling-criteria.md`; `proof-bank/` and `testimonial-bank/` → `knowledge/proof-placement-rules.md`; `metaphor-bank/` → `knowledge/metaphor-integration.md`; `framework-bank/` → `knowledge/framework-builder.md` (also the 5-step build when the bank has no match) | candidates for the block types this segment actually uses. Never load all the banks up front |
 | 2, conditional | `knowledge/visual-demo-builder.md` | only when the parable is a Visual Demo (inline 3-step brainstorm; there is no visual-demo bank) |
-| 2 | `banks/transition-bank.md` | Section 2 patterns for the structure draft's handoff; Section 4 banned phrases re-checked at prose time |
+| 2 | `knowledge/transition-patterns.md` | Section 2 patterns for the structure draft's handoff; Section 4 banned phrases re-checked at prose time |
 | 3 | `foundation/voice-profile.md` + `foundation/reference-pieces/{voice_context}.md` | the guardrail and the voice engine (see fallback below) |
 | 3 | `knowledge/voice-rhythm.md` + `knowledge/voice-pressure-test.md` | the by-ear rhythm lens and the pre-save voice check |
 | 3, conditional | `knowledge/visual-proof-callouts.md` | only when the principle carries a claim the editor must put on screen |
@@ -54,7 +54,7 @@ The segment must work AS A UNIT before any prose exists. A structure draft is bu
 
 1. **Parable (the show), when the shape calls for one.** The emotional open: visual demo, story, or metaphor, picked via the decision matrix, anchored in the brain dump's material.
 2. **Principle (the tell).** The actionable lesson: the framework and its components, proof placed AFTER the framework lands, one sharp takeaway line.
-3. **Transition (the handoff).** Signals the shift AND promises a result the viewer cares about: "here's step 4" is dead, "step 4 is the one that got me consistent leads" lives. Patterns in transition-bank Section 2, or the body-to-ending bridge if this is the last segment.
+3. **Transition (the handoff).** Signals the shift AND promises a result the viewer cares about: "here's step 4" is dead, "step 4 is the one that got me consistent leads" lives. Patterns in transition-patterns Section 2, or the body-to-ending bridge if this is the last segment.
 
 **Bank pulling** (this skill's differentiator). Query only the banks this segment's block types need, by their match keys (story `illustrates`, proof `proof_type` + what it proves, metaphor `concept`, framework name, testimonial claim-match). Surface 0-3 candidates per type, each as: slug + one line + WHY it matches this segment's job. More than 3 is choice paralysis. Testimonials are seasoning inside a segment, never its spine.
 

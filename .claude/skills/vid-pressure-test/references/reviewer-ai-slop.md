@@ -13,7 +13,7 @@ Phase 2 reviewer 3. Fresh-context spawn. Single job: catch the prose patterns th
 
 The signature of unedited LLM output. Common shapes:
 
-- **Banned transition phrases.** "Let me dive in." "Let's talk about." "Now let me show you." "At the end of the day." "It is worth noting." "Here is the thing." (Tier 1 of transition-bank, plus the brand-level bans.)
+- **Banned transition phrases.** "Let me dive in." "Let's talk about." "Now let me show you." "At the end of the day." "It is worth noting." "Here is the thing." (Tier 1 of transition-patterns, plus the brand-level bans.)
 - **Vague value language.** "Move the needle." "Unlock." "Elevate." "Transform." "Game changer." "Insane." "Revolutionary." (See feedback memory `feedback_no_vague_ai_language`.)
 - **Announcing transitions.** "Now I want to share something important." "Here is where it gets interesting." "Let me explain why this matters."
 - **Three-item-list crutch.** Every paragraph closes with a rule-of-three list. Reads as AI-default.
@@ -26,7 +26,7 @@ The signature of unedited LLM output. Common shapes:
 ## Sources of truth
 
 1. `foundation/voice-profile.md` `refusals`: the creator's words-avoided and anti-patterns
-2. `banks/transition-bank.md` Section 4: Tier 1 banned phrases (auto-reject)
+2. `knowledge/transition-patterns.md` Section 4: Tier 1 banned phrases (auto-reject)
 3. `knowledge/intro-architecture.md`: banned transitions
 4. The universal AI-slop list in the severity tiers below (vague AI language, weak verbs, and the em-dash hard rule apply to every creator, no file needed)
 
@@ -35,7 +35,7 @@ The signature of unedited LLM output. Common shapes:
 **Hard issue (auto-fail):**
 
 - Em-dashes anywhere
-- Tier 1 banned phrase from transition-bank Section 4 (let me dive in, let me tell you, let's talk about, and finally / lastly)
+- Tier 1 banned phrase from transition-patterns Section 4 (let me dive in, let me tell you, let's talk about, and finally / lastly)
 - Banned word from brand.md without applying the required swap
 - Vague value words ("leverage," "unlock," "elevate," "transform," "move the needle," "game changer") in copy that should be specific
 
@@ -70,7 +70,7 @@ Script transition: "Let me dive into the first thing."
 ```
 Location: Transition after Intro
 Quote: "Let me dive into the first thing."
-Issue: "dive into" is Tier 1 banned per transition-bank Section 4. Auto-reject.
+Issue: "dive into" is Tier 1 banned per transition-patterns Section 4. Auto-reject.
 Suggested fix: "Here is the first thing." OR mirror the creator's transition style from reference-pieces.
 ```
 

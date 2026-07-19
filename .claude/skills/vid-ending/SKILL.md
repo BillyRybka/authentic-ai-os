@@ -24,7 +24,7 @@ Load each file at the phase that needs it. Do not front-load.
 | 1 | `references/end-screen-design.md` | how to pick the next video (converts for this goal, logical next watch) |
 | 2 | `foundation/voice-profile.md` + `foundation/reference-pieces/{voice_context}.md` | the guardrail and the voice engine. Voice only, not structure: if a passage's arc conflicts with Pivot/Gap/Bridge, the spec wins |
 | 2 | `references/pivot-gap-bridge-shapes.md` | the formula's worked shapes and contrasts |
-| 2 | `banks/transition-bank.md` Sections 3 + 4 | BE-1..BE-8 close patterns, banned-phrase tiers |
+| 2 | `knowledge/transition-patterns.md` Sections 3 + 4 | BE-1..BE-8 close patterns, banned-phrase tiers |
 | 2 | `references/cta-placement-by-format.md` | which goal x format CTA combinations work, which tank |
 | 2 | `references/ending-anti-patterns.md` | banned phrases and the failure mechanism behind each |
 | 2, conditional | `knowledge/story-pulling-criteria.md` / `proof-placement-rules.md` (+ `visual-proof-callouts.md`) / `metaphor-integration.md` / `parable-decision-matrix.md` | only if the close actually pulls a story, cites proof, frames with a metaphor, or opens on a fresh emotional beat. Endings are claim-light; most runs skip all four |
@@ -60,7 +60,7 @@ Load each file at the phase that needs it. Do not front-load.
 
 ## Phase 2: Draft 2 candidates
 
-Draft 2 complete closes (Pivot + Gap + Bridge + CTA), differing in shape and rhythm (different BE patterns from transition-bank Section 3), same Gap problem and next video. Slots filled from the script's actual material and the creator's voice; receipts from the lock list only.
+Draft 2 complete closes (Pivot + Gap + Bridge + CTA), differing in shape and rhythm (different BE patterns from transition-patterns Section 3), same Gap problem and next video. Slots filled from the script's actual material and the creator's voice; receipts from the lock list only.
 
 **Length: 30-60 seconds read aloud (roughly 60-150 words).** Longer is a recap (banned). Shorter is a bare CTA (banned).
 
@@ -73,7 +73,7 @@ Draft 2 complete closes (Pivot + Gap + Bridge + CTA), differing in shape and rhy
 5. **Em-dashes.** Universal hard rule.
 6. **Read-aloud failure.** If it doesn't flow as continuous spoken speech, restructure.
 
-**Soft friction, flag and let the creator decide:** Tier 2 phrases ("if you liked this please subscribe", "smash that like button", "stay tuned") with their failure mechanism and override case per transition-bank Section 4; a 3+ sentence Pivot (reads as a wind-down); a bridge to a video that flopped (name the trade-off); a CTA mismatched to goal per the placement reference; hedge words in the Bridge ("maybe", "I think you should"), the Bridge is confident.
+**Soft friction, flag and let the creator decide:** Tier 2 phrases ("if you liked this please subscribe", "smash that like button", "stay tuned") with their failure mechanism and override case per transition-patterns Section 4; a 3+ sentence Pivot (reads as a wind-down); a bridge to a video that flopped (name the trade-off); a CTA mismatched to goal per the placement reference; hedge words in the Bridge ("maybe", "I think you should"), the Bridge is confident.
 
 Present the 2 candidates as a numbered list, each annotated with its BE pattern, estimated read-aloud time, goal, and any soft flags. The candidate text comes from THIS video's material; do not model closes on remembered examples.
 

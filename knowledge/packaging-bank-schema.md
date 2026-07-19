@@ -40,8 +40,8 @@ One file per packaging combo that won. Entry captures:
 
 - Third-party frameworks or examples belong in `knowledge/`.
 - Title patterns and fill-in-the-blank formulas belong in `banks/title-bank.md`.
-- Hook patterns belong in `banks/hook-bank.md`.
-- Transition patterns belong in `banks/transition-bank.md`.
+- Hook patterns belong in `knowledge/hook-patterns.md` (system reference, not a creator bank).
+- Transition patterns belong in `knowledge/transition-patterns.md` (system reference, not a creator bank).
 - Losing A/B variants. Winners only.
 - Untested concepts. Packages that never got measured against a real audience do not belong.
 - Title-only wins without thumbnail context. If the thumbnail data is missing, the entry is incomplete.

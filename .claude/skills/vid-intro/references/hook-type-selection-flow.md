@@ -8,7 +8,7 @@ tags: [reference, hook, selection-flow]
 
 # Hook Type Selection Flow
 
-The decision flow `vid-intro` runs to pick which of the 5 canonical hook types to lean on for THIS video. The 5 types and their patterns live in [[intro-architecture]] Step 2 and [[hook-bank]]; per-format hook-lane defaults live in each `knowledge/format-planners/{format}.md`'s intro-adaptation table. This file does NOT restate any of those. It teaches the runtime decision: how `vid-intro` cross-references those sources to pick the lane for a specific video.
+The decision flow `vid-intro` runs to pick which of the 5 canonical hook types to lean on for THIS video. The 5 types and their patterns live in [[intro-architecture]] Step 2 and [[hook-patterns]]; per-format hook-lane defaults live in each `knowledge/format-planners/{format}.md`'s intro-adaptation table. This file does NOT restate any of those. It teaches the runtime decision: how `vid-intro` cross-references those sources to pick the lane for a specific video.
 
 Examples-first contrastive: every rule shows a worked match plus a near-miss with one-line "why this lands / why this doesn't."
 
@@ -93,6 +93,6 @@ When the creator wants to override, the skill confirms once ("Going with Credibi
 
 ## What this file does NOT do
 
-- It does not list every hook pattern. That's [[hook-bank]].
+- It does not list every hook pattern. That's [[hook-patterns]].
 - It does not make the final creative call. The creator picks among 2-3 candidates.
 - It does not enforce voice preferences as laws. Voice profile is a fingerprint, not a rule. Match it unless format identity overrides.

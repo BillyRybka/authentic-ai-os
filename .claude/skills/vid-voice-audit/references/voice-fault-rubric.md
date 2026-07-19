@@ -131,7 +131,7 @@ Script line: "Let me show you exactly how to dive into this strategy."
 severity: hard
 location: "Intro line 6"
 quote: "Let me show you exactly how to dive into this strategy."
-issue: "'dive into' is a banned transition phrase per transition-bank Tier 1 AND a voice-profile refusal anti-pattern."
+issue: "'dive into' is a banned transition phrase per transition-patterns Tier 1 AND a voice-profile refusal anti-pattern."
 suggested_rewrite: "Here is exactly how this works."
 ```
 
