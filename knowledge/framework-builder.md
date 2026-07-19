@@ -10,11 +10,12 @@ tags: [reference, framework-capture, framework-bank]
 
 A framework is a container for the viewer's brain. It turns a scattered topic into a named structure they can hold, repeat, and act on. The #1 mistake in a principle is including too much. A framework's job is to give the viewer the 20% of the material that creates 80% of the result, and to give that 20% a memorable shape and name.
 
-This guide teaches how frameworks work. vid-capture's Stage F uses it to walk creators through naming an existing system. vid-segment loads it inline during writing when a Framework block is needed and no matching entry exists in `banks/framework-bank/`.
+This guide teaches how frameworks work. vid-capture's Stage F uses it to walk creators through naming an existing system. vid-segment loads it whenever a segment's principle is a framework: to pick the teaching shape for an existing bank entry, or to walk the 5-step build when no entry exists.
 
 ## When this fires
 
 - vid-capture Stage F (standalone): creator says "I have a system called X, save it."
+- vid-segment (write time): the segment's principle pulls a framework from `banks/framework-bank/`; this file decides the shape it's taught in.
 - vid-segment (inline, mid-write): creator is writing a segment whose principle is a framework, no bank match exists, walks the 5-step build then optionally saves via Stage F.
 - vid-segment (inline, mid-write): creator wants help naming a framework that already exists in their brain-dump but isn't banked yet.
 
@@ -68,7 +69,7 @@ For Proof, see `knowledge/proof-placement-rules.md`. For Checklists / On-Screen 
 
 **Why it lands:** viewers remember the word first, then recall what each letter means. Strong recall, simple recall, the framework becomes shorthand.
 
-## The 5 framework shapes
+## The 6 framework shapes
 
 Pick the shape AFTER the components are clear, not before. The shape's job is to make the relationship between components visible at a glance.
 
@@ -144,6 +145,24 @@ Pick the shape AFTER the components are clear, not before. The shape's job is to
 | Share a clean alphabetical relationship | Acronym |
 
 If two shapes seem to fit, default to the simpler one. The shape exists to make the relationship visible, not to demonstrate cleverness.
+
+If NO row fits, the "framework" is probably a list, not a framework. If the components are a flat list with no logic between them, it's a checklist: teach it with on-screen step markers, don't dress it as a framework.
+
+## Using a framework at write time (vid-segment)
+
+When the segment's principle pulls an existing framework from the bank:
+
+1. Open the entry, read `framework_type` and `components:`
+2. If the entry has a `shape:` field, respect it; otherwise apply the selection matrix
+3. Note the shape in the structure draft (e.g. "Principle: framework [[3-part-onboarding-system]], arrows shape")
+4. At prose time, name the framework, walk the components in shape order, and place a `> [!note] visual:` callout suggesting the on-screen graphic if the format supports it
+
+Cross-shape rules, either path:
+
+- **Three is the default count.** More than 5 components rarely lands. An 8-component framework should be split, or some components are sub-items under a parent.
+- **Name the shape on screen.** Arrows drawn as steps, pyramid stacked, acronym letters bold. Make the shape visible.
+- **One framework per segment.** Two frameworks in one segment dilute both; that's two segments.
+- **The shape doesn't replace the lesson.** The shape is the scaffold; the words do the teaching.
 
 ## The 5-step build process
 

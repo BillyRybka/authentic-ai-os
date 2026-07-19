@@ -18,20 +18,19 @@ Load each file at the phase that needs it. Do not front-load.
 | Phase | Load | For |
 |---|---|---|
 | 1 | `content/pieces/{slug}/piece.md` | format, goal, voice_context, locked title, prior `*_used` arrays |
-| 1 | `content/pieces/{slug}/script.md` | this segment's skeleton section (its job, anchors, tension role), the prior segment's closing line, the `## Blocks to capture` list |
+| 1 | `content/pieces/{slug}/script.md` | this segment's skeleton section (its job, anchors, tension role), the prior segment's closing line (the handoff this segment inherits), the `## Blocks to capture` list |
 | 1 | `content/pieces/{slug}/brain-dump.md` | the raw material and the creator's actual words |
 | 1 | `content/pieces/{slug}/async-block-notes.md` IF it exists | notes tagged to this segment from earlier writing sessions |
 | 1 | `knowledge/format-planners/{format}.md` | how THIS format weights the bricks (full parable+principle, lean principle-only steps, or case-study one-arc) |
 | 2 | `references/parable-principle-shapes.md` | the structural shapes for the two bricks |
 | 2 | `knowledge/parable-decision-matrix.md` | picking the parable type (visual demo / story / metaphor) |
-| 2, on demand | ONE bank folder at a time as the segment queries it (`banks/story-bank/`, `proof-bank/`, `metaphor-bank/`, `testimonial-bank/`, `framework-bank/`) + its filter file (`knowledge/story-pulling-criteria.md` / `proof-placement-rules.md` / `metaphor-integration.md`) | candidates for the block types this segment actually uses. Never load all the banks up front |
-| 2, conditional | `references/framework-shapes.md` + `knowledge/framework-builder.md` | only when the principle is a framework (shapes for teaching it; the 5-step build if it doesn't exist yet) |
+| 2, on demand | ONE bank folder at a time as the segment queries it, plus that bank's filter file: `story-bank/` → `knowledge/story-pulling-criteria.md`; `proof-bank/` and `testimonial-bank/` → `knowledge/proof-placement-rules.md`; `metaphor-bank/` → `knowledge/metaphor-integration.md`; `framework-bank/` → `knowledge/framework-builder.md` (also the 5-step build when the bank has no match) | candidates for the block types this segment actually uses. Never load all the banks up front |
 | 2, conditional | `knowledge/visual-demo-builder.md` | only when the parable is a Visual Demo (inline 3-step brainstorm; there is no visual-demo bank) |
+| 2 | `banks/transition-bank.md` | Section 2 patterns for the structure draft's handoff; Section 4 banned phrases re-checked at prose time |
 | 3 | `foundation/voice-profile.md` + `foundation/reference-pieces/{voice_context}.md` | the guardrail and the voice engine (see fallback below) |
 | 3 | `knowledge/voice-rhythm.md` + `knowledge/voice-pressure-test.md` | the by-ear rhythm lens and the pre-save voice check |
-| 3 | `banks/transition-bank.md` Sections 2 + 4 | segment-to-segment patterns, banned phrases |
 | 3, conditional | `knowledge/visual-proof-callouts.md` | only when the principle carries a claim the editor must put on screen |
-| 4 | `knowledge/vault-integration.md` | the save schema and the update-both-sides rule |
+| 4 | nothing | the save contract is embedded in Phase 4; the vault rules live in the workspace CLAUDE.md |
 
 ## Prerequisites
 
@@ -68,7 +67,7 @@ The segment must work AS A UNIT before any prose exists. A structure draft is bu
 
 **Mid-write ideas for OTHER segments** don't break flow: jot one line into `async-block-notes.md` (`- [Segment M, block type]: idea`) and keep going.
 
-**The segment test.** Before surfacing the draft, run three silent pass/fail checks on the plan, judged through the avatar's eyes. NEW: would they say "heard it before"? EASY: is this the vital 20% that gets 80% of the result, with nothing that makes their brain strain? INSPIRING: does it make them want to act, not just understand? A fail is a structure problem; fix it here, not in prose.
+**The segment test.** Before surfacing the draft, run three silent pass/fail checks on the plan, judged through the avatar's eyes. NEW: would they say "heard it before"? EASY: is this the vital 20% that gets 80% of the result, with nothing that makes their brain strain? INSPIRING: does it make them want to act, not just understand? The target feeling is the viewer coming away feeling smart: "that was easy, this person's a genius, I'm coming back." A fail is a structure problem; fix it here, not in prose.
 
 Surface the structure draft as a compact block (segment label, parable pick + bank candidates, principle + framework/proof candidates, transition pattern) and ask: lock it, swap a block, pull a different candidate, sharpen the payoff, or scrap. **Loop until the structure locks. No prose before lock.**
 
@@ -90,9 +89,9 @@ Per block: the parable opens the segment, verbatim brain-dump lines where possib
 
 Always, both modes:
 
-- **Append** the locked prose to `content/pieces/{slug}/script.md` under the segment's heading. Preserve all prior sections; never overwrite.
-- Update piece.md: append the pulled wikilinks to whichever of `stories_used` / `proofs_used` / `metaphors_used` / `testimonials_used` / `frameworks_used` apply; append this segment's label to `segments_completed` (the pipeline's body-progress counter); bump `last_updated`.
-- Update every pulled bank entry per the update-both-sides rule: `used_in` gets `[[piece-slug]]`, `status` flips `captured` → `used`.
+- **Append** the locked prose to `content/pieces/{slug}/script.md` under the segment's heading. Preserve all prior sections; never overwrite. One exception: if this segment's opening made the prior segment's closing transition land wrong, adjust that one inherited line and tell the creator.
+- Update piece.md frontmatter: append the pulled `[[wikilinks]]` to whichever of `stories_used` / `proofs_used` / `metaphors_used` / `testimonials_used` / `frameworks_used` apply; append this segment's label to `segments_completed` (the pipeline's body-progress counter); bump `last_updated` to today. Append only; never touch another skill's fields.
+- Update every pulled bank entry, both sides of the link: its `used_in` gets `[[{piece-slug}]]`, its `status` flips `captured` → `used`.
 - Surface in chat: the voice-check result (real, not scripted) and any `bank_link: null` visual-proof callouts so the creator can capture the proof before filming or rephrase.
 
 **STOP.** Do not write the next segment. The creator or the orchestrator re-invokes per segment.
