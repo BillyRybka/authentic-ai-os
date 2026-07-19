@@ -202,7 +202,7 @@ What does NOT get reused:
 - Specific contrast pairs (one sales page vs another)
 - Specific frozen frames
 
-When the creator nails a demo and wants to remember the IDEA for inspiration, drop a note in `content/pieces/{slug}/async-block-notes.md` or just trust the script's record. The bank model is wrong for this material type.
+When the creator nails a demo and wants to remember the IDEA for inspiration, drop a `> [!todo]` callout under the relevant segment's heading in that piece's script.md, or just trust the script's record. The bank model is wrong for this material type.
 
 ## When to swap to a different block type
 
