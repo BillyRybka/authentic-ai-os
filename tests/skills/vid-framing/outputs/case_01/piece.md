@@ -16,6 +16,6 @@ voice_context: youtube-script
 
 ## Considered + Dropped Angles
 
-> [!quote] Angle: You are not the only one who can do this. You are just the only one with the steps in your head (principle-first opener, then proof through Marcus).
-> Why: Principle-first fits cold audiences who need the claim before the story. For this warm audience, the story earns more trust and the principle lands harder after they have watched Marcus's transformation, not before it. No bank pattern backs principle-first opens on delegation; this was a gut pick.
+> [!quote] Angle: You are not the only one who can do this. You are just the only one with the steps in your head (principle-first opener, then Marcus as proof).
+> Why: Principle-first fits cold audiences who need the claim before the story. For this warm audience, the story earns more trust and the principle lands harder after they have watched Marcus's transformation, not before it. No bank pattern backs principle-first opens on delegation; flagged as a gut pick.
 > Date: 2026-07-04

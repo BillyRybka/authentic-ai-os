@@ -103,9 +103,3 @@ The outline owns the order and the threads. The writer composes the actual forwa
 | `assets/script-skeleton-template.md` | Phase 3, the exact script.md shape |
 | `knowledge/format-planners/{format}.md` | Phase 1, the locked format's body shape |
 | `knowledge/parable-decision-matrix.md` | Phase 2, picking the parable type per point |
-
-## Related skills
-
-- `vid-intake` writes `brain-dump.md`, this skill mines it.
-- `vid-framing` writes the framing fields in `piece.md` (`selected_angle`, `core_payoff`, `format`, `goal`), this skill reads them.
-- `vid-segment` writes each point's prose from the outline this skill produces.

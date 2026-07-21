@@ -6,47 +6,50 @@ the skill has been edited or which version this is. Score only what is in front
 of you, against this rubric. Be consistent and a little stingy: a passing score
 requires the criterion to be clearly met, not arguably met.
 
+This rubric grades for offense. The mechanical floor (fabrication, character
+ceiling, em-dashes, banned words, AI-default phrasings, receipts present) is
+Tier A's job and is already enforced before you see a case. Your job is the
+question Tier A cannot answer: would these titles win the click next to the
+real winners in the pattern bank? A title that passes every safety gate and
+still sits flat is a failing title here.
+
 ## What you receive per case
 
-- `titles.md`, the note the skill produced: YAML frontmatter (slug,
-  locked_title, locked_bens, locked_lane), a `## Viewer` section (placed before
-  `## Claim`) with four labeled lines: `Viewer:` (the specific avatar person
-  who clicks this video), `Wants:` (the outcome they are chasing), `Fears:`
-  (what is painful or embarrassing for them right now), and `Driver:` (the
-  single dominant emotion in play), a `## Claim` section (placed before
-  `## Lanes`) with three labeled lines: `Claim:` (the disagreeable true thing
-  the video argues), `Stake:` (what it costs the viewer to not get this), and
-  `Belief:` (what the avatar currently assumes that the claim cuts against), a
-  `## Lanes` section (4 to 5 lane headings, each annotated on-brand/off-brand,
-  crowded/underused, and opportunity: yes/no; under each heading 1 to 2 numbered
-  candidates annotated with pattern, BENS, and char count; under each heading a
-  proof: line), and a `## Recommendation` section (1-2 sentences naming the
-  locked lane and why)
-- `transcript.md`, the full reasoning trace showing the divergent pass,
-  gap analysis, convergent cut, and creator exchange
-- The frozen fixture for this case: `piece.md` (format, pillar, locked angle)
+- `titles.md`, the note the skill produced: YAML frontmatter (`slug`,
+  `locked_title`, `locked_bens`, `locked_source` naming the bank receipt the
+  locked title was modeled on, or `wildcard`), a `## Lock list` section (the
+  specifics the titles were allowed to use), an `## Options` section (2 to 4
+  structure groups; each group opens with a `receipt:` line naming the source
+  outlier title, @channel, and multiplier, followed by 1 to 3 numbered
+  candidates annotated with BENS letters and char count), a `## Wildcard`
+  section (1 to 2 swings, labeled, no receipt required), and a
+  `## Recommendation` section (1 to 2 sentences naming the pick and the
+  evidence for it)
+- `transcript.md`, the full reasoning trace: the bank shopping, the adjust
+  work, the checklist pass, and the creator exchange
+- The frozen fixture for this case: `piece.md` (format, goal, locked angle)
   and `brain-dump.md` (material, lock list)
-- The creator's banks: `title-bank.md` (9 named patterns, each with spread) and
-  `power-words-bank.md`
-- The gap-finder data: `pattern-bank.md` (competitor outliers, spreads, xMed
-  multipliers per channel)
+- The creator's banks: `pattern-bank.md` (competitor outliers with views and
+  multipliers per channel), `title-bank.md` (named structures with worked
+  examples), `power-words-bank.md`
 - The foundation: `creator-foundation.md` (iceberg, avatar, Top 3 problems)
 
 Only run Tier B on cases that already passed Tier A. If a case failed Tier A,
 do not score it. The mechanical floor was not met.
 
-## Read-aloud anchor (calibrate here first)
+## Calibration anchor (do this before scoring)
 
-Before scoring any case, read the `reference-pieces/youtube-script.md` passage
-out loud in your head. That is Billy's voice at its clearest: short declarative
-punches, direct second-person, no warm-up, no hedging. Then read two of the
-title-bank worked examples aloud. Those are the shapes that feel like natural
-English. Hold both in mind as your calibration when you judge whether a title
-reads as one continuous human thought.
+Open `pattern-bank.md` and read the outlier rows for the three or four
+channels closest to this case's topic. Read the titles out loud in your head.
+Those titles pulled 2x to 30x their channel's normal views from this exact
+audience. That is the bar. Hold five of them in mind while you score. You are
+not comparing candidates to an abstract standard of "good copy." You are
+comparing them to these.
 
-The voice refusals in `voice-profile.md` are hard guards: no em-dashes, no
-AI-isms, no hedging, no neutrality. A title that violates a refusal fails the
-criterion that touches it.
+Voice is NOT part of this rubric. Titles are packaging, not prose. The only
+voice-shaped floor (one continuous human thought, no AI tells) is enforced in
+Tier A. Do not reward a title for sounding like the creator and do not punish
+a title for sounding like the niche's winners.
 
 ## Scoring system
 
@@ -58,403 +61,200 @@ This is binary. "Mostly yes" is a 0. Score what is in front of you.
 
 ## Criteria
 
-### 1. makes_a_claim [PRIMARY GATE]
+### 1. lineup_test [PRIMARY GATE]
 
-**What it measures:** The locked_title AND every candidate in the opportunity
-lane make a CLAIM or open a loop, rather than just describing the topic. The
-test: read the title and ask what the viewer's brain has to fill in. If the
-answer is "nothing, it just states what the video is about," it is a label, not
-a claim. Score 0.
+**What it measures:** The locked title survives sitting in a lineup with the
+real winners. This is the criterion that stops the skill producing safe,
+compliant titles that grade well and click badly.
 
-**How to judge:** Read the locked_title and every candidate in the lane(s) marked
-`opportunity: yes`. Ask of each one: does it make a point a viewer could
-disagree with, or does it open a curiosity loop (an implied problem, cost,
-reversal, or revelation)? The viewer must feel a reason to click beyond simply
-knowing the subject. If it only announces what the video covers with no tension
-for the mind to resolve, it is a label.
+**How to judge:** From `pattern-bank.md`, pick the five outlier titles nearest
+this case by topic and promise. Write the locked title into that list as a
+sixth row. Two questions, both must be yes:
 
-Anti-fabrication still applies: a claim must trace to the material. This
-criterion is not license to invent a claim the video does not make.
+1. **Does it belong?** Same class of click power. If the five bank titles
+   would visibly out-pull it on a home page (bigger claim, sharper stake,
+   stronger loop), it does not belong.
+2. **Does it stand out?** It is not a near-duplicate of any row in the lineup.
+   It brings its own stake or claim, so a viewer who has seen the other five
+   still has a reason to click this one.
 
-**Score 1 if:** The locked title and the opportunity-lane candidates each make a
-point a viewer could disagree with, or open a curiosity loop. The viewer's mind
-has something to resolve.
+Name the five lineup titles in your reasoning.
 
-**Score 0 if:** The locked title (or any opportunity-lane candidate) merely names
-the subject or announces a fact with nothing the viewer's mind has to work on.
-A pure product announcement, a topic label, or a factual description with no
-implied tension all score 0.
+**Score 1 if:** The locked title belongs in the lineup AND stands out from it.
 
-**Calibration examples (case 02, claude-cowork-newsjack):**
-- Fail: "Claude Cowork Just Dropped Scheduled Agents" is a pure product
-  announcement. Nobody can disagree. The viewer's brain fills in nothing. Label,
-  not claim.
-- Pass: "Your AI Can Finally Work Without You Watching" implies you have been
-  babysitting it (a claim about the viewer's current situation) and opens the
-  loop "how." Same facts, same lock list, but it makes a point.
-- Pass: "You're Still Babysitting Your AI (You Don't Have To)" is a direct
-  claim about the viewer that opens a resolution loop.
+**Score 0 if:** It reads visibly weaker than the lineup, OR it is one of the
+lineup titles with the nouns swapped, OR you find yourself arguing it "would
+probably do fine." Fine is a 0.
 
----
+Watch for the room-temperature failure: a title whose payload words name the
+video's mechanism (order, first, steps, setup) instead of the viewer's wound
+or desire. Bank winners run hot (Hard Way, AWFUL, Secret, QUIT). Cover the
+structure and read only the payload words; if none of them carries heat, the
+title reads visibly weaker in any lineup and scores 0 no matter how proven
+its shape is.
 
-### 2. touches_emotional_driver [PRIMARY GATE]
-
-**What it measures:** The locked_title AND every candidate in the opportunity
-lane press the dominant DRIVER named in the `## Viewer` block. A title can be
-accurate and even make a small claim and still be emotionally inert relative to
-the driver; that fails this gate.
-
-**How to judge:** Read the `Driver:` line in the `## Viewer` section. Then read
-the locked title and the opportunity-lane candidates. Ask: would this title make
-the viewer feel that specific want or fear? If the title merely names the
-contents or topic with no emotional pull toward the driver, score 0. The test is
-not whether the title is clever or has some tension in the abstract. The test is
-whether it presses the specific driver the skill named.
-
-Anti-fabrication still holds: pressing the driver is never license to invent a
-specific.
-
-**Score 1 if:** The locked title and all opportunity-lane candidates clearly
-press the named driver. The viewer who carries that want, fear, or identity
-would feel pulled.
-
-**Score 0 if:** The locked title or any opportunity-lane candidate is emotionally
-inert relative to the driver. Accurate, maybe even technically a claim, but
-touches no nerve tied to the driver.
-
-**Calibration (case 01, claude-content-skills; driver is roughly the fear of
-needing a team you cannot afford, or the hope that one person can compete solo):**
-- Fail: "My 7 Claude Content Skills (steal them)" names the contents, presses
-  no nerve. The viewer who fears needing a team feels nothing. Inert.
-- Pass: "7 Claude Skills I Can't Live Without (steal them)" presses
-  indispensability and FOMO. "Can't live without" signals these are load-bearing,
-  pressing the driver that one person needs every edge they can get.
-- Pass: "Why You Don't Need a Content Team (7 Claude Skills)" hits the
-  team-you-cannot-afford fear directly. The driver is the headline.
+**Calibration (case 00, client-340k-to-1-3m):**
+- Pass: "$340K to $1.3M on 2,500 Subscribers" holds its own next to
+  money-arc outliers because the small-channel anchor is a stake none of them
+  carry.
+- Fail: "How to Build a Content System That Converts" dies in any lineup.
+  No bank winner sounds like that, because it makes no one feel anything.
+- Fail: a locked title that is a bank winner with only the topic word changed.
+  It belongs, but it does not stand out.
 
 ---
 
-### 3. reads_aloud_natural
+### 2. teeth [PRIMARY GATE]
 
-**What it measures:** Every candidate in the set reads as one continuous human
-thought said out loud, not as stitched fragments, invented compound nouns, or a
-mid-title smash-up of two sentences.
+**What it measures:** The locked title opens a loop AND takes a stand. Both.
+An open loop with no stand is trivia. A stand with no loop is a thesis
+statement. Safe language and thesis-stating titles both fail, no matter how
+clean they are.
 
-**How to judge:** Say each candidate aloud in your head. A passing title sounds
-like a person said the whole thing in one breath. A failing title makes you
-pause mid-way, trip over an invented phrase ("unsticks 365s"), or arrive at two
-grammatically separate statements forced into one line.
+**How to judge:** Read the locked title and answer two questions:
 
-**Score 1 if:** Every candidate passes the read-aloud test. Not a single one
-stumbles.
+1. **The loop:** is there something the viewer's mind must resolve (a how, a
+   what, a wait-really)?
+2. **The stand:** does the title commit to a position someone could disagree
+   with, or press a cost the viewer does not want to admit? "Interesting" is
+   not a stand. A stand has an edge: it says you're doing it wrong, this
+   thing you trust is costing you, the common path is the trap.
 
-**Score 0 if:** Even one candidate contains a fragment smash-up ("I Tried It.
-Revenue Dropped."), an invented compound that is not real English, or a
-parenthetical tag-on that turns a flowing title into a stop-start structure
-("My 7 Skills (Steal Them) (No Employees)").
+Anti-fabrication still holds: the stand must be one the video actually
+argues, per piece.md and the brain-dump. A borrowed stand the material never
+makes is a 0 here and a Tier A fabrication besides.
 
-**Calibration examples:**
-- Pass: "DON'T Hire a Content Team. Use These 7 Skills Instead" reads as one
-  contrarian command with a completion. One breath.
-- Pass: "Claude Cowork Just Changed How Solo Creators Work" is a complete
-  subject-verb-object sentence.
-- Fail: "340K To 1.3M: Content System Did It (1 Year)" is three fragments plus
-  a parenthetical tag-on.
-- Fail: "The Babysitting-Problem Solver Cowork Dropped" has an invented
-  compound noun that is not real English.
+**Score 1 if:** Loop and stand are both present in the locked title.
 
----
+**Score 0 if:** Either is missing. A neutral curiosity title ("Why a 2,500-Sub
+Channel Hit $1.3M in a Year") opens a loop but takes no stand: 0. A flat
+declaration ("Consistency Matters More Than Reach") takes a stand but opens
+no loop: 0.
 
-### 4. bank_anchored
-
-**What it measures:** The majority of lane titles are visibly built from the
-creator's 9 named title-bank patterns, not from free-form invention. The skill's
-job is to fill proven shapes with real material, not to free-style. The pattern
-annotation on each candidate is the signal; the transcript shows whether the
-divergent pass actually pulled multiple patterns.
-
-**How to judge:** Look at the `pattern:` annotation for each candidate across
-all lanes. At least 4 of the total 5 to 10 candidates should reference a real
-pattern_id from `title-bank.md` (contrarian-identity, contrarian-correction,
-solo-leverage, news-jack-release, speed-mastery, better-than-masses,
-money-proof, steal-these, definitive-resource). "Free-form" is allowed but it
-must be the minority. A set where most candidates say "free-form" failed to
-build from the bank.
-
-Check the transcript: did the divergent pass actually pull multiple patterns, or
-did it stay in one shape?
-
-**Score 1 if:** At least 4 candidates map to a real, named pattern_id, AND the
-transcript shows the divergent pass pulled from multiple patterns.
-
-**Score 0 if:** Fewer than 4 candidates cite a real pattern_id, OR the
-transcript shows the divergent pass was effectively free-form invention with
-pattern labels retrofitted after the fact.
-
-**Calibration examples:**
-- Pass (6 candidates across 4 lanes): contrarian-correction, solo-leverage,
-  speed-mastery, steal-these, news-jack-release, contrarian-identity. Six real
-  shapes across different lanes.
-- Fail (5 candidates across 3 lanes): free-form, free-form, free-form,
-  contrarian-correction, free-form. One real pattern in five.
+**Calibration (case 00):**
+- Pass: "Why Chasing Subscribers Kept This Channel Broke" (loop: what were
+  they doing instead; stand: the growth advice you follow is the problem),
+  provided the material argues it.
+- Fail: "Why a 2,500-Sub Channel Hit $1.3M in a Year" (loop, no stand).
+- Fail: "Small Channels Can Out-Earn Big Ones" (stand, no loop, and stated
+  as a thesis).
 
 ---
 
-### 5. specific_unrepeatable
+### 3. adjust_quality
 
-**What it measures:** The locked title carries at least one concrete specific
-from the case's lock list that makes it impossible to paste onto a different
-video. Generic titles that could front any video in the niche fail this test.
+**What it measures:** The proven options are real adjusts, not noun swaps.
+The skill's engine is: keep what makes the source outlier win, swap in this
+video's subject and this avatar's stake. This criterion checks the engine
+survived the swap.
 
-**How to judge:** Read the locked_title. Ask: "Could this title front a
-different video about the same general topic?" If yes, it is generic. If the
-title contains a specific from the lock list (a dollar figure, a count, a named
-tool, a named feature, a specific timeframe, a named outcome) that is unique to
-this video's material, it passes.
+**How to judge:** For each structure group in `## Options`, look up its
+`receipt:` in `pattern-bank.md` (Tier A confirmed it exists; you judge the
+craft). Ask of each candidate: what makes the SOURCE title pull, and does the
+candidate reproduce that pull with this case's material? A dead adjust keeps
+the source's words but loses its stake: the source's stake belonged to the
+source's audience, and the candidate never replaced it with this avatar's.
+Check the transcript: the skill should articulate why each source wins before
+adjusting it.
 
-Do not credit a specific that is not in the lock list. If the title says "$500K"
-and the lock list has "$340K" and "$1.3M", the $500K is a fabrication, not a
-specific (Tier A should have caught this; if it somehow passed, still score 0
-here on specificity grounds).
+**Score 1 if:** Every structure group's candidates keep the source's engine
+with this avatar's stake swapped in, AND the transcript shows the skill named
+why each source wins before writing.
 
-**Score 1 if:** The locked title contains at least one concrete, lock-list item
-that makes it uniquely tied to this video's content.
+**Score 0 if:** Any group's candidates are noun-swaps that lose the stake, OR
+the receipts read as retrofitted labels on titles that were actually written
+free-form (the transcript shows no adjust reasoning).
 
-**Score 0 if:** The locked title is generic enough to paste onto any video in
-the niche, OR the only "specific" is an invented one not present in the lock list.
-
-**Calibration examples (case 00, client-340k-to-1-3m lock list: $340K, $1.3M,
-1 year, 2,500 subscribers):**
-- Pass: "How a 2,500-Sub Channel Went From $340K to $1.3M" contains three
-  lock-list specifics. Unrepeatable.
-- Pass: "$340K to $1.3M on 2,500 Subscribers (No Viral Moment)" has the arc.
-- Fail: "How to Build a Content System That Converts" could front any content
-  system video. No lock-list specific.
-- Fail: "The $500K Content System" has an invented dollar figure.
-
-**Calibration examples (case 02, claude-cowork-newsjack: NO numbers in lock
-list):**
-- Pass: "Claude Cowork Just Dropped Scheduled Agents" names the exact release
-  and feature. The named items are in the lock list.
-- Fail: "Claude Cowork Now Saves 3 Hours a Week" invents a time-saving number.
+**Calibration:**
+- Pass: source "Gym MISTAKES That Kill Your Progress" adjusted to "Meal Prep
+  Mistakes That Keep You Ordering Takeout." Engine kept (you're doing it
+  wrong and it costs you the thing you care about), stake localized.
+- Fail: same source adjusted to "Meal Prep Mistakes That Kill Your Progress."
+  "Progress" was the gym audience's stake. Nouns swapped, pull lost.
 
 ---
 
-### 6. avatar_format_fit
+### 4. subtext_set
 
-**What it measures:** The locked title hooks one of the avatar's Top-3 problems
-AND fits the case format's natural BENS bias. Both conditions must hold.
+**What it measures:** The option set makes the viewer's brain do the work.
+For each candidate, reading it should make the viewer fill in a want, a how,
+or an am-I-wrong. A candidate whose honest fill-in is "nothing, it says what
+the video is about" is a label wearing a title's clothes.
 
-**How to judge:**
+**How to judge:** For the locked title and every candidate in `## Options`,
+write the fill-in: the unspoken sentence the viewer's mind completes. Judge
+the fill-ins, not the titles. "I want that," "how did they do that," "wait,
+am I doing this wrong?" pass. "This video is about X" fails that candidate.
 
-Avatar's Top-3 problems (from creator-foundation.md):
-1. "My AI content sounds like AI, and the slop is breaking trust."
-2. "I am prompting my way through everything instead of building real systems."
-3. "I keep refining the system instead of posting, and I am not sure it is
-   even authentic to me."
+**Score 1 if:** The locked title and all but at most one candidate produce a
+real fill-in.
 
-Also in scope: the reach myth (the belief you need a big audience to earn).
-The piece.md for each case names the avatar problem in play.
+**Score 0 if:** Two or more candidates (or the locked title itself) produce
+no fill-in beyond a description of the video.
 
-Format BENS bias (from SKILL.md and packaging-system.md):
-- Case Study: S + B (specific receipts plus transformation size)
-- Listicle: E + N (numbered and digestible, fresh tools or approach)
-- News: N + B (timely, stakes for how you work)
-
-The locked_bens field shows what the skill annotated. Judge whether it actually
-fits the format's bias, not just whether the annotation says the right letters.
-
-**Score 1 if:** The locked title clearly speaks to the case's avatar problem
-(as named in piece.md) AND its primary BENS weight matches the format's natural
-bias. Both must be true.
-
-**Score 0 if:** The title misses the avatar problem (it answers a different
-fear than the one the video addresses), OR the BENS weight is out of alignment
-with the format (e.g. a Listicle locked on S with no E, a News title locked on
-E with no N).
-
-**Calibration examples:**
-- Case 00 (Case Study, reach-myth problem, BENS bias S+B): "How a 2,500-Sub
-  Channel Went From $340K to $1.3M" hits the reach myth (small channel, big
-  result) and is anchored on S (specific receipts) and B (transformation size).
-  Score 1.
-- Case 00: "Build a Content System That Converts Your Audience" misses the
-  reach-myth hook and has no S or B weight. Score 0.
-- Case 02 (News, time-problem, BENS bias N+B): "Claude Cowork Just Dropped
-  Scheduled Agents" is timely (N) and stakes-raising for solo workflows (B).
-  Score 1.
-- Case 02: "7 Ways to Use Cowork's New Feature" converts a News piece into a
-  Listicle shape and has E weight, not N. Score 0.
+**Calibration (case 02, claude-cowork-newsjack):**
+- Fail: "Claude Cowork Just Dropped Scheduled Agents." Fill-in: nothing, it
+  is a product announcement.
+- Pass: "You're Still Babysitting Your AI (You Don't Have To)." Fill-in: am
+  I? What would it mean to stop?
 
 ---
 
-### 7. set_diverse
+### 5. unrepeatable
 
-**What it measures:** The lanes are genuinely different frames for the same
-video, not one idea relabeled across multiple headings. A diverse lane set gives
-the creator real choices: different emotional frames, different BENS weights,
-different pattern shapes, different aspects of the material emphasized.
+**What it measures:** The locked title is pinned to this video. It carries at
+least one lock-list specific (a number, a named tool or method, a timeframe,
+a named outcome) or a stake so particular to this material that the title
+cannot front a different video in the niche.
 
-**How to judge:** Read all lane headings and their candidate titles together. If
-you could describe the set as "four ways of saying the same thing," it fails.
-Look for: different lane names that each point at a distinct emotional or
-strategic frame (confession vs. authority vs. contrarian vs. result), different
-primary BENS letters across lanes, different pattern shapes across lanes. The
-lane heading names themselves are part of the evidence: if two headings name
-frames that are functionally identical (e.g. "warning" and "mistake"), that is
-relabeling, not diversity.
+**How to judge:** Read the locked title and ask: could a competitor paste
+this onto their own video about the same general topic without changing a
+word? If yes, it is generic. Cross-check any specific against the
+`## Lock list`: only listed specifics count (an invented one is a Tier A
+failure, but if one slipped through, score 0 here too).
 
-The lane_diversity Tier A check already enforced the mechanical minimum (3
-distinct lane headings). Here you judge whether the set feels genuinely diverse
-in creative angle, not just mechanically distinct.
+**Score 1 if:** The locked title carries a lock-list specific or a
+material-particular stake that ties it to this video alone.
 
-**Score 1 if:** The lanes feel like distinct creative options drawing on
-different emotional frames. A creator reading the set would have a real decision
-to make, not just pick a phrasing they prefer.
+**Score 0 if:** The locked title could front any video in the niche, or its
+only specific is not on the lock list.
 
-**Score 0 if:** Most lane headings point at the same emotional frame with
-different words, OR the candidate titles across lanes all hit the same avatar
-problem from the same direction, OR removing the headings would make the set
-indistinguishable from a flat list of near-synonyms.
+**Calibration (case 00, lock list: $340K, $1.3M, 1 year, 2,500 subscribers):**
+- Pass: "$340K to $1.3M on 2,500 Subscribers." Three lock-list specifics.
+- Fail: "How to Build a Content System That Converts." Paste-on-anything.
+- Fail: "The $500K Content System." The figure is not on the lock list.
 
-**Calibration examples:**
-- Pass: one lane leads with the dollar arc (confession of a client result),
-  one frames it as a contrarian system argument (authority reversal), one
-  offers a "steal the system" generosity angle, one uses the 2,500-sub anchor
-  as a warning about chasing reach. Different frames, different pulls.
-- Fail: "Result lane," "Proof lane," "Outcome lane," and "Numbers lane" all
-  surface the $340K to $1.3M figure with minor wording variation. One idea,
-  four headings.
+**Calibration (case 02, lock list has NO numbers):** a candidate with any
+digit fails; "Claude Cowork" and "scheduled agents" are the legal specifics.
 
 ---
 
-### 8. fabrication_resistant
+### 6. set_range
 
-**What it measures:** No candidate invents a number, name, tool, or claim
-absent from the lock list. For the adversarial News case this is the primary
-test: the lock list has no numbers, so any digit in any candidate is a
-fabrication.
+**What it measures:** The set gives the creator a real decision plus a real
+swing. The structure groups pull in genuinely different ways, and the
+wildcard is an actual experiment, not a proven option with the receipt
+removed.
 
-**How to judge:** Read every candidate title and the locked_title. Cross-check
-each specific (dollar figures, percentages, counts, timeframes, named tools,
-named methods) against the lock list in brain-dump.md. If a specific is present
-in a candidate but absent from the lock list, the criterion fails.
+**How to judge:** Read the full set. First, the groups: do they run different
+engines (a contrarian correction pulls differently than a result arc, which
+pulls differently than a named-system reveal)? If every group presses the
+same button with different words, the set is one idea photocopied. Second,
+the wildcard: is at least one swing present, flagged, and structurally unlike
+every proven option? A tame wildcard (a shorter variant of option 2) fails.
 
-Tier A's anti_fabrication check is the mechanical gate. This criterion judges
-whether the skill stayed clean across the WHOLE set, including any edge cases
-Tier A's regex might miss (e.g. a named method that sounds plausible but is not
-in the material).
+**Score 1 if:** At least two structure groups run clearly different engines,
+AND a flagged wildcard exists that is not a variant of any proven option.
 
-For the adversarial case (claude-cowork-newsjack): the lock list has Claude,
-Cowork, and "scheduled agents" but NO numbers. A candidate that says "cuts 3
-hours a week" or "10x your output" or "in 30 minutes" invents a number the
-creator explicitly refused to provide. Score 0 if any candidate does this.
+**Score 0 if:** The groups are one engine relabeled, OR the wildcard is
+missing, unflagged, or a disguised variant of a proven option.
 
-**Score 1 if:** Every candidate and the locked title contain only specifics
-traceable to the lock list. No invented numbers, no invented tool names, no
-invented methods.
-
-**Score 0 if:** Even one candidate contains a specific not in the lock list, OR
-the adversarial case has any digit in any candidate title.
-
-**Calibration examples:**
-- Case 00 pass: all candidates use "$340K," "$1.3M," "2,500 subscribers," or
-  "1 year," all of which are in the lock list.
-- Case 00 fail: a candidate says "From $0 to $1.3M" when the lock list has
-  $340K as the starting figure, not $0.
-- Case 02 pass: "Claude Cowork Just Dropped Scheduled Agents" uses only
-  named items from the lock list, no digits.
-- Case 02 fail: "Cowork's New Feature Saves 2 Hours a Day" invents "2 Hours"
-  which does not exist in the lock list.
-
----
-
-### 9. surfaces_differentiated_angle
-
-**What it measures:** The recommended opportunity lane is genuinely on-brand
-AND underused in the competitor set (low spread), not a relabeled safe or
-crowded pick dressed up as an opportunity. This is the headline criterion: it
-is what stops the output being generic.
-
-**How to judge:** Find the lane(s) marked `opportunity: yes`. Check two things:
-
-First, check the iceberg alignment. The lane's frame must fit the positioning in
-`creator-foundation.md` ("AI should enhance you, not replace you, no slop, you
-lead"). A hype-money frame or a pure tool-speed frame is off-brand even if it
-performs elsewhere. Check whether the lane name and its candidate titles fit the
-iceberg.
-
-Second, check the spread claim. Open `title-bank.md` and `pattern-bank.md`. The
-opportunity lane's pattern(s) should have a spread of 1 to 2 of 11 channels
-(underused). If the lane's pattern is one of the high-spread patterns (spread 5
-of 11: contrarian-correction, news-jack-release, speed-mastery) and the skill
-still labels it `opportunity: yes`, that is a false claim. Check whether the
-`underused` label in the heading is actually supported by the spread data.
-
-**Score 1 if:** The opportunity lane is both on-brand per the iceberg AND its
-pattern(s) have a spread of 1 to 3 of 11 channels in the bank data (genuinely
-underused), AND the candidate titles in that lane draw on material that only
-this creator can credibly use.
-
-**Score 0 if:** The opportunity lane's pattern is crowded (spread 4+ of 11 in
-the bank data), OR the lane is off-brand per the iceberg (hype, fabricated
-money, pure speed framing), OR the lane's titles are generic enough that any
-competitor could run them without modification.
-
-**Calibration examples:**
-- Pass (case 00): the opportunity lane is "confession" or "contrarian-identity"
-  (spread 2 of 11 each). The candidates use lock-list specifics ($340K to
-  $1.3M, 2,500 subs) that only this creator's client result can back. On-brand
-  (authentic reckoning, not hype). Score 1.
-- Fail (case 00): the opportunity lane is "speed-mastery" (spread 5 of 11,
-  crowded). Marking it `underused` is false. Score 0.
-- Fail (any case): the opportunity lane's titles are "How to Build a Content
-  System That Converts." Generic. Any competitor could run this. Score 0.
-- Pass (case 02): the opportunity lane is "contrarian-identity" (spread 2 of
-  11). The candidates name Claude Cowork and scheduled agents specifically.
-  The framing is honest-and-skeptical, which fits the iceberg. Score 1.
-
----
-
-### 10. competitor_proof_real
-
-**What it measures:** Each lane's `proof:` line traces to a real entry in
-`tests/fixtures/billy/banks/pattern-bank.md`. The title and channel cited in
-the proof line must actually exist in the pattern-bank outlier tables, not be
-invented. This is the evidence-not-taste rule: a lane recommendation without
-traceable proof is just an opinion.
-
-**How to judge:** For every lane's `proof:` line, extract the quoted title and
-the @handle. Search `pattern-bank.md` for that @handle's section and look for a
-row containing that title (or a clear match allowing for minor quoting
-differences). The title does not need to be verbatim, but the channel handle
-must appear in pattern-bank.md and the title must be recognizable as one of its
-listed outliers.
-
-Do not accept a proof line that cites a channel handle which does not appear in
-pattern-bank.md at all. Do not accept a proof line where the quoted title is
-plausible but not traceable to any row in that channel's outlier table.
-
-**Score 1 if:** Every lane's proof: line cites a title-and-channel pair where
-the channel appears in pattern-bank.md AND the cited title matches a row in
-that channel's outlier table.
-
-**Score 0 if:** Any lane's proof: line cites a channel handle absent from
-pattern-bank.md, OR cites a title that is not traceable to any row in that
-channel's listed outliers (i.e. the title appears invented rather than pulled
-from the research data).
-
-**Calibration examples:**
-- Pass: `proof: "Why Growing A Personal Brand Is An AWFUL Idea" (@ed-lawrence,
-  6.3x)`. @ed-lawrence appears in pattern-bank.md and that exact title is in
-  the ed-lawrence outlier table at 6.3x. Score 1.
-- Pass: `proof: "15 Claude Cowork Skills I Can't Live Without (steal them)"
-  (@brockmesarich, 9.5x)`. @brockmesarich is in the bank and that title is in
-  the brockmesarich outlier table. Score 1.
-- Fail: `proof: "How I Quit My Job Using Claude" (@ed-lawrence, 4.5x)`. The
-  @ed-lawrence section in pattern-bank.md has no such title. Invented. Score 0.
-- Fail: `proof: "AI Changed Everything For Solo Creators" (@somechannel, 8x)`.
-  @somechannel does not appear in pattern-bank.md at all. Score 0.
+**Calibration:**
+- Pass: a mistakes-with-a-cost group, a result-arc group, a named-system
+  group, and a wildcard that reframes the whole premise ("Cooking Every
+  Night Is the Mistake").
+- Fail: "Result lane," "Proof lane," and "Numbers lane" all surfacing the
+  same dollar arc, wildcard absent.
 
 ## Output format
 
@@ -467,46 +267,37 @@ Return JSON only:
       "case": 0,
       "slug": "client-340k-to-1-3m",
       "criteria": {
-        "makes_a_claim": 1,
-        "touches_emotional_driver": 1,
-        "reads_aloud_natural": 1,
-        "bank_anchored": 1,
-        "specific_unrepeatable": 1,
-        "avatar_format_fit": 1,
-        "set_diverse": 1,
-        "fabrication_resistant": 1,
-        "surfaces_differentiated_angle": 1,
-        "competitor_proof_real": 1
+        "lineup_test": 1,
+        "teeth": 1,
+        "adjust_quality": 1,
+        "subtext_set": 1,
+        "unrepeatable": 1,
+        "set_range": 1
       },
-      "passed": 10,
-      "reasoning": "one or two sentences, concrete, cite the specific lane, candidate, or proof line that determined the score"
+      "passed": 6,
+      "reasoning": "one or two sentences, concrete: name the lineup titles used, the fill-in that decided subtext_set, or the candidate that decided the score"
     }
   ],
   "criteria_pass_rate": {
-    "makes_a_claim": 0.0,
-    "touches_emotional_driver": 0.0,
-    "reads_aloud_natural": 0.0,
-    "bank_anchored": 0.0,
-    "specific_unrepeatable": 0.0,
-    "avatar_format_fit": 0.0,
-    "set_diverse": 0.0,
-    "fabrication_resistant": 0.0,
-    "surfaces_differentiated_angle": 0.0,
-    "competitor_proof_real": 0.0
+    "lineup_test": 0.0,
+    "teeth": 0.0,
+    "adjust_quality": 0.0,
+    "subtext_set": 0.0,
+    "unrepeatable": 0.0,
+    "set_range": 0.0
   },
   "quality_score": 0.0
 }
 ```
 
-`passed` is the count of criteria that scored 1 for that case (out of 10).
+`passed` is the count of criteria that scored 1 for that case (out of 6).
 
-`criteria_pass_rate` is the fraction of cases where each criterion scored 1
-(e.g. if 2 of 3 cases passed fabrication_resistant, that rate is 0.6667).
+`criteria_pass_rate` is the fraction of cases where each criterion scored 1.
 
 `quality_score` is the total number of 1s across all scored cases divided by
-the total possible (cases_scored x 10). This is the single number the optimizer
-reads. A per-criterion pass rate below 0.67 tells the optimizer where to spend
-the next iteration.
+the total possible (cases_scored x 6). This is the single number the
+optimizer reads. A per-criterion pass rate below 0.67 tells the optimizer
+where to spend the next iteration.
 
-One `reasoning` sentence per case. Be concrete: name the lane, candidate, or
-proof line that determined the score, not abstract adjectives.
+One `reasoning` sentence per case. Be concrete: name the lineup titles, the
+candidate, or the fill-in that determined the score, not abstract adjectives.

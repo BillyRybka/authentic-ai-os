@@ -1,95 +1,34 @@
-# Title filters, pattern shapes, and craft notes
+# Title filters, natural shapes, and craft notes
 
-Load this when judging an edge case, when a soft filter fires and you want the full reasoning, or when you want to widen the divergent pass with more pattern shapes. Do not paste it into chat. It is for your thinking.
+Load this when judging an edge case, when a soft filter fires and you want the full reasoning, when the banks are missing and you need shapes to write from, or when a worked example of the adjust move would help. Do not paste it into chat. It is for your thinking.
 
-The hard cuts (fabrication, over-ceiling without reason, invented compound nouns, read-aloud failure, AI-default openers) live in the SKILL.md body. Everything here is softer: it tends to under-perform, but the creator may have a reason, so flag it and let them decide.
+The hard cuts (fabrication, over-ceiling without reason, invented compound nouns, read-aloud failure, AI phrasing) live in the SKILL.md checklist. Everything here is softer: it tends to under-perform, but the creator may have a reason, so flag it and let them decide.
 
-## Angle-lane frame menu
+## A worked adjust (the target shape)
 
-A lane is one emotional way to make the viewer FEEL the claim, not a sentence template you
-pour the video's nouns into. The claim comes first (Phase 1): the disagreeable true thing the
-video argues. Then each lane is a different angle on that same claim. Frame the claim and the
-title opens a loop; frame the topic and it just describes the video. Test every line by what
-the viewer's brain fills in. If the answer is "nothing, it says what the video is about," it
-is a label, not a title.
+Video: a case study, a client channel went from $340K to $1.3M in a year on 2,500 subscribers. Lock list: $340K, $1.3M, 1 year, 2,500 subscribers.
 
-These are the common frames, each mapped to the `title-bank` pattern(s) it uses and the
-typical spread for THIS creator's set (read the live `spread` from `title-bank.md` /
-`pattern-bank.md` each time, the notes below are the starting read, and the bank stays closed
-until Phase 3). Crowded = you blend in. Underused + on-brand = the opportunity.
+Bank shopping found three structures with receipts:
 
-- **Confession / reckoning.** "I got this wrong, here is what it cost, here is what changed."
-  Patterns: free-form, contrarian-correction. Spread: near-absent in the set, so underused.
-  On-brand: yes (authenticity is the whole positioning). The reliable opportunity lane.
-- **Contrarian / identity.** "Why [common belief or goal] is [a blunt negative]." Patterns:
-  contrarian-identity (spread 2, underused), contrarian-correction (spread 5, crowded).
-  On-brand: yes (against the grain, against the slop).
-- **Warning / mistake.** "Stop doing X." "The mistake that cost me." Pattern:
-  contrarian-correction. Spread: moderate. On-brand: yes.
-- **Authority / mastery.** "Master X." "Better than 99%." Patterns: better-than-masses
-  (spread 4), speed-mastery (spread 5). Crowded. On-brand but you sound like every AI-tips
-  channel.
-- **Result / money.** "$X in N (with tool)." Pattern: money-proof (spread 3). Watch the
-  iceberg: only with a real, defensible number. A fabricated money claim is off-brand.
-- **Speed / compression.** "X in N minutes." Pattern: speed-mastery (spread 5). Crowded, the
-  widest pattern in the set.
-- **Generosity / steal.** "N things I use (steal them)." Pattern: steal-these (spread 2).
-  Underused and on-brand. A strong second opportunity lane.
-- **Curiosity / withheld.** "What nobody tells you about X." Patterns: free-form, contrarian.
-  Spread: moderate. Earns the click only if the body actually withholds and pays off.
-- **News / release.** "X just dropped." Pattern: news-jack-release (spread 5). Crowded and
-  time-sensitive; decays fast.
+- Result arc, proven in the niche: "23:07 to 19:42" style before/after outliers. Why it wins: the arc is the proof, the viewer's brain fills in "how."
+- Contrarian identity, underused in the niche, on-brand: "Why Growing A Personal Brand Is An AWFUL Idea" (7x). Why it wins: contradicts advice the viewer hears everywhere.
+- Small-actor-big-result, adjacent: "How a 2-Person Team Beat a 200-Person Studio." Why it wins: the viewer is the small actor, the title says their size is not the ceiling.
 
-Derive the lanes for a given video from its tension (Phase 1) plus this menu. The gap analysis
-is just: which of the lanes you built are low-spread AND on-brand. Lead with that one.
+The adjusts, engine kept, material swapped in:
 
-## Worked lane group (the target shape)
+- "How a 2,500-Sub Channel Went From $340K to $1.3M" (result arc + small actor, the receipt numbers do all the work)
+- "$340K to $1.3M on 2,500 Subscribers" (pure arc, shorter, the thumbnail can carry the face or the chart)
+- "Why Chasing Subscribers Kept This Channel Broke" (contrarian identity, only if the material actually argues it; if the script never makes that claim, this one is fabrication wearing a nice shape)
 
-Video: "21 AI Content Lessons I Learned the Hard Way" (lock list: 21, the lessons, the
-creator's own channel arc).
+And one wildcard, cold, from the boldest true claim: "You Don't Need an Audience. You Need a System." Flagged as the swing.
 
-Phase 1, the claim before any pattern:
-- **Claim:** most of what people are taught about AI content is what kept the creator stuck.
-- **Stake:** every month following that advice is a month of output nobody watches.
-- **Belief it challenges:** that the "best practices" everyone repeats actually work.
-
-Phase 2, raw titles written from that claim, bank closed:
-"I Followed AI Content Advice for 2 Years (Big Mistake)", "Most AI Content Advice Is
-Backwards", "21 Things I Wish Someone Told Me About AI Content", "Stop Taking AI Content
-Advice From People Who Don't Post".
-
-Phase 3, grouped into lanes with proof pinned, opportunity first:
-
-```
-Recommended lane: Confession (on-brand, underused. The set leans hype/money; the
-honest-reckoning angle is wide open and only the creator can run it credibly.)
-  1. "21 AI Content Mistakes I Made So You Don't"   contrarian-correction  B+N  (44)
-  2. "I Got AI Content Wrong for 2 Years"           free-form              N+S  (37)
-  proof: "Why Growing A Personal Brand Is An AWFUL Idea" (@ed-lawrence, 7.0x)
-
-Contrarian lane (on-brand, underused)
-  3. "Most AI Content Advice Is Backwards"          contrarian-identity    N+B  (38)
-  proof: "Why Introverts Make the BEST Content Creators" (@thisisnickys, 22x)
-
-Authority lane (on-brand, CROWDED, you blend in)
-  4. "21 AI Content Lessons That Actually Work"     better-than-masses     E+B  (43)
-  proof: "How to Use Claude Cowork Better Than 99% of People" (@brockmesarich)
-
-Result lane (CROWDED, iceberg watch, real numbers only)
-  5. "The 21 Lessons Behind 100K Subscribers"       money-proof            B+S  (43)
-  proof: "How This Mom Makes $48K/Month With Claude" (@sabrina_ramonov)
-```
-
-Every line above frames the claim (the advice was wrong), not the topic (21 lessons). That is
-why they open a loop instead of describing a video. The opportunity is not the highest-
-performing shape in the abstract. It is the on-brand lane the competitor set leaves open. That
-is what makes the title feel original instead of safe.
+The dead version of the same session: taking "Why Growing A Personal Brand Is An AWFUL Idea" and producing "Why Growing A YouTube Channel Is An AWFUL Idea" for a video that argues no such thing. Nouns swapped, claim borrowed, trust spent.
 
 ## Soft friction catalog
 
-Surface these in the candidate annotation so the creator sees the option and the concern together. Example: "5. 'Maybe You're Hiring Too Early', Why-X pattern, BENS: N (39). Soft flag: hedge word 'maybe'."
+Surface these in the candidate annotation so the creator sees the option and the concern together. Example: "5. 'Maybe You're Hiring Too Early', N (39). Soft flag: hedge word 'maybe'."
 
-- **Generic.** "How To Make Money Online" fits any video. Tends to fail because viewers cannot tell what is specifically inside. Flag it and ask whether to add a specific from the material.
+- **Generic.** "How To Make Money Online" fits any video. Viewers cannot tell what is specifically inside. Flag it and ask whether to add a specific from the material.
 - **Hedge words.** "Maybe", "Probably", "How To Possibly". Tend to undermine click confidence. Some creators have a deliberately humble brand where a hedge fits voice. Let them choose.
 - **Stock hype phrases.** "Game-Changer", "Mind-Blowing", "Revolutionary", "Insane". Tend to read as low-effort marketing. Some land when self-aware or ironic. Default to flagging.
 - **Visual metaphor as the whole title.** "The Roadmap To Wealth", "Unlock Your Potential". Tend to need decoding. Some land: "The Operating Manual For X" works because it feels literal. Default flag.
@@ -104,7 +43,7 @@ The principle: hard cuts block what is literally broken. Soft flags surface what
 
 ## Natural-language pattern shapes
 
-Lean toward shapes real winners use. These read as one human thought. Use them to widen the divergent pass by swapping the variables for this video's material. The creator's own `banks/title-bank.md` patterns come first; these are the general English shapes underneath them.
+The fallback when the banks are missing, and a widener when a structure needs more variants. These read as one human thought, which is why real winners keep landing on them. The creator's own `banks/title-bank.md` patterns always come first; these are the general English shapes underneath them.
 
 - "How I [verb] [specific thing] [in / after / before] [context]" for "How I Added 55 Pounds To My Squat In 12 Weeks"
 - "Why [subject] [verb-phrase]" for "Why Looking Poor Is Important"
@@ -114,11 +53,9 @@ Lean toward shapes real winners use. These read as one human thought. Use them t
 - "Stop [verb-ing] [object]" for "Stop Asking This" (a single command, not two)
 - "What [subject] [verb] About [topic]" for "What [Group] Won't Tell You About X"
 
-These scale across niches because they are natural English sentence patterns. Generate within the shapes, swapping the variables for the video's specific material.
+Generate within the shapes, swapping the variables for the video's specific material.
 
-## Craft notes (judge candidates against these before showing the list)
-
-These separate good titles from generic ones. Use them in the convergent cut.
+## Craft notes (deeper calls while writing and cutting)
 
 **1. Subtext is the actual product.** The viewer feels the words and their brain fills in what is not said. "How To Get SO Rich You Question The Meaning Of Making Money" never says "you want that, click for the answer", but that is what the viewer feels. Read each candidate and ask what the viewer's mind fills in. If the answer is "nothing, it is just description", it is weak. If it is "I want that / how do they do it / what is the secret", it is strong.
 
@@ -126,8 +63,10 @@ These separate good titles from generic ones. Use them in the convergent cut.
 
 **3. Specificity equals credibility.** "$14,332" beats "make money". "23:07 to 19:42" beats "I got faster". "400 sq ft" beats "small apartment". Default to the most specific number in the material. Round numbers feel made up; cents and decimals feel real.
 
-**4. Naming a system or rule does double duty.** "The 90 Minute Rule" hits N (sounds proprietary), E (a defined process feels achievable), and B (if the claim is bold). When the script teaches a multi-step method, test whether naming it works as a title angle.
+**4. Naming a system or rule does double duty.** "The 90 Minute Rule" hits N (sounds proprietary), E (a defined process feels achievable), and B (if the claim is bold). When the script teaches a multi-step method, test whether naming it works as a title.
 
 **5. Stakes and urgency drive clicks.** Why should the viewer act now? "(Avoid This Mistake)", "Before It's Too Late", "Stop Doing This". Used honestly, urgency tells viewers their inaction has a cost. Used as empty bait, it burns trust.
 
-**6. AI-default phrasings are dead on arrival.** "Discover the secret to", "Unlock your", "The ultimate guide to", "The truth about". The convergent pass cuts these as hard. They are the on-distribution center the model drifts toward, and the creator's audience reads them as slop.
+**6. "I did" beats "I tried".** Challenge and case-study titles that claim the completed thing ("I read 100 books") feel safe because the work is provably done. If the material only supports "I tried", say "I tried"; the lock list wins. But when the creator did the thing, claim it done.
+
+**7. AI-default phrasings are dead on arrival.** "Discover the secret to", "Unlock your", "The ultimate guide to", "The truth about". Cut these hard. They are the on-distribution center the model drifts toward, and the creator's audience reads them as slop.

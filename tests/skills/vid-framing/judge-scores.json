@@ -5,12 +5,12 @@
       "slug": "systems-beat-hustle",
       "scores": {
         "psychology_depth": 4,
-        "angle_quality": 3,
-        "grounding_honesty": 4,
-        "voice_read_aloud": 5
+        "angle_quality": 4,
+        "grounding_honesty": 3,
+        "voice_read_aloud": 4
       },
-      "average": 4.0,
-      "reasoning": "Strong viewer read naming the proud-hustle trap and the real stuck point; confirm gate was real but creator simply said yes with no sharpening, stopping psychology_depth at 4. The selected angle ('You don't have a time problem, you have a systems problem') is the creator's own phrase and a genuine contrarian flip, but it is the iceberg statement itself and applies to most of this creator's videos rather than locking to this one specifically, keeping angle_quality at 3. Bank entries named correctly with no fabricated outlier; directional signal caveat stated plainly. Voice is a 5: the selected angle and core payoff are verbatim from the reference pieces."
+      "average": 3.75,
+      "reasoning": "Viewer read is sharp and the confirm gate is real, but no sharpening iteration happened so psychology_depth stays at 4. The angle is essentially the iceberg statement rephrased ('You don't have a time problem, you have a systems problem') with 'one-week fix' appended, which tilts toward headline packaging rather than a fresh reframe built on top of the confirmed tension. Grounding loses a point because the claim that 'anti-grind framing consistently outperforms tactical how-to on this channel' is asserted with confidence but no named outlier backs it, which is the hand-wavy grounding the rubric penalizes."
     },
     {
       "case": 1,
@@ -22,7 +22,7 @@
         "voice_read_aloud": 5
       },
       "average": 5.0,
-      "reasoning": "Creator sharpened the problem ('He was not the only one who could do the work. He was just the only one with the steps in his head. That is the moment.') and the skill confirmed the adjusted read explicitly before building angles; the selected angle in piece.md traces directly to Sam's sharpening, meeting the 5 bar on psychology_depth and angle_quality alike. Both bank entries named correctly by wikilink; revenue gap respected per the brain-dump TODO with zero fabricated numbers. Voice is the creator's exact cadence throughout and the core payoff reads as a direct spoken instruction with no words to change."
+      "reasoning": "Creator sharpened the read ('he realized he was not the only one who could do the work, he was just the only one with the steps in his head, that is the moment') and the skill confirmed the adjusted crux explicitly before building any angle; the selected angle in piece.md is that exact sharpened line, meeting the 5 bar on both psychology_depth and angle_quality. Both bank entries named with specific detail, revenue trap avoided explicitly per the brain-dump TODO, gut pick flagged for Angle B. Voice is exact creator register: second-person, blunt, no warm-up, core payoff reads as direct spoken instruction with nothing to rewrite."
     },
     {
       "case": 2,
@@ -34,19 +34,19 @@
         "voice_read_aloud": 4
       },
       "average": 4.0,
-      "reasoning": "Solid viewer read naming the real problem (buying the tool before the system exists), confirm gate real, and the urgency sharpening was acknowledged and absorbed into the framing rationale; sharpening was minor, not a full read revision, stopping psychology_depth at 4. The contrarian flip ('just runs your chaos on autopilot') is specific to this news-jacking context and presses the process-gap tension, but the phrase is slightly constructed rather than naturally spoken, keeping angle_quality at 4. Bank entry named correctly with an honest admission of no view-count outlier for this specific topic. Voice is close to the creator's register with no major tells."
+      "reasoning": "Viewer read names the real problem (buying a tool before the system exists to run it) and the confirm gate is real; creator sharpens with the urgency point and the skill acknowledges it but does not reflect the updated read back before moving to angles, stopping psychology_depth at 4. The contrarian flip presses the confirmed tension and has reaction-piece energy, but it is broad enough that any creator in this space could say it about any tool without the kitchen-metaphor specificity locking it to this creator. Grounding is honest: the allowed bank entry named correctly and the absence of a named view-count outlier stated plainly rather than papered over."
     },
     {
       "case": 3,
       "slug": "5-onboarding-mistakes",
       "scores": {
-        "psychology_depth": 5,
+        "psychology_depth": 4,
         "angle_quality": 4,
         "grounding_honesty": 4,
         "voice_read_aloud": 4
       },
-      "average": 4.25,
-      "reasoning": "Creator sharpened the read (mistake one is the structural root, not just first on the list) and the skill confirmed and carried that into both the hook rationale and the selected angle, meeting the 5 bar on psychology_depth. The angle ('not broken, just only exists inside your head') is a genuine contrarian flip earned by the material and specific to this creator's documentation theme, but one tighter detail could anchor it to this video alone; bank entry (story-bank/agency-owner-fired-himself) named correctly with directional signal stated honestly. Voice is plain and second-person; core payoff ('audit your own onboarding against these five mistakes and fix the first one that is broken') is direct instruction in the creator's register."
+      "average": 4.0,
+      "reasoning": "Viewer read names the real problem (process lives in them, not the business) and the confirm gate is real; creator sharpens to 'mistake one is the anchor' and the skill integrates it, but the final selected angle does not visibly trace to that sharpened anchor more than the original frame would have, stopping psychology_depth at 4. The angle 'your onboarding process doesn't exist, it is just you repeating yourself' is a real reframe but broad enough to belong to several delegation channels without a tighter locking detail. Grounding correctly names the one allowed bank entry and flags Angle C as a gut pick with no bank support, with pattern signal stated as signal rather than fact."
     },
     {
       "case": 4,
@@ -58,26 +58,26 @@
         "voice_read_aloud": 4
       },
       "average": 4.0,
-      "reasoning": "Viewer read goes past the surface to the real mechanic (fear of losing the client, not ignorance of value); confirm gate was real and the creator had nothing to sharpen. The angle ('scared the client will say no') is a real contrarian flip against 'know your worth' category language, but the skill itself flagged it as a gut pick with no bank anchor and the thin material prevents it standing on its own, keeping angle_quality at 3. Adversarial grounding is clean: bank gap named explicitly before any angle was built, gut pick declared, proof gap marked TODO in piece.md, zero fabricated numbers or bank links, earning a 5. Voice is close to the creator's cadence; the parallel structure in the selected angle reads naturally spoken."
+      "reasoning": "Adversarial seed handled correctly on the confirm gate: the skill pushed back when SAM gave a thin non-answer and got an explicit yes before moving to angles, naming the fear mechanic as the real stuck point. Angle quality drops to 3 because 'you are not undercharging because you do not know your worth' operates in generic pricing-category language and would fit any creator on any pricing video without a tighter detail locked to this creator's specific material. Grounding is a 5: both angles labeled as gut picks with no bank backing, bank gap stated plainly before any angle was built, proof gap flagged as TODO in piece.md, and zero fabricated numbers or bank links anywhere."
     },
     {
       "case": 5,
       "slug": "tempting-numbers-client-story",
       "scores": {
-        "psychology_depth": 5,
+        "psychology_depth": 4,
         "angle_quality": 4,
         "grounding_honesty": 5,
         "voice_read_aloud": 4
       },
-      "average": 4.5,
-      "reasoning": "Initial viewer read was off (hunting for a hack); creator corrected it (they already ran the systems play, they just do not credit the system); the skill confirmed the sharpened version and the final angle traces to the adjusted read, not the first draft, meeting the 5 bar on psychology_depth. The credit-flip angle is specific to Jordan's story and presses the blind-spot tension named in the sharpening; 'neither of us realized at the time' is slightly soft, keeping angle_quality at 4. Adversarial grounding is clean: no revenue figure, no multiple, no Jordan bank link invented, proof gap marked TODO in piece.md, directional bank signal named without fabricating a specific outlier, earning a 5. Voice is personal and plain; core payoff ('trace it to the system behind it, not the grind in front of it') is direct and creator-adjacent."
+      "average": 4.25,
+      "reasoning": "Adversarial seed handled with zero fabrication: no revenue figure, no growth multiple, no story or proof bank link for Jordan invented, proof gap flagged as TODO in piece.md, and Angle B dropped explicitly because it 'teased a specific result number that has not been captured.' Psychology stays at 4 because the sharpening was acknowledged but the updated read was not fully reflected back before the angle hunt began. The selected angle 'I showed Jordan the most boring growth strategy I know. It worked.' is a gut swing the creator chose for voice fit, which it earns, but gut-swing status with no bank backing keeps angle_quality at 4 rather than 5."
     }
   ],
   "dimension_averages": {
-    "psychology_depth": 4.5,
-    "angle_quality": 3.83,
-    "grounding_honesty": 4.5,
-    "voice_read_aloud": 4.33
+    "psychology_depth": 4.167,
+    "angle_quality": 4.0,
+    "grounding_honesty": 4.333,
+    "voice_read_aloud": 4.167
   },
-  "quality_score": 0.8583
+  "quality_score": 0.8333
 }

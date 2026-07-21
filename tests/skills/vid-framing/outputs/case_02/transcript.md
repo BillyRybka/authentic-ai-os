@@ -1,56 +1,61 @@
+---
+type: framing-transcript
+slug: new-scheduling-feature-reaction
+skill: vid-framing
+date: 2026-07-04
+---
+
 # Framing Conversation: new-scheduling-feature-reaction
 
 ---
 
-**SKILL:** I have read the brain-dump for "new-scheduling-feature-reaction." Before I start building anything, I want to make sure I have the right person in mind.
+**SKILL:** I read the brain-dump for "new-scheduling-feature-reaction." Before I build anything, let me make sure I have the right person in mind.
 
 Here is my read.
 
-The viewer is a solo service business owner, running an agency or consultancy, doing serious volume but still slammed. They just saw the announcement of this new auto-scheduling feature and their first instinct was "maybe this is what fixes it." The main problem they are stuck on is not the tool, it is that they are still doing everything themselves and no process is written down. They think the new feature is the answer. The transformation they want is to stop being the bottleneck on their team's work. The core payoff: write your process down before you hand it to any tool, so the tool actually has something to run.
+The viewer is a solo service business owner, agency or consultancy, doing ten to forty thousand a month. They are slammed. They just saw the announcement of this new auto-scheduling feature that auto-assigns tasks based on team capacity. Their first move is to want it. The main problem they are stuck on is not the feature, it is that no process is written down for the tool to run. They will buy it and still be slammed because the chaos is now automated. The transformation they want is to stop being the bottleneck. The core payoff: write the process down before you hand it to any tool, so the tool has something to run.
 
-Is that the video, or do you want to sharpen the problem or the transformation?
-
----
-
-**SAM:** Yeah, that is the video. One thing to add: the urgency is real. Everyone in my audience is getting sold on this feature right now, this week. So the timing is what makes the reaction land, not just the lesson.
+Is that the video, or do you want to sharpen it?
 
 ---
 
-**SKILL:** Got it. The timing is the hook and the lesson is the reason the hook matters. Noted.
-
-Now pulling the reframe toolkit and pattern bank.
-
-The bank has the restaurant kitchen metaphor already in your material ([[metaphor-bank/restaurant-kitchen-systems]]): the tool is the kitchen appliance, the system is the recipe. That is yours, grounded in the brain-dump and in the bank. The bank also signals that contrarian takes outperform tactical how-to for this audience. There is no named outlier with a specific view count for a news-reaction piece on this exact topic, so the bank gives directional signal here, not a precise data point.
-
-Here are the angles. Both come after your yes.
-
-**Angle A: Contrarian flip.** "The new auto-scheduling feature does not fix your team, it just runs your chaos on autopilot." The frame is: the tool is not the bottleneck, your missing process is. Backed by the kitchen metaphor in your bank: the tool is the appliance, the system is the recipe. BENS: strong N (the obvious reaction to a new feature is excitement, flipping it to "here is what it cannot fix" feels new), strong B (you are about to spend money and still be slammed). Risk: the body has to deliver a real alternative, not just tear down the feature.
-
-**Angle B: Named system (gut pick, no pattern behind it).** "The Recipe Rule: document the process before you automate it." Packages the kitchen metaphor as a named rule the viewer can carry out of the video. Strong E (simple rule, feels doable), decent N (named rule feels proprietary). This is the gut pick, no data behind it, higher variance.
-
-For a reaction piece landing the same week as the feature announcement, Angle A is the call. News format. The contrarian flip is the energy a reaction video needs. Which one works for you?
+**SAM:** Yeah, that is the video. The urgency piece is important too. Everyone in my audience is getting sold on this feature this week, so the reaction timing is the whole reason to do it now.
 
 ---
 
-**SAM:** I want to go with Angle A. The contrarian flip is exactly the point I want to make.
+**SKILL:** Good. Timing is the hook, the lesson is why the hook matters. Moving to angles.
+
+I pulled the reframe toolkit and the pattern bank. The bank has your restaurant kitchen metaphor already captured: [[metaphor-bank/restaurant-kitchen-systems]]. The tool is the kitchen appliance, the system is the recipe. That is your line from the brain-dump and it is in the bank. The bank also signals that contrarian takes outperform tactical how-to for this audience. No named outlier with a view count for a news-reaction piece specifically, so the bank gives directional signal, not a precise data point.
+
+Two angles.
+
+**Angle A: Contrarian flip.** "The new auto-scheduling feature is useful. It will not stop you from being slammed." The frame is that the tool is not the problem, the missing process is. The kitchen metaphor from [[metaphor-bank/restaurant-kitchen-systems]] carries the idea: the appliance is not the issue, there is no recipe to run. BENS: strong N (everyone expects the reaction to be about the feature, flipping to "here is what it cannot fix" feels new), strong B (you are about to spend money and still be buried). Risk: the body needs a clear alternative, not just a takedown.
+
+**Angle B: Named system (gut pick, no pattern behind it).** "The Recipe Rule: write the process before you automate it." Packages the kitchen metaphor as a named rule the viewer walks away with. Strong E (simple, one action), decent N (a named rule feels proprietary). Flagged as the gut pick. No data behind it, higher variance.
+
+For a reaction piece landing this week, Angle A is the call. The contrarian flip is the energy a reaction piece runs on. Which do you want?
 
 ---
 
-**SKILL:** Good. What is the goal for this one: sales, emails, or views?
+**SAM:** I want Angle A. The contrarian flip is exactly the point.
 
 ---
 
-**SAM:** Let's go with views. Cold audience, and everyone in my niche is going to be searching this week. I want the reach.
+**SKILL:** Locked on Angle A. What is the goal: sales, emails, or views?
 
 ---
 
-**SKILL:** That lines up. News format scores 5 for views, which is the top. The tradeoff is it decays fast and is weak on sales (scores 1), but you said views and the timing fits perfectly.
+**SAM:** Views. Cold audience, everyone in my niche is going to be searching this week. I want the reach.
 
-Confirmed: news format, views goal.
+---
 
-Dropping Angle B. One-line reason: named system with no pattern behind it, weaker than the contrarian flip for a reaction piece.
+**SKILL:** That lines up. News format scores a 5 for views, top of the index. The trade-off is it decays fast and is weak on sales (scores 1), but views is the goal and the timing fits.
 
-Does that sound right before I write?
+Confirming: news format, views goal.
+
+Dropping Angle B now. One-line reason: named system with no pattern behind it, weaker than the contrarian flip for a reaction piece.
+
+Good to drop that one?
 
 ---
 
@@ -58,11 +63,11 @@ Does that sound right before I write?
 
 ---
 
-**SKILL:** Locked. Writing to piece.md now.
+**SKILL:** Written up.
 
-Selected angle: "The new auto-scheduling feature does not fix your team, it just runs your chaos on autopilot."
-Core payoff: "Write your process down before you hand it to any tool, so the tool actually has something to run."
+Selected angle: "The new auto-scheduling feature is useful. It will not stop you from being slammed."
+Core payoff: "Write your process down before you hand it to any tool, so the tool has something to run."
 Format: news
 Goal: views
 
-Framing saved to piece.md. Handing off to vid-title.
+Saving to piece.md now. Handing off to vid-title.

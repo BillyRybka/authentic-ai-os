@@ -6,7 +6,7 @@ status: ideating
 created: 2026-06-20
 last_updated: 2026-07-04
 # Written by vid-framing
-selected_angle: "Your onboarding process is not broken, it just only exists inside your head."
+selected_angle: "Your onboarding process doesn't exist, it is just you repeating yourself."
 core_payoff: "Audit your own onboarding against these five mistakes and fix the first one that is broken."
 format: listicle
 goal: emails
@@ -17,14 +17,10 @@ voice_context: youtube-script
 
 ## Considered + Dropped Angles
 
-> [!quote] Angle: Your onboarding isn't a process, it's a habit.
-> Why: Clever contrarian flip but risks feeling abstract for a warm audience already looking for a concrete fix. Angle A names the viewer's pain more directly in the frame.
-> Date: 2026-07-01
+> [!quote] Angle: Five onboarding mistakes and the fix for each
+> Why: Accurate restatement of the topic, no BENS, no frame. Describes the video rather than angles it.
+> Date: 2026-07-04
 
-> [!quote] Angle: The onboarding audit: five things to check before you delegate a single client.
-> Why: Gut pick with no bank support. The same diagnostic intent is served by the selected angle with better viewer-cost framing.
-> Date: 2026-07-01
-
-> [!quote] Angle: "The five things your onboarding does to your new hires without you knowing."
-> Why: Brain-dump does not build toward this perspective; the body would be a reach from the existing material.
+> [!quote] Angle: Your clients are not the problem. Your onboarding is.
+> Why: Gut pick, contrarian flip, no pattern bank support. Higher variance and no grounding for a warm audience.
 > Date: 2026-07-04

@@ -37,23 +37,6 @@ Co-write ONE body segment of a bingeworthy script in the creator's voice. One po
 
 **Invoked by the pipeline:** prerequisites are verified and the caller names the segment; skip re-checking and skip questions the caller already answered. Never skip the creator gate. Saves are identical in both modes.
 
-## What good looks like
-
-Every segment is held to this before the creator sees it. Yes or no, no vibe calls:
-
-1. Makes exactly one point; every line serves it.
-2. The opening connects to what the previous transition promised. No cold restart.
-3. Tension never empties: within a line or two of any payoff, a new setup lands.
-4. Everything set up gets paid off here, or explicitly handed to a later segment.
-5. Shows before telling where belief is needed; states plainly where it isn't. Nothing keeps explaining after the point has landed.
-6. Every number, name, and story beat traces to the brain dump or a bank entry, verbatim.
-7. Proof lands after the lesson it backs, never before the lesson exists.
-8. The takeaway is one sentence the viewer could repeat to a friend.
-9. The closing transition signals the shift AND promises a result the viewer cares about.
-10. Read aloud, it is the creator talking to one person: their phrasing, varied sentence lengths, words a 10 year old follows.
-11. The delete test passes: no line can be cut without losing meaning.
-12. The avatar couldn't say "heard this exact thing before."
-
 ## Step 1: Read the plan, verify the materials
 
 A writer doesn't start drafting with research missing. Read this segment's skeleton section (its job, its picked parable and principle, its tension role, any `> [!todo]` notes earlier sessions left under its heading), the prior segment's closing line (the handoff this segment inherits), and the format planner's shape for this format. Then pull the actual material: the full text of every bank entry the skeleton picked, and the brain dump lines behind this point.
@@ -86,14 +69,24 @@ Mid-draft ideas for OTHER segments don't break flow: drop a `> [!todo]` callout 
 
 ## Step 4: Edit out loud
 
-A separate pass, after the draft is done, never during. Walk the draft as spoken word against the rubric, silently:
+A separate pass, after the draft is done, never during. Walk the draft as spoken word and answer twelve questions, yes or no, silently. Any no gets fixed before the creator sees a word:
 
-- The four questions, line by line: is this confusing? does it make sense? could I say it in fewer words? do I even need this line?
-- The delete test: a line that can go without losing meaning, goes.
-- The tension walk: list every setup, confirm its payoff; find every payoff, confirm the re-hook that follows it.
-- Sentence variation by ear (`voice-rhythm.md` is the lens), claims get their `> [!important] Visual proof needed` callouts, and the guardrail scan (`voice-pressure-test.md` Pass 1) runs before anything is shown.
+1. Does every line serve exactly ONE point?
+2. Does the opening connect to what the previous transition promised, no cold restart?
+3. Does a new setup land within a line or two of every payoff? Walk it: list every setup, confirm its payoff; find every payoff, confirm its re-hook.
+4. Is everything set up here paid off here, or explicitly handed to a later segment?
+5. Does it show before telling where belief is needed, and stop the moment the point has landed? Anything still explaining after it's clear gets cut.
+6. Does every number, name, and story beat trace verbatim to the brain dump or a bank entry?
+7. Does proof land after the lesson it backs?
+8. Is the takeaway one sentence the viewer could repeat to a friend?
+9. Does the closing transition signal the shift AND promise a result the viewer cares about?
+10. Read aloud, is it the creator talking to one person: their phrasing, varied sentence lengths (`voice-rhythm.md` is the lens), words a 10 year old follows?
+11. Could any line be deleted without losing meaning? Then delete it.
+12. Could the avatar say "heard this exact thing before"? Then the angle, demo, or story isn't specific enough to this creator's material.
 
-A rubric fail at this stage that traces to the plan (wrong parable, point actually two points) is a structure problem: fix the structure, don't sand the prose.
+Then the mechanical tail: claims get their `> [!important] Visual proof needed` callouts, and the guardrail scan (`voice-pressure-test.md` Pass 1) runs before anything is shown.
+
+A no that traces to the plan (wrong parable, two points fused into one segment) is a structure problem: fix the structure, don't sand the prose.
 
 ## Step 5: The creator gate
 

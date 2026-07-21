@@ -6,8 +6,8 @@ status: ideating
 created: 2026-06-20
 last_updated: 2026-07-04
 # Written by vid-framing
-selected_angle: "My client Jordan grew their coaching business, and neither of us realized at the time that the system we built was why."
-core_payoff: "Look back at one result you got and trace it to the system behind it, not the grind in front of it."
+selected_angle: I showed Jordan the most boring growth strategy I know. It worked.
+core_payoff: build the system first, the unglamorous one, and let it do the growing for you.
 format: case-study
 goal: sales
 voice_context: youtube-script
@@ -15,10 +15,14 @@ voice_context: youtube-script
 
 # Tempting Numbers Client Story
 
-> [!todo] Proof gap: exact growth numbers for Jordan not captured yet. Pull the real screenshot before publishing. 2026-07-04
-
 ## Considered + Dropped Angles
 
-> [!quote] Angle: Named system / contrarian flip. "The boring system is the growth hack." Contrarian open, everyone hunting for a hack does not see that the thing they already built is the answer.
-> Why: Conceptually strong but thin on evidence without Jordan's proof numbers. The story-led angle (Angle A) is the stronger pick for a case-study frame and matches the channel's known story-open pattern.
+> [!quote] Angle: Jordan ran a coaching business that was stuck. We built a boring system. It grew.
+> Why: strong and grounded, but the gut swing carried the same payoff in a voice that sounded more like the creator's register.
 > Date: 2026-07-04
+
+> [!quote] Angle: The system that grew Jordan's business has no sexy parts.
+> Why: slightly slicker than the creator's natural register and teased a specific result number that has not been captured yet.
+> Date: 2026-07-04
+
+> [!todo] Proof gap: no revenue figure or growth multiple captured for Jordan. Pull the real screenshot before vid-structure drafts the proof section. 2026-07-04

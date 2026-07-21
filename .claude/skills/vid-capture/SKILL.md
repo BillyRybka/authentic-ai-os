@@ -7,16 +7,6 @@ description: Capture or create a story, metaphor, proof, testimonial, or framewo
 
 Capture one item at a time (stories, metaphors, proof, testimonials, or frameworks) into the creator's banks. This skill is how raw experience becomes usable material at script-writing time. Without these banks, every future script starts empty and fabrication pressure goes up.
 
-This skill loads `knowledge/vault-integration.md` at session start. Every entry it creates matches that contract, including frontmatter schema, body template, tags, file naming, wikilinks, and the People stub rule.
-
-## Invocation modes
-
-The skill works two ways:
-
-**Standalone.** Creator invokes directly (typed trigger phrase, or running vid-capture as a slash command). After each save, loop back to the routing menu. Capture multiple items in one session. End with a session-close visibility summary.
-
-**Sub-skill (invoked by another vid- skill).** Another skill like `vid-pipeline` or `vid-segment` calls vid-capture mid-script when the banks don't have what the writing step needs. Capture ONE item, return the new entry's wikilink to the caller, skip the routing loop, skip the session-close summary. The caller handles the wrapping.
-
 The five stage flows (S, M, P, T, F) are identical in both modes. The difference is only in the router and the session-close behavior.
 
 If invoked with context from the caller (e.g., "I need a metaphor about client onboarding"), skip the questions the caller has already answered and go straight to the stage.
