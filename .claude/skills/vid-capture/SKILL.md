@@ -5,225 +5,172 @@ description: Capture or create a story, metaphor, proof, testimonial, or framewo
 
 # Video Capture
 
-Capture one item at a time (stories, metaphors, proof, testimonials, or frameworks) into the creator's banks. This skill is how raw experience becomes usable material at script-writing time. Without these banks, every future script starts empty and fabrication pressure goes up.
+Capture one item at a time (story, metaphor, proof, testimonial, framework) into the creator's banks, in the creator's exact words. The banks are the material every future script pulls from: written once, read many times.
 
-The five stage flows (S, M, P, T, F) are identical in both modes. The difference is only in the router and the session-close behavior.
+## What loads, and when
 
-If invoked with context from the caller (e.g., "I need a metaphor about client onboarding"), skip the questions the caller has already answered and go straight to the stage.
+| File | When | For |
+|---|---|---|
+| `knowledge/vault-integration.md` | session start | the schema contract every entry and people stub must match |
+| `knowledge/story-capture-guide.md` | Stage S | the 3 story types, the 6 story prompts, dig-deeper probes |
+| `references/metaphor-builder.md` | Stage M | the 3-step builder, everyday categories, visual vs non-visual |
+| `references/proof-capture-guide.md` | Stage P | the 2 proof types, the screenshot-immediately rule, anonymization |
+| `references/testimonial-capture.md` | Stage T | verbatim handling, the 4 sources, permission rules |
+| `knowledge/framework-builder.md` | Stage F | shapes, selection matrix, naming rules, entry schema, what NOT to bank |
+| `assets/{type}-entry-template.md` | assemble time | the entry's frontmatter and body skeleton |
+
+## The bar: capture what a writer can pull
+
+A bank entry gets written once and read many times, by a writing skill mid-script, under time pressure, looking for something it can drop into a segment without rework. So the capture question is never "did the creator say this?" It is "could a writer pull this?" Capture what a writer can pull, not everything the creator said.
+
+A pullable entry carries what a script cannot invent later: the worst-moment detail, the exact number, the client's verbatim words, the comparison anyone recognizes. An entry without those is worse than an empty slot. An empty slot tells the writer to ask. A thin entry gets pulled, and the segment goes out flat.
+
+- **Weak:** "I was struggling with pricing, made some changes, and things got a lot better."
+- **Strong:** "I priced my first course at $49 because I was scared to charge more. Three months in I had made $900, and realized I had built myself a minimum wage job."
+
+The strong version is pullable because a writer can say it aloud as-is. The weak one needs the whole interview redone at write time, and redoing that interview at write time is the failure this skill exists to prevent.
 
 ## What this produces
 
-Bank entries in the creator's workspace, each following the vault-integration schema.
+- `banks/story-bank/{slug}.md`, `banks/metaphor-bank/{slug}.md`, `banks/proof-bank/{slug}.md` (screenshots and clips in `banks/proof-bank/assets/`), `banks/testimonial-bank/{slug}.md`, `banks/framework-bank/{slug}.md`
+- `people/{Full Name}.md` stubs for any client named
 
-- `banks/story-bank/{slug}.md`: stories in Problem / Action / Outcome format
-- `banks/metaphor-bank/{slug}.md`: metaphors tied to the concept they clarify
-- `banks/proof-bank/{slug}.md`: screenshots, numbers, results (optionally with asset files in `banks/proof-bank/assets/`)
-- `banks/testimonial-bank/{slug}.md`: verbatim client quotes with source tagging
-- `banks/framework-bank/{slug}.md`: named systems with components, shape, problem solved
-- `people/{Full Name}.md`: auto-created stubs for any client mentioned
-
-The skill is looped. Capture one item, save it, loop back to the menu, capture another. End when the creator is done.
-
-## When to run this
-
-- Right after a client wins (capture the story plus the proof)
-- A screenshot landed in DMs and it proves something useful
-- A metaphor came up mid-conversation and actually worked
-- A named system / framework crystallized during writing or coaching and the creator wants to lock it for reuse
-- The creator had a breakthrough and wants to lock the story
-- A downstream writing skill (vid-segment, vid-intro) asked for material that doesn't exist yet
-- Monthly bank top-up session
-
-Not for: soliciting testimonials from clients (out of scope, this skill captures what already exists), refining already-captured entries (use direct edit), or generating stories from thin air (this skill never fabricates).
-
-## Prerequisites
-
-No foundation dependency. Each entry is tagged from its own material: an `illustrates:` line (the lesson it proves, in the creator's voice) plus open `themes:`, drawn from what the creator actually said. There is no fixed problem list to map against, so capture works whether or not the foundation is built. Bank folders are created on demand.
-
-Optional but helpful:
-- The raw material the creator wants to capture (a memory, a Slack screenshot, a DM, a number from analytics)
-- The client's full name if a client is involved (so the People stub lands correctly)
-
-## Folder structure this uses or creates
-
-```
-banks/story-bank/                    (created if missing)
-banks/metaphor-bank/                 (created if missing)
-banks/proof-bank/                    (created if missing)
-banks/proof-bank/assets/             (created if missing, for screenshots/videos)
-banks/testimonial-bank/              (created if missing)
-banks/framework-bank/                (created if missing)
-people/                              (expected to exist, stubs created inside)
-```
+No foundation dependency. Each entry is tagged from its own material (an `illustrates` or matching-key line plus open `themes:`), so capture works whether or not the foundation is built.
 
 ## Routing
 
-At session start:
+Looped, one item at a time, never batched:
 
-1. Load `vault-integration.md` to lock the schemas.
-2. Ask the creator what they're capturing: story, metaphor, proof, testimonial, or framework.
-3. Route to the matching stage.
-4. After save, loop back to step 2. End when the creator says they're done.
+1. Load `knowledge/vault-integration.md` to lock the schemas.
+2. Ask what the creator is capturing: story, metaphor, proof, testimonial, or framework.
+3. Run the matching stage, then the shared finish below.
+4. Loop back to step 2. End when the creator is done.
 
-If the creator has multiple items in mind, process them one at a time. Do not batch multi-item captures.
+Called mid-script by another vid- skill: same stages, same finish. The caller passes what it already built or asked, so skip the questions it has answered, capture the item, and return the new entry's wikilink instead of looping.
+
+Not for: soliciting new testimonials from clients, refining existing entries (edit them directly), or inventing material. A gap is a TODO, never a fabrication.
 
 ## Stage S: Story capture
 
+Emotion is what stores a story in the viewer's memory; facts alone barely stick. The bar for a bankable story is twist or receipt: either the ending surprises (a result wildly different from what anyone expected), or the outcome carries a receipt the viewer could check (exact number, timeline, before vs after). A story with neither is a chronicle, and chronicles do not get pulled.
+
 Load `knowledge/story-capture-guide.md`.
 
-1. **Pick the story type.** Client (someone else's transformation), Own (creator's experience), or Viewer (fallback when no personal or client example exists). If the creator is unsure, walk them through the distinction from the reference.
-2. **Extract the raw material.** If the creator knows the story, let them tell it. If they're not sure they have one, walk them through the 6 story prompts in the reference. Each is designed to unlock a memory.
-3. **Dig deeper.** Do NOT accept the first pass as final. Probe for specifics:
-   - Problem: "What did that feel like at the worst moment? What's the specific detail that made it sting?"
-   - Action: "What's the one thing you did? Not everything, the key move."
-   - Outcome: "What's the exact number, timeline, or result? What changed?"
-   - Plan on 2-3 rounds. Loop until specificity emerges, then save. Flag in Notes if still thin.
-4. **Client mention check.** If the creator names a client, check `people/{Full Name}.md`. If missing, create the stub per the vault-integration template. Write `client: "[[Full Name]]"` in frontmatter and `[[Full Name]]` at first body mention.
-5. **Set `illustrates` and `themes`.** Write one short line stating the lesson this story proves, as plain cause and effect, in the creator's voice. Read it aloud; if they wouldn't say it that way, rewrite it. Then tag a few open `themes:` (the angles it touches). No fixed problem number.
-6. **Propose a slug.** Lowercase, hyphenated, 3-6 words, descriptive. Creator approves or overrides.
-7. **Dedup check.** Scan `banks/story-bank/*.md` for matches on `illustrates` overlap plus theme tags plus slug proximity plus first-sentence overlap of the Problem section. If candidates found, show them and ask: update existing, save as new angle, or merge manually.
-8. **Assemble the entry** using `assets/story-entry-template.md`. Fill frontmatter (including `used_in: []` empty). Body follows Problem, Action, Outcome, `> [!tip] Why this story lands`, Notes.
-9. **Read-aloud test.** Read the entry back to the creator: "Would you reword any of this if you were saying it out loud?" Edit to match their phrasing. Save only after they confirm.
-10. **Save** to `banks/story-bank/{slug}.md`.
-11. Loop back to the router (standalone mode) OR return the new entry's wikilink to the caller (sub-skill mode).
+1. **Pick the type.** Client (highest trust, someone else's transformation), Own (credibility, an admitted failure makes it stronger), Viewer (fallback only).
+2. **Get the raw story.** If the creator knows it, let them tell it. If they say they have none, walk the 6 story prompts one at a time, and bail after 3 prompts surface nothing.
+3. **Dig for the moment, not the lesson.** Never accept the first pass. Push 2 to 3 rounds: the worst-moment detail in the Problem, the one key move in the Action, the exact receipt in the Outcome.
+4. **Client mention.** A named client gets `client: "[[Full Name]]"` in frontmatter, `[[Full Name]]` at first body mention, and a `people/{Full Name}.md` stub from `assets/people-stub-template.md` if one does not exist.
+5. **Write `illustrates` plus `themes`.** One short line, plain cause and effect, in the creator's voice. This line is what a writer searches the bank by, so it says what the story proves, not what it is about. Add a few open theme tags.
+
+Then run the finish (slug, dedup, assemble, read-aloud, save).
 
 ## Stage M: Metaphor capture
 
-Load `knowledge/metaphor-builder.md`.
+Two tests decide whether a metaphor is bankable. The everyday-recognition test: anyone, no context, recognizes the comparison (food, cars, clothes, sports, travel). The read-aloud-without-visuals test: read it aloud with nothing on screen. If it still lands, it is non-visual; if it needs the prop, it is visual. That classification is what tells the writer whether to plan a visual or script the speech alone.
 
-**Branch:** Open by asking the creator which path they're on. Both paths use the same builder below; the difference is pace.
+Load `references/metaphor-builder.md`.
 
-- **Log path.** Creator already has a metaphor (invented it, heard it from someone else, remembered an old one). Validate it through steps 1-3, then capture.
-- **Create path.** Creator has a concept but no metaphor. Walk them through steps 1-3 to generate one. Push back when attempts feel abstract or forced.
+Two paths in, one builder. The difference is pace, not process:
+
+- **Log.** The creator already has the metaphor. Validate it through the builder, then capture. Heard-it-somewhere counts; note the origin in Notes if they want to remember it.
+- **Create.** The creator has a concept but no comparison. Walk the builder and push back when attempts come out abstract or forced. If it still feels like a riddle after a couple of rounds, drop it. A forced metaphor is worse than none.
 
 The builder:
 
-1. **Name the concept.** What abstract or confusing idea is the metaphor clarifying? One short phrase.
-2. **Problem and solution.** State the problem in the concept (what viewers get wrong) and the solution (what they should do instead). Both in the creator's voice.
-3. **Find the comparison.** Pull from everyday categories: food, cars, clothes, sports, travel. The reference shows 2 real metaphors. If the first attempt feels abstract or forced, push back: "Make it something anyone would recognize. What's the everyday version?"
-4. **Classify visual vs non-visual.** Ask: "Does this metaphor depend on a prop or graphic to land, or does pure speech carry it?" Set `visual: true` or `visual: false`. Visual metaphors capture TWO body sections (Spoken plus Shown); non-visual capture one (The metaphor).
-5. **Set `themes`.** Tag the open angles this metaphor touches. The `concept:` from step 1 is the metaphor's matching key; there is no fixed problem tag.
-6. **Propose a slug.** Creator approves.
-7. **Dedup check.** Scan `banks/metaphor-bank/*.md` for matches on `concept:` field value (same concept) OR same `category:` with similar metaphor text. If candidates found, show them and ask: update existing, save as new angle, or merge manually.
-8. **Assemble the entry** using `assets/metaphor-entry-template.md`. Body depends on `visual`: if true, include Spoken plus Shown subsections; if false, single "The metaphor" block.
-9. **Read-aloud test.** The metaphor has to land fast. For non-visual, read it aloud with no visual aid. Does the viewer still get it? For visual, imagine Spoken plus Shown together. Does the spoken layer drag without the visual, or does the visual land without the speech?
-10. **Save** to `banks/metaphor-bank/{slug}.md`.
-11. Loop back to the router (standalone mode) OR return the new entry's wikilink to the caller (sub-skill mode).
+1. **Name the concept.** The abstract idea being clarified, one short phrase. This is the entry's matching key.
+2. **Problem and solution.** What viewers get wrong, and the one move instead, both in the creator's voice.
+3. **Find the comparison.** Something anyone would recognize that works the same way.
+4. **Classify with the read-aloud-without-visuals test.** Visual entries capture two body layers (Spoken plus Shown, precise enough that someone else could reproduce the shot). Non-visual entries capture one spoken block.
+
+- **Weak:** "Your content system is like a well-oiled machine." Nothing to picture, fits everything, lands on nothing.
+- **Strong:** "Early dating is like wine tasting. You sip, you swirl, you smell. You do not chug the bottle and assume it is perfect for life." Anyone has done one side of this; the mapping is instant.
+
+Then run the finish.
 
 ## Stage P: Proof capture
 
-Load `knowledge/proof-capture-guide.md`.
+Proof is the receipt that lets the avatar mentally simulate the result: a number, a screenshot, a before-after they can picture happening to them. "I have helped lots of people" fails the simulation test; one dashboard screenshot passes it. The screenshot-immediately rule (drop everything, capture the win the moment it lands, sort it later) is the upstream habit. This stage turns what landed into an entry.
 
-1. **Pick the proof type.** Two options: `personal-result` (creator's own numbers and wins) or `client-win` (someone else's result, with permission or anonymized). Presentation format (static screenshot, before-after pairing, live video clip, inline stat) is captured separately in the body, not as a top-level type.
-2. **Collect the asset.** If there's a screenshot or video file, ask the creator for the path or where to save it. Put the asset in `banks/proof-bank/assets/`. Record the path in `asset_path:`. If the proof is inline (a stat or quote), capture it in the body.
-2b. **Note presentation format.** In the body's "Presentation format" section, record how this proof is shown: static screenshot, before-after pairing, live video clip, or inline stat. A single proof can be available in multiple formats.
-3. **Client mention check.** Same flow as Stage S. Auto-create `people/{Full Name}.md` stub if missing. Write `client:` wikilink in frontmatter.
-4. **Capture what it proves.** One sentence. The claim this proof backs up.
-5. **Context.** When, where, who, enough that the creator will remember why this matters in six months.
-6. **Usage rules.** If there are NDA or permission constraints, add a `> [!warning] Usage rules` callout. If the client consented to stats but not their name, note it. Anonymization rules live in the body.
-7. **Set `illustrates` and `themes`.** One short line for the point this proof backs, in the creator's voice, plus open theme tags. No fixed problem number.
-8. **Propose a slug.** Creator approves.
-9. **Dedup check.** Scan `banks/proof-bank/*.md` for matches on `proof_type:` plus `client:` plus first-sentence overlap of "What it proves". If candidates found, show them and ask: update existing, save as new angle, or merge manually.
-10. **Assemble the entry** using `assets/proof-entry-template.md`. Fill frontmatter (`used_in: []` empty).
-11. **Save** to `banks/proof-bank/{slug}.md`.
-12. Loop back to the router (standalone mode) OR return the new entry's wikilink to the caller (sub-skill mode).
+Load `references/proof-capture-guide.md`.
+
+1. **Pick the type.** `personal-result` (the creator's own numbers) or `client-win` (someone else's result, with permission or anonymized).
+2. **Collect the asset.** A screenshot or clip goes into `banks/proof-bank/assets/` and its path into `asset_path:`. If there is no asset, the proof is an inline stat or quote and lives in the body. If there is no file and no exact words, there is no proof yet.
+3. **Presentation format.** How it gets shown on screen (static screenshot, before-after pairing, live clip, inline stat). Captured in the body, not the type. One proof can grow formats over time.
+4. **Client mention.** Same stub flow as Stage S.
+5. **What it proves, in one sentence.** If it takes more than one sentence, the proof is too vague to bank.
+6. **Context and usage rules.** When, where, who, enough that the creator remembers why it matters in six months. NDA or permission limits go in the `> [!warning] Usage rules` callout. When in doubt, anonymize.
+
+- **Weak:** "My clients get amazing results." Nothing to simulate; a claim, not proof.
+- **Strong:** "Analytics dashboard screenshot, 3.1M views over 12 months, file in `assets/`, one sentence naming what it backs." A writer can drop that on screen the moment a viewer asks "has this worked?"
+
+Then run the finish.
 
 ## Stage T: Testimonial capture
 
-Load `knowledge/testimonial-capture.md`.
+A testimonial is the client's own words, and verbatim is the whole value: the receipt the avatar can mentally simulate saying. Paraphrasing or grammar cleanup turns proof back into a claim. The only edit allowed is trimming for length, noted in Context.
 
-Testimonials are captured client voice, preserved verbatim. Different from stories (which the creator narrates) and different from general proof (which may be a number or graph). The source is always the client's own words.
+Load `references/testimonial-capture.md`.
 
-1. **Source check.** Is this from a comment, DM, email, or video? Set `source:` accordingly.
-2. **Capture the quote verbatim.** Do NOT paraphrase. Do NOT clean up grammar. The exact wording is the testimonial.
-3. **Client identification.** If the client is named and OK to be named, use their name. If anonymization applies, use "Anonymous" in `client:` and set `anonymized: true`. Note permission status in the body's Anonymization section.
-4. **People stub check.** If named, auto-create `people/{Full Name}.md` if missing.
-5. **Context.** What were they responding to? Which video or offer triggered this testimonial? Link to it with a wikilink if the piece exists.
-6. **Set `illustrates` and `themes`.** One short line for the point this quote backs, in the creator's voice, plus open theme tags. No fixed problem number.
-7. **Propose a slug.** Creator approves.
-8. **Dedup check.** Scan `banks/testimonial-bank/*.md` for matches on `client:` plus `source:` plus first-line of verbatim quote. If candidates found, show them and ask: update existing, save as new angle, or merge manually.
-9. **Assemble the entry** using `assets/testimonial-entry-template.md`. Body follows the `> [!quote]` callout with verbatim text, Context, Anonymization, Notes.
-10. **Save** to `banks/testimonial-bank/{slug}.md`.
-11. Loop back to the router (standalone mode) OR return the new entry's wikilink to the caller (sub-skill mode).
+1. **Source.** comment, dm, email, or video. The source drives permission: comments are public, everything else defaults to anonymized until the client has said yes.
+2. **The quote, exactly.** Typos, lowercase, profanity, all of it, inside the `> [!quote]` callout. The authenticity is what lands.
+3. **Client and stub.** Named with permission, or "Anonymous" plus `anonymized: true`. Named clients get the people stub.
+4. **Context.** What the client was responding to; wikilink the piece if it exists.
+5. **Write `illustrates` plus `themes`.** The point this quote backs, one short line in the creator's voice.
+
+Then run the finish.
 
 ## Stage F: Framework capture
 
+The bar for banking a framework: name it so the viewer can repeat it. If someone cannot say the name back after one watch, the framework has not crystallized yet, and banking it stores fog. The name comes from the creator's mouth, never invented here, and the read-aloud test on the name is the gate.
+
 Load `knowledge/framework-builder.md`.
 
-Stage F handles the LOG path: the creator already has a named system and wants to save it for reuse across videos. The CRAFT path (building a framework from scratch via the 5-step process) lives inline in vid-segment, which loads `framework-builder.md` directly and walks the creator through the 5 steps mid-write. Stage F is invoked AFTER inline crafting completes (vid-segment routes here to save), OR standalone when a framework crystallizes outside writing.
+Stage F is the log path: the system already exists in the creator's practice. Building one from scratch is vid-segment's inline 5-step build; when that finishes, vid-segment hands what it built here for the save.
 
-**What counts as bank-worthy:** the creator's OWN named systems (not other people's frameworks, not AI-invented acronyms, not single tactics). A framework needs (a) a name the creator actually uses, (b) named components, (c) a clear problem it solves. See `framework-builder.md` "What NOT to bank" for the full exclusion list.
+Bank-worthy means the creator's OWN named system: a name they actually use, named components, a clear problem it solves. Other people's frameworks, AI-invented acronyms, single tactics, and one-video novelties stay out. The full exclusion list is in the reference.
 
-1. **Confirm the framework exists in the creator's voice.** Ask: "What do you call this system?" The name comes from the creator, not the AI. If they don't have a name yet but want one, route them into the inline craft flow via vid-segment OR walk Step 5 of the 5-step build (`framework-builder.md` "Step 5: Name it") right here.
-2. **Capture the problem it solves.** One sentence in the creator's voice. "Why does this framework exist? What's the failure mode it prevents?"
-3. **Capture the components.** Usually 3 (sometimes 4-5). Each component gets a name and a one-line "what it is, why it matters." Push back if the creator lists 6+; the framework probably hasn't crystallized yet.
-4. **Pick the shape.** Use the selection matrix in `framework-builder.md`. If components are sequential → arrows. Equal-and-stacking → pyramid. Looping → cycle. Overlapping → Venn. Broad-to-narrow → funnel. Share-a-letter → acronym. If the creator doesn't care about the shape, infer silently from the component relationships and confirm.
-5. **Set `themes`.** Tag the open angles this framework touches. The `problem_it_solves:` from step 2 is the framework's matching key; there is no fixed problem tag.
-6. **Propose a slug.** Lowercase, hyphenated, 3-6 words, descriptive (e.g., `3-part-onboarding-system`, `hire-or-automate-matrix`). Creator approves.
-7. **Dedup check.** Scan `banks/framework-bank/*.md` for matches on `name:` proximity, `components:` overlap, or `problem_it_solves:` overlap. If candidates found, show them and ask: update existing, save as new angle, or merge manually.
-8. **Assemble the entry** using the schema in `framework-builder.md` "Entry schema + worked body example." Body follows: What problem does this solve? / The components / The shape / When to use it / Related assets / Origin. Fill frontmatter with `used_in: []` empty.
-9. **Read-aloud test on the NAME.** "Read the framework name out loud. Would you say this on camera without rewording it?" If they'd reword it, rename before saving. (The components and shape don't need a full read-aloud test; the name does.)
-10. **Save** to `banks/framework-bank/{slug}.md`.
-11. Loop back to the router (standalone mode) OR return the new entry's wikilink to the caller (sub-skill mode).
+1. **The name, in the creator's words.** Ask what they call this system. No name yet means it is not ready to bank, or route them into the build flow.
+2. **The problem it solves.** One sentence: the failure mode it prevents. This is the entry's matching key.
+3. **The components.** Usually 3. Each gets a name plus one line of what it is and why it matters. Six or more means it has not crystallized.
+4. **The shape.** From the selection matrix: sequential is arrows, equal-and-stacking is pyramid, looping is cycle, overlapping is Venn, broad-to-narrow is funnel, shared letters is acronym. Infer it from how the components relate and confirm.
+5. **Read-aloud on the name.** The creator says it out loud. If they reword it, the rewording is the name.
 
-**Sub-skill invocation pattern.** When vid-segment routes here after inline crafting, the caller passes a context packet like: `{name: "The 3-Part Onboarding System", components: [...], shape: "arrows", problem_solved: "...", themes: [onboarding, delegation]}`. Skip steps 1-4 (the caller already has the answers), go directly to step 5 (themes, if not already passed), step 6 (slug), step 7 (dedup), step 8 (assemble), step 9 (read-aloud on name), step 10 (save), step 11 (return wikilink).
+- **Weak name:** "S.C.A.L.E. (Strongify Communication And Lead Engagement)." Strained letters, and nobody repeats it.
+- **Strong name:** "The 3-Part Onboarding System." Descriptive, sayable, and clients will say it back.
 
-## Contract behaviors (enforced every stage)
+When vid-segment routes here after building one inline, it passes what it built (name, components, shape, problem, themes). Skip whatever it already answered and go to the finish.
 
-These come from `knowledge/vault-integration.md`. Non-negotiable.
+Then run the finish.
 
-- **Frontmatter matches the schema exactly.** Field names, enum values, tag slugs are specified in the contract. Don't invent fields or alternate names.
-- **`used_in: []` starts empty.** Writing skills (vid-segment, vid-intro) update it later when they actually use the entry. Never touch it from here after initial creation.
-- **Client mention, People stub.** No exceptions. Orphan wikilinks break the graph.
-- **Tags per type:** Story gets `story` plus theme slugs. Metaphor gets `metaphor`, `category-{slug}`, plus theme slugs. Proof gets `proof`, `{proof-type-slug}`, plus theme slugs. Testimonial gets `testimonial`, `source-{slug}`, plus theme slugs. Framework gets `framework`, `{shape-slug}`, plus theme slugs.
-- **File naming:** lowercase, hyphenated, 3-6 words, no dates in filename (dates live in frontmatter), no type prefix (folder carries that context).
-- **Read-aloud test.** Every entry that captures creator voice (stories, metaphor text, testimonials) must pass: creator reads it and doesn't reword a word.
+## Finishing any entry
 
-## Failure-mode behaviors
+Every stage ends the same way:
 
-From `vault-integration.md` Failure modes section. Never silent inconsistency.
+1. **Slug.** Propose lowercase, hyphenated, 3 to 6 words, no dates, no type prefix (the folder carries that). Creator approves or overrides.
+2. **Dedup.** Scan the matching bank folder against the criteria below. On a candidate, show it and ask: update the existing entry, save as a new angle, or merge manually. An update keeps the existing slug.
+3. **Assemble** from `assets/{type}-entry-template.md` (frameworks use the schema in `knowledge/framework-builder.md`). The template already carries the frontmatter and body skeleton; fill it, do not redesign it. `status: captured` and `used_in: []` start every entry's lifecycle. Writing skills move them later, never this skill.
+4. **Read-aloud.** Read the entry back to the creator. Anything in their voice they would reword gets their rewording. Save only after they confirm.
+5. **Save** to `banks/{type}-bank/{slug}.md`, creating the folder if missing. Standalone: loop back to the router. Called by another skill: return the entry's wikilink.
 
-- **Missing bank subfolders:** create them silently and proceed.
-- **People stub creation fails** (permission error, folder missing): do NOT save the bank entry with an unresolved `[[Client Name]]` wikilink. Report visibly, ask the creator to resolve, then retry save.
-- **Re-save over a malformed existing entry:** show the diff. Don't overwrite silently.
+Dedup criteria per bank:
+
+| Bank | A candidate match is |
+|---|---|
+| story | `illustrates` overlap, shared theme tags, slug proximity, first sentence of the Problem |
+| metaphor | same `concept:`, or same `category:` with similar metaphor text |
+| proof | `proof_type:` plus `client:` plus first sentence of "What it proves" |
+| testimonial | `client:` plus `source:` plus first line of the quote |
+| framework | `name:` proximity, `components:` overlap, or `problem_it_solves:` overlap |
 
 ## Session close
 
-Before exiting, report:
-
-- Entries captured this session (as wikilinks to each new bank file)
-- People stubs created (names plus bucket)
-- Any fields still thin (e.g., an `illustrates:` line that needs sharpening)
-- Any unresolved warnings
-
-End with: "When you're ready to write a script, run `vid-pipeline` (or any specific writing sub-skill). These banks will be there."
+Report what changed: entries captured (as wikilinks), people stubs created, anything still thin (a TODO in an entry, a missing asset), and anything unresolved. No silent gaps.
 
 ## Principles
 
-- **Preserve creator's exact phrasing.** Mine the creator's actual words. Do NOT polish into generic prose. Voice lives in word choice, rhythm, and specificity. The read-aloud test is the quality bar.
-- **Claude structures, Claude does not generate.** If a prompt gets no response, note "no story here yet" and move on. Never invent a client, number, result, or testimonial.
-- **Dig deeper before saving.** Push for specifics. Thin entries are worse than empty ones because they take up space without pulling weight.
-- **Honor the contract.** Every entry matches the vault-integration schema. Every client mention creates a People stub. Every entry gets its matching line (`illustrates`, or `concept` / `problem_it_solves`) plus `themes`.
-- **Banks are written once, read many times.** Optimize entries for downstream retrieval, not the capture moment.
-- **One item at a time.** Batch captures encourage sloppy ones.
-- **Dedup before save.** Always check existing bank entries for overlap. Duplicates pollute future retrieval and make it harder for writing skills to find the right entry.
-
-## Reference index
-
-References live in `knowledge/` (loaded by multiple skills, since vid-segment and vid-intro will load them too):
-
-- Stage S loads `story-capture-guide.md` (6 prompts, 3 story types, P/A/O with real examples, dig-deeper probes)
-- Stage M loads `metaphor-builder.md` (3-step builder, 5 everyday categories, 2 real metaphors, visual vs non-visual distinction, pivot phrases)
-- Stage P loads `proof-capture-guide.md` (4 proof types, screenshot-immediately rule, placement, anonymization)
-- Stage T loads `testimonial-capture.md` (verbatim capture, 4 sources, anonymization, scope)
-- Stage F loads `framework-builder.md` (5 visual shapes, selection matrix, 5-step build process, naming rules, entry schema, what NOT to bank). Also loaded inline by vid-segment for the craft path mid-write.
-
-Templates in `assets/`:
-
-- `story-entry-template.md`
-- `metaphor-entry-template.md`
-- `proof-entry-template.md`
-- `testimonial-entry-template.md`
-- `people-stub-template.md`
-
-(Framework entries use the schema embedded in `knowledge/framework-builder.md`. No separate template file. Single source of truth for framework structure.)
+- **Written once, read many times.** Build every entry for the writer who pulls it mid-script, not for the capture moment.
+- **Thin is worse than empty.** A thin entry gets pulled and flattens a segment. If the material is not there, say so and mark the TODO.
+- **The creator's phrasing is the product.** Claude structures, Claude never polishes. The read-aloud test is the quality bar.
+- **Never fabricate.** No invented clients, numbers, results, quotes, or metaphors. A gap is a TODO.
+- **One item at a time.** Batching encourages sloppy captures.
+- **The contract is one file.** Schemas, wikilink and people-stub rules, and failure behavior live in `knowledge/vault-integration.md`. Every entry matches it.

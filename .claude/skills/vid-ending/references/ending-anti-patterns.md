@@ -212,29 +212,25 @@ If voice passes but structure fails, the close gets shipped sounding right but c
 
 ---
 
-## 5. The auto-reject regex (informal)
+## 5. The draft-time scan list
 
-When generating candidates, scan against this informal list. Any hit auto-rejects the candidate before surfacing:
+Run every candidate against this list before the creator sees it. Any hit auto-rejects. The why for each family lives in Sections 1 and 2 above.
 
-- `and finally` / `and lastly` / `to wrap (this|it|things) up` / `in conclusion`
-- `thanks for watching` / `appreciate you watching` / `thank you for watching`
-- `if you (liked|enjoyed)` / `please subscribe` / `smash (the|that) like`
-- `stay tuned` / `until next time` / `catch you in the next` / `see you next time`
-- `without further ado`
-- `today('s)? video (was|is) about` / `in this video we covered` / `in today's video`
-- `i hope you enjoyed`
-- `let me know (in|what) the comments` / `drop (a|your) comment`
-- `don't forget to`
-- `hit the bell` / `(turn on|enable) notifications`
+- **Winding down:** "and finally", "and lastly", "to wrap this up", "to wrap it up", "to wrap things up", "in conclusion"
+- **Signing off:** "thanks for watching", "thank you for watching", "appreciate you watching", "until next time", "see you next time", "catch you in the next one"
+- **Begging:** "if you liked", "if you enjoyed", "please subscribe", "smash the like", "smash that like", "make sure to like and subscribe", "hit the bell", "turn on notifications"
+- **Broadcast filler:** "stay tuned", "without further ado"
+- **Topic-label recap:** "today's video was about", "in today's video", "in this video we covered", "i hope you enjoyed"
+- **Comment-bait:** "let me know in the comments", "let me know what you think", "drop a comment", "drop your comment"
+- **Hedged reminder:** "don't forget to"
+- **Vague gap:** "more to learn"
 
-Plus everything in `knowledge/transition-patterns.md` Section 4 (B-1 through B-13).
-
-Plus em-dashes anywhere (brand-level hard no per CLAUDE.md rule 25 in the parent vault and the locked decisions in build-plan.md).
+Plus everything in `knowledge/transition-patterns.md` Section 4 (B-1 through B-13), and em-dashes anywhere (universal hard rule).
 
 ---
 
 ## 6. Why this list is short (intentionally)
 
-The list is not exhaustive. It's the high-frequency banned phrases. New patterns will emerge as creators run the skill, capture them in `voice-rule-capture` flow, route additions to this file with a failure-mechanism note.
+The list is not exhaustive. It's the high-frequency banned phrases. New patterns will emerge as creators run the skill; capture them through `vid-voice-update` and route additions to this file with a failure-mechanism note.
 
 The principle: each banned phrase must come with WHY it fails. Banning a phrase without the reason creates blind spots. Claude can't generalize from "don't say X" to "don't say similar things." But "don't say X because it's broadcast-era filler that telegraphs the end" generalizes. Claude can spot the broadcast-era pattern in new phrases.

@@ -1,7 +1,7 @@
 ---
 type: reference
-scope: shared
-loaded_by: [vid-capture, vid-segment, vid-intro]
+scope: vid-capture
+loaded_by: [vid-capture]
 status: active
 tags: [reference, metaphor-capture, metaphor-bank]
 ---
@@ -10,7 +10,7 @@ tags: [reference, metaphor-capture, metaphor-bank]
 
 A strong metaphor turns an abstract concept into something anyone can picture. Facts alone retain around 10% of viewer attention. A strong visual metaphor can push retention on that concept to 65% or higher. Most creators skip metaphors because they're hard, which is exactly why a good one is a differentiator.
 
-This guide teaches how metaphors work. vid-capture uses it to extract, build, and classify metaphors into the bank. Downstream writing skills (vid-segment, vid-intro) use it to understand what they're pulling and where it fits in a script.
+This guide teaches how metaphors work. vid-capture's Stage M uses it to extract, build, and classify metaphors into the bank. Writing skills read the bank entries it produces; how a metaphor gets spliced into a script lives in [[metaphor-integration]].
 
 ## Real examples (read these first)
 
@@ -48,7 +48,7 @@ Three different tools. Easy to confuse. Here's the line:
 
 - **Visual demo** shows the actual thing on screen. Sixteen sugar cubes next to a Coke can. The cubes ARE the sugar in the soda. There's no swap, just direct visibility. Separate tool for a separate job.
 
-- **Framework visualization** makes an organizing structure visible. Sticky notes on a table representing scattered topics, grouped into three blocks. The sticky notes literally stand in for the topics. Belongs to the logic section of a video, not the metaphor slot.
+- **Framework visualization** makes an organizing structure visible. Sticky notes on a table representing scattered topics, grouped into three blocks. The sticky notes stand in for the topics. Belongs to the logic section of a video, not the metaphor slot.
 
 If in doubt: am I comparing this concept to a different thing (metaphor), showing the thing itself (visual demo), or organizing the thing into structure (framework visualization)?
 

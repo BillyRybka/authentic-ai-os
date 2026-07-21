@@ -10,7 +10,7 @@ tags: [reference, metaphor-integration, banks]
 
 How to drop a metaphor into a segment without it landing as "let me give you an analogy" theater. Examples-first. Each integration pattern pairs a worked example with a near-miss.
 
-This file is reference material for Claude to think with at Phase 3 (prose pass) when a metaphor block is in play. The metaphor builder (`knowledge/metaphor-builder.md`) lives upstream and defines what metaphors ARE and how they're built. This file is about the splice.
+This file is reference material for Claude to think with at Phase 3 (prose pass) when a metaphor block is in play. The metaphor builder (vid-capture's `references/metaphor-builder.md`) lives upstream and defines what metaphors ARE and how they're built. This file is about the splice.
 
 ## Why integration is harder than capture
 

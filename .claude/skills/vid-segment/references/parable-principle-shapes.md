@@ -9,7 +9,7 @@ tags: [reference, parable-principle, segment, format-aware]
 
 Per-format examples of how a segment shows (parable) and tells (principle). Examples lead. Principles follow. Every shape pairs a worked example with a near-miss so the boundary is clear.
 
-This file is reference material for Claude to think with at structure-pass time (Phase 2 of vid-segment). The format planner says WHICH shape to use; this file shows WHAT each shape looks like in practice.
+This file is reference material for Claude to think with at draft time (Step 3 of vid-segment). The format planner says WHICH shape to use; this file shows WHAT each shape looks like in practice.
 
 A segment is two bricks: a **parable** (the show: visual demo, story, metaphor, contrast, or breakdown) then a **principle** (the tell: the framework, the proof, the one-line takeaway). The parable is the emotional open; it carries the stakes the viewer feels before the lesson lands. The principle is the lesson they can action. Setups and payoffs (the tension graph) live ACROSS segments, in `knowledge/script-tension-architecture.md`, not inside one segment.
 
@@ -206,15 +206,15 @@ These fail across every format shape. If you see them in a structure draft, rest
 
 ---
 
-## Lean segments and early payoff (source-backed exception)
+## Lean segments and early payoff (the two exceptions)
 
-Most segments need both a parable and a principle to land. But two source-backed cases relax this:
+Most segments need both a parable and a principle to land. But two cases relax this:
 
 **Case 1: Early payoff with a new setup (rehook).**
 
-Source quote (lesson-16): "Don't worry if you pay something off early. If you pay something off early and then you keep explaining it, that's a problem. If you pay something off early and then you instantly set up something else, you've rehooked them. It's fine."
+The rule: if you pay something off early and then keep explaining it, that is a problem. If you pay something off early and then instantly set up something else, you have rehooked them. That is fine.
 
-Translated: a segment can run principle-only and land the lesson fast, without a full parable, IF the lesson lands and the segment immediately sets up the next thing the viewer needs to know. The danger is paying off early and then continuing to explain the same thing the viewer already understood. That's where retention breaks. The fix is the rehook (the transition), not a forced second brick.
+In practice: a segment can run principle-only and land the lesson fast, without a full parable, IF the lesson lands and the segment immediately sets up the next thing the viewer needs to know. The danger is paying off early and then continuing to explain the same thing the viewer already understood. That's where retention breaks. The fix is the rehook (the transition), not a forced second brick.
 
 Worked example: a Short Process segment lands the lesson in 12 seconds with a one-line metaphor, then immediately sets up the friction in step 2 ("but the second you try this with a cold list, it falls apart, here's what's actually going on..."). No story or stat needed. The rehook IS the next move.
 
@@ -222,9 +222,9 @@ Near-miss: a Short Process segment lands the lesson in 12 seconds and then keeps
 
 **Case 2: Intro setups can be paid off anywhere in the video.**
 
-Source quote (lesson-16): "Intro setups don't have to be paid off immediately. They can be resolved anywhere in the video."
+The rule: intro setups do not have to be paid off immediately. They can be resolved anywhere in the video.
 
-Translated: a segment can deliberately leave a thread from the intro hanging until later. Don't force every body segment to fully resolve the intro's promise. Sometimes the right move is to introduce a sub-piece in segment 2 and pay off the original intro thread in segment 4. The full-video arc is the unit, not the segment. (This belongs to the cross-segment tension layer, see `knowledge/script-tension-architecture.md`.)
+In practice: a segment can deliberately leave a thread from the intro hanging until later. Don't force every body segment to fully resolve the intro's promise. Sometimes the right move is to introduce a sub-piece in segment 2 and pay off the original intro thread in segment 4. The full-video arc is the unit, not the segment. (This belongs to the cross-segment tension layer, see `knowledge/script-tension-architecture.md`.)
 
 The rule: when a segment looks lean (short, missing a parable), check whether (a) a rehook is doing the work, or (b) the missing payoff is intentionally deferred to a later segment. If neither, the segment is genuinely thin and needs structural work. If either, the segment is fine.
 
@@ -232,12 +232,12 @@ The rule: when a segment looks lean (short, missing a parable), check whether (a
 
 ## How vid-segment uses this file
 
-At Phase 2 (structure pass), vid-segment reads:
+At Step 3 (the draft), vid-segment reads:
 
 1. The matched format planner from `knowledge/format-planners/{format}.md`
 2. This file's matching shape section
-3. The relevant references for the parable type chosen (story / proof / metaphor / etc.)
+3. The craft file for the parable type the skeleton picked (story / proof / metaphor / visual demo)
 
-The structure draft surfaced to the creator pulls its skeleton from the matching shape. Bank candidates surfaced for the parable and the principle's proof get filtered through the per-shape examples. A story that lands in a deep-dive segment may not land in a tight news segment.
+The segment's prose is calibrated against the matching shape's worked example. A story that lands in a deep-dive segment may not land in a tight news segment.
 
 If the format planner conflicts with this file, the planner wins (it's loaded by all writing skills, this file is vid-segment-local).

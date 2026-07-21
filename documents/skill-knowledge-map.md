@@ -92,11 +92,9 @@ The skills split into three families: `vid-*` (the video pipeline), `aud-*` (the
 
 **vid-capture** `STAGED`
 - `knowledge/framework-builder.md`
-- `knowledge/metaphor-builder.md`
-- `knowledge/proof-capture-guide.md`
 - `knowledge/story-capture-guide.md`
-- `knowledge/testimonial-capture.md`
 - `knowledge/vault-integration.md`
+- Skill-local `references/` (moved out of `knowledge/` 2026-07-21, vid-capture is their only consumer): `metaphor-builder.md`, `proof-capture-guide.md`, `testimonial-capture.md`
 
 **vid-framing** `STAGED`
 - `knowledge/audience-temperature-model.md` (also via `references/audience-temperature-fit.md`)
@@ -142,15 +140,12 @@ The skills split into three families: `vid-*` (the video pipeline), `aud-*` (the
 **vid-segment** `STAGED`
 - `knowledge/emotion-brick-decision-matrix.md`
 - `knowledge/framework-builder.md`
-- `knowledge/metaphor-builder.md`
 - `knowledge/metaphor-integration.md`
 - `knowledge/parable-decision-matrix.md`
-- `knowledge/proof-capture-guide.md`
 - `knowledge/proof-placement-rules.md`
 - `knowledge/script-tension-architecture.md` (also via `references/parable-principle-shapes.md`)
 - `knowledge/story-capture-guide.md`
 - `knowledge/story-pulling-criteria.md`
-- `knowledge/testimonial-capture.md`
 - `knowledge/vault-integration.md`
 - `knowledge/visual-demo-builder.md`
 - `knowledge/visual-proof-callouts.md`
@@ -258,14 +253,14 @@ Use this when editing or renaming a knowledge file: it tells you every skill tha
 | `interview-posture.md` | vid-avatar, vid-positioning, vid-pillars, vid-credibility, vid-backstory, vid-research, vid-voice-capture |
 | `intro-architecture.md` | vid-intro, vid-ending, vid-pressure-test |
 | `metaphor-bank-schema.md` | **none** (see Orphans) |
-| `metaphor-builder.md` | vid-capture, vid-segment |
+| `metaphor-builder.md` | moved to vid-capture `references/` (single consumer) |
 | `metaphor-integration.md` | vid-intro, vid-segment, vid-ending |
 | `outlier-identification-rules.md` | vid-research, vid-framing |
 | `packaging-bank-schema.md` | **none** (see Orphans) |
 | `packaging-system-template.md` | vid-research |
 | `parable-decision-matrix.md` | vid-intro, vid-segment, vid-ending |
 | `proof-bank-schema.md` | vid-credibility |
-| `proof-capture-guide.md` | vid-capture, vid-segment |
+| `proof-capture-guide.md` | moved to vid-capture `references/` (single consumer) |
 | `proof-placement-rules.md` | vid-intro, vid-segment, vid-ending |
 | `script-tension-architecture.md` | vid-structure, vid-segment, vid-pressure-test |
 | `story-bank-schema.md` | **none** (see Orphans) |
@@ -273,7 +268,7 @@ Use this when editing or renaming a knowledge file: it tells you every skill tha
 | `story-pulling-criteria.md` | vid-intro, vid-segment, vid-ending |
 | `synthetic-audience-method.md` | aud-intake, aud-avatar-build, aud-validate, aud-review |
 | `testimonial-bank-schema.md` | **none** (see Orphans) |
-| `testimonial-capture.md` | vid-capture, vid-segment |
+| `testimonial-capture.md` | moved to vid-capture `references/` (single consumer) |
 | `theory-of-one-curation.md` | vid-ideas, vid-research |
 | `three-circle-research.md` | vid-research, vid-framing |
 | `thumbnail-composition-guide.md` | vid-thumbnail |
@@ -311,7 +306,7 @@ Five files exist in `knowledge/` but are referenced by no skill:
 - `story-bank-schema.md`
 - `testimonial-bank-schema.md`
 
-All five are bank-schema files authored ahead of their consumer. The skill that will write those banks, `vid-capture`, currently loads the matching `-builder` and `-capture` guides (`framework-builder.md`, `metaphor-builder.md`, `proof-capture-guide.md`, `story-capture-guide.md`, `testimonial-capture.md`) rather than the schema files. The one bank-schema that IS wired is `proof-bank-schema.md`, loaded by vid-credibility. These five are not defects, they are content staged ahead of the skill that will consume it, and they do not need to ship until `vid-capture` (or another skill) loads them.
+All five are bank-schema files authored ahead of their consumer. The skill that will write those banks, `vid-capture`, currently loads the matching `-builder` and `-capture` guides (`framework-builder.md` and `story-capture-guide.md` from `knowledge/`, plus `metaphor-builder.md`, `proof-capture-guide.md`, and `testimonial-capture.md` from its own `references/`) rather than the schema files. The one bank-schema that IS wired is `proof-bank-schema.md`, loaded by vid-credibility. These five are not defects, they are content staged ahead of the skill that will consume it, and they do not need to ship until `vid-capture` (or another skill) loads them.
 
 No other orphans. Every other file in `knowledge/` has at least one consumer.
 
@@ -347,13 +342,13 @@ When you ship a skill, confirm every box. The skill's own `SKILL.md`, `reference
 
 - [ ] **vid-ideas**: iceberg-and-top-3-alignment, theory-of-one-curation, update-check, vault-integration (4)
 - [ ] **vid-intake**: story-capture-guide, update-check, vault-integration (3)
-- [ ] **vid-capture**: framework-builder, metaphor-builder, proof-capture-guide, story-capture-guide, testimonial-capture, vault-integration (6)
+- [ ] **vid-capture**: framework-builder, story-capture-guide, vault-integration (3; metaphor-builder, proof-capture-guide, and testimonial-capture ship inside the skill's own `references/`)
 - [ ] **vid-framing**: audience-temperature-model, outlier-identification-rules, three-circle-research, format-planners/ x7 (10)
 - [ ] **vid-title**: BENS-framework, thumbnail-text-patterns (2)
 - [ ] **vid-thumbnail**: BENS-framework, gift-framework, thumbnail-composition-guide, thumbnail-examples-library, thumbnail-strategy-menu, thumbnail-text-patterns, vault-integration (7)
 - [ ] **vid-structure**: framework-builder, script-tension-architecture, voice-profile-schema, format-planners/ x7 (10)
 - [ ] **vid-intro**: intro-architecture, metaphor-integration, parable-decision-matrix, proof-placement-rules, story-pulling-criteria, thumbnail-text-patterns, vault-integration, visual-proof-callouts, voice-pressure-test, voice-profile-schema, voice-rhythm, format-planners/ x7 (18)
-- [ ] **vid-segment**: emotion-brick-decision-matrix, framework-builder, metaphor-builder, metaphor-integration, parable-decision-matrix, proof-capture-guide, proof-placement-rules, script-tension-architecture, story-capture-guide, story-pulling-criteria, testimonial-capture, vault-integration, visual-demo-builder, visual-proof-callouts, voice-pressure-test, voice-profile-schema, voice-rhythm, format-planners/ x7 (24)
+- [ ] **vid-segment**: emotion-brick-decision-matrix, framework-builder, metaphor-integration, parable-decision-matrix, proof-placement-rules, script-tension-architecture, story-capture-guide, story-pulling-criteria, vault-integration, visual-demo-builder, visual-proof-callouts, voice-pressure-test, voice-profile-schema, voice-rhythm, format-planners/ x7 (21)
 - [ ] **vid-ending**: emotion-brick-decision-matrix, intro-architecture, metaphor-integration, parable-decision-matrix, proof-placement-rules, story-pulling-criteria, vault-integration, visual-proof-callouts, voice-pressure-test, voice-profile-schema, voice-rhythm, format-planners/ x7 (18)
 - [ ] **vid-pressure-test**: audience-temperature-model, intro-architecture, script-tension-architecture, voice-profile-schema (4)
 - [ ] **vid-voice-capture**: interview-posture, vault-integration, voice-extraction-methods, voice-pressure-test, voice-profile-schema, voice-rhythm (6)

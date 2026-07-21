@@ -1,7 +1,7 @@
 ---
 type: reference
-scope: shared
-loaded_by: [vid-capture, vid-segment, vid-intro]
+scope: vid-capture
+loaded_by: [vid-capture]
 status: active
 tags: [reference, testimonial-capture, proof-bank]
 ---
@@ -10,7 +10,7 @@ tags: [reference, testimonial-capture, proof-bank]
 
 A testimonial is captured client voice. Not the creator narrating what a client achieved (that's a story). Not a number on a dashboard (that's proof). A testimonial is the client's own words, preserved verbatim, with a source and a date.
 
-This guide teaches how testimonials work. vid-capture uses it to log testimonials that already exist. Downstream writing skills (vid-segment, vid-intro) use it to understand where testimonials land in a script and how to render them.
+This guide teaches how testimonials work. vid-capture's Stage T uses it to log testimonials that already exist. Where testimonials land once a script pulls them lives in [[proof-placement-rules]].
 
 Soliciting new testimonials from clients is outside this skill's scope.
 

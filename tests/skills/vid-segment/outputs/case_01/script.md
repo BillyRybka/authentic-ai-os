@@ -38,7 +38,7 @@ Here is the receipt. His own onboarding time, the hours he personally spent per 
 > [!important] Visual proof needed
 > Before-and-after time log screenshot from [[proof-bank/onboarding-5h-to-1h]] on screen here.
 
-Five hours to one. That is what documentation buys.
+Five hours to one. That is what documentation buys. But a receipt is not a plan. The next part is the three steps that produce it, starting with the one task only you can do.
 
 ## Lesson + Steps
 **Parable:** none. The story already carried it.

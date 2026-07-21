@@ -19,7 +19,7 @@ This bank is written by `vid-measurement` (own winners) and `vid-research` (outl
 Every entry has a `source` field distinguishing where it came from:
 
 - **`source: own`**: the creator's own videos that proved out. Real performance data (CTR vs channel baseline, retention through hook, views).
-- **`source: outlier`**: other creators' videos performing significantly above their channel average (2x+ is the rule of thumb). Per outlier analysis methodology, study what is working in your niche AND adjacent niches, then extract the packaging pattern.
+- **`source: outlier`**: other creators' videos performing significantly above their channel average (2x+ is the rule of thumb). Per standard outlier analysis, study what is working in your niche AND adjacent niches, then extract the packaging pattern.
 
 Both feed the same use case. When `vid-thumbnail` generates concept briefs, it pulls reference packages from here. Over time, own-winners crowd out outliers as the creator builds their own proven style.
 
@@ -40,7 +40,7 @@ One file per packaging combo that won. Entry captures:
 
 - Third-party frameworks or examples belong in `knowledge/`.
 - Title patterns and fill-in-the-blank formulas belong in `banks/title-bank.md`.
-- Hook patterns belong in `knowledge/hook-patterns.md` (system reference, not a creator bank).
+- Hook patterns belong in the vid-intro skill's `references/hook-patterns.md` (system reference, not a creator bank).
 - Transition patterns belong in `knowledge/transition-patterns.md` (system reference, not a creator bank).
 - Losing A/B variants. Winners only.
 - Untested concepts. Packages that never got measured against a real audience do not belong.

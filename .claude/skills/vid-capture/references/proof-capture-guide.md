@@ -1,7 +1,7 @@
 ---
 type: reference
-scope: shared
-loaded_by: [vid-capture, vid-segment, vid-intro]
+scope: vid-capture
+loaded_by: [vid-capture]
 status: active
 tags: [reference, proof-capture, proof-bank]
 ---
@@ -10,7 +10,7 @@ tags: [reference, proof-capture, proof-bank]
 
 Proof is what a cold viewer needs to believe the creator. Right after a framework lands, the viewer asks "has this actually worked for anyone?" If the answer isn't shown visually, specifically, and undeniably, the viewer loses trust at the exact wrong moment.
 
-This guide teaches how proof works. Vid-capture uses it to extract and log proof into the bank. Downstream writing skills (vid-segment, vid-intro) use it to understand placement and how to splice proof into a script.
+This guide teaches how proof works. vid-capture's Stage P uses it to extract and log proof into the bank. Where proof lands once a script pulls it lives in [[proof-placement-rules]].
 
 ## Real examples (read these first)
 

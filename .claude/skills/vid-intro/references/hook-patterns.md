@@ -1,6 +1,6 @@
 ---
 type: reference
-scope: shared
+scope: skill-local
 loaded_by: [vid-intro]
 status: active
 tags: [reference, hooks, patterns]

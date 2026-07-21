@@ -1,46 +1,29 @@
 ---
 name: vid-intro
-description: Produce the full 6-part video intro (Top 3 viewer questions, Hook, Problem/Result, Setup, Transition, credibility woven in) for one video. Format-aware, title-aware, thumbnail-aware. Runnable standalone OR invoked by vid-pipeline during the script phase. Use whenever the creator needs the opening of a video written, even if they don't say "intro": "write the intro", "intro for [video]", "lock the hook", "rewrite the intro", "fix the intro", "what should I open with", "how do I start this video", "I need a hook", "the opening feels off", "help me set up this video".
+description: Write the opening of one video. Hook, problem/result, setup, and transition anchored to the questions the locked title and thumbnail raised, credibility woven in. Format-aware. Standalone or via vid-pipeline in the script phase. Use when the creator needs the opening of a video written, even if they don't say "intro". Triggers on "write the intro", "intro for [video]", "lock the hook", "rewrite the intro", "fix the intro", "what should I open with", "how do I start this video", "I need a hook", "the opening feels off", "help me set up this video".
 ---
 
 # Video Intro Builder
 
-Writes the opening of one video: Hook, Problem/Result with credibility woven in, Setup, and Transition, anchored to the Top 3 questions the viewer clicked to get answered. The title and thumbnail made a promise; the intro is where the video starts keeping it.
+Writes the opening of one video: Hook, Problem/Result with credibility woven in, Setup, and Transition, anchored to the Top 3 questions the viewer clicked to get answered. The title and thumbnail made a promise; the intro is where the video starts keeping it. The intro is for hooking, not educating: a lesson in the first 30 seconds switches the viewer from curiosity to evaluation, and they leave.
 
 **This is a conversation, not a document.** Short messages, one decision at a time, creator approves each lock. References are for your thinking; never paste them at the creator.
 
 ## What loads, and when
 
-Load each file at the phase that needs it. Do not front-load.
+Read as you go; never front-load. Skill-local `references/` decision flows are named where they fire.
 
-| Phase | Load | For |
-|---|---|---|
-| 1 | `content/pieces/{slug}/piece.md` | locked `title`, `thumbnail_text`, format, goal, pillar, voice_context |
-| 1 | `content/pieces/{slug}/brain-dump.md` + `script.md` (the outline) | the material, the lock list, what the body will deliver |
-| 1 | `foundation/creator-foundation.md` | avatar, Top 3 problems, credibility brags |
-| 1 | `knowledge/intro-architecture.md` | the 6-part architecture, 5 hook types, 3 problem/result options, soft-friction list |
-| 1 | `knowledge/format-planners/{format}.md` | how THIS format trims, expands, or reorders the intro |
-| 1 | `references/hook-type-selection-flow.md` | the hook-lane decision: format x voice x channel size x material |
-| 1 | `foundation/voice-profile.md` (see fallback below) | guardrail + optional `preferred_hook_types` |
-| 2 | `knowledge/hook-patterns.md` | fill-in patterns for the chosen hook lane |
-| 2 | `references/problem-result-options.md` | reading pain-acuteness vs result-drama to pick Poke / Tease / Combine |
-| 2 | `references/credibility-line-weaving.md` | which slot (Hook / Problem-Result / Setup) the credibility line weaves into |
-| 2, conditional | `banks/story-bank/` + `knowledge/story-pulling-criteria.md` | only if a credibility candidate weaves a story; stage-match is the top filter here |
-| 2, conditional | `banks/proof-bank/`, `banks/testimonial-bank/` + `knowledge/proof-placement-rules.md` | only if the credibility line cites a number, screenshot, or testimonial |
-| 2, conditional | `knowledge/metaphor-integration.md` | only if a Hook candidate uses metaphor framing (drop clean, 3-sentence cap) |
-| 3 | `knowledge/transition-patterns.md` Sections 1 + 4 | hook-forward patterns and the banned-phrase tiers |
-| 4 | `foundation/reference-pieces/{voice_context}.md` | the voice engine for the grain check |
-| 4 | `knowledge/voice-pressure-test.md` + `knowledge/voice-rhythm.md` | the two-pass voice check, judged by ear |
-| 4 | `knowledge/visual-proof-callouts.md` | callout syntax for claims needing visual proof |
-| 5 | `knowledge/vault-integration.md` | the update-both-sides rule for any bank pull |
+- **Phase 1 vault reads:** `content/pieces/{slug}/piece.md` (locked `title`, `thumbnail_text`, format), `brain-dump.md` and `script.md` (the material and the outline the intro forwards into), `foundation/creator-foundation.md` (avatar, credibility brags), `foundation/voice-profile.md` (guardrails, `preferred_hook_types`; if missing, run on the default guardrails, note "Voice profile not captured, run `vid-voice-capture` for sharper voice fit," and continue; voice is never a blocker).
+- **Phase 1 craft:** `knowledge/intro-architecture.md` (the 6-part architecture and friction list) and `knowledge/format-planners/{format}.md` (how THIS format trims the intro).
+- **Phase 2 patterns:** `references/hook-patterns.md`, plus the creator's `banks/hook-bank.md` if one exists. **Phase 3:** `knowledge/transition-patterns.md` Sections 1 + 4.
+- **Phase 4 voice and proof:** `foundation/reference-pieces/{voice_context}.md`, `knowledge/voice-pressure-test.md`, `knowledge/voice-rhythm.md`, `knowledge/visual-proof-callouts.md`.
+- **Phase 5:** `knowledge/vault-integration.md` (the update-both-sides rule for bank pulls).
+- **Conditional depth:** story/proof/testimonial banks with `knowledge/story-pulling-criteria.md` or `knowledge/proof-placement-rules.md` (only when the credibility weave pulls bank material); `knowledge/metaphor-integration.md` (only when a hook runs on metaphor).
 
 ## Prerequisites
 
-- `content/pieces/{slug}/piece.md` with `title` and `thumbnail_text` locked. Missing → run `vid-title` / `vid-thumbnail` first. The Top 3 viewer questions derive from that package.
-- `content/pieces/{slug}/script.md` exists as vid-structure's outline (`segment_purposes` set in piece.md). **No outline → hard stop: run `vid-structure` first.** The Transition forwards into the first body point and the Setup promises what the body delivers; neither exists before the outline. (Running early also gets the intro destroyed when vid-structure later writes its skeleton.)
-- `content/pieces/{slug}/brain-dump.md` exists.
-- `foundation/creator-foundation.md` exists.
-- `foundation/voice-profile.md`: load if present. If missing, fall back to the universal hard rules (no em-dashes, no AI-isms, no hedging), note "Voice profile not captured, using default guardrails. Run `vid-voice-capture` for sharper voice fit," and continue. Voice is never a blocker.
+- `content/pieces/{slug}/piece.md` with `title` and `thumbnail_text` locked (missing → run `vid-title` / `vid-thumbnail` first; the Top 3 viewer questions derive from that package), plus `brain-dump.md` and `foundation/creator-foundation.md`.
+- `content/pieces/{slug}/script.md` exists as vid-structure's outline (`segment_purposes` set in piece.md). **No outline → hard stop: run `vid-structure` first.** The Transition forwards into the first body point and the Setup promises what the body delivers; neither exists before the outline. Running early also gets the intro destroyed when vid-structure later writes its skeleton.
 
 **Invoked by the pipeline:** the caller has verified prerequisites; skip re-checking them and skip questions the caller already answered. Never skip the creator locks (Top 3 questions, hook lane, candidate picks). Standalone or pipeline, the flow and the saves are identical.
 
@@ -48,35 +31,56 @@ Load each file at the phase that needs it. Do not front-load.
 
 **Build the lock list:** every number, dollar figure, percentage, timeframe, named method, named client, and specific result that appears verbatim in the brain dump, outline, or foundation. Candidates may use ONLY material from this list. Nothing invented.
 
-**Name the avatar's problem this video addresses** (usually one of the Top 3 from creator-foundation). The Problem/Result poke and the viewer questions both anchor here.
+**Derive the Top 3 viewer questions.** Read the locked title and thumbnail text together as one package. The viewer just clicked that package cold: what do they most want answered in the next 30 seconds? Surface 3 questions as a numbered list and ask the creator: look right, or redraft? **Wait. Lock with creator approval.** These become the Setup's on-camera promises. The questions and the Problem/Result poke both anchor to the avatar's problem this video addresses (usually one of the Top 3 from creator-foundation).
 
-**Derive the Top 3 viewer questions.** Read the locked title and thumbnail text together as one package. The viewer just clicked that package cold: what do they most want answered in the next 30 seconds? Surface 3 questions as a numbered list and ask the creator: look right, or redraft? **Wait. Lock with creator approval.** These become the Setup's on-camera promises.
-
-**Pick the hook lane** per `references/hook-type-selection-flow.md`: the format planner says which of the 5 types fit this format, `preferred_hook_types` says where the creator naturally lands, the material says what's available. One flag worth surfacing: a Credibility hook on a small or new channel tends to fail the cold-trust test; say so and let the creator call it. Confirm the lane in one short message.
+**Pick the hook lane.** The format planner says which of the 5 hook types fit this format, `preferred_hook_types` says where the creator naturally lands, and the lock list says what the material can actually fill (a Fact hook with no surprising stat in the dump is a dead lane). Format wins conflicts, voice breaks ties. One flag worth surfacing: a Credibility hook on a small or new channel usually fails the cold-trust test; say so and let the creator call it. Confirm the lane in one short message. When the inputs disagree and the call is close, `references/hook-type-selection-flow.md` has worked calls.
 
 ## Phase 2: Hook + Problem/Result
 
-**Generate 2-3 Hook candidates** from `knowledge/hook-patterns.md` patterns in the chosen lane, slots filled from the lock list only. Each: under 5 seconds spoken (roughly 15 words), distinct from the others, sayable by THIS creator. If a pattern's slot can't be filled from the lock list, skip the pattern.
+### What makes a hook land
 
-**Generate 2-3 Problem/Result candidates.** Pick per `references/problem-result-options.md`: acute lived pain → Poke the Problem; a dramatic receipt → Tease the Result; both loud → Combine. The poked problem must be one the avatar actually lives (usually the problem this video was framed around). A poke the avatar doesn't feel loses them; only regenerate if it rings false.
+Four tests, judged by ear, not by formula:
 
-Show both lists short and annotated (pattern, word count, any soft flag). Ask for a pick from each. **Wait.**
+- **Curiosity gap.** The first line opens a loop the viewer can only close by watching. A line that answers itself, or announces the topic, has no gap and no pull.
+- **Specificity is the trust signal.** A named number, pain, or situation tells the cold viewer there is real material behind this. Vague reads as "no information here, skip."
+- **The did-they-make-this-for-me test.** The avatar should feel the first line was made for them. A question anyone could ask is a question no one hears.
+- **One hook per open.** A question plus a stat plus a command in five seconds reads as panic. Pick the strongest and let it breathe.
 
-Push back on weak picks: fabricated number (hard reject, regenerate), over 5 seconds (flag), a problem the avatar wouldn't feel (flag), hook + problem/result energies that clash (flag, suggest a tighter pairing).
+> Great: "Have you ever wondered why one of your videos pulls 100k views and the next one barely cracks 1k?"
+> Weak: "Have you ever wondered why people are the way they are?"
+> Same pattern, same lane. The great one names the exact pain this avatar lives weekly; the weak one could be for anyone, so it lands for no one.
 
-**Weave the credibility.** Per `references/credibility-line-weaving.md`, pick the slot (Hook / Problem-Result / Setup, most often Problem/Result, where claims earn it) and the form (one of the 5 in intro-architecture Step 6). Pull the actual brag from creator-foundation or the brain dump. Woven into a claim moment, never a separate self-introduction. Show the creator the line in context and confirm.
+> Great: "The second your video loads, viewers judge it, and if they don't like what they see they leave forever."
+> Weak: "The second your video loads, things start happening."
+> Same shape. One has stakes with a clock on them, the other has none. Specificity is the whole difference.
+
+> Great: "I'm a fitness coach and I don't do cardio."
+> Weak: "Have you ever wondered why fitness is hard? Here's a fact: 80% of people quit. Stop doing what you're doing. I'll show you my system."
+> One defensible inversion the body can pay off, versus four hooks stacked into five seconds. Stacked hooks read as panic.
+
+**Generate 2-3 Hook candidates** in the locked lane. Pull patterns from `references/hook-patterns.md`, and from the creator's `banks/hook-bank.md` when it exists: hooks that already held retention on THIS channel outrank generic patterns. The vault bank supplements the plugin patterns, never replaces them, and a missing bank is fine. Fill every slot from the lock list only. Each candidate: under 5 seconds spoken (roughly 15 words), distinct from the others, sayable by THIS creator. If a slot cannot be filled from the lock list, skip that pattern. If the creator wants a number-driven hook and no number exists, kick it back: the number goes into the brain dump first, or the angle changes. Never invent one.
+
+**Generate 2-3 Problem/Result candidates** by matching intensity: acute lived pain → Poke the Problem; a dramatic receipt → Tease the Result; both loud → Combine. The poked problem must be one the avatar actually lives (usually the problem this video was framed around); a poke the avatar does not feel loses them. Close calls: `references/problem-result-options.md` has worked matches.
+
+**The redundancy rule:** when the hook already carries the result (a Credibility hook that IS the receipt, a tease-shaped hook), do not spend a second beat saying it again. Delete the Problem/Result, or cut it to the curiosity pivot ("Three things changed."). Two beats saying one thing reads as stalling.
+
+Show both lists short and annotated (pattern, word count, any soft flag). Ask for a pick from each. **Wait.** Push back on weak picks: fabricated number (hard reject, regenerate), over 5 seconds (flag), a problem the avatar would not feel (flag), clashing energies between the two picks (flag, suggest a tighter pairing). Anything softer (long hooks, teaching creep, topic-label openers, 4+ setup items) lives in the `intro-architecture.md` friction list: flag it with why it usually fails and let the creator decide.
+
+**Weave the credibility.** Pick the slot by what the receipt does: dramatic enough to stop a cold viewer on its own → it IS the Hook; it proves the result being teased → Problem/Result (the default, where claims earn it); it frames why the body can be trusted → Setup. Pull the actual brag from creator-foundation or the lock list and set it inside the claim moment, never as a separate self-introduction. Show the line in context and confirm. Worked weaves per slot: `references/credibility-line-weaving.md`. When the format planner says the format usually skips credibility (News, small-channel Roast), skip it; forcing a weave is its own failure.
 
 ## Phase 3: Setup + Transition
 
-**Setup:** "So in this video, I'm going to show you [Q1], [Q2], [Q3]." Each clause maps to one locked viewer question. Maximum 3 (the format planner may trim to 1 or extend for long Deep Dives). Verbs: "show you" / "walk you through," never "talk about" / "tell you." Push back if a clause maps to no locked question or promises something the outline doesn't deliver. The Setup is a contract; the body pays it.
+**Setup:** "So in this video, I'm going to show you [Q1], [Q2], [Q3]." Each clause maps to one locked viewer question. Maximum 3 (the format planner may trim to 1, drop it for News, or extend for long Deep Dives). Verbs: "show you" / "walk you through," never "talk about" / "tell you." Push back if a clause maps to no locked question or promises something the outline does not deliver. The Setup is a contract; the body pays it.
 
-**Transition:** 1-2 candidates from `transition-patterns.md` Section 1 (hook-forward). Each forwards into the outline's FIRST body point with a result the avatar cares about, and signals the content has started. Tier 1 banned phrases (Section 4) never surface as options; Tier 2 phrases surface flagged with the failure mechanism, creator decides. If a picked transition forwards to something the first body point doesn't deliver, flag it.
+**Transition:** 1-2 candidates from `transition-patterns.md` Section 1 (hook-forward). Each forwards into the outline's FIRST body point with a result the avatar cares about, and signals the content has started. Tier 1 banned phrases (Section 4) never surface as options; substitute silently. Tier 2 phrases surface flagged with the failure mechanism, creator decides. If a picked transition forwards to something the first body point does not deliver, flag it.
 
 ## Phase 4: Assemble + pressure-test
 
-Stitch: Hook → Problem/Result (credibility woven) → Setup → Transition. Show it as one clean spoken block, no labels or annotations, exactly as they'd read it on camera.
+Stitch: Hook → Problem/Result (credibility woven) → Setup → Transition. Show it as one clean spoken block, no labels or annotations, exactly as they would read it on camera.
 
-**Length check** by ear: under 30 seconds default, 15 ideal; the format planner flexes it (News compresses to 5-10s, Deep Dive earns more). Flag if long.
+**Length check** by ear: under 30 seconds default, 15 ideal; the format planner flexes it (News compresses to 5-10s, Deep Dive earns more). Flag if long. Over the limit usually means a lesson crept in; move it into the body.
+
+**First-shot match.** The thumbnail set a production-quality expectation, and the first shot has to match it: cinematic thumbnail, cinematic open; scrappy thumbnail, scrappy open. A mismatch reads as a lie and the viewer leaves before the hook lands. Call out the expected first shot as a production note when the intro locks.
 
 **Visual-proof callouts:** mark each claim needing on-screen proof per `knowledge/visual-proof-callouts.md` (callout after the claim line + `visual_proofs_called_out` tracking); surface any missing-proof cases at save time.
 
@@ -86,21 +90,10 @@ Stitch: Hook → Problem/Result (credibility woven) → Setup → Transition. Sh
 
 ## Phase 5: Lock and save
 
-Always, both modes:
-
 - Write the intro into `content/pieces/{slug}/script.md` under `## Intro`, replacing the stub vid-structure left.
-- Update piece.md: `intro_locked: true`, bump `last_updated:`.
+- Update piece.md: `intro_locked: true`, the locked `viewer_questions`, bump `last_updated:`.
 - Any bank pull gets both sides updated per `knowledge/vault-integration.md`: the piece's `stories_used` / `proofs_used` / `testimonials_used` AND the bank entry's `used_in` + `status`.
+- No em-dashes in anything saved. Vale enforces it; catch it here.
 - Confirm in chat with the real voice-check result (clean / soft-flagged), not a scripted "pass."
 
 **STOP.** Body segments, ending, title, thumbnail are other skills' jobs.
-
-## Hard rules (candidates never shown when violated)
-
-1. **No fabrication.** Numbers, names, claims: lock list only. If the creator wants a number-driven hook and no number exists, kick it back: add the number to the brain dump or drop the angle.
-2. **Tier 1 banned transition phrases** (transition-patterns Section 4: B-1, B-2, B-3, B-6). Substitute silently.
-3. **No bolted-on self-introduction.** Credibility weaves into a claim moment.
-4. **Setup clauses map to locked viewer questions.** Otherwise the intro breaks the title/thumbnail promise.
-5. **No em-dashes.** Universal hard rule; Vale enforces on save.
-
-Everything softer (credibility hook on a small channel, 4+ setup items, long hooks, teaching creep, hedges, topic-label openers) is soft friction: the list with why-it-tends-to-fail and when-it's-earned lives in `intro-architecture.md`, which is already loaded. Flag it in the candidate annotation and let the creator decide.

@@ -34,15 +34,15 @@ If the type choice and the format planner conflict, the format planner wins. The
 
 ## The types, and where their craft lives
 
-**Show-the-Problem** turns invisible into visible (dissolved sugar becomes a stack of cubes). Boundary: if the problem is ALREADY visible, this type adds nothing; use Contrast instead. Craft: `knowledge/visual-demo-builder.md`.
+**Show-the-Problem** turns invisible into visible (dissolved sugar becomes a stack of cubes). Boundary: if the problem is ALREADY visible, this type adds nothing; use Contrast instead. Craft: `references/visual-demo-builder.md` inside vid-segment.
 
-**Contrast** is side-by-side old way vs new way, and needs one side to be CLEARLY worse. Boundary: if the two sides are really a tradeoff or a preference, it's not a contrast; drop it or use Breakdown. Max 3 pointed-out differences. Craft: `knowledge/visual-demo-builder.md`.
+**Contrast** is side-by-side old way vs new way, and needs one side to be CLEARLY worse. Boundary: if the two sides are really a tradeoff or a preference, it's not a contrast; drop it or use Breakdown. Max 3 pointed-out differences. Craft: `references/visual-demo-builder.md` inside vid-segment.
 
-**Breakdown** pauses, zooms, and annotates something real on screen. Boundary: the shot must be cropped to the single element being taught; arrows flying over a cluttered screen teach nothing. Craft: `knowledge/visual-demo-builder.md`.
+**Breakdown** pauses, zooms, and annotates something real on screen. Boundary: the shot must be cropped to the single element being taught; arrows flying over a cluttered screen teach nothing. Craft: `references/visual-demo-builder.md` inside vid-segment.
 
-**Story** runs Problem-Action-Outcome in 20-30 spoken seconds, starting at the WORST moment, never at the journey's beginning, with real names and numbers. Boundary: a story with no specifics ("my client was struggling, we tried something, it worked") activates nothing; if the bank entry is that thin, route to `vid-capture` to dig deeper before pulling. Craft: `knowledge/story-capture-guide.md`, pull filter: `knowledge/story-pulling-criteria.md`.
+**Story** runs Problem-Action-Outcome in 20-30 spoken seconds, starting at the WORST moment, not the first thing that happened, with real names and numbers. Boundary: a story with no specifics ("my client was struggling, we tried something, it worked") activates nothing; if the bank entry is that thin, route to `vid-capture` to dig deeper before pulling. Craft: `knowledge/story-capture-guide.md`, pull filter: `knowledge/story-pulling-criteria.md`.
 
-**Metaphor** swaps an abstract idea for one familiar image in three sentences or fewer. Boundary: one metaphor per parable, never mixed, never explained after the fact; if it needs a paragraph, it isn't working, use a story or demo. Craft: `knowledge/metaphor-builder.md`, integration rules: `knowledge/metaphor-integration.md`.
+**Metaphor** swaps an abstract idea for one familiar image in three sentences or fewer. Boundary: one metaphor per parable, never mixed, never explained after the fact; if it needs a paragraph, it isn't working, use a story or demo. Craft: vid-capture's `references/metaphor-builder.md`, integration rules: `knowledge/metaphor-integration.md`.
 
 ## Bridge to the principle
 

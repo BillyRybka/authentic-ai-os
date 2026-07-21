@@ -1,6 +1,6 @@
 ---
 type: reference
-scope: shared
+scope: vid-segment
 loaded_by: [vid-segment]
 status: active
 tags: [reference, visual-demo, parable]

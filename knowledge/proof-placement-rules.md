@@ -10,7 +10,7 @@ tags: [reference, proof-placement, banks]
 
 Where proof goes inside a segment, how to handle the multiple presentation formats one entry can carry, and how to keep proof from contradicting the framework or breaking trust. Examples-first.
 
-This file is reference material for Claude to think with when querying `banks/proof-bank/*.md` and `banks/testimonial-bank/*.md`. The capture guides (`knowledge/proof-capture-guide.md`, `knowledge/testimonial-capture.md`) live upstream and define what proof IS. This file decides where it goes once pulled.
+This file is reference material for Claude to think with when querying `banks/proof-bank/*.md` and `banks/testimonial-bank/*.md`. The capture guides (vid-capture's `references/proof-capture-guide.md`, `references/testimonial-capture.md`) live upstream and define what proof IS. This file decides where it goes once pulled.
 
 ## The placement rule
 
