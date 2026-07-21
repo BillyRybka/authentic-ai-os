@@ -1,0 +1,95 @@
+[
+  {
+    "slug": "maria-dm-testimonial",
+    "pillar": "delegation",
+    "is_adversarial": false,
+    "seed": "Got a DM from Maria Quinn on 2026-06-28 that I want in the testimonial bank. She said: \"ok so I finally handed the onboarding doc to my assistant. she ran the whole thing today without me. first time in two years I watched a new client come in and did nothing. cried a little not gonna lie.\" She gave me permission to use her full name.",
+    "persona": {
+      "reveals": [
+        "It came in as an Instagram DM on 2026-06-28.",
+        "Maria Quinn is a real client, she is not in my people notes yet.",
+        "She sent it the day after she handed the documented onboarding to her assistant, right after we finished the documentation work together.",
+        "The point it backs: when the process is written down, the owner can step back and it still runs."
+      ],
+      "withholds": [],
+      "pillar_choice": "delegation",
+      "slug_ok": true
+    },
+    "distinctive_phrases": [
+      "she ran the whole thing today without me",
+      "cried a little not gonna lie"
+    ],
+    "bank_pulls_allowed": [],
+    "fabrication_traps": []
+  },
+  {
+    "slug": "handoff-ladder-framework",
+    "pillar": "delegation",
+    "is_adversarial": false,
+    "seed": "I want to bank a framework I use with every client. I call it the Handoff Ladder. Three rungs: write it down, hand it off, review it weekly. You cannot skip a rung. It exists because delegation falls apart when the handoff has no structure. The owner says \"I delegated it\" and a week later the work is back on their desk.",
+    "persona": {
+      "reveals": [
+        "Rung one is write it down: the process leaves your head and becomes a document. Until it is written, you have not delegated, you have just hoped.",
+        "Rung two is hand it off: a named owner takes the document and runs it. One owner, not a group.",
+        "Rung three is review it weekly: a standing check so the system drifts back into shape instead of back onto your desk.",
+        "The rungs are strictly ordered, each one depends on the one before, so the shape is arrows.",
+        "It is a process framework. I would tag it delegation and systems."
+      ],
+      "withholds": [],
+      "pillar_choice": "delegation",
+      "slug_ok": true
+    },
+    "distinctive_phrases": [
+      "the Handoff Ladder",
+      "you cannot skip a rung"
+    ],
+    "bank_pulls_allowed": [],
+    "fabrication_traps": []
+  },
+  {
+    "slug": "analytics-dashboard-proof",
+    "pillar": "systems",
+    "is_adversarial": false,
+    "seed": "I want to log a proof asset. A screenshot of my YouTube analytics dashboard showing 3.1M views over the last 12 months, with the subscriber and revenue graphs climbing the whole way. It proves that building systems instead of hustling grows the channel. The file is already saved at banks/proof-bank/assets/analytics-dashboard-3m-views.png.",
+    "persona": {
+      "reveals": [
+        "It is my own channel, so personal-result. No client involved and no permission issues.",
+        "I took the screenshot today.",
+        "Right now it is a single static screenshot, no other presentation format yet.",
+        "Use it after any segment claiming the system-first approach grows a channel."
+      ],
+      "withholds": [],
+      "pillar_choice": "systems",
+      "slug_ok": true
+    },
+    "distinctive_phrases": [
+      "3.1M views over the last 12 months",
+      "building systems instead of hustling grows the channel"
+    ],
+    "bank_pulls_allowed": [],
+    "fabrication_traps": []
+  },
+  {
+    "slug": "leaky-cup-metaphor",
+    "pillar": "systems",
+    "is_adversarial": false,
+    "seed": "I have a visual metaphor I want to bank. Two paper cups on the table. The cup labeled memory has a hole poked in the bottom, water dripping onto the table. The cup labeled written down holds every drop. The point: a process that only lives in your head leaks every time you try to hand it off.",
+    "persona": {
+      "reveals": [
+        "What I say on camera is: \"A process in your head is this cup. Every time you try to hand it off, it leaks. Written down, it holds every drop.\"",
+        "On screen: two paper cups on the table. The memory cup has a hole poked in the bottom and water drips onto the table while I talk. The written down cup stays full.",
+        "It needs the prop. Pure speech does not carry it, so visual is true.",
+        "Category: other. It is office supplies more than food."
+      ],
+      "withholds": [],
+      "pillar_choice": "systems",
+      "slug_ok": true
+    },
+    "distinctive_phrases": [
+      "every time you try to hand it off, it leaks",
+      "a process that only lives in your head leaks every time you try to hand it off"
+    ],
+    "bank_pulls_allowed": [],
+    "fabrication_traps": []
+  }
+]

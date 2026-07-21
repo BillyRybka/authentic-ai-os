@@ -1,0 +1,18 @@
+---
+type: content-piece
+slug: new-scheduling-feature-reaction
+pillar: systems
+status: scripting
+format: news
+goal: views
+selected_angle: "Everyone is about to get sold on auto-assign this week, and it will not save them, because the tool is the kitchen appliance and the system is the recipe."
+core_payoff: "Write the process down before you buy any tool to run it."
+title: "That New Auto-Assign Feature Will Not Save You"
+voice_context: youtube-script
+ending_locked: true
+next_video: "[[documented-onboarding-system]]"
+created: 2026-06-20
+last_updated: 2026-06-29
+---
+
+# New Scheduling Feature Reaction

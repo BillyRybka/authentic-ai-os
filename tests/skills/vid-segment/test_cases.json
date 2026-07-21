@@ -1,0 +1,56 @@
+{
+  "skill": "vid-segment",
+  "corpus": "../../corpus/seeds.json",
+  "fixtures": "../../fixtures/shared",
+  "input_stage": "../../fixtures/stages/after-intake",
+  "suite_fixtures": "fixtures",
+  "cases": [
+    {
+      "case": 0,
+      "slug": "5-onboarding-mistakes",
+      "seed_index": 3,
+      "segment_heading": "Mistake 3",
+      "segment_label": "mistake-3",
+      "min_words": 100,
+      "expected_used": {
+        "stories_used": ["[[story-bank/agency-owner-fired-himself]]"]
+      },
+      "bank_updates": ["story-bank/agency-owner-fired-himself"],
+      "parable_anchors": ["marcus"],
+      "handoff_cues": ["mistake 4", "mistake number 4", "number 4", "never update"],
+      "requires_callout": null,
+      "allowed_drops": []
+    },
+    {
+      "case": 1,
+      "slug": "fired-himself-delegation",
+      "seed_index": 1,
+      "segment_heading": "Outcome",
+      "segment_label": "outcome",
+      "min_words": 80,
+      "expected_used": {
+        "proofs_used": ["[[proof-bank/onboarding-5h-to-1h]]"]
+      },
+      "bank_updates": ["proof-bank/onboarding-5h-to-1h"],
+      "parable_anchors": ["coordinator"],
+      "handoff_cues": ["lesson", "step", "watch", "next"],
+      "requires_callout": null,
+      "allowed_drops": []
+    },
+    {
+      "case": 2,
+      "slug": "tempting-numbers-client-story",
+      "seed_index": 5,
+      "segment_heading": "Outcome",
+      "segment_label": "outcome",
+      "min_words": 60,
+      "expected_used": {},
+      "bank_updates": [],
+      "parable_anchors": ["jordan"],
+      "handoff_cues": ["lesson", "next", "watch", "step"],
+      "requires_callout": "todo",
+      "allowed_drops": []
+    }
+  ],
+  "note": "vid-segment Tier A eval. vid-segment writes ONE body segment per run, so each case names the slug, the corpus seed, the target segment heading, and the expected save-side effects. Input state per case: the frozen after-intake brain-dump.md from input_stage (source text), plus a suite-local after-structure state under fixtures/{slug}/ (piece.md with status: drafting + segment_purposes + segments_completed + tension_plan + *_used arrays, and script.md the vid-structure skeleton with prior segments already written). The suite-local fixtures exist because fixtures/stages/after-structure does not exist yet; when that stage is frozen for real, point suite_fixtures at it instead. Output contract per case (written by the test runner to outputs/case_NN/): script.md (the skeleton with the segment prose appended under its heading, all other sections preserved), piece.md (frontmatter updated: segments_completed appended, the matching *_used arrays appended, last_updated bumped, every other field untouched), banks/{bank-dir}/{slug}.md for EVERY bank entry pulled this run (status flipped captured to used, used_in gains [[{piece-slug}]]), and transcript.md (the creator gate conversation; never scored for fabrication or brand rules because it legitimately echoes the creator's words). Per-case spec fields: segment_heading (substring of the target ## heading), segment_label (the label appended to segments_completed), min_words (deterministic floor for filming-ready prose; lower for the adversarial case because a segment with an honestly-missing proof is legitimately lean), expected_used (exact set of wikilinks each *_used array must GAIN; anything more or less fails, which is what makes the adversarial case gate on zero additions), bank_updates (bank entries the run must write back flipped), parable_anchors (tokens from the picked parable material that must appear in the prose), handoff_cues (any one must appear in the segment's final paragraph, the forward-hook floor), requires_callout (a callout type like todo that must appear inside the segment section), allowed_drops (fixture lines the run may legitimately delete, e.g. a To build row this segment consumed)."
+}

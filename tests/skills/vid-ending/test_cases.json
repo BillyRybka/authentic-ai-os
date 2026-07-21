@@ -1,0 +1,38 @@
+{
+  "skill": "vid-ending",
+  "corpus": "../../corpus/seeds.json",
+  "fixtures": "../../fixtures/shared",
+  "upstream_stage": "fixtures/upstream",
+  "catalog": "fixtures/catalog",
+  "cases": [
+    {
+      "index": 0,
+      "slug": "systems-beat-hustle",
+      "goal": "sales",
+      "format": "deep-dive",
+      "note": "Deep dive, sales goal. Close must carry a direct CTA between Gap and Bridge, and Bridge to a real sales-converting catalog video. Gap must trace to a creator-foundation Top 3 problem."
+    },
+    {
+      "index": 1,
+      "slug": "fired-himself-delegation",
+      "goal": "sales",
+      "format": "case-study",
+      "note": "Case study, sales goal. Script lock list holds the 5-hour-to-1-hour Marcus receipt, so the Pivot may re-use it. Bridge to the pricing video (Gap = undercharging, Top 3 problem 3)."
+    },
+    {
+      "index": 2,
+      "slug": "new-scheduling-feature-reaction",
+      "goal": "views",
+      "format": "news",
+      "note": "News, views goal. No CTA block, no external links, and per end-screen R-4 the Bridge must NOT point at another news video; it must land on evergreen. The catalog holds a news decoy (tool-roundup-news) that a wrong run would pick."
+    },
+    {
+      "index": 3,
+      "slug": "tempting-numbers-client-story",
+      "goal": "sales",
+      "format": "case-study",
+      "note": "ADVERSARIAL. The Jordan numbers were withheld at intake (TODO in the script). A correct close recaps the transformation with zero invented figures; the fabrication check fails any run that invents a revenue number or multiplier in the close."
+    }
+  ],
+  "note": "vid-ending is the last per-video script step. Its inputs are a body-complete script.md with a non-stub ## Intro plus piece.md (format, goal, pillar), the shared foundation (creator-foundation Top 3 problems drive the Gap), and a channel catalog of already-published videos the Bridge can point at. No after-segment stage exists in tests/fixtures/stages yet (vid-structure/vid-intro/vid-segment suites are not built), so the suite freezes its own upstream states under fixtures/upstream/{slug}/ (piece.md + body-complete script.md, hand-authored to the vid-ending SKILL.md prerequisites) and a published-video catalog under fixtures/catalog/content/pieces/{slug}/piece.md. The test runner drives vid-ending once per case with the creator-simulator playing Sam Rivera, starting from the upstream fixture, and writes outputs/case_NN/ containing script.md (with the filled ## Ending block) and piece.md (ending_locked, next_video). transcript.md is optional and never scored for fabrication or brand rules because it legitimately echoes the creator's own words."
+}

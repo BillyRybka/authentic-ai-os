@@ -1,0 +1,132 @@
+{
+  "skill": "vid-capture",
+  "corpus": "../../corpus/seeds.json",
+  "local_seeds": "capture-seeds.json",
+  "fixtures": "../../fixtures/shared",
+  "input_stage": "shared-only",
+  "note": "vid-capture is bank maintenance, not a per-video pipeline step, so it consumes only the shared foundation + banks fixture tree. There is no upstream stage to freeze. Each case names one capture flow (stage S/M/P/T/F) driven by one seed. Corpus seeds are reused where their persona material is bankable; capture-seeds.json (suite-local) adds raw material for the testimonial, framework, proof, and visual-metaphor flows the video corpus does not cover. The runner writes outputs/case_NN/ as: {entry_type}-{slug}.md for the bank entry (the prefix stands in for banks/{type}-bank/), people-{Full-Name}.md for new stubs or 'already exists' notes, and transcript.md for the capture conversation. eval.py scores the bank files and stubs. transcript.md is never brand- or fabrication-scored because it legitimately echoes the creator, but it IS legitimate source text: a number in an entry must trace to the seed, the persona, or something the creator said in the transcript.",
+  "cases": [
+    {
+      "id": "case_00",
+      "seed": "systems-beat-hustle",
+      "stage": "S",
+      "entry_type": "story",
+      "expect_entry": true,
+      "expected_fields": {"story_type": "own"},
+      "named_people": [],
+      "dedup_against": [],
+      "verbatim_required": [
+        "it stayed the same while making me a worse overall person",
+        "the goal is to build the thing that does it for you"
+      ],
+      "note": "Own story from the seed dump: two years of 80 hour weeks with no growth, then the onboarding system. No client named, so no client field and no people stub."
+    },
+    {
+      "id": "case_01",
+      "seed": "fired-himself-delegation",
+      "stage": "S",
+      "entry_type": "story",
+      "expect_entry": true,
+      "expected_fields": {"story_type": "client"},
+      "named_people": [{"name": "Marcus Lane", "stub_expected": false}],
+      "dedup_against": ["story-bank/agency-owner-fired-himself"],
+      "verbatim_required": [
+        "delegation is not about trust, it is about documentation"
+      ],
+      "note": "The Marcus story already exists in the frozen bank, so this is the dedup case: a correct run surfaces the existing entry and updates it under the SAME slug instead of minting a second file. Marcus Lane already has a people profile in fixtures, so no new stub. Withhold honored: no revenue figures anywhere."
+    },
+    {
+      "id": "case_02",
+      "seed": "new-scheduling-feature-reaction",
+      "stage": "M",
+      "entry_type": "metaphor",
+      "expect_entry": true,
+      "expected_fields": {"category": "food", "visual": "false"},
+      "named_people": [],
+      "dedup_against": [],
+      "verbatim_required": [
+        "the tool is the kitchen appliance, the system is the recipe"
+      ],
+      "note": "Log-path metaphor capture: the appliance vs recipe line from the seed. Non-visual, single 'The metaphor' block, category food. Dedup scan should notice restaurant-kitchen-systems but the concept key differs (systems vs personal effort, not tools vs systems), so a new entry is correct."
+    },
+    {
+      "id": "case_03",
+      "seed": "tempting-numbers-client-story",
+      "stage": "S",
+      "entry_type": "story",
+      "expect_entry": true,
+      "expected_fields": {"story_type": "client"},
+      "named_people": [{"name": "Jordan", "stub_expected": true}],
+      "dedup_against": [],
+      "gap_flag_in": "entry",
+      "verbatim_required": [
+        "it was honestly wild how fast it moved",
+        "the growth came from the boring system, not from a growth hack"
+      ],
+      "note": "ADVERSARIAL. The creator does not remember the numbers and forbids inventing them. A correct run saves the story with zero claim-shaped numbers, flags the missing proof as a TODO inside the entry, links no bank entries, and creates the Jordan people stub (real client, not yet in the vault)."
+    },
+    {
+      "id": "case_04",
+      "seed": "thin-pricing-dump",
+      "stage": "S",
+      "entry_type": "story",
+      "expect_entry": false,
+      "named_people": [],
+      "dedup_against": [],
+      "gap_flag_in": "transcript",
+      "verbatim_required": [],
+      "note": "ADVERSARIAL. No story exists and the creator withholds everything. A correct run saves NOTHING (no entry file at all), says so plainly, and marks the gap as a TODO in the transcript instead of fabricating an entry."
+    },
+    {
+      "id": "case_05",
+      "seed": "maria-dm-testimonial",
+      "stage": "T",
+      "entry_type": "testimonial",
+      "expect_entry": true,
+      "expected_fields": {"source": "dm", "anonymized": "false"},
+      "named_people": [{"name": "Maria Quinn", "stub_expected": true}],
+      "dedup_against": [],
+      "verbatim_required": [
+        "she ran the whole thing today without me",
+        "cried a little not gonna lie"
+      ],
+      "note": "Testimonial from a suite-local seed: verbatim DM quote with lowercase casual phrasing preserved exactly, source dm, named client with permission, new people stub for Maria Quinn."
+    },
+    {
+      "id": "case_06",
+      "seed": "handoff-ladder-framework",
+      "stage": "F",
+      "entry_type": "framework",
+      "expect_entry": true,
+      "expected_fields": {"framework_type": "process", "shape": "arrows", "maturity": "active"},
+      "named_people": [],
+      "dedup_against": [],
+      "verbatim_required": ["you cannot skip a rung"],
+      "note": "Framework log path: the creator's own named system, three strictly ordered components, arrows shape. The name comes from the creator and is read-aloud tested in the transcript. Dedup scan should notice 3-part-onboarding-system but name and components differ."
+    },
+    {
+      "id": "case_07",
+      "seed": "analytics-dashboard-proof",
+      "stage": "P",
+      "entry_type": "proof",
+      "expect_entry": true,
+      "expected_fields": {"proof_type": "personal-result"},
+      "named_people": [],
+      "dedup_against": [],
+      "verbatim_required": ["3.1M views over the last 12 months"],
+      "note": "Personal-result proof with an asset_path and a Presentation format body section. No client involved, so no client field and no usage-rules callout required."
+    },
+    {
+      "id": "case_08",
+      "seed": "leaky-cup-metaphor",
+      "stage": "M",
+      "entry_type": "metaphor",
+      "expect_entry": true,
+      "expected_fields": {"category": "other", "visual": "true"},
+      "named_people": [],
+      "dedup_against": [],
+      "verbatim_required": ["every time you try to hand it off, it leaks"],
+      "note": "Visual metaphor: visual true requires the two-layer body (Spoken plus Shown subsections). Category other (office supplies, not food)."
+    }
+  ]
+}

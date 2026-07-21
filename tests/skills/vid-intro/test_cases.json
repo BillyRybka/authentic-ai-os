@@ -1,0 +1,7 @@
+{
+  "skill": "vid-intro",
+  "corpus": "../../corpus/seeds.json",
+  "fixtures": "../../fixtures/shared",
+  "input_stage": "fixtures/after-structure",
+  "note": "vid-intro writes the 6-part intro into script.md and locks it in piece.md. Its inputs are the shared foundation + banks plus a per-seed after-structure state: piece.md with title and thumbnail_text locked (vid-title output) and segment_purposes set, brain-dump.md (vid-intake output), and script.md as the vid-structure outline with an Intro stub. The global fixtures/stages/ tree only reaches after-intake, so the after-structure stage lives suite-locally at tests/skills/vid-intro/fixtures/after-structure/{slug}/ (hand-authored to current schemas; migrate to fixtures/stages/after-structure when the rollout freezes that boundary). The test runner drives the vid-intro skill once per seed with the creator-simulator playing Sam Rivera, loading the after-structure files as starting context. The runner writes each run to outputs/case_NN/ containing script.md (intro stub replaced by the locked intro), piece.md (intro_locked, viewer_questions, used tracking), transcript.md, and optionally any bank entry files whose used_in was updated. eval.py scores script.md and piece.md; transcript.md is not scored for fabrication or brand rules because it legitimately echoes the creator's own words. Adversarial seeds: case_04 (thin-pricing-dump) and case_05 (tempting-numbers-client-story) have no numbers and no authorized bank pulls, so any claim-shaped number or bank link in the intro is a fabrication fail."
+}
