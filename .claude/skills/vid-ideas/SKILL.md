@@ -34,7 +34,6 @@ Hard requirements:
 
 Soft requirements:
 - `content/ideas-backlog.md` (loaded if present, for prior keepers and sticky drops)
-- `foundation/packaging-system.md` (read only to know the creator's active format rotation, so an idea can hint at a fitting format; never required)
 
 ## Invocation modes
 

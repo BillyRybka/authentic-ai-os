@@ -40,7 +40,7 @@ Show, don't tell. Source: "95% of Freelancers Invoice Wrong" (@ledgerline, 88k, 
 
 - GOOD: "95% of Service Owners Undercharge on Every Invoice." The number survives, the claim moves onto the creator's pricing lane. Side by side, the bend competes with the source.
 - FLOOR FAIL: "The Way Most Service Owners Invoice Is Costing Them Money." Theme kept, 95% gone. The source gets the click every time.
-- FLOOR FAIL: "How to Run Your Agency Without Hiring Anyone", bent from "I Run a $40k a Month Agency With Zero Employees (Full System)". "Without hiring anyone" is a dull synonym of "Zero Employees (Full System)". The kicker was the engine.
+- FLOOR FAIL: "How to Run a Carpentry Business With Minimal Overhead", bent from "I Run a $40k a Month Carpentry Business From One Garage (Full System)". "With minimal overhead" is a dull synonym of "From One Garage (Full System)". The kicker was the engine.
 
 **The side-by-side sharpness test.** Put your bend directly under the source line and read the pair the way a scroller would. If the SOURCE gets the click, the bend failed. Sharpen it (restore the form you dropped) or re-roll. Only surface a bend you would honestly click over its source. This test catches the dull bend that every abstract checklist misses, because the comparison is concrete: two lines, one click.
 
@@ -58,7 +58,7 @@ So the old fear is inverted: the seed's failure mode is not staying too close, i
 For each candidate, put it next to the others and ask the real question: scrolling the feed, would the avatar click THIS, and why?
 
 - Run the side-by-side sharpness test against the source first (above). A bend the source beats is already dead.
-- A dream outcome beats a defensive reassurance. "A full content team's output with no payroll" pulls harder than "...and it still sounds like you". Reassurance is a footnote, not a hook.
+- A dream outcome beats a defensive reassurance. "Every invoice paid within a week" pulls harder than "...and it works with the spreadsheet you already have". Reassurance is a footnote, not a hook.
 - If the strongest thing about the line is that it is on-brand, it fails. On-brand is the floor, not the pull.
 - It reads like one line a person would actually say out loud. No crushed, stiff, keyword-stuffed phrasing.
 - If you cannot say in one sentence why a human clicks this over the next one, it is not ready.

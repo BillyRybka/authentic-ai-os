@@ -1,16 +1,16 @@
-# vid-title transcript: claude-cowork-newsjack
+# vid-title transcript: pinnacle-glidetrack-newsjack
 
 Mode: standalone. The creator asked for title options for this piece.
 
 ## Orient
 
-Framing already did the viewer work, so I inherit it. Format: news. Goal: views. The locked angle: Claude Cowork just shipped scheduled agents, so the part of content work that used to need a person sitting there can now run on its own. Core payoff: the viewer understands the new capability and whether it is worth setting up. Who clicks: the solo creator whose day gets eaten by babysitting content jobs.
+Framing already did the viewer work, so I inherit it. Format: news. Goal: views. The locked angle: Pinnacle just announced the GlideTrack, a self-calibrating track saw, so the setup ritual (measuring twice, test cuts, shims) might stop being the viewer's job. Core payoff: the viewer understands the announcement and whether it matters for their shop, with zero invented numbers. Who clicks: the small-shop woodworker whose setup time eats the build time.
 
 ## Lock list (from brain-dump.md)
 
-- Named: Claude, Cowork, scheduled agents
-- Timing: just shipped / this week
-- NO numbers available (no time-saved figure, no revenue figure, no percentage has been measured)
+- Named: Pinnacle, the GlideTrack, self-calibrating track saw
+- Timing: just announced / this week
+- NO numbers available. No accuracy figure, no time-saved figure, nothing measured.
 
 Hard rule for this case: the lock list has NO numbers. Any digit in any title is fabrication, and the creator said it plainly: not going to make one up.
 
@@ -18,92 +18,94 @@ Hard rule for this case: the lock list has NO numbers. Any digit in any title is
 
 Own-channel winners first: none yet. Niche first, then adjacent. Three structures picked:
 
-1. News release (news-jack-release, spread 5 of 11). Source: "Anthropic Just Dropped Claude for Small Businesses (31 Skills)" (@brockmesarich, 10.8x). Why it wins: it rides a release the audience is already curious about and ties it to their world. The shape decays fast, so speed is the whole game.
+1. News release (news-jack-release, spread 2 of 12, concentrated in the tool-review circle). Source: "Copper Creek Just Dropped a Self-Squaring Track Guide (First Cut)" (@coppercreekshop, 10.4x). Why it wins: it rides a release the gear-watchers are already curious about and ties it to their shop. The shape decays fast, so speed is the whole game.
 
-2. Contrarian identity (contrarian-identity, spread 2 of 11, underused). Source: "Why Introverts Make the BEST Content Creators (Nobody Talks About This)" (@thisisnickys, 22.0x). Why it wins: it flips a belief the viewer holds. The belief here: AI needs you sitting there. Flagging it as the edge.
+2. Contrarian identity (contrarian-identity, spread 2 of 12, underused). Source: "Why Cheap Tools Make the BEST Beginners (Nobody Talks About This)" (@wrenhalloran, 18.9x). Why it wins: it flips a belief the viewer holds. The belief here: a straight cut is your job to set up. Flagging it as the edge.
 
-3. Contrarian correction (contrarian-correction, spread 5 of 11, crowded). Source: "You've Been Using AI the Hard Way (Use This Instead)" (@networkchuck, 6.7x). Why it wins: the hard-way frame tells the viewer their current workflow is the expensive one.
+3. Contrarian correction (contrarian-correction, spread 5 of 12, crowded). Source: "You've Been Sawing the Hard Way (Do This Instead)" (@workshopwars, 7.1x). Why it wins: the hard-way frame tells the viewer their current setup ritual is the expensive one.
 
-## Wide pass (21 candidates; most die here)
+## Wide pass (22 candidates; most die here)
 
-1. "Claude Cowork Just Dropped Scheduled Agents"
-2. "Claude Cowork Can Now Run Content Without You"
-3. "Claude Cowork Just Changed Content Work Forever"
-4. "New Cowork Update Runs Jobs on a Schedule"
-5. "Why Babysitting Your Content Work Is Ending"
-6. "You Can Stop Babysitting Claude Cowork Now"
-7. "Why You Still Babysit Your AI"
-8. "The Babysitting Era of AI Content Is Over"
-9. "Stop Kicking Off Every Content Job Yourself"
-10. "You're Still Starting Every Job by Hand"
-11. "Stop Starting Every Claude Job by Hand"
-12. "DON'T Babysit Cowork, Schedule It"
-13. "Claude Cowork Stopped Needing a Babysitter"
-14. "Your AI Finally Works While You Sleep"
-15. "The End of Babysitting Your AI"
-16. "What Cowork's Scheduled Agents Mean for Solo Creators"
-17. "Cowork Just 10x'd My Content Output"
-18. "Scheduled Agents Are Here, and They Change Solo Work"
-19. "This Week's Cowork Release, in Plain English"
-20. "How Scheduled Agents Actually Work"
-21. "Set It Once, Cowork Runs It"
+1. "Pinnacle's Self-Calibrating Saw Just Dropped"
+2. "The GlideTrack Cuts Straight Without You"
+3. "Pinnacle GlideTrack Just Dropped, and It Tracks Itself"
+4. "New GlideTrack Announcement, My Honest Read"
+5. "Why Measuring Twice Is Suddenly Optional"
+6. "You Can Stop Squaring Your Fence by Hand"
+7. "Why Your Steady Hand Matters Less Now"
+8. "The End of Measure Twice, Cut Once"
+9. "Stop Calibrating Your Track Saw by Hand"
+10. "You're Still Setting Your Saw Up by Hand"
+11. "Stop Truing Your Fence, the GlideTrack Does It"
+12. "DON'T Buy the GlideTrack Yet"
+13. "Pinnacle Just Killed the Setup Shim"
+14. "Your Track Saw Finally Calibrates Itself"
+15. "The Saw That Sets Itself Up"
+16. "What the GlideTrack Means for Small Shops"
+17. "The GlideTrack Doubled My Accuracy"
+18. "Self-Calibrating Saws Are Here, and Shops Change"
+19. "This Week's GlideTrack News, in Plain English"
+20. "How Self-Calibration Actually Works"
+21. "The Track Saw That Checks Its Own Work"
+22. "Set the Fence Once, the Saw Remembers"
 
 ## Kill pass
 
-- 3: "forever" overpromises a feature release. Cut.
-- 4: feature label, no stake. Cut.
-- 7: no named tool, cold. Cut.
-- 8: "is over" overclaims. The video itself says the release does not help everywhere yet. Cut.
-- 11: near-duplicate of 9, weaker. Cut.
-- 12: ends on "it", weak close. Cut.
-- 14: hype cadence without the named release. Cut.
-- 15: thesis, no loop. Cut.
+- 3: "tracks itself" muddles self-calibrating into a pun. A pun is not a stake. Cut.
+- 4: explainer label, no loop. Cut.
+- 7: vague "now," and weaker than 5 on the same flip. Cut.
+- 8: obituary overclaims. The video itself says nobody has tested the saw yet. Cut.
+- 11: names the fix ("the GlideTrack does it"), which closes the loop the title needs open. Cut.
+- 12: a buy-or-not verdict, off this angle. The video is the news and the read, not a purchasing recommendation. Cut.
+- 13: "killed" overclaims for an announcement nobody has measured. Cut.
+- 14: hype cadence, and "finally" is unearned before a single test cut. Cut.
+- 15: drops the named product, cold. Cut.
 - 16: explainer label, the brain fills in nothing. Cut.
-- 17: FABRICATED number. No time-saved figure exists; this is the trap this case is built to catch. Cut.
+- 17: FABRICATED performance claim. No accuracy figure exists; this is the trap this case is built to catch. Cut.
 - 18: comma-stacked two thoughts. Cut.
 - 19: explainer label. Cut.
 - 20: mechanism title, no wound. Cut.
-- 21: vague "it", fragment. Cut.
+- 22: vague "remembers," fragment. Cut.
 
 ## Checklist pass
 
 One lap, fix or cut, no second lap:
 
-- Char ceiling: every survivor is at or under 45.
+- Char ceiling: every survivor is at or under 44.
 - Colons and pipes: none.
-- Lock list only: zero digits anywhere. The only specifics are Claude, Cowork, scheduled agents, and the just-shipped timing.
+- Lock list only: zero digits anywhere. The only specifics are Pinnacle, the GlideTrack, self-calibrating, and the just-announced timing.
 - Read aloud: one continuous thought each.
-- Loop: each survivor leaves "how does it run without me?" open.
+- Loop: each survivor leaves "how does it do that without me?" open.
 - Credibility: no measured outcome is claimed, because none exists.
-- Thumbnail room: the title does not spend the calendar or clock visual, so the thumbnail adds a second beat.
+- Thumbnail room: the title does not spend the saw-on-rail visual, so the thumbnail adds a second beat.
 
 ## Options
 
 ### News release
-receipt: "Anthropic Just Dropped Claude for Small Businesses (31 Skills)" (@brockmesarich, 10.8x)
-1. "Claude Cowork Just Dropped Scheduled Agents"  N  (43)
-2. "Claude Cowork Can Now Run Content Without You"  N+B  (45)
+receipt: "Copper Creek Just Dropped a Self-Squaring Track Guide (First Cut)" (@coppercreekshop, 10.4x)
+1. "Pinnacle's Self-Calibrating Saw Just Dropped"  N  (44)
+2. "The GlideTrack Cuts Straight Without You"  N+B  (40)
 
 ### Contrarian identity
-receipt: "Why Introverts Make the BEST Content Creators (Nobody Talks About This)" (@thisisnickys, 22.0x)
-3. "Why Babysitting Your Content Work Is Ending"  N+B  (43)
-4. "You Can Stop Babysitting Claude Cowork Now"  N+E  (42)
+receipt: "Why Cheap Tools Make the BEST Beginners (Nobody Talks About This)" (@wrenhalloran, 18.9x)
+3. "Why Measuring Twice Is Suddenly Optional"  N+B  (40)
+4. "You Can Stop Squaring Your Fence by Hand"  N+E  (40)
 
 ### Contrarian correction
-receipt: "You've Been Using AI the Hard Way (Use This Instead)" (@networkchuck, 6.7x)
-5. "Stop Kicking Off Every Content Job Yourself"  N+E  (43)
-6. "You're Still Starting Every Job by Hand"  N  (39)
+receipt: "You've Been Sawing the Hard Way (Do This Instead)" (@workshopwars, 7.1x)
+5. "Stop Calibrating Your Track Saw by Hand"  N+E  (39)
+6. "You're Still Setting Your Saw Up by Hand"  N  (40)
 
 ### Wildcard (the swing, no pattern behind it)
-7. "Claude Cowork Stopped Needing a Babysitter"  N+B  (42)
+7. "The Track Saw That Checks Its Own Work"  N  (38)
 
 ## Recommendation
 
-Recommended: "Claude Cowork Can Now Run Content Without You"  N+B  (45).
-News format means the release has to be in the title, and this one carries it plus the claim: the work runs without you. The pure announcement ("Claude Cowork Just Dropped Scheduled Agents") is the floor; it labels the feature and promises nothing. Zero digits, which the lock list demands. Risk: "without you" is bold for a feature the creator has not measured yet. The babysitting line in the contrarian identity group is the counterweight.
+Recommended: "The GlideTrack Cuts Straight Without You"  N+B  (40).
+News format means the product has to be in the title, and this one carries it plus the claim: the cut stops being your setup job. The pure announcement ("Pinnacle's Self-Calibrating Saw Just Dropped") is the floor; it labels the feature and promises nothing. Zero digits, which the lock list demands. The risk: "without you" is bold for a saw nobody outside the demo room has touched, and the video says exactly that on camera. The measuring-twice line in the contrarian identity group is the counterweight. The recommendation stays the ceiling, not the floor.
 
 ## Lock
 
-Creator picked: "Claude Cowork Can Now Run Content Without You".
-Title locked: 'Claude Cowork Can Now Run Content Without You'. Saved to piece.md.
-Next: vid-thumbnail. "Why Babysitting Your Content Work Is Ending" can live again as thumbnail text.
+Creator picked: "The GlideTrack Cuts Straight Without You".
+Title locked: 'The GlideTrack Cuts Straight Without You'. Saved to piece.md.
+Next: vid-thumbnail. "Why Measuring Twice Is Suddenly Optional" can live again as thumbnail text.

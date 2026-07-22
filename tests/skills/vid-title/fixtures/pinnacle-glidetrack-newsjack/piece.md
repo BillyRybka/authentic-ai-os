@@ -6,13 +6,12 @@ pillar: honest-tool-guidance
 status: filming-ready
 format: news
 goal: views
-title: "The GlideTrack Cuts Straight Without You"
 voice_context: youtube-script
 selected_angle: "Pinnacle just announced the GlideTrack, a self-calibrating track saw; what self-calibrating actually means for a small shop, and an honest read on where it helps before anyone has measured a thing."
 core_payoff: "Understand the GlideTrack announcement and whether it matters for your shop, with zero invented numbers."
 captured: 2026-07-20
 created: 2026-07-20
-last_updated: 2026-07-22
+last_updated: 2026-07-20
 published: null
 stories_used: []
 metaphors_used: []

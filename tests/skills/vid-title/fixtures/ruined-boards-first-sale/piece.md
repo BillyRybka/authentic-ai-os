@@ -6,13 +6,12 @@ pillar: beginner-builds-that-finish
 status: filming-ready
 format: case-study
 goal: trust
-title: "11 Ruined Boards, Then a $2,400 Table in 90 Days"
 voice_context: youtube-script
 selected_angle: "Nora's student Dana ruined 11 boards in her first 90 days, then sold her first trestle table for $2,400 with a 4-tool kit and no table saw; the dream shop is procrastination dressed as planning."
 core_payoff: "Stop saving for the dream shop and start the reps: a small kit, sharp edges, and a first build you actually finish."
 captured: 2026-07-20
 created: 2026-07-20
-last_updated: 2026-07-22
+last_updated: 2026-07-20
 published: null
 stories_used: []
 metaphors_used: []

@@ -6,13 +6,12 @@ pillar: hand-tool-fundamentals
 status: filming-ready
 format: listicle
 goal: views
-title: "My Whole Shop Is 7 Hand Tools (No Table Saw)"
 voice_context: youtube-script
 selected_angle: "The 7 hand tools Nora builds every piece with in her one-car garage shop, each owning one job, handed over as a complete beginner kit so the viewer can skip the table saw and start building this weekend."
 core_payoff: "You do not need a table saw. You need these 7 tools and a pile of reps."
 captured: 2026-07-20
 created: 2026-07-20
-last_updated: 2026-07-22
+last_updated: 2026-07-20
 published: null
 stories_used: []
 metaphors_used: []

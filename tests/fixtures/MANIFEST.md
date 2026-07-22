@@ -25,25 +25,9 @@ skill never invalidate a fixture.
 | banks/pattern-bank.md, title-bank.md, transition-bank.md | hand-authored | 2026-01-09 | Thin single-file banks so downstream skills have signal. |
 | people/Marcus Lane.md | hand-authored | 2026-01-08 | Client stub referenced by the story and proof. |
 
-## billy/ (real frozen creator data, real-conditions evals)
+## billy/ (removed)
 
-> [!warning] billy/ is Billy's REAL data, not synthetic
-> Unlike shared/ (synthetic Sam Rivera), the billy/ tree is a frozen snapshot of
-> Billy's actual Content Vault: real foundation, real competitor research, real
-> banks. It exists so a skill can be evaluated under real conditions. The question
-> "does vid-title draw well from a rich, real bank?" cannot be answered against the
-> thin synthetic shared/ bank. This is dev-only test infra and never ships: the
-> release script rebuilds main from an allowlist that excludes tests/.
-
-| Path | Source | Frozen | Notes |
-|---|---|---|---|
-| banks/pattern-bank.md | Content Vault | with vid-ideas suite | 103 outliers, 11 channels. The vid-ideas eval fixture. |
-| banks/title-bank.md | Content Vault (last_refreshed 2026-06-17) | 2026-06-18 | 9 researched patterns with worked examples. vid-title input. |
-| banks/power-words-bank.md | Content Vault (last_refreshed 2026-06-17) | 2026-06-18 | 17 global + 18 audience words, each with land/fail notes. vid-title input. |
-| foundation/creator-foundation.md | Content Vault | with vid-ideas suite | Real avatar, Top 3, iceberg, pillars, credibility. The alignment-check input. |
-| foundation/packaging-system.md | Content Vault (last_refreshed 2026-06-17) | 2026-06-18 | Format rotation + thumbnail/title defaults. vid-title input. Checklist sets title ceiling ~50 chars. |
-| foundation/voice-profile.md | Content Vault | with vid-ideas suite | Signature phrases + hard refusals. |
-| foundation/reference-pieces/youtube-script.md | Content Vault | with vid-ideas suite | Read-aloud anchor for the Tier B judge. |
+The real-Billy fixtures were removed on 2026-07-22 per the owner's rule that real channel content must not live in the test corpus. Everything under tests/fixtures/ is synthetic.
 
 ## stages/ (frozen per-video upstream states)
 
@@ -59,14 +43,6 @@ input fixture for the vid-framing loop.
 | after-framing/{slug}/ | vid-framing | pending | not yet reached (shared/Sam corpus) |
 | after-structure/{slug}/ | vid-structure | pending | not yet reached |
 
-Billy real-conditions stage (hand-authored framed pieces, for the vid-title eval under real banks):
-
-| Boundary | Produced by | Date | Status |
-|---|---|---|---|
-| billy/stages/after-framing/client-340k-to-1-3m/ | hand-authored | 2026-06-18 | Case Study. Rich real-proof lock list ($340K, $1.3M, 1yr, 2,500 subs). |
-| billy/stages/after-framing/claude-content-skills/ | hand-authored | 2026-06-18 | Listicle. Count (7) + named tools. Solo-staffing angle. |
-| billy/stages/after-framing/claude-cowork-newsjack/ | hand-authored | 2026-06-18 | News. ADVERSARIAL: no numbers available, a correct title invents none. |
-
 ## Suite-local fixtures (live inside tests/skills/<suite>/fixtures/)
 
 Some suites keep fixtures next to their eval because nothing else should read
@@ -75,6 +51,6 @@ stale only when the consuming skill's output contract changes.
 
 | Suite | Path | Produced by | Date | Notes |
 |---|---|---|---|---|
-| vid-title | tests/skills/vid-title/fixtures/{slug}/piece.md | hand-authored | 2026-06-18 | Upstream framed pieces in the current vid-framing schema. |
+| vid-title | tests/skills/vid-title/fixtures/{slug}/piece.md | hand-authored | 2026-07-22 | Upstream framed pieces in the current vid-framing schema. Reskinned to the synthetic "Nora Beck / Beck Builds" persona (woodworking); banks, foundation, and brain-dump stages now live suite-locally under tests/skills/vid-title/fixtures/persona/. |
 | vid-ideas | tests/skills/vid-ideas/fixtures/pattern-bank.md | hand-authored | 2026-07-22 | Synthetic Sam-niche bank with per-channel raw outlier rows (the shared bank has none) plus the off-lane @agenticalex trap circle. Receipt ground truth. |
 | vid-ideas | tests/skills/vid-ideas/fixtures/prior-backlog.md | hand-authored | 2026-07-22 | Prior backlog: 1 kept row (pick-from-backlog source) + 1 dropped row (never-re-propose trap). |

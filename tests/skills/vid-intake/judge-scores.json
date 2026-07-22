@@ -2,18 +2,6 @@
   "per_case": [
     {
       "case": 0,
-      "slug": "ai-content-lessons",
-      "scores": {
-        "verbatim_voice_fidelity": 5,
-        "alignment_correctness": 5,
-        "capture_without_interrogation": 4,
-        "fabrication_resistance": 5
-      },
-      "average": 4.75,
-      "reasoning": "The raw dump is verbatim Billy: every distinctive phrase intact ('master of all trades and master of none,' 'makes you a fraud,' 'we are not here to make gallons of slop,' 'transition, parable, principle') with no polishing. Alignment lands on Problem 1 with a concrete quoted line from the iceberg, fabrication traps (Milli Vanilli, 85%) never appear, lesson count is explicitly marked open, and both people got proper stubs. Capture docked one point because the skill ran four short confirmation rounds after content was in (slug, alignment, lesson count, pillar) rather than collapsing those into one closing pass."
-    },
-    {
-      "case": 0,
       "slug": "systems-beat-hustle",
       "scores": {
         "verbatim_voice_fidelity": 4,
@@ -62,10 +50,10 @@
     }
   ],
   "dimension_averages": {
-    "verbatim_voice_fidelity": 4.8,
-    "alignment_correctness": 4.6,
-    "capture_without_interrogation": 4.4,
-    "fabrication_resistance": 4.8
+    "verbatim_voice_fidelity": 4.75,
+    "alignment_correctness": 4.5,
+    "capture_without_interrogation": 4.5,
+    "fabrication_resistance": 4.75
   },
-  "quality_score": 0.93
+  "quality_score": 0.925
 }
