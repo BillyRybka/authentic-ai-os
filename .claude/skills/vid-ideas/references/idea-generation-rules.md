@@ -95,6 +95,7 @@ The outlier floor is the guard against small-channel inflation, because a low-me
 - 4 anchored to STRONG or MODERATE raw titles (favor STRONG and the creator's own winners).
 - 1-2 swings, flagged.
 - Spread across 3-4 pillars.
+- Each idea anchors off a DIFFERENT source row, and no channel appears more than once per batch, swings included. Two ideas off the same channel read as a rut even when the rows differ.
 - Never proven-only (the channel goes derivative). Never all-swing (it gambles with no signal).
 
 ## Anti-fabrication (hard rule)
@@ -107,6 +108,10 @@ Scope, so the rule is never misread: it protects the CREATOR'S claims (their res
 
 Skip any idea built on a `Considered + dropped` pattern. If it is genuinely strong, surface the drop rationale and ask before using it. Never silently re-propose a dropped pattern or a `dropped` backlog idea.
 
+## No repeats across sessions
+
+Before proposing, scan the anchors recorded in `content/ideas-backlog.md` (kept and dropped rows both record anchors already). A row already in the backlog may not anchor a new idea unless the creator asks to revisit it. If they ask, say in one line which backlog entry it came from. This is a scan of the backlog as it stands, not a new file and not a new field on the template.
+
 ## The dial (Phase 3 postures)
 
 The creator turns the dial; re-roll with the new posture. Same spine, shift the mix or the territory.
@@ -117,6 +122,8 @@ The creator turns the dial; re-roll with the new posture. Same spine, shift the 
 - **"sharper"** -> re-roll the same territory, pushing each line toward its sharpest legitimate form. Restore the dropped number, the parenthetical kicker, the named system, the hot proper noun, then run the side-by-side test on every line. Sharper never means inventing a claim the source did not have; it means stop leaving the source's best phrasing on the table.
 - **"different pillar" / "different problem"** -> regenerate aimed there, or rotate to ones the last batch underused.
 - **"regenerate"** -> same posture, all new ideas.
+
+Every re-roll shops fresh. Any dial turn (more, regenerate, wilder, different pillar) anchors off rows and channels not yet shown this session. "tighter" may reuse a row already shown, but only to upgrade its signal tier. Never silently re-present the same anchored row twice in one session. Escape valve: if the bank genuinely cannot fill a fresh batch, say so in one line and flag the repeats as repeats.
 
 After any roll, surface the new batch and repeat the one-line dial offer. Do not narrate the change.
 

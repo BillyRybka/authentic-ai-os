@@ -15,7 +15,7 @@ Generates a small batch of video ideas for the blank-slate moment, grounded in t
 
 ## What this produces
 
-- A surfaced batch of ~5-6 video ideas in chat. Each leads with the real outlier receipt it borrows (title + @channel + views + xMed) and names the engine it carried (the load-bearing element quoted from that source), and is tagged to a pillar, its signal tier, and an iceberg-fit verdict, with an optional Top 3 problem tag where one genuinely fits (or flagged as an experimental swing).
+- A surfaced batch of ~5-6 video ideas in chat, shown as a numbered list of 2-line entries: the idea line carrying the engine at full sharpness, then one receipt line (real outlier title + @channel + views + xMed, the engine it carried, and the why-it-could-land) or a flagged swing line. The full record form (receipt + engine + pillar, signal tier, iceberg-fit verdict, and an optional Top 3 problem tag where one genuinely fits) persists in files and appears when the creator asks for the receipts.
 - `content/ideas-backlog.md`, created from `assets/ideas-backlog-template.md` on the first keep. Only ideas the creator flags to keep are saved (status `kept`). Dropped backlog ideas are marked `dropped` and never re-proposed.
 - A seed packet handed to `vid-intake` for the one idea the creator picks to make now: `{idea_title, pillar, top_3_problem, iceberg_fit, anchor}`, where anchor is the FULL receipt (source title + @channel + views + xMed). `vid-intake` persists the anchor into piece.md so `vid-title` inherits it. This skill writes no piece folder; `vid-intake` creates it.
 
@@ -68,7 +68,19 @@ Generate ~5-6 ideas per `references/idea-generation-rules.md`. Default mix: 4 an
 4. **Click test:** put it next to the others, would the avatar click THIS, and why. Then the side-by-side sharpness test: put the bend next to its source line; if the source gets the click, sharpen or re-roll. A dream outcome beats a defensive reassurance. On-brand is the floor, not the pull. Do not staple the positioning ("without the slop") onto a title where voice is not the premise.
 5. **Fit is a floor, checked last:** inside the iceberg = pass, off-iceberg never surfaces. Range across 3-4 pillars. A Top 3 problem is an optional tag, never forced.
 
-Each idea surfaces with exactly this shape (keep it tight, no walls of text). Lead with the receipt:
+The batch surfaces in chat as a NUMBERED list, exactly 2 lines per idea, no exceptions:
+
+> 1. **{the idea as one short line carrying the engine at full sharpness}**
+>    "{real outlier title}" (@{channel}, {views}, {xMed}x median) · engine: {the load-bearing element in 2-5 words} · {the why-it-could-land, one short clause}
+
+For an experimental swing with no proven anchor, line 1 appends ` · swing, unproven` instead of a receipt, and line 2 names what it gestures at:
+
+> 5. **{the idea as one short line carrying the engine at full sharpness}** · swing, unproven
+>    swing: {the adjacent-niche or weaker outlier it gestures at}, unproven for this channel · {the why, one short clause}
+
+Pillar, Signal tier, Iceberg verdict, and Problem tags no longer show in chat. They remain mandatory internal work: the fit gate, the batch spread, and the anchor-strength judgment all still run silently, and pillar + anchor still persist into the backlog row and the seed packet exactly as today.
+
+The 5-line block remains the canonical RECORD form. When the batch is materialized as a file, or the creator asks to "show the receipts", use the full block (receipt + engine + tags + why):
 
 > **{the idea as one short line, carrying the engine of a real winning title, in the creator's voice}**
 > inspired by: "{real outlier title}" (@{channel}, {views}, {xMed}x median)
@@ -76,7 +88,7 @@ Each idea surfaces with exactly this shape (keep it tight, no walls of text). Le
 > Pillar: {pillar} | Iceberg: {one-phrase fit verdict} | Signal: {STRONG | MODERATE | swing} | Problem: {1 | 2 | 3, or omit if none fits}
 > Why it could land: {one line on why a human clicks this: the engine carried, plus the avatar's want}
 
-For an experimental swing with no proven anchor, replace the receipt and engine lines with `swing: {the adjacent-niche or weaker outlier it gestures at}, unproven for this channel`.
+Anchor freshness is enforced per `references/idea-generation-rules.md`: a different source row and channel per idea within one batch, fresh rows and channels on every re-roll, and no re-anchoring rows already recorded in `content/ideas-backlog.md` unless the creator asks to revisit one.
 
 **Anti-fabrication (hard rule):** every anchored idea cites a REAL per-channel row (actual title + @channel + views + xMed), and the cited engine must actually be the one carried into the line, carried in its sharp form (a dull synonym keeps the theme and drops the engine, which is a fake citation wearing a real receipt). Never invent an outlier, a view count, or a spread, and never cite a row you did not use. The rule protects the creator's own claims, never the borrowed shape: the outlier's number and hot words are part of the receipt and are allowed in the line. Swings are flagged unproven, never dressed up as proven.
 
@@ -103,6 +115,7 @@ Do not over-talk between rolls. Surface the new batch, repeat the one-line dial 
 
 ## Conversational discipline
 
+- **Chat output is the numbered batch plus the one-line dial offer, nothing else.** No phase banners, no checklist or "here is what I did" bullets, no preamble beyond at most one short line ("Here's the batch, ranging across your pillars" style), no summary after the list.
 - **Conversation, not a document.** Short messages. Never paste the pattern-bank or foundation into chat. The loads are for your thinking.
 - **Signal over volume.** Five or six sharp ideas beat ten mushy ones. The creator's worry is crappy ideas, so every anchored idea earns its place by citing a real signal.
 - **Specificity wins.** Each idea is a concrete topic in the creator's voice, not a category ("a video about pricing" is not an idea, "the pricing mistake that makes clients ghost you after the proposal" is).
