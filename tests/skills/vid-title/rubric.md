@@ -15,20 +15,24 @@ still sits flat is a failing title here.
 
 ## What you receive per case
 
-- `titles.md`, the note the skill produced: YAML frontmatter (`slug`,
-  `locked_title`, `locked_bens`, `locked_source` naming the bank receipt the
-  locked title was modeled on, or `wildcard`), a `## Lock list` section (the
-  specifics the titles were allowed to use), an `## Options` section (2 to 4
-  structure groups; each group opens with a `receipt:` line naming the source
-  outlier title, @channel, and multiplier, followed by 1 to 3 numbered
-  candidates annotated with BENS letters and char count), a `## Wildcard`
-  section (1 to 2 swings, labeled, no receipt required), and a
-  `## Recommendation` section (1 to 2 sentences naming the pick and the
-  evidence for it)
-- `transcript.md`, the full reasoning trace: the bank shopping, the adjust
-  work, the checklist pass, and the creator exchange
-- The frozen fixture for this case: `piece.md` (format, goal, locked angle)
-  and `brain-dump.md` (material, lock list)
+- `piece.md`, the vault file the skill saved: the upstream framed piece with
+  the locked title written to the `title:` frontmatter field and
+  `last_updated:` bumped. This is the artifact. The locked title is the
+  `title:` field. The current skill produces NO `titles.md`; anything grading
+  a `titles.md` is grading the old contract.
+- `transcript.md`, the full working trace: the lock list build, the bank
+  shopping, the wide pass, the kill pass, the checklist pass, the presented
+  set, and the creator exchange. The sections that matter for scoring:
+  `## Lock list` (the specifics the titles were allowed to use), `## Options`
+  (3 to 5 proven structure groups plus one wildcard group; each proven group
+  opens with a `receipt:` line naming the source outlier title, @channel, and
+  multiplier, followed by 1 to 2 numbered candidates annotated with BENS
+  letters and char count; the wildcard group is flagged in its heading,
+  carries no receipt, and holds 1 to 2 swings), and `## Recommendation`
+  (names the recommended candidate and the reason, ceiling not floor)
+- The frozen fixtures for this case: the upstream `piece.md` (suite-local
+  `fixtures/{slug}/piece.md`: format, goal, selected_angle, core_payoff) and
+  the shared billy `brain-dump.md` (material, the lock-list ground truth)
 - The creator's banks: `pattern-bank.md` (competitor outliers with views and
   multipliers per channel), `title-bank.md` (named structures with worked
   examples), `power-words-bank.md`

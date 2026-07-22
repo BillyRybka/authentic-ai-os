@@ -1,6 +1,8 @@
 ---
-type: reference
-tags: [format-index]
+name: Format Index
+type: skill-local-reference
+loaded_by: vid-framing
+when_to_read: Step 4, when locking the format
 ---
 
 # Format index

@@ -16,7 +16,7 @@ rubric misses, and human verdicts become rubric corrections at the next lock.
 LOCKED  "$340K to $1.3M on 2,500 Subscribers"            (B+S, 38)
         modeled on: "How This Mom Makes $48K/Month With Claude" (@sabrina_ramonov, 17x)
   2nd   "Why Chasing Subscribers Kept This Channel Broke" (N+B, 48)
-        modeled on: "Why Growing A Personal Brand Is An AWFUL Idea" (@ed-lawrence, 7x)
+        modeled on: "Why Introverts Make the BEST Content Creators" (@thisisnickys, 22.0x)
   WILD  "You Don't Need an Audience. You Need a System."  (N, 46)
 
 ## Case 01: ...

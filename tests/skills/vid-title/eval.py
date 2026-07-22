@@ -3,51 +3,57 @@
 Tier A eval for vid-title. The read-only "does it work" judge.
 DO NOT MODIFY during an autoresearch loop. Lock it, then optimize the skill.
 
-Reads each run from outputs/case_NN/ (titles.md, optional transcript.md) and
-scores it against the frozen Billy fixtures. An output passes Tier A only when
-every error-level check passes. Warnings are reported but never gate.
+Synced 2026-07-21 to the CURRENT skill contract: vid-title writes the locked
+title into piece.md (title: field, last_updated: bumped) and produces NO
+titles.md. The candidate set, receipts, wide pass, and kill pass live in the
+conversation, which the test runner captures as transcript.md.
+
+Reads each run from outputs/case_NN/ and scores it against the suite-local
+upstream fixtures (fixtures/{slug}/piece.md), the frozen billy brain-dumps
+(../../fixtures/billy/stages/after-framing/{slug}/brain-dump.md, the lock-list
+ground truth), and Billy's real banks (pattern-bank, title-bank,
+power-words-bank). An output passes Tier A only when every error-level check
+passes. Warnings are reported but never gate.
 
 Output contract (what the test runner writes for each case):
-  outputs/case_NN/titles.md
-    - YAML frontmatter: slug, locked_title, locked_bens, locked_lane
-    - ## Viewer section (placed BEFORE ## Claim): exactly four labeled lines:
-        Viewer: <one phrase naming the specific avatar person who clicks this video>
-        Wants:  <the outcome they are chasing on this topic>
-        Fears:  <what is painful, stuck, or embarrassing for them right now>
-        Driver: <the single dominant emotion in play>
-      All four lines must be present and non-empty.
-    - ## Claim section (placed AFTER ## Viewer, BEFORE ## Lanes): exactly three labeled lines:
-        Claim: <the disagreeable true thing the video argues>
-        Stake: <what it costs the viewer to not get this>
-        Belief: <what the avatar currently assumes that the claim cuts against>
-      All three lines must be present and non-empty.
-    - ## Lanes section: 4 to 5 lane headings, each in the form:
-        ### <Lane name> | <on-brand|off-brand> | <crowded|underused> | opportunity: <yes|no>
-      Under each lane heading: 1 to 2 numbered candidate lines in the form:
-        N. "Title text"  | pattern: <pattern_id or free-form>  | BENS: <letters>  | <charcount>
-      Under each lane heading: a non-empty proof line in the form:
-        proof: "<real competitor outlier title>" (@channel, <N>x)
-    - ## Recommendation section: 1-2 sentences naming the locked lane and why
-  outputs/case_NN/transcript.md (the runner's reasoning trace, read by Tier B only)
+  outputs/case_NN/piece.md
+    - the suite-local upstream piece with ONLY two changes: title: set to the
+      locked title, last_updated: bumped to the run date. Every other
+      frontmatter field and the body preserved verbatim.
+  outputs/case_NN/transcript.md
+    - ## Lock list: bullets grounded in brain-dump.md
+    - ## Wide pass: 20+ numbered candidates (the kill-rate floor)
+    - a kill-pass note (what died and why)
+    - ## Options: 3-5 proven structure groups + exactly one wildcard group.
+      Proven group: '### <name>' heading, ONE receipt line
+        receipt: "<source outlier title>" (@channel, <N.Nx>)
+      and 1-2 numbered candidate lines
+        N. "Title text"  <BENS letters>  (<char count>)
+      Wildcard group: heading contains 'wildcard', NO receipt line, 1-2 swings.
+    - ## Recommendation: names one presented candidate with its reason
+    - 6-10 presented survivors total (proven + wildcard)
 
 Case layout (matches test_cases.json):
-  case_00 -> client-340k-to-1-3m   (Case Study; has dollar figures + counts)
-  case_01 -> claude-content-skills  (Listicle; count of 7 + named tools)
-  case_02 -> claude-cowork-newsjack (News; ADVERSARIAL: no numbers exist, any digit fails)
+  case_00 -> client-340k-to-1-3m   (case-study; dollar figures + counts)
+  case_01 -> claude-content-skills  (listicle; count of 7 + named tools)
+  case_02 -> claude-cowork-newsjack (news; ADVERSARIAL: no numbers exist)
 
 Assertions (error level, gate):
-  no_em_dash, no_banned_words, char_ceiling, bens_annotation_present,
-  candidate_count, no_generic_opener, anti_fabrication, lane_diversity,
-  opportunity_named, proof_attached, locked_title_valid, handoff,
-  viewer_section_present, claim_section_present
+  no_em_dash, no_banned_words, titles_no_em_dash, titles_no_banned_words,
+  handoff_framing_to_title, title_written, last_updated_bumped,
+  piece_fields_preserved, locked_title_valid, char_ceiling,
+  char_count_honest, bens_annotation_present, survivor_count,
+  structure_diversity, wildcard_present, kill_rate, receipt_attached,
+  power_word_spent, anti_fabrication, no_generic_opener, no_colons_pipes,
+  lock_list_grounded, recommendation_present, candidate_line_format
 
 Warnings (reported only):
   char_target, no_aiisms, no_hedge_words
 
-Brand checks (no_em_dash, no_banned_words, no_aiisms, no_hedge_words) are
-scoped to extracted title text only, not to the full file. Pattern IDs like
-"solo-leverage" in the annotation metadata are internal labels and are
-deliberately excluded from brand scanning to prevent false positives.
+Brand and fabrication checks on titles are scoped to the extracted presented
+candidate strings plus the locked title, never to the whole transcript (which
+legitimately echoes the creator and quotes real bank outliers with their own
+numbers). piece.md is scanned whole, as a vault file.
 
 Usage:
   python eval.py [outputs_dir]
@@ -57,6 +63,7 @@ import json
 import os
 import re
 import sys
+from datetime import date
 
 # make tests/lib importable
 _HERE = os.path.dirname(os.path.abspath(__file__))
@@ -65,13 +72,12 @@ sys.path.insert(0, _LIB)
 
 import tier_a_universal as t  # noqa: E402
 from frontmatter import split_frontmatter  # noqa: E402
-from check_fabrication import find_fabricated_numbers, _normalize_numbers  # noqa: E402
-import vale_rules  # noqa: E402
+from check_fabrication import find_fabricated_numbers  # noqa: E402
+from check_handoff import check_handoff  # noqa: E402
 
+# --- constants from SKILL.md and references/title-filters.md ---
 
-# --- constants ---
-
-# The blocklist from SKILL.md "AI-default openers" (hard cuts, not soft flags).
+# AI-default openers, hard cuts per title-filters.md ("dead on arrival").
 _GENERIC_OPENERS = [
     "the truth about",
     "everything you need to know",
@@ -80,36 +86,45 @@ _GENERIC_OPENERS = [
     "discover the secret",
 ]
 
-# BENS letters: any of B, E, N, S must appear in the candidate annotation.
-_BENS_RE = re.compile(r"\bBENS:\s*([BENS+]+)", re.IGNORECASE)
+# SKILL.md Step 4: 50 target, 55 hard ceiling.
+CHAR_CEILING = 55
+CHAR_TARGET = 50
 
-# Pattern field in a candidate line: | pattern: <something> |
-_PATTERN_RE = re.compile(r"\|\s*pattern:\s*([^|]+?)\s*\|", re.IGNORECASE)
+# SKILL.md Step 5: "Show the survivors (6 to 10)".
+SURVIVOR_MIN = 6
+SURVIVOR_MAX = 10
 
-# The candidate line shape: starts with a digit and a period (N. "Title ...")
-_CANDIDATE_LINE_RE = re.compile(r"^\s*\d+\.\s+")
+# SKILL.md Step 2: "Pick 3 to 5 distinct structures".
+GROUPS_MIN = 3
+GROUPS_MAX = 5
 
-# Any digit at all (for the adversarial no-numbers check)
-_ANY_DIGIT_RE = re.compile(r"\d")
+# SKILL.md Step 3: "20 or more candidates across the structures, then keep only
+# the best 2 per group. Most of what you write should die."
+WIDE_PASS_MIN = 20
 
-# Lane heading: ### <Name> | <on-brand|off-brand> | <crowded|underused> | opportunity: <yes|no>
-_LANE_HEADING_RE = re.compile(
-    r"^###\s+(.+?)\s*\|\s*(on-brand|off-brand)\s*\|\s*(crowded|underused)\s*\|\s*opportunity:\s*(yes|no)",
+# A presented candidate line: 1. "Title text"  B+N  (48)
+_CANDIDATE_RE = re.compile(
+    r'^\s*(\d+)\.\s+"([^"]+)"\s+([A-Za-z](?:\+[A-Za-z])*)\s+\((\d+)\)\s*$'
+)
+# Any numbered line (to catch malformed candidates inside ## Options)
+_NUMBERED_RE = re.compile(r"^\s*\d+\.\s+")
+# A receipt line: receipt: "Source outlier" (@handle, 12.3x)
+_RECEIPT_RE = re.compile(
+    r'^\s*receipt:\s*"([^"]+)"\s*\(@([\w-]+),\s*(\d+(?:\.\d+)?)x\s*\)\s*$',
     re.IGNORECASE,
 )
-
-# proof: line under a lane
-_PROOF_LINE_RE = re.compile(r"^proof:\s*(.+)", re.IGNORECASE)
-
-# @handle anywhere in a proof line
+# Any digit at all (for the adversarial no-numbers check)
+_ANY_DIGIT_RE = re.compile(r"\d")
+# @handle anywhere in the banks
 _AT_HANDLE_RE = re.compile(r"@[\w-]+")
+# Power-word entries in power-words-bank.md: ### "WORD"
+_POWER_WORD_RE = re.compile(r'^###\s+"([^"]+)"', re.MULTILINE)
+# xMed token on a pattern-bank table row
+_XMED_RE = re.compile(r"(\d+(?:\.\d+)?)x")
 
-# All-caps tokens that are likely tool/brand abbreviations (3-10 chars, no
-# lowercase). These are the named-entity tokens worth checking against the
-# lock list because they are almost always proper names: MCP, VEO, SOP, etc.
-# Common all-caps single words used as emphasis (STOP, DON'T, WRONG, BEST,
-# FREE, etc.) are excluded because they appear in the power-words bank and are
-# legitimate copy choices, not named entities.
+# All-caps tokens that are legitimate emphasis choices (they appear in the
+# power-words bank as plain English words, not as named entities). All-caps
+# tokens outside this set must trace to the lock list (MCP, VEO, SOP...).
 _CAPS_EMPHASIS_WORDS = {
     "STOP", "DON", "WRONG", "BEST", "FREE", "NEW", "ONLY", "JUST", "STILL",
     "RIGHT", "NOW", "MOST", "EVERY", "NEVER", "NO", "NOT", "ALL", "EVEN",
@@ -117,15 +132,27 @@ _CAPS_EMPHASIS_WORDS = {
     "STEAL", "WITHOUT", "FOREVER", "INSANE", "VIRAL", "FULL", "REAL",
 }
 
+# piece.md frontmatter fields vid-title may write. Everything else is another
+# skill's field and must survive byte-identical ("never re-argues the video").
+_MUTABLE_FIELDS = {"title", "last_updated"}
+
+
+# --- loading helpers ---
 
 def _load_manifest():
-    path = os.path.join(_HERE, "test_cases.json")
-    with open(path, encoding="utf-8") as f:
+    with open(os.path.join(_HERE, "test_cases.json"), encoding="utf-8") as f:
         return json.load(f)
 
 
-def _fixtures_root(manifest):
-    return os.path.normpath(os.path.join(_HERE, manifest["fixtures"]))
+def _norm_path(*parts):
+    return os.path.normpath(os.path.join(*parts))
+
+
+def _read(path):
+    if not os.path.exists(path):
+        return ""
+    with open(path, encoding="utf-8") as f:
+        return f.read()
 
 
 def _read_case_files(outputs_dir, i):
@@ -140,22 +167,20 @@ def _read_case_files(outputs_dir, i):
     return files
 
 
-def _load_brain_dump(fixtures_root, slug):
-    """Read brain-dump.md for a given slug from the stages/after-framing fixture."""
-    path = os.path.join(
-        fixtures_root, "stages", "after-framing", slug, "brain-dump.md"
-    )
-    if not os.path.exists(path):
-        return ""
-    with open(path, encoding="utf-8") as f:
-        return f.read()
+def _normalize(text):
+    """Whitespace, quote, and case normalization for substring tracing."""
+    s = text.replace("’", "'").replace("‘", "'")
+    s = s.replace("“", '"').replace("”", '"')
+    s = re.sub(r"\]\([^)]*\)", "]", s)  # [Title](url) -> [Title]
+    s = s.replace("[", "").replace("]", "")
+    s = re.sub(r"\s+", " ", s)
+    return s.strip().lower()
 
+
+# --- fixture parsing ---
 
 def _parse_lock_list(brain_dump_text):
-    """
-    Extract the content of the '### Verifiable specifics (lock list)' block
-    from a brain-dump. Returns the raw text of that section.
-    """
+    """Raw text of the '### Verifiable specifics (lock list)' block."""
     lines = brain_dump_text.splitlines()
     in_section = False
     collected = []
@@ -171,598 +196,563 @@ def _parse_lock_list(brain_dump_text):
     return "\n".join(collected)
 
 
-# --- lane parsing ---
+def _parse_power_words(bank_text):
+    return _POWER_WORD_RE.findall(bank_text)
 
-def _parse_lanes(body_text):
-    """
-    Parse the ## Lanes section into a list of lane dicts.
 
-    Each dict has:
-      name:        str (lane name from heading)
-      on_brand:    bool
-      underused:   bool
-      opportunity: bool
-      candidates:  list of raw candidate lines (N. "..." | pattern: | BENS: | charcount)
-      proof_line:  str or None (raw text of the proof: line)
+# --- transcript parsing ---
 
-    The ## Lanes section ends at the next ## heading (e.g. ## Recommendation).
-    """
+def _section_lines(body_text, heading_regex):
+    """Lines between a ## heading matching heading_regex and the next ## one."""
     lines = body_text.splitlines()
-    in_lanes_section = False
-    lanes = []
-    current_lane = None
+    start = None
+    for i, line in enumerate(lines):
+        if re.match(r"^##\s+", line.strip()) and heading_regex.search(line):
+            start = i + 1
+            break
+    if start is None:
+        return None
+    out = []
+    for line in lines[start:]:
+        if re.match(r"^##\s+", line.strip()):
+            break
+        out.append(line)
+    return out
 
+
+def _parse_options(body_text):
+    """
+    Parse ## Options into a list of group dicts:
+      name, wildcard (bool), receipt (dict|None), candidates (list[dict]),
+      malformed (list of numbered lines that failed the strict candidate regex)
+    Candidate dict: num, title, bens, chars (annotated), raw.
+    """
+    lines = _section_lines(body_text, re.compile(r"^##\s+options\b", re.IGNORECASE))
+    if lines is None:
+        return None
+    groups = []
+    current = None
     for line in lines:
-        stripped = line.strip()
-
-        # Enter ## Lanes
-        if re.match(r"^##\s+lanes", stripped, re.IGNORECASE):
-            in_lanes_section = True
-            continue
-
-        # Exit ## Lanes on next ## heading
-        if in_lanes_section and re.match(r"^##\s+", stripped) and not re.match(r"^##\s+lanes", stripped, re.IGNORECASE):
-            in_lanes_section = False
-            if current_lane is not None:
-                lanes.append(current_lane)
-                current_lane = None
-            continue
-
-        if not in_lanes_section:
-            continue
-
-        # New lane heading (### level)
-        m = _LANE_HEADING_RE.match(line)
-        if m:
-            if current_lane is not None:
-                lanes.append(current_lane)
-            current_lane = {
-                "name": m.group(1).strip(),
-                "on_brand": m.group(2).lower() == "on-brand",
-                "underused": m.group(3).lower() == "underused",
-                "opportunity": m.group(4).lower() == "yes",
+        s = line.strip()
+        hm = re.match(r"^###\s+(.+)$", s)
+        if hm:
+            current = {
+                "name": hm.group(1).strip(),
+                "wildcard": "wildcard" in hm.group(1).lower(),
+                "receipt": None,
                 "candidates": [],
-                "proof_line": None,
+                "malformed": [],
+            }
+            groups.append(current)
+            continue
+        if current is None:
+            continue
+        rm = _RECEIPT_RE.match(s)
+        if rm:
+            current["receipt"] = {
+                "title": rm.group(1), "handle": rm.group(2),
+                "xmed": float(rm.group(3)), "raw": s,
             }
             continue
-
-        if current_lane is None:
+        cm = _CANDIDATE_RE.match(line)
+        if cm:
+            current["candidates"].append({
+                "num": int(cm.group(1)), "title": cm.group(2),
+                "bens": cm.group(3), "chars": int(cm.group(4)),
+                "raw": line.strip(),
+            })
             continue
-
-        # Candidate line (N. "...")
-        if _CANDIDATE_LINE_RE.match(line):
-            current_lane["candidates"].append(line.strip())
-            continue
-
-        # proof: line
-        pm = _PROOF_LINE_RE.match(stripped)
-        if pm:
-            current_lane["proof_line"] = pm.group(1).strip()
-            continue
-
-    # Catch the last lane if the section ended at EOF
-    if in_lanes_section and current_lane is not None:
-        lanes.append(current_lane)
-
-    return lanes
+        if _NUMBERED_RE.match(line):
+            current["malformed"].append(line.strip())
+    return groups
 
 
-def _all_candidate_lines(lanes):
-    """Flatten all candidate lines across all lanes into one list."""
-    result = []
-    for lane in lanes:
-        result.extend(lane["candidates"])
-    return result
+def _presented(groups):
+    """All presented candidate dicts (proven + wildcard), flattened."""
+    out = []
+    for g in groups or []:
+        out.extend(g["candidates"])
+    return out
 
 
-def _extract_title_from_candidate(line):
-    """
-    Pull the quoted title text from a candidate line.
-    Expects format: N. "Title text" | pattern: ... | BENS: ... | charcount
-    Falls back to taking text up to the first pipe if no quotes found.
-    """
-    m = re.search(r'"([^"]+)"', line)
-    if m:
-        return m.group(1)
-    stripped = re.sub(r"^\d+\.\s*", "", line)
-    return stripped.split("|")[0].strip()
+def _wide_pass_count(body_text):
+    lines = _section_lines(body_text, re.compile(r"^##\s+wide pass\b", re.IGNORECASE))
+    if lines is None:
+        return 0
+    return sum(1 for line in lines if _NUMBERED_RE.match(line))
 
 
-def _all_candidate_titles(lanes, locked_title):
-    """Return the list of extracted title strings plus locked_title."""
-    titles = [_extract_title_from_candidate(ln) for ln in _all_candidate_lines(lanes)]
-    if locked_title:
-        titles.append(locked_title)
-    return titles
-
-
-def _titles_as_files(lanes, locked_title):
-    """
-    Build a synthetic 'files' dict containing only the extracted title text.
-    Used to scope brand checks (no_em_dash, no_banned_words) to title strings
-    only, avoiding false positives on pattern IDs like 'solo-leverage' in the
-    annotation metadata.
-    """
-    combined = "\n".join(_all_candidate_titles(lanes, locked_title))
-    return {"titles-text-only": combined}
+def _transcript_lock_bullets(body_text):
+    lines = _section_lines(body_text, re.compile(r"^##\s+lock list\b", re.IGNORECASE))
+    if lines is None:
+        return None
+    return [l.strip() for l in lines if l.strip().startswith("-")]
 
 
 # --- assertion functions ---
 
-def check_no_em_dash_titles(lanes, locked_title):
+def check_handoff_framing_to_title(upstream_piece):
     """
-    Error gate: no em-dash or double-hyphen-as-dash in any title string.
-    Scoped to extracted title text only, not pattern IDs or annotations.
+    Error gate: the upstream piece.md carries what vid-title reads from
+    framing (tests/lib/check_handoff.py 'framing->title': type, slug,
+    selected_angle, core_payoff, format, goal, voice_context).
     """
-    files = _titles_as_files(lanes, locked_title)
-    result = t.check_no_em_dash(files)
-    return t.CheckResult("no_em_dash", result.passed, "error", result.detail)
+    ok, detail = check_handoff("framing->title", {"piece.md": upstream_piece})
+    return t.CheckResult("handoff_framing_to_title", ok, "error", detail)
 
 
-def check_no_banned_words_titles(lanes, locked_title):
-    """
-    Error gate: no banned words in any title string.
-    Scoped to extracted title text only, not pattern IDs or annotations.
-    Pattern IDs like 'solo-leverage' contain the word 'leverage' which is on
-    the banned list, but that is an internal label, not published copy.
-    """
-    files = _titles_as_files(lanes, locked_title)
-    result = t.check_no_banned_words(files)
-    return t.CheckResult("no_banned_words", result.passed, "error", result.detail)
+def check_title_written(piece_text):
+    """Error gate: piece.md frontmatter title: is set and within the ceiling."""
+    fm, _ = split_frontmatter(piece_text)
+    title = fm.get("title")
+    if title is None or str(title).strip() in ("", "null"):
+        return t.CheckResult(
+            "title_written", False, "error",
+            {"reason": "piece.md frontmatter has no title: field"},
+        )
+    title = str(title).strip()
+    if len(title) > CHAR_CEILING:
+        return t.CheckResult(
+            "title_written", False, "error",
+            {"reason": f"title over {CHAR_CEILING} chars ({len(title)}): {title}"},
+        )
+    return t.CheckResult("title_written", True, "error", {})
 
 
-def check_char_ceiling(lanes, locked_title):
+def check_last_updated_bumped(fixture_text, piece_text):
+    """Error gate: last_updated moved forward from the upstream fixture."""
+    f_fm, _ = split_frontmatter(fixture_text)
+    o_fm, _ = split_frontmatter(piece_text)
+    old, new = str(f_fm.get("last_updated", "")).strip(), str(o_fm.get("last_updated", "")).strip()
+    if not new or new.lower() == "null":
+        return t.CheckResult(
+            "last_updated_bumped", False, "error", {"reason": "last_updated missing in output"}
+        )
+    if old and new == old:
+        return t.CheckResult(
+            "last_updated_bumped", False, "error",
+            {"reason": f"last_updated unchanged ({old}); SKILL Step 6 bumps it to today"},
+        )
+    try:
+        ok = date.fromisoformat(new) > date.fromisoformat(old)
+    except ValueError:
+        ok = new != old
+    detail = {} if ok else {"old": old, "new": new, "reason": "last_updated did not move forward"}
+    return t.CheckResult("last_updated_bumped", ok, "error", detail)
+
+
+def check_piece_fields_preserved(fixture_text, piece_text):
     """
-    Error gate: every candidate AND the locked_title must be <= 55 characters.
-    SKILL.md sets 55 as the hard ceiling ("cut anything over 55").
-    Character count is on the title text itself, not the whole candidate line.
+    Error gate: every upstream frontmatter field except title/last_updated is
+    present and unchanged, no new fields appeared, and the body is unchanged.
+    vid-title packages the locked angle; it never re-argues it (SKILL Step 1
+    and Related skills), so framing's fields must survive byte-identical.
     """
+    f_fm, f_body = split_frontmatter(fixture_text)
+    o_fm, o_body = split_frontmatter(piece_text)
+    problems = []
+    for key, val in f_fm.items():
+        if key in _MUTABLE_FIELDS:
+            continue
+        if key not in o_fm:
+            problems.append(f"frontmatter field dropped: {key}")
+        elif str(o_fm[key]) != str(val):
+            problems.append(f"frontmatter field changed: {key}")
+    for key in o_fm:
+        if key not in f_fm and key not in _MUTABLE_FIELDS:
+            problems.append(f"unexpected new frontmatter field: {key}")
+    norm = lambda b: re.sub(r"[ \t]+$", "", b, flags=re.MULTILINE).strip()
+    if norm(f_body) != norm(o_body):
+        problems.append("piece.md body changed; only frontmatter title/last_updated may change")
+    return t.CheckResult("piece_fields_preserved", not problems, "error", problems)
+
+
+def check_locked_title_valid(piece_text, presented):
+    """Error gate: the locked title is one of the presented candidates."""
+    fm, _ = split_frontmatter(piece_text)
+    title = str(fm.get("title", "")).strip()
+    if not title:
+        return t.CheckResult(
+            "locked_title_valid", False, "error", {"reason": "no locked title in piece.md"}
+        )
+    titles = [c["title"].strip().lower() for c in presented]
+    ok = title.lower() in titles
+    detail = {} if ok else {
+        "reason": "locked title was never presented to the creator in ## Options",
+        "locked": title,
+        "presented": [c["title"] for c in presented],
+    }
+    return t.CheckResult("locked_title_valid", ok, "error", detail)
+
+
+def check_char_ceiling(presented, locked_title):
+    """Error gate: every presented candidate and the locked title <= 55."""
     failures = []
-    for line in _all_candidate_lines(lanes):
-        title = _extract_title_from_candidate(line)
-        if len(title) > 55:
-            failures.append(f"candidate over 55 chars ({len(title)}): {title}")
-    if locked_title and len(locked_title) > 55:
-        failures.append(f"locked_title over 55 chars ({len(locked_title)}): {locked_title}")
-    return t.CheckResult("char_ceiling", len(failures) == 0, "error", failures)
+    for c in presented:
+        if len(c["title"]) > CHAR_CEILING:
+            failures.append(f"over {CHAR_CEILING} ({len(c['title'])}): {c['title']}")
+    if locked_title and len(locked_title) > CHAR_CEILING:
+        failures.append(f"locked title over {CHAR_CEILING} ({len(locked_title)}): {locked_title}")
+    return t.CheckResult("char_ceiling", not failures, "error", failures)
 
 
-def check_char_target(lanes, locked_title):
-    """
-    Warning: flag candidates and the locked_title that are 51-55 chars.
-    The packaging-system checklist target is ~50 chars; 51-55 is "over target
-    but allowed." Reported so the optimizer can prefer shorter titles.
-    """
+def check_char_target(presented, locked_title):
+    """Warning: flag 51-55 char titles (over the 50 target, under ceiling)."""
     flags = []
-    for line in _all_candidate_lines(lanes):
-        title = _extract_title_from_candidate(line)
-        if 51 <= len(title) <= 55:
-            flags.append(f"over target (={len(title)}): {title}")
-    if locked_title and 51 <= len(locked_title) <= 55:
-        flags.append(f"locked_title over target (={len(locked_title)}): {locked_title}")
-    return t.CheckResult("char_target", len(flags) == 0, "warning", flags)
+    for c in presented:
+        if CHAR_TARGET < len(c["title"]) <= CHAR_CEILING:
+            flags.append(f"over target ({len(c['title'])}): {c['title']}")
+    if locked_title and CHAR_TARGET < len(locked_title) <= CHAR_CEILING:
+        flags.append(f"locked title over target ({len(locked_title)}): {locked_title}")
+    return t.CheckResult("char_target", not flags, "warning", flags)
 
 
-def check_bens_annotation_present(lanes):
+def check_char_count_honest(presented):
+    """Error gate: the annotated (NN) char count equals the real count."""
+    failures = []
+    for c in presented:
+        actual = len(c["title"])
+        if c["chars"] != actual:
+            failures.append(f"annotated ({c['chars']}) != actual ({actual}): {c['title']}")
+    return t.CheckResult("char_count_honest", not failures, "error", failures)
+
+
+def check_bens_annotation_present(presented):
+    """Error gate: every presented candidate carries at least one BENS letter."""
+    failures = []
+    for c in presented:
+        letters = c["bens"].upper().split("+")
+        if not any(ch in "BENS" for ch in letters):
+            failures.append(f"no valid BENS letter in '{c['bens']}': {c['raw'][:80]}")
+    return t.CheckResult("bens_annotation_present", not failures, "error", failures)
+
+
+def check_candidate_line_format(groups):
+    """Error gate: every numbered line inside ## Options parses as a candidate."""
+    failures = []
+    for g in groups:
+        for raw in g["malformed"]:
+            failures.append(f"malformed candidate line in '{g['name']}': {raw[:80]}")
+    return t.CheckResult("candidate_line_format", not failures, "error", failures)
+
+
+def check_survivor_count(presented):
+    """Error gate: 6-10 presented survivors (SKILL Step 5)."""
+    n = len(presented)
+    ok = SURVIVOR_MIN <= n <= SURVIVOR_MAX
+    detail = {} if ok else {"count": n, "expected": f"{SURVIVOR_MIN}-{SURVIVOR_MAX}"}
+    return t.CheckResult("survivor_count", ok, "error", detail)
+
+
+def check_structure_diversity(groups):
     """
-    Error gate: every candidate line must annotate at least one BENS letter
-    (B, E, N, or S) in the '| BENS: <letters> |' field.
-    SKILL.md Phase 3: "Hit at least one BENS letter (annotate which)."
+    Error gate: 3-5 distinct proven structure groups with unique names
+    (SKILL Step 2: different shapes with different pulls, not one shape
+    reworded).
     """
-    missing = []
-    for line in _all_candidate_lines(lanes):
-        m = _BENS_RE.search(line)
-        if not m:
-            missing.append(f"no BENS annotation: {line[:80]}")
-        else:
-            val = m.group(1).upper()
-            if not any(ch in val for ch in "BENS"):
-                missing.append(f"BENS field has no valid letter: {line[:80]}")
+    proven = [g for g in groups if not g["wildcard"]]
+    failures = []
+    if not (GROUPS_MIN <= len(proven) <= GROUPS_MAX):
+        failures.append(
+            f"{len(proven)} proven structure group(s); need {GROUPS_MIN}-{GROUPS_MAX}"
+        )
+    seen, dupes = set(), []
+    for g in proven:
+        key = g["name"].strip().lower()
+        if key in seen:
+            dupes.append(g["name"])
+        seen.add(key)
+    if dupes:
+        failures.append(f"duplicate structure name(s): {dupes}")
+    return t.CheckResult("structure_diversity", not failures, "error", failures)
+
+
+def check_wildcard_present(groups):
+    """
+    Error gate: exactly one wildcard group, flagged in its heading, holding
+    1-2 swings and NO receipt line (SKILL Step 3: written cold, no pattern
+    behind it, flagged as the experiment).
+    """
+    wilds = [g for g in groups if g["wildcard"]]
+    if len(wilds) != 1:
+        return t.CheckResult(
+            "wildcard_present", False, "error",
+            {"wildcard_groups": len(wilds), "expected": 1},
+        )
+    w = wilds[0]
+    failures = []
+    if not (1 <= len(w["candidates"]) <= 2):
+        failures.append(f"wildcard holds {len(w['candidates'])} candidate(s); need 1-2")
+    if w["receipt"] is not None:
+        failures.append("wildcard carries a receipt line; it is written cold, no pattern behind it")
+    return t.CheckResult("wildcard_present", not failures, "error", failures)
+
+
+def check_kill_rate(body_text, presented):
+    """
+    Error gate: the wide pass lists >= 20 candidates and at least half of
+    everything written died before presentation (SKILL Step 3: '20 or more
+    candidates... Most of what you write should die. The kill rate is where
+    quality comes from').
+    """
+    wide = _wide_pass_count(body_text)
+    survivors = len(presented)
+    killed = wide - survivors
+    failures = []
+    if wide < WIDE_PASS_MIN:
+        failures.append(f"wide pass has {wide} candidate(s); SKILL writes {WIDE_PASS_MIN} or more")
+    elif killed < survivors:
+        failures.append(
+            f"only {killed} of {wide} written candidates died ({survivors} survived); most must die"
+        )
+    return t.CheckResult("kill_rate", not failures, "error", failures)
+
+
+def check_receipt_attached(groups, banks_text, pattern_bank_text):
+    """
+    Error gate: every proven group pins a real receipt (SKILL Step 2: 'For
+    each, note its receipt: the source outlier title, the channel, the
+    multiplier'). The quoted outlier must exist in the banks, the @handle must
+    exist in the banks, and when the outlier sits on a pattern-bank table row
+    the cited multiplier must equal that row's xMed. A receipt that traces to
+    nothing is a fabricated proof.
+    """
+    banks_norm = _normalize(banks_text)
+    failures = []
+    for g in groups:
+        if g["wildcard"]:
+            continue
+        rec = g["receipt"]
+        if rec is None:
+            failures.append(f"group '{g['name']}': missing receipt line")
+            continue
+        if _normalize(rec["title"]) not in banks_norm:
+            failures.append(
+                f"group '{g['name']}': receipt title not found in banks: \"{rec['title']}\""
+            )
+        if not _AT_HANDLE_RE.search("@" + rec["handle"]) or (
+            "@" + rec["handle"] not in banks_text
+        ):
+            failures.append(
+                f"group '{g['name']}': receipt handle @{rec['handle']} not found in banks"
+            )
+        # xMed verification against the pattern-bank table row, when present
+        row_xmed = None
+        norm_title = _normalize(rec["title"])
+        for line in pattern_bank_text.splitlines():
+            if norm_title in _normalize(line):
+                m = _XMED_RE.search(line)
+                if m:
+                    row_xmed = float(m.group(1))
+                break
+        if row_xmed is not None and row_xmed != rec["xmed"]:
+            failures.append(
+                f"group '{g['name']}': cited {rec['xmed']}x but pattern-bank row says "
+                f"{row_xmed}x for \"{rec['title']}\""
+            )
+    return t.CheckResult("receipt_attached", not failures, "error", failures)
+
+
+def check_power_word_spent(presented, locked_title, power_words):
+    """
+    Error gate: at least one presented or locked title spends a power word
+    from power-words-bank.md (SKILL Step 3 Heat: 'A set with zero hot words
+    means the banks were loaded and never spent').
+    """
+    titles = [c["title"] for c in presented] + ([locked_title] if locked_title else [])
+    for title in titles:
+        low = title.lower()
+        for word in power_words:
+            if re.search(r"\b" + re.escape(word.lower()) + r"\b", low):
+                return t.CheckResult("power_word_spent", True, "error", {})
     return t.CheckResult(
-        "bens_annotation_present", len(missing) == 0, "error", missing
+        "power_word_spent", False, "error",
+        {"reason": "no presented or locked title uses a power-words-bank word"},
     )
 
 
-def check_candidate_count(lanes):
+def check_anti_fabrication(presented, locked_title, lock_list_text, no_numbers):
     """
-    Error gate: total candidates across all lanes must be between 5 and 10
-    inclusive. SKILL.md: 4 to 5 lanes, each with 1 to 2 titles each.
-    The ceiling is 10 (5 lanes x 2 titles). The floor is 5 (5 lanes x 1 title,
-    or 4 lanes with some having 2).
-    """
-    n = len(_all_candidate_lines(lanes))
-    ok = 5 <= n <= 10
-    detail = {} if ok else {"count": n, "expected": "5-10"}
-    return t.CheckResult("candidate_count", ok, "error", detail)
-
-
-def check_no_generic_opener(lanes):
-    """
-    Error gate: no candidate contains a blocked generic opener phrase.
-    Blocklist from SKILL.md "AI-default openers" (hard cut category):
-      - "The truth about"
-      - "Everything you need to know"
-      - "Why you should"
-      - "The ultimate guide to"
-      - "Discover the secret"
-    Check is case-insensitive on the extracted title text.
-    """
-    hits = []
-    for line in _all_candidate_lines(lanes):
-        title = _extract_title_from_candidate(line).lower()
-        for phrase in _GENERIC_OPENERS:
-            if phrase in title:
-                hits.append(f"blocked opener '{phrase}': {line[:80]}")
-                break
-    return t.CheckResult("no_generic_opener", len(hits) == 0, "error", hits)
-
-
-def check_anti_fabrication(lanes, locked_title, lock_list_text, slug):
-    """
-    Error gate: numbers and all-caps named tokens in candidates must trace to
-    the lock list.
-
-    Number check:
-      - For the adversarial case (claude-cowork-newsjack) the lock list has
-        NO numbers. Any digit in any candidate title fails.
-      - For other cases, claim-shaped numbers (dollar figures, percentages,
-        multipliers, large counts) must appear in the lock list text. Plain
-        small counts (1-2 digits) are checked against the lock list too,
-        because a listicle title claiming "9 Skills" when the material says
-        "7 Skills" is fabrication.
-
-    Named-entity check (conservative heuristic):
-      - Only ALL-CAPS tokens of 3+ characters are checked (e.g. MCP, VEO,
-        SOP, API). These are almost always product names or abbreviations.
-      - Common emphasis words (STOP, WRONG, BEST, FREE, etc.) are excluded.
-      - A flagged token must appear somewhere in the lock list text (case-
-        insensitive) to pass. This catches invented tool names or methods
-        while ignoring normal English words.
-      - The locked_title is checked alongside the candidates.
-
-    Why not check all capitalized words: normal English capitalization at the
-    start of a title word ("Business," "System," "Channel") produces too many
-    false positives. Only all-caps abbreviations are reliable named-entity
-    signals.
+    Error gate: numbers and all-caps named tokens in titles trace to the lock
+    list built from brain-dump.md. For the adversarial case (lock list has NO
+    numbers) any digit in any presented or locked title fails.
     """
     failures = []
     lock_lower = lock_list_text.lower()
-    is_adversarial = (slug == "claude-cowork-newsjack")
-
-    all_titles = _all_candidate_titles(lanes, locked_title)
-
-    for title in all_titles:
-        # --- number check ---
-        if is_adversarial:
+    titles = [c["title"] for c in presented] + ([locked_title] if locked_title else [])
+    for title in titles:
+        if no_numbers:
             if _ANY_DIGIT_RE.search(title):
                 failures.append(
-                    f"ADVERSARIAL: digit in title when lock list has no numbers: {title}"
+                    f"ADVERSARIAL: digit in title when the lock list has no numbers: {title}"
                 )
         else:
-            bad_nums = find_fabricated_numbers(title, lock_list_text)
-            for n in bad_nums:
+            for n in find_fabricated_numbers(title, lock_list_text):
                 failures.append(f"number not in lock list ({n}): {title}")
-
-        # --- named-entity check (all-caps tokens only) ---
-        caps_tokens = re.findall(r"\b([A-Z]{3,10})\b", title)
-        for tok in caps_tokens:
+        for tok in re.findall(r"\b([A-Z]{3,10})\b", title):
             if tok in _CAPS_EMPHASIS_WORDS:
                 continue
             if tok.lower() not in lock_lower:
-                failures.append(
-                    f"all-caps token '{tok}' not in lock list: {title}"
-                )
-
-    # De-duplicate while preserving order
-    seen = set()
-    deduped = []
+                failures.append(f"all-caps token '{tok}' not in lock list: {title}")
+    seen, deduped = set(), []
     for f in failures:
         if f not in seen:
             seen.add(f)
             deduped.append(f)
+    return t.CheckResult("anti_fabrication", not deduped, "error", deduped)
 
-    return t.CheckResult("anti_fabrication", len(deduped) == 0, "error", deduped)
+
+def check_no_generic_opener(presented, locked_title):
+    """Error gate: no AI-default opener (title-filters.md hard-cut list)."""
+    hits = []
+    titles = [c["title"] for c in presented] + ([locked_title] if locked_title else [])
+    for title in titles:
+        low = title.lower()
+        for phrase in _GENERIC_OPENERS:
+            if phrase in low:
+                hits.append(f"blocked opener '{phrase}': {title}")
+                break
+    return t.CheckResult("no_generic_opener", not hits, "error", hits)
 
 
-def check_lane_diversity(lanes):
+def check_no_colons_pipes(presented, locked_title):
+    """Error gate: SKILL Step 4, 'No colons, no pipes' in presented titles."""
+    hits = []
+    titles = [c["title"] for c in presented] + ([locked_title] if locked_title else [])
+    for title in titles:
+        if ":" in title or "|" in title:
+            hits.append(f"colon or pipe in title: {title}")
+    return t.CheckResult("no_colons_pipes", not hits, "error", hits)
+
+
+def check_lock_list_grounded(body_text, brain_dump_text):
     """
-    Error gate: at least 3 distinct lane headings under ## Lanes.
-
-    The skill builds 4 to 5 distinct angle lanes (confession, contrarian,
-    authority, result, etc.). This check enforces a floor of 3 to catch
-    degenerate outputs that produce one or two lanes and dress them as a set.
-    Lane names are lowercased and stripped for comparison so minor capitalization
-    drift does not hide duplicates.
-
-    Replaces the old pattern_diversity check, which counted distinct pattern_ids
-    across a flat candidate list. The new output contract organizes candidates
-    into named lanes, making the lane heading the correct unit of diversity.
+    Error gate: the transcript's ## Lock list exists (>= 2 bullets) and every
+    bullet's substance traces verbatim to brain-dump.md. SKILL Step 1 builds
+    the lock list FROM the material; a lock-list entry that appears nowhere in
+    the brain-dump was invented, and every title built on it inherits the
+    fabrication.
     """
-    failures = []
-
-    if len(lanes) < 3:
-        failures.append(
-            f"only {len(lanes)} lane(s) parsed; need at least 3 distinct lane headings under ## Lanes"
+    bullets = _transcript_lock_bullets(body_text)
+    if bullets is None:
+        return t.CheckResult(
+            "lock_list_grounded", False, "error", ["## Lock list section not found in transcript.md"]
         )
-
-    # Detect duplicate lane names (same frame relabeled)
-    names_lower = [lane["name"].strip().lower() for lane in lanes]
-    seen_names = set()
-    dupes = []
-    for name in names_lower:
-        if name in seen_names:
-            dupes.append(name)
-        seen_names.add(name)
-    if dupes:
-        failures.append(f"duplicate lane name(s): {dupes}")
-
-    return t.CheckResult("lane_diversity", len(failures) == 0, "error", failures)
-
-
-def check_opportunity_named(lanes):
-    """
-    Error gate: at least one lane heading has opportunity: yes, AND that same
-    lane is labeled both on-brand AND underused.
-
-    The skill's core promise is to surface the on-brand underused angle the
-    competitor set leaves open. If no lane is marked as the opportunity, or if
-    the opportunity lane is off-brand or crowded, the skill failed its primary
-    job. The skill should lead with this lane (presentation order is not checked
-    here; that is a Tier B concern). This check enforces that at least one lane
-    in the output qualifies as a genuine opportunity.
-    """
-    failures = []
-    opportunity_lanes = [lane for lane in lanes if lane["opportunity"]]
-
-    if not opportunity_lanes:
-        failures.append("no lane heading has 'opportunity: yes'")
-        return t.CheckResult("opportunity_named", False, "error", failures)
-
-    # At least one opportunity lane must also be on-brand AND underused
-    valid_opportunity = [
-        lane for lane in opportunity_lanes
-        if lane["on_brand"] and lane["underused"]
-    ]
-
-    if not valid_opportunity:
-        bad = [
-            f"{lane['name']} (on-brand={lane['on_brand']}, underused={lane['underused']})"
-            for lane in opportunity_lanes
-        ]
-        failures.append(
-            f"opportunity lane(s) present but not both on-brand and underused: {bad}"
+    if len(bullets) < 2:
+        return t.CheckResult(
+            "lock_list_grounded", False, "error",
+            [f"## Lock list has {len(bullets)} bullet(s); a real lock list has several"],
         )
-
-    return t.CheckResult("opportunity_named", len(failures) == 0, "error", failures)
-
-
-def check_proof_attached(lanes):
-    """
-    Error gate: every lane must have a non-empty proof: line that cites a
-    channel handle (@handle format).
-
-    SKILL.md Phase 2 requires pinning "one real competitor proof from
-    pattern-bank.md: the outlier title, the channel, and its xMed multiplier."
-    A lane without proof is a recommendation without evidence. The @handle
-    requirement ensures the proof is attributed, not just a quoted title
-    floating in space.
-    """
+    dump_norm = _normalize(brain_dump_text)
     failures = []
-    for lane in lanes:
-        if not lane["proof_line"]:
-            failures.append(f"lane '{lane['name']}': missing proof: line")
+    for b in bullets:
+        substance = b.lstrip("-").strip()
+        substance = substance.split("(", 1)[0].strip()
+        if not substance:
             continue
-        if not _AT_HANDLE_RE.search(lane["proof_line"]):
-            failures.append(
-                f"lane '{lane['name']}': proof: line has no @handle: {lane['proof_line'][:80]}"
-            )
-    return t.CheckResult("proof_attached", len(failures) == 0, "error", failures)
+        if _normalize(substance) not in dump_norm:
+            failures.append(f"lock-list bullet not in brain-dump: {b[:80]}")
+    return t.CheckResult("lock_list_grounded", not failures, "error", failures)
 
 
-def check_locked_title_valid(locked_title, lanes):
+def check_recommendation_present(body_text, presented):
     """
-    Error gate: locked_title is non-empty, <= 55 chars, and matches one of the
-    listed candidate title texts across all lanes.
-
-    The locked_title frontmatter field is the handoff artifact. Downstream
-    skills read it. A title locked to something not in any lane is a
-    consistency failure. Comparison is case-insensitive on stripped text to
-    tolerate minor whitespace drift.
+    Error gate: ## Recommendation exists and names one of the presented
+    candidates (SKILL Step 5: 'Lead with a recommendation and a reason. You
+    are a partner with a point of view, not a menu').
     """
-    if not locked_title or not locked_title.strip():
+    lines = _section_lines(body_text, re.compile(r"^##\s+recommendation\b", re.IGNORECASE))
+    if lines is None:
         return t.CheckResult(
-            "locked_title_valid", False, "error",
-            {"reason": "locked_title is empty"}
+            "recommendation_present", False, "error",
+            ["## Recommendation section not found in transcript.md"],
         )
-
-    if len(locked_title) > 55:
-        return t.CheckResult(
-            "locked_title_valid", False, "error",
-            {"reason": f"locked_title over 55 chars ({len(locked_title)}): {locked_title}"}
-        )
-
-    locked_norm = locked_title.strip().lower()
-    all_lines = _all_candidate_lines(lanes)
-    candidate_titles = [
-        _extract_title_from_candidate(ln).strip().lower()
-        for ln in all_lines
-    ]
-    if locked_norm not in candidate_titles:
-        return t.CheckResult(
-            "locked_title_valid", False, "error",
-            {
-                "reason": "locked_title not found in any lane candidate",
-                "locked": locked_title,
-                "candidates": [_extract_title_from_candidate(ln) for ln in all_lines],
-            }
-        )
-
-    return t.CheckResult("locked_title_valid", True, "error", {})
-
-
-def check_handoff(fm, slug):
-    """
-    Error gate: titles.md frontmatter carries slug, locked_title, locked_bens,
-    and locked_lane.
-
-    locked_lane was added in the lane-based output contract. Downstream skills
-    (vid-structure, vid-thumbnail) read locked_lane to understand which creative
-    frame the packaging settled on, not just which title string was picked.
-    """
-    required = ["slug", "locked_title", "locked_bens", "locked_lane"]
-    missing = []
-    for field in required:
-        if field not in fm:
-            missing.append(field)
-            continue
-        val = fm[field]
-        if val is None:
-            missing.append(field)
-            continue
-        if isinstance(val, str) and val.strip().lower() in ("", "null"):
-            missing.append(field)
-
-    # Check slug matches the expected case slug
-    if "slug" in fm and fm["slug"] and isinstance(fm["slug"], str):
-        if fm["slug"].strip().lower() != slug.lower():
-            missing.append(f"slug mismatch (got '{fm['slug']}', expected '{slug}')")
-
-    return t.CheckResult("handoff", len(missing) == 0, "error", {"missing": missing})
-
-
-def check_viewer_section_present(body_text):
-    """
-    Error gate: titles.md must contain a '## Viewer' heading AND all four
-    required labels (Viewer:, Wants:, Fears:, Driver:) must be present and
-    non-empty.
-
-    This is a structural existence check only. It does NOT judge the quality
-    of the viewer analysis. It verifies that the section exists and that the
-    skill filled in all four fields before writing the Claim and titles.
-
-    Why this section: titles that are accurate but emotionally inert fail
-    because no driver was named before writing. Requiring the Viewer section
-    forces the skill to name the dominant emotion (Driver:) the titles must
-    press. An empty or missing label is the same failure as a missing section.
-
-    The four labels:
-      Viewer: who specifically clicks this video (the actual avatar, not "everyone")
-      Wants:  the outcome they are chasing on this topic
-      Fears:  what is painful, stuck, or embarrassing for them right now
-      Driver: the single dominant emotion in play (fear, frustration, hope,
-              aspiration, or identity)
-    """
-    # Check ## Viewer heading is present
-    if not re.search(r"^##\s+viewer\b", body_text, re.IGNORECASE | re.MULTILINE):
-        return t.CheckResult(
-            "viewer_section_present", False, "error",
-            ["## Viewer heading not found in titles.md body"]
-        )
-
-    failures = []
-
-    # Check each required label is present and non-empty
-    for label in ("Viewer", "Wants", "Fears", "Driver"):
-        pattern = re.compile(
-            r"^" + label + r":\s*(.+)", re.IGNORECASE | re.MULTILINE
-        )
-        m = pattern.search(body_text)
-        if not m:
-            failures.append(f"{label}: label missing or has no value")
-        else:
-            value = m.group(1).strip()
-            if not value:
-                failures.append(f"{label}: label present but value is empty")
-
+    section = _normalize("\n".join(lines))
+    for c in presented:
+        if _normalize(c["title"]) in section:
+            return t.CheckResult("recommendation_present", True, "error", {})
     return t.CheckResult(
-        "viewer_section_present", len(failures) == 0, "error", failures
+        "recommendation_present", False, "error",
+        {"reason": "## Recommendation names no presented candidate"},
     )
 
 
-def check_claim_section_present(body_text):
-    """
-    Error gate: titles.md must contain a '## Claim' heading AND all three
-    required labels (Claim:, Stake:, Belief:) must be present and non-empty.
-
-    This is a structural check only. It does NOT judge the quality of the claim.
-    It verifies that the section exists and that the skill filled in all three
-    fields. An empty or missing label is the same failure as a missing section.
-
-    The ## Claim section must appear in the body (after frontmatter). The check
-    scans for the heading then looks for the three labeled lines anywhere in the
-    file after the heading. The labels can appear in any order.
-
-    Why these three labels: Claim names the disagreeable point the video argues,
-    Stake gives the viewer the cost of ignoring it, and Belief surfaces the
-    assumption the claim is cutting against. All three are required because a
-    Claim without a Stake is just an opinion, and a Claim without a Belief has
-    no tension to resolve.
-    """
-    # Check ## Claim heading is present
-    if not re.search(r"^##\s+claim\b", body_text, re.IGNORECASE | re.MULTILINE):
-        return t.CheckResult(
-            "claim_section_present", False, "error",
-            ["## Claim heading not found in titles.md body"]
-        )
-
-    failures = []
-
-    # Check each required label is present and non-empty
-    for label in ("Claim", "Stake", "Belief"):
-        pattern = re.compile(
-            r"^" + label + r":\s*(.+)", re.IGNORECASE | re.MULTILINE
-        )
-        m = pattern.search(body_text)
-        if not m:
-            failures.append(f"{label}: label missing or has no value")
-        else:
-            value = m.group(1).strip()
-            if not value:
-                failures.append(f"{label}: label present but value is empty")
-
-    return t.CheckResult(
-        "claim_section_present", len(failures) == 0, "error", failures
-    )
+def _title_strings_file(presented, locked_title):
+    """Synthetic 'files' dict scoping brand checks to title strings only."""
+    titles = [c["title"] for c in presented] + ([locked_title] if locked_title else [])
+    return {"title-strings": "\n".join(titles)}
 
 
-def evaluate_case(slug, files, fixtures_root):
+def evaluate_case(case, files, manifest):
     """Run all assertions for one case. Returns list[CheckResult]."""
-    titles_text = files.get("titles.md", "")
+    slug = case["slug"]
+    no_numbers = bool(case.get("no_numbers", False))
 
-    fm, body = split_frontmatter(titles_text)
-    lanes = _parse_lanes(body)
-    locked_title = fm.get("locked_title", "") or ""
-    if isinstance(locked_title, str):
-        locked_title = locked_title.strip()
+    piece = files.get("piece.md", "")
+    transcript = files.get("transcript.md", "")
 
-    # Load the lock list for this case from the frozen fixture.
-    brain_dump = _load_brain_dump(fixtures_root, slug)
+    fixtures_root = _norm_path(_HERE, manifest["fixtures"])
+    input_stage = _norm_path(_HERE, manifest["input_stage"])
+    suite_fixtures = _norm_path(_HERE, manifest["suite_fixtures"])
+
+    upstream_piece = _read(_norm_path(suite_fixtures, slug, "piece.md"))
+    brain_dump = _read(_norm_path(input_stage, slug, "brain-dump.md"))
     lock_list_text = _parse_lock_list(brain_dump)
+
+    banks_dir = os.path.join(fixtures_root, "banks")
+    pattern_bank = _read(os.path.join(banks_dir, "pattern-bank.md"))
+    banks_text = pattern_bank + "\n" + _read(os.path.join(banks_dir, "title-bank.md"))
+    power_words = _parse_power_words(_read(os.path.join(banks_dir, "power-words-bank.md")))
+
+    _, transcript_body = split_frontmatter(transcript)
+    groups = _parse_options(transcript_body) or []
+    presented = _presented(groups)
+
+    fm, _ = split_frontmatter(piece)
+    locked_title = str(fm.get("title", "") or "").strip()
 
     results = []
 
-    # Error-level (gate). Brand checks are scoped to extracted title text
-    # only (not pattern IDs or other annotation metadata).
-    results.append(check_no_em_dash_titles(lanes, locked_title))
-    results.append(check_no_banned_words_titles(lanes, locked_title))
-    results.append(check_char_ceiling(lanes, locked_title))
-    results.append(check_bens_annotation_present(lanes))
-    results.append(check_candidate_count(lanes))
-    results.append(check_no_generic_opener(lanes))
-    results.append(check_anti_fabrication(lanes, locked_title, lock_list_text, slug))
-    results.append(check_lane_diversity(lanes))
-    results.append(check_opportunity_named(lanes))
-    results.append(check_proof_attached(lanes))
-    results.append(check_locked_title_valid(locked_title, lanes))
-    results.append(check_handoff(fm, slug))
-    results.append(check_viewer_section_present(body))
-    results.append(check_claim_section_present(body))
+    # Brand gates on the vault file (whole file) and on title strings only.
+    vault_files = {"piece.md": piece}
+    title_files = _title_strings_file(presented, locked_title)
+    em = t.check_no_em_dash(title_files)
+    bw = t.check_no_banned_words(title_files)
+    results.append(t.check_no_em_dash(vault_files))
+    results.append(t.check_no_banned_words(vault_files))
+    results.append(t.CheckResult("titles_no_em_dash", em.passed, "error", em.detail))
+    results.append(t.CheckResult("titles_no_banned_words", bw.passed, "error", bw.detail))
 
-    # Warning-level (reported, do not gate). Also scoped to title text only.
-    results.append(check_char_target(lanes, locked_title))
-    title_files = _titles_as_files(lanes, locked_title)
-    results.append(t.check_no_aiisms(title_files))
-    results.append(t.check_no_hedge_words(title_files))
+    # The piece.md save contract (SKILL Step 6) and the no-reargument rule.
+    results.append(check_handoff_framing_to_title(upstream_piece))
+    results.append(check_title_written(piece))
+    results.append(check_last_updated_bumped(upstream_piece, piece))
+    results.append(check_piece_fields_preserved(upstream_piece, piece))
+    results.append(check_locked_title_valid(piece, presented))
+
+    # The presented set (SKILL Steps 2-5).
+    results.append(check_char_ceiling(presented, locked_title))
+    results.append(check_char_count_honest(presented))
+    results.append(check_bens_annotation_present(presented))
+    results.append(check_candidate_line_format(groups))
+    results.append(check_survivor_count(presented))
+    results.append(check_structure_diversity(groups))
+    results.append(check_wildcard_present(groups))
+    results.append(check_kill_rate(transcript_body, presented))
+    results.append(check_receipt_attached(groups, banks_text, pattern_bank))
+    results.append(check_power_word_spent(presented, locked_title, power_words))
+    results.append(check_anti_fabrication(presented, locked_title, lock_list_text, no_numbers))
+    results.append(check_no_generic_opener(presented, locked_title))
+    results.append(check_no_colons_pipes(presented, locked_title))
+    results.append(check_lock_list_grounded(transcript_body, brain_dump))
+    results.append(check_recommendation_present(transcript_body, presented))
+
+    # Warnings (reported, never gate).
+    results.append(check_char_target(presented, locked_title))
+    warn_files = dict(vault_files)
+    warn_files.update(title_files)
+    results.append(t.check_no_aiisms(warn_files))
+    results.append(t.check_no_hedge_words(warn_files))
 
     return results
 
@@ -770,15 +760,17 @@ def evaluate_case(slug, files, fixtures_root):
 def main():
     outputs_dir = sys.argv[1] if len(sys.argv) > 1 else os.path.join(_HERE, "outputs")
     manifest = _load_manifest()
-    fixtures_root = _fixtures_root(manifest)
     cases = manifest["cases"]
 
     error_assertions = [
-        "no_em_dash", "no_banned_words", "char_ceiling",
-        "bens_annotation_present", "candidate_count", "no_generic_opener",
-        "anti_fabrication", "lane_diversity", "opportunity_named",
-        "proof_attached", "locked_title_valid", "handoff",
-        "viewer_section_present", "claim_section_present",
+        "no_em_dash", "no_banned_words", "titles_no_em_dash",
+        "titles_no_banned_words", "handoff_framing_to_title", "title_written",
+        "last_updated_bumped", "piece_fields_preserved", "locked_title_valid",
+        "char_ceiling", "char_count_honest", "bens_annotation_present",
+        "candidate_line_format", "survivor_count", "structure_diversity",
+        "wildcard_present", "kill_rate", "receipt_attached",
+        "power_word_spent", "anti_fabrication", "no_generic_opener",
+        "no_colons_pipes", "lock_list_grounded", "recommendation_present",
     ]
     warn_assertions = ["char_target", "no_aiisms", "no_hedge_words"]
 
@@ -789,17 +781,18 @@ def main():
 
     print(f"--- vid-title Tier A ({len(cases)} cases) ---")
 
-    for i, slug in enumerate(cases):
+    for case in cases:
+        i, slug = case["case"], case["slug"]
         files = _read_case_files(outputs_dir, i)
         if files is None:
             print(f"  case {i:02d} [{slug}]: NO OUTPUT (skipped)")
             continue
-        if "titles.md" not in files:
-            print(f"  case {i:02d} [{slug}]: MISSING titles.md (skipped)")
+        if "piece.md" not in files or "transcript.md" not in files:
+            print(f"  case {i:02d} [{slug}]: MISSING piece.md or transcript.md (skipped)")
             continue
 
         total += 1
-        results = evaluate_case(slug, files, fixtures_root)
+        results = evaluate_case(case, files, manifest)
         by_name = {r.name: r for r in results}
 
         if t.gate(results):
@@ -829,6 +822,8 @@ def main():
     pass_rate = total_pass / total
     print(f"\nDETAIL {total_pass}/{total} outputs passed ALL Tier A error checks")
     print(f"METRIC tier_a_pass_rate={pass_rate:.4f}")
+    if pass_rate < 1.0:
+        sys.exit(1)
 
 
 if __name__ == "__main__":

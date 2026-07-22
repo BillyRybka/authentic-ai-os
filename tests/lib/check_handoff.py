@@ -30,6 +30,14 @@ HANDOFF_CONTRACTS = {
             "format", "goal", "voice_context",
         ],
     },
+    # vid-framing -> vid-title. vid-title Step 1 reads the locked angle, core
+    # payoff, format, and goal from framing's piece.md before writing titles.
+    "framing->title": {
+        "piece.md": [
+            "type", "slug", "selected_angle", "core_payoff",
+            "format", "goal", "voice_context",
+        ],
+    },
 }
 
 

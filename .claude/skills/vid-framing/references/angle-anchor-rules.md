@@ -7,7 +7,7 @@ when_to_read: Step 3, when grounding an angle in the pattern bank
 
 # Angle Anchor Rules
 
-Step 3 grounds the angle in what has worked. This file is the line between real grounding and hand-waving. An angle does not need a pattern behind it (the gut swing is allowed), but if you claim one, it has to be real.
+**The rule: name the real entry, or call it a gut pick.** Step 3 grounds the angle in what has worked, and this file is the line between real grounding and hand-waving. An angle does not need a pattern behind it; the gut swing is allowed. But if you claim a pattern, the entry has to be real, and anything in between is hand-waving. This is the canonical statement of the rule. When another skill needs it, it points here instead of restating it.
 
 ## What counts as real grounding
 

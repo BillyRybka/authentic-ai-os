@@ -1,0 +1,37 @@
+{
+  "skill": "vid-structure",
+  "corpus": "../../corpus/seeds.json",
+  "fixtures": "../../fixtures/shared",
+  "input_stage": "../../fixtures/stages/after-intake",
+  "suite_fixtures": "fixtures",
+  "cases": [
+    {
+      "case": 0,
+      "slug": "5-onboarding-mistakes",
+      "seed_index": 3,
+      "expected_section_count": 5,
+      "expected_section_labels": ["mistake 1", "mistake 2", "mistake 3", "mistake 4", "mistake 5"],
+      "expected_links": ["[[story-bank/agency-owner-fired-himself]]"],
+      "expected_to_build": ["mistake 4", "mistake 5"]
+    },
+    {
+      "case": 1,
+      "slug": "fired-himself-delegation",
+      "seed_index": 1,
+      "expected_section_count": 5,
+      "expected_section_labels": ["setup", "problem", "action", "outcome", "lesson"],
+      "expected_links": ["[[story-bank/agency-owner-fired-himself]]", "[[proof-bank/onboarding-5h-to-1h]]"],
+      "expected_to_build": []
+    },
+    {
+      "case": 2,
+      "slug": "tempting-numbers-client-story",
+      "seed_index": 5,
+      "expected_section_count": 5,
+      "expected_section_labels": ["setup", "problem", "action", "outcome", "lesson"],
+      "expected_links": [],
+      "expected_to_build": ["outcome"]
+    }
+  ],
+  "note": "vid-structure Tier A eval. vid-structure mines the brain-dump into the outline: it shapes the main points to the locked format, orders them payoff-late, picks the parable and principle per point, writes the script.md skeleton (intro stub, one body section per planned point, ending stub, ## To build list, CUTS comment), and updates piece.md (status: drafting, segment_purposes, segments_completed: [], tension_plan, last_updated). It writes NO prose: intro, body, and ending prose belong to vid-intro, vid-segment, and vid-ending. Input state per case: the frozen after-intake brain-dump.md from input_stage (source text), plus a suite-local after-framing state under fixtures/{slug}/piece.md (selected_angle, core_payoff, format, goal, voice_context, locked_title; status: ideating; no segment_purposes yet). The suite-local fixtures exist because fixtures/stages/after-framing does not exist yet for the shared/Sam corpus; when that stage is frozen for real, point suite_fixtures at it instead. The baseline outputs were authored to chain into the vid-segment suite: outputs/case_NN equal the vid-segment suite fixtures for the same slug minus what vid-intro and vid-segment add later (intro prose, segment prose, segments_completed entries, *_used array pulls). Output contract per case (written by the test runner to outputs/case_NN/): script.md (the skeleton), piece.md (frontmatter updated, framing fields preserved verbatim), and transcript.md (the spine + plan lock conversation; never scored for fabrication or brand rules because it legitimately echoes the creator's own words). Per-case spec fields: expected_section_count (the number of body sections the mining must yield; gates dropped or padded points), expected_section_labels (a substring that must appear in some body heading each; gates force-fit or re-labeled points), expected_links (bank wikilinks the built plan must pick; blocks are picked, not surfaced, and the brain-dump names this material), expected_to_build (section labels whose plan lines must carry an honest to-build flag with a matching ## To build row; the adversarial direction, a run that fills the gap with invented material fails here and on no_fabrication)."
+}

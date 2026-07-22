@@ -31,7 +31,7 @@ What the read covers:
 
 **AI move (only after the confirm):** find the angle that makes the idea feel new (one of the five moves in `reframe-toolkit.md`, judged against BENS, weighting N), then pull the pattern bank and name the real pattern behind each. Shape one or two angles that deliver the confirmed payoff and press the tension.
 
-- **Angle:** "Stop Planning Harder, Your System Is Fighting Your ADHD Brain." Grounded in the STOP pattern, proven by "STOP Planning Your Week Like This" (@CoachY, 800k). Backed by the creator's own burnout story in the brain-dump. Risk: needs a strong alternative in the body.
+- **Angle:** "Stop Planning Harder, Your System Is Fighting Your ADHD Brain." Grounded in the STOP pattern, proven by "STOP Planning Your Week Like This" (@CoachY, 800k). Backed by the creator's own burnout story in the brain-dump. Risk: needs a strong alternative in the body. *This one came out headline-shaped, and that is allowed. Do not polish it into a title here; it goes to vid-title as one candidate, free to beat.*
 - **Gut swing (no pattern):** "I Threw Out My Calendar." Flagged as the gut pick, no data behind it, higher variance.
 
 Each angle gets a one-line "why it could land" and a one-line risk. The creator picks.
