@@ -1,0 +1,41 @@
+{
+  "skill": "vid-ideas",
+  "fixtures": "../../fixtures/shared",
+  "suite_fixtures": "fixtures",
+  "cases": [
+    {
+      "case": 0,
+      "slug": "blank-slate-keeps",
+      "adversarial": false,
+      "prior_backlog": true,
+      "flags": [4],
+      "pick": 1,
+      "pick_from": "batch",
+      "off_iceberg_tokens": ["100k", "ai agent", "prints money", "selling ai", "passive income", "while you sleep"],
+      "design_note": "Standard blank-slate run. Prior backlog holds one kept row and one dropped row. The batch surfaces 6 ideas (4 anchored + 2 swings, 4 pillars), never re-proposes the dropped morning-routine idea, the creator flags idea 4 to keep and picks idea 1. Expected: PASS all Tier A checks."
+    },
+    {
+      "case": 1,
+      "slug": "off-iceberg-trap",
+      "adversarial": true,
+      "prior_backlog": true,
+      "flags": [],
+      "pick_from": "backlog",
+      "pick_backlog_idea": "I Raised My Retainer 40% and Kept Every Client",
+      "off_iceberg_tokens": ["100k", "ai agent", "prints money", "selling ai", "passive income", "while you sleep"],
+      "design_note": "ADVERSARIAL. The fixture bank's @agenticalex rows (512k views, 38.2x) tempt the skill toward make-money-with-AI topics outside Sam's iceberg, and the simulator explicitly asks about them. Correct behavior: every surfaced idea stays inside the iceberg, nothing cites or chases the trap rows' topics. The creator flags nothing and instead picks the kept backlog idea, which flips to status picked and hands a full-receipt seed packet. Expected: PASS all Tier A checks."
+    },
+    {
+      "case": 2,
+      "slug": "dull-bend-baseline",
+      "adversarial": false,
+      "prior_backlog": false,
+      "flags": [],
+      "pick": 1,
+      "pick_from": "batch",
+      "off_iceberg_tokens": ["100k", "ai agent", "prints money", "selling ai", "passive income", "while you sleep"],
+      "design_note": "The known dull-bend failure mode, faithfully simulated from the CURRENT skill (its rules call dropping the '99%' crutch GOOD). Receipts are all real and the batch shape is valid, but ideas 2 and 3 keep only dull synonyms of the sharp forms they cite ('most agency owners' instead of '95%', 'without hiring anyone' instead of 'Zero Employees (Full System)'). Expected: FAIL engine_carried on ideas 2 and 3, with sharpness_proxy warnings. This case is the suite's teeth: it must keep failing until a run genuinely carries the engines."
+    }
+  ],
+  "note": "vid-ideas Tier A. Input fixtures: the shared foundation (../../fixtures/shared, Sam Rivera's iceberg, pillars, avatar, Top 3) plus the SUITE-LOCAL pattern-bank (fixtures/pattern-bank.md, the only bank with per-channel raw outlier rows; the shared bank has none) and, for cases 0-1, the SUITE-LOCAL prior backlog (fixtures/prior-backlog.md). The test runner drives the vid-ideas skill once per case with the creator-simulator playing Sam Rivera (blank on ideas; answers the focus question; flags and picks per the case config; on case 1, asks about the shiny @agenticalex rows). Output contract per case, written by the runner to outputs/case_NN/: (1) ideas-batch.md, the surfaced batch as markdown, one block per idea in the strict shape below. (2) ideas-backlog.md, the backlog AFTER the run (present when a prior backlog exists or any keep was flagged; absent otherwise; unflagged batch ideas are never saved). (3) seed-packet.md, frontmatter-only: type, idea_title, pillar, top_3_problem (1|2|3|none), iceberg_fit, anchor, where anchor is the FULL receipt '\"source title\" (@channel, views views, N.Nx median)' traced from the pattern-bank row. (4) transcript.md, the conversation (never scored). Strict idea block shape (anchored): '## Idea N' heading, the idea line as a '**bold**' line, then 'inspired by: \"source title\" (@handle, VIEWS views, N.Nx median)', then 'engine: \"the load-bearing element quoted verbatim from the source title\" plus a few words of gloss', then a single meta line 'Pillar: X | Iceberg: Y | Signal: STRONG|MODERATE | Problem: 1|2|3' (Problem segment optional when none fits), then 'Why it could land: ...'. Swing block: same but the receipt+engine lines are replaced by 'swing: what it gestures at, unproven for this channel' and Signal: swing. eval.py scores only ideas-batch.md, ideas-backlog.md, and seed-packet.md against the suite fixtures; the transcript legitimately echoes the creator and is never checked."
+}

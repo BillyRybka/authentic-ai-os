@@ -1,49 +1,69 @@
 # Idea generation rules
 
-Runtime logic for `vid-ideas` Phase 2 (generate) and Phase 3 (the dial). Not chat content. This is how Claude turns the creator's positioning plus the real winning titles into a batch that would actually get clicked.
+Runtime logic for `vid-ideas` Phase 2 (generate) and Phase 3 (the dial). Not chat content. This is how the skill turns the creator's positioning plus the real winning titles into a batch that would actually get clicked.
 
 ## Start from the raw winner, not the label
 
 The pattern-bank has two layers. The **Synthesis** names patterns in the abstract ("speed-to-outcome compression", "steal-this generosity"). The **per-channel rows** hold the actual winning titles with real views and median-multiples.
 
-Generate from the RAW TITLES, never the labels. The Synthesis is only a map: it tells you which shapes have spread and what is on-lane versus off-lane. It does not tell you why a specific title won. The label editorializes; the title is the evidence. "AI builds your team, you keep control" is a label. "I Built My Entire Content Team Inside Claude (No Employees)" is the title, and its engine is "(No Employees)", a whole team's output at zero headcount, not "control". Use the Synthesis to decide which patterns to mine, then open the per-channel rows and work from the actual titles.
+Generate from the RAW TITLES, never the labels. The Synthesis is only a map: it tells you which shapes have spread and what is on-lane versus off-lane. It does not tell you why a specific title won. The label editorializes; the title is the evidence. "Systems content that promises speed" is a label. "I Cook a Week of Dinners in 90 Minutes (One Pan)" is the title, and its engine is "in 90 Minutes" plus "(One Pan)", a week of output compressed into one small block, not "speed". Use the Synthesis to decide which patterns to mine, then open the per-channel rows and work from the actual titles.
 
-## Why did this win (the load-bearing element)
+## The engine is a form, not a theme
 
-Before you move anything, take the raw title and name the ONE element that drove the multiple. Not "structural job plus emotional job" in the abstract. The specific load-bearing move:
+Before you move anything, take the raw title and name the ONE element that drove the multiple. Not the abstract job ("it promises speed", "it flips an identity"). The specific load-bearing phrasing:
 
-- "I Built My Entire Content Team Inside Claude (No Employees)" -> the contrast: a whole team's output, zero payroll. The parenthetical carries it.
-- "How I Use VEO 3 To Create Viral AI Videos In 11 Minutes" -> the first-person demo of a named tool producing a real result fast. The engine is "How I Use [Tool] To [Output] In [N] Minutes", not just "in N minutes".
-- "Why Introverts Make the BEST Content Creators (Nobody Talks About This)" -> the identity flip: the trait you think is a weakness is the advantage.
+- its **number**: "95% of Freelancers Invoice Wrong" lives on the 95%. "Most Freelancers Invoice Wrong" is the same theme with the engine removed.
+- its **hot proper noun**: the named tool, the named client, the named method everyone in the niche already talks about.
+- its **parenthetical kicker**: "(No Gym)", "(One Pan)", "(Full System)". The kicker is where the proof or the objection-killer sits.
+- its **named system**: "The 3-Tier Pricing Page", "The Weekly Review". A name turns advice into a thing the viewer can take.
 
-Ask the real question: why did this beat its channel's median by Nx? The answer is the thing you must keep.
+Worked reads (synthetic, across niches):
 
-## Carry the engine, bounded both ways
+- "I Got My Clients Stronger in 20 Minutes a Day (No Gym)" (@shedstrong, 412k, 18.2x) -> the contrast: real results, tiny time, no equipment. The "(No Gym)" kicker carries it.
+- "95% of Freelancers Invoice Wrong" (@ledgerline, 88k, 9.4x) -> the superiority stat. The 95% IS the engine: it tells the viewer they probably do this wrong.
+- "I Cook a Week of Dinners in 90 Minutes (One Pan)" (@weeknightplate, 1.2M, 22.6x) -> "in 90 Minutes" plus the "(One Pan)" kicker, a whole week compressed into one small block.
+- "Why Quiet Consultants Close the Biggest Clients (Nobody Talks About This)" (@quietcloser, 156k, 11.3x) -> the identity flip plus the exclusion kicker: the trait you hide is the advantage.
 
-Move the creator's topic onto the title while keeping the load-bearing element recognizable. Two bounds, clear both:
+Ask the real question: why did this beat its channel's median by Nx? The answer is the thing you must keep, in its sharp form.
 
-- **Fidelity floor:** the engine survives. If the load-bearing element is gone or gutted, the receipt no longer backs the idea, you have invented a title with a fake citation. Reject it. (Failure: keeping only "in N minutes" and dropping "How I Use [Tool] To [Output]".)
-- **Transcribe ceiling:** it is not the source with its nouns swapped. If the source's load-bearing phrase survives verbatim and you only changed the subject, it is a copy. Reject it. (Failure: "Why AI-Assisted Creators Make Better Content Than Anyone (Nobody's Saying This Out Loud)" is the Introverts title slot-for-slot.)
+**A dull synonym of the sharp form is a floor failure.** "Without a gym membership" is not "(No Gym)". "Most freelancers" is not "95%". "With minimal cleanup" is not "(One Pan)". The synonym keeps the theme and kills the engine. If your bend reads duller than its source, it failed the floor, no matter how on-brand it sounds.
 
-Between the floor and the ceiling: keep the engine, move the topic to the creator's lane, rebuild the surface phrasing fresh. The creator's topic is the headline; the borrowed engine is the chassis under it.
+## Carry the engine at full sharpness
 
-Show, don't tell. Source: "How to Use Claude Cowork Better Than 99% of People" (@brock, 205k, 12.7x). Engine: the superiority promise, "better than 99% at [specific skill]".
-- GOOD: "The Way Most Business Owners Package a Video Is Why Nobody Clicks." Keeps the mastery/you-are-doing-it-wrong promise, moves it to packaging, drops the "99%" crutch.
-- FLOOR FAIL: "Packaging Matters More Than You Think." Engine gone, no superiority promise, the receipt does not back it.
-- CEILING FAIL: "How to Package YouTube Videos Better Than 99% of Business Owners." The source sentence, two nouns swapped.
+Move the creator's topic onto the title while keeping the load-bearing element recognizable at full strength. Three rules and a test:
 
-Numbers in a line are the borrowed shape's own number or a bracketed placeholder (`in [N] minutes`, `[N] prompts`). Never invent a figure.
+- **Fidelity floor:** the engine's form survives. Keep the number, the kicker, the hot proper noun, the named system. Lose the form and the idea has left its evidence behind; the receipt becomes decoration. Reject it.
+- **Borrowed numbers and hot words are allowed.** The anti-fabrication rule protects the creator's own claims: their results, their client numbers, their story receipts. It says nothing about the borrowed shape's number, because that number is not the creator's claim, it is part of the cited receipt, quoted in full next to the idea. Keep the source's number ("95%", "in 90 Minutes") or, when the bend genuinely changes the scale, use a bracketed placeholder ("in [N] minutes"). Never invent a figure the source did not have, and never soften the figure it did have.
+- **The seed is provisional.** It may stay close to the source (see the next section). What it may never do is bend dull.
+
+Show, don't tell. Source: "95% of Freelancers Invoice Wrong" (@ledgerline, 88k, 9.4x). Engine: the "95%" superiority stat.
+
+- GOOD: "95% of Service Owners Undercharge on Every Invoice." The number survives, the claim moves onto the creator's pricing lane. Side by side, the bend competes with the source.
+- FLOOR FAIL: "The Way Most Service Owners Invoice Is Costing Them Money." Theme kept, 95% gone. The source gets the click every time.
+- FLOOR FAIL: "How to Run Your Agency Without Hiring Anyone", bent from "I Run a $40k a Month Agency With Zero Employees (Full System)". "Without hiring anyone" is a dull synonym of "Zero Employees (Full System)". The kicker was the engine.
+
+**The side-by-side sharpness test.** Put your bend directly under the source line and read the pair the way a scroller would. If the SOURCE gets the click, the bend failed. Sharpen it (restore the form you dropped) or re-roll. Only surface a bend you would honestly click over its source. This test catches the dull bend that every abstract checklist misses, because the comparison is concrete: two lines, one click.
+
+## The seed is provisional by design
+
+The idea line this skill surfaces is a seed for judging WHICH video to make, not the title the video ships with. Two consequences:
+
+- **The seed may stay close to the source.** Adjust the outlier to the creator's topic and stop there. "I Write a Week of Client Emails in 90 Minutes (One Doc)" is a fine seed from the dinners title: same engine, new topic, close phrasing. Closeness is not copying at seed stage; it keeps the shape legible while the creator judges the topic.
+- **The do-not-copy ceiling applies to the FINAL title, which `vid-title` crafts later.** After intake captures the creator's real material, `vid-title` writes the actual title from that material, and there the source's phrasing must not survive slot-for-slot. The seed hands `vid-title` the shape plus the full receipt, and it enters as the leading candidate to beat. The ceiling is `vid-title`'s to enforce; it is not a reason to dull the seed.
+
+So the old fear is inverted: the seed's failure mode is not staying too close, it is bending dull. Sharpen freely; the ceiling waits downstream.
 
 ## The click test (run on every idea before surfacing)
 
-The gate that was missing. For each candidate, put it next to the others and ask the real question: scrolling the feed, would the avatar click THIS, and why?
+For each candidate, put it next to the others and ask the real question: scrolling the feed, would the avatar click THIS, and why?
 
+- Run the side-by-side sharpness test against the source first (above). A bend the source beats is already dead.
 - A dream outcome beats a defensive reassurance. "A full content team's output with no payroll" pulls harder than "...and it still sounds like you". Reassurance is a footnote, not a hook.
 - If the strongest thing about the line is that it is on-brand, it fails. On-brand is the floor, not the pull.
 - It reads like one line a person would actually say out loud. No crushed, stiff, keyword-stuffed phrasing.
 - If you cannot say in one sentence why a human clicks this over the next one, it is not ready.
 
-Do not bend ideas toward the creator's positioning. The differentiator ("without the AI slop") is the creator's flag, and the standing temptation is to staple it onto every title. It belongs only where voice or slop IS the premise of the video, never as a clause bolted onto a leverage or speed title where it dilutes the pull.
+Do not bend ideas toward the creator's positioning. The differentiator is the creator's flag, and the standing temptation is to staple it onto every line. It belongs only where that difference IS the premise of the video, never as a clause bolted onto a speed or systems line where it dilutes the pull.
 
 ## Fit is a floor, checked after pull
 
@@ -77,7 +97,9 @@ Rank by anchor strength and click pull, not by raw view count. A 4x own-channel-
 
 ## Anti-fabrication (hard rule)
 
-Every anchored idea cites a REAL per-channel row: the actual title, @channel, views, xMed. Never invent a title, a view count, a multiple, or a spread. Never cite a row whose engine you did not actually carry into the line, a citation you did not use is decoration, and decoration is how fabrication hides. Swings are flagged unproven, never dressed as proven.
+Every anchored idea cites a REAL per-channel row: the actual title, @channel, views, xMed. Never invent a title, a view count, a multiple, or a spread. Never cite a row whose engine you did not actually carry into the line, and carrying means the sharp form: a dull synonym keeps the theme and drops the engine, which is a fake citation wearing a real receipt. Swings are flagged unproven, never dressed as proven.
+
+Scope, so the rule is never misread: it protects the CREATOR'S claims (their results, client numbers, story receipts), not the borrowed shape. The outlier's own number and hot words are part of the receipt and are allowed in the line; the receipt is quoted in full right next to the idea, so nothing is hidden.
 
 ## Respect the drop list
 
@@ -90,11 +112,14 @@ The creator turns the dial; re-roll with the new posture. Same spine, shift the 
 - **"more"** -> a fresh batch, same mix. No repeats from this session or the backlog.
 - **"tighter" / "safer"** -> all 5-6 anchored to STRONG raw titles, drop the swings.
 - **"wilder" / "more original"** -> 3-4 swings, 2 anchored. Contrarian takes, adjacent-niche structures, the creator's unique pillar angles. Still iceberg-gated.
+- **"sharper"** -> re-roll the same territory, pushing each line toward its sharpest legitimate form. Restore the dropped number, the parenthetical kicker, the named system, the hot proper noun, then run the side-by-side test on every line. Sharper never means inventing a claim the source did not have; it means stop leaving the source's best phrasing on the table.
 - **"different pillar" / "different problem"** -> regenerate aimed there, or rotate to ones the last batch underused.
 - **"regenerate"** -> same posture, all new ideas.
 
 After any roll, surface the new batch and repeat the one-line dial offer. Do not narrate the change.
 
-## What gets saved (Phase 4)
+## What gets saved and handed off (Phase 4)
 
 Only ideas the creator flags to keep. The unflagged batch is discarded, not logged. The backlog is a curated queue of ideas the creator actually liked, never a dump. See `assets/ideas-backlog-template.md` for the row shape.
+
+The picked idea hands `vid-intake` a seed packet: `{idea_title, pillar, top_3_problem, iceberg_fit, anchor}`. The anchor MUST carry the full receipt: the source title, the @channel, the views, and the xMed, exactly as they appear in the pattern-bank row. The receipt is the seed's evidence chain: `vid-intake` persists it into piece.md and `vid-title` inherits it from there as the leading candidate to beat. A seed packet without the full receipt is a broken handoff.

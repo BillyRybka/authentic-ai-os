@@ -1,6 +1,6 @@
 ---
 name: vid-ideas
-description: Generate signal-backed video ideas for a creator blank on what to make next. Reads the iceberg, pillars, avatar, and Top 3 problems plus the pattern-bank, proposes ~5-6 ideas anchored to real proven outliers with 1-2 flagged swings, and re-rolls on a more / tighter / wilder dial. Keepers save to content/ideas-backlog.md; the pick hands a seed packet to vid-intake. Triggers on "give me video ideas", "what should I make", "I'm out of ideas", "I'm blank on content".
+description: Generate signal-backed video ideas for a creator blank on what to make next. Reads the iceberg, pillars, avatar, and Top 3 plus the pattern-bank, proposes ~5-6 ideas anchored to proven outliers with 1-2 flagged swings, and re-rolls on a more / tighter / wilder / sharper dial. Keepers save to content/ideas-backlog.md; the pick hands a full-receipt seed packet to vid-intake. Triggers on "give me video ideas", "what should I make", "I'm out of ideas", "I'm blank on content".
 ---
 
 > 🔄 **Pre-flight (mandatory).** Before doing anything else, read `${CLAUDE_PLUGIN_ROOT}/knowledge/update-check.md` and follow it. If a newer version exists, halt and tell the creator. If you're up to date, continue with the skill below.
@@ -9,15 +9,15 @@ description: Generate signal-backed video ideas for a creator blank on what to m
 
 Generates a small batch of video ideas for the blank-slate moment, grounded in the creator's positioning and in the evidence of what has actually worked. Reads the iceberg, pillars, avatar, and Top 3 problems plus the pattern-bank, proposes ~5-6 signal-anchored ideas, lets the creator turn a dial until the batch lands, then hands the picked idea to `vid-intake`.
 
-**Scope boundary:** this skill picks WHAT video to make (the topic), from a blank slate or the backlog. It does NOT pick the angle (`vid-framing`), capture raw material or create the piece folder (`vid-intake`), craft the final title (`vid-title`) or thumbnails (`vid-thumbnail`), or write any script. It surfaces each idea as a short line wearing the borrowed shape, with the real outlier receipt, as a seed for judging the idea; `vid-title` crafts the real title later from the captured material. This skill hands the chosen idea seed to `vid-intake` and stops.
+**Scope boundary:** this skill picks WHAT video to make (the topic), from a blank slate or the backlog. It does NOT pick the angle (`vid-framing`), capture raw material or create the piece folder (`vid-intake`), craft the final title (`vid-title`) or thumbnails (`vid-thumbnail`), or write any script. It surfaces each idea as a short line wearing the borrowed shape at full sharpness (the number, the kicker, the named system), with the real outlier receipt, as a seed for judging the idea. The seed may stay close to its source; the do-not-copy ceiling governs the final title `vid-title` crafts later from the captured material. This skill hands the chosen idea seed to `vid-intake` and stops.
 
 > **Resolving `knowledge/` and skill paths.** Any path written `knowledge/X.md` is a plugin reference file. Load it from `${CLAUDE_PLUGIN_ROOT}/knowledge/X.md` when running as an installed plugin. If `${CLAUDE_PLUGIN_ROOT}` is unset or that path does not exist (running from the source repo during development), load the repo-relative path instead. The same applies to skill references named `.claude/skills.../...`.
 
 ## What this produces
 
-- A surfaced batch of ~5-6 video ideas in chat. Each leads with the real outlier receipt it borrows (title + @channel + views + xMed), and is tagged to a pillar, its signal tier, and an iceberg-fit verdict, with an optional Top 3 problem tag where one genuinely fits (or flagged as an experimental swing).
+- A surfaced batch of ~5-6 video ideas in chat. Each leads with the real outlier receipt it borrows (title + @channel + views + xMed) and names the engine it carried (the load-bearing element quoted from that source), and is tagged to a pillar, its signal tier, and an iceberg-fit verdict, with an optional Top 3 problem tag where one genuinely fits (or flagged as an experimental swing).
 - `content/ideas-backlog.md`, created from `assets/ideas-backlog-template.md` on the first keep. Only ideas the creator flags to keep are saved (status `kept`). Dropped backlog ideas are marked `dropped` and never re-proposed.
-- A seed packet handed to `vid-intake` for the one idea the creator picks to make now: `{idea_title, pillar, top_3_problem, iceberg_fit, anchor}`. This skill writes no piece folder; `vid-intake` creates it.
+- A seed packet handed to `vid-intake` for the one idea the creator picks to make now: `{idea_title, pillar, top_3_problem, iceberg_fit, anchor}`, where anchor is the FULL receipt (source title + @channel + views + xMed). `vid-intake` persists the anchor into piece.md so `vid-title` inherits it. This skill writes no piece folder; `vid-intake` creates it.
 
 ## When to run this
 
@@ -49,7 +49,7 @@ Soft requirements:
 1. `foundation/creator-foundation.md`, but only: the **Iceberg Statement**, the **Content Pillars** list, the **Avatar** description, and the **Top 3 problems**. Skip credibility, backstory, offer.
 2. `banks/pattern-bank.md`: the **Synthesis** sections (convergent / niche-specific / adjacent / unique), **Confirmed winners**, and **Considered + dropped** for orientation (which shapes have spread, what is on-lane), AND the **per-channel raw outlier rows** (the actual winning titles + views + xMed). You generate from the raw titles, not the labels, so the rows are working material, not just citations. The Synthesis is the map; the raw titles are the evidence you decompose.
 3. `content/ideas-backlog.md` if it exists, for prior keepers (surface them) and dropped entries (never re-propose).
-4. `references/idea-generation-rules.md`, the signal-anchoring, anti-skew, and posture-dial logic. This is your thinking, not chat content.
+4. `references/idea-generation-rules.md`, the signal-anchoring, engine-as-form, sharpness, and posture-dial logic. This is your thinking, not chat content.
 Do NOT load voice-profile, reference-pieces, BENS, or the title / power-words / thumbnail banks. This skill proposes ideas, not titles, and loads no title source.
 
 **Then ask one short question:**
@@ -64,21 +64,22 @@ Generate ~5-6 ideas per `references/idea-generation-rules.md`. Default mix: 4 an
 
 **The spine (per `idea-generation-rules.md`):**
 1. **Work from a raw winning title**, not a Synthesis label. Open the per-channel rows.
-2. **Name why it won:** the one load-bearing element that drove the multiple (e.g. the kicker "(No Employees)", not the abstract "control").
-3. **Carry that engine onto the creator's topic**, bounded both ways: the engine must survive (fidelity floor) and the line must not be the source with its nouns swapped (transcribe ceiling). Rebuild the surface phrasing fresh; numbers stay placeholders.
-4. **Click test:** put it next to the others, would the avatar click THIS, and why. A dream outcome beats a defensive reassurance. On-brand is the floor, not the pull. Do not staple the positioning ("without the slop") onto a title where voice is not the premise.
+2. **Name why it won:** the one load-bearing element that drove the multiple, in its FORM: the number, the parenthetical kicker, the named system, the hot proper noun. Not the abstract theme.
+3. **Carry that engine onto the creator's topic at full sharpness.** The engine's form must survive: a dull synonym of the sharp form ("most people" for "95%") fails the floor. Borrowed numbers and hot words are allowed: keep the source's number or use a bracketed placeholder. The seed is provisional and may stay close to the source; the do-not-copy ceiling governs the final title `vid-title` crafts later, not this seed.
+4. **Click test:** put it next to the others, would the avatar click THIS, and why. Then the side-by-side sharpness test: put the bend next to its source line; if the source gets the click, sharpen or re-roll. A dream outcome beats a defensive reassurance. On-brand is the floor, not the pull. Do not staple the positioning ("without the slop") onto a title where voice is not the premise.
 5. **Fit is a floor, checked last:** inside the iceberg = pass, off-iceberg never surfaces. Range across 3-4 pillars. A Top 3 problem is an optional tag, never forced.
 
 Each idea surfaces with exactly this shape (keep it tight, no walls of text). Lead with the receipt:
 
 > **{the idea as one short line, carrying the engine of a real winning title, in the creator's voice}**
 > inspired by: "{real outlier title}" (@{channel}, {views}, {xMed}x median)
+> engine: "{the load-bearing element, quoted from the source title}"
 > Pillar: {pillar} | Iceberg: {one-phrase fit verdict} | Signal: {STRONG | MODERATE | swing} | Problem: {1 | 2 | 3, or omit if none fits}
 > Why it could land: {one line on why a human clicks this: the engine carried, plus the avatar's want}
 
-For an experimental swing with no proven anchor, replace the receipt with `swing: {the adjacent-niche or weaker outlier it gestures at}, unproven for this channel`.
+For an experimental swing with no proven anchor, replace the receipt and engine lines with `swing: {the adjacent-niche or weaker outlier it gestures at}, unproven for this channel`.
 
-**Anti-fabrication (hard rule):** every anchored idea cites a REAL per-channel row (actual title + @channel + views + xMed), and the cited engine must actually be the one carried into the line. Never invent an outlier, a view count, or a spread, and never cite a row you did not use. Swings are flagged unproven, never dressed up as proven.
+**Anti-fabrication (hard rule):** every anchored idea cites a REAL per-channel row (actual title + @channel + views + xMed), and the cited engine must actually be the one carried into the line, carried in its sharp form (a dull synonym keeps the theme and drops the engine, which is a fake citation wearing a real receipt). Never invent an outlier, a view count, or a spread, and never cite a row you did not use. The rule protects the creator's own claims, never the borrowed shape: the outlier's number and hot words are part of the receipt and are allowed in the line. Swings are flagged unproven, never dressed up as proven.
 
 **Fit gate:** use the iceberg layer of `knowledge/iceberg-and-top-3-alignment.md`. Only surface ideas inside the iceberg; never surface an off-iceberg idea. Top 3 fit is an optional tag, not a gate, and not a reason to stamp an idea `outlier`.
 
@@ -86,7 +87,7 @@ For an experimental swing with no proven anchor, replace the receipt with `swing
 
 Present the batch, then offer the dial in one line:
 
-> "Pick the one to make now. Flag any others you want to keep. Or turn the dial: 'more', 'tighter' (safer, higher signal), 'wilder' (more original swings), 'different pillar', or 'regenerate'."
+> "Pick the one to make now. Flag any others you want to keep. Or turn the dial: 'more', 'tighter' (safer, higher signal), 'wilder' (more original swings), 'sharper' (push each line to its sharpest legitimate form), 'different pillar', or 'regenerate'."
 
 Act on the creator's call:
 - **Pick** -> go to Phase 4 with that idea.
@@ -98,7 +99,7 @@ Do not over-talk between rolls. Surface the new batch, repeat the one-line dial 
 ### Phase 4: Save keepers and hand off
 
 1. **Save keepers.** For each idea the creator flagged to keep (but is not making now), append a row to `content/ideas-backlog.md` (create it from `assets/ideas-backlog-template.md` on the first keep) with status `kept`, today's date, pillar, problem, and anchor. Do NOT save the unflagged ideas. If the creator explicitly drops a backlog idea, set its status to `dropped` (sticky, never re-proposed).
-2. **Hand off the pick.** Pass the seed packet `{idea_title, pillar, top_3_problem, iceberg_fit, anchor}` to `vid-intake`. Tell the creator: "Handing this to `vid-intake` to capture what you'd actually say. It'll drill you for the material and build the brain dump." `vid-intake` runs its idea+dump flow seeded from this packet and creates the piece folder. This skill creates no piece folder.
+2. **Hand off the pick.** Pass the seed packet `{idea_title, pillar, top_3_problem, iceberg_fit, anchor}` to `vid-intake`, with anchor carrying the full receipt (source title + @channel + views + xMed) exactly as it appears in the pattern-bank row. Tell the creator: "Handing this to `vid-intake` to capture what you'd actually say. It'll drill you for the material and build the brain dump." `vid-intake` runs its idea+dump flow seeded from this packet and creates the piece folder, persisting the anchor into piece.md. This skill creates no piece folder.
 3. If the picked idea came FROM the backlog, set that backlog row's status to `picked`.
 
 ## Conversational discipline
@@ -107,14 +108,14 @@ Do not over-talk between rolls. Surface the new batch, repeat the one-line dial 
 - **Signal over volume.** Five or six sharp ideas beat ten mushy ones. The creator's worry is crappy ideas, so every anchored idea earns its place by citing a real signal.
 - **Specificity wins.** Each idea is a concrete topic in the creator's voice, not a category ("a video about pricing" is not an idea, "the pricing mistake that makes clients ghost you after the proposal" is).
 - **The dial is the creator's, not yours.** Re-roll on request without arguing. If they want wilder, go wilder. If the swings flop, they will tell you.
-- **Carry the engine, never the words.** Work from the raw winning title. Name the one load-bearing element that drove its multiple, then carry THAT onto the creator's topic. The engine must survive (fidelity floor) but the line must not be the source with its nouns swapped (transcribe ceiling). A summary label is not the engine; the title is.
-- **Run the click test.** Before surfacing, ask which of these a human actually clicks, and why. A dream outcome beats a defensive reassurance. Never bend a title toward the creator's positioning to feel on-brand; on-brand is the floor, not the pull.
+- **Carry the engine at full sharpness.** Work from the raw winning title. Name the one load-bearing element that drove its multiple (its number, its kicker, its named system, its hot proper noun), then carry THAT onto the creator's topic in its sharp form. A dull synonym of the sharp form fails the floor. The seed may stay close to the source; the do-not-copy ceiling belongs to the final title `vid-title` crafts later. A summary label is not the engine; the title is.
+- **Run the click test.** Before surfacing, ask which of these a human actually clicks, and why. Then the side-by-side sharpness test: put the bend next to its source line, and if the source gets the click, the bend failed, sharpen or re-roll. A dream outcome beats a defensive reassurance. Never bend a title toward the creator's positioning to feel on-brand; on-brand is the floor, not the pull.
 
 ## Hard friction (stop and flag)
 
 - Foundation or pattern-bank missing: hard stop per Prerequisites.
 - An idea you cannot anchor to a real signal AND that is not flagged as an experimental swing: do not surface it. Anchor it, flag it as a swing, or drop it.
-- An anchored idea whose receipt's engine you did not actually carry into the line: that is a fake citation. Re-roll it so the borrowed engine is visible, or drop the receipt and flag it a swing.
+- An anchored idea whose receipt's engine you did not actually carry into the line in its sharp form (a dull synonym is a dropped engine): that is a fake citation. Sharpen it until the borrowed engine is visible at full strength, or drop the receipt and flag it a swing.
 - An off-iceberg (NO/NO) idea: do not surface it. If the creator insists the iceberg has shifted, point them at `/foundation` to refresh positioning first.
 
 ## Soft friction (surface and let the creator decide)
@@ -127,7 +128,7 @@ Do not over-talk between rolls. Surface the new batch, repeat the one-line dial 
 
 | File | When to read it |
 |------|-----------------|
-| `references/idea-generation-rules.md` | Phase 2 + Phase 3. Signal-anchoring rules, the anti-skew guards, and what each dial posture changes. |
+| `references/idea-generation-rules.md` | Phase 2 + Phase 3. Signal-anchoring rules, the engine-as-form and sharpness doctrine, the anti-skew guards, and what each dial posture changes. |
 | `assets/ideas-backlog-template.md` | Phase 4. The `content/ideas-backlog.md` file shape, created on first keep. |
 | `knowledge/iceberg-and-top-3-alignment.md` | Phase 2. The iceberg 2-layer fit check + 4 outcomes. Reuse, do not duplicate. |
 | `knowledge/theory-of-one-curation.md` | Phase 2. The audience-fit lens when an anchor works everywhere but may not fit this creator. |
@@ -143,8 +144,8 @@ Do not over-talk between rolls. Surface the new batch, repeat the one-line dial 
 
 - The `/foundation` chain produces `creator-foundation.md` (iceberg, pillars, avatar, Top 3) this skill reads
 - `vid-research` produces `banks/pattern-bank.md`, the signal source this skill anchors ideas to
-- `vid-intake` receives the picked idea seed and captures the brain dump (this skill's downstream handoff)
+- `vid-intake` receives the picked idea seed and captures the brain dump (this skill's downstream handoff); it persists the seed's anchor receipt into piece.md
 - `vid-framing` runs after intake and picks the angle (this skill picks the topic, not the angle)
-- `vid-title` owns ALL title craft. The idea line this skill surfaces is a provisional seed (a borrowed proven shape), never a crafted title; `vid-title` writes the real title later from the captured material. vid-ideas loads no title source.
+- `vid-title` owns ALL title craft. The idea line this skill surfaces is a provisional seed (a borrowed proven shape, at full sharpness), never a crafted title; `vid-title` writes the real title later from the captured material. The do-not-copy ceiling applies to `vid-title`'s final title, not to this seed, which may stay close to its source. Where piece.md carries the seed's `anchor:` receipt, `vid-title` treats the seed as the leading candidate to beat. vid-ideas loads no title source.
 - `vid-pipeline` invokes this skill from its Step 2 blank-on-ideas branch; the picked seed packet enters the chain at `vid-intake`
 - `vid-measurement` (future) will feed published performance back into the pattern-bank's Confirmed winners, sharpening this skill's signals over time

@@ -64,5 +64,17 @@ Billy real-conditions stage (hand-authored framed pieces, for the vid-title eval
 | Boundary | Produced by | Date | Status |
 |---|---|---|---|
 | billy/stages/after-framing/client-340k-to-1-3m/ | hand-authored | 2026-06-18 | Case Study. Rich real-proof lock list ($340K, $1.3M, 1yr, 2,500 subs). |
-| billy/stages/after-framing/claude-content-skills/ | hand-authored | 2026-06-18 | Listicle. Count (7) + named tools. Solo-leverage angle. |
+| billy/stages/after-framing/claude-content-skills/ | hand-authored | 2026-06-18 | Listicle. Count (7) + named tools. Solo-staffing angle. |
 | billy/stages/after-framing/claude-cowork-newsjack/ | hand-authored | 2026-06-18 | News. ADVERSARIAL: no numbers available, a correct title invents none. |
+
+## Suite-local fixtures (live inside tests/skills/<suite>/fixtures/)
+
+Some suites keep fixtures next to their eval because nothing else should read
+them. They follow the same rule as everything here: synthetic, frozen, and
+stale only when the consuming skill's output contract changes.
+
+| Suite | Path | Produced by | Date | Notes |
+|---|---|---|---|---|
+| vid-title | tests/skills/vid-title/fixtures/{slug}/piece.md | hand-authored | 2026-06-18 | Upstream framed pieces in the current vid-framing schema. |
+| vid-ideas | tests/skills/vid-ideas/fixtures/pattern-bank.md | hand-authored | 2026-07-22 | Synthetic Sam-niche bank with per-channel raw outlier rows (the shared bank has none) plus the off-lane @agenticalex trap circle. Receipt ground truth. |
+| vid-ideas | tests/skills/vid-ideas/fixtures/prior-backlog.md | hand-authored | 2026-07-22 | Prior backlog: 1 kept row (pick-from-backlog source) + 1 dropped row (never-re-propose trap). |

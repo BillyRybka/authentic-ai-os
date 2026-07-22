@@ -110,10 +110,11 @@ pillar: {pillar-slug or null}
 status: ideating
 created: YYYY-MM-DD       # today, stamped once, never changed
 last_updated: YYYY-MM-DD  # today; every skill that writes piece.md bumps this
+anchor: "{Only when vid-ideas handed a picked seed: the full outlier receipt, source title + @channel + views + xMed. Omit otherwise.}"
 ---
 ```
 
-Set both dates to today. `created` is permanent; `last_updated` moves forward on every later write. The pillar comes from the Phase 4 fit check; if it stayed open, leave it null (not a blocker). Full downstream schema in `knowledge/vault-integration.md`.
+Set both dates to today. `created` is permanent; `last_updated` moves forward on every later write. The pillar comes from the Phase 4 fit check; if it stayed open, leave it null (not a blocker). When the piece opened from a `vid-ideas` seed packet, persist its anchor receipt into the `anchor:` field unchanged, so `vid-title` inherits the provenance as the leading candidate to beat. Full downstream schema in `knowledge/vault-integration.md`.
 
 ## Rules (and why)
 
