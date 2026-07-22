@@ -99,3 +99,5 @@ On approval, always, both modes:
 - Surface in chat: what saved, and any proof callouts with no bank link so the creator can capture the proof before filming or rephrase.
 
 The next segment starts only when the creator says go.
+
+Last-segment handoff: when `segments_completed` now matches `segment_purposes`, the body is done and `vid-ending` is next (the pipeline re-routes there on its own; standalone, tell the creator to run `vid-ending` when ready).

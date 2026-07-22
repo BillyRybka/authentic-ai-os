@@ -13,8 +13,8 @@ This is the final skill in the `aud-*` pipeline. It only uses avatars whose `sta
 
 > **Resolving `knowledge/` paths.** Any path written `knowledge/X.md` is a plugin reference file. Load it from `${CLAUDE_PLUGIN_ROOT}/knowledge/X.md` when running as an installed plugin. If `${CLAUDE_PLUGIN_ROOT}` is unset or that path does not exist (running from the source repo during development), load `knowledge/X.md` relative to the repo root instead.
 
-1. `knowledge/synthetic-audience-method.md`. Scoring dimensions, trigger rules, rotating disclaimers, banned vocabulary, calibration check trigger. Non-negotiable.
-2. `knowledge/vault-integration.md`. Avatar-review and panel-synthesis frontmatter schemas.
+1. `.claude/skills-wip/synthetic-audience-method.md`. Scoring dimensions, trigger rules, rotating disclaimers, banned vocabulary, calibration check trigger. Non-negotiable.
+2. `.claude/skills-wip/vault-integration-aud-schemas.md`. Avatar-review and panel-synthesis frontmatter schemas.
 
 ## Contract
 
@@ -232,7 +232,7 @@ For each dimension:
 For each dissent flag, read the avatar's reason for that dimension verbatim from the avatar-review file. The dissent quote in the synthesis MUST come from the file on disk, not from working memory.
 
 ### Step 4: Compute verdict
-Per `knowledge/synthetic-audience-method.md`:
+Per `.claude/skills-wip/synthetic-audience-method.md`:
 - Median < 7 on any dimension → REWRITE
 - Any avatar's min on any dimension < 4 → REWRITE
 - Median >= 7 across all + no min < 4 → SHIP
@@ -259,7 +259,7 @@ Bad fixes (do NOT write):
 - "Rewrite the script with more clarity"
 
 ### Step 6: Pick the disclaimer variant
-Pick ONE of the three variants from `knowledge/synthetic-audience-method.md` randomly per run. If this run hits the every-10th-run trigger OR the 60-day-stale-data flag was set in pre-check, append the calibration check at the bottom regardless.
+Pick ONE of the three variants from `.claude/skills-wip/synthetic-audience-method.md` randomly per run. If this run hits the every-10th-run trigger OR the 60-day-stale-data flag was set in pre-check, append the calibration check at the bottom regardless.
 
 ### Step 7: Write `synthesis.md`
 Top-to-bottom, designed for first-screen reading.
@@ -354,7 +354,7 @@ Do NOT auto-trigger a rewrite. The creator decides what to do.
 
 **The creator wants to re-run on the same iteration.** Push back: "Iteration {N} already has a synthesis. Running again creates iteration {N+1}. That's the audit trail. Proceed?"
 
-**Banned vocabulary appears in synthesis output.** Strip. Per `knowledge/synthetic-audience-method.md`, never use "test-retest reliability," "p-value," "confidence interval," "statistical significance," "Bayesian," or "cosine similarity" in synthesis output.
+**Banned vocabulary appears in synthesis output.** Strip. Per `.claude/skills-wip/synthetic-audience-method.md`, never use "test-retest reliability," "p-value," "confidence interval," "statistical significance," "Bayesian," or "cosine similarity" in synthesis output.
 
 ## Anti-patterns
 

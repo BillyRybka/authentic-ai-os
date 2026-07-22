@@ -25,7 +25,7 @@ Lists go in bullets, not comma-separated runs inside a sentence.
 
 ### Bad
 
-> "Your business is structured around a hybrid model combining consulting engagements with productized services, which creates revenue volatility because consulting hours fluctuate while productized commitments compound, and that's compounded by your team being optimized for delivery rather than acquisition, so even when leads come in there's no dedicated handler, meaning the funnel leaks at the top."
+> "Your business is structured around a hybrid model combining consulting engagements with productized services, which creates revenue volatility because consulting hours fluctuate while productized commitments compound, and that's compounded by your team being built for delivery rather than acquisition, so even when leads come in there's no dedicated handler, meaning the funnel leaks at the top."
 
 ### Good
 
@@ -90,7 +90,7 @@ Then route:
 
 ### Step 2A: Empty CWD, flat scaffold
 
-Read `manifest.md`. For each row in the current-release table, act on its class: **structure** rows create the named folder at CWD; **seed** rows copy the named template from `${CLAUDE_PLUGIN_ROOT}/knowledge/` into the workspace at the row's path, but only if that file does not already exist.
+Read `manifest.md`. For each row in the current-release table, act on its class: **structure** rows create the named folder at CWD; **seed** rows copy the named template from `${CLAUDE_PLUGIN_ROOT}/knowledge/` into the workspace at the row's path, but only if that file does not already exist. A seeded file lands as a creator-owned starter bank: the writing skills read it as a supplement to the plugin's pattern libraries (which stay the craft reference), and the creator grows it with their own proven winners.
 
 Then write:
 - `assets/CLAUDE.md` → `./CLAUDE.md`
@@ -210,7 +210,7 @@ Go to **Step 4**.
 
 ### Step 3: Additive update
 
-The workspace already exists. Read `manifest.md`. For every **structure** row the manifest now lists that does not yet exist in `TARGET`, create the folder. For every **seed** row, copy its template from `${CLAUDE_PLUGIN_ROOT}/knowledge/` into `TARGET` at the named path, but only if that file does not already exist (never overwrite an edited bank). If `CLAUDE.md` or `.env.example` is missing at the workspace root, write it from `assets/`.
+The workspace already exists. Read `manifest.md`. For every **structure** row the manifest now lists that does not yet exist in `TARGET`, create the folder. For every **seed** row, copy its template from `${CLAUDE_PLUGIN_ROOT}/knowledge/` into `TARGET` at the named path, but only if that file does not already exist (never overwrite an edited bank; seeded banks are creator-owned starter banks, per Step 2A). If `CLAUDE.md` or `.env.example` is missing at the workspace root, write it from `assets/`.
 
 Never read, modify, overwrite, or delete anything the creator authored (`foundation/*`, bank entries, `people/*`, their `.env`, their CLAUDE.md if they edited it).
 

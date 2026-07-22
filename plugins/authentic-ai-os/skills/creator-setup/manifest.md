@@ -33,7 +33,7 @@ The `people/` row is conditional. If the creator chose a path override during se
 
 - **structure**: an empty directory a released skill writes into. Create if missing, never touch otherwise.
 - **env-template**: the `.env.example` scaffold. Create if missing. Never create or read the real `.env`.
-- **seed**: a starter bank file copied from a plugin template (the `template` column names a file under `${CLAUDE_PLUGIN_ROOT}/knowledge/`) into the workspace. Copy only if the target file does not already exist. Never overwrite a creator's edited bank. Once copied, the creator owns and grows it.
+- **seed**: a starter bank file copied from a plugin template (the `template` column names a file under `${CLAUDE_PLUGIN_ROOT}/knowledge/`) into the workspace. Copy only if the target file does not already exist. Never overwrite a creator's edited bank. Once copied, the creator owns and grows it. The writing skills read the seeded bank as a supplement to the plugin's pattern libraries, which stay the craft reference; a missing bank is fine.
 
 ## Deliberately NOT scaffolded
 
@@ -42,7 +42,7 @@ The `people/` row is conditional. If the creator chose a path override during se
 
 ## Pending (ships with the script-writing skills)
 
-These rows are staged, not live. `creator-setup` acts ONLY on the "Container needs (current release)" table above. When `vid-intro`, `vid-segment`, and `vid-ending` graduate from `skills-wip`, move their rows up into that table and the seeds scaffold on the next setup or additive update.
+These rows are staged, not live. `creator-setup` acts ONLY on the "Container needs (current release)" table above. When `vid-intro`, `vid-segment`, and `vid-ending` ship, move their rows up into that table and the seeds scaffold on the next setup or additive update. Each seeded file lands as a creator-owned starter bank; the writing skills read it as a supplement to the plugin's pattern libraries (`hook-patterns.md`, `transition-patterns.md`), never a replacement.
 
 | skill | needs in container | class | template | since |
 |---|---|---|---|---|

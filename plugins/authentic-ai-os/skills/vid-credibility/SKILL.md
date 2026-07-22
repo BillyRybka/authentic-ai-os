@@ -19,7 +19,7 @@ These are the sentences the creator says in nearly every intro to signal "I know
 
 **Outputs:** Credibility brags section written to `foundation/creator-foundation.md`. Three numbered brag sentences.
 
-**Downstream consumers:** `vid-intro` (rotates brags through hook sections), `vid-script`, every per-video skill that touches the intro.
+**Downstream consumers:** `vid-intro` (rotates brags through hook sections), `vid-segment`, `vid-ending`, `vid-structure` (plans where the brags land), every per-video skill that touches the intro.
 
 ## Load at session start
 

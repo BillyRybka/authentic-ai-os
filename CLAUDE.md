@@ -33,7 +33,6 @@ This is what `creator-setup` actually scaffolds in the current release. More fol
 │       └── assets/              # Screenshots/charts referenced by proof entries
 ├── people/                      # One file per human (clients, guests, sources)
 ├── CLAUDE.md                    # Rules for Claude when working in this workspace
-├── _guide.md                    # Human-readable orientation
 ├── .env.example                 # Placeholder for the YT_API_KEY that vid-research needs
 └── knowledge/                   # Plugin reference material (loaded by skills via ${CLAUDE_PLUGIN_ROOT})
 ```

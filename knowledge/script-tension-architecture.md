@@ -106,63 +106,19 @@ vid-segment owns the outbound transition. vid-structure owns the verification th
 
 ## Format-specific tension arcs
 
-Different formats run the cross-segment graph differently. Reference the format planner for the segment-shape; this section explains the tension flow.
+The segment shapes themselves live in `knowledge/format-planners/{format}.md`, the single per-format authority. This section keeps only the tension layer on top: where the title promise lands and how many threads stay active per format.
 
-### Case Study
+| Format | Title-promise location | Active threads |
+|---|---|---|
+| Case Study | The outcome moment, after the obstacles. The lesson and steps are application, not the payoff. | 1: the protagonist's transformation, opened in the intro, closed at the outcome |
+| Listicle | The final item, or the item that delivers the title's core promise. The list builds toward it; never pay it off at the open. | 1 positional ("which one is the best?"), plus optional sub-threads across items |
+| Short Process | Between the last step and the close: "you now have the complete system." | 1: the viewer's growing capability |
+| Deep Dive | The synthesis lesson, usually the last big idea, where everything connects. | Concept threads that deepen across lessons; each lesson opens a question, pays it off, and raises the next one higher |
+| News | The "why it matters" moment. News compresses everything; the named answer cannot wait as long as elsewhere. | 1 max |
+| Roast | The promised lesson at the end of the review pattern, or the most egregious subject's reveal for entertainment titles. | 1: the pattern emerging across subjects |
+| Interview | The question whose answer delivers the title's promise, usually 2/3 through the conversation. | 1: the through-line the host weaves |
 
-Single rising arc through the story. Problem (setup) raises tension. Action segments add tension as obstacles appear. The Outcome moment is the script's peak. Lesson + steps run as falling-action payoff. The thread is the protagonist's transformation, opened in the intro and closed at the outcome.
-
-**Title-promise location:** the outcome moment, after obstacles. The lesson + steps are NOT the payoff; they're the application.
-
-**Active threads:** 1 (the protagonist's transformation).
-
-### Listicle
-
-Multiple small arcs (one per item) running inside one big arc rising toward the "biggest" or "most surprising" item. Each item has its own parable + principle. The cross-segment thread is positional. The viewer expects item N+1 to be more interesting than item N.
-
-**Title-promise location:** the final item (if the list ends on the biggest) OR the item that delivers the title's core promise. Either way, viewers expect the named lesson to land near the end of the list, not at the open.
-
-**Active threads:** the implicit thread of "what's the best/worst/most important one?" Items can also carry sub-threads (a story introduced in item 2, referenced in item 5).
-
-### Short Process
-
-Rising mastery. Each step is a small payoff that compounds. The thread is the viewer's growing capability. By step 5, they can do something they couldn't at step 1.
-
-**Title-promise location:** between the last step and the close. The full method equals the full step list, so the BIG payoff is "you now have the complete system." Lands at step-end.
-
-**Active threads:** the viewer's own progression. Less character-driven, more competence-driven.
-
-### Deep Dive
-
-Extended payoff cycles per major lesson. The cross-segment arc is concept-deepening, not story-driven. Each lesson opens a new question, pays it off, then the next question raises higher.
-
-**Title-promise location:** the synthesis lesson, usually the last big idea, where everything connects.
-
-**Active threads:** concept threads that weave through the lessons. The deepest dives layer threads so a concept introduced in lesson 1 deepens in lesson 3 and resolves in lesson 5.
-
-### News
-
-Tight, short arc. What happened (setup) → why it matters (tension peak) → what to do (payoff). The whole arc runs in 5-8 minutes; cross-segment tension is condensed.
-
-**Title-promise location:** the "why it matters" moment. The payoff lands soon after. News compresses everything; the named answer can't wait as long as in other formats.
-
-**Active threads:** 1 max. News doesn't have time for multiple loops.
-
-### Roast
-
-Per-subject arcs accumulating. Each subject reviewed = one small arc with its own setup, problem-identification, fix. The cross-segment thread is the pattern recognition: by subject 3, the viewer sees the mistake type even before the reviewer names it.
-
-**Title-promise location:** depends. If the title promises a specific lesson, that lesson lands at the end of the review pattern. If the title promises entertainment value, the peak is the most egregious subject's reveal.
-
-**Active threads:** 1, the pattern emerging across subjects.
-
-### Interview
-
-Per-question arcs, host pulls thread. Each question + answer is one arc. The cross-segment thread is the through-line the host weaves, a theme that the guest's answers all connect back to.
-
-**Title-promise location:** the question whose answer delivers the title's promise, usually 2/3 through the conversation.
-
-**Active threads:** 1 (the through-line). Guests sometimes introduce their own thread (a story they keep returning to); good hosts let it play.
+Guests sometimes introduce their own thread (a story they keep returning to). Let it play.
 
 ## Anti-patterns (the failure modes)
 

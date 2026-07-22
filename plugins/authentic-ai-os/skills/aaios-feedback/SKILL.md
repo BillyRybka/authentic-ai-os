@@ -1,6 +1,6 @@
 ---
 name: aaios-feedback
-description: The Authentic AI OS feedback channel. Captures a creator's feedback on an Authentic AI OS skill that just ran (or the whole session) and sends it straight to Billy, the plugin's author, not to Claude. Reconstructs which skill ran and where it went sideways, builds a small reproduction bundle so Billy can recreate the problem, asks one or two light questions, previews for consent, then submits. Use whenever a creator wants to report on the Authentic AI OS plugin or one of its skills. Triggers on "give feedback", "leave feedback", "send feedback", "AAIOS feedback", "that didn't work", "report a bug", "this is broken", "something went wrong", or "that's not what I wanted". Also invoked by the offer protocol in knowledge/feedback-offer.md when a skill fails, a creator is frustrated, or a journey completes.
+description: Captures a creator's feedback on an Authentic AI OS skill that just ran (or the whole session) and sends it to Billy, the plugin's author, with a reproduction bundle, after preview and consent. Use whenever a creator wants to report on the plugin or one of its skills. Triggers on "give feedback", "leave feedback", "send feedback", "AAIOS feedback", "that didn't work", "report a bug", "this is broken", "something went wrong", or "that's not what I wanted".
 ---
 
 > This skill does NOT run the update pre-flight. It usually runs mid-session after another skill already checked, and interrupting a feedback report with an update notice defeats the point. Skip `update-check.md` here.

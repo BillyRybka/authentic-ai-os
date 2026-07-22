@@ -2,7 +2,7 @@
 
 vid-research needs a YouTube Data API key to pull channel data. Setup takes 5 minutes via Google Cloud Console. Free tier (10,000 units/day) is plenty for one creator's research sessions.
 
-This guide walks the creator through the one-time setup. After this, the key gets saved to `foundation/youtube-api-config.md` and reused on every vid-research run.
+This guide walks the creator through the one-time setup. After this, the key goes in a `.env` file at the vault root and gets reused on every vid-research run.
 
 ## Step 1: Create or open a Google Cloud project
 
@@ -43,32 +43,19 @@ This prevents accidental misuse if the key leaks.
 
 ## Step 5: Save the key to your workspace
 
-vid-research stores the key reference in `foundation/youtube-api-config.md`. You can either:
+vid-research reads the key from a `.env` file at the vault root. You can either:
 
 **Option A: Skill walks you through it.**
-The next time you run vid-research, it'll detect the missing config and prompt you to paste the key. The skill saves it to the workspace automatically.
+The next time you run vid-research, it'll detect the missing key and walk you through adding it to `.env`.
 
 **Option B: Save it manually.**
-Create `foundation/youtube-api-config.md`:
+Copy `.env.example` to `.env` at the vault root (creator-setup scaffolds `.env.example` for you) and paste your key after `YT_API_KEY=`:
 
-```markdown
----
-type: api-config
-service: youtube-data-v3
-status: active
-created: YYYY-MM-DD
----
-
-# YouTube Data API Configuration
-
-API key: {paste your key here}
-
-Quota: 10,000 units per day (free tier).
-Restrictions: YouTube Data API v3 only.
-Project: {your Google Cloud project name}
+```
+YT_API_KEY={paste your key here}
 ```
 
-Either way, the key gets stored locally on your machine, not in any productized files. `foundation/` is workspace-only, never shipped or shared.
+Either way, the key stays in `.env`, which is gitignored. It never gets written into any skill file, committed, or saved to the foundation docs.
 
 ## Step 6: Verify the key works
 
@@ -116,7 +103,7 @@ A typical full research session (1 own + 5 niche + 5 adjacent = 11 channels):
 If you're running vid-research from a workspace tied to one Google account but generated the key in a different Google Cloud project, the key still works, keys aren't account-locked, they're project-locked. You can use one key across multiple workspaces.
 
 **Gotcha 2: Project deleted.**
-If the Google Cloud project is deleted, the API key dies with it. Re-run this guide to generate a new key in a new project. Update `foundation/youtube-api-config.md`.
+If the Google Cloud project is deleted, the API key dies with it. Re-run this guide to generate a new key in a new project. Update the `YT_API_KEY=` line in `.env`.
 
 **Gotcha 3: Billing not required.**
 You do NOT need to enable billing on the Google Cloud project. The free tier (10k units/day) is enough for vid-research. Don't add a credit card unless you're sure you need to (and you don't).

@@ -36,7 +36,7 @@ Sections fill in as the creator runs each skill. Sections not yet built show as 
 
 ## Avatar
 
-*Who this is for. A description, not a structured field list. A few sentences. Enough that `vid-title`, `vid-thumbnail`, and `vid-script` can write to a recognizable person.*
+*Who this is for. A description, not a structured field list. A few sentences. Enough that `vid-title`, `vid-thumbnail`, and the writing skills (`vid-intro`, `vid-segment`, `vid-ending`) can write to a recognizable person.*
 
 > [avatar description]
 

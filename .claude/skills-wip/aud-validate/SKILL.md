@@ -13,9 +13,9 @@ This runs after `aud-avatar-build`. It is the ONLY skill allowed to read from `a
 
 > **Resolving `knowledge/` paths.** Any path written `knowledge/X.md` is a plugin reference file. Load it from `${CLAUDE_PLUGIN_ROOT}/knowledge/X.md` when running as an installed plugin. If `${CLAUDE_PLUGIN_ROOT}` is unset or that path does not exist (running from the source repo during development), load `knowledge/X.md` relative to the repo root instead.
 
-1. `knowledge/synthetic-audience-method.md`. Validation thresholds, novel-word definition, banned Billy-facing vocabulary. Non-negotiable.
-2. `knowledge/common-english.txt`. Used by test 3. ~1,000 most-common English words; grows over time as needed.
-3. `knowledge/vault-integration.md`. Avatar and avatar-validation frontmatter schemas.
+1. `.claude/skills-wip/synthetic-audience-method.md`. Validation thresholds, novel-word definition, banned Billy-facing vocabulary. Non-negotiable.
+2. `references/common-english.txt`. Used by test 3. ~1,000 most-common English words; grows over time as needed.
+3. `.claude/skills-wip/vault-integration-aud-schemas.md`. Avatar and avatar-validation frontmatter schemas.
 
 ## Contract
 
@@ -69,7 +69,7 @@ Run the tests in order. Stop and skip remaining tests if a test result conclusiv
 - Ask: "Would you say this? Yes or no."
 - Score: own held-out quotes should get "yes". Other avatar's quotes should get "no".
 
-**Pass threshold:** >= 7/10 correct (defined in `knowledge/synthetic-audience-method.md`).
+**Pass threshold:** >= 7/10 correct (defined in `.claude/skills-wip/synthetic-audience-method.md`).
 
 Save score to validation report.
 
@@ -93,7 +93,7 @@ This test is the most judgment-heavy. Err strict. If unsure, count as no match.
 
 **Setup:**
 - From the avatar's source quotes (cited in the profile, NOT from held-out), build a vocabulary set: every word used in those quotes, lowercased, with stems collapsed (first 4 letters or root form).
-- Load `knowledge/common-english.txt` as the common-words allowlist.
+- Load `references/common-english.txt` as the common-words allowlist.
 
 **Test:**
 - Load this avatar's profile.
@@ -102,7 +102,7 @@ This test is the most judgment-heavy. Err strict. If unsure, count as no match.
 - For each word in the response: a word is **novel** if BOTH (a) it does NOT stem-match anything in the source vocabulary set AND (b) it does NOT appear in `common-english.txt`.
 - Calculate: `novel_percent = (novel_words / total_words_in_response) * 100`
 
-**Pass threshold:** novel_percent <= 15 (defined in `knowledge/synthetic-audience-method.md`).
+**Pass threshold:** novel_percent <= 15 (defined in `.claude/skills-wip/synthetic-audience-method.md`).
 
 This catches avatars that invent vocabulary they have no source basis for.
 

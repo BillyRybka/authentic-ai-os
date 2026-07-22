@@ -13,11 +13,11 @@ Phase 2 reviewer 3. Fresh-context spawn. Single job: catch the prose patterns th
 
 The signature of unedited LLM output. Common shapes:
 
-- **Banned transition phrases.** "Let me dive in." "Let's talk about." "Now let me show you." "At the end of the day." "It is worth noting." "Here is the thing." (Tier 1 of transition-patterns, plus the brand-level bans.)
+- **Banned transition phrases.** "Let me dive in." "Let's talk about." "Now let me show you." "At the end of the day." "It is worth noting." "Here is the thing." (Tier 1 of transition-patterns, plus the house banned-word list.)
 - **Vague value language.** "Move the needle." "Unlock." "Elevate." "Transform." "Game changer." "Insane." "Revolutionary." (See feedback memory `feedback_no_vague_ai_language`.)
 - **Announcing transitions.** "Now I want to share something important." "Here is where it gets interesting." "Let me explain why this matters."
 - **Three-item-list crutch.** Every paragraph closes with a rule-of-three list. Reads as AI-default.
-- **Em-dashes.** Brand-level rule: zero em-dashes in any productized output. Em-dash is the AI tell that defines the brand against.
+- **Em-dashes.** House rule: zero em-dashes in any productized output. The em-dash is the AI tell the house rules define against.
 - **Hedge stacks.** "Maybe you might want to perhaps consider..." Hedges undermine stakes.
 - **Generic CTAs.** "Smash the like button." "Don't forget to subscribe." Anti-patterns per voice-profile.
 - **Filler openers.** "So..." or "Alright..." or "Let's see..." stacked at the front of multiple sentences in a row.
@@ -36,7 +36,7 @@ The signature of unedited LLM output. Common shapes:
 
 - Em-dashes anywhere
 - Tier 1 banned phrase from transition-patterns Section 4 (let me dive in, let me tell you, let's talk about, and finally / lastly)
-- Banned word from brand.md without applying the required swap
+- Word from the voice-profile `refusals` used raw (a words-avoided term, or a required swap left unapplied)
 - Vague value words ("leverage," "unlock," "elevate," "transform," "move the needle," "game changer") in copy that should be specific
 
 **Soft issue (worth flagging):**
@@ -49,7 +49,7 @@ The signature of unedited LLM output. Common shapes:
 
 ## Returning the top 3
 
-Rank by severity. Em-dashes first (zero tolerance brand rule). Then Tier 1 banned phrases. Then vague value words. Soft issues only surface if there are fewer than 3 hard issues.
+Rank by severity. Em-dashes first (zero-tolerance house rule). Then Tier 1 banned phrases. Then vague value words. Soft issues only surface if there are fewer than 3 hard issues.
 
 Each issue:
 
@@ -76,12 +76,12 @@ Suggested fix: "Here is the first thing." OR mirror the creator's transition sty
 
 ### Example 2: em-dash (HARD)
 
-Script line contains an em-dash between "simple" and "just stop" (the character is intentionally not pasted in this example file per brand rule).
+Script line contains an em-dash between "simple" and "just stop" (the character is intentionally not pasted in this example file per house rule).
 
 ```
 Location: Segment 1 line 4
 Quote: [script line with em-dash between "simple" and "just stop"]
-Issue: Em-dash. Brand-level zero tolerance.
+Issue: Em-dash. House rule, zero tolerance.
 Suggested fix: "The fix is simple. Just stop doing it." (period) OR "The fix is simple, just stop doing it." (comma).
 ```
 

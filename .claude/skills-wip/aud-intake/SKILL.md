@@ -13,8 +13,8 @@ This is the first skill in the `aud-*` pipeline. Without it, `aud-avatar-build` 
 
 > **Resolving `knowledge/` paths.** Any path written `knowledge/X.md` is a plugin reference file. Load it from `${CLAUDE_PLUGIN_ROOT}/knowledge/X.md` when running as an installed plugin. If `${CLAUDE_PLUGIN_ROOT}` is unset or that path does not exist (running from the source repo during development), load `knowledge/X.md` relative to the repo root instead.
 
-1. `knowledge/synthetic-audience-method.md`. The contamination checklist, the 5 moment types, the validation thresholds, the banned vocabulary list. Non-negotiable.
-2. `knowledge/vault-integration.md`. Frontmatter schemas for audience-data, vocabulary-sample, and the People stub rule.
+1. `.claude/skills-wip/synthetic-audience-method.md`. The contamination checklist, the 5 moment types, the validation thresholds, the banned vocabulary list. Non-negotiable.
+2. `.claude/skills-wip/vault-integration-aud-schemas.md`. Frontmatter schemas for audience-data and vocabulary-sample. `knowledge/vault-integration.md` for the People stub rule.
 
 ## Contract
 
@@ -92,12 +92,12 @@ Skip everything else. Small talk, scheduling, host's leading questions are dropp
 **Cap on extracts per call:** ~15 quote units. If a call yields more, keep the strongest 15 (most specific, most emotional, most distinctive language). Quality over quantity.
 
 ### Step 4: Run contamination scan on the extracted units
-For each extracted quote, apply the checklist in `knowledge/synthetic-audience-method.md` (em-dashes used as punctuation, LLM filler words, hedging phrases, suspiciously uniform sentence length, etc.). A quote needs 2+ tells to flag.
+For each extracted quote, apply the checklist in `.claude/skills-wip/synthetic-audience-method.md` (em-dashes used as punctuation, LLM filler words, hedging phrases, suspiciously uniform sentence length, etc.). A quote needs 2+ tells to flag.
 
 Calls are usually clean (spoken language is messy), so flagging is rare. If a "transcript" comes back perfectly polished and free of filler ("um", "like", "you know"), flag the whole call as `verified_human: needs_review`.
 
 ### Step 5: Write the per-call summary file
-Save to `banks/audience-data/calls/{call-slug}.md` using the audience-data (call) schema from `knowledge/vault-integration.md`.
+Save to `banks/audience-data/calls/{call-slug}.md` using the audience-data (call) schema from `.claude/skills-wip/vault-integration-aud-schemas.md`.
 
 Body structure:
 
@@ -160,7 +160,7 @@ Also drop:
 - Exact-duplicate comments (same text across multiple rows)
 
 ### Step 3: Run contamination scan
-Apply the checklist in `knowledge/synthetic-audience-method.md`. Flag any comment with 2+ tells.
+Apply the checklist in `.claude/skills-wip/synthetic-audience-method.md`. Flag any comment with 2+ tells.
 
 Comments are more often clean (short, casual, typo-prone). LLM-generated comments are typically too long, too balanced, and too polite for the platform. Flag those.
 

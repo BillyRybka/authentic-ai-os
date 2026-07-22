@@ -33,7 +33,7 @@ In priority order:
 - Word from the voice-profile `refusals` words-avoided used in the script
 - Anti-pattern from voice-profile `refusals` present (contrast-template, hedge stack, cadence-placed emphasis, scripted improvised moment, etc.)
 - Creator hard rule breached (a never-script moment scripted, a peak-only intensity device carpet-bombed)
-- Banned word from `brand.md` used without the required swap
+- Word marked for a required swap in the voice-profile `refusals` used without applying the swap
 - Em-dash anywhere
 
 ### Soft severity (worth flagging, creator may keep)
@@ -79,9 +79,9 @@ issue: "'leverage' is a words-avoided refusal. The creator never uses it in the 
 suggested_rewrite: "...so you can use this on any video."
 ```
 
-### Example 2: brand.md required swap missed (HARD)
+### Example 2: required swap from the refusals missed (HARD)
 
-brand.md requires swap `ship` to `post` for content references.
+voice-profile `refusals` require the swap `ship` to `post` for content references.
 
 Script line: "When you ship your next video..."
 
@@ -89,7 +89,7 @@ Script line: "When you ship your next video..."
 severity: hard
 location: "Ending line 5"
 quote: "When you ship your next video..."
-issue: "'ship' must swap to 'post' per brand.md (software metaphor for content)."
+issue: "'ship' must swap to 'post' per the voice-profile required swaps (software metaphor for content)."
 suggested_rewrite: "When you post your next video..."
 ```
 

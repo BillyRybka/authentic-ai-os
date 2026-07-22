@@ -54,7 +54,7 @@ Silent loads (do NOT paste into chat):
 6. `foundation/reference-pieces/{voice_context}.md` (the voice engine: real intact passages as `## ` sections, matched to piece.md `voice_context`, default `youtube-script`. The gold standard for the read-aloud test)
 7. `knowledge/script-tension-architecture.md` (retention-logic source)
 
-Deferred load: `knowledge/format-planners/{format}.md` loads only when the retention-logic reviewer fires in Phase 2 (it is the only consumer; no point loading at Phase 1).
+Deferred loads: `knowledge/format-planners/{format}.md` and `knowledge/attention-craft.md` (beat pacing, pattern interrupts, mid-beat re-engagement) load only when the retention-logic reviewer fires in Phase 2 (they are its only consumers; no point loading at Phase 1).
 
 **Hard friction checks during load:**
 
@@ -89,11 +89,11 @@ Every claim, number, name, story, metaphor, framework, statistic, and quoted phr
 
 **Reviewer 2: voice-authenticity** (invokes `vid-voice-audit` as a sub-skill)
 
-Invoke `vid-voice-audit`. It loads `foundation/reference-pieces/{voice_context}.md` (the gold standard for grain), the voice-profile.md guardrail (refusals, signature phrases, POV/energy), and brand.md (banned words, required swaps), and optionally samples 2-3 raw passages from `raw/voice-sources/`. It returns the full findings list ranked by severity plus a per-beat verdict map (hook / segment_N / ending → passes / soft-flag / would-reword). Take the top 3 hard findings (severity-ordered, preferring hard over soft) for this reviewer slot in Phase 3 consolidation. Preserve the audit's per-beat verdict map and the remaining findings; the verdict map appears in the chat summary in Phase 6 and the remaining findings go to `soft_issues_list` in piece.md frontmatter.
+Invoke `vid-voice-audit`. It loads `foundation/reference-pieces/{voice_context}.md` (the gold standard for grain) and the voice-profile.md guardrail (the refusals carry the creator's banned words and required swaps, plus signature phrases and POV/energy), and optionally samples 2-3 raw passages from `raw/voice-sources/`. It returns the full findings list ranked by severity plus a per-beat verdict map (hook / segment_N / ending → passes / soft-flag / would-reword). Take the top 3 hard findings (severity-ordered, preferring hard over soft) for this reviewer slot in Phase 3 consolidation. Preserve the audit's per-beat verdict map and the remaining findings; the verdict map appears in the chat summary in Phase 6 and the remaining findings go to `soft_issues_list` in piece.md frontmatter.
 
 **Reviewer 3: AI-slop** (`references/reviewer-ai-slop.md`)
 
-Scans for banned phrases (transition-patterns Tier 1 + brand.md hard rules), vague hedges, announcing transitions, AI tells (em-dashes, three-item-list crutch, generic value language). Returns top 3 worst offenders with quote + suggested removal or replacement.
+Scans for banned phrases (transition-patterns Tier 1 + the house banned-word rules + voice-profile.md refusals), vague hedges, announcing transitions, AI tells (em-dashes, three-item-list crutch, generic value language). Returns top 3 worst offenders with quote + suggested removal or replacement.
 
 **Reviewer 4: retention-logic** (`references/reviewer-retention-logic.md`)
 
@@ -135,11 +135,11 @@ Approve / Deny (write your own version) / Skip
 
 **Skip** → accept as written, move to next issue.
 
-**Skip restriction on hard-rule violations.** If the issue is a factual break (fabricated number, named claim with no source) OR a brand.md banned-phrase violation OR an em-dash, Skip is NOT allowed. Creator must Approve, Deny+rewrite, OR Mark-as-gap. Mark-as-gap writes the issue to piece.md frontmatter under `claims_to_source_before_filming: [...]` and blocks the "ready to film" verdict until resolved.
+**Skip restriction on hard-rule violations.** If the issue is a factual break (fabricated number, named claim with no source) OR a banned-phrase violation (a house banned word or a voice-profile refusal) OR an em-dash, Skip is NOT allowed. Creator must Approve, Deny+rewrite, OR Mark-as-gap. Mark-as-gap writes the issue to piece.md frontmatter under `claims_to_source_before_filming: [...]` and blocks the "ready to film" verdict until resolved.
 
 **Light-vet creator rewrites before applying.** When the creator Denies and pastes their own version, scan that text BEFORE writing to script.md:
 
-- Any banned phrase from brand.md → surface inline: "Your rewrite has '{phrase}' which is banned per brand.md. Want to revise, or skip?"
+- Any house-banned word or phrase → surface inline: "Your rewrite has '{phrase}' which is on the house banned list. Want to revise, or skip?"
 - Any word avoided from the guardrail refusals → surface inline: "'{word}' is a refusal in your voice guardrail. Revise or accept?"
 - Em-dashes → surface inline: "Your rewrite has an em-dash. Replace with period/comma/parentheses?"
 - Hedges from voice-profile anti-patterns → surface inline: "'{hedge}' undermines stakes per your voice-profile. Tighten or accept?"
@@ -217,7 +217,7 @@ Verdict: Script needs revision.
 
 ## Sub-skill mode handoff
 
-vid-pipeline (future) reads `pressure_test_audit` from piece.md frontmatter directly. No separate output packet; the frontmatter block IS the structured handoff.
+vid-pipeline reads `pressure_test_audit` from piece.md frontmatter directly. No separate output packet; the frontmatter block IS the structured handoff.
 
 ## Conversational discipline
 
@@ -257,6 +257,7 @@ vid-pipeline (future) reads `pressure_test_audit` from piece.md frontmatter dire
 | `references/interactive-fix-loop.md` | Phase 4, worked dialogues for Approve / Deny / Skip / Mark-as-gap / light-vet violations |
 | `assets/pressure-test-frontmatter.md` | Phase 6, the exact YAML block appended to piece.md |
 | `knowledge/script-tension-architecture.md` | Phase 1 + Phase 2 reviewer 4, cross-segment tension rules |
+| `knowledge/attention-craft.md` | Phase 2 reviewer 4, beat pacing, pattern interrupts, and re-engagement ear tests |
 | `knowledge/format-planners/{format}.md` | Phase 2 reviewer 4, format-native retention arc |
 | `foundation/voice-profile.md` `refusals` | Phase 2 reviewer 2 + reviewer 3, the creator's banned words and required swaps |
 
@@ -277,5 +278,5 @@ vid-pipeline (future) reads `pressure_test_audit` from piece.md frontmatter dire
 - `vid-framing` locks the angle the reviewers test against
 - `vid-intake` produced the brain-dump that source-traceability checks
 - The `/foundation` chain produced creator-foundation; `vid-voice-capture` produced voice-profile; `vid-research` produced packaging-system
-- `vid-pipeline` (future) invokes this skill after vid-ending completes
+- `vid-pipeline` invokes this skill after vid-ending completes
 - `vid-measurement` (future) reads pressure-test results post-publish to correlate with retention data

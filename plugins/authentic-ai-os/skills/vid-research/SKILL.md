@@ -1,6 +1,6 @@
 ---
 name: vid-research
-description: Builds and refreshes the creator's pattern banks, the real-YouTube-data research that downstream video skills read to ground decisions in what audiences actually click. Runs Three-Circle Research (the creator's own channel, direct competitors, and adjacent niches), pulls outlier videos via the YouTube Data API, reads their thumbnails and titles, and curates with the creator what fits them. Produces three bank files (pattern-bank, title-bank, power-words-bank) plus a starting packaging-system.md. Three modes: full first build, quarterly refresh, or capturing a single outlier. Use whenever a creator needs to build their pattern bank from scratch, refresh their research, research their niche, or log an outlier they spotted. Triggers on "build my pattern bank", "refresh my research", "I just saw an outlier", "research my niche", or "what's working in my niche right now".
+description: Builds and refreshes the creator's pattern banks from real YouTube data. Runs Three-Circle Research across the creator's own channel, direct competitors, and adjacent niches. Produces pattern-bank, title-bank, and power-words-bank plus a starting packaging system. Use for a first build, a quarterly refresh, or capturing a single outlier. Triggers on "build my pattern bank", "refresh my research", "I just saw an outlier", "research my niche", or "what's working in my niche right now".
 ---
 
 > 🔄 **Pre-flight (mandatory).** Before doing anything else, read `${CLAUDE_PLUGIN_ROOT}/knowledge/update-check.md` and follow it. If a newer version exists, halt and tell the creator. If you're up to date, continue with the skill below.
@@ -31,7 +31,7 @@ Plus one synthesis artifact: `foundation/packaging-system.md`. vid-research auth
 
 ## When to run this
 
-- **First build (Mode 1):** creator has just run /foundation and vid-voice-capture. No pattern banks exist yet. Run vid-research before vid-framing for the first time.
+- **First build (Mode 1):** creator has just run /foundation. No pattern banks exist yet. Run vid-research before vid-framing for the first time. (Voice capture is still in development; it is not a prerequisite.)
 - **Quarterly refresh (Mode 2):** 90+ days since `last_full_rebuild` in `pattern-bank.md` frontmatter. Or when new outliers have stacked up the creator wants surfaced.
 - **Single outlier add (Mode 3):** creator spotted an outlier between rebuilds and wants to capture it without a full session.
 
@@ -79,7 +79,7 @@ Load silently. Never narrate it to the creator.
 **Setup checks (silent unless missing):**
 
 1. `foundation/creator-foundation.md` exists → load iceberg, audience, niche keywords, top 12 outliers if existing channel.
-2. YouTube Data API key configured. Path: `foundation/youtube-api-config.md` if creator has set this up before. If missing, walk through `assets/api-key-setup-guide.md` first.
+2. YouTube Data API key configured as `YT_API_KEY` in a `.env` file at the vault root (see Prerequisites). If missing, walk through `assets/api-key-setup-guide.md` first.
 3. Test API call against creator's own channel handle. If fails, walk creator through troubleshooting (key invalid, channel handle wrong, quota exhausted).
 
 **Own channel pull:**
@@ -287,7 +287,7 @@ Load `knowledge/interview-posture.md` and follow it: one question at a time, pla
 ## Related skills
 
 - `/foundation` produces creator-foundation.md (iceberg, audience, niche keywords), vid-research reads.
-- `vid-voice-capture` produces voice-profile.md, vid-research reads for mirroring style only.
+- `vid-voice-capture` (in development) will produce voice-profile.md; when it exists, vid-research reads it for mirroring style only.
 - `vid-framing` reads pattern banks vid-research produces, picks angle for THIS video grounded in patterns.
 - `vid-title` reads `power-words-bank.md` and `title-bank.md`, generates titles using patterns and words.
 - `vid-thumbnail` reads `foundation/packaging-system.md` (current thumbnail strategy) plus `knowledge/thumbnail-text-patterns.md` for text candidates. Future `vid-thumbnail-gen` (Phase 5) queries `pattern-bank.md` outlier rows by thumbnail strategy for visual references.

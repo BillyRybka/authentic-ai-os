@@ -1,6 +1,6 @@
 ---
 name: vid-ideas
-description: Generate a small batch of signal-backed video ideas for a creator who is blank on what to make next. Reads the creator's iceberg, content pillars, avatar, and Top 3 problems plus the pattern-bank (proven outliers = what worked), filters every idea through the iceberg, and proposes ~5-6 ideas, mostly anchored to real proven signals with 1-2 experimental swings. The creator picks one to make now, flags any others they like (those save to content/ideas-backlog.md), and the picked idea hands a seed to vid-intake. In-session dial: more / tighter / wilder / different pillar re-rolls the batch. Anti-fabrication, every anchored idea cites a real pattern-bank entry. Optional front-door of the pipeline; skip it when the creator already knows what to make. Use this skill whenever a creator does not know what video to make. Phrases like "I don't know what to make", "give me video ideas", "what should I make a video about", "I'm out of ideas", "what's next for my channel", "help me come up with a video", "ideate", "generate some ideas", "I'm blank on content", or any moment the creator needs a topic before vid-intake should fire this skill.
+description: Generate signal-backed video ideas for a creator blank on what to make next. Reads the iceberg, pillars, avatar, and Top 3 problems plus the pattern-bank, proposes ~5-6 ideas anchored to real proven outliers with 1-2 flagged swings, and re-rolls on a more / tighter / wilder dial. Keepers save to content/ideas-backlog.md; the pick hands a seed packet to vid-intake. Triggers on "give me video ideas", "what should I make", "I'm out of ideas", "I'm blank on content".
 ---
 
 > 🔄 **Pre-flight (mandatory).** Before doing anything else, read `${CLAUDE_PLUGIN_ROOT}/knowledge/update-check.md` and follow it. If a newer version exists, halt and tell the creator. If you're up to date, continue with the skill below.
@@ -38,9 +38,7 @@ Soft requirements:
 
 ## Invocation modes
 
-**Standalone:** the creator invokes directly. Run the full flow, loop the dial, save keepers, hand the picked idea to `vid-intake`.
-
-**Sub-skill:** `vid-pipeline` (future) may invoke this at the very start of the SCRIPT phase when the creator has no piece yet. Return the picked idea seed packet to the caller instead of invoking `vid-intake` directly.
+**Standalone or via `vid-pipeline`:** the creator invokes directly, or the pipeline's blank-on-ideas branch fires it. Same flow either way, ending with the pick handed to `vid-intake`.
 
 ## The 4 phases
 
@@ -148,5 +146,5 @@ Do not over-talk between rolls. Surface the new batch, repeat the one-line dial 
 - `vid-intake` receives the picked idea seed and captures the brain dump (this skill's downstream handoff)
 - `vid-framing` runs after intake and picks the angle (this skill picks the topic, not the angle)
 - `vid-title` owns ALL title craft. The idea line this skill surfaces is a provisional seed (a borrowed proven shape), never a crafted title; `vid-title` writes the real title later from the captured material. vid-ideas loads no title source.
-- `vid-pipeline` (future) may invoke this at the start of the SCRIPT phase when no piece exists yet
+- `vid-pipeline` invokes this skill from its Step 2 blank-on-ideas branch; the picked seed packet enters the chain at `vid-intake`
 - `vid-measurement` (future) will feed published performance back into the pattern-bank's Confirmed winners, sharpening this skill's signals over time

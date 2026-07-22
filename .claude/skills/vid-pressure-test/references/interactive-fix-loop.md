@@ -123,7 +123,7 @@ AI: [writes to piece.md: claims_to_source_before_filming: ["Segment 2 line 3: 47
     Logged. Moving to issue 2. Final verdict will flag this as needs-revision until you confirm.
 ```
 
-Skip block is non-negotiable for: fabricated claims, em-dashes, brand.md banned phrases. The other options are real paths forward; the lie isn't.
+Skip block is non-negotiable for: fabricated claims, em-dashes, banned phrases (the house list or voice-profile refusals). The other options are real paths forward; the lie isn't.
 
 ## Worked example 5: creator-rewrite light-vet catches new violation
 
@@ -178,7 +178,7 @@ AI: One quick check:
 Creator: try: "First thing first..." (with em-dash at end)
 
 AI: Quick check:
-    - Em-dash in your rewrite. Brand-level zero tolerance.
+    - Em-dash in your rewrite. House rule, zero tolerance.
 
     Revise (replace with period or comma), accept anyway, or use my version?
 

@@ -13,8 +13,8 @@ This runs after `aud-intake`. Without intake, this skill has nothing to read.
 
 > **Resolving `knowledge/` paths.** Any path written `knowledge/X.md` is a plugin reference file. Load it from `${CLAUDE_PLUGIN_ROOT}/knowledge/X.md` when running as an installed plugin. If `${CLAUDE_PLUGIN_ROOT}` is unset or that path does not exist (running from the source repo during development), load `knowledge/X.md` relative to the repo root instead.
 
-1. `knowledge/synthetic-audience-method.md`. Held-out protocol, the 5 moment types, banned vocabulary list. Non-negotiable.
-2. `knowledge/vault-integration.md`. Frontmatter schemas for audience-segment, avatar, held-out.
+1. `.claude/skills-wip/synthetic-audience-method.md`. Held-out protocol, the 5 moment types, banned vocabulary list. Non-negotiable.
+2. `.claude/skills-wip/vault-integration-aud-schemas.md`. Frontmatter schemas for audience-segment, avatar, held-out.
 3. `audience/state.md` if it exists. Resume-from-where-we-left-off state for bounded interviews.
 
 ## Contract
@@ -210,7 +210,7 @@ Before saving, verify:
 
 If any section has < 2 citations, either find more evidence in the bank or DROP the claim. Single-citation claims leak in as stereotype. Strip them.
 
-**Hard structural rule (per `knowledge/synthetic-audience-method.md`):** comments may ONLY be cited in section 4 (Vocabulary Bank). Never in Identity, Problems, or Objections. Comments don't carry enough context for those claims.
+**Hard structural rule (per `.claude/skills-wip/synthetic-audience-method.md`):** comments may ONLY be cited in section 4 (Vocabulary Bank). Never in Identity, Problems, or Objections. Comments don't carry enough context for those claims.
 
 If you find yourself wanting to cite a comment in section 1-3, the avatar is reaching. Strip the claim or find call evidence.
 
@@ -287,7 +287,7 @@ When a fresh session loads, read this first. If the file exists and phase != don
 
 **Avatar drafting accidentally surfaces a held-out quote.** Strip the quote from the avatar. Find a different citation from the non-held-out pool. If no alternative exists, drop the claim entirely.
 
-**Banned vocabulary appears in Billy-facing output.** Per `knowledge/synthetic-audience-method.md`, never use "test-retest reliability," "p-value," "confidence interval," "statistical significance," "Bayesian," "cosine similarity" in Billy-facing output. Translate to plain English.
+**Banned vocabulary appears in Billy-facing output.** Per `.claude/skills-wip/synthetic-audience-method.md`, never use "test-retest reliability," "p-value," "confidence interval," "statistical significance," "Bayesian," "cosine similarity" in Billy-facing output. Translate to plain English.
 
 ## Anti-patterns
 

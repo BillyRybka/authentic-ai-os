@@ -101,7 +101,7 @@ Used by `aud-validate` test 3 (vocabulary leak). Deterministic.
 
 A word is **novel** to an avatar if BOTH conditions hold:
 - (a) The word does NOT appear as a stem-match in any source quote cited by that avatar (stem-match: same first 4 letters or same root, e.g., "playing" matches "play", "improvise" matches "improvising")
-- (b) The word does NOT appear in `knowledge/common-english.txt`
+- (b) The word does NOT appear in `.claude/skills-wip/aud-validate/references/common-english.txt`
 
 Stop words, articles, prepositions, and connectives are never novel.
 

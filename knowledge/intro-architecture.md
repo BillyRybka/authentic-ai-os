@@ -242,19 +242,7 @@ If the intro runs over 30 seconds, the creator is teaching in the intro instead 
 
 ## Format-specific adaptation
 
-This is the universal architecture. Each format trims, expands, or reorders to fit its own audience expectations. See `knowledge/format-planners/{format}.md` for per-format guidance.
-
-Quick map (full detail in each planner):
-
-| Format | Intro adaptation |
-|---|---|
-| Deep Dive | Full 6-part. Strong credibility woven early. Authority requires it. |
-| Case Study | Inverted. Lead with the RESULT (the receipt), then problem, then setup. |
-| Short Process | Compressed. Hook plus tight promise plus transition to step 1. Setup is one line. |
-| Listicle | Hook plus count tease plus transition ("Starting with #1..."). Credibility woven into the count. |
-| Roast | Hook is the contestant submission plus 1-line "what we're roasting." Setup compressed. |
-| News | Hook plus 1-line context plus immediate transition. NO Setup, NO Credibility line. Speed matters. |
-| Interview | Hook is the GUEST's credibility plus "today we're talking about X" plus question setup. Different shape entirely. |
+This is the universal architecture. Each format trims, expands, or reorders it to fit its own audience expectations, and those per-format changes live in exactly one place: `knowledge/format-planners/{format}.md` (each planner owns an "Intro adaptation" section). `vid-intro` loads the matching planner before assembling the intro. No per-format rules live in this file.
 
 ## How vid-intro uses this file
 
