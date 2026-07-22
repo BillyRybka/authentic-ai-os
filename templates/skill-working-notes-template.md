@@ -81,8 +81,8 @@ Every anti-pattern (banned phrase, failure mode, common mistake) in the producti
 Free-text list of coordination points with other team builders. One line per confirmed dependency. Date the confirmation. Use this when another skill's contract (a schema field, a pattern slug, a banned-phrase list) had to match this skill's contract.
 
 - vid-intro confirmed canonical 5 hook types match vid-segment usage on YYYY-MM-DD
-- vid-ending confirmed 3-Part End Formula matches transition-bank.md Section 3 patterns on YYYY-MM-DD
-- voice-profile-schema field `preferred_hook_types` accepts the 5 type slugs used in hook-bank.md, confirmed YYYY-MM-DD
+- vid-ending confirmed its 3-Part End Formula against the patterns in knowledge/transition-patterns.md on YYYY-MM-DD (the creator's transition bank holds proven rows, not the pattern library)
+- voice-profile-schema field `preferred_hook_types` accepts the 5 hook types defined in .claude/skills/vid-intro/references/hook-patterns.md, confirmed YYYY-MM-DD (the creator's hook bank holds proven rows, no fixed type slugs live there)
 
 ---
 

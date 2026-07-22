@@ -43,7 +43,7 @@ and their distinctive phrases, not smoothed-out marketing prose.
 
 ### 2. commitment_no_hedging
 
-Use the definition in `knowledge/ai-hedging.md`. Score how willing the post is to
+Use the definition in `.claude/skills-wip/post-write/references/ai-hedging.md`. Score how willing the post is to
 take and hold a position. Penalize the underlying move of non-commitment (claims
 dissolved by qualifiers, positions raised and never answered, reflex both-sides,
 vague unfalsifiable takeaways), NOT the presence of any soft word. Do not penalize

@@ -24,7 +24,7 @@ This is the first skill in the foundation sequence. Without it, `vid-positioning
 
 **Outputs:** Offer, Avatar, and Top 3 perceived problems sections written to `foundation/creator-foundation.md` using the schema in `${CLAUDE_PLUGIN_ROOT}/knowledge/creator-foundation-template.md`.
 
-**Downstream consumers:** `vid-positioning` (reads all three sections), `vid-pillars`, `vid-credibility`, `vid-backstory`, `vid-voice-capture`, `vid-research`, every per-video skill in the pipeline.
+**Downstream consumers:** `vid-positioning` (reads all three sections), `vid-pillars`, `vid-credibility`, `vid-backstory`, `vid-research`, every per-video skill in the pipeline. `vid-voice-capture` (in development) will also read all three sections when it ships.
 
 ## Load at session start
 
@@ -50,9 +50,9 @@ This skill does NOT produce:
 - Content pillars (bottom subtopics) → that's `vid-pillars`
 - Credibility brags → that's `vid-credibility`
 - Backstory → that's `vid-backstory`
-- Voice profile → that's `vid-voice-capture`
+- Voice profile → that's `vid-voice-capture` (in development, not shipped yet)
 
-If the creator asks for any of the above, finish the avatar work first, then point them at the right skill.
+If the creator asks for positioning, pillars, credibility, or backstory, finish the avatar work first, then point them at the right skill. If they ask for voice capture, tell them it is in development and coming in a future release.
 
 ## Pre-check (silent)
 

@@ -89,3 +89,25 @@ and fully wired, with Tier A tests proving the four skills before and after.
 - Nothing dev-only (WORKING-NOTES, DEBUG-TRACE, plans, tests) enters
   `plugins/authentic-ai-os/`.
 - Line endings: LF in anything that may ship.
+
+## Outcome (2026-07-21, branch `dag`)
+
+All five stages complete. Commits: `188c186` (wave 1), `d270041` (wave 2a),
+`5f70c25` (wave 2b), `01ac6a9` (vid-intake fixture repair), `8a83f59` (stage 3+4),
+plus stage 5. All 10 Tier A suites green: post-write, vid-capture 9/9, vid-ending 4/4,
+vid-framing 6/6, vid-intake 6/6, vid-intro 4/4, vid-segment 3/3 (case_01 flipped from
+fail to pass by the rewrite itself), vid-structure 3/3, vid-thumbnail 3/3, vid-title 3/3
+(suite resynced to the live contract first).
+
+Delivered beyond the plan: vid-framing/title/thumbnail/structure joined the rewrite
+(wave 2); framing-vs-title merge question answered with evidence (keep separate:
+framing decides what is TRUE, title decides what is CLICKABLE about the truth);
+8 WORKING-NOTES files sanitized of source-course references; vid-intake fixture drift
+repaired against the authority contract.
+
+Open follow-ups for the owner: pre-existing Vale findings in shipped skills
+(vid-credibility, vid-research, aaios-feedback); release.ps1 has no explicit LF
+conversion for relocated knowledge files (safe today, gap noted); policy call needed
+on source-course mentions in living internal docs (DEV-WORKFLOW, build-plan) vs
+dated audit history; parked list unchanged (skyscraper mining, vid-review retention
+loop, thumbnail visual pass).

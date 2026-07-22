@@ -47,7 +47,7 @@ function isExcluded(filePath) {
   if (skipDirs.some(d => rel.startsWith(d))) return true;
   if (/transcript.*\.md$/i.test(rel)) return true;
   // Meta files that document the voice rules themselves. They must contain the banned words.
-  const metaFiles = ['CLAUDE.md', 'Context/brand.md', 'Context/system-evolution.md'];
+  const metaFiles = ['CLAUDE.md', 'Context/system-evolution.md'];
   if (metaFiles.includes(rel)) return true;
   // Frontmatter checks
   try {
@@ -185,7 +185,7 @@ function main() {
     }
     if (warnings.length > 10) console.log(`  ...and ${warnings.length - 10} more`);
   }
-  console.log(`\nRun \`vale ${rel}\` for full output. See Context/brand.md for rationale.\n`);
+  console.log(`\nRun \`vale ${rel}\` for full output. See .vale/styles/ProductVoice/ for the rules.\n`);
   exitSilent();
 }
 
