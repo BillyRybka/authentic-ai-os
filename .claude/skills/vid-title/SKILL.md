@@ -47,6 +47,8 @@ Receipts run on the anchor rule, whose canonical statement lives in vid-framing'
 
 Write 20 or more candidates across the structures, then keep the best 2 per group. Most of what you write should die. The kill rate is where quality comes from; a set where everything survives was never selected, only collected.
 
+**A sharp seed enters as the leader.** When `piece.md` carries an `anchor:` receipt (a seed line plus its source outlier, channel, views, and xMed, inherited from vid-ideas through vid-intake), that seed enters the candidate set as the leading candidate, the one everything else has to beat. A real audience already voted for its shape; the receipt is what earns the lead, so a bare working title with no receipt stays one candidate like any other. Do not re-derive from scratch when a sharp seed exists: shop the banks specifically to beat it, write the wide pass around and against it, and run it through the same kill pass as everything else. If it survives, it leads its structure group with the anchor receipt pinned; if nothing beats it, lock the seed itself. A seed is a head start, never a shortcut: the wide write, the kill pass, and the lock list still govern every word, the seed included.
+
 The creative act is the **adjust**: keep what makes the structure win, aim it at this video. Name why the source outlier works (what the viewer feels, what their brain fills in), then rebuild that exact pull out of this video's material. Swap the subject and the stake, keep the engine.
 
 - Dead adjust: outlier is "Gym MISTAKES That Kill Your Progress", video is meal prep, you write "Meal Prep Mistakes That Kill Your Progress." Nouns swapped, pull lost; "progress" was the gym audience's stake, not this one's.
@@ -54,7 +56,7 @@ The creative act is the **adjust**: keep what makes the structure win, aim it at
 
 ### The click judgment
 
-Four calls, learned by example.
+Six calls, learned by example.
 
 **Feel new beats be new.** N is the strongest BENS letter for an audience that has tried things and failed, and the information does not need to BE new. It needs to FEEL new.
 - Weak: "How To Write Better Emails." The advice could be great; the viewer has scrolled past this promise a hundred times.
@@ -71,6 +73,14 @@ Four calls, learned by example.
 **Match credibility to the channel.**
 - Weak: "My Morning Routine" on a 300-sub channel. A cold viewer owes a stranger's "I" nothing; fame-dependent titles presume trust the channel hasn't earned.
 - Strong: "$340K to $1.3M on 2,500 Subscribers." The numbers carry the credibility the "I" can't. On a small channel, specifics, named methods, and borrowed authority do the trusting. The one exception: a claim dramatic and specific enough earns the click on any channel size.
+
+**One open question, exactly one.** A strong title opens one question in the viewer's mind and leaves it hanging: "am I missing something?" or "am I doing something wrong?" Two questions dilute each other and the brain resolves neither. Zero questions dies the other way: nothing open, no reason to click.
+- Weak: "The $12 Scale That Fixed My Diet And The Habit That Fixed My Sleep." Two loops open at once ("what scale?" and "what habit?") and each waters down the other; the brain picks neither and scrolls.
+- Strong: "The $12 Scale That Fixed My Diet." One loop, wide open: what scale, and how does a scale fix a diet? Cut the second promise and the pull doubles. The zero-question version of the same video, "How I Eat Better Now," gives the brain nothing to resolve, so the brain gives the title nothing back.
+
+**One mechanism, executed well.** Every strong title runs on a single click mechanism: curiosity gap, loss aversion, pattern interrupt, desire for the transformation, or social proof. The angle picks the mechanism, and you spend every word executing it. Stacked mechanisms read as desperate, not stronger: three levers pulled halfway each lose to one lever pulled all the way.
+- Weak: "10,000 Runners Swear By This Weird $12 Scale Before It Sells Out Again." Social proof ("10,000 runners"), curiosity ("weird scale, what is it?"), and loss aversion ("before it sells out") all grab at once, and the line reads like an ad that needs the click instead of a title that earns it.
+- Strong: "Why 10,000 Runners Weigh Their Food." One mechanism (social proof: that many people doing a strange thing means they know something) executed clean. When the angle argues a mistake, loss aversion leads and the crowd stays home; when the angle promises a result, desire leads. One angle, one lever.
 
 Two more lenses stay on while writing:
 
@@ -126,6 +136,6 @@ Pipeline mode also returns the title string and its BENS letters to the caller. 
 
 - `vid-framing` locks the angle this skill packages; angle problems route back there, never get fixed here
 - `vid-thumbnail` runs next and writes the thumbnail text
-- `vid-ideas` may leave a provisional working title; treat it as one candidate, free to beat
+- `vid-ideas` may leave a seed line; when `piece.md` carries its `anchor:` receipt, the seed enters as the leading candidate to beat (Step 3), otherwise it stays one candidate, free to beat
 - /foundation produces `creator-foundation.md`; `vid-research` produces the banks
 - `vid-pipeline` orchestrates and calls this skill during packaging
