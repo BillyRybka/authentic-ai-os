@@ -68,10 +68,13 @@ Generate ~5-6 ideas per `references/idea-generation-rules.md`. Default mix: 4 an
 4. **Click test:** put it next to the others, would the avatar click THIS, and why. Then the side-by-side sharpness test: put the bend next to its source line; if the source gets the click, sharpen or re-roll. A dream outcome beats a defensive reassurance. On-brand is the floor, not the pull. Do not staple the positioning ("without the slop") onto a title where voice is not the premise.
 5. **Fit is a floor, checked last:** inside the iceberg = pass, off-iceberg never surfaces. Range across 3-4 pillars. A Top 3 problem is an optional tag, never forced.
 
-The batch surfaces in chat as a NUMBERED list, exactly 2 lines per idea, no exceptions:
+The batch surfaces in chat as a NUMBERED list, exactly 2 lines per idea with one blank line between entries, no exceptions:
 
 > 1. **{the idea as one short line carrying the engine at full sharpness}**
 >    "{real outlier title}" (@{channel}, {views}, {xMed}x median) · engine: {the load-bearing element in 2-5 words} · {the why-it-could-land, one short clause}
+>
+> 2. **{the next idea, same 2-line shape}**
+>    "{receipt line}"
 
 For an experimental swing with no proven anchor, line 1 appends ` · swing, unproven` instead of a receipt, and line 2 names what it gestures at:
 
