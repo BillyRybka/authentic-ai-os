@@ -15,9 +15,9 @@ Every skill that makes a structural decision about the script as a whole loads t
 
 ## Two separate layers (the split)
 
-A script runs two separate things at once. Ed keeps them apart, and so do we.
+A script runs two separate things at once. Keep them apart.
 
-**Per-segment content (lives in vid-segment).** Inside one segment: a parable (the show, the emotion brick) then a principle (the tell, the logic brick). Each segment teaches one thing. This is NOT a Setup/Tension/Payoff skeleton; it is the two bricks. See `references/parable-principle-shapes.md`.
+**Per-segment content (lives in vid-segment).** Inside one segment: a parable (the show, the emotion brick) then a principle (the tell, the logic brick), each segment teaching one thing. How often the two bricks repeat is the format's call, and the planner owns it: persuasive formats (Listicle, Roast, Interview) run parable + principle at every point; instructional formats (Short Process, Case Study, Deep Dive, News) run one parable arc up front, then steps. Either way this is NOT a Setup/Tension/Payoff skeleton; it is the content layer. See `references/parable-principle-shapes.md`.
 
 **Cross-segment tension (this file).** Across all segments: the title makes a promise, the intro raises the central question, segments deliver pieces of the answer in an order that withholds the BIG payoff until the moment of maximum tension, and the ending pivots to the next problem. Setups and payoffs live HERE, not inside a segment. The intro is one big setup; transitions are little setups; the points pay off curiosity one by one. The viewer stays through 5+ minutes because the central promise hasn't fully paid off yet.
 
@@ -217,7 +217,7 @@ Findings get surfaced as ranked issues in pressure-test.md.
 ## Principles
 
 - **Tension and curiosity are the fuel.** Information without tension doesn't retain. Most "boring videos" have good information but no curiosity arc.
-- **Two separate layers.** Parable + principle per segment at vid-segment. Cross-segment tension planned at vid-structure and audited at vid-pressure-test. Both matter.
+- **Two separate layers.** Parable + principle per segment at vid-segment (how often they repeat is the format's call). Cross-segment tension planned at vid-structure and audited at vid-pressure-test. Both matter.
 - **Title-promise late.** The named answer to the central question lands 60-80% through the body, not earlier. Early-payoff is the most common failure.
 - **Threads make scripts feel woven.** One open loop running across the body is the difference between "five lessons stacked" and "one experience."
 - **Every handoff forward-hooks.** Segment ends with a question, name, or gap that lifts into the next segment's setup. No closed-payoff endings except the very last.
