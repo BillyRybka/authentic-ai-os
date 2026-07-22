@@ -115,7 +115,7 @@ Do not over-talk between rolls. Surface the new batch, repeat the one-line dial 
 
 ## Conversational discipline
 
-- **Chat output is the numbered batch plus the one-line dial offer, nothing else.** No phase banners, no checklist or "here is what I did" bullets, no preamble beyond at most one short line ("Here's the batch, ranging across your pillars" style), no summary after the list.
+- **Chat output is the numbered batch plus the one-line dial offer, nothing else.** From this skill itself: no phase banners, no checklist or "here is what I did" bullets, no preamble beyond at most one short line ("Here's the batch, ranging across your pillars" style), no summary after the list. A caller's own trace layer (vid-pipeline's builder instrumentation) may still print phase blocks around this skill; that narration is the caller's, not this skill's, so let it print and keep this skill's own output clean.
 - **Conversation, not a document.** Short messages. Never paste the pattern-bank or foundation into chat. The loads are for your thinking.
 - **Signal over volume.** Five or six sharp ideas beat ten mushy ones. The creator's worry is crappy ideas, so every anchored idea earns its place by citing a real signal.
 - **Specificity wins.** Each idea is a concrete topic in the creator's voice, not a category ("a video about pricing" is not an idea, "the pricing mistake that makes clients ghost you after the proposal" is).
