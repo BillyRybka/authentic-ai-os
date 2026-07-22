@@ -3,5 +3,6 @@ type: content-piece
 slug: new-scheduling-feature-reaction
 pillar: systems
 status: ideating
-captured: 2026-06-16
+created: 2026-06-16
+last_updated: 2026-06-16
 ---
