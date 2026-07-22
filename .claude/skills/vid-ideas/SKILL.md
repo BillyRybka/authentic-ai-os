@@ -46,7 +46,7 @@ Soft requirements:
 **Silent loads** (do NOT paste into chat). Load ONLY these, and only the named slices. This skill stays lean on purpose.
 
 1. `foundation/creator-foundation.md`, but only: the **Iceberg Statement**, the **Content Pillars** list, the **Avatar** description, and the **Top 3 problems**. Skip credibility, backstory, offer.
-2. `banks/pattern-bank.md`: the **Synthesis** sections (convergent / niche-specific / adjacent / unique), **Confirmed winners**, and **Considered + dropped** for orientation (which shapes have spread, what is on-lane), AND the **per-channel raw outlier rows** (the actual winning titles + views + xMed). You generate from the raw titles, not the labels, so the rows are working material, not just citations. The Synthesis is the map; the raw titles are the evidence you decompose.
+2. `banks/pattern-bank.md`: the **Synthesis** sections (convergent / niche-specific / adjacent / unique), **Confirmed winners** for orientation (which shapes have spread, what is on-lane), AND the **per-channel raw outlier rows** (the actual winning titles + views + xMed). You generate from the raw titles, not the labels, so the rows are working material, not just citations. The Synthesis is the map; the raw titles are the evidence you decompose.
 3. `content/ideas-backlog.md` if it exists, for prior keepers (surface them) and dropped entries (never re-propose).
 4. `references/idea-generation-rules.md`, the signal-anchoring, engine-as-form, sharpness, and posture-dial logic. This is your thinking, not chat content.
 Do NOT load voice-profile, reference-pieces, BENS, or the title / power-words / thumbnail banks. This skill proposes ideas, not titles, and loads no title source.

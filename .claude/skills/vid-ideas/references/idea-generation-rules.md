@@ -81,12 +81,14 @@ The territory is the creator's 8 to 12 content pillars, not the 3 pains. A batch
 
 Read strength from the raw rows:
 
-- **STRONG:** own-channel-proven, OR a Confirmed winner, OR the shape spreads across 5+ channels. Lead with these.
-- **MODERATE:** 3-4 channels.
-- **WEAK (1-2 channels):** do not surface as a proven anchor. If interesting, it becomes a flagged swing.
+- **STRONG:** own-channel-proven, OR a Confirmed winner, OR the shape spreads across 5+ channels, OR a single raw row at 15x+ its channel median that also clears that channel's outlier floor. Lead with these.
+- **MODERATE:** 3-4 channels, or a single row at 8-15x median that clears the floor.
+- **WEAK:** 1-2 channels with no row above 8x. Do not surface as a proven anchor. If interesting, it becomes a flagged swing.
 - **SWING:** no proven anchor. A contrarian take, an adjacent-niche structure, or the creator's own backstory. Always flagged `swing (unproven)`. Never dressed as proven.
 
-Rank by anchor strength and click pull, not by raw view count. A 4x own-channel-proven shape beats a 12x one-channel fluke.
+Two things count as proof and both are real. Spread says a shape is safe to run. A high multiple says one execution actually hit. Never dismiss a high-multiple row as a fluke for not having spread: spread is a lagging indicator, and by the time five channels run a shape it is saturated. Where the two disagree, take own-channel-proven first, then the higher multiple.
+
+The outlier floor is the guard against small-channel inflation, because a low-median channel manufactures big multiples on ordinary videos. The pattern-bank already computes a floor per channel, so use it. A row that clears its floor did real numbers, not just a flattering ratio.
 
 ## The default batch (~5-6)
 

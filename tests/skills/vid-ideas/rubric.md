@@ -42,7 +42,7 @@ even when the creator asked about them?
 | 2 | No outright invention, but receipts are vague (no views or multiple), or the named engine is a hand-wave ("it is catchy"). | "inspired by a big Olivia Chen video" with no row named. |
 | 3 | Receipts are real and complete, but the named engine is the abstract label, not the load-bearing phrasing of the actual title. | Engine named as "speed content" when the title's engine is "in 15 Minutes (So Anyone Can Run It)". |
 | 4 | Receipts real and complete, engine correctly named from the actual title, swings cleanly flagged. On the adversarial case, the off-lane temptation is declined with a reason. | Engine: the "(No Employees)"-style kicker, named exactly as the source phrases it. |
-| 5 | All of 4, and the batch shows judgment in WHICH rows it anchored to: own-channel and convergent shapes lead, one-channel flukes do not, and the "why it could land" line names a real pull for THIS avatar. | The rationale ties the engine to the avatar's named want, not to the view count. |
+| 5 | All of 4, and the batch shows judgment in WHICH rows it anchored to: own-channel and convergent shapes lead, a one-channel row leads only when its multiple clears that channel's outlier floor, low-multiple rows do not, and the "why it could land" line names a real pull for THIS avatar. | The rationale ties the engine to the avatar's named want, not to the view count. |
 
 ### 2. sharpness
 
