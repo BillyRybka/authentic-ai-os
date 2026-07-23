@@ -10,7 +10,7 @@ tags: [reference, vid-intake, capture-examples, dialogue]
 
 Worked dialogues showing the one vid-intake capture flow running on different kinds of material. Optional depth: the flow and the watch-list in SKILL.md are enough for a normal run. Open this when you want to see a full run end to end, or when a conversation stalls and you need calibration on the feel. Each example pairs the shape that lands with a near-miss and a one-line "why this fails."
 
-There is one flow. What changes is the material the creator brings and the one or two things to get right with it. The creator never hears a category; you open to match.
+There is one flow. What changes is the material the creator brings and the one or two things to get right with it. The creator never hears a category; you open to match. Each example shows one way a conversation can go. These are illustrations, never scripts to follow.
 
 The creator in these examples is a fitness coach. Iceberg statement: "I help busy founders build sustainable strength training habits in 30 minutes a day." The lane covers time scarcity that collapses routines, cardio-bias that misallocates effort, and inconsistency under stress.
 
@@ -42,7 +42,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Skill:** "Saved to `content/pieces/cardio-vs-strength-for-founders/brain-dump.md`. Run vid-framing next to lock the angle and format."
 
-**Why this works:** the creator dumped freely without interruption. Skill mirrored back the structure they already had, drilled the one weakest spot (James story specifics) to unlock the proof, then ran a single-exchange fit check on the way out. Save was clean. The whole thing stayed in flow, no interrogation.
+**Why this works:** the creator dumped freely without interruption. Skill mirrored back the structure they already had, drilled the one weakest spot (James story specifics) to surface the proof, then ran a single-exchange fit check on the way out. Save was clean. The whole thing stayed in flow, no interrogation.
 
 ### Near-miss
 
@@ -66,7 +66,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Creator:** "Here are the bullets I have so far for a video on morning routines for founders."
 - Most morning routines are aesthetic, not functional
-- The 3 things that actually move the needle: sleep window, sunlight, one hard physical task
+- The 3 things that actually matter: sleep window, sunlight, one hard physical task
 - I tried the 5am Hard 75 thing for 3 months and it broke me
 - My current routine takes 22 minutes
 - Clients report better focus when they cut the journaling step
@@ -109,9 +109,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Creator:** "Yep, mine."
 
-**Skill (read once):** "Reading. One pass."
-
-[skill reads silently]
+[skill reads the transcript once, silently]
 
 **Skill (reflect):** "Got 3 main points: gym attrition is psychological not physical, the New Year fantasy collapses when stress hits, the fix is matching gym time to existing habits. One story about your own gym quit in 2019. One claim about 80% of new gym members ghosting by March without a number source. Did I catch it right?"
 
@@ -139,7 +137,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Creator:** "Whoop just released their new strength training tracking. I want to do a video on it."
 
-**Skill (set the pace):** "Fast capture on this one. Three quick questions, then we save."
+**Skill (set the pace):** "Fast capture on this one."
 
 **Skill:** "What's the news? One sentence."
 
@@ -147,7 +145,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Skill:** "What does it mean for your audience? One sentence."
 
-**Creator:** "It validates what I've been telling founders for 3 years: strength is the highest-leverage workout. Now they have data."
+**Creator:** "It validates what I've been telling founders for 3 years: strength is the highest-payoff workout. Now they have data."
 
 **Skill:** "What's your angle, take, or contrarian read?"
 
@@ -175,7 +173,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Creator:** "I want to do a video around James. He went from 135 to 225 squat in 12 weeks while losing 14 lbs of fat. Only 30 minutes a day."
 
-**Skill (frame the capture):** "Let's capture the proof, then pivot to the lesson. A case study can't be a biography, it has to teach. Cool?"
+**Skill (frame the capture):** "Let's capture the proof, then pivot to the lesson. A case study can't be a biography, it has to teach. Sound right?"
 
 **Creator:** "Yes."
 
@@ -249,7 +247,7 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 ## What every run does the same
 
-1. **Open to match what they brought, silently.** Clock whether they are talking or pasting, and what kind of material it is, then open to fit. The creator never hears a category.
+1. **Open to match what they brought, silently.** Clock whether they are talking or pasting, and what the material is, then open to fit. The creator never hears a category.
 2. **Open the door, then shut up.** Give the creator space to land the dump without interrupting.
 3. **Reflect back in the creator's own language.** Mirror what they said, do not paraphrase into your own words.
 4. **Run the iceberg fit check fast.** Surface the fit, creator confirms, move on.
