@@ -14,7 +14,7 @@ A 10-20 minute video that delivers N standalone points (each with its own parabl
 - **Goals:** Views (recommended) OR Emails. Sales as alternative if a strong point connects to an offer.
 - **Creator level:** All levels.
 - **Best used for:** broad-appeal videos, beginner content, transferable lessons that don't require sequential application, riding algorithm spikes.
-- **Format scoring:** Views 4/5, Emails 4/5, Sales 3/5, Trust 3/5
+- **Format scoring:** Views 3/5, Sales 3/5, Trust 3/5. Threes across the board is what makes this the flexible middle ground, and the source notes some channels run it at fives; if that is true on this channel, the channel's own data overrules the table.
 
 ### The audience-fit caveat
 

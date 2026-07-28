@@ -24,3 +24,14 @@ Load this at the format step. Pick the format the frame implies, then sanity-che
 1. **The frame usually implies the format.** A client transformation is a case study. A reaction to a launch is news. A "here is my process" is short-process. A set of disconnected tips is a listicle.
 2. **Then check it against the goal.** Sales or trust goal, lean to the high S/T formats (case-study, deep-dive, roast). Views goal, the high V formats earn their place (news, case-study, deep-dive, interview).
 3. **Lock one of the seven.** Every value here matches a planner on disk. Structure builds on it, so never lock a format that has no planner.
+
+## Where these numbers come from
+
+Verified against the source on 2026-07-28. These seven rows are a faithful transcription of the source author's spoken scoring, and `knowledge/format-planners/{format}.md` was corrected to match this table, not the other way round. **If a future audit finds a planner disagreeing with this table, this table is right.**
+
+Two things to hold alongside them:
+
+- **They are tendencies, not predictions.** The source says so directly: the ranking is a general overview, low-scoring formats do sometimes blow up, and it is on the creator to test. A channel's own results overrule this table every time.
+- **There is no Emails column, and inventing one would be fabrication.** The source scores Views, Sales, and Trust only. `goal: emails` is a real option in this system with no column to check against, so when the goal is emails, reason from the Sales and Trust scores (the formats that convert also collect) and say plainly that the table does not score it.
+
+Note for anyone reconciling this against the source directly: the source's own written course descriptions disagree with the source's spoken transcript on three formats (Short Process Views, News Sales, Interview Sales). This table follows the transcript, because that is the author speaking rather than marketing copy about what he said.

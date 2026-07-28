@@ -14,7 +14,7 @@ A 10-30 minute conversation with a guest who has achieved what the audience want
 - **Goals:** Views OR Emails. **Not Sales.** Interviews almost never convert directly. There's a documented case of a 300k-view interview producing zero sales because the credibility flowed to the guest, not the host.
 - **Creator level:** Any level. Just understand the tradeoff (credibility goes to the guest, not you).
 - **Best used for:** building relationships with notable guests, riding their credibility for views, teaching through someone else's transformation.
-- **Format scoring:** Views 4/5, Emails 3/5, Sales 1/5, Trust transfer 5/5 (TO the guest, not you)
+- **Format scoring:** Views 4/5, Sales 1/5, Trust 2/5. Trust scores low because the credibility transfers to the guest, not to you. See the section below; that transfer is the whole reason the end-screen routing carries this format.
 
 ### The hard truth about interviews
 

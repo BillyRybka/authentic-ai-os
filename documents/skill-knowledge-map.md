@@ -51,7 +51,7 @@ The skills split into three families: `vid-*` (the video pipeline), `aud-*` (the
 - `knowledge/interview-posture.md`
 - `knowledge/proof-bank-schema.md`
 - `knowledge/update-check.md`
-- `knowledge/vault-integration.md`
+- `knowledge/vault-integration.md`, `knowledge/bank-contract.md` (the leftover-wins proof entries)
 - Note: the proof bank this skill seeds is pulled downstream by `vid-intro`, `vid-segment`, `vid-ending`, and `vid-structure` (per the downstream-consumers line in the skill itself).
 
 **vid-backstory** `RELEASED`
@@ -88,23 +88,23 @@ The skills split into three families: `vid-*` (the video pipeline), `aud-*` (the
 **vid-intake** `STAGED`
 - `knowledge/story-capture-guide.md`
 - `knowledge/update-check.md` (pre-flight)
-- `knowledge/vault-integration.md`
+- `knowledge/piece-contract.md`
 
 **vid-capture** `STAGED`
 - `knowledge/framework-builder.md`
 - `knowledge/story-capture-guide.md`
-- `knowledge/vault-integration.md`
+- `knowledge/bank-contract.md`
 - Skill-local `references/` (moved out of `knowledge/`; vid-capture is their only consumer): `metaphor-builder.md`, `proof-capture-guide.md`, `testimonial-capture.md`
 
 **vid-framing** `STAGED`
-- `knowledge/BENS-framework.md`
-- `knowledge/vault-integration.md`
-- Skill-local `references/`: `format-index.md` (moved out of `knowledge/`; vid-framing is its only consumer), `reframe-toolkit.md`, `angle-anchor-rules.md`, `framing-conversation-examples.md`
-- Note: `references/format-index.md` names `knowledge/format-planners/{format}.md` only to say vid-structure loads it later. A pointer, not a load; vid-framing does not consume the planners. vid-framing also no longer loads `audience-temperature-model.md`, `outlier-identification-rules.md`, or `three-circle-research.md` (all three were in the prior map). Confirmed by grep.
+- `knowledge/piece-contract.md`
+- Skill-local `references/`: `format-index.md` (moved out of `knowledge/`; vid-framing is its only consumer), `stake-finder.md`, `framing-conversation-examples.md`
+- Note: `references/format-index.md` names `knowledge/format-planners/{format}.md` only to say vid-structure loads it later. A pointer, not a load; vid-framing does not consume the planners. As of the 2026-07-27 narrowing, vid-framing no longer loads `BENS-framework.md` or `banks/pattern-bank.md` (packaging and receipts are vid-title's job), and `reframe-toolkit.md` plus `angle-anchor-rules.md` moved into `vid-title/references/`. It also no longer loads `audience-temperature-model.md`, `outlier-identification-rules.md`, or `three-circle-research.md`.
 
 **vid-title** `STAGED`
 - `knowledge/BENS-framework.md`
-- Note: no longer loads `thumbnail-text-patterns.md` (the prior map listed it). vid-title also points at `references/angle-anchor-rules.md` inside the vid-framing folder, a cross-skill pointer whose target ships with vid-framing. Flagged in section 8.
+- Skill-local `references/`: `title-filters.md`, `angle-anchor-rules.md`, `reframe-toolkit.md` (the last two moved in from vid-framing on 2026-07-27)
+- Note: no longer loads `thumbnail-text-patterns.md` (the prior map listed it). The cross-skill pointer into vid-framing's folder is gone; every reference vid-title makes is now skill-local, so it packages standalone.
 
 **vid-thumbnail** `STAGED`
 - `knowledge/thumbnail-text-patterns.md` (the one craft reference: the 5 patterns, anti-patterns, pairing rules, and the examples library, now folded into this file)
@@ -120,7 +120,7 @@ The skills split into three families: `vid-*` (the video pipeline), `aud-*` (the
 - `knowledge/attention-craft.md`
 - `knowledge/intro-architecture.md`
 - `knowledge/transition-patterns.md`
-- `knowledge/vault-integration.md`
+- `knowledge/bank-contract.md`
 - `knowledge/visual-proof-callouts.md`
 - `knowledge/voice-pressure-test.md`
 - `knowledge/voice-rhythm.md`
@@ -137,7 +137,7 @@ The skills split into three families: `vid-*` (the video pipeline), `aud-*` (the
 - `knowledge/parable-decision-matrix.md`
 - `knowledge/script-tension-architecture.md`
 - `knowledge/transition-patterns.md`
-- `knowledge/vault-integration.md`
+- `knowledge/bank-contract.md`
 - `knowledge/visual-proof-callouts.md`
 - `knowledge/voice-pressure-test.md`
 - `knowledge/voice-rhythm.md`
@@ -149,7 +149,7 @@ The skills split into three families: `vid-*` (the video pipeline), `aud-*` (the
 **vid-ending** `STAGED`
 - `knowledge/attention-craft.md`
 - `knowledge/transition-patterns.md`
-- `knowledge/vault-integration.md`
+- `knowledge/bank-contract.md`
 - `knowledge/voice-pressure-test.md`
 - `knowledge/voice-rhythm.md`
 - `knowledge/format-planners/*.md`: all 7
@@ -194,7 +194,7 @@ The skills split into three families: `vid-*` (the video pipeline), `aud-*` (the
 All four `aud-*` skills load two parked files straight from `.claude/skills-wip/`: `synthetic-audience-method.md` (method, thresholds, banned vocabulary) and `vault-integration-aud-schemas.md` (the audience-family frontmatter schemas, extracted from `knowledge/vault-integration.md`). Neither is a `knowledge/` file, so neither ships while the family is WIP.
 
 **aud-intake** `WIP`
-- `knowledge/vault-integration.md` (the People stub rule)
+- `knowledge/bank-contract.md` (the person-stub rule)
 - Parked: `.claude/skills-wip/synthetic-audience-method.md`, `.claude/skills-wip/vault-integration-aud-schemas.md`
 
 **aud-avatar-build** `WIP`
@@ -214,7 +214,7 @@ All four `aud-*` skills load two parked files straight from `.claude/skills-wip/
 
 **post-write** `WIP`
 - `knowledge/iceberg-and-top-3-alignment.md`
-- `knowledge/vault-integration.md`
+- `knowledge/vault-integration.md`, `knowledge/piece-contract.md`, `knowledge/bank-contract.md`
 - `knowledge/voice-pressure-test.md`
 - `knowledge/voice-profile-schema.md`
 - Skill-local `references/`: `ai-hedging.md` (moved out of `knowledge/`; post-write is its only consumer)
@@ -229,11 +229,19 @@ Use this when editing or renaming a knowledge file: it tells you every skill tha
 |----------------|-------------|
 | `attention-craft.md` | vid-intro, vid-segment, vid-ending, vid-pressure-test |
 | `audience-temperature-model.md` | vid-pressure-test (via references/) |
+| `bank-contract.md` | vid-capture, vid-credibility, vid-intro, vid-segment, vid-ending, aud-intake, post-write |
 | `BENS-framework.md` | vid-framing, vid-title |
 | `creator-foundation-template.md` | vid-avatar |
 | `feedback-capture-map.md` | aaios-feedback |
 | `feedback-offer.md` | aaios-feedback, foundation |
 | `feedback-submit.md` | aaios-feedback |
+| `format-planners/case-study.md` | vid-structure, vid-intro, vid-segment, vid-ending, vid-pressure-test |
+| `format-planners/deep-dive.md` | vid-structure, vid-intro, vid-segment, vid-ending, vid-pressure-test |
+| `format-planners/interview.md` | vid-structure, vid-intro, vid-segment, vid-ending, vid-pressure-test |
+| `format-planners/listicle.md` | vid-structure, vid-intro, vid-segment, vid-ending, vid-pressure-test |
+| `format-planners/news.md` | vid-structure, vid-intro, vid-segment, vid-ending, vid-pressure-test |
+| `format-planners/roast.md` | vid-structure, vid-intro, vid-segment, vid-ending, vid-pressure-test |
+| `format-planners/short-process.md` | vid-structure, vid-intro, vid-segment, vid-ending, vid-pressure-test |
 | `format-rotation-guide.md` | vid-research |
 | `framework-builder.md` | vid-capture, vid-segment |
 | `hook-bank-template.md` | creator-setup (pending seed row into `banks/hook-bank.md`, then soft-loaded at runtime by vid-intro) |
@@ -244,6 +252,7 @@ Use this when editing or renaming a knowledge file: it tells you every skill tha
 | `outlier-identification-rules.md` | vid-research |
 | `packaging-system-template.md` | vid-research |
 | `parable-decision-matrix.md` | vid-structure, vid-segment, vid-ending (conditional, rare) |
+| `piece-contract.md` | vid-intake, vid-framing, post-write |
 | `proof-bank-schema.md` | vid-credibility |
 | `proof-placement-rules.md` | vid-intro (conditional), vid-ending (conditional, rare) |
 | `script-tension-architecture.md` | vid-structure, vid-segment, vid-pressure-test |
@@ -255,19 +264,12 @@ Use this when editing or renaming a knowledge file: it tells you every skill tha
 | `transition-bank-template.md` | creator-setup (pending seed row into `banks/transition-bank.md`, then soft-loaded at runtime by vid-segment, vid-ending) |
 | `transition-patterns.md` | vid-intro, vid-segment, vid-ending, vid-pressure-test (via references/) |
 | `update-check.md` | creator-setup, foundation, vid-avatar, vid-positioning, vid-pillars, vid-credibility, vid-backstory, vid-research, vid-ideas, vid-intake, vid-pipeline |
-| `vault-integration.md` | aaios-feedback, creator-setup, vid-avatar, vid-positioning, vid-pillars, vid-credibility, vid-backstory, vid-intake, vid-capture, vid-framing, vid-intro, vid-segment, vid-ending, vid-voice-capture, aud-intake, post-write |
+| `vault-integration.md` | aaios-feedback, creator-setup, vid-avatar, vid-positioning, vid-pillars, vid-credibility, vid-backstory, vid-voice-capture, post-write |
 | `visual-proof-callouts.md` | vid-intro, vid-segment |
 | `voice-extraction-methods.md` | vid-voice-capture |
 | `voice-pressure-test.md` | vid-intro, vid-segment, vid-ending, vid-voice-capture, vid-voice-audit, post-write |
 | `voice-profile-schema.md` | vid-pressure-test, vid-voice-capture, vid-voice-audit, vid-voice-update, post-write |
 | `voice-rhythm.md` | vid-intro, vid-segment, vid-ending, vid-voice-capture, vid-voice-audit |
-| `format-planners/case-study.md` | vid-structure, vid-intro, vid-segment, vid-ending, vid-pressure-test |
-| `format-planners/deep-dive.md` | vid-structure, vid-intro, vid-segment, vid-ending, vid-pressure-test |
-| `format-planners/interview.md` | vid-structure, vid-intro, vid-segment, vid-ending, vid-pressure-test |
-| `format-planners/listicle.md` | vid-structure, vid-intro, vid-segment, vid-ending, vid-pressure-test |
-| `format-planners/news.md` | vid-structure, vid-intro, vid-segment, vid-ending, vid-pressure-test |
-| `format-planners/roast.md` | vid-structure, vid-intro, vid-segment, vid-ending, vid-pressure-test |
-| `format-planners/short-process.md` | vid-structure, vid-intro, vid-segment, vid-ending, vid-pressure-test |
 
 The 7 `format-planners/` files are always loaded one at a time (`{format}.md` matched to the video's format), but any of the 7 can be needed, so all 7 must ship with any consuming skill. For vid-pressure-test the load is deferred to the Phase 2 retention reviewer, but all 7 still have to ship.
 
@@ -303,7 +305,6 @@ Watch items that look like broken references but are not:
 
 - The string `knowledge/X.md` appears in many SKILL.md files. It is **not a reference**. It is a documentation line explaining how to resolve `knowledge/` paths at runtime (`${CLAUDE_PLUGIN_ROOT}/knowledge/` when installed, repo-relative in dev). The `X` is a literal placeholder. Ignore it.
 - The vault banks `banks/hook-bank.md` and `banks/transition-bank.md` are soft-loads: vid-intro, vid-segment, and vid-ending use them when present and run fine without. creator-setup's manifest carries the seed rows (pending table) that copy `hook-bank-template.md` and `transition-bank-template.md` into the vault once the writing skills ship.
-- vid-title points at `references/angle-anchor-rules.md` in the vid-framing folder. The file exists and ships with vid-framing; package the two skills together.
 - `references/format-index.md` (vid-framing) names `knowledge/format-planners/{format}.md` only to say vid-structure loads it later. A pointer, not a load.
 
 ---
@@ -319,7 +320,7 @@ When you ship a skill, confirm every box. The skill's own `SKILL.md`, `reference
 - [ ] **vid-avatar**: creator-foundation-template, interview-posture, update-check, vault-integration (4)
 - [ ] **vid-positioning**: interview-posture, update-check, vault-integration (3)
 - [ ] **vid-pillars**: interview-posture, update-check, vault-integration (3)
-- [ ] **vid-credibility**: interview-posture, proof-bank-schema, update-check, vault-integration (4)
+- [ ] **vid-credibility**: bank-contract, interview-posture, proof-bank-schema, update-check, vault-integration (5)
 - [ ] **vid-backstory**: interview-posture, update-check, vault-integration (3)
 - [ ] **vid-research**: format-rotation-guide, interview-posture, outlier-identification-rules, packaging-system-template, theory-of-one-curation, three-circle-research, thumbnail-text-patterns, update-check (8)
 - [ ] **aaios-feedback**: feedback-capture-map, feedback-offer, feedback-submit, vault-integration (4)
@@ -327,15 +328,15 @@ When you ship a skill, confirm every box. The skill's own `SKILL.md`, `reference
 ### STAGED skills
 
 - [ ] **vid-ideas**: iceberg-and-top-3-alignment, theory-of-one-curation, update-check (3)
-- [ ] **vid-intake**: story-capture-guide, update-check, vault-integration (3)
-- [ ] **vid-capture**: framework-builder, story-capture-guide, vault-integration (3; metaphor-builder, proof-capture-guide, and testimonial-capture ship inside the skill's own `references/`)
-- [ ] **vid-framing**: BENS-framework, vault-integration (2; format-index and the other decision files ship inside the skill's own `references/`)
+- [ ] **vid-intake**: piece-contract, story-capture-guide, update-check (3)
+- [ ] **vid-capture**: bank-contract, framework-builder, story-capture-guide (3; metaphor-builder, proof-capture-guide, and testimonial-capture ship inside the skill's own `references/`)
+- [ ] **vid-framing**: BENS-framework, piece-contract (2; format-index and the other decision files ship inside the skill's own `references/`)
 - [ ] **vid-title**: BENS-framework (1)
 - [ ] **vid-thumbnail**: thumbnail-text-patterns (1)
 - [ ] **vid-structure**: parable-decision-matrix, script-tension-architecture, format-planners/ x7 (9)
-- [ ] **vid-intro**: attention-craft, intro-architecture, metaphor-integration, proof-placement-rules, story-pulling-criteria, transition-patterns, vault-integration, visual-proof-callouts, voice-pressure-test, voice-rhythm, format-planners/ x7 (17)
-- [ ] **vid-segment**: attention-craft, framework-builder, parable-decision-matrix, script-tension-architecture, transition-patterns, vault-integration, visual-proof-callouts, voice-pressure-test, voice-rhythm, format-planners/ x7 (16)
-- [ ] **vid-ending**: attention-craft, metaphor-integration, parable-decision-matrix, proof-placement-rules, story-pulling-criteria, transition-patterns, vault-integration, voice-pressure-test, voice-rhythm, format-planners/ x7 (16)
+- [ ] **vid-intro**: attention-craft, bank-contract, intro-architecture, metaphor-integration, proof-placement-rules, story-pulling-criteria, transition-patterns, visual-proof-callouts, voice-pressure-test, voice-rhythm, format-planners/ x7 (17)
+- [ ] **vid-segment**: attention-craft, bank-contract, framework-builder, parable-decision-matrix, script-tension-architecture, transition-patterns, visual-proof-callouts, voice-pressure-test, voice-rhythm, format-planners/ x7 (16)
+- [ ] **vid-ending**: attention-craft, bank-contract, metaphor-integration, parable-decision-matrix, proof-placement-rules, story-pulling-criteria, transition-patterns, voice-pressure-test, voice-rhythm, format-planners/ x7 (16)
 - [ ] **vid-pressure-test**: attention-craft, audience-temperature-model, intro-architecture, script-tension-architecture, transition-patterns, voice-profile-schema, format-planners/ x7 (13)
 - [ ] **vid-voice-capture**: interview-posture, vault-integration, voice-extraction-methods, voice-pressure-test, voice-profile-schema, voice-rhythm (6)
 - [ ] **vid-voice-audit**: voice-pressure-test, voice-profile-schema, voice-rhythm (3)
@@ -344,11 +345,11 @@ When you ship a skill, confirm every box. The skill's own `SKILL.md`, `reference
 
 ### WIP skills (re-verify dependency list before shipping)
 
-- [ ] **aud-intake**: vault-integration (1, plus the two parked `.claude/skills-wip/` files)
+- [ ] **aud-intake**: bank-contract (1, plus the two parked `.claude/skills-wip/` files)
 - [ ] **aud-avatar-build**: none in `knowledge/` (0, plus the two parked `.claude/skills-wip/` files)
 - [ ] **aud-validate**: none in `knowledge/` (0, plus the two parked files and skill-local `references/common-english.txt`)
 - [ ] **aud-review**: none in `knowledge/` (0, plus the two parked `.claude/skills-wip/` files)
-- [ ] **post-write**: iceberg-and-top-3-alignment, vault-integration, voice-pressure-test, voice-profile-schema (4; ai-hedging ships inside the skill's own `references/`)
+- [ ] **post-write**: bank-contract, iceberg-and-top-3-alignment, piece-contract, vault-integration, voice-pressure-test, voice-profile-schema (6; ai-hedging ships inside the skill's own `references/`)
 
 ---
 
@@ -368,7 +369,7 @@ The copy is idempotent (skip if the target exists), so a creator's edited bank i
 ## 7. Maintenance
 
 > [!note] Provenance
-> Regenerated 2026-07-21 by grepping all three skill roots (`plugins/authentic-ai-os/skills/`, `.claude/skills/`, `.claude/skills-wip/`), including each skill's `SKILL.md`, `references/`, `assets/`, and `manifest.md`, then cross-checking every referenced path against `knowledge/` on disk. Dev-only `WORKING-NOTES.md` files were excluded. This scan reflects the post-slimming state: six craft files moved from `knowledge/` into skill-local `references/`, four thumbnail files and five bank-schemas deleted, the aud-* method and schemas parked at `.claude/skills-wip/`, `vault-integration.md` slimmed to 618 lines, `attention-craft.md` and `transition-patterns.md` added, and `emotion-brick-decision-matrix.md` renamed to `parable-decision-matrix.md`.
+> Regenerated 2026-07-21, updated 2026-07-27 for the vault-integration split by grepping all three skill roots (`plugins/authentic-ai-os/skills/`, `.claude/skills/`, `.claude/skills-wip/`), including each skill's `SKILL.md`, `references/`, `assets/`, and `manifest.md`, then cross-checking every referenced path against `knowledge/` on disk. Dev-only `WORKING-NOTES.md` files were excluded. This scan reflects the post-slimming state: six craft files moved from `knowledge/` into skill-local `references/`, four thumbnail files and five bank-schemas deleted, the aud-* method and schemas parked at `.claude/skills-wip/`, `vault-integration.md` split into a slim shared core plus `piece-contract.md` and `bank-contract.md`, `attention-craft.md` and `transition-patterns.md` added, and `emotion-brick-decision-matrix.md` renamed to `parable-decision-matrix.md`.
 
 **This map is a release-process artifact.** It is regenerated as a mandatory step whenever a skill graduates (WIP to STAGED to RELEASED) or is parked. See the graduation checklist in `documents/RELEASE.md`, `documents/DEV-WORKFLOW.md`, and the `peak-release` skill.
 
@@ -389,8 +390,8 @@ To regenerate the raw data:
 ## 8. Known irregularities (not defects, worth tracking)
 
 - **aaios-feedback skips the update-check pre-flight** that the other eight released skills run. Intentional: feedback is a terminal cross-cutting skill that runs mid-session after another skill already checked, so it skips the pre-flight to avoid interrupting a feedback report with an update notice.
-- **vid-structure does not load `vault-integration.md`** while every other writing skill does. It writes `script.md` and updates `piece.md` and may rely on a calling skill having loaded the routing rules. Confirm before shipping vid-structure standalone.
+- **vid-structure does not load `piece-contract.md`** while every other writing skill that touches piece.md does. It writes `script.md` and updates `piece.md` and may rely on a calling skill having loaded the field-ownership map. Confirm before shipping vid-structure standalone.
 - **vid-pressure-test loads `format-planners/` and `attention-craft.md` deferred**, only when the Phase 2 retention-logic reviewer fires. The prior map said the planners were dropped entirely; the current build re-added them as a deferred load. Easy to mis-scan either way.
 - **The decision-matrix rename is resolved.** `emotion-brick-decision-matrix.md` no longer exists; `knowledge/parable-decision-matrix.md` is the one matrix file, consumed by vid-structure and vid-segment, with a rare conditional pull from vid-ending.
-- **vid-title has a cross-skill pointer** into `references/angle-anchor-rules.md` inside the vid-framing folder. Not a packaging defect (the file ships with vid-framing), but vid-title should not ship without vid-framing until the pointer is made relative to the plugin root.
+- **vid-title's cross-skill pointer is resolved.** `angle-anchor-rules.md` and `reframe-toolkit.md` moved into `vid-title/references/` on 2026-07-27 when vid-framing was narrowed to the argument and stopped shopping the banks. vid-title now packages standalone.
 - **The two bank seed rows are pending** in `creator-setup/manifest.md` until `vid-intro`, `vid-segment`, and `vid-ending` ship. The templates ship in `knowledge/` either way; the rows move tables at graduation.

@@ -50,9 +50,9 @@ from frontmatter import split_frontmatter, has_fields  # noqa: E402
 BANK_TYPES = ["story", "metaphor", "proof", "testimonial", "framework"]
 
 # Required frontmatter, enum values, body sections, and required callouts per
-# bank type, per knowledge/vault-integration.md, the skill's assets/ templates,
+# bank type, per knowledge/bank-contract.md, the skill's assets/ templates,
 # and knowledge/framework-builder.md ("Entry schema + worked body example",
-# which is why framework entries carry `shape` even though vault-integration's
+# which is why framework entries carry `shape` even though bank-contract's
 # own framework block does not list it).
 SCHEMAS = {
     "story": {

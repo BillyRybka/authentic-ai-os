@@ -27,7 +27,7 @@ _PERCENT_RE = re.compile(r"\b\d[\d,]*(?:\.\d+)?\s?%")
 _MULTIPLIER_RE = re.compile(r"\b\d[\d,]*(?:\.\d+)?\s?[xX]\b")
 _BIG_NUMBER_RE = re.compile(r"\b\d{3,}(?:,\d{3})*(?:\.\d+)?\b")
 
-# Bank subfolders that a [[link]] might point into (per vault-integration.md).
+# Bank subfolders that a [[link]] might point into (per bank-contract.md).
 _BANK_DIRS = [
     "story-bank", "proof-bank", "metaphor-bank",
     "testimonial-bank", "framework-bank", "packaging-bank",

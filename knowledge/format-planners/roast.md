@@ -14,7 +14,7 @@ A 10-25 minute video reviewing 1-3 viewer submissions, showing problems and demo
 - **Goals:** Sales (recommended) OR Emails. Views can spike. The format's strength is conversion.
 - **Creator level:** Intermediate to advanced. You must be a true expert who can deliver real solutions on the spot.
 - **Best used for:** establishing undeniable credibility ("watch me fix this live"), generating recurring submissions for content, building a list of submission-ready viewers who self-identify as buyers.
-- **Format scoring:** Sales 5/5, Trust 5/5, Views 3/5
+- **Format scoring:** Views 2/5, Sales 5/5, Trust 5/5. The low reach is the tradeoff, not a failure state. Smaller channels struggle to run this one, because it needs an audience willing to submit work.
 
 ### Why this is the highest-conversion format
 

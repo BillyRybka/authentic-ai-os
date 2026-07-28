@@ -95,7 +95,7 @@ On approval, always, both modes:
 
 - **Append** the locked prose to script.md under the segment's heading. Preserve all prior sections. One exception: if this segment's opening made the prior segment's closing transition land wrong, adjust that one inherited line and tell the creator. Delete any `> [!todo]` callout this segment consumed and its cleared `## To build` row.
 - Update piece.md frontmatter: append this segment's label to `segments_completed`, append the pulled `[[wikilinks]]` to the matching `*_used` arrays, bump `last_updated`. Append only; never touch another skill's fields.
-- Update every pulled bank entry per the update-both-sides rule in `knowledge/vault-integration.md`: `status` flips to `used`, `used_in` gains `[[{piece-slug}]]`.
+- Update every pulled bank entry per the update-both-sides rule in `knowledge/bank-contract.md`: `status` flips to `used`, `used_in` gains `[[{piece-slug}]]`.
 - Surface in chat: what saved, and any proof callouts with no bank link so the creator can capture the proof before filming or rephrase.
 
 The next segment starts only when the creator says go.

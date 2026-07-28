@@ -14,7 +14,7 @@ A 4-10 minute video that breaks something happening RIGHT NOW (or new-to-the-vie
 - **Goals:** Views (recommended), Emails. **NOT for sales. Viewers came for the story, not your offer.**
 - **Creator level:** All levels. Beginners can use news to ride algorithm spikes from trending topics.
 - **Best used for:** breaking events relevant to the niche, surfacing under-noticed updates, announcing something new in a tool, policy, or industry that affects the avatar.
-- **Format scoring:** Views 5/5, Emails 3/5, Sales 2/5
+- **Format scoring:** Views 5/5, Sales 1/5, Trust 2/5
 
 ### "News" doesn't only mean breaking world events
 

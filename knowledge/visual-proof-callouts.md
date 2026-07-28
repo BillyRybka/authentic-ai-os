@@ -136,7 +136,7 @@ If the creator's claim is real (it's in the lock list) but no visual asset exist
 2. **Don't auto-remove the claim.** The creator decides whether to capture the proof or rephrase.
 3. **Don't fabricate a visual** ("imagine a dashboard here"). Anti-fabrication applies to visual proof too. The proof is real or the claim doesn't ship.
 
-This connects to [[banks/proof-bank]]: if the proof exists in the bank but isn't linked to the brain dump, ask the creator if they want to wikilink it. Update both sides per [[knowledge/vault-integration]].
+This connects to [[banks/proof-bank]]: if the proof exists in the bank but isn't linked to the brain dump, ask the creator if they want to wikilink it. Update both sides per [[knowledge/bank-contract]].
 
 ## How callouts feed downstream skills
 

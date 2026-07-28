@@ -79,7 +79,7 @@ Foundation skills must check this section before writing person stubs (or any ot
 This is an Obsidian vault. Treat every note accordingly.
 
 - **Wikilinks everywhere.** Internal references are `[[Note Name]]`, never plain text and never `[markdown](links)`. Every person, project, story, framework gets wikilinked when referenced.
-- **Frontmatter on every note** a skill creates. Schema in `${CLAUDE_PLUGIN_ROOT}/knowledge/vault-integration.md`.
+- **Frontmatter on every note** a skill creates. Shared conventions in `${CLAUDE_PLUGIN_ROOT}/knowledge/vault-integration.md`; that file indexes the schema for each artifact type.
 - **Embeds:** `![[Note]]`. Callouts: `> [!tip]`, `> [!warning]`. Highlights: `==text==`. Tags inline (`#tag`) or in frontmatter.
 - **No `README.md` for folder indexes.** A project folder's index file is `{Project Name}.md`, proper case, matches the folder name. Reason: in Obsidian's graph every README node looks identical and the creator cannot tell them apart.
 - **Bidirectional links.** When a story references a person, the person's profile gets a backlink too.
@@ -89,7 +89,7 @@ This is an Obsidian vault. Treat every note accordingly.
 1. **Creator drives, Claude structures.** Never fabricate positioning, avatar details, stories, numbers, testimonials, or metaphors. If the creator didn't say it, don't write it.
 2. **Ask before scanning.** When a skill starts, ask the creator what they want to do. Don't pre-load foundation docs, banks, or content pieces.
 3. **Auto-save meaningful info.** When the creator says something worth keeping (a correction, a story, a decision), save it to the right file immediately. Report what was saved and where. Never ask permission.
-4. **People get profiles.** When a new human is mentioned, create `people/{Full Name}.md` as a stub even if details are thin.
+4. **People get profiles, at capture time.** When a human's material becomes a bank entry (story, proof, testimonial), the skill writing that entry creates `people/{Full Name}.md` as a stub even if details are thin. Skills that only capture raw material keep names as plain text and create nothing; a name in a brain dump is material, not yet an entity.
 5. **Keep piece dates honest.** A content piece's `piece.md` carries `created` (stamped once by vid-intake, never changed) and `last_updated`. Any skill that writes a piece's `piece.md` bumps `last_updated` to today. The piece's `status` (ideating, drafting, filming-ready, then the post-production states) is the one lifecycle field; the pipeline advances it, you never hand-edit it.
 
 ## Quick reference

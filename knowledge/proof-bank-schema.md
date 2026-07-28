@@ -40,21 +40,7 @@ How the proof gets presented (static screenshot, before-after pairing, live vide
 
 ## Schema
 
-```yaml
----
-type: proof
-project: authentic-ai-os
-proof_type: client-win          # personal-result | client-win
-illustrates: delegating one task gave back a full day every week
-themes: [delegation, time]      # open vocabulary, the angles this proof backs
-client: "[[Client Name]]"       # only if proof_type: client-win
-captured: YYYY-MM-DD
-status: captured                # captured | used | archived
-tags: [proof, {proof-type-slug}]
-asset_path: "banks/proof-bank/assets/{file}.png"   # optional
-used_in: []
----
-```
+The proof frontmatter block lives in [[bank-contract]], alongside the other four banks. Write it from there; this file does not restate it.
 
 ## Naming
 
@@ -70,4 +56,4 @@ used_in: []
 
 ## People links
 
-If a proof entry names a recognizable person (a client, a guest), create or update a person stub and wikilink the name both ways, per the vault-integration contract. Default path is `people/{Full Name}.md` inside the workspace; if the workspace `CLAUDE.md` defines a `## Path overrides` entry for person stubs, follow that override instead.
+If a proof entry names a recognizable person (a client, a guest), create or update a person stub and wikilink the name both ways, per the person-stub rule in [[bank-contract]]. Default path is `people/{Full Name}.md` inside the workspace; if the workspace `CLAUDE.md` defines a `## Path overrides` entry for person stubs, follow that override instead.

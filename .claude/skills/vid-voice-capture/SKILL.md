@@ -43,8 +43,8 @@ A context with too little material gets no folder (no stub) and is noted in `con
 ## Load at session start
 
 1. `knowledge/interview-posture.md`. Shared posture. Non-negotiable.
-2. `knowledge/vault-integration.md`. Frontmatter and wikilink contract.
-3. `knowledge/voice-profile-schema.md`. The two-artifact contract and load contract.
+2. `knowledge/voice-profile-schema.md`. The two-artifact contract and load contract, including both artifacts' frontmatter.
+3. `knowledge/vault-integration.md`. The foundation-doc schema `voice-profile.md` is written against, plus tag and naming conventions.
 4. `foundation/creator-foundation.md`. Avatar and positioning.
 5. `knowledge/voice-extraction-methods.md` when curation starts. Source grouping, passage selection, guardrail build.
 6. `knowledge/voice-pressure-test.md` at the read-aloud stage.

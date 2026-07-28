@@ -14,7 +14,7 @@ This is the first skill in the `aud-*` pipeline. Without it, `aud-avatar-build` 
 > **Resolving `knowledge/` paths.** Any path written `knowledge/X.md` is a plugin reference file. Load it from `${CLAUDE_PLUGIN_ROOT}/knowledge/X.md` when running as an installed plugin. If `${CLAUDE_PLUGIN_ROOT}` is unset or that path does not exist (running from the source repo during development), load `knowledge/X.md` relative to the repo root instead.
 
 1. `.claude/skills-wip/synthetic-audience-method.md`. The contamination checklist, the 5 moment types, the validation thresholds, the banned vocabulary list. Non-negotiable.
-2. `.claude/skills-wip/vault-integration-aud-schemas.md`. Frontmatter schemas for audience-data and vocabulary-sample. `knowledge/vault-integration.md` for the People stub rule.
+2. `.claude/skills-wip/vault-integration-aud-schemas.md`. Frontmatter schemas for audience-data and vocabulary-sample. `knowledge/bank-contract.md` for the person-stub rule.
 
 ## Contract
 
@@ -69,7 +69,7 @@ Save the answer to `audience/state.md` so we don't ask again. Default: first spe
 
 ### Step 2: Identify the prospect
 Find the prospect's name in the transcript opening if present. If found:
-- Create `people/{Full Name}.md` stub if it doesn't exist (per the People stub rule in `knowledge/vault-integration.md`)
+- Create `people/{Full Name}.md` stub if it doesn't exist (per the person-stub rule in `knowledge/bank-contract.md`)
 - Use the name for the call-slug: `{first-name}-{date-or-topic}.md`
 
 If no name in the transcript:

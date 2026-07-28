@@ -19,7 +19,7 @@ Read each file when its phase starts. Never front-load.
 
 - **Phase 1:** `content/pieces/{slug}/piece.md` (format, goal, pillar, selected_angle) · `content/pieces/{slug}/script.md` (full body, plus the `## Intro` verbatim for the callback rules) · `foundation/creator-foundation.md` (avatar + Top 3 problems) · `knowledge/format-planners/{format}.md` (close shape, authoritative) · `references/end-screen-design.md` (picking the next video).
 - **Phase 2:** `foundation/voice-profile.md` + the matching `foundation/reference-pieces/{voice_context}.md` (voice only; the spec wins any conflict with Pivot/Gap/Bridge) · `knowledge/transition-patterns.md` Sections 3 + 4 (BE-1..BE-8 close patterns, banned tiers) · `banks/transition-bank.md` if the vault has it (creator-grown supplement; missing is fine) · `knowledge/attention-craft.md` (energy + pacing calibration) · `references/pivot-gap-bridge-shapes.md` · `references/cta-placement-by-format.md` · `references/ending-anti-patterns.md`. Conditional: the story/proof/metaphor/parable files, only if the close pulls one (rare).
-- **Phase 4:** `knowledge/voice-pressure-test.md` + `knowledge/voice-rhythm.md` (the two-pass voice check) · `knowledge/vault-integration.md` (update-both-sides on bank pulls).
+- **Phase 4:** `knowledge/voice-pressure-test.md` + `knowledge/voice-rhythm.md` (the two-pass voice check) · `knowledge/bank-contract.md` (update-both-sides on bank pulls).
 
 ## Prerequisites
 
@@ -120,7 +120,7 @@ Then:
 
 - Update piece.md: `ending_locked: true`, `next_video: "[[slug]]"`, bump `last_updated:`.
 - If the next-video wikilink target doesn't resolve, do NOT save a broken link. Ask: right slug, plain text for now, or skip the Bridge until the video exists?
-- Any bank pull updates both sides per `knowledge/vault-integration.md`.
+- Any bank pull updates both sides per `knowledge/bank-contract.md`.
 - Confirm in chat with the real voice-check result, one line.
 
 **STOP.** The script is now body-complete with intro and close; `vid-pressure-test` is the next gate.

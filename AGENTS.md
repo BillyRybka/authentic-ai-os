@@ -90,7 +90,7 @@ vale path/to/file.md
 
 - No em-dashes or en-dashes. No banned words, AI-isms, or hedge words (see the `.yml` rule files). `tests/lib/vale_rules.py` mirrors these rules at eval time — keep the two in sync.
 - Obsidian-flavored markdown throughout: internal references are always `[[wikilinks]]`, never `[markdown](links)` or plain-text entity names. Callouts `> [!tip]`, highlights `==text==`, frontmatter `tags: [a, b]`.
-- Frontmatter on every note a skill creates; the schema is defined in `knowledge/vault-integration.md`.
+- Frontmatter on every note a skill creates. `knowledge/vault-integration.md` holds the shared conventions and indexes the per-artifact schemas (`knowledge/piece-contract.md`, `knowledge/bank-contract.md`, `knowledge/voice-profile-schema.md`).
 - Plain, spoken language. "Read aloud is the voice test" — if the creator would reword it when speaking, it is wrong.
 - Vale skips: frontmatter blocks, wikilinks, and the paths excluded in `.vale.ini` (creator-side output, scratch dirs). Rule-documentation meta files (e.g. `CLAUDE.md`) may contain banned words.
 

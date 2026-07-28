@@ -60,6 +60,48 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 
 **Why this fails:** skill ran an interrogation instead of letting the creator dump. Asked questions that belong in `vid-framing`, not intake. Creator's enthusiasm for the topic dies in the questionnaire.
 
+## A seed handed over from vid-ideas (the title makes a promise)
+
+When `vid-ideas` hands off a pick, the piece.md is already on disk and the topic is set. Two things change: you open on the material (no "what do you want to make"), and when the seed's title makes a promise ("better than 99%", "the only X you need", a number), the body has to earn it with the creator's real method, not generic tips. That is what the opening drill is for. When the ask has more than one part, format it: a **bold lead-in** per question, then the plain prompt. A multi-part ask dumped as one paragraph reads like homework.
+
+### Worked
+
+*(seed from `vid-ideas`: "Train Busy Founders Better Than 99% of Coaches", anchored to a real outlier. piece.md already written with status `ideating`.)*
+
+**Skill (open on the material):** "Piece is saved. The title makes a promise, that you train busy founders better than 99% of coaches, so the video only works if the body is your actual method, not stuff any coach could say. Dump raw on these three, any order:
+
+**Your actual programming workflow.** Walk me through it like I'm watching you build a founder's week. What you decide first, what you cut, what the final week looks like.
+
+**Where the 99% go wrong.** The mistake you see other coaches make over and over that produces a program a stressed founder can't sustain.
+
+**The one move that's yours.** The thing you do that they don't, the reason your clients stick and theirs quit.
+
+No need to organize it, I'll catch everything."
+
+**Creator:** "OK so first move is I look at their calendar before their goals. Everyone else starts with the goal, bench 315, whatever, then jams a program in. I start with the two or three time slots that will actually survive a bad week. Then I build backwards from there. Usually it's 2 sessions, never 5. The mistake everyone makes is programming for the founder's best week instead of their worst one, so the plan works for 3 weeks then collapses the first time a deal blows up. The thing that's mine is I make them cut the program in half in front of me on the call, so they feel how little is actually required."
+
+**Skill (reflect):** "Got it. Three points: program off the calendar not the goal, build from the slots that survive a bad week; the 99% mistake is programming for the best week not the worst; and your move is making them cut it in half live on the call. Anything I missed?"
+
+**Creator:** "That's the spine of it."
+
+**Skill (drill the thin spot):** "The 'cut it in half on the call' move is the strongest thing here and it's the least explained. What do you actually say when they push back?"
+
+**Creator:** "They always say 'that's not enough.' I say 'it's not enough for the you who has a free week. It's exactly enough for the you who just lost a client.' Then we delete two days right there."
+
+**Skill (fit check):** "That's dead center in your iceberg, the consistency-under-stress lane. Pillar's programming. Sound right?"
+
+**Creator:** "Yep."
+
+**Skill (save):** "Saved to `content/pieces/train-founders-better-than-99/brain-dump.md`. Run vid-framing next to lock the angle."
+
+**Why this works:** opened straight on the material because the piece was already seeded, no re-asking the topic. Named the promise in the title so the creator knew the bar. Formatted the three-part ask as a bold-labeled list, which gives the creator a place to start instead of a wall to parse. Drilled the one move that was his and least explained. Any same-territory pieces were read silently and never mentioned.
+
+### Near-miss
+
+**Skill:** "Great, so this is about training founders better than 99% of coaches. Before we start, I'm reading your other piece on founder morning routines to hold in reserve so I don't re-drill ground you've covered. OK, now tell me your whole content workflow, where other coaches go wrong, what makes your programming different from everyone else's, what you say to clients, how you handle pushback, and what the final week looks like."
+
+**Why this fails:** two mistakes. First, it announced the same-territory scan and treated an adjacent piece as if it might be the same video. That scan is silent, always, and an adjacent piece on the same pillar is not this video. Second, it dumped a six-part question as one run-on paragraph. The creator can't tell what to answer first. Break it into a short bold-labeled list, and keep the reserve scan invisible.
+
 ## Notes or bullets, pasted
 
 ### Worked
@@ -252,7 +294,9 @@ The creator in these examples is a fitness coach. Iceberg statement: "I help bus
 3. **Reflect back in the creator's own language.** Mirror what they said, do not paraphrase into your own words.
 4. **Run the iceberg fit check fast.** Surface the fit, creator confirms, move on.
 5. **Drill ONLY where the material is thin.** Never run an exhaustive question battery.
-6. **Save with a clean confirmation.** "Saved to [path]. Run vid-framing next."
+6. **Format a multi-part ask.** When the opening drill or a reflect-back asks for more than one thing, give each part a **bold lead-in** and put the prompt under it. Never dump a multi-part ask as one paragraph, it reads like homework and the creator can't tell where to start.
+7. **Keep the same-territory scan invisible.** If you read an adjacent piece to avoid re-drilling, do it silently. Never announce it, and never treat a same-pillar piece as if it might be this video (see the vid-ideas near-miss above).
+8. **Save with a clean confirmation.** "Saved to [path]. Run vid-framing next."
 
 ## When you can't tell what they brought
 

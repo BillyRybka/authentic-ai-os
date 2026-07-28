@@ -48,7 +48,7 @@ Soft requirements (loaded if present, graceful fallback if not):
 
 **Silent loads** (do NOT paste into chat). Load only these:
 
-1. `knowledge/vault-integration.md`. The frontmatter and wikilink contract for everything this skill saves.
+1. `knowledge/vault-integration.md` (shared conventions) plus `knowledge/piece-contract.md` and `knowledge/bank-contract.md`. The frontmatter and wikilink contract for everything this skill saves.
 2. `knowledge/voice-profile-schema.md`. The voice load contract. Follow it exactly.
 3. `foundation/creator-foundation.md`, but only the **Iceberg Statement**, the **Content pillars** list, the **Avatar** description, and the **Top 3 perceived problems**. Skip offer, credibility, backstory.
 4. `foundation/voice-profile.md` if it exists, plus `foundation/reference-pieces/{voice_context}.md` for each platform in play. Graceful fallback per the load contract if absent.
@@ -88,7 +88,7 @@ This is the loop. For the next unit, in order:
 4. **Show the core ALONE and lock it.** Present just the core piece. Offer the beat: "Is this good? Tweak it, switch the type, or drop it." Do NOT write any platform version until the creator approves the core. This is the gate: the content gets locked before any platform effort, so you never adapt a piece the creator is about to change.
 5. **Once the core is approved, adapt it to each target platform.** Read `references/platforms/{platform}.md` and transform the locked core into that platform's delivery. LinkedIn: hook-first, short paragraphs, length and CTA rules. Instagram carousel: first run the worth-it gate in `references/carousel.md`. A single story or one belief is a caption, not a carousel, so do NOT build the carousel for it. Build the caption instead, tell the creator plainly why a single story lands harder as one thread than as slides, and build slides only if the creator explicitly insists after the recommendation. If the idea genuinely earns slides (a list, a framework, a process, a comparison, a multi-beat case study), decompose the core into beats per `references/carousel.md` (one idea per slide, 30 words and two short sentences max per slide, a cover that earns the swipe, the delete test on every slide), never sliced at the core's paragraph breaks, plus a text visual brief. Instagram caption: a warmer single-thread version. Each adaptation is a real transformation of the core, not a paste of another platform's version. **Re-engineer the opening line for each platform** per `references/hooks.md`. The same idea hooks differently on a LinkedIn feed, a carousel title slide, and a caption, so each version gets its own first line held to the hook test, never the core's opener reflowed. Run the anti-slop pass on each adaptation too, watch that no invented number leaks into a platform CTA, and vary the hook against what the batch has already used.
 6. **Show the platform versions and get the call.** Present the adaptations. Offer the beat: "Good, or tweak a platform, drop one."
-7. **Save the post note** from `assets/post-note-template.md`: provenance frontmatter, then the approved core and each platform adaptation as clean `## Publishable` blocks. Update the parent piece per the vault-integration "update both sides" rule. Settle this unit before the next. Never dump the whole batch at once.
+7. **Save the post note** from `assets/post-note-template.md`: provenance frontmatter, then the approved core and each platform adaptation as clean `## Publishable` blocks. Update the parent piece per the "update both sides" rule in `knowledge/bank-contract.md`. Settle this unit before the next. Never dump the whole batch at once.
 
 ### Phase 5: Batch pass and close
 
@@ -96,7 +96,7 @@ When the batch is done (or the creator stops):
 
 1. **Hook-variety check across the batch.** Scan the openers. If more than two posts share an opening pattern, flag it and offer to re-roll the repeats with a different hook from the rotation library. Sameness across a batch is the loudest AI tell.
 2. **Batch summary.** List what was produced, the platform and type of each, and where each saved. If voice context fell back to fingerprint-only (no reference-pieces for a platform), say so and suggest the creator add voice sources for that context.
-3. **Surface any failures** per the vault-integration visibility rule: units dropped, partial saves, unresolved wikilinks. No silent swallowing.
+3. **Surface any failures** per the visibility rule in `knowledge/bank-contract.md`: units dropped, partial saves, unresolved wikilinks. No silent swallowing.
 
 ## Conversational discipline
 
@@ -138,7 +138,9 @@ When the batch is done (or the creator stops):
 | `knowledge/iceberg-and-top-3-alignment.md` | Phase 2. The 2-layer fit gate and its 4 outcomes. Reuse, do not duplicate. |
 | `knowledge/voice-profile-schema.md` | Phase 1. The voice load contract and graceful fallback. |
 | `knowledge/voice-pressure-test.md` | Phase 4 step 4. The read-aloud voice test before save. |
-| `knowledge/vault-integration.md` | Phase 1 and Phase 4. Frontmatter, wikilinks, and the update-both-sides rule. |
+| `knowledge/vault-integration.md` | Phase 1. Shared conventions: folder map, wikilink form, tags, naming. |
+| `knowledge/piece-contract.md` | Phase 1 and Phase 4. The piece.md schema and field ownership. |
+| `knowledge/bank-contract.md` | Phase 4. The update-both-sides rule and the visibility rule. |
 
 ## Principles (the why)
 

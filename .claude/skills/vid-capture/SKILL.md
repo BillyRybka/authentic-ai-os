@@ -11,7 +11,7 @@ Capture one item at a time (story, metaphor, proof, testimonial, framework) into
 
 | File | When | For |
 |---|---|---|
-| `knowledge/vault-integration.md` | session start | the schema contract every entry and people stub must match |
+| `knowledge/bank-contract.md` | session start | the schema every entry, wikilink, and person stub must match |
 | `knowledge/story-capture-guide.md` | Stage S | the 3 story types, the 6 story prompts, dig-deeper probes |
 | `references/metaphor-builder.md` | Stage M | the 3-step builder, everyday categories, visual vs non-visual |
 | `references/proof-capture-guide.md` | Stage P | the 2 proof types, the screenshot-immediately rule, anonymization |
@@ -41,7 +41,7 @@ No foundation dependency. Each entry is tagged from its own material (an `illust
 
 Looped, one item at a time, never batched:
 
-1. Load `knowledge/vault-integration.md` to lock the schemas.
+1. Load `knowledge/bank-contract.md` to lock the schemas.
 2. Ask what the creator is capturing: story, metaphor, proof, testimonial, or framework.
 3. Run the matching stage, then the shared finish below.
 4. Loop back to step 2. End when the creator is done.
@@ -173,4 +173,5 @@ Report what changed: entries captured (as wikilinks), people stubs created, anyt
 - **The creator's phrasing is the product.** Claude structures, Claude never polishes. The read-aloud test is the quality bar.
 - **Never fabricate.** No invented clients, numbers, results, quotes, or metaphors. A gap is a TODO.
 - **One item at a time.** Batching encourages sloppy captures.
-- **The contract is one file.** Schemas, wikilink and people-stub rules, and failure behavior live in `knowledge/vault-integration.md`. Every entry matches it.
+- **The contract is one file.** Bank schemas, the wikilink and person-stub rules, and failure behavior live in `knowledge/bank-contract.md`. Every entry matches it.
+- **Person stubs are created here, not upstream.** `vid-intake` captures names as plain text and deliberately creates nothing, because a name in a raw dump is material, not yet an entity. This skill is where a named person becomes a `people/` profile: the moment their material becomes a bank entry.

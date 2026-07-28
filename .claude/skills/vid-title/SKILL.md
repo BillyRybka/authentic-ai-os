@@ -11,7 +11,7 @@ The craft underneath is copywriting, and copywriting is not the words on screen,
 
 **Scope: this skill produces THE title.** Thumbnail text is vid-thumbnail's job. Short messages; the banks are for your thinking, never pasted at the creator.
 
-**The boundary that never moves:** framing locked the angle; you package it, you never re-argue it. If the angle looks wrong, say so and route back to vid-framing. Do not fix a weak angle with a clever title here. A headline-shaped angle arrives from vid-framing as ONE candidate, free to beat like any other.
+**The boundary that never moves:** framing locked the angle; you package it, you never re-argue it. If the angle looks wrong, say so and route back to vid-framing. Do not fix a weak angle with a clever title here. The angle arrives as an argument, never as a headline, so it competes with nothing you write; if it reads like a title, framing broke its own rule and the wording is still yours to beat.
 
 ## What loads, and when
 
@@ -22,12 +22,14 @@ The craft underneath is copywriting, and copywriting is not the words on screen,
 | 2 | `banks/pattern-bank.md` + `banks/title-bank.md` | the proven structures and their source outliers |
 | 3 | `banks/power-words-bank.md` + `knowledge/BENS-framework.md` | the words and the feeling lens while writing |
 | on demand | `references/title-filters.md` | soft flags, natural English shapes, the fallback when banks are missing |
+| on demand | `references/angle-anchor-rules.md` | the canonical receipt rule: name the real entry or call it a swing |
+| on demand | `references/reframe-toolkit.md` | the five shapes to pour the stake into, when the plainest statement is not landing |
 
 Stops: no `creator-foundation.md`, point to /foundation. No framed piece (no `selected_angle` and no brain-dump), point to vid-framing or vid-intake. Banks missing: offer vid-research, and if the creator wants titles anyway, write from the natural English shapes in `references/title-filters.md`, flagged honestly as unproven shapes with no receipts. Invoked by the pipeline, prerequisites are already verified.
 
 ## Step 1: Inherit the frame, build the lock list
 
-Framing already did the deep viewer work. Inherit it, don't redo it: who clicks this, what they want, the angle the video argues. Orient in two lines, no ceremony.
+Framing already did the deep viewer work. Inherit it, don't redo it. `selected_angle` is what the video argues and piece.md's `## The Read` carries the rest: who clicks this, what they believe, what it is costing them. The stake in that read is what the title has to press on. It arrives argument-shaped on purpose, never as a headline, so every word of the title is yours to write. Orient in two lines, no ceremony.
 
 Then build the **lock list** from the brain-dump: every number, dollar figure, timeframe, named tool, method, person, and result that actually appears in the material or the foundation. Titles may use only what is on this list. One invented number is the exact slop this brand exists to kill. If the creator wants a number-driven title and the material has none, say so and pick a structure that doesn't need one.
 
@@ -41,7 +43,7 @@ Shop like a pro: what has already pulled clicks from this exact audience?
 
 Pick **3 to 5 distinct structures** that fit this video's material and the avatar's proven wants. Distinct means different shapes with different pulls (a contrarian correction, a result arc, a named-system reveal), not one shape reworded. If a structure is on-brand and barely used in the niche, flag it when you present; that is an edge worth naming.
 
-Receipts run on the anchor rule, whose canonical statement lives in vid-framing's `references/angle-anchor-rules.md`: name the real entry (source outlier, channel, multiplier) or admit there is no pattern and call it a swing. The swing is allowed; that's the wildcard slot in Step 3. What is not allowed is the in-between: a "proven" structure with no named entry behind it.
+Receipts run on the anchor rule, whose canonical statement lives in `references/angle-anchor-rules.md`: name the real entry (source outlier, channel, multiplier) or admit there is no pattern and call it a swing. The swing is allowed; that's the wildcard slot in Step 3. What is not allowed is the in-between: a "proven" structure with no named entry behind it.
 
 ## Step 3: Write wide, then kill
 

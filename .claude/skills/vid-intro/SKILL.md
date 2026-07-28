@@ -17,7 +17,7 @@ Read as you go; never front-load. Skill-local `references/` decision flows are n
 - **Phase 1 craft:** `knowledge/intro-architecture.md` (the 6-part architecture and friction list) and `knowledge/format-planners/{format}.md` (how THIS format trims the intro).
 - **Phase 2 patterns:** `references/hook-patterns.md`, plus the creator's `banks/hook-bank.md` if one exists. **Phase 3:** `knowledge/transition-patterns.md` Sections 1 + 4.
 - **Phase 4 voice, proof, and pacing:** `foundation/reference-pieces/{voice_context}.md`, `knowledge/voice-pressure-test.md`, `knowledge/voice-rhythm.md`, `knowledge/visual-proof-callouts.md`, `knowledge/attention-craft.md` (pacing and energy of the spoken intro; the ear test behind the length check).
-- **Phase 5:** `knowledge/vault-integration.md` (the update-both-sides rule for bank pulls).
+- **Phase 5:** `knowledge/bank-contract.md` (the update-both-sides rule for bank pulls).
 - **Conditional depth:** story/proof/testimonial banks with `knowledge/story-pulling-criteria.md` or `knowledge/proof-placement-rules.md` (only when the credibility weave pulls bank material); `knowledge/metaphor-integration.md` (only when a hook runs on metaphor).
 
 ## Prerequisites
@@ -92,7 +92,7 @@ Stitch: Hook → Problem/Result (credibility woven) → Setup → Transition. Sh
 
 - Write the intro into `content/pieces/{slug}/script.md` under `## Intro`, replacing the stub vid-structure left.
 - Update piece.md: `intro_locked: true`, the locked `viewer_questions`, bump `last_updated:`.
-- Any bank pull gets both sides updated per `knowledge/vault-integration.md`: the piece's `stories_used` / `proofs_used` / `testimonials_used` AND the bank entry's `used_in` + `status`.
+- Any bank pull gets both sides updated per `knowledge/bank-contract.md`: the piece's `stories_used` / `proofs_used` / `testimonials_used` AND the bank entry's `used_in` + `status`.
 - No em-dashes in anything saved. Vale enforces it; catch it here.
 - Confirm in chat with the real voice-check result (clean / soft-flagged), not a scripted "pass."
 

@@ -14,7 +14,7 @@ A 30-90+ minute video that delivers a complete system or methodology, with proof
 - **Goals:** Sales (recommended for established creators) OR Views (recommended for small or new channels). Emails as alternative.
 - **Creator level:** **Intermediate to advanced only.** Beginners should post 10-20 videos in other formats first. Deep dives are unforgiving. If the substance isn't there, the length kills.
 - **Best used for:** evergreen conversion assets, channel trailers, definitive treatments of a topic the creator wants to own. The "this is the only video you need to watch" type.
-- **Format scoring:** Sales 5/5, Trust 5/5, Views 3/5
+- **Format scoring:** Views 4/5, Sales 5/5, Trust 5/5
 
 ### Critical caveat
 

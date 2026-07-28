@@ -1,0 +1,41 @@
+---
+name: Anchor Rules
+type: skill-local-reference
+loaded_by: vid-title
+when_to_read: Step 2, when grounding a structure in the pattern bank
+---
+
+# Anchor Rules
+
+**The rule: name the real entry, or call it a swing.** Shopping the banks grounds a candidate in what has worked, and this file is the line between real grounding and hand-waving. A candidate does not need a pattern behind it; the wildcard swing is allowed. But if you claim a pattern, the entry has to be real, and anything in between is hand-waving. This is the canonical statement of the rule. When another skill needs it, it points here instead of restating it.
+
+## What counts as real grounding
+
+A specific entry from `banks/pattern-bank.md`, named:
+
+- a real outlier title
+- a real channel
+- a real view count (and spread, if the bank records it)
+- the reason it pulled
+
+> Grounded: "Stop Using Time-Blocking If You Have ADHD" resembles the STOP pattern, proven by "STOP Planning Your Week Like This" (@CoachY, 800k). The brain-dump has the creator's own time-blocking burnout story to back it.
+
+That is a hypothesis backed by data. The creator can weigh it.
+
+## What is hand-waving (cut it)
+
+> Not grounded: "STOP titles work well in your niche. Curiosity hooks get clicks. Your ADHD audience would relate."
+
+No specific outlier, no number, no channel. This is the confident-but-empty claim creators have been getting from AI for years. If you cannot name the entry, do not claim the pattern. Call it a swing instead.
+
+## Anti-fabrication
+
+Never invent an outlier, a view count, a channel, or a result to make a candidate look proven. If the bank is thin for this topic, say so and offer to run vid-research, or write from the material and flag it as ungrounded. A fabricated number is the exact slop this brand is built against.
+
+## Fluke check
+
+Banks built by vid-research already have flukes filtered. If the creator added an outlier by hand, sanity-check it before leaning on it: a 700k video about van life on a dog-training channel is a fluke, not a pattern. Off-niche spikes do not transfer.
+
+## When the creator rewrites it
+
+Fine. The grounding stays the same; the wording is theirs. Lock their version. The pattern it leans on is context for the decision, not a stored field.

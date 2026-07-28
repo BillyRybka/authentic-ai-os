@@ -39,6 +39,18 @@ Banned terminology: do not say "voice locked" or "voice-locked drafting" anywher
 
 Curated by `vid-voice-capture`. **One file per populated `voice_context`.** Inside: the creator's real passages as `## ` sections, intact (not trimmed of structure). Each section opens with a `> Demonstrates:` line in plain language, then the verbatim passage.
 
+```yaml
+---
+type: reference-pieces
+project: authentic-ai-os
+voice_context: youtube-script
+captured: YYYY-MM-DD
+last_refreshed: YYYY-MM-DD
+sources: ["{source filename}", ...]
+tags: [voice, reference-pieces, context-{voice_context}]
+---
+```
+
 Number: usually 3 to 8 passages, depending on the creator's range. Aim for 2 to 3 per major beat type the creator uses (cold-open, plain teach, live demo, signature analogy, ending). Single-sample beats are prone to structural shadowing in downstream writing; multiple samples per beat dilute that. The number serves coverage and dilution, not a fixed target.
 
 Passages stay **intact**, not stripped of structural content. Stylometric and practitioner evidence is one-directional: flattened voice-only fragments lose the rhythm that IS voice. Whole passages carry the grain. The risk that intact samples cause downstream writing to copy their structural arc is real but is handled by (a) keeping 2 to 3 samples per beat to dilute any single arc, and (b) the explicit voice-only-not-structure clause every writing skill carries (see Load contract). The reference set is voice; structure stays the writing skill's job.
@@ -100,7 +112,7 @@ Values: `youtube-script` | `tutorial` | `shorts` | `newsletter` | `linkedin` | `
 
 `instagram` covers both carousel and caption deliveries. Those are layout sub-formats the writing skill handles (`post-write`), not separate voice contexts. The creator talks one way on Instagram; the carousel just chops that voice into slides.
 
-`piece.md` carries `voice_context:` (default `youtube-script`), set by `vid-framing` alongside `format`. Schema home: [[vault-integration]] piece.md schema.
+`piece.md` carries `voice_context:` (default `youtube-script`), set by `vid-framing` alongside `format`. Schema home: [[piece-contract]].
 
 ## The unified load contract (every writing skill follows this exactly)
 

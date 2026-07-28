@@ -24,7 +24,7 @@ These are the sentences the creator says in nearly every intro to signal "I know
 ## Load at session start
 
 1. `${CLAUDE_PLUGIN_ROOT}/knowledge/interview-posture.md`. Shared posture. Non-negotiable.
-2. `${CLAUDE_PLUGIN_ROOT}/knowledge/vault-integration.md`.
+2. `${CLAUDE_PLUGIN_ROOT}/knowledge/vault-integration.md`. The foundation-doc schema plus tag and naming conventions.
 3. `foundation/creator-foundation.md`. Read Avatar and Top 3 problems.
 4. `foundation/voice-profile.md` if it exists.
 5. `references/credibility-method.md` when drafting starts. Holds the Big plus Specific plus Personal rule, the anti-proof check, and the good/bad pairs.
@@ -179,7 +179,7 @@ Two writes on lock.
 
 **1. The locked three to the foundation.** Write the three brags to `foundation/creator-foundation.md` in the Credibility brags section. Three numbered lines. Creator's words verbatim where possible. Sharpen only by trimming filler or fixing tense.
 
-**2. The leftover wins to the proof bank.** Every strong proof point that surfaced but did not make the locked three goes to `banks/proof-bank/` as its own entry, so future intros and scripts can pull it. Follow the schema in `${CLAUDE_PLUGIN_ROOT}/knowledge/proof-bank-schema.md` (`proof_type` is `personal-result` or `client-win`, kebab-case filename, the body sections from the proof entry template). The proof entries themselves are written to `banks/proof-bank/` in the creator's vault.
+**2. The leftover wins to the proof bank.** Every strong proof point that surfaced but did not make the locked three goes to `banks/proof-bank/` as its own entry, so future intros and scripts can pull it. Follow `${CLAUDE_PLUGIN_ROOT}/knowledge/proof-bank-schema.md` for what qualifies and the body sections, and `${CLAUDE_PLUGIN_ROOT}/knowledge/bank-contract.md` for the frontmatter block and the person-stub rule (`proof_type` is `personal-result` or `client-win`, kebab-case filename). Load both at this step, not at session start. The proof entries themselves are written to `banks/proof-bank/` in the creator's vault.
 
 Rules for the bank write:
 - Do not create a duplicate if an entry already covers that proof. Check first.

@@ -409,7 +409,7 @@ def check_intro_locked(piece_text):
 
 def check_bank_pull_tracked(script_text, piece_text):
     """
-    Piece-side of the vault-integration rule: every bank entry cited in the
+    Piece-side of the bank-contract rule: every bank entry cited in the
     intro must appear in the matching piece.md frontmatter field
     (stories_used / proofs_used / testimonials_used / metaphors_used /
     frameworks_used). An intro that cites [[proof-bank/x]] without tracking it
@@ -429,8 +429,8 @@ def check_bank_pull_tracked(script_text, piece_text):
 
 def check_bank_side_used_in(files, slug):
     """
-    Bank-side of the vault-integration rule (warning: the secondary write is
-    reflective per vault-integration.md, and the runner may not copy updated
+    Bank-side of the bank-contract rule (warning: the secondary write is
+    reflective per bank-contract.md, and the runner may not copy updated
     bank entries into the case folder). For every bank entry the piece tracks,
     if the case folder includes the updated bank file, its used_in must name
     the piece slug and its status must read 'used'.

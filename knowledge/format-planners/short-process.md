@@ -14,7 +14,7 @@ A 10-20 minute video that lays out a specific quick-fire process to get a specif
 - **Goals:** Views, Sales, OR Emails (pick ONE per video, do not mix).
 - **Creator level:** All levels (beginner, intermediate, advanced).
 - **Best used for:** presenting a clear system or workflow (editing workflow, morning routine, funnel setup), teaching strategy or execution that doesn't require deep theory, when the transformation is simple but valuable.
-- **Format scoring:** Views 5/5, Sales 4/5, Trust 4/5
+- **Format scoring:** Views 4/5, Sales 4/5, Trust 4/5
 
 ### Why scores aren't universal
 

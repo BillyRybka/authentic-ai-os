@@ -14,11 +14,15 @@ A 10-15 minute video that tells one client's (or the creator's own) transformati
 - **Goals:** Sales (recommended), Emails, OR Views. Pick ONE. **Sales is the priority for this format.**
 - **Creator level:** Intermediate to advanced. Requires a real proven transformation. Not for beginners with no track record.
 - **Best used for:** building belief in a methodology, converting cold viewers into leads or customers, and showing real results that abstract teaching can't.
-- **Format scoring:** Sales 5/5, Trust 5/5, Views 3/5
+- **Format scoring:** Views 5/5, Sales 5/5, Trust 5/5
 
-### Why scores aren't universal
+### The two gates
 
-A case study can blow up for views in the right niche, but the format's strongest contribution is conversion. Viewers who watch a case study and stay are warm. They've now seen proof and want to see if they can replicate it. The end-screen routing should capitalize on this.
+The score is straight fives, and the cost of that is the entry requirement. This is the one format the source explicitly says beginners should not attempt, and it fails on two specific things rather than on execution quality.
+
+**It needs storytelling.** Getting good at it takes years, so this is not a first-format pick. **It needs a result that surprises.** A predictable arc where the ending lands at "meh" does not work; the transformation has to carry a twist. Miss either gate and the fives do not show up, which is why a case study that flops usually flopped at selection, not at the edit.
+
+Viewers who watch a case study and stay are warm. They have seen proof and want to know if they can replicate it, so the end-screen routing should capitalize on that.
 
 ## The structure
 

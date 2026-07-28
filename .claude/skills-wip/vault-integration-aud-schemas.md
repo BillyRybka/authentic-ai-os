@@ -8,7 +8,7 @@ tags: [reference, vault-integration, audience, schemas]
 
 # Vault Integration: Audience-Family Schemas (parked)
 
-Parked out of `knowledge/vault-integration.md` on 2026-07-21 during the knowledge-layer cleanup (branch dag). These frontmatter schemas serve only the WIP aud-* pipeline (aud-intake, aud-avatar-build, aud-validate, aud-review). No shipped skill uses them. When the aud-* skills graduate, move this block back into `knowledge/vault-integration.md` at the pointer line.
+Parked out of `knowledge/vault-integration.md` on 2026-07-21 during the knowledge-layer cleanup (branch dag). These frontmatter schemas serve only the WIP aud-* pipeline (aud-intake, aud-avatar-build, aud-validate, aud-review). No shipped skill uses them. When the aud-* skills graduate, this becomes `knowledge/audience-contract.md`, a per-artifact contract alongside `piece-contract.md` and `bank-contract.md`, indexed from `knowledge/vault-integration.md`. It does not go back into vault-integration itself; that file is the shared core only.
 
 ### Audience-data entries (calls)
 

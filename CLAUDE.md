@@ -47,7 +47,7 @@ Everything in this vault is Obsidian-native. Wikilinks build the graph. Use them
 - **Highlights**: `==text==`
 - **Tags**: `#tag` inline or `tags: [a, b]` in frontmatter
 
-Every note that ties to a project, person, or other note gets wikilinked, not plain text, not `[markdown](links)`. Frontmatter goes on every note created by a skill; the schema is defined in [[knowledge/vault-integration]].
+Every note that ties to a project, person, or other note gets wikilinked, not plain text, not `[markdown](links)`. Frontmatter goes on every note created by a skill; the shared conventions are in [[knowledge/vault-integration]], which indexes the per-artifact schemas ([[knowledge/piece-contract]], [[knowledge/bank-contract]]).
 
 ## Auto-save rule
 
@@ -59,7 +59,7 @@ When meaningful info comes up (a correction, a fact about the creator, a new sto
 |------|----------|
 | Creator positioning, avatar, pillars, credibility, backstory | `foundation/creator-foundation.md` (via the `/foundation` command) |
 | A proof point (number, result, credential) | `banks/proof-bank/{slug}.md` (via `vid-credibility`) |
-| A person (client, guest, testimonial source) | `people/{Full Name}.md`. Create a stub if missing. |
+| A person (client, guest, testimonial source) | `people/{Full Name}.md`. Stub created by the skill that banks their material, per rule 5. |
 
 More routes get added when their owning skills ship. Until then, do not invent routes for unreleased capabilities.
 
@@ -68,8 +68,8 @@ More routes get added when their owning skills ship. Until then, do not invent r
 1. **Creator drives, Claude structures.** Never fabricate positioning, avatar details, stories, numbers, testimonials, or metaphors. If something isn't in what the creator said, don't invent it.
 2. **ASK before scanning.** When a skill starts a stage, ask the creator what they want to do at that stage. Do not pre-scan banks, foundation docs, or content pieces for context.
 3. **Wikilinks everywhere.** Internal references are always `[[wikilinks]]`, never plain text or markdown links.
-4. **Frontmatter on every note** a skill creates. Schema lives in [[knowledge/vault-integration]].
-5. **People get profiles.** When a new human is mentioned (client, guest, testimonial source), create `people/{Full Name}.md` as a stub even if details are thin.
+4. **Frontmatter on every note** a skill creates. Shared conventions in [[knowledge/vault-integration]]; that file indexes the schema for each artifact type.
+5. **People get profiles, at capture time.** When a human's material becomes a bank entry (story, proof, testimonial), the skill writing that entry creates `people/{Full Name}.md` as a stub even if details are thin. Upstream skills that only capture raw material (`vid-intake`) keep names as plain text and create nothing: a name in a dump is material, not yet an entity, and a wikilink written before its target exists is a broken link.
 6. **Bidirectional wikilinks.** When a story, proof, or metaphor references a person, the link goes both ways. The person's profile gets the backlink.
 7. **Auto-save meaningful info.** Don't ask "should I save this?" Save it and report.
 8. **Read aloud is the voice test.** If the creator would reword it when speaking, the draft is wrong. Applies anywhere their voice appears.
