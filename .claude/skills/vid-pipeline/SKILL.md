@@ -33,6 +33,50 @@ While this section is present, trace what the skill is doing for the builder. At
 Group each step's actions under the one header instead of repeating the skill and step on every line, and keep each action to a single line. Trace file loads, saves, routing decisions, and skips. Carry this through the whole run: every skill you invoke from here (vid-intake, vid-framing, and on down the chain) gets its own block, including the ones that do not repeat this instruction. This is for the builder, not the creator: it deliberately breaks the invisible-machinery rule, which is why it comes out before release.
 <!-- DEBUG-TRACE:END -->
 
+<!-- DEBUG-TRACE:START — probe mode. Builder-only stage gate for testing the pipeline end to end. Safe here in .claude/skills (never ships); release.ps1 hard-stops it from the plugin tree. -->
+## 🔧 Probe mode (temporary, builder-facing)
+
+**Off by default.** Everything below is inert unless the builder turns it on. A creator never sees any of it.
+
+**On when** the invocation says `probe` (`/vid-pipeline probe {slug}`, "probe run", "probe mode"). Once on, it stays on for the whole session. Confirm in one line: `Probe mode on. Gate fires between every stage. No skill edits until the run ends.` Then run the pipeline normally.
+
+### The freeze
+
+While probe mode is on you do not edit any skill file, for any reason, no matter how obvious the fix. Defects go to the log. If the builder asks you to fix a skill mid-run, say the run is frozen, offer to log it instead, and continue. Ending the run early to fix something is the failure this mode exists to prevent.
+
+### The gate
+
+Wrap every stage. `{stage}` is the sub-skill you are about to invoke.
+
+**Before invoking**, snapshot so a bad stage is recoverable. Run:
+
+```
+curl -s -X POST http://127.0.0.1:4317/api/checkpoint -H "Content-Type: application/json" -d "{\"root\":\"vault\",\"name\":\"probe {slug} pre-{stage}\"}"
+```
+
+Keep the returned `id`. If the call fails (workbench not running), say so once and fall back to `git -C {vault} stash push -- content/pieces/{slug}` as the snapshot. Do not stop the run over a failed checkpoint.
+
+**After the stage finishes**, do not auto-route. Stop and take a verdict with `AskUserQuestion`, three options:
+
+- **Good** — log nothing, route to the next stage.
+- **Flawed but usable** — log it, keep the output, continue. Offer to hand-correct the artifact first so the next stage gets clean input.
+- **Bad** — log it, then restore: `curl -s -X POST http://127.0.0.1:4317/api/checkpoint/rewind -H "Content-Type: application/json" -d "{\"id\":\"{id}\"}"`. Ask whether to re-run the stage or hand-write the artifact and move on.
+
+### Why flawed still continues
+
+A stage that produces weak output still hands something forward. If you carry the weak version, every downstream defect is a reaction to bad input and tells you nothing about the downstream skill. Correcting the artifact before continuing is what makes the rest of the run readable. Log the defect either way: the correction is for the run, the log is for the fix batch.
+
+### Logging
+
+Append to `C:\Users\billr\projects\authentic-ai-content-engine\documents\probe-log.md` under `## Runs`, in the format that file defines. Write the entry yourself, do not ask the builder to. Confirm in one line: `Logged: {stage} · {verdict}.`
+
+Fill `Went in` and `Came out` from what you actually saw, not a summary of intent. Leave `Read` blank unless the cause is plain. Guessing at causes mid-run is what pulls you into the skill file.
+
+### Ending a run
+
+When the piece hits `filming-ready`, or the builder stops, print a closing block: stages run, verdicts by count, and the defect list as one line each. That list is the input to the fix batch. Then say the freeze is lifted.
+<!-- DEBUG-TRACE:END -->
+
 ## How this runs
 
 ### Step 1: Prerequisites (silent)
