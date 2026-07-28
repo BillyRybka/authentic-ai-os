@@ -3,8 +3,6 @@ name: vid-intake
 description: Capture raw video material into a structured brain-dump.md for one video, in the creator's exact words. One short capture conversation whether the creator talks the idea through or pastes notes or a transcript, then hands off to vid-framing. Runs standalone or via vid-pipeline. Use whenever a creator brings video material not yet captured into a piece folder, even if they don't say "intake", like "I want to make a video about X", "here's a transcript I want to turn into a video", "I had this thing happen", "a video on my client win", "there's a new feature to cover", "let's start a new video", "let's plan this one out".
 ---
 
-> 🔄 **Pre-flight (mandatory).** Before anything else, read `${CLAUDE_PLUGIN_ROOT}/knowledge/update-check.md` and follow it. If a newer version exists, halt and tell the creator. Otherwise continue.
-
 # Video Intake
 
 Capture the raw material for one video into `content/pieces/{slug}/brain-dump.md`, in the creator's exact words (minus obvious mistakes). Intake captures only.

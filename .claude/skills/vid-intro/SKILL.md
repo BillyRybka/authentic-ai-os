@@ -13,7 +13,7 @@ Writes the opening of one video: Hook, Problem/Result with credibility woven in,
 
 Read as you go; never front-load. Skill-local `references/` decision flows are named where they fire.
 
-- **Phase 1 vault reads:** `content/pieces/{slug}/piece.md` (locked `title`, `thumbnail_text`, format), `brain-dump.md` and `script.md` (the material and the outline the intro forwards into), `foundation/creator-foundation.md` (avatar, credibility brags), `foundation/voice-profile.md` (guardrails, `preferred_hook_types`; if missing, run on the default guardrails, note "Voice profile not captured, run `vid-voice-capture` for sharper voice fit," and continue; voice is never a blocker).
+- **Phase 1 vault reads:** `content/pieces/{slug}/piece.md` (locked `title`, `thumbnail_text`, format, plus framing's `## The Read`), `brain-dump.md` and `script.md` (the material and the outline the intro forwards into), `foundation/creator-foundation.md` (avatar, credibility brags), `foundation/voice-profile.md` (guardrails, `preferred_hook_types`; if missing, run on the default guardrails, note "Voice profile not captured, run `vid-voice-capture` for sharper voice fit," and continue; voice is never a blocker).
 - **Phase 1 craft:** `knowledge/intro-architecture.md` (the 6-part architecture and friction list) and `knowledge/format-planners/{format}.md` (how THIS format trims the intro).
 - **Phase 2 patterns:** `references/hook-patterns.md`, plus the creator's `banks/hook-bank.md` if one exists. **Phase 3:** `knowledge/transition-patterns.md` Sections 1 + 4.
 - **Phase 4 voice, proof, and pacing:** `foundation/reference-pieces/{voice_context}.md`, `knowledge/voice-pressure-test.md`, `knowledge/voice-rhythm.md`, `knowledge/visual-proof-callouts.md`, `knowledge/attention-craft.md` (pacing and energy of the spoken intro; the ear test behind the length check).
@@ -36,6 +36,8 @@ Read as you go; never front-load. Skill-local `references/` decision flows are n
 **Pick the hook lane.** The format planner says which of the 5 hook types fit this format, `preferred_hook_types` says where the creator naturally lands, and the lock list says what the material can actually fill (a Fact hook with no surprising stat in the dump is a dead lane). Format wins conflicts, voice breaks ties. One flag worth surfacing: a Credibility hook on a small or new channel usually fails the cold-trust test; say so and let the creator call it. Confirm the lane in one short message. When the inputs disagree and the call is close, `references/hook-type-selection-flow.md` has worked calls.
 
 ## Phase 2: Hook + Problem/Result
+
+**Mine `## The Read` first.** Its **Stakes** are the richest hook material in the piece: framing already escalated the consequences and landed the last one somewhere the viewer would not trace back to the cause, which is exactly the shape a cold-open loop wants. Where Target names a blind spot, that is the Problem/Result poke, already written as "they think X, it is actually Y." Everything mined here still passes through the lock list; the Read is framing's language, not a source of new specifics. Older pieces have no Read section, in which case work from the title package and the dump as before.
 
 ### What makes a hook land
 

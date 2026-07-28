@@ -29,7 +29,7 @@ Stops: no `creator-foundation.md`, point to /foundation. No framed piece (no `se
 
 ## Step 1: Inherit the frame, build the lock list
 
-Framing already did the deep viewer work. Inherit it, don't redo it. `selected_angle` is what the video argues and piece.md's `## The Read` carries the rest: who clicks this, what they believe, what it is costing them. The stake in that read is what the title has to press on. It arrives argument-shaped on purpose, never as a headline, so every word of the title is yours to write. Orient in two lines, no ceremony.
+Framing already did the deep viewer work. Inherit it, don't redo it. `selected_angle` is what the video argues and piece.md's `## The Read` carries the rest as Target, Transformation, Stakes, and Core payoff. **The Stakes are what the title presses on**, and where Target names a blind spot, that is the correction the title can lead with. The angle arrives argument-shaped on purpose, never as a headline, so every word of the title is yours to write. No Read section on an older piece, work from the angle and the dump as before. Orient in two lines, no ceremony.
 
 Then build the **lock list** from the brain-dump: every number, dollar figure, timeframe, named tool, method, person, and result that actually appears in the material or the foundation. Titles may use only what is on this list. One invented number is the exact slop this brand exists to kill. If the creator wants a number-driven title and the material has none, say so and pick a structure that doesn't need one.
 

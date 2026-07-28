@@ -3,8 +3,6 @@ name: vid-pipeline
 description: Thin orchestrator for one video, idea to filming-ready script. Reads where a piece is in the writing pipeline and auto-invokes the next skill (vid-ideas when the creator is blank on ideas, then vid-intake, vid-framing, vid-title, vid-thumbnail, vid-structure, vid-intro, vid-segment, vid-ending, vid-pressure-test). Use this when the creator says "work on my video", "continue this piece", "what's next on {piece}", "move this video forward", "run the pipeline", "let's make a video", or "/vid-pipeline". It routes and delegates; it never writes content itself.
 ---
 
-> 🔄 **Pre-flight (mandatory).** Before doing anything else, read `${CLAUDE_PLUGIN_ROOT}/knowledge/update-check.md` and follow it. If a newer version exists, halt and tell the creator. If you're up to date, continue with the skill below.
-
 # Video Pipeline
 
 Thin orchestrator. It reads one piece's `piece.md` to find where it is, then invokes the next skill in the writing chain. It does not write angles, titles, hooks, prose, or any content. Every creative decision lives in a sub-skill. This is the per-video sibling of `/foundation`.
@@ -33,48 +31,22 @@ While this section is present, trace what the skill is doing for the builder. At
 Group each step's actions under the one header instead of repeating the skill and step on every line, and keep each action to a single line. Trace file loads, saves, routing decisions, and skips. Carry this through the whole run: every skill you invoke from here (vid-intake, vid-framing, and on down the chain) gets its own block, including the ones that do not repeat this instruction. This is for the builder, not the creator: it deliberately breaks the invisible-machinery rule, which is why it comes out before release.
 <!-- DEBUG-TRACE:END -->
 
-<!-- DEBUG-TRACE:START — probe mode. Builder-only stage gate for testing the pipeline end to end. Safe here in .claude/skills (never ships); release.ps1 hard-stops it from the plugin tree. -->
-## 🔧 Probe mode (temporary, builder-facing)
+<!-- DEBUG-TRACE:START — bench run. Builder-only fast path for vid-bench. Safe here in .claude/skills (never ships); release.ps1 hard-stops it from the plugin tree. -->
+## 🔧 Bench run (temporary, builder-facing)
 
-**Off by default.** Everything below is inert unless the builder turns it on. A creator never sees any of it.
+**Off by default.** Inert unless the invocation carries the marker below. A creator never sees any of it.
 
-**On when** the invocation says `probe` (`/vid-pipeline probe {slug}`, "probe run", "probe mode"). Once on, it stays on for the whole session. Confirm in one line: `Probe mode on. Gate fires between every stage. No skill edits until the run ends.` Then run the pipeline normally.
+**On when** the invocation contains `[bench run`. The bench (vid-bench, port 4318) puts it there and hands you the piece folder in the same line. Do not confirm it, do not narrate it, do not mention the bench. Take the shortcut below and start the work.
 
-### The freeze
+### The piece folder is given, so do not go looking for it
 
-While probe mode is on you do not edit any skill file, for any reason, no matter how obvious the fix. Defects go to the log. If the builder asks you to fix a skill mid-run, say the run is frozen, offer to log it instead, and continue. Ending the run early to fix something is the failure this mode exists to prevent.
+The marker carries an absolute path: `[bench run: piece folder is {abs}]`. That folder is authoritative.
 
-### The gate
+- Read `{abs}/piece.md` directly, then go straight to Step 3 routing.
+- Do NOT run the Step 2 entry menu, the in-progress scan, or any glob over `content/pieces/`. The piece is already resolved, and scanning a 30-piece vault to re-derive an answer you were handed is pure latency.
+- If `{abs}` has no `piece.md`, that is the pre-intake state, not a lookup failure. Route to `vid-intake` for that folder. Do not go hunting for a different piece.
 
-Wrap every stage. `{stage}` is the sub-skill you are about to invoke.
-
-**Before invoking**, snapshot so a bad stage is recoverable. Run:
-
-```
-curl -s -X POST http://127.0.0.1:4317/api/checkpoint -H "Content-Type: application/json" -d "{\"root\":\"vault\",\"name\":\"probe {slug} pre-{stage}\"}"
-```
-
-Keep the returned `id`. If the call fails (workbench not running), say so once and fall back to `git -C {vault} stash push -- content/pieces/{slug}` as the snapshot. Do not stop the run over a failed checkpoint.
-
-**After the stage finishes**, do not auto-route. Stop and take a verdict with `AskUserQuestion`, three options:
-
-- **Good** — log nothing, route to the next stage.
-- **Flawed but usable** — log it, keep the output, continue. Offer to hand-correct the artifact first so the next stage gets clean input.
-- **Bad** — log it, then restore: `curl -s -X POST http://127.0.0.1:4317/api/checkpoint/rewind -H "Content-Type: application/json" -d "{\"id\":\"{id}\"}"`. Ask whether to re-run the stage or hand-write the artifact and move on.
-
-### Why flawed still continues
-
-A stage that produces weak output still hands something forward. If you carry the weak version, every downstream defect is a reaction to bad input and tells you nothing about the downstream skill. Correcting the artifact before continuing is what makes the rest of the run readable. Log the defect either way: the correction is for the run, the log is for the fix batch.
-
-### Logging
-
-Append to `C:\Users\billr\projects\authentic-ai-content-engine\documents\probe-log.md` under `## Runs`, in the format that file defines. Write the entry yourself, do not ask the builder to. Confirm in one line: `Logged: {stage} · {verdict}.`
-
-Fill `Went in` and `Came out` from what you actually saw, not a summary of intent. Leave `Read` blank unless the cause is plain. Guessing at causes mid-run is what pulls you into the skill file.
-
-### Ending a run
-
-When the piece hits `filming-ready`, or the builder stops, print a closing block: stages run, verdicts by count, and the defect list as one line each. That list is the input to the fix batch. Then say the freeze is lifted.
+Pass the absolute folder to every sub-skill in the context line, for the same reason.
 <!-- DEBUG-TRACE:END -->
 
 ## How this runs

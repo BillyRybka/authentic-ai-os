@@ -1,13 +1,13 @@
 ---
 type: skill-reference
 skill: vid-structure
-phase: 1
-last_updated: 2026-07-01
+step: 1
+last_updated: 2026-07-28
 ---
 
 # Brain-Dump Mining
 
-How to filter brain-dump material against the locked angle in Phase 1. The result decides which lessons become main points, which become subpoints under a point, which merge, and which get cut.
+How to filter brain-dump material against the locked angle when roughing the spine. The result decides which lessons become main points, which become subpoints under a point, which merge, and which get cut.
 
 This is silent reasoning, not a review the creator sees. They see the rough spine (main points and subpoints, plus the cuts), never the worksheet.
 
@@ -20,6 +20,8 @@ Every lesson, story, proof, or aside in the brain-dump gets one tag.
 Serves the locked angle on its own. The viewer needs it to reach the `core_payoff`. If it were missing, the video would not deliver the title's promise. Becomes its own body section.
 
 **Test:** "Does this move the viewer toward the payoff? Without it, does the video still deliver the title's promise?" Yes-needed means main point.
+
+Where piece.md carries framing's `## The Read`, its **Transformation** is the sharper version of the same test: the field names the from and the to, so a main point is anything the viewer needs in order to make that move. Material that fits the topic but does not move them along that line is a subpoint or a tangent, however good it is.
 
 ### Subpoint
 

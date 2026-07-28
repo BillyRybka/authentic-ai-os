@@ -30,22 +30,30 @@ Judge the angle and payoff by ear against those passages.
 
 ### 1. psychology_depth
 
-**What it measures:** Did the skill go deep on the ONE viewer this video is for,
-name their MAIN PROBLEM and the TRANSFORMATION they want, and reflect that read
-back to the creator for a yes/no before building any angle?
+**What it measures:** Did the skill write a real read of the ONE viewer this
+video is for, and reflect it back to the creator for a yes before building any
+angle?
 
-The framing skill is psychology-first. The pattern bank grounds the angle; the
-viewer read generates it. An angle built before the creator confirmed the
-problem is the expensive mistake this skill exists to prevent. Check the
-transcript: was the confirm gate real or skipped?
+The read is four fields, third person: **Target** (their goal, their challenge,
+their pain point, plus the blind spot when the material has one),
+**Transformation** (from X to Y, plus what they leave with), **Stakes**
+(compounding consequences that escalate), **Core payoff** (the deliverable). An
+angle built before the creator confirmed the read is the expensive mistake this
+skill exists to prevent. Check the transcript: was the confirm gate real or
+skipped?
+
+Two lane rules matter when scoring. Target describes the situation and stops;
+consequences belong to Stakes. And a blind spot is optional. A straight tutorial
+or a launch reaction can have none, and inventing one to fill the slot is a
+defect, not a strength.
 
 | Score | Description | Example |
 |-------|-------------|---------|
-| 1 | No viewer read at all. Jumped straight to angles, or the read is a generic summary of the topic with no named problem or transformation. | "This video is about systems. Your audience wants to be more productive." |
-| 2 | A viewer read was attempted but it is surface-level: restates the seed without naming the actual stuck point or what changes for them. | "The viewer wants to build better systems and stop being slammed." |
-| 3 | Names the viewer, a plausible problem, and a transformation, but the confirm gate was rushed or the problem is still a bit generic. The creator was not clearly given space to sharpen before angles appeared. | Viewer read present, then angles immediately followed with "does this work?" tacked on. |
-| 4 | Names the ONE viewer, the main problem they are stuck on (not the surface topic), the tension underneath it, and the transformation. Creator was asked to confirm or sharpen before any angle was built. | "The person who clicks this has already tried time-blocking and it made things worse. Their problem is not that they lack a system, it is that every system they try fights how their brain works. The transformation is they stop trying to fix their discipline and start building for how they actually think. Is that the video?" |
-| 5 | All of 4, plus the skill adjusted its read based on the creator's sharpening (from transcript) before moving to angles. The problem and transformation in the final piece.md trace directly to the confirmed, sharpened version, not the first draft. | Creator sharpens the problem; the skill confirms the adjusted read and names the updated core payoff; then and only then builds angles. |
+| 1 | No read at all. Jumped straight to angles, or the read is a generic summary of the topic with no named pain point and no stakes. | "This video is about systems. Your audience wants to be more productive." |
+| 2 | A read was attempted but it is surface-level: restates the seed without naming what they are actually stuck on. Stakes are a single sentence of consequence or missing. | "The viewer wants to build better systems and stop being slammed. If they don't, they'll stay busy." |
+| 3 | All four fields present and plausible, but one is doing another's job (consequences inside Target), or Stakes state one consequence instead of compounding, or the confirm gate was rushed. | Fields present, then angles immediately followed with "does this work?" tacked on. |
+| 4 | Target names the specific situation and pain point. Transformation is directional (from X to Y) with what they leave with. Stakes compound through at least three linked consequences. Creator was asked to confirm or sharpen before any angle was built. | "Their pain point is spending the whole call proving they're good, so the prospect leaves informed and unconvinced. They go from performing credibility to running a diagnosis. Every call that doesn't close is a week of pipeline gone; they start discounting, so the clients they land pay less and expect more; eventually it reads as a slow market rather than a call that never asked a question. Is that the video?" |
+| 5 | All of 4, plus the skill adjusted its read on the creator's sharpening before moving to angles, and the Stakes land on a consequence the viewer would not trace back to the cause. Where the material has a blind spot, Target names it; where it does not, none is invented. | Creator sharpens the pain point; the skill confirms the adjusted read and the updated payoff; then and only then builds angles. |
 
 ### 2. angle_quality
 
@@ -92,10 +100,15 @@ flagged as a gut swing scores higher than a fabricated citation.
 ### 4. voice_read_aloud
 
 **What it measures:** Does piece.md read like the creator in `reference-pieces/youtube-script.md`?
-Specifically: do `selected_angle` and `core_payoff` sound spoken and human, not
-corporate? Does the dropped-angles section use the creator's plain direct tone,
-not formal labels? The whole file should pass the read-aloud test Billy's brand
-is built on.
+Specifically: does `selected_angle` sound spoken and human rather than
+corporate, and does `core_payoff` name a concrete deliverable in plain words?
+Does the read carry the creator's tone without slipping into brochure copy? The
+whole file should pass the read-aloud test Billy's brand is built on.
+
+Note on `core_payoff`: it states what the viewer will have, know, or be able to
+do after watching. It is not a second-person instruction ("pick the one task and
+write down every step") and not a benefit statement ("save hours every week").
+Score the plainness of the language, not the grammatical person.
 
 This dimension is calibrated against the reference pieces. A 5 means you would
 not be surprised to find these exact lines in a video the creator actually made.
@@ -106,7 +119,7 @@ not be surprised to find these exact lines in a video the creator actually made.
 | 2 | Mostly plain but has at least one phrase the creator would reword on camera, or reads like it was written to impress rather than to communicate. | "The Bottleneck Is Documentation: A Systematic Approach to Onboarding Delegation" |
 | 3 | Reads plain and avoids the worst AI tells, but lacks the creator's specific cadence: second-person, blunt, no warm-up. Could belong to a generic business channel. | "How to Stop Being the Bottleneck in Your Business" |
 | 4 | Reads close to the creator's voice. Second-person where the creator uses it, plain verb choices, no hedging. You would not be surprised to hear it in the transcript. Minor word choices might be slightly off. | "You Are Still the Bottleneck Because the Steps Only Live In Your Head" |
-| 5 | Reads exactly like the creator. The phrasing, rhythm, and bluntness match the reference pieces. You would hear it in the creator's mouth without rewriting a word. The core_payoff sounds like the creator giving a direct instruction, not a benefit statement. | selected_angle: "The Bottleneck Is Not You. It Is the Document That Does Not Exist Yet." / core_payoff: "Pick the one task only you can do this week and write down every step so it can run without you." |
+| 5 | Reads exactly like the creator. The phrasing, rhythm, and bluntness match the reference pieces. You would hear it in the creator's mouth without rewriting a word. The core_payoff names a specific thing the viewer ends up holding, in the creator's plain words. | selected_angle: "The bottleneck is not you, it is the document that does not exist yet." / core_payoff: "By the end of this video, owners will have one task written down step by step, in a form someone else can actually run without asking." |
 
 ## Output format
 

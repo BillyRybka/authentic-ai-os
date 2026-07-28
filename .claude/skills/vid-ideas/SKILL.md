@@ -3,8 +3,6 @@ name: vid-ideas
 description: Generate signal-backed video ideas for a creator blank on what to make next. Reads the iceberg, pillars, avatar, and Top 3 plus the pattern-bank, proposes ~5-6 ideas anchored to proven outliers with 1-2 flagged swings, and re-rolls on a more / tighter / wilder / sharper dial. Keepers save to content/ideas-backlog.md; the pick hands a full-receipt seed packet to vid-intake. Triggers on "give me video ideas", "what should I make", "I'm out of ideas", "I'm blank on content".
 ---
 
-> 🔄 **Pre-flight (mandatory).** Before doing anything else, read `${CLAUDE_PLUGIN_ROOT}/knowledge/update-check.md` and follow it. If a newer version exists, halt and tell the creator. If you're up to date, continue with the skill below.
-
 # Video Ideas
 
 Generates a small batch of video ideas for the blank-slate moment, grounded in the creator's positioning and in the evidence of what has actually worked. Reads the iceberg, pillars, avatar, and Top 3 problems plus the pattern-bank, proposes ~5-6 signal-anchored ideas, lets the creator turn a dial until the batch lands, then hands the picked idea to `vid-intake`.

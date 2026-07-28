@@ -25,9 +25,10 @@ You are handed ONE seed object from `corpus/seeds.json`. Use only what is in it.
 
 ### 1. Confirm the viewer read (the most important moment)
 
-When the skill reflects back the ONE viewer, the MAIN PROBLEM, the
-TRANSFORMATION, and the CORE PAYOFF, your job is to confirm or sharpen it
-using only the facts in `persona.reveals`.
+When the skill reflects a read of your viewer back at you, your job is to
+confirm or sharpen it using only the facts in `persona.reveals`. You have no
+opinion about what shape or how many fields that read should be in; react to
+whether it describes the right person and the right problem, nothing else.
 
 - If the read is right: say so plainly. "Yeah, that is the video." or "That is
   it." Short. No elaboration needed unless there is something to add.

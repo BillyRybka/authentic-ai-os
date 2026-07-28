@@ -15,7 +15,7 @@ Insert under the existing frontmatter (after the lifecycle fields `slug`, `pilla
 ```yaml
 # Written by vid-framing
 selected_angle: "{one clean sentence naming what the video argues, in the creator's voice. Argument-shaped, not headline-shaped: it says what is true and what it costs, it does not sell the click. No explanation clause, no colon-summary, no TODO text inside}"
-core_payoff: "{a direct instruction spoken to the viewer, second person: 'pick the one task only you can do this week and write the steps down'. Never 'the viewer does X'}"
+core_payoff: "{the deliverable: what the viewer will have, know, or be able to do after watching. One or two sentences: 'By the end of this video, coaches will have a discovery call structure that surfaces the real objection while the prospect is still on the line.' Not a diagnosis of their problem, not a thesis. Identical to the Core payoff field in the body's ## The Read}"
 format: short-process | case-study | roast | deep-dive | interview | news | listicle
 goal: sales | emails | views
 voice_context: youtube-script   # default. Set to another medium (tutorial | shorts | newsletter | linkedin | twitter | instagram | podcast | casual | talk) only if this piece genuinely is one. Drives which foundation/reference-pieces/{voice_context}.md the writing skills load.
@@ -26,19 +26,23 @@ vid-framing does not set a status. The piece stays `status: ideating` until vid-
 
 ## Body sections to append
 
-The read goes on disk, all five beats, in the words the creator confirmed. It is the ore vid-title, vid-intro, and vid-structure pull from, and if it only lives in the conversation it is gone by the next session.
+The read goes on disk, all four fields, in the words the creator confirmed and in third person. vid-title presses on the Stakes, vid-intro mines them for hooks, and vid-structure builds toward the Transformation. If it only lives in the conversation it is gone by the next session.
 
 ```markdown
 ## The Read
 
-- **Viewer:** {the cut of the known audience this video is for, and the state that puts them in it. Never the avatar restated}
-- **Main problem:** {what they are actually stuck on, not the surface topic}
-- **Tension underneath:** {what being stuck there feels like; the part they would not say out loud}
-- **Transformation:** {what changes for them by the end}
-- **Payoff:** {what they walk away able to do, second person}
+**Core payoff:** {"By the end of this video you'll have [the one concrete thing], [and what that means you stop doing]." Second person, one deliverable, plain words. Identical to the `core_payoff` frontmatter value}
+
+**Target:** {who this is for and the situation, as one causal chain: they want something, but this keeps happening, so they end up doing this, which costs them that. No "their goal is / their challenge is" scaffold. Blind spot only when the material has one}
+
+**Transformation:** {they stop doing X and do Y instead, plus what that gets them}
+
+**Stakes:** {"if they keep working the old way," then each consequence causing the next, sentences tightening as it escalates, the misattribution named near the end, landing back where Target started}
 ```
 
-Never drop the tension or the transformation to save space. Those two are why the section exists; without them it is a diagnosis, and the downstream skills have nothing to aim at.
+Never compress a field away to save space. Target with no cost at the end of it is a demographic, Stakes that do not escalate are a single sentence of consequence, and a Transformation with no "stop doing X" is a feature description. Each field is what a different downstream skill reads.
+
+Before writing the section, read all four fields aloud. Anything the creator would pause and reword gets rewritten first: plain nouns where the thing has a name, one image per field rather than three stacked, and the cost put in front of the reader rather than described from a distance. A read that is structurally perfect and unsayable hands the writing skills nothing.
 
 On a re-frame, replace this section rather than appending a second copy. It describes the current frame, not a history.
 
@@ -72,6 +76,7 @@ If the creator withheld proof (a number, a client detail, a bank entry they have
 - Never overwrite frontmatter fields owned by other skills. The field-ownership map lives in `knowledge/piece-contract.md`.
 - Never delete previous "Considered + Dropped" entries. Append only. `## The Read` is the one section that gets replaced instead.
 - Never fabricate. The angle, the read, and the payoff trace to the brain-dump and foundation; a gap is named, never invented.
-- Keep `selected_angle` and `core_payoff` clean: one voiced line each (the payoff in second person), no embedded TODOs. Withheld proof goes in a body `> [!todo]`.
+- Keep `selected_angle` and `core_payoff` clean, no embedded TODOs. Withheld proof goes in a body `> [!todo]`.
+- `core_payoff` and the read's Core payoff field are the same sentence. If they drift, the frontmatter is what downstream skills load, so fix the body to match it.
 - `selected_angle` is never a title. If it reads like one, rewrite it as the argument underneath and let vid-title do the selling.
 - Always set `last_updated` to today in YYYY-MM-DD.

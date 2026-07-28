@@ -57,8 +57,12 @@ VALID_FORMATS = {
 }
 VALID_GOALS = {"sales", "emails", "views"}
 
-# The body section vid-framing must append (substring match, case-insensitive).
+# The body sections vid-framing must append (substring match, case-insensitive).
 REQUIRED_SECTION_KEY = "considered + dropped angles"
+READ_SECTION_KEY = "the read"
+
+# The four fields '## The Read' must carry, per knowledge/piece-contract.md.
+READ_FIELDS = ("target", "transformation", "stakes", "core payoff")
 
 
 def _load_manifest():
@@ -210,6 +214,42 @@ def check_required_section(piece_text):
     return t.CheckResult("required_section", found, "error", detail)
 
 
+def check_read_section(piece_text):
+    """
+    Assert piece.md body contains '## The Read' carrying all four fields.
+
+    The section is contracted in knowledge/piece-contract.md as Target /
+    Transformation / Stakes / Core payoff. It drifted shape twice while nothing
+    outside vid-framing specified it; this check is the mechanical half of that
+    fix. Downstream readers are soft (vid-title presses on Stakes, vid-intro
+    mines them for hooks, vid-structure builds toward Transformation), so a
+    missing field degrades a reader silently rather than failing loudly.
+
+    Heading match is substring, case-insensitive. Field match looks for each
+    label anywhere in the section body, so both '**Target:**' and '**Target.**'
+    pass.
+    """
+    lines = piece_text.splitlines()
+    start = None
+    for i, line in enumerate(lines):
+        if line.strip().startswith("#") and READ_SECTION_KEY in line.strip().lstrip("#").strip().lower():
+            start = i
+            break
+    if start is None:
+        return t.CheckResult("read_section", False, "error", {"missing": "## The Read"})
+
+    body = []
+    for line in lines[start + 1:]:
+        if line.strip().startswith("## "):
+            break
+        body.append(line.lower())
+    body_text = "\n".join(body)
+
+    missing = [f for f in READ_FIELDS if f not in body_text]
+    detail = {} if not missing else {"missing_fields": missing}
+    return t.CheckResult("read_section", not missing, "error", detail)
+
+
 def evaluate_case(seed, files, fixtures_root, intake_stage_root):
     """Run all assertions for one case. Returns list[CheckResult]."""
     piece = files.get("piece.md", "")
@@ -236,6 +276,7 @@ def evaluate_case(seed, files, fixtures_root, intake_stage_root):
     results.append(check_format_enum(piece))
     results.append(check_goal_enum(piece))
     results.append(check_required_section(piece))
+    results.append(check_read_section(piece))
 
     handoff_ok, handoff_detail = check_handoff(
         "framing->structure", {"piece.md": piece}

@@ -11,59 +11,29 @@ Worked shapes for how a framing session runs. Not scripts to paste; write your o
 
 ## Example 1: the read, then the gate
 
-**AI move:** lay the read back in five labeled beats, one short paragraph each, then stop and wait. Do not propose an angle yet.
-
-What the read covers, in order:
-
-- **The viewer.** The cut of the known audience this video is for, and the state that puts them in it. Never the avatar restated.
-- **The main problem.** What they are actually stuck on, not the surface topic.
-- **The tension underneath.** What being stuck there feels like. The part they would not say out loud.
-- **The transformation.** What changes for them by the end.
-- **The core payoff.** What they walk away able to do, spoken to them.
+**AI move:** lay the read back in four labeled fields, Core payoff first, one short paragraph each, then stop and wait. Do not propose an angle yet.
 
 Worked, on a video about handing work to a first VA:
 
-> **The viewer.** An owner who hired their first VA two months ago and is somehow working more hours now than before they hired.
+> **Core payoff.** By the end of this video you'll have one task out of your head and written down well enough that someone else can run it this week, without a single follow-up call.
 >
-> **The main problem.** They hand off by explaining the task live on a call. The VA takes notes, does it, and it comes back wrong in a way that is faster to fix than to explain again. So they fix it quietly, and the next task never gets handed off at all. Two months in they are paying for help and carrying the same workload.
+> **Target.** They hired their first VA two months ago and they want hours back. But every task they hand off comes back wrong in a way that's faster to fix than to explain again, so they fix it quietly and never hand that task off twice. So they're paying for help and carrying the same workload. Which means the hire that was supposed to buy back time has turned into one more thing to manage.
 >
-> **The tension underneath.** They have decided the problem is them, that they are just bad at managing people. So they stopped hiring instead of fixing the handoff, and now every week they are defending a verdict they passed on themselves.
+> **Transformation.** They stop explaining tasks live on a call and start handing over instructions that exist outside their head. The task comes back right the first time, and so do the ones after it, because the explaining only ever happens once.
 >
-> **The transformation.** The task comes back right the first time, because the instructions live outside their head instead of inside a call they have to keep repeating.
+> **Stakes.** If they keep handing off this way, every task they take back is an hour they're paying someone else to cover. The VA runs out of work and starts asking what's next, which costs more time than the task did. So they stop delegating. They decide hiring doesn't work for their business. The ceiling on the company becomes the number of hours they personally have. A year later they're still the only person who can do any of it, and it looks like a hiring problem, so they interview more people, when the real problem is that nothing was ever written down.
 >
-> **The core payoff.** Record yourself doing the task once, the messy real version, and hand over the recording instead of the explanation.
->
-> Is that the video, or do you want to sharpen the problem or the transformation?
+> Is that the video, or do you want to sharpen the target or the transformation?
 
-*The problem and the tension are the same situation at two depths. The problem is mechanical, what actually happens. The tension is what they concluded about themselves because of it. Write the problem so a person could watch it happen; write the tension so they would wince reading it. Cut the tension and this reads as a support ticket. Cut the transformation and the angle has nothing to aim at.*
+*Read Target out loud and listen for the joints: **but**, **so**, **which means**. Those connectives are doing the work a "their goal is / their challenge is" template only pretends to do. The template version of this same content is accurate and reads like a form.*
 
-Close by naming the two sharpenable parts, the problem and the transformation. A bare "is that right?" gets a polite yes.
+*Watch the sentence lengths in Stakes. It opens with reasoning, then tightens: "So they stop delegating. They decide hiring doesn't work." Short sentences are the escalation, not decoration. And the last line does two jobs: it names what they blame instead (interviewing more people) and it lands back on the thing Target opened with.*
 
-## Calibrating each beat
+*The blind spot is optional. Here it is folded into the chain rather than announced. On a video with no blind spot at all, Target simply runs to its cost and stops, and Stakes carries the weight.*
 
-The flat versions are not wrong. They are true about a category. The sharp versions are true about a person in a moment, and that is the whole difference.
+Close by naming the two sharpenable parts, the target and the transformation. A bare "is that right?" gets a polite yes.
 
-**The viewer.** A state, not a demographic.
-- Flat: "Business owners who want to grow."
-- Sharp: "An owner who hired their first VA two months ago and is working more hours than before."
-
-**The main problem.** The mechanism, in the order it happens. If you cannot picture it happening, it is still a category.
-- Flat: "They struggle to delegate."
-- Sharp: "They hand off by explaining it live, it comes back wrong, fixing it beats explaining again, so it never gets handed off twice."
-
-**The tension underneath.** Not the feeling. The verdict they passed on themselves, and what it made them stop doing.
-- Flat: "It's frustrating and they feel stuck."
-- Sharp: "They decided they're bad at managing people, so they stopped hiring instead of fixing the handoff."
-
-**The transformation.** Something you could watch happen. Not a state of competence.
-- Flat: "They delegate effectively and get their time back."
-- Sharp: "The task comes back right the first time, because the process lives outside their head."
-
-**The core payoff.** One move, second person, specific enough to do on Monday without watching the video first.
-- Flat: "Learn a better system for delegating."
-- Sharp: "Record yourself doing the task once and hand over the recording instead of the explanation."
-
-The tell across all five: flat beats describe the topic, sharp beats describe a person doing a specific thing in a specific moment. If a beat would still be true for a different video in the same niche, it is flat.
+The flat-versus-sharp pair for each field lives in SKILL.md at the step where you write them. This file carries the composed read, so you can see the four fields running at full length instead of one line each.
 
 **Creator:** "Yeah, but it's more that they think planning harder will fix it, when the issue is the system fights their brain."
 
@@ -91,12 +61,12 @@ The tell across all five: flat beats describe the topic, sharp beats describe a 
 
 **Creator:** "I lost four clients that year and I blamed delivery the whole time. It wasn't delivery. They'd already checked out in week one, I just didn't find out until month three."
 
-*There it is. A cost they cannot see, on a delay. Two questions, no battery. Stop digging the moment one opens.*
+*There it is, and it is two things at once. The blind spot for Target (they think the sale is the moment that matters) and the delay for Stakes (the bill arrives in month three, so nobody traces it back to week one). Two questions, no battery. Stop digging the moment one opens.*
 
 **AI move:** name the argument back in one line and confirm it.
 
 - **Argument:** "Clients decide whether they're staying in week one, and you're spending all your energy on the sale."
-- **Core payoff:** "map what your client actually experiences in their first seven days, and fix the gap where they go quiet."
+- **Core payoff:** "By the end of this video you'll have a map of what your client actually goes through in their first seven days, and you'll know which gap is the one losing them."
 
 *Note the shape. "Your Onboarding Is Why Clients Ghost" is headline-shaped and does not belong here; it is a wording decision made before the lock list exists, and it anchors vid-title on a line written blind. Hand over the argument. Title does the selling with the banks open.*
 
@@ -110,7 +80,7 @@ The tell across all five: flat beats describe the topic, sharp beats describe a 
 
 **Creator:** "It's news, I just want the speed. Film it."
 
-**AI move:** lock it as `news`, goal `views`, and move on without another word about it.
+**AI move:** lock it as `news`, goal `views`, and move on without another word about it. Target runs to its cost and stops, no blind spot invented.
 
 *Framing does not kill videos. It names the ceiling once, plainly, and the creator spends the filming day with their eyes open.*
 
@@ -122,8 +92,11 @@ The tell across all five: flat beats describe the topic, sharp beats describe a 
 
 ## Near-misses
 
-- **The four-beat read.** Tension or transformation quietly dropped, usually for brevity. What survives is a correct diagnosis of a person, and nobody clicks a diagnosis. This is the most common way a read goes flat while every line in it stays true.
+- **Stakes that stop at one consequence.** "They lose revenue" is a sentence, not stakes. Stakes compound: each one causes the next, and the last lands somewhere the viewer would never trace back to the cause. This is the most common way a read goes flat while every line in it stays true.
+- **A manufactured blind spot.** No "they think X" in the material, so one gets invented to fill the slot. Not every video has one. A tutorial and a news reaction are allowed to run on Target plus Stakes alone, and a blind spot the creator does not actually believe is a promise the body cannot keep.
+- **Target bleeding into Stakes.** The consequences written into Target, leaving Stakes to repeat them. Target describes the situation and stops.
+- **Transformation with no "stop doing X."** "They delegate effectively" names a destination with no journey, which reads as a feature description. The thing they put down is half the content.
+- **Target written as a form.** "Their goal is X. Their challenge is Y. Their pain point is Z." Every fact correct, and it reads like a template being filled in. Write the chain instead and let *but*, *so*, and *which means* carry it.
 - **Building before the yes.** Four angles surfaced right after reading the brain-dump. If the read is wrong, every angle is wrong.
 - **The question battery.** All four dig questions fired at once. It reads as an interrogation, the creator gets defensive, and the door you were opening shuts.
-- **Manufactured tension.** No stake surfaced, so a contrarian flip gets invented to fill the hole. The creator does not believe it, the body cannot deliver it, and it costs more trust than a flat video ever would.
 - **Handing over a headline.** An angle written as a title. That is vid-title's decision, made here without the lock list or the banks.

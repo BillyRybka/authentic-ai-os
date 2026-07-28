@@ -7,7 +7,7 @@ last_updated: 2026-07-01
 
 # script.md Skeleton Template
 
-The exact shape vid-structure writes to `content/pieces/{slug}/script.md` after the plan locks in Phase 3. `vid-intro` fills `## Intro`, `vid-segment` writes each body section, `vid-ending` fills `## Ending`. Do not paste this file into chat. Fill the slots with the locked plan.
+The exact shape vid-structure writes to `content/pieces/{slug}/script.md` once the built plan locks. `vid-intro` fills `## Intro`, `vid-segment` writes each body section, `vid-ending` fills `## Ending`. Do not paste this file into chat. Fill the slots with the locked plan.
 
 ## Frontmatter
 
@@ -23,7 +23,7 @@ last_refreshed: {YYYY-MM-DD}
 
 ## Body shape
 
-Every body section is the same shape: a material-anchored header, then the parable and the principle picked in Phase 2. Nothing else per section. Setup and payoff lives once in piece.md (`tension_plan`), not repeated here. The forward-hook transition is the writer's to compose.
+Every body section is the same shape: a material-anchored header, then the parable and the principle the plan locked. Nothing else per section. Setup and payoff lives once in piece.md (`tension_plan`), not repeated here. The forward-hook transition is the writer's to compose.
 
 ```markdown
 # {title from piece.md, or "Title TBD"}

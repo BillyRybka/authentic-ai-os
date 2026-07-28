@@ -20,6 +20,8 @@ type: content-piece
 project: authentic-ai-os
 slug: video-slug
 pillar: {pillar-slug}           # creator's content pillar
+selected_angle: "..."           # one sentence naming what the video argues, in the creator's voice. Argument-shaped, never a headline. Set by vid-framing.
+core_payoff: "..."              # the deliverable: what the viewer will have, know, or be able to do after watching. 1-2 sentences. Matches the Core payoff field in the body's ## The Read verbatim. Set by vid-framing.
 format: short-process           # from the 7 formats: short-process | case-study | roast | deep-dive | interview | news | listicle. Set by vid-framing.
 voice_context: youtube-script   # delivery medium for voice: youtube-script (default) | tutorial | shorts | newsletter | linkedin | twitter | instagram | podcast | casual | talk. Orthogonal to format. Set by vid-framing (videos) or post-write (posts). Drives which foundation/reference-pieces/{voice_context}.md a writing skill loads.
 goal: sales                     # sales | emails | views (ONE only). Set by vid-framing.
@@ -65,7 +67,7 @@ Skills append their own fields and never overwrite another skill's.
 | Skill | Writes |
 |---|---|
 | vid-intake | `type`, `project`, `slug`, `pillar`, `status: ideating`, `created`, `last_updated`, `anchor`, `tags` |
-| vid-framing | `selected_angle`, `core_payoff`, `format`, `voice_context`, `goal` |
+| vid-framing | `selected_angle`, `core_payoff`, `format`, `voice_context`, `goal`, plus the `## The Read` and `## Considered + Dropped Angles` body sections |
 | vid-title | `title` |
 | vid-thumbnail | `thumbnail_text`, `thumbnail_shape` |
 | vid-structure | `segment_purposes`, `tension_plan`, `status: drafting` |
@@ -77,6 +79,19 @@ Skills append their own fields and never overwrite another skill's.
 The bank-use arrays (`stories_used`, `metaphors_used`, `proofs_used`, `testimonials_used`, `frameworks_used`) are shared: any writing skill that pulls a bank entry appends to the matching array. Append, never replace. The reciprocal write on the bank side is in [[bank-contract]].
 
 Every skill that writes this file bumps `last_updated` to today. `created` never changes.
+
+## Body sections
+
+piece.md carries body sections as well as frontmatter, and they are contracted here for the same reason the fields are: `## The Read` silently changed shape twice because nothing outside the owning skill specified it.
+
+| Section | Owner | Shape | Re-run behavior |
+|---|---|---|---|
+| `## The Read` | vid-framing | Four fields in this order, third person: **Target** (goal, challenge, pain point, plus the blind spot when the material has one), **Transformation** (from X to Y, plus what they leave with), **Stakes** (compounding consequences, three to five deep), **Core payoff** (the deliverable, 1-2 sentences, identical to the `core_payoff` field) | Replaced on a re-frame. It describes the current frame, not a history. |
+| `## Considered + Dropped Angles` | vid-framing | One entry per dropped angle: the angle, a one-line why, the date | Append-only, sticky across re-frames |
+
+Readers are soft: a piece written before a section existed must not block a downstream skill. vid-title presses on the Stakes, vid-intro mines the Stakes for hooks and the blind spot for the problem poke, and vid-structure builds toward the Transformation. All three degrade to their prior behavior when the section is absent.
+
+Changing the shape of a contracted section means updating this table, the owning skill, and every reader named above in the same pass.
 
 ## What does not go in piece.md
 

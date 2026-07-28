@@ -2,22 +2,22 @@
 name: Stake Finder
 type: skill-local-reference
 loaded_by: vid-framing
-when_to_read: Step 3, when finding what is at stake
+when_to_read: Step 2, before writing Target and Stakes
 ---
 
 # Stake finder
 
-Load this at step 3. It is for your thinking, never pasted into chat.
+Open this at step 2, before you write the read. It is for your thinking, never pasted into chat.
 
-**This file serves the tension beat.** Step 2's read already named what being stuck feels like. This is how you say what kind of tension it is, so the argument has something specific to push against. When the tension beat came up thin, this is also how you dig for it.
+**This file serves two of the four fields:** Target's blind spot, and Stakes. They are the hardest two to write and the two most often written soft, so open this first rather than drafting them blind. It also carries the dig, for when the dump has no conflict in it at all.
 
-**The one principle: a boring idea is boring because nothing is at stake for the viewer.** You cannot wrap your way out of that. A metaphor, a named system, a story, a visual model, all of them package interest. None of them create it. Applied to an idea with no stake, they return a decorated restatement, which is the exact failure this step exists to kill.
+**The one principle: a boring idea is boring because nothing is at stake for the viewer.** The job is not "make this sound interesting." It is: name the thing the viewer stands to lose, or has already lost without noticing. Everything downstream (the argument, the title, the hook) runs on that; if it is not here, there is nothing for them to work with.
 
-So the job is not "make this sound interesting." It is: name the thing the viewer stands to lose, or has already lost without noticing.
+## The four shapes a blind spot takes
 
-## The four places the stake lives
+When the material has a blind spot, it is almost always one of these. Find which one, and it goes in Target as the "they think X, it is actually Y" clause.
 
-Almost every genuinely interesting video runs on one of these. Find which one this material has.
+**A video does not need one.** A straight tutorial or a news reaction can be worth making with no blind spot at all. Do not manufacture one to fill the slot; leave Target as goal, challenge, and pain point, and let the Stakes carry the weight.
 
 1. **A belief that is costing them.** They are doing the thing they were told to do, and it is the problem. "You don't need a better planner, you need fewer decisions."
 2. **A cost they cannot see.** They are fine with it because the bill arrives later. "Your onboarding is why clients ghost at month three."
@@ -26,9 +26,9 @@ Almost every genuinely interesting video runs on one of these. Find which one th
 
 One is enough. Two is usually two videos.
 
-## Digging when the tension came up thin
+## Digging when Target or Stakes came up thin
 
-Most brain-dumps arrive as accurate information with no conflict in them. That is normal and it is not a dead end. The tension is usually in the creator's head and did not make it into the dump, because the creator has held the belief so long they forgot it was ever contested.
+Most brain-dumps arrive as accurate information with no conflict in them. That is normal and it is not a dead end. The conflict is usually in the creator's head and did not make it into the dump, because they have held the belief so long they forgot it was ever contested.
 
 Ask one at a time, in flow, in your own words. Stop the moment one opens.
 

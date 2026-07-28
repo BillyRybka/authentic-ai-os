@@ -1,20 +1,20 @@
 ---
 type: skill-reference
 skill: vid-structure
-phase: all
-last_updated: 2026-07-01
+step: all
+last_updated: 2026-07-28
 ---
 
 # Structure Conversation Examples
 
-How vid-structure runs in real sessions. The creator sees two proposals (the rough spine, then the built-out plan) and one confirmation. The phases are internal, never announced.
+How vid-structure runs in real sessions. The creator sees two proposals (the rough spine, then the built-out plan) and one confirmation. The steps are internal, never announced.
 
 ## Example 1: Clean run, Listicle
 
 **Locked at framing (piece.md):** angle "The 'best practices' quietly killing your channel", core payoff "spot the advice tanking your retention and what to do instead", format listicle, goal views.
 **Brain-dump:** thumbnail-copying flops, a year of daily posting tanked, the 12-minute retention cliff, Linus's bad first thumbnails, best mic under $200, the "5-second hook" myth, a lighting setup, "post consistently" trains the algorithm wrong, titles that overpromise killed Tom's channel.
 
-### The spine (Phase 1)
+### The spine (step 1)
 
 > **AI:** "Rough spine, listicle, 4 items.
 >
@@ -41,7 +41,7 @@ How vid-structure runs in real sessions. The creator sees two proposals (the rou
 
 > **Creator:** "That's it. Lock."
 
-### The built plan (Phase 2)
+### The built plan (step 2)
 
 > **AI:** "Built plan. I moved 'post consistently' to item 4 so the most-preached advice is the late payoff. Title pays off at item 4. One thread: the viewer recognizing themselves, building to item 4.
 >
@@ -65,7 +65,7 @@ How vid-structure runs in real sessions. The creator sees two proposals (the rou
 
 > **Creator:** "Lock."
 
-[Phase 3: script.md written with the 4 items (parable + principle each), intro and ending stubbed, a ## To build list with the two proofs. piece.md gets status: drafting, segment_purposes, segments_completed: [], the setup/payoff plan (payoff at item 4, one thread), last_updated.]
+[Step 3: script.md written with the 4 items (parable + principle each), intro and ending stubbed, a ## To build list with the two proofs. piece.md gets status: drafting, segment_purposes, segments_completed: [], the setup/payoff plan (payoff at item 4, one thread), last_updated.]
 
 **Why this worked:** the spine got agreed before anything was built out, so the detailed proposal was fast to review. The order changed for a reason (payoff late) and the AI said why. Blocks were picked, not offered as menus. The writer picks this up and writes, no re-planning.
 
@@ -112,8 +112,8 @@ Eleven separate lessons in the brain-dump, but the format is locked to case stud
 
 ## Anti-patterns
 
-- **NPC ticking.** "Phase 1 complete, moving to Phase 2." The phases are internal. The creator sees the spine, then the plan, then the confirm.
+- **NPC ticking.** "Mining complete, moving to the build." The steps are internal. The creator sees the spine, then the plan, then the confirm.
 - **Abstract points.** `## Item 3: {second main point}`. Always name the actual lesson from the brain-dump.
 - **Silent cuts.** Proposing a spine without saying what got cut. Always log cuts; the creator may know a cut is the real gold.
-- **Surfacing block menus instead of picking.** Phase 2 locks the parable and principle. It does not hand the writer three candidates to choose from later.
+- **Surfacing block menus instead of picking.** The build step locks the parable and principle. It does not hand the writer three candidates to choose from later.
 - **Writing prose.** This skill outlines. Full sentences belong to vid-segment.
