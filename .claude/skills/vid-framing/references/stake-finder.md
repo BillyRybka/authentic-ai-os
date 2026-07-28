@@ -9,9 +9,11 @@ when_to_read: Step 3, when finding what is at stake
 
 Load this at step 3. It is for your thinking, never pasted into chat.
 
+**This file serves the tension beat.** Step 2's read already named what being stuck feels like. This is how you say what kind of tension it is, so the argument has something specific to push against. When the tension beat came up thin, this is also how you dig for it.
+
 **The one principle: a boring idea is boring because nothing is at stake for the viewer.** You cannot wrap your way out of that. A metaphor, a named system, a story, a visual model, all of them package interest. None of them create it. Applied to an idea with no stake, they return a decorated restatement, which is the exact failure this step exists to kill.
 
-So the job is not "make this sound interesting." It is: find the thing the viewer stands to lose, or has already lost without noticing.
+So the job is not "make this sound interesting." It is: name the thing the viewer stands to lose, or has already lost without noticing.
 
 ## The four places the stake lives
 
@@ -24,9 +26,9 @@ Almost every genuinely interesting video runs on one of these. Find which one th
 
 One is enough. Two is usually two videos.
 
-## Digging when there is no stake
+## Digging when the tension came up thin
 
-Most brain-dumps arrive as accurate information with no conflict in them. That is normal and it is not a dead end. The stake is usually in the creator's head and did not make it into the dump, because the creator has held the belief so long they forgot it was ever contested.
+Most brain-dumps arrive as accurate information with no conflict in them. That is normal and it is not a dead end. The tension is usually in the creator's head and did not make it into the dump, because the creator has held the belief so long they forgot it was ever contested.
 
 Ask one at a time, in flow, in your own words. Stop the moment one opens.
 

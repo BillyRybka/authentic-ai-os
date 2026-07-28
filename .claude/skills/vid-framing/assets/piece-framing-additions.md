@@ -26,16 +26,19 @@ vid-framing does not set a status. The piece stays `status: ideating` until vid-
 
 ## Body sections to append
 
-The read goes on disk. It is the ore vid-title, vid-intro, and vid-structure pull from, and if it only lives in the conversation it is gone by the next session. Four short lines, no prose.
+The read goes on disk, all five beats, in the words the creator confirmed. It is the ore vid-title, vid-intro, and vid-structure pull from, and if it only lives in the conversation it is gone by the next session.
 
 ```markdown
 ## The Read
 
-- **Viewer:** {the one person, localized to this topic, not the generic avatar}
-- **Believes:** {what they hold to be true about it, in plain words}
-- **Costs them:** {what that belief is costing, or the bill they cannot see yet}
+- **Viewer:** {the cut of the known audience this video is for, and the state that puts them in it. Never the avatar restated}
+- **Main problem:** {what they are actually stuck on, not the surface topic}
+- **Tension underneath:** {what being stuck there feels like; the part they would not say out loud}
+- **Transformation:** {what changes for them by the end}
 - **Payoff:** {what they walk away able to do, second person}
 ```
+
+Never drop the tension or the transformation to save space. Those two are why the section exists; without them it is a diagnosis, and the downstream skills have nothing to aim at.
 
 On a re-frame, replace this section rather than appending a second copy. It describes the current frame, not a history.
 
