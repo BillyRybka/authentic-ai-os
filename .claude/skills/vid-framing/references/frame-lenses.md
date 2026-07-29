@@ -2,16 +2,36 @@
 name: Frame Lenses
 type: skill-local-reference
 loaded_by: vid-framing
-when_to_read: Step 2, every run, before writing any frame
+when_to_read: Step 2, every run, before mining the wants and writing any frame
 ---
 
 # Frame Lenses
 
 A lens is a want the viewer already has. Framing points the video at one.
 
-The move is small and the whole skill rests on it: **hold the material completely still and change only which want it answers.** Same demo, same story, same numbers, same tool. Eight lenses, eight angles on the one video, and the creator picks which one they are making.
+The move is small and the whole skill rests on it: **hold the material completely still and change only which want it answers.** Same demo, same story, same numbers, same tool. One angle per want the material can honestly support, and the creator picks which one they are making.
 
 This is why a boring topic is not a boring video. Boring means the topic has not been pointed at anything yet.
+
+## Mining the wants
+
+Before any frame gets written, work the dump and the foundation down four levels:
+
+| Level | The question | On the weekly review |
+|---|---|---|
+| What it does | What is the thing, with no benefit language? | A checklist and a Friday calendar block catch problems early. |
+| What that gets them | What does that immediately hand the viewer? | Issues surface while they are still small. |
+| What they can then do | What can they do now that they could not before? | Decide what next week looks like instead of finding out on Monday. |
+| How that changes how they feel | What stops weighing on them? | They stop bracing for Monday. They become the one who saw it coming. |
+
+The top two levels are how the video delivers. The bottom two are where angles come from: every lens below points at something in those two rows.
+
+Two rules keep the ladder honest:
+
+- **It only goes where the material goes.** A level with nothing in the dump stays empty. An emotional row written to complete the table is an invented stake, and every frame built on it is fiction with good posture.
+- **Each want carries its situation.** Not "owners," but "owners who find out about problems on Monday, in the weeks when everything lands at once." The situation is what makes a frame specific enough that it could not be swapped onto another video.
+
+Name each surviving want in one line before writing its frame: the want, plus its situation. That line is also where duplicates die. Two lines tracing to the same want are one angle, and one gets cut before any frame exists.
 
 ## The rotation, on one video
 
@@ -21,14 +41,18 @@ Topic: a weekly review that catches problems before they blow up. Mechanism: a c
 |---|---|
 | Control | A video that shows owners how to decide what next week looks like, instead of finding out on Monday morning. |
 | Time savings | A video that shows owners how to get back the hours they lose every week to problems they could have caught on Friday. |
-| Familiarity | A video that shows owners how to run a preflight check on their week, the way a pilot runs one before takeoff. |
-| Frustration | A video that shows owners how to end the Monday morning fire drill for good. |
-| Identity | A video that shows owners how to stop being the one who is always reacting and become the one who saw it coming. |
+| Familiarity | A video that runs their week the way a pilot runs a preflight check, twenty minutes that catch what would have blown up. |
+| Frustration | A video that ends the Monday morning fire drill for good. |
+| Identity | A video about becoming the owner who saw it coming, instead of the one who is always reacting. |
 | Curiosity | A video that explains why their busiest weeks are the ones where the least actually gets finished. |
-| Convenience | A video that shows owners how to get ahead of next week in twenty minutes on a Friday, without another system to maintain. |
+| Convenience | A video that gets next week handled in twenty minutes on a Friday, without another system to maintain. |
 | Repetition | A video that shows owners how to stop solving the same problem every single Monday. |
 
 Eight angles. One checklist. Nothing about the material changed.
+
+Read the openings down the page. No two share a stem, because the grammar is doing work: each opening sounds like its own want. Six frames opening the same way make six distinct wants read as one idea reworded, and the pick stops meaning anything.
+
+Eight is also a ceiling, not a quota. This material happened to support all eight. Material that supports five gets five, and padding the list to reach eight is how rewordings sneak back in.
 
 ## The eight
 
@@ -108,9 +132,13 @@ Two that come up often enough to expect: **risk** (the thing they are exposed to
 
 ## Near-misses
 
-- **Eight rewordings of one lens.** The most common failure and the hardest to see, because every option reads differently. The check is not "do these sound different," it is "do these answer different wants." Tag each frame with its lens privately. Two tags matching means one frame, written twice.
+- **Rewordings of one lens.** The most common failure and the hardest to see, because every option reads differently. The check is not "do these sound different," it is "do these answer different wants." Tag each frame with its want privately. Two tags matching means one frame, written twice.
 
-- **The mechanism smuggled back in.** A frame that names the tool has quietly become a video about the tool. The exception is real and narrow: when the mechanism is itself what people are searching for this week, it belongs at the front. That call gets made at step 1, not here.
+- **One stem across the whole list.** Uniform grammar makes genuinely different wants read as one idea with several captions. The opening should sound like the want: curiosity explains why, frustration ends something, familiarity carries its analogy, identity becomes someone. If the openings blur, rewrite them before the list goes out, not after the pick lands flat.
+
+- **Padding to reach eight.** The count is however many wants the material honestly supports. A frame added to hit a number is a frame that failed the three tests and got offered anyway.
+
+- **The mechanism smuggled back in.** A frame that names the tool has quietly become a video about the tool. The exception is real and narrow: when the mechanism is itself what people are searching for this week, it belongs at the front. That call gets made at step 1, not here, and it governs every frame offered, not just the one that wins.
 
 - **A frame that describes the contents.** "A video that walks through the five steps of the weekly review" answers what happens in the video. Every lens above answers why anyone would sit through it.
 
