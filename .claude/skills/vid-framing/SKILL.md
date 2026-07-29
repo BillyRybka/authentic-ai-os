@@ -21,8 +21,6 @@ One captured brain-dump goes in. One chosen video comes out: the frame it runs o
 
 - **Anti-fabrication constrains generation.** A frame the material cannot support never gets offered, so there is nothing to walk back later. A missing number is a TODO in the body, never a promise in the frame.
 
-- **Read aloud, in their voice.** Frames and the read both. Anything the creator would pause and reword is wrong. Their banned words live in the `refusals` list in `foundation/voice-profile.md`.
-
 ## What loads, and when
 
 | File | Step | For |
@@ -35,7 +33,7 @@ One captured brain-dump goes in. One chosen video comes out: the frame it runs o
 
 Stops: no `brain-dump.md`, point to vid-intake. No `creator-foundation.md`, point to /foundation.
 
-Re-frame: if piece.md already carries a `frame`, surface it and ask whether to rotate fresh or sharpen that one. Never re-offer something already in `## Considered + Dropped Angles` unless the creator asks for it.
+Re-frame: if piece.md already carries a `frame`, surface it and ask whether to rotate fresh or sharpen that one.
 
 ## The eight lenses at a glance
 
@@ -82,7 +80,7 @@ If they do, it joins the list in the next step and gets weighed against the rest
 
 1. **Hold the video fixed and rotate the lens.** Same material, same demo, same story. Only the want changes.
 2. **Write each frame in third person, describing the video.** "A video that shows {who} how to {what changes for them}." Never a spoken line, never a pitch, never a headline.
-3. **Give each frame its own core payoff.** One deliverable, in plain words. Third person here, because eight second-person lines in a row do not scan.
+3. **Give each frame its own core payoff.** One deliverable, in plain words, and one only. A deliverable with a mindset shift welded on is two payoffs wearing one label, and it reads as a bonus offer. Third person here, because eight second-person lines in a row do not scan. The winner flips to second person on the way to disk; that is the only thing about it that changes.
 4. **Cut duplicates by lens, not by wording.** Two frames tracing to the same want are one frame written twice, however different they read.
 5. **Recommend one and say why.** You are a partner with a point of view, not a menu. Recommend the ceiling, not the floor: the frame you would bet on, not the one with the fewest ways to fail.
 6. **Offer the dial in one line.** More, a different lens, sharper, or rotate again.
@@ -100,7 +98,7 @@ The handle is a conversational label so the creator can say "the second one." It
 Rules that fire here:
 
 - **Plain nouns, always.** When a real word for the thing exists, use it. Reaching for "an automated pre-output validation layer" is what happens when the plain word was available and got avoided.
-- **The lens stays internal.** It is what guarantees the eight are genuinely different. The creator never sees the label.
+- **The lens stays internal.** It is what guarantees the eight are genuinely different. The creator never sees the label, in the offer or in the recommendation. The want a frame was rotated through is scaffolding, and scaffolding shown to the creator reads as the video's category.
 - **Technical language belongs later in the video, never in the frame.** The viewer does not need to be excited about the tool. They need to be excited about what stops happening to them.
 - **A frame the material cannot support never gets written.** No invented number, client, or result, not even in a frame nobody picks.
 
@@ -161,7 +159,11 @@ Keep the lanes clean. Target describes the situation and stops; the compounding 
 
 Never run all four. That is an interrogation, it makes the creator defensive, and it closes the door you are opening. If two rounds surface nothing, the video has a modest cost and that is honest: Target runs its chain and stops, Stakes stay small, and the ceiling gets named the same way it would at step 3.
 
-Lay the three fields back, one short paragraph each, and save in the same move. The creator can sharpen after; nothing waits on it.
+**The read is its own message.** Write all three fields out in full, one short paragraph each, and put nothing else in that message. No format, no goal, no save confirmation, no handoff line.
+
+This is not decoration. Three downstream skills build on these fields, and a creator who never saw them cannot catch a read aimed at the wrong person. **A run where the fields went to disk without appearing in the conversation is a failed run**, even though the file on disk looks correct.
+
+Then save. Nothing waits on the creator's response; they can sharpen after.
 
 ### 6. Set the format and the goal
 
@@ -174,7 +176,11 @@ Both are derivations from decisions already made. Turning them into questions sp
 
 ### 7. Save and hand off
 
-Write everything to piece.md per `assets/piece-framing-additions.md`, confirm in one line (frame, format, goal), and point to vid-title.
+Write everything to piece.md per `assets/piece-framing-additions.md`, then one line: format, goal, and vid-title next.
+
+That line covers the format and the goal only. **It never stands in for the read**, which had its own message at step 5, and it never restates the frame the creator just chose.
+
+Two things change shape at this step and nothing else does. The chosen payoff flips from third person to second, same deliverable, same words otherwise. The losing frames go down as frames: no lens labels, no option handles, one reason each.
 
 ## Output and handoff
 
@@ -185,7 +191,6 @@ Frontmatter it writes: `frame`, `core_payoff`, `mechanism`, `format`, `goal`, `v
 Body it writes:
 
 - `## The Read`, three fields (Target, Transformation, Stakes). vid-title presses on the Stakes, vid-intro mines them for hooks, vid-structure builds toward the Transformation.
-- `## Considered + Dropped Angles`, the frames that lost, one terse line each, sticky across re-frames.
 - Any withheld proof as a one-line `> [!todo]`, kept out of the frame and the payoff.
 
 Prerequisite: vid-intake. Handoff: vid-title.
@@ -194,7 +199,9 @@ Prerequisite: vid-intake. Handoff: vid-title.
 
 - The frame describes a video in third person. If it could be read aloud as a line in the video, or pasted in as a title, it is the wrong shape.
 - The mechanism sits where its kind says it belongs: out of the frame if it is delivery, in the frame if it is the draw.
-- `core_payoff` is one deliverable in plain words, in second person, with no bonus asset bolted on.
+- `core_payoff` is one deliverable in plain words, in second person, with nothing bolted on: no bonus asset, no mindset shift, no second clause opening "and you'll". If it holds two things, the frame is doing the work of two frames and one of them is not this video.
+- `core_payoff` opens on the deliverable itself, never on "By the end of this video". The stem adds four words, promises nothing, and is the first thing a form hardens around.
+- No lens label anywhere the creator can see it.
 - Target is a causal chain, not a filled-in form. If "their goal is" or "their pain point is" appears, rewrite it.
 - Stakes escalate, name the misattribution, and land back where Target started.
 - Every claim in the read traces to a real line in the dump or something the creator said in this session.

@@ -15,8 +15,8 @@ Insert under the existing lifecycle fields (`slug`, `pillar`, `created`, `status
 ```yaml
 # Written by vid-framing
 frame: "{the chosen video, described in third person: 'A video that shows {who} how to {the change}, {the condition that makes it theirs}.' Never a spoken line, never a headline, never a description of the contents}"
-core_payoff: "{the one concrete thing the viewer ends up holding, second person: 'By the end of this video you'll have [the thing], [and what that means you stop doing].' One deliverable, plain words, no bonus asset}"
-mechanism: "{what actually produces the result, plus its kind: delivery | draw | qualifier. Delivery stays out of the frame; draw carries it; qualifier narrows it}"
+core_payoff: "{the one concrete thing the viewer ends up holding, second person, opening on the thing itself. One deliverable, plain words. No 'By the end of this video' stem, no bonus asset, no second clause. No fixed opener either: if two pieces in a row start the same way, that is the form growing back}"
+mechanism: "{the call, not the case for it: what produces the result, named in a phrase, plus its kind: delivery | draw | qualifier}"
 format: short-process | case-study | roast | deep-dive | interview | news | listicle
 goal: sales | emails | views
 voice_context: youtube-script   # default. Another medium (tutorial | shorts | newsletter | linkedin | twitter | instagram | podcast | casual | talk) only if this piece genuinely is one. Drives which foundation/reference-pieces/{voice_context}.md the writing skills load.
@@ -26,6 +26,8 @@ last_updated: {YYYY-MM-DD}
 vid-framing does not set a status. The piece stays `status: ideating` until vid-structure moves it to `drafting`. The orchestrator knows framing is done because `frame` is present.
 
 `core_payoff` lives in frontmatter only. It is locked with the frame, before the read exists, so there is no second copy for it to drift against.
+
+It was offered in third person during the rotation, because eight second-person lines in a row do not scan. It saves in second person. That flip is the whole transform: same deliverable, same plain words, one grammatical person changed. Nothing gets added on the way to disk.
 
 ## Body sections to append
 
@@ -49,19 +51,7 @@ Read all three aloud before writing them. Anything the creator would pause and r
 
 On a re-frame, replace this section. It describes the current frame, not a history.
 
-### Considered + Dropped Angles
-
-The frames that lost, one line each, grouped by the rotation that produced them. Terse: enough to recognise it, enough to know why it is not the video.
-
-```markdown
-## Considered + Dropped Angles
-
-> [!quote] Rotated {YYYY-MM-DD}
-> - {frame, cut to its distinguishing clause}. {Why it lost, one clause.}
-> - {next}. {Why.}
-```
-
-Append-only across re-frames, and never re-offered unless the creator asks. Option handles from the conversation are never written here. The frame is what gets recorded, because a handle is title-shaped and vid-title should arrive with nothing pre-written.
+The frames that lost stay in the conversation. Nothing downstream reads them, and the option handles are title-shaped, so writing them to disk hands vid-title a line drafted before the banks were open.
 
 ### Proof gaps
 
@@ -77,15 +67,16 @@ If the creator withheld a number, a client detail, or a bank entry they have not
 2. Insert the framing fields after the last lifecycle field. Preserve every existing field untouched.
 3. Set `last_updated` to today.
 4. Write `## The Read`. On a re-frame, replace the existing section.
-5. Append to `## Considered + Dropped Angles`, never overwriting earlier entries. Proof-gap `> [!todo]` lines go here too.
+5. Add any proof-gap `> [!todo]` lines to the body.
 6. Write the file.
 
 ## Hard rules
 
 - Never overwrite frontmatter owned by another skill. The ownership map is in `knowledge/piece-contract.md`.
-- Never delete previous "Considered + Dropped" entries. Append only. `## The Read` is the one section that gets replaced.
 - Never fabricate. The frame, the read, and the payoff trace to the brain-dump, the foundation, or something the creator said in the session. A gap is named, never invented.
 - Keep `frame` and `core_payoff` clean. No embedded TODOs, no explanation clause, no colon-summary.
 - `frame` is never a title and never a spoken line. If it reads like either, rewrite it as the description of the video and let vid-title do the selling.
-- `mechanism` carries its kind. Without that word the field cannot be used by anything downstream.
+- `core_payoff` holds one deliverable. A second clause bolted on with "and you'll" is a second payoff, whether it is an asset, a habit, or a mindset shift. Cut it or pick the other one.
+- No lens label reaches this file, in any section. The eight wants are how the rotation was generated, not what the piece is about.
+- `mechanism` carries its kind. Without that word the field cannot be used by anything downstream. It stores the call in a phrase, not the reasoning behind it: frontmatter is a schema, and an argument parked in a string field is one nothing downstream can read.
 - Always set `last_updated` to today in YYYY-MM-DD.

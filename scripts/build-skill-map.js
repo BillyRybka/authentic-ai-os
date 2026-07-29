@@ -201,7 +201,7 @@ const PIPELINE = [
       { title: '5. Save + hand off',
         reads: [],
         writes: [['piece.md frontmatter\nframe · core_payoff · mechanism\nformat · goal · voice_context', 'writeAlt'],
-                 ['piece.md body\n## The Read (Target · Transformation\nStakes)\n## Considered + Dropped\nproof TODOs', 'write']] },
+                 ['piece.md body\n## The Read (Target · Transformation\nStakes)\nproof TODOs', 'write']] },
     ],
   },
   {

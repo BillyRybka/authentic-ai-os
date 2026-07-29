@@ -16,7 +16,7 @@ checked for fabrication or brand rules.
 Assertions (error level, gate):
   no_em_dash, no_banned_words, no_fabrication,
   piece_framing_frontmatter, format_enum, goal_enum,
-  required_section, handoff_framing_to_structure
+  read_section, handoff_framing_to_structure
 Warnings (reported only):
   no_aiisms, no_hedge_words
 
@@ -58,8 +58,7 @@ VALID_FORMATS = {
 }
 VALID_GOALS = {"sales", "emails", "views"}
 
-# The body sections vid-framing must append (substring match, case-insensitive).
-REQUIRED_SECTION_KEY = "considered + dropped angles"
+# The body section vid-framing must append (substring match, case-insensitive).
 READ_SECTION_KEY = "the read"
 
 # The three fields '## The Read' must carry, per knowledge/piece-contract.md.
@@ -191,30 +190,6 @@ def check_goal_enum(piece_text):
     return t.CheckResult("goal_enum", ok, "error", detail)
 
 
-def check_required_section(piece_text):
-    """
-    Assert piece.md body contains a '## Considered + Dropped Angles' heading.
-
-    This section is append-only across re-frames and is the mechanism that stops
-    the skill from surfacing previously rejected angles. Its absence means the
-    skill did not complete the framing protocol.
-
-    Match is substring containment in any markdown heading, case-insensitive, so
-    'Considered + Dropped Angles', 'Considered and Dropped Angles', and minor
-    variations all pass.
-    """
-    headings = [
-        line.strip().lstrip("#").strip().lower()
-        for line in piece_text.splitlines()
-        if line.strip().startswith("#")
-    ]
-    # accept both '+' and 'and' as the connector
-    found = any(
-        "considered" in h and ("dropped" in h or "drop" in h)
-        for h in headings
-    )
-    detail = {} if found else {"missing": "## Considered + Dropped Angles"}
-    return t.CheckResult("required_section", found, "error", detail)
 
 
 def check_read_section(piece_text):
@@ -278,7 +253,6 @@ def evaluate_case(seed, files, fixtures_root, intake_stage_root):
     results.append(check_piece_framing_frontmatter(piece))
     results.append(check_format_enum(piece))
     results.append(check_goal_enum(piece))
-    results.append(check_required_section(piece))
     results.append(check_read_section(piece))
 
     handoff_ok, handoff_detail = check_handoff(
@@ -308,7 +282,6 @@ def main():
         "piece_framing_frontmatter",
         "format_enum",
         "goal_enum",
-        "required_section",
         "handoff_framing_to_structure",
     ]
     warn_assertions = ["no_aiisms", "no_hedge_words"]

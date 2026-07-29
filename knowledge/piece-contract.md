@@ -68,7 +68,7 @@ Skills append their own fields and never overwrite another skill's.
 | Skill | Writes |
 |---|---|
 | vid-intake | `type`, `project`, `slug`, `pillar`, `status: ideating`, `created`, `last_updated`, `anchor`, `tags` |
-| vid-framing | `frame`, `core_payoff`, `mechanism`, `format`, `voice_context`, `goal`, plus the `## The Read` and `## Considered + Dropped Angles` body sections |
+| vid-framing | `frame`, `core_payoff`, `mechanism`, `format`, `voice_context`, `goal`, plus the `## The Read` body section |
 | vid-title | `title` |
 | vid-thumbnail | `thumbnail_text`, `thumbnail_shape` |
 | vid-structure | `segment_purposes`, `tension_plan`, `status: drafting` |
@@ -88,7 +88,6 @@ piece.md carries body sections as well as frontmatter, and they are contracted h
 | Section | Owner | Shape | Re-run behavior |
 |---|---|---|---|
 | `## The Read` | vid-framing | Three fields in this order, third person, all pointed at the locked frame: **Target** (who this is for and the situation, as one causal chain ending on a cost), **Transformation** (they stop doing X and do Y instead, plus what that gets them), **Stakes** (each consequence causing the next, the misattribution named near the end, landing back where Target started) | Replaced on a re-frame. It describes the current frame, not a history. |
-| `## Considered + Dropped Angles` | vid-framing | The frames that lost, grouped by rotation date, one terse line each: the frame cut to its distinguishing clause, plus a one-clause why | Append-only, sticky across re-frames |
 
 `core_payoff` is frontmatter only. It is locked with the frame, before the read exists, so there is no second copy in the body to drift against.
 
