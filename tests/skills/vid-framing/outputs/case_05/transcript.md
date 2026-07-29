@@ -89,7 +89,7 @@ Angle B dropped: slightly slicker than the creator's natural register and teased
 
 Locking:
 
-- selected_angle: I showed Jordan the most boring growth strategy I know. It worked.
+- frame: I showed Jordan the most boring growth strategy I know. It worked.
 - core_payoff: build the system first, the unglamorous one, and let it do the growing for you.
 - format: case-study
 - goal: sales

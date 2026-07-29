@@ -2,101 +2,134 @@
 name: Framing Conversation Examples
 type: skill-local-reference
 loaded_by: vid-framing
-when_to_read: optional, to calibrate the confirm gate and the dig
+when_to_read: once, to calibrate pacing. Not on every run.
 ---
 
 # Framing Conversation Examples
 
-Worked shapes for how a framing session runs. Not scripts to paste; write your own lines, fit to the moment. Italic notes are for the skill builder.
+One session start to finish, then the two situations that break the normal rhythm. Not scripts to paste. Write your own lines. Italic notes are for the skill builder.
 
-## Example 1: the read, then the gate
+## A full session
 
-**AI move:** lay the read back in four labeled fields, Core payoff first, one short paragraph each, then stop and wait. Do not propose an angle yet.
+**The dump:** a Notion dashboard the creator built to track where every client project stands. A story about finding out a deliverable had slipped on the day it was due. Three earlier trackers that nobody kept updating. No numbers.
 
-Worked, on a video about handing work to a first VA:
+### Step 1, in one message
 
-> **Core payoff.** By the end of this video you'll have one task out of your head and written down well enough that someone else can run it this week, without a single follow-up call.
+> Topic: knowing where every client project stands without asking anyone.
 >
-> **Target.** They hired their first VA two months ago and they want hours back. But every task they hand off comes back wrong in a way that's faster to fix than to explain again, so they fix it quietly and never hand that task off twice. So they're paying for help and carrying the same workload. Which means the hire that was supposed to buy back time has turned into one more thing to manage.
+> Mechanism: the Notion dashboard. It's a qualifier, not the draw. People search Notion, but not for this, so it narrows the video without carrying it.
 >
-> **Transformation.** They stop explaining tasks live on a call and start handing over instructions that exist outside their head. The task comes back right the first time, and so do the ones after it, because the explaining only ever happens once.
+> Material: the dashboard itself, the story about the deliverable that slipped, and the three trackers you built before this one that nobody kept updating.
 >
-> **Stakes.** If they keep handing off this way, every task they take back is an hour they're paying someone else to cover. The VA runs out of work and starts asking what's next, which costs more time than the task did. So they stop delegating. They decide hiring doesn't work for their business. The ceiling on the company becomes the number of hours they personally have. A year later they're still the only person who can do any of it, and it looks like a hiring problem, so they interview more people, when the real problem is that nothing was ever written down.
+> Anything you're already thinking for the angle?
+
+*One message, no question until the last line. Naming the mechanism as a qualifier is the load-bearing call: Notion can appear in a frame as a condition, and cannot be what the frame is about.*
+
+### Step 2, their angle
+
+**Creator:** "I was just going to do, here's my Notion setup, walk through it."
+
+**AI move:** do not reject it, do not adopt it. Convert it into the frame it implies, put it in the list, let it compete.
+
+*"Here's my Notion setup" describes the contents. Underneath it is a real frame, the viewer who wants the build, it just has not been pointed at a want yet. Rejecting a creator's instinct teaches them to stop offering one. Converting it shows them the difference between contents and a frame in a single move.*
+
+### Step 3, the rotation
+
+> Eight ways this same video could go. Yours is number one, written as a frame.
 >
-> Is that the video, or do you want to sharpen the target or the transformation?
+> 1. **The Build**
+>    Frame: A video that shows agency owners how to build a single dashboard that tracks every client project, start to finish.
+>    Core payoff: The viewer can copy the setup and have it running the same afternoon.
+>
+> 2. **Stop Asking Where Things Stand**
+>    Frame: A video that shows agency owners how to see the status of every client project without chasing a single person for an update.
+>    Core payoff: The viewer stops spending their week collecting information the team already has.
+>
+> 3. **Never Get Blindsided by a Deadline**
+>    Frame: A video that shows agency owners how to stop finding out a project slipped on the day it was due.
+>    Core payoff: The viewer sees a project going sideways while there is still time to fix it.
+>
+> 4. **Air Traffic Control for Client Work**
+>    Frame: A video that shows agency owners how to run client projects the way a control tower runs runways, one screen, everything in the air visible at once.
+>    Core payoff: The viewer gets one place that answers where everything stands, instead of four that each answer part of it.
+>
+> 5. **The Owner Who Always Knows**
+>    Frame: A video that shows agency owners how to become the person who answers a client's status question on the spot instead of saying they'll check.
+>    Core payoff: The viewer can answer any client, about any project, without opening anything.
+>
+> 6. **Why Your Tracker Keeps Dying**
+>    Frame: A video that explains why every project tracker they have built got abandoned within a month, and what the ones that survive do differently.
+>    Core payoff: The viewer knows which part of their system will be abandoned before they build it.
+>
+> 7. **Visibility With Nobody Updating Anything**
+>    Frame: A video that shows agency owners how to get full visibility on client work without asking the team to maintain a tracker.
+>    Core payoff: The viewer gets the status view without adding a status meeting.
+>
+> 8. **Stop Rebuilding This Every Year**
+>    Frame: A video that shows agency owners how to build project tracking once, in a shape that survives the team doubling.
+>    Core payoff: The viewer builds it one time instead of starting over every time the team changes.
+>
+> I'd take 6. It's the only one that uses the three dead trackers, and that material is the part nobody else can film. Everything else on this list, a hundred people have already made.
+>
+> Pick one, or tell me: more, a different lens, sharper, rotate again.
 
-*Read Target out loud and listen for the joints: **but**, **so**, **which means**. Those connectives are doing the work a "their goal is / their challenge is" template only pretends to do. The template version of this same content is accurate and reads like a form.*
+*The recommendation carries a reason, and the reason is about material rather than taste. Recommending the ceiling means arguing for the frame with the highest upside, not the one with the fewest ways to fail. Number 1 is the safest thing here and it is on the list because the creator asked for it.*
 
-*Watch the sentence lengths in Stakes. It opens with reasoning, then tightens: "So they stop delegating. They decide hiring doesn't work." Short sentences are the escalation, not decoration. And the last line does two jobs: it names what they blame instead (interviewing more people) and it lands back on the thing Target opened with.*
+*Read down the list checking the wants, not the wording: build, stop chasing, early warning, one place, identity, why-this-fails, no maintenance, build once. Eight wants. If two of them matched, one of the frames is dead weight however different it reads.*
 
-*The blind spot is optional. Here it is folded into the chain rather than announced. On a video with no blind spot at all, Target simply runs to its cost and stops, and Stakes carries the weight.*
+### Step 4, the pick
 
-Close by naming the two sharpenable parts, the target and the transformation. A bare "is that right?" gets a polite yes.
+**Creator:** "Yeah, six. That's actually the thing I know that nobody says."
 
-The flat-versus-sharp pair for each field lives in SKILL.md at the step where you write them. This file carries the composed read, so you can see the four fields running at full length instead of one line each.
+**AI move:** lock it and move. No confirmation question, no restating the payoff back for approval.
 
-**Creator:** "Yeah, but it's more that they think planning harder will fix it, when the issue is the system fights their brain."
+*A pick with a reason attached is the signal the rotation worked. Compare it to "yeah, six is fine," which usually means nothing on the list opened anything, and the right response to that is to rotate again rather than proceed.*
 
-**AI move:** take their wording, confirm the payoff in one line, move to the argument.
+### Step 5, the read, then saved in the same message
 
-*The gate is the point. A session aimed at the wrong problem is the expensive mistake. Build nothing until they say "that's it."*
+> **Target.** They run a small agency and they want to stop being the only person who knows where anything is. So they build a tracker. It works for three weeks, then someone forgets to move a card, the board stops matching reality, and the moment it is wrong once nobody trusts it again. So they go back to asking. Which means the answer to "where is that project" still lives in their head and in four Slack threads.
+>
+> **Transformation.** They stop building trackers that need someone to remember, and start building ones where the status is a byproduct of doing the work. Nobody updates anything, and the board is right on Friday because it was never a separate job from the work itself.
+>
+> **Stakes.** If they keep building trackers that depend on people remembering, each one dies the same way and each death costs more trust than the last. The team learns the new system is temporary, so they stop using it early, which kills it faster. And because nothing is reliable the owner keeps checking, so every project routes back through them. They are the tracker. Deadlines slip and they find out the day of. It reads like a discipline problem on the team, so they write a process doc nobody reads, when the real problem is a board that asked people to do a second job on top of the first.
+>
+> Locked. Deep-dive, goal views. Say the word if either's wrong. Next is vid-title.
 
-## Example 2: the dig (the centerpiece)
+*Target and Stakes are two lanes doing two jobs. Target describes the loop and stops on a cost. Stakes take that cost and compound it. Watch the sentences tighten as it escalates ("They are the tracker.") and watch the last line name what they blame instead, then land on the thing Target opened with.*
 
-**Context:** the brain-dump is accurate and completely flat. A process, a doc, three automations. Nothing contested in it.
+*Format and goal are stated, not asked. Deep-dive because the frame discredits the old way at length, views because this audience is cold. Both are derivations from the pick.*
 
-**Creator:** "I want to do a video on my client onboarding. I've got it down to a Google Doc and three automations now."
+## When the cost will not come
 
-**AI:** "Before I frame it, what do people get wrong about onboarding?"
+**Context:** a frame is locked and Stakes read as one flat sentence.
 
-**Creator:** "They treat it like admin. Welcome email, intake form, done."
+**AI:** "What did you believe about this before?"
 
-*True, but soft. It is a category complaint, not a cost. Push once more, and go to the creator's own before-state, which lands most often.*
-
-**AI:** "What did you believe about it before?"
-
-**Creator:** "Honestly I thought onboarding was the boring part. I put everything into the sales call and then just handed them a folder. Took me two years to work out that's exactly where I was losing people."
+**Creator:** "Honestly I thought onboarding was the boring part. I put everything into the sales call and handed them a folder. Took me two years to work out that's exactly where I was losing people."
 
 **AI:** "What did that cost you?"
 
-**Creator:** "I lost four clients that year and I blamed delivery the whole time. It wasn't delivery. They'd already checked out in week one, I just didn't find out until month three."
+**Creator:** "Lost four clients that year and blamed delivery the whole time. It wasn't delivery. They'd already checked out in week one, I just didn't find out until month three."
 
-*There it is, and it is two things at once. The blind spot for Target (they think the sale is the moment that matters) and the delay for Stakes (the bill arrives in month three, so nobody traces it back to week one). Two questions, no battery. Stop digging the moment one opens.*
+*Two questions and both fields are writable. The bill arrives in month three, so nobody traces it back to week one, which is exactly the shape Stakes wants. Stop the moment one opens. Firing all four reads as an interrogation and shuts the door you were opening.*
 
-**AI move:** name the argument back in one line and confirm it.
+## When the rotation comes back flat
 
-- **Argument:** "Clients decide whether they're staying in week one, and you're spending all your energy on the sale."
-- **Core payoff:** "By the end of this video you'll have a map of what your client actually goes through in their first seven days, and you'll know which gap is the one losing them."
+**Context:** a launch reaction. Eight lenses run and every frame lands on "it's faster now."
 
-*Note the shape. "Your Onboarding Is Why Clients Ghost" is headline-shaped and does not belong here; it is a wording decision made before the lock list exists, and it anchors vid-title on a line written blind. Hand over the argument. Title does the selling with the banks open.*
-
-## Example 3: no stake, so name the ceiling
-
-**Creator:** "New Notion feature dropped, I want to cover it."
-
-**AI move:** dig twice. What do people get wrong about it, what does the old way cost them. Both come back with "nothing really, it's just faster."
-
-**AI:** "There's no real conflict in this one. It's a reference video, not a click video. Three ways to play it: narrow to the one part people will get wrong, let a number carry it if you have one, or film it as a fast utility video and know the ceiling going in."
+**AI:** "There's no real conflict in this one. Nobody's wrong about anything, it's just quicker. That's a reference video, not a click video. Three ways to play it: narrow to the one part people will get wrong, let a number carry it if you've got one, or film it fast and know the ceiling going in."
 
 **Creator:** "It's news, I just want the speed. Film it."
 
-**AI move:** lock it as `news`, goal `views`, and move on without another word about it. Target runs to its cost and stops, no blind spot invented.
+**AI move:** lock `news`, goal `views`, write the read with a modest cost, and move on without another word about it.
 
-*Framing does not kill videos. It names the ceiling once, plainly, and the creator spends the filming day with their eyes open.*
-
-## Example 4: re-frame
-
-**Context:** piece.md already has a `selected_angle`.
-
-**AI move:** surface it, ask "re-frame from scratch, or refine this one?" Do not resurface previously dropped angles unless asked.
+*A full rotation coming back flat is evidence, not failure. Framing does not kill videos. It names the ceiling once, plainly, and the creator spends the filming day with their eyes open.*
 
 ## Near-misses
 
-- **Stakes that stop at one consequence.** "They lose revenue" is a sentence, not stakes. Stakes compound: each one causes the next, and the last lands somewhere the viewer would never trace back to the cause. This is the most common way a read goes flat while every line in it stays true.
-- **A manufactured blind spot.** No "they think X" in the material, so one gets invented to fill the slot. Not every video has one. A tutorial and a news reaction are allowed to run on Target plus Stakes alone, and a blind spot the creator does not actually believe is a promise the body cannot keep.
-- **Target bleeding into Stakes.** The consequences written into Target, leaving Stakes to repeat them. Target describes the situation and stops.
-- **Transformation with no "stop doing X."** "They delegate effectively" names a destination with no journey, which reads as a feature description. The thing they put down is half the content.
-- **Target written as a form.** "Their goal is X. Their challenge is Y. Their pain point is Z." Every fact correct, and it reads like a template being filled in. Write the chain instead and let *but*, *so*, and *which means* carry it.
-- **Building before the yes.** Four angles surfaced right after reading the brain-dump. If the read is wrong, every angle is wrong.
-- **The question battery.** All four dig questions fired at once. It reads as an interrogation, the creator gets defensive, and the door you were opening shuts.
-- **Handing over a headline.** An angle written as a title. That is vid-title's decision, made here without the lock list or the banks.
+- **Eight rewordings.** Every option reads differently and four answer the same want. The check is the want, never the wording.
+- **A frame that describes the contents.** "A video that walks through the dashboard build" answers what happens in the video. Nobody clicks for that.
+- **A frame written as a line of the video.** "You don't have a tracking problem, you have a maintenance problem" is spoken, and it belongs in the script.
+- **The mechanism promoted without the call.** Putting Notion at the front of every frame because it is in the material. That decision happens at step 1, on whether people search for it, and here the answer was no.
+- **Building before the pick.** Writing the read on the frame you recommended. If they choose a different one, every word of it is aimed at the wrong person.
+- **Handing over a headline.** "Why Your Tracker Keeps Dying" is a handle for talking about option 6 in chat. Save it to piece.md and vid-title inherits a title written before the banks were open.

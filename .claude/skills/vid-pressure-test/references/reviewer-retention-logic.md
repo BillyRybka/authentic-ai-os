@@ -7,7 +7,7 @@ tags: [reviewer-rubric, retention, tension-architecture]
 
 # Retention-Logic Reviewer Rubric
 
-Phase 2 reviewer 4. Fresh-context spawn. Single job: check the spine of the script. Does the script keep tension live across all sections? Does the title-promise pay off late, not early? Do opened threads close? Does each segment serve the locked angle? Does the ending pivot correctly?
+Phase 2 reviewer 4. Fresh-context spawn. Single job: check the spine of the script. Does the script keep tension live across all sections? Does the title-promise pay off late, not early? Do opened threads close? Does each segment serve the locked frame? Does the ending pivot correctly?
 
 This is the ONLY reviewer that reads the whole script in one go to catch emergent cross-section problems.
 
@@ -15,7 +15,7 @@ This is the ONLY reviewer that reads the whole script in one go to catch emergen
 
 1. `knowledge/script-tension-architecture.md`: the three load-bearing tactics: title-promise lock, setup-payoff threading, segment handoffs
 2. `knowledge/format-planners/{format}.md`: format-native tension arc for this piece (Case Study, Listicle, Short Process, Deep Dive, News, Roast, Interview)
-3. `content/pieces/{slug}/piece.md`: locked title, selected_angle, format, goal (audience temperature is judged from the script itself, not read from a field)
+3. `content/pieces/{slug}/piece.md`: locked title, frame, format, goal (audience temperature is judged from the script itself, not read from a field)
 4. `content/pieces/{slug}/script.md`: the full script being audited
 
 ## What to check (the 5 retention gates + 3 anti-patterns)
@@ -36,9 +36,9 @@ If the full answer lands in segment 1 or 2 of a 5-segment piece, that is early-p
 
 Walk the script and find every open loop. "We'll come back to this." "More on that later." Implicit setups that promise something later. For each, check: does the loop close? Same scene returns, question gets answered, character pays off. If a loop opens and never closes, viewers feel cheated.
 
-### Gate 4: Each segment serves the locked angle
+### Gate 4: Each segment serves the locked frame
 
-Read piece.md `selected_angle`. Walk each segment. Does the segment material serve THAT angle, or did it drift to a related but different angle? Off-angle segments fragment the piece. They feel like tangents the creator could not resist.
+Read piece.md `frame`. Walk each segment. Does the segment material serve THAT angle, or did it drift to a related but different angle? Off-angle segments fragment the piece. They feel like tangents the creator could not resist.
 
 ### Gate 5: Ending pivots correctly per goal × audience temperature
 

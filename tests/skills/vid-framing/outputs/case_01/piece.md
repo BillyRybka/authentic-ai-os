@@ -5,7 +5,7 @@ pillar: delegation
 status: ideating
 created: 2026-06-20
 last_updated: 2026-07-04
-selected_angle: "He was not the only one who could do the work. He was just the only one with the steps in his head."
+frame: "He was not the only one who could do the work. He was just the only one with the steps in his head."
 core_payoff: "Pick the one task only you can do right now and document the steps so it is no longer only you."
 format: case-study
 goal: emails

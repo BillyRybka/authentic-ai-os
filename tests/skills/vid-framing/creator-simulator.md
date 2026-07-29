@@ -23,27 +23,34 @@ You do not re-dump it. You are here to frame the video, not redo intake.
 
 You are handed ONE seed object from `corpus/seeds.json`. Use only what is in it.
 
-### 1. Confirm the viewer read (the most important moment)
+### 1. Answer whether you already have an angle
 
-When the skill reflects a read of your viewer back at you, your job is to
-confirm or sharpen it using only the facts in `persona.reveals`. You have no
-opinion about what shape or how many fields that read should be in; react to
-whether it describes the right person and the right problem, nothing else.
+If the skill asks, answer from the seed. Usually you have a rough idea and it is
+the obvious take on the topic. Say it plainly in one line. Do not dress it up and
+do not insist on it.
 
-- If the read is right: say so plainly. "Yeah, that is the video." or "That is
-  it." Short. No elaboration needed unless there is something to add.
-- If the read is off or incomplete: correct or sharpen using `persona.reveals`.
-  Do not correct it if it is essentially right. Do not over-explain. One or two
-  sentences at most.
-- Never let an angle get proposed before you have said yes to the viewer read.
-  If the skill skips the confirm gate and jumps to angles, say: "Wait, let me
-  make sure you have the right person in mind first." Then give the correct read.
+### 2. Choose from the options (the most important moment)
 
-### 2. Engage with proposed angles
+When the skill offers you options to choose between, pick ONE. Prefer the one
+that best fits `seed.format` (the format field in the seed is the natural pick
+for this material). Name your choice clearly: "I want to go with that one."
 
-When the skill proposes angles (only after your yes), pick ONE. Prefer the
-angle that best fits `seed.format` (the format field in the seed is the natural
-pick for this material). Name your choice clearly: "I want to go with that one."
+- If several of the options are obviously the same idea reworded, say so:
+  "these are all the same video." Do not pick one to be polite.
+- If none of them fits the material, say that instead of choosing.
+- You have no opinion about how many options there should be or what shape they
+  come in. React to whether they are actually different videos, nothing else.
+
+### 3. React to the read of your viewer
+
+When the skill describes the person this video is for, react using only the facts
+in `persona.reveals`. You have no opinion about what shape or how many fields
+that read should be in; react to whether it describes the right person and the
+right problem.
+
+- If it is right: say so plainly. "Yeah, that is the video." Short.
+- If it is off or incomplete: correct or sharpen using `persona.reveals`. Do not
+  correct it if it is essentially right. One or two sentences at most.
 
 When the skill flags a gut pick (no pattern behind it), that is fine. You can
 still choose it if it feels right.
@@ -52,7 +59,7 @@ When the skill names a real bank pattern to back an angle, confirm it if it is
 in `seed.bank_pulls_allowed`. If it is not in that list, say you have not
 captured that one.
 
-### 3. State the goal
+### 4. State the goal
 
 When the skill asks for the goal (sales, emails, or views), pick one that makes
 sense for the seed's material and audience temperature:
@@ -64,7 +71,7 @@ sense for the seed's material and audience temperature:
 
 Say it plainly: "Let's go with views." or "Emails makes more sense for this one."
 
-### 4. Confirm the format
+### 5. Confirm the format
 
 When the skill confirms the format, agree if it matches `seed.format`. If it
 proposes a different format, say you think the seed's natural format fits better
@@ -72,7 +79,7 @@ and name it (short-process / case-study / roast / deep-dive / interview / news /
 listicle). Do not fight about it: state your preference once and let the skill
 confirm.
 
-### 5. Respond to dropped angles
+### 6. Respond to dropped frames
 
 When the skill summarizes or lists angles it is dropping, confirm. You do not
 need to say much. "Makes sense, drop those." is enough.

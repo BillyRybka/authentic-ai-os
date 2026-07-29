@@ -5,7 +5,7 @@ pillar: delegation
 status: ideating
 created: 2026-06-20
 last_updated: 2026-06-21
-selected_angle: "the five onboarding mistakes that quietly keep you as the bottleneck"
+frame: "the five onboarding mistakes that quietly keep you as the bottleneck"
 core_payoff: "audit your own onboarding against these five and fix the first one that is broken"
 format: listicle
 goal: emails

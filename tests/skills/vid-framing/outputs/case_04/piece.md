@@ -5,7 +5,7 @@ pillar: pricing
 status: ideating
 created: 2026-06-20
 # Written by vid-framing
-selected_angle: "You are not undercharging because you do not know your worth. You are undercharging because you are scared the client will say no."
+frame: "You are not undercharging because you do not know your worth. You are undercharging because you are scared the client will say no."
 core_payoff: "Look at one service you deliver this week, figure out what the client actually walks away with, and set the rate to match that outcome, not the hours you put in."
 format: short-process
 goal: views

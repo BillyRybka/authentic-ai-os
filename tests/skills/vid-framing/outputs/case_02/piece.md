@@ -5,7 +5,7 @@ pillar: systems
 status: ideating
 created: 2026-06-20
 # Written by vid-framing
-selected_angle: "The new auto-scheduling feature is useful. It will not stop you from being slammed."
+frame: "The new auto-scheduling feature is useful. It will not stop you from being slammed."
 core_payoff: "Write your process down before you hand it to any tool, so the tool has something to run."
 format: news
 goal: views

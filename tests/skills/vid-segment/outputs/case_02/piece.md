@@ -5,7 +5,7 @@ pillar: systems
 status: drafting
 created: 2026-06-20
 last_updated: 2026-06-23
-selected_angle: "the growth came from the boring system, not from a growth hack"
+frame: "the growth came from the boring system, not from a growth hack"
 core_payoff: "see that a documented onboarding plus a weekly review is what actually moves a business"
 format: case-study
 goal: sales

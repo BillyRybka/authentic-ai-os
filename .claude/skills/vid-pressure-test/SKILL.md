@@ -23,7 +23,7 @@ A script.md that is filmable. The skill EDITS the script in place during the int
 
 Hard requirements:
 - `content/pieces/{slug}/script.md` exists with intro + all body segments + ending all written (no stub sections)
-- `content/pieces/{slug}/piece.md` exists with `selected_angle`, `format`, `goal` locked
+- `content/pieces/{slug}/piece.md` exists with `frame`, `format`, `goal` locked
 - `content/pieces/{slug}/brain-dump.md` exists (claim traceability source)
 - `foundation/creator-foundation.md`, `foundation/voice-profile.md` (the refusals section carries the banned phrases and required swaps)
 
@@ -59,7 +59,7 @@ Deferred loads: `knowledge/format-planners/{format}.md` and `knowledge/attention
 **Hard friction checks during load:**
 
 - script.md has any stub section (e.g. `## Segment 3` with empty body) → reject. "Script not complete. Finish writing segment N first."
-- piece.md missing `selected_angle` or `format` → reject. "Run vid-framing first."
+- piece.md missing `frame` or `format` → reject. "Run vid-framing first."
 - brain-dump.md missing → reject. "Run vid-intake first."
 - foundation docs missing → reject. "Run /foundation sequence first."
 
@@ -97,7 +97,7 @@ Scans for banned phrases (transition-patterns Tier 1 + the house banned-word rul
 
 **Reviewer 4: retention-logic** (`references/reviewer-retention-logic.md`)
 
-Reads script against script-tension-architecture.md and format-planners/{format}.md. Checks: intro Setup's Top 3 questions are actually delivered in the body, title-promise lands late not early, opened threads close, each segment serves the locked angle, ending pivots correctly per goal × viewer_stage. Returns top 3 retention risks with location + diagnosis + suggested restructure.
+Reads script against script-tension-architecture.md and format-planners/{format}.md. Checks: intro Setup's Top 3 questions are actually delivered in the body, title-promise lands late not early, opened threads close, each segment serves the locked frame, ending pivots correctly per goal × viewer_stage. Returns top 3 retention risks with location + diagnosis + suggested restructure.
 
 **Hard cap: top 3 per reviewer.** Forces severity ranking. Soft cap discipline is the discipline that keeps the audit tractable.
 
@@ -162,7 +162,7 @@ Wait. Three possible answers:
 - **Yes, would reword X** → creator names the section/sentence. Apply their version to script.md. Ask again: "Reread it. Anything else?" Loop until clean.
 - **Yes, but I want to think on it overnight** → save state with `pressure_test_status: read-aloud-pending` in piece.md. Skill ends. Resume on next invocation.
 
-**Soft cap on re-read cycles.** After 2 re-read cycles where the creator keeps finding rewordings, the script is signaling deeper structural drift. Surface proactively: "You've reworded twice. Sometimes the third read reveals it is the angle or the format, not the lines. Want to save state and come back tomorrow, or push through one more?" Creator picks. Avoids 10:30pm spiral.
+**Soft cap on re-read cycles.** After 2 re-read cycles where the creator keeps finding rewordings, the script is signaling deeper structural drift. Surface proactively: "You've reworded twice. Sometimes the third read reveals it is the frame or the format, not the lines. Want to save state and come back tomorrow, or push through one more?" Creator picks. Avoids 10:30pm spiral.
 
 The read-aloud test is non-negotiable. If the creator would reword anything when speaking, the script is not ready. This is the final arbiter; not the reviewers.
 
@@ -230,7 +230,7 @@ vid-pipeline reads `pressure_test_audit` from piece.md frontmatter directly. No 
 ## Hard friction (auto-flag, stop)
 
 1. script.md incomplete (any stub section) → redirect to vid-segment, vid-intro, or vid-ending
-2. piece.md missing selected_angle or format → redirect to vid-framing
+2. piece.md missing frame or format → redirect to vid-framing
 3. brain-dump.md missing → redirect to vid-intake
 4. Foundation docs missing → redirect to /foundation
 5. Em-dashes in any productized output (this skill's chat, suggested rewrites, frontmatter)
@@ -275,7 +275,7 @@ vid-pipeline reads `pressure_test_audit` from piece.md frontmatter directly. No 
 
 - `vid-segment`, `vid-intro`, `vid-ending` write the script this skill audits
 - `vid-structure` writes the skeleton that the body skills filled
-- `vid-framing` locks the angle the reviewers test against
+- `vid-framing` locks the frame the reviewers test against
 - `vid-intake` produced the brain-dump that source-traceability checks
 - The `/foundation` chain produced creator-foundation; `vid-voice-capture` produced voice-profile; `vid-research` produced packaging-system
 - `vid-pipeline` invokes this skill after vid-ending completes

@@ -295,7 +295,7 @@ def check_handoff_framing_to_title(upstream_piece):
     """
     Error gate: the upstream piece.md carries what vid-title reads from
     framing (tests/lib/check_handoff.py 'framing->title': type, slug,
-    selected_angle, core_payoff, format, goal, voice_context).
+    frame, core_payoff, format, goal, voice_context).
     """
     ok, detail = check_handoff("framing->title", {"piece.md": upstream_piece})
     return t.CheckResult("handoff_framing_to_title", ok, "error", detail)

@@ -60,7 +60,7 @@ STRUCTURE_FIELDS = [
 # skill is append-only across skills. Compared verbatim against the
 # after-framing fixture.
 PROTECTED_FIELDS = [
-    "type", "slug", "selected_angle", "core_payoff",
+    "type", "slug", "frame", "core_payoff",
     "format", "goal", "voice_context",
 ]
 

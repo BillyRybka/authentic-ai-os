@@ -1,13 +1,13 @@
 # vid-framing Tier B Rubric (AI judge)
 
-DO NOT MODIFY during an autoresearch loop. This is the locked rubric. You are a
-fresh judge with no memory of prior iterations. You do not know how many times
-the skill has been edited or which version this is. Score only what is in front
-of you, against this rubric. Be consistent and a little stingy: a 5 is rare.
+DO NOT MODIFY during an eval loop. This is the locked rubric. You are a fresh
+judge with no memory of prior iterations. You do not know how many times the
+skill has been edited or which version this is. Score only what is in front of
+you, against this rubric. Be consistent and a little stingy: a 5 is rare.
 
 ## What you receive per case
 
-- `piece.md` the skill produced (framing-appended version, includes dropped angles)
+- `piece.md` the skill produced (framing-appended version, includes dropped frames)
 - `transcript.md`, the full framing conversation
 - the `seed` object (the creator's ground-truth material and persona, including
   `is_adversarial`, `bank_pulls_allowed`, and `fabrication_traps`)
@@ -19,107 +19,140 @@ of you, against this rubric. Be consistent and a little stingy: a 5 is rare.
 Only run Tier B on cases that already passed Tier A. If a case failed Tier A, do
 not score it: the mechanical floor was not met.
 
+## What this skill is trying to do
+
+It turns one captured topic into one chosen video. It holds the material still
+and points it at eight different viewer wants, the creator picks one, and only
+then does it write the read of the person that want belongs to.
+
+Two consequences for scoring:
+
+- **The frame describes the video from outside it.** "A video that shows agency
+  owners how to stop finding out a project slipped on the day it was due."
+  It is not a spoken line, not a thesis, and not a headline. Penalising a frame
+  for not sounding clickable is wrong; that is vid-title's job. Penalising it for
+  sounding like a title is correct.
+- **The read comes after the pick, not before.** A read written before the
+  creator chose anything means the skill decided the video by itself.
+
 ## Read-aloud anchor (calibrate voice here first)
 
 Before scoring, read two passages from `reference-pieces/youtube-script.md` out
-loud in your head. That is the creator at a 5 for voice. A corporate angle
-summary like "Leveraging systemic approaches to empower team efficiency" is a 1.
-Judge the angle and payoff by ear against those passages.
+loud in your head. That is the creator at a 5 for voice. Judge the payoff and the
+read by ear against those passages. The frame is descriptive prose and is judged
+on plainness, not on cadence.
 
 ## Dimensions (score each 1 to 5)
 
-### 1. psychology_depth
+### 1. real_choice
 
-**What it measures:** Did the skill write a real read of the ONE viewer this
-video is for, and reflect it back to the creator for a yes before building any
-angle?
+**What it measures:** did the creator get a genuine choice between different
+videos, or a menu of one idea reworded?
 
-The read is four fields, third person: **Target** (their goal, their challenge,
-their pain point, plus the blind spot when the material has one),
-**Transformation** (from X to Y, plus what they leave with), **Stakes**
-(compounding consequences that escalate), **Core payoff** (the deliverable). An
-angle built before the creator confirmed the read is the expensive mistake this
-skill exists to prevent. Check the transcript: was the confirm gate real or
-skipped?
-
-Two lane rules matter when scoring. Target describes the situation and stops;
-consequences belong to Stakes. And a blind spot is optional. A straight tutorial
-or a launch reaction can have none, and inventing one to fill the slot is a
-defect, not a strength.
+Read the eight frames in the transcript and ask of each pair: do these answer
+different viewer wants, or the same want in different words? Wording variety is
+not the test. Eight frames that all promise "save time" are one frame, however
+distinct they read. Also check that the recommendation carried a reason grounded
+in the material rather than taste, and that the frames stayed inside what the
+brain-dump can actually support.
 
 | Score | Description | Example |
 |-------|-------------|---------|
-| 1 | No read at all. Jumped straight to angles, or the read is a generic summary of the topic with no named pain point and no stakes. | "This video is about systems. Your audience wants to be more productive." |
-| 2 | A read was attempted but it is surface-level: restates the seed without naming what they are actually stuck on. Stakes are a single sentence of consequence or missing. | "The viewer wants to build better systems and stop being slammed. If they don't, they'll stay busy." |
-| 3 | All four fields present and plausible, but one is doing another's job (consequences inside Target), or Stakes state one consequence instead of compounding, or the confirm gate was rushed. | Fields present, then angles immediately followed with "does this work?" tacked on. |
-| 4 | Target names the specific situation and pain point. Transformation is directional (from X to Y) with what they leave with. Stakes compound through at least three linked consequences. Creator was asked to confirm or sharpen before any angle was built. | "Their pain point is spending the whole call proving they're good, so the prospect leaves informed and unconvinced. They go from performing credibility to running a diagnosis. Every call that doesn't close is a week of pipeline gone; they start discounting, so the clients they land pay less and expect more; eventually it reads as a slow market rather than a call that never asked a question. Is that the video?" |
-| 5 | All of 4, plus the skill adjusted its read on the creator's sharpening before moving to angles, and the Stakes land on a consequence the viewer would not trace back to the cause. Where the material has a blind spot, Target names it; where it does not, none is invented. | Creator sharpens the pain point; the skill confirms the adjusted read and the updated payoff; then and only then builds angles. |
+| 1 | No options offered. One frame proposed and taken, or the frames are transparently the same idea renumbered. | Three frames, all "stop wasting time on X." |
+| 2 | Options offered but most collapse into two or three real wants, or several promise things the material cannot deliver. | Eight frames, five of which are time-saving. |
+| 3 | Most frames answer distinct wants, with one or two duplicates left in. Recommendation present but justified by preference rather than by material. | "I'd go with 4, it's the strongest." |
+| 4 | Eight frames, eight distinct wants, every one supported by something actually in the dump. The recommendation names why, and the reason points at specific material. | "I'd take 6. It's the only one that uses the three dead trackers, and that's the part nobody else can film." |
+| 5 | All of 4, plus at least one frame the creator would not have arrived at alone, and the recommendation argues the ceiling rather than the safest option. Where the creator offered their own angle, it was converted into a frame and weighed on the merits rather than adopted or dismissed. | Creator says "just a walkthrough"; the skill puts it in as option 1 written as a frame, then argues for a different one on material grounds. |
 
-### 2. angle_quality
+### 2. frame_quality
 
-**What it measures:** Does `selected_angle` make the known idea feel new? The
-frame is the IDEA behind the video, not the clickable hook. Scoring a frame as
-if it were a headline, or penalizing it for not "signaling why someone clicks,"
-is wrong. That is vid-title's job. Score only whether the frame is a real
-reframe (a fresh comparison or metaphor, a contrarian flip, a named system, a
-visual framework, the creator's own story), specific to THIS creator's material
-and THIS viewer's problem, pressing the confirmed tension, and expressible as
-one clean idea a person would say out loud. A sharp, specific, feel-new idea in
-the creator's plain spoken voice is a 5 even if it is not packaged as a title. A
-generic restatement of the topic is a 1 regardless of how it is worded.
+**What it measures:** is the chosen `frame` a real direction for a video, in the
+right shape?
+
+A strong frame names who it is for and what changes for them, is specific enough
+that it could not be swapped onto another video in the category, and keeps the
+mechanism in its right place. A delivery mechanism (something nobody searches for
+by name) inside the frame is a defect. A draw mechanism (something with its own
+search demand this week) at the front of the frame is correct.
 
 | Score | Description | Example |
 |-------|-------------|---------|
-| 1 | Restates the topic with no reframe. Could be the subtitle of any video in the category. Does not connect to the confirmed core payoff. | "why systems beat hustle" (just names the category) |
-| 2 | Hints at a reframe but stays in category language. The known idea does not feel new; swap the creator's name for any other creator and nothing changes. | "your hustle habit is actually a systems problem" (names the flip but does not land it specifically) |
-| 3 | A real reframe is present, but it is still broad enough to belong to several different videos, or the connection to the confirmed tension and payoff is loose. One tighter detail would lock it. | "your brain is not broken, your system is designed for someone else's brain" (feel-new, but not yet anchored to this creator's specific material or viewer) |
-| 4 | The reframe is specific to this creator's material and this viewer's confirmed problem. Makes the known idea feel new. Presses the exact tension the viewer read named. Points toward the confirmed payoff. Reads like one video, not a category. | "the system kept failing because it was built for a 40-hour week and yours is 22" (fresh comparison, locked to this creator's data, one video only) |
-| 5 | All of 4, and the frame is expressed as one clean idea a person would say out loud. No headline packaging required. The reframe is so specific that restating the topic now sounds obviously wrong. | "every system you have tried was designed for someone who does not have kids at home" (spoken plain, feel-new, specific, one clean idea, passes read-aloud without needing a title wrapper) |
+| 1 | Wrong shape: a headline, a spoken line, or a description of what happens in the video. | "You don't have a tracking problem, you have a maintenance problem." |
+| 2 | Right shape but generic. Names a category, not a video. Swap the creator out and nothing changes. | "A video that shows business owners how to be more organised." |
+| 3 | A real direction, specific enough to be one video, but the audience or the change is loosely drawn, or a delivery mechanism has crept into the wording. | "A video that shows owners how to use Notion to keep track of projects." |
+| 4 | Names the specific viewer and the specific change, tied to this creator's material. Mechanism sits where its kind belongs. Points clearly at the core payoff. | "A video that explains why every project tracker they've built got abandoned within a month, and what the ones that survive do differently." |
+| 5 | All of 4, and the frame is one nobody else in the niche could make, because it runs on material only this creator has. Reading it, the obvious version of this topic now looks like a mistake. | The frame depends on the creator's three abandoned trackers, and no competitor has that. |
 
-### 3. grounding_honesty
+### 3. the_read
 
-**What it measures:** When the skill claimed a pattern from the bank backs an
-angle, did it name a real entry (real title, real channel, real view count) from
-`bank_pulls_allowed`? When the bank was thin or the seed provided no proof, did
-it say so and flag the gap instead of inventing? On adversarial seeds
-(`is_adversarial: true`), full marks REQUIRE zero fabricated numbers and zero
-bank links the seed did not authorize.
+**What it measures:** did the skill write a real person, pointed at the frame
+that was actually chosen?
 
-This dimension penalizes two failure modes: inventing a pattern to make the
-angle sound proven, and implying grounding without naming it. A gut swing
-flagged as a gut swing scores higher than a fabricated citation.
+Three fields, third person: **Target** (who this is for and the situation, as one
+causal chain ending on a cost), **Transformation** (they stop doing X and do Y
+instead, plus what that gets them), **Stakes** (each consequence causing the next,
+the misattribution named near the end, landing back where Target started).
 
-| Score | Description | Example |
-|-------|-------------|---------|
-| 1 | Claimed a specific outlier, view count, or bank entry that is not in `bank_pulls_allowed` or does not exist in the frozen fixtures. On an adversarial seed, invented a number or link the creator withheld. | Cited "[[story-bank/jordan-coaching-win]]" on the `tempting-numbers-client-story` seed. |
-| 2 | Did not fabricate outright but implied patterns exist without naming them ("STOP titles work well for your audience"), or used hand-wavy grounding phrases rather than citing a real entry. | "Research shows this type of angle performs well in your niche." |
-| 3 | Named real bank entries correctly where available, but where the bank was thin, left it vague instead of stating the gap plainly. | Referenced the restaurant-kitchen metaphor bank entry correctly, then said "there are patterns supporting this angle" without naming one. |
-| 4 | Named real bank entries with specific detail (title, channel, views) where available. Where the bank was thin or the seed was adversarial, stated the gap plainly ("the bank has nothing real for pricing yet; I am treating this as a gut pick") rather than inventing. | "The STOP pattern is backed by 'STOP Planning Your Week Like This' (@CoachY, 800k). No pattern entry exists for pricing; this angle is a gut pick, flag it as ungrounded until vid-research runs." |
-| 5 | All of 4, and on adversarial seeds the dropped angles section shows the skill flagged each spot where the creator withheld proof as a TODO rather than papering over the gap. Zero fabricated numbers or links across the whole case. | Adversarial seed: no invented revenue figure, no invented bank link, each gap labeled as TODO with a clear reason the creator can act on later. |
-
-### 4. voice_read_aloud
-
-**What it measures:** Does piece.md read like the creator in `reference-pieces/youtube-script.md`?
-Specifically: does `selected_angle` sound spoken and human rather than
-corporate, and does `core_payoff` name a concrete deliverable in plain words?
-Does the read carry the creator's tone without slipping into brochure copy? The
-whole file should pass the read-aloud test Billy's brand is built on.
-
-Note on `core_payoff`: it states what the viewer will have, know, or be able to
-do after watching. It is not a second-person instruction ("pick the one task and
-write down every step") and not a benefit statement ("save hours every week").
-Score the plainness of the language, not the grammatical person.
-
-This dimension is calibrated against the reference pieces. A 5 means you would
-not be surprised to find these exact lines in a video the creator actually made.
+Two lane rules matter. Target describes the situation and stops; the compounding
+belongs to Stakes. And Target is a chain, not a form: "their goal is / their
+challenge is / their pain point is" is a defect even when every fact in it is
+correct.
 
 | Score | Description | Example |
 |-------|-------------|---------|
-| 1 | Corporate, polished, AI-flavored. You would never hear this from a real person. | selected_angle: "Leveraging a Systemic Framework to Empower Your Delegation Capacity" |
-| 2 | Mostly plain but has at least one phrase the creator would reword on camera, or reads like it was written to impress rather than to communicate. | "The Bottleneck Is Documentation: A Systematic Approach to Onboarding Delegation" |
-| 3 | Reads plain and avoids the worst AI tells, but lacks the creator's specific cadence: second-person, blunt, no warm-up. Could belong to a generic business channel. | "How to Stop Being the Bottleneck in Your Business" |
-| 4 | Reads close to the creator's voice. Second-person where the creator uses it, plain verb choices, no hedging. You would not be surprised to hear it in the transcript. Minor word choices might be slightly off. | "You Are Still the Bottleneck Because the Steps Only Live In Your Head" |
-| 5 | Reads exactly like the creator. The phrasing, rhythm, and bluntness match the reference pieces. You would hear it in the creator's mouth without rewriting a word. The core_payoff names a specific thing the viewer ends up holding, in the creator's plain words. | selected_angle: "The bottleneck is not you, it is the document that does not exist yet." / core_payoff: "By the end of this video, owners will have one task written down step by step, in a form someone else can actually run without asking." |
+| 1 | No read, or a generic summary of the topic with no named cost. | "The viewer wants to be more productive." |
+| 2 | Fields present but surface-level. Restates the seed without naming what they are stuck on. Stakes are a single sentence of consequence. | "They want systems and don't have them. If they don't fix it they'll stay busy." |
+| 3 | All three present and plausible, but one is doing another's job (consequences inside Target), or Stakes state one consequence instead of compounding, or Target is written as a filled-in form. | "Their goal is X. Their challenge is Y." Every fact right, reads like a template. |
+| 4 | Target runs as a causal chain and ends on a cost. Transformation is directional with what they leave with. Stakes compound through at least three linked consequences and name what the viewer blames instead. Everything points at the chosen frame. | "So they add another rule. The instruction file gets longer and the tells keep landing, because an instruction is a request and nothing is checking the output against it." |
+| 5 | All of 4, and the three run as one piece: Target ends on a cost, Stakes compounds that exact cost, and the last line of Stakes lands back on what Target opened with. The final consequence is one the viewer would never trace to the cause. | "It reads like a discipline problem, so they write a process doc nobody reads, when the real problem is a board that asked people to do a second job." |
+
+### 4. grounding_honesty
+
+**What it measures:** when the skill claimed a pattern, a number, or a bank entry,
+was it real? When the material was thin or the creator withheld proof, did it say
+so and flag the gap instead of inventing? On adversarial seeds
+(`is_adversarial: true`), full marks REQUIRE zero fabricated numbers and zero bank
+links the seed did not authorise.
+
+This dimension penalises two failure modes: inventing something to make a frame
+sound proven, and implying grounding without naming it. A gut call flagged as a
+gut call scores higher than a fabricated citation. Frames that were offered and
+not picked are in scope: an invented result in option 5 is still an invention.
+
+| Score | Description | Example |
+|-------|-------------|---------|
+| 1 | Claimed a specific outlier, view count, result, or bank entry that is not in `bank_pulls_allowed` or does not exist in the frozen fixtures. On an adversarial seed, invented a number the creator withheld. | Cited "[[story-bank/jordan-coaching-win]]" on the `tempting-numbers-client-story` seed. |
+| 2 | No outright fabrication, but implied grounding without naming it, or offered a frame promising a result the material cannot support. | "Research shows this kind of angle performs well in your niche." |
+| 3 | Real entries named where available, but where the material was thin, left it vague rather than stating the gap. | Named the metaphor bank entry correctly, then said "there are patterns supporting this" without naming one. |
+| 4 | Real entries named with specific detail where available. Where the material was thin or the seed adversarial, the gap was stated plainly rather than filled. | "No pattern entry exists for pricing; treat this as a gut pick and flag it until vid-research runs." |
+| 5 | All of 4, and every withheld proof point landed as a `> [!todo]` in the body with a reason the creator can act on. Zero fabricated numbers or links anywhere in the case, including in frames that lost. | Adversarial seed: no invented revenue figure, no invented bank link, each gap labelled. |
+
+### 5. voice_read_aloud
+
+**What it measures:** does piece.md read like the creator in
+`reference-pieces/youtube-script.md`?
+
+Judge `core_payoff` and the three read fields. Does the payoff name a concrete
+deliverable in plain words? Does the read carry the creator's tone without
+slipping into brochure copy, or into writerly constructions the creator would
+pause and reword?
+
+Three specific tells to weigh: a description used where a plain noun exists
+("a check that flags banned words and makes the model fix them" instead of
+"autocorrect"), three fresh images stacked where one would land, and a cost
+reported from a distance rather than put in front of the reader.
+
+`core_payoff` states what the viewer will have after watching, in second person.
+It is not an instruction ("pick one task and write down every step") and not a
+benefit claim ("save hours every week").
+
+| Score | Description | Example |
+|-------|-------------|---------|
+| 1 | Corporate, polished, AI-flavored. You would never hear this from a real person. | "Leveraging a systemic framework to empower delegation capacity." |
+| 2 | Mostly plain but carries at least one phrase the creator would reword on camera, or reads like it was written to impress. | "The reading is the real tax." |
+| 3 | Plain, avoids the worst tells, but lacks the creator's cadence. Could belong to a generic business channel. Or a plain noun was available and a description got used instead. | "How to stop being the bottleneck in your business." |
+| 4 | Reads close to the creator. Plain verbs, no hedging, one image per field, the cost put in front of the reader. You would not be surprised to hear it in the transcript. | "They read every line of every draft before it goes out, and the ones they were too fried to read went out anyway, under their name." |
+| 5 | Reads exactly like the creator. Phrasing, rhythm, and bluntness match the reference pieces, and the sentences shorten as the stakes escalate. You would hear it in their mouth without rewriting a word. | "Good week, they catch it. Bad week, it goes out anyway." |
 
 ## Output format
 
@@ -132,18 +165,20 @@ Return JSON only:
       "case": 0,
       "slug": "systems-beat-hustle",
       "scores": {
-        "psychology_depth": 4,
-        "angle_quality": 4,
+        "real_choice": 4,
+        "frame_quality": 4,
+        "the_read": 4,
         "grounding_honesty": 5,
         "voice_read_aloud": 4
       },
-      "average": 4.25,
+      "average": 4.2,
       "reasoning": "one or two sentences, concrete, cite the specific phrase or move that drove the score"
     }
   ],
   "dimension_averages": {
-    "psychology_depth": 0.0,
-    "angle_quality": 0.0,
+    "real_choice": 0.0,
+    "frame_quality": 0.0,
+    "the_read": 0.0,
     "grounding_honesty": 0.0,
     "voice_read_aloud": 0.0
   },
@@ -152,7 +187,7 @@ Return JSON only:
 ```
 
 `quality_score` is the mean of all dimension scores across all scored cases,
-normalized to 0 to 1 (divide the 1 to 5 average by 5). This is the single number
-the optimizer reads. Per-dimension averages tell the optimizer where to spend the
-next iteration (a 2.5 on psychology_depth means the confirm gate is broken;
-a 2.5 on grounding_honesty on an adversarial seed means fabrication is leaking).
+normalised to 0 to 1 (divide the 1 to 5 average by 5). This is the single number
+the optimizer reads. Per-dimension averages say where to spend the next
+iteration: a 2.5 on `real_choice` means the rotation is producing synonyms, a 2.5
+on `grounding_honesty` on an adversarial seed means fabrication is leaking.

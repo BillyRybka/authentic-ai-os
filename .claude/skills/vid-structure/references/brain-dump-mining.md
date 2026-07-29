@@ -7,7 +7,7 @@ last_updated: 2026-07-28
 
 # Brain-Dump Mining
 
-How to filter brain-dump material against the locked angle when roughing the spine. The result decides which lessons become main points, which become subpoints under a point, which merge, and which get cut.
+How to filter brain-dump material against the locked frame when roughing the spine. The result decides which lessons become main points, which become subpoints under a point, which merge, and which get cut.
 
 This is silent reasoning, not a review the creator sees. They see the rough spine (main points and subpoints, plus the cuts), never the worksheet.
 
@@ -17,7 +17,7 @@ Every lesson, story, proof, or aside in the brain-dump gets one tag.
 
 ### Main point
 
-Serves the locked angle on its own. The viewer needs it to reach the `core_payoff`. If it were missing, the video would not deliver the title's promise. Becomes its own body section.
+Serves the locked frame on its own. The viewer needs it to reach the `core_payoff`. If it were missing, the video would not deliver the title's promise. Becomes its own body section.
 
 **Test:** "Does this move the viewer toward the payoff? Without it, does the video still deliver the title's promise?" Yes-needed means main point.
 
@@ -25,7 +25,7 @@ Where piece.md carries framing's `## The Read`, its **Transformation** is the sh
 
 ### Subpoint
 
-Backs a main point without being a point of its own. It strengthens something that already serves the angle.
+Backs a main point without being a point of its own. It strengthens something that already serves the frame.
 
 **Test:** "Does this strengthen a main point without standing alone?"
 
@@ -47,9 +47,9 @@ Interesting but does not serve this angle. Belongs in a different video. Cut at 
 
 **Test:** "Could this stand as its own video on a different angle? Does it lead the viewer somewhere other than the payoff?"
 
-Common tangents: adjacent topics the creator got fired up about mid-dump, pet theories that don't connect, tooling or setup detail when the angle is strategy, backstory beyond what the intro needs.
+Common tangents: adjacent topics the creator got fired up about mid-dump, pet theories that don't connect, tooling or setup detail when the frame is strategy, backstory beyond what the intro needs.
 
-**Cut discipline.** Log every tangent, never drop it silent. The creator may know a cut is the real gold, which means the angle is wrong. Surface cuts in the spine like this:
+**Cut discipline.** Log every tangent, never drop it silent. The creator may know a cut is the real gold, which means the frame is wrong. Surface cuts in the spine like this:
 
 ```
 CUTS (logged for future pieces):
@@ -61,7 +61,7 @@ CUTS (logged for future pieces):
 
 Walk the brain-dump in the order it was written. For each block:
 
-1. **Test against the angle.** Main point, subpoint, combine, or tangent.
+1. **Test against the frame.** Main point, subpoint, combine, or tangent.
 2. **Pull the material anchor.** For main points and subpoints, note the specific phrasings, numbers, names, and moments from the dump. These become the spine's lines.
 3. **Attach subpoints to their main point.** A subpoint with no parent is usually a tangent or a main point you missed.
 4. **Resolve combines.** Merge the pair into one main point with the sharper phrasing.
@@ -80,7 +80,7 @@ Walk the brain-dump in the order it was written. For each block:
 9. "Best mic under $200 is the Shure MV7"
 10. "The fix: shorter videos with one big payoff instead of three medium ones"
 
-**Locked angle:** "Why posting daily is killing your channel, and the retention-first fix."
+**Locked frame:** "Why posting daily is killing your channel, and the retention-first fix."
 **Core payoff:** "Cut your schedule, restructure for one big payoff, retention jumps 20%+."
 
 | # | Material | Tag | Notes |
@@ -111,7 +111,7 @@ The creator may push back on a cut or a tag.
 
 ## Anti-patterns
 
-- **Mining without an angle.** Don't mine before framing is locked. Without the angle, everything looks interesting.
+- **Mining without a frame.** Don't mine before framing is locked. Without the frame, everything looks interesting.
 - **Cutting silently.** Always log cuts. The creator may know the cut is the gold.
 - **Combining destructively.** Keep both stories and proofs when merging, discard only the redundant framing.
 - **Forcing every main point into its own section.** Some serving material lives as a subpoint inside another point, not as a section of its own.

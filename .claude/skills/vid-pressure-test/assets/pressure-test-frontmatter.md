@@ -93,7 +93,7 @@ Bumped to today on every pressure-test run, per the vault-wide date rule.
    - `pressure_tested_at`
    - `status` (set to `filming-ready` ONLY when verdict is ready-to-film)
    - `last_updated` (today)
-4. Preserve every other field exactly as-is (do not touch `selected_angle`, `core_payoff`, `format`, `goal`, `viewer_stage`, `segment_purposes`, `segments_completed`, etc.)
+4. Preserve every other field exactly as-is (do not touch `frame`, `core_payoff`, `format`, `goal`, `viewer_stage`, `segment_purposes`, `segments_completed`, etc.)
 5. Write piece.md back
 
 ## Re-audit overwrites previous block
@@ -115,7 +115,7 @@ last_updated: 2026-05-14
 published: null
 
 # Written by vid-framing
-selected_angle: "Daily posting destroyed my quality and tanked retention"
+frame: "Daily posting destroyed my quality and tanked retention"
 core_payoff: "A schedule that doubles quality without losing growth"
 format: short-process
 voice_context: youtube-script

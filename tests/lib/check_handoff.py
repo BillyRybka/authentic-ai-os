@@ -26,7 +26,7 @@ HANDOFF_CONTRACTS = {
     # vid-framing -> vid-structure (added when the rollout reaches framing)
     "framing->structure": {
         "piece.md": [
-            "type", "slug", "selected_angle", "core_payoff",
+            "type", "slug", "frame", "core_payoff",
             "format", "goal", "voice_context",
         ],
     },
@@ -34,7 +34,7 @@ HANDOFF_CONTRACTS = {
     # payoff, format, and goal from framing's piece.md before writing titles.
     "framing->title": {
         "piece.md": [
-            "type", "slug", "selected_angle", "core_payoff",
+            "type", "slug", "frame", "core_payoff",
             "format", "goal", "voice_context",
         ],
     },

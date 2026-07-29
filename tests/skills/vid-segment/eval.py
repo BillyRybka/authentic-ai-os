@@ -69,7 +69,7 @@ HANDOFF_FIELDS = [
 # piece.md fields vid-segment must never touch ("append only; never touch
 # another skill's fields"). Compared verbatim against the fixture.
 PROTECTED_FIELDS = [
-    "type", "slug", "selected_angle", "core_payoff", "format", "goal",
+    "type", "slug", "frame", "core_payoff", "format", "goal",
     "voice_context", "segment_purposes", "tension_plan",
 ]
 

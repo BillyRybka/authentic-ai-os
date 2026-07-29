@@ -82,7 +82,7 @@ _ANY_DIGIT_RE = re.compile(r"\d")
 # the framing fields plus the title it must pay off late; the pipeline routes on
 # thumbnail_text. vid-thumbnail appends, it never overwrites.
 HANDOFF_PIECE_FIELDS = [
-    "type", "slug", "selected_angle", "core_payoff",
+    "type", "slug", "frame", "core_payoff",
     "format", "goal", "title", "thumbnail_text",
 ]
 
@@ -480,7 +480,7 @@ def check_handoff_thumbnail_to_structure(piece_text, fixture_title):
     Error gate: piece.md still carries everything vid-structure and the
     pipeline read after this step, and the locked title survived verbatim.
 
-    vid-structure reads selected_angle, core_payoff, format, goal, and the
+    vid-structure reads frame, core_payoff, format, goal, and the
     title it must pay off late; the pipeline routes on thumbnail_text. The
     skill appends thumbnail_text + thumbnail_shape and never overwrites
     another skill's fields, so the framing fields and the exact title string

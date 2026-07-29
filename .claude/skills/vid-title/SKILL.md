@@ -11,13 +11,13 @@ The craft underneath is copywriting, and copywriting is not the words on screen,
 
 **Scope: this skill produces THE title.** Thumbnail text is vid-thumbnail's job. Short messages; the banks are for your thinking, never pasted at the creator.
 
-**The boundary that never moves:** framing locked the angle; you package it, you never re-argue it. If the angle looks wrong, say so and route back to vid-framing. Do not fix a weak angle with a clever title here. The angle arrives as an argument, never as a headline, so it competes with nothing you write; if it reads like a title, framing broke its own rule and the wording is still yours to beat.
+**The boundary that never moves:** framing locked the frame; you package it, you never re-argue it. If the frame looks wrong, say so and route back to vid-framing. Do not fix a weak frame with a clever title here. The frame arrives as a description of the video, never as a headline, so it competes with nothing you write; if it reads like a title, framing broke its own rule and the wording is still yours to beat.
 
 ## What loads, and when
 
 | Step | Load | For |
 |---|---|---|
-| 1 | `content/pieces/{slug}/piece.md`, `brain-dump.md` (and `script.md` if it exists) | the locked angle and payoff; the material, and the lock list pulled from it |
+| 1 | `content/pieces/{slug}/piece.md`, `brain-dump.md` (and `script.md` if it exists) | the locked frame and payoff; the material, and the lock list pulled from it |
 | 1 | `foundation/creator-foundation.md` | avatar, iceberg (the on-brand filter), credibility reality |
 | 2 | `banks/pattern-bank.md` + `banks/title-bank.md` | the proven structures and their source outliers |
 | 3 | `banks/power-words-bank.md` + `knowledge/BENS-framework.md` | the words and the feeling lens while writing |
@@ -25,11 +25,11 @@ The craft underneath is copywriting, and copywriting is not the words on screen,
 | on demand | `references/angle-anchor-rules.md` | the canonical receipt rule: name the real entry or call it a swing |
 | on demand | `references/reframe-toolkit.md` | the five shapes to pour the stake into, when the plainest statement is not landing |
 
-Stops: no `creator-foundation.md`, point to /foundation. No framed piece (no `selected_angle` and no brain-dump), point to vid-framing or vid-intake. Banks missing: offer vid-research, and if the creator wants titles anyway, write from the natural English shapes in `references/title-filters.md`, flagged honestly as unproven shapes with no receipts. Invoked by the pipeline, prerequisites are already verified.
+Stops: no `creator-foundation.md`, point to /foundation. No framed piece (no `frame` and no brain-dump), point to vid-framing or vid-intake. Banks missing: offer vid-research, and if the creator wants titles anyway, write from the natural English shapes in `references/title-filters.md`, flagged honestly as unproven shapes with no receipts. Invoked by the pipeline, prerequisites are already verified.
 
 ## Step 1: Inherit the frame, build the lock list
 
-Framing already did the deep viewer work. Inherit it, don't redo it. `selected_angle` is what the video argues and piece.md's `## The Read` carries the rest as Target, Transformation, Stakes, and Core payoff. **The Stakes are what the title presses on**, and where Target names a blind spot, that is the correction the title can lead with. The angle arrives argument-shaped on purpose, never as a headline, so every word of the title is yours to write. No Read section on an older piece, work from the angle and the dump as before. Orient in two lines, no ceremony.
+Framing already did the deep viewer work. Inherit it, don't redo it. `frame` names which video this is, `core_payoff` names what the viewer walks away holding, and piece.md's `## The Read` carries the person as Target, Transformation, and Stakes. **The Stakes are what the title presses on:** framing escalated the consequences and landed the last one somewhere the viewer would not trace back to the cause, and that gap is what a title can open. The frame arrives as a description of the video, never as a headline, so every word of the title is yours to write. No Read section on an older piece, work from the frame and the dump. Orient in two lines, no ceremony.
 
 Then build the **lock list** from the brain-dump: every number, dollar figure, timeframe, named tool, method, person, and result that actually appears in the material or the foundation. Titles may use only what is on this list. One invented number is the exact slop this brand exists to kill. If the creator wants a number-driven title and the material has none, say so and pick a structure that doesn't need one.
 
@@ -82,7 +82,7 @@ Six calls, learned by example.
 
 **One mechanism, executed well.** Every strong title runs on a single click mechanism: curiosity gap, loss aversion, pattern interrupt, desire for the transformation, or social proof. The angle picks the mechanism, and you spend every word executing it. Stacked mechanisms read as desperate, not stronger: three levers pulled halfway each lose to one lever pulled all the way.
 - Weak: "10,000 Runners Swear By This Weird $12 Scale Before It Sells Out Again." Social proof ("10,000 runners"), curiosity ("weird scale, what is it?"), and loss aversion ("before it sells out") all grab at once, and the line reads like an ad that needs the click instead of a title that earns it.
-- Strong: "Why 10,000 Runners Weigh Their Food." One mechanism (social proof: that many people doing a strange thing means they know something) executed clean. When the angle argues a mistake, loss aversion leads and the crowd stays home; when the angle promises a result, desire leads. One angle, one lever.
+- Strong: "Why 10,000 Runners Weigh Their Food." One mechanism (social proof: that many people doing a strange thing means they know something) executed clean. When the frame argues a mistake, loss aversion leads and the crowd stays home; when the frame promises a result, desire leads. One frame, one lever.
 
 Two more lenses stay on while writing:
 
@@ -136,7 +136,7 @@ Pipeline mode also returns the title string and its BENS letters to the caller. 
 
 ## Related skills
 
-- `vid-framing` locks the angle this skill packages; angle problems route back there, never get fixed here
+- `vid-framing` locks the frame this skill packages; frame problems route back there, never get fixed here
 - `vid-thumbnail` runs next and writes the thumbnail text
 - `vid-ideas` may leave a seed line; when `piece.md` carries its `anchor:` receipt, the seed enters as the leading candidate to beat (Step 3), otherwise it stays one candidate, free to beat
 - /foundation produces `creator-foundation.md`; `vid-research` produces the banks

@@ -6,7 +6,7 @@ status: ideating
 created: 2026-06-20
 last_updated: 2026-07-04
 # Written by vid-framing
-selected_angle: "Your onboarding process doesn't exist, it is just you repeating yourself."
+frame: "Your onboarding process doesn't exist, it is just you repeating yourself."
 core_payoff: "Audit your own onboarding against these five mistakes and fix the first one that is broken."
 format: listicle
 goal: emails

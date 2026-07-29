@@ -100,8 +100,8 @@ Read `piece.md` frontmatter plus the presence of sibling files. Match top-to-bot
 | State of the piece | Next skill |
 |---|---|
 | No `piece.md` for the slug | `vid-intake` |
-| No `selected_angle` | `vid-framing` |
-| `selected_angle` set, no `title` | `vid-title` |
+| No `frame` | `vid-framing` |
+| `frame` set, no `title` | `vid-title` |
 | `title` set, no `thumbnail_text` | `vid-thumbnail` |
 | `thumbnail_text` set, no `segment_purposes` | `vid-structure` |
 | `segment_purposes` set, no `intro_locked` | `vid-intro` |

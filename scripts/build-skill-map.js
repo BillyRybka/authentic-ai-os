@@ -200,8 +200,8 @@ const PIPELINE = [
         writes: [] },
       { title: '5. Save + hand off',
         reads: [],
-        writes: [['piece.md frontmatter\nselected_angle · core_payoff\nformat · goal · voice_context', 'writeAlt'],
-                 ['piece.md body\n## The Read (Target · Transformation\nStakes · Core payoff)\n## Considered + Dropped\nproof TODOs', 'write']] },
+        writes: [['piece.md frontmatter\nframe · core_payoff · mechanism\nformat · goal · voice_context', 'writeAlt'],
+                 ['piece.md body\n## The Read (Target · Transformation\nStakes)\n## Considered + Dropped\nproof TODOs', 'write']] },
     ],
   },
   {
@@ -340,7 +340,7 @@ const PIPELINE = [
     name: 'vid-ending', status: 'STAGED', note: 'needs full body + non-stub Intro',
     steps: [
       { title: '1. Read video, pick the next',
-        reads: [['piece.md\nformat · goal · pillar\nselected_angle', 'piece'],
+        reads: [['piece.md\nformat · goal · pillar\nframe', 'piece'],
                 ['script.md\nFULL body + ## Intro VERBATIM\n(Setup contract, hook lane,\ncredibility receipt)', 'piece'],
                 ['creator-foundation.md\navatar + Top 3 problems', 'found'],
                 ['knowledge/format-planners/\n{format}.md: close shape', 'craft'],
@@ -367,7 +367,7 @@ const PIPELINE = [
     steps: [
       { title: '1. Load + condition rubrics',
         reads: [['script.md FULL\nno stub sections allowed', 'piece'],
-                ['piece.md\nselected_angle · format · goal\n(goal + format weight rubrics)', 'piece'],
+                ['piece.md\nframe · format · goal\n(goal + format weight rubrics)', 'piece'],
                 ['brain-dump.md\nclaim traceability source', 'piece'],
                 ['creator-foundation.md\nvoice-profile.md', 'found']],
         writes: [] },
@@ -746,7 +746,7 @@ const LEDGER = [
   ['slug · created · status: ideating', 'vid-intake', 'vid-pipeline (is there a piece at all)'],
   ['anchor  (full outlier receipt)', 'vid-intake, from the vid-ideas seed packet', 'vid-title (the receipt it presents)'],
   ['pillar · iceberg_aligned · alignment_note', 'vid-intake', 'vid-structure, vid-ending. Unset iceberg_aligned = intake never finished'],
-  ['selected_angle', 'vid-framing', 'vid-title, vid-structure, vid-ending, vid-pressure-test, vid-pipeline (route gate)'],
+  ['frame', 'vid-framing', 'vid-title, vid-structure, vid-ending, vid-pressure-test, vid-pipeline (route gate)'],
   ['core_payoff', 'vid-framing', 'vid-title, vid-structure'],
   ['format', 'vid-framing', 'vid-thumbnail, vid-structure, vid-intro, vid-segment, vid-ending, vid-pressure-test: picks the format planner'],
   ['goal   (sales | emails | views)', 'vid-framing', 'vid-thumbnail, vid-structure, vid-ending (CTA shape), vid-pressure-test (rubric weights)'],

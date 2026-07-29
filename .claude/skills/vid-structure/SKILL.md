@@ -1,20 +1,20 @@
 ---
 name: vid-structure
-description: Build the outline for one video. Mine the brain-dump against the locked angle into the main points, shape them to the format, order so the title pays off late, and lock each point's parable, material, principle, and proof. Writes script.md, updates piece.md; vid-intro runs next. Triggers on "structure this video", "build the outline", "plan the body", "what points should this hit", "outline the script", "build the skeleton", "re-structure this piece".
+description: Build the outline for one video. Mine the brain-dump against the locked frame into the main points, shape them to the format, order so the title pays off late, and lock each point's parable, material, principle, and proof. Writes script.md, updates piece.md; vid-intro runs next. Triggers on "structure this video", "build the outline", "plan the body", "what points should this hit", "outline the script", "build the skeleton", "re-structure this piece".
 ---
 
 # Video Structure
 
-Turn the brain-dump plus the locked angle into a complete plan: the main points shaped to the format, ordered so the title's promise pays off late, every point locked to its parable, its material, its principle, and its proof. `vid-intro` runs next. It hard-stops without this outline, and the transition it writes is the one segment 1 inherits.
+Turn the brain-dump plus the locked frame into a complete plan: the main points shaped to the format, ordered so the title's promise pays off late, every point locked to its parable, its material, its principle, and its proof. `vid-intro` runs next. It hard-stops without this outline, and the transition it writes is the one segment 1 inherits.
 
-**Scope: the plan, never the prose.** No intro, no segment prose, no ending, no title, no thumbnail. It does not re-pick the angle or the format; framing locked those.
+**Scope: the plan, never the prose.** No intro, no segment prose, no ending, no title, no thumbnail. It does not re-pick the frame or the format; framing locked those.
 
 ## Core principles
 
 - **Plan so completely the writers never re-plan.** Four locks per point: the parable type, the specific material, the principle, the proof. A writer that has to re-pick a block, re-derive a lesson, or hunt for proof is a boundary bug, and the fix is always here, never in the writer.
 - **Payoff late is judgment, not a rule.** The viewer clicked holding one question, and once the full answer lands, their reason to stay is gone. So the title's answer lands past the midpoint by default, and the locked format outranks the default.
 - **Never fabricate.** No invented stories, numbers, results, or bank entries. Where the banks and the dump have nothing, the plan names the hole and it lands in `## To build`. Flagging the gap is the job.
-- **Cuts are logged, never dropped silent.** In the spine, and in script.md's CUTS comment so re-structure runs do not re-propose them. The creator may know a cut is the real gold, which means the angle is wrong.
+- **Cuts are logged, never dropped silent.** In the spine, and in script.md's CUTS comment so re-structure runs do not re-propose them. The creator may know a cut is the real gold, which means the frame is wrong.
 - **Never pad to a count.** Mining yields what it yields. A gap between the points and the format's shape gets surfaced, thin dump back to `vid-intake` or wrong format back to `vid-framing`, never filled with tangents.
 - **Machinery stays invisible.** No step numbers, no "mining complete." The creator sees the spine, then the built plan, then the confirm.
 
@@ -25,7 +25,7 @@ Load each file at the step that needs it. Never bulk-load the banks; query one o
 | File | Step | For |
 |---|---|---|
 | `content/pieces/{slug}/brain-dump.md` | 1 | the raw material to mine |
-| `content/pieces/{slug}/piece.md` | 1 | the locked angle, core payoff, format, goal, title, plus `## The Read` (the Transformation is what the outline has to deliver; absent on older pieces, work from the angle and payoff) |
+| `content/pieces/{slug}/piece.md` | 1 | the locked frame, core payoff, format, goal, title, plus `## The Read` (the Transformation is what the outline has to deliver; absent on older pieces, work from the frame and payoff) |
 | `knowledge/format-planners/{format}.md` | 1 | the body shape this format runs |
 | `references/brain-dump-mining.md` | 1 | the four tags and the mining sequence |
 | `references/point-planning.md` | 2 | the ordering judgment and the four locks |
@@ -35,7 +35,7 @@ Load each file at the step that needs it. Never bulk-load the banks; query one o
 | `assets/script-skeleton-template.md` | 3 | the exact shape of script.md |
 | `assets/piece-structure-additions.md` | 3 | the fields to append to piece.md |
 
-Stops: no `brain-dump.md`, point to `vid-intake`. No `selected_angle`, `core_payoff`, `format`, or `goal` in piece.md, point to `vid-framing`. No planner on disk for the locked format, show the seven and let the creator lock a real one.
+Stops: no `brain-dump.md`, point to `vid-intake`. No `frame`, `core_payoff`, `format`, or `goal` in piece.md, point to `vid-framing`. No planner on disk for the locked format, show the seven and let the creator lock a real one.
 
 Re-structure: if piece.md already carries `segment_purposes`, the piece is outlined. Show the existing spine and ask whether to refine or rebuild. Never discard prior points unless the creator says so.
 
@@ -63,7 +63,7 @@ Three steps. The creator sees two proposals (the spine, then the built plan) and
 
 ### 1. Rough the spine
 
-1. **Mine the dump against the angle.** Every block gets one tag: main point, subpoint, combine, or tangent. Silent work; the method and a worked tagging pass are in `references/brain-dump-mining.md`.
+1. **Mine the dump against the frame.** Every block gets one tag: main point, subpoint, combine, or tangent. Silent work; the method and a worked tagging pass are in `references/brain-dump-mining.md`.
 2. **Check the fit.** If the surviving material does not fit the locked format, surface it now rather than shaping a spine around a mismatch.
 3. **Shape the survivors to the format.** Lay the main points into the planner's body shape. Each main point gets a couple of subpoints that state, in a line, what it actually says.
 4. **Show the spine.** Points, subpoints, and the cuts. The creator adds, cuts, merges, reorders. Lock the spine before anything gets built out.

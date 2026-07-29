@@ -15,7 +15,7 @@ perform it, just talk normally.
 
 Before this conversation starts, the intro and every body segment of
 `script.md` are written (the upstream fixture). `piece.md` has format, goal,
-pillar, selected_angle. You are here to close the video, nothing else.
+pillar, frame. You are here to close the video, nothing else.
 
 ## Your script for this run
 

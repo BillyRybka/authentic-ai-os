@@ -20,8 +20,9 @@ type: content-piece
 project: authentic-ai-os
 slug: video-slug
 pillar: {pillar-slug}           # creator's content pillar
-selected_angle: "..."           # one sentence naming what the video argues, in the creator's voice. Argument-shaped, never a headline. Set by vid-framing.
-core_payoff: "..."              # the deliverable: what the viewer will have, know, or be able to do after watching. 1-2 sentences. Matches the Core payoff field in the body's ## The Read verbatim. Set by vid-framing.
+frame: "..."                    # the chosen video described in third person: "A video that shows {who} how to {the change}." Never a spoken line, never a headline, never a description of the contents. Set by vid-framing.
+core_payoff: "..."              # the deliverable: the one concrete thing the viewer ends up holding, second person, 1-2 sentences. Locked with the frame. Set by vid-framing.
+mechanism: "..."                # what produces the result, plus its kind: delivery | draw | qualifier. Delivery stays out of the frame, draw carries it, qualifier narrows it. Set by vid-framing.
 format: short-process           # from the 7 formats: short-process | case-study | roast | deep-dive | interview | news | listicle. Set by vid-framing.
 voice_context: youtube-script   # delivery medium for voice: youtube-script (default) | tutorial | shorts | newsletter | linkedin | twitter | instagram | podcast | casual | talk. Orthogonal to format. Set by vid-framing (videos) or post-write (posts). Drives which foundation/reference-pieces/{voice_context}.md a writing skill loads.
 goal: sales                     # sales | emails | views (ONE only). Set by vid-framing.
@@ -67,7 +68,7 @@ Skills append their own fields and never overwrite another skill's.
 | Skill | Writes |
 |---|---|
 | vid-intake | `type`, `project`, `slug`, `pillar`, `status: ideating`, `created`, `last_updated`, `anchor`, `tags` |
-| vid-framing | `selected_angle`, `core_payoff`, `format`, `voice_context`, `goal`, plus the `## The Read` and `## Considered + Dropped Angles` body sections |
+| vid-framing | `frame`, `core_payoff`, `mechanism`, `format`, `voice_context`, `goal`, plus the `## The Read` and `## Considered + Dropped Angles` body sections |
 | vid-title | `title` |
 | vid-thumbnail | `thumbnail_text`, `thumbnail_shape` |
 | vid-structure | `segment_purposes`, `tension_plan`, `status: drafting` |
@@ -86,10 +87,12 @@ piece.md carries body sections as well as frontmatter, and they are contracted h
 
 | Section | Owner | Shape | Re-run behavior |
 |---|---|---|---|
-| `## The Read` | vid-framing | Four fields in this order, third person: **Target** (goal, challenge, pain point, plus the blind spot when the material has one), **Transformation** (from X to Y, plus what they leave with), **Stakes** (compounding consequences, three to five deep), **Core payoff** (the deliverable, 1-2 sentences, identical to the `core_payoff` field) | Replaced on a re-frame. It describes the current frame, not a history. |
-| `## Considered + Dropped Angles` | vid-framing | One entry per dropped angle: the angle, a one-line why, the date | Append-only, sticky across re-frames |
+| `## The Read` | vid-framing | Three fields in this order, third person, all pointed at the locked frame: **Target** (who this is for and the situation, as one causal chain ending on a cost), **Transformation** (they stop doing X and do Y instead, plus what that gets them), **Stakes** (each consequence causing the next, the misattribution named near the end, landing back where Target started) | Replaced on a re-frame. It describes the current frame, not a history. |
+| `## Considered + Dropped Angles` | vid-framing | The frames that lost, grouped by rotation date, one terse line each: the frame cut to its distinguishing clause, plus a one-clause why | Append-only, sticky across re-frames |
 
-Readers are soft: a piece written before a section existed must not block a downstream skill. vid-title presses on the Stakes, vid-intro mines the Stakes for hooks and the blind spot for the problem poke, and vid-structure builds toward the Transformation. All three degrade to their prior behavior when the section is absent.
+`core_payoff` is frontmatter only. It is locked with the frame, before the read exists, so there is no second copy in the body to drift against.
+
+Readers are soft: a piece written before a section existed must not block a downstream skill. vid-title presses on the Stakes, vid-intro mines them for hooks, and vid-structure builds toward the Transformation. All three degrade to their prior behavior when the section is absent.
 
 Changing the shape of a contracted section means updating this table, the owning skill, and every reader named above in the same pass.
 
@@ -109,7 +112,7 @@ Decisions a later skill or the pipeline reads, not a diary of how each skill wor
 
 ## How the pipeline routes
 
-`vid-pipeline` decides the next writing step by reading which artifact already exists, not by a micro-status: `selected_angle` present? `title` present? thumbnail picks present? `segments_completed` length vs `segment_purposes` length? `ending_locked` present? `status` at `filming-ready`?
+`vid-pipeline` decides the next writing step by reading which artifact already exists, not by a micro-status: `frame` present? `title` present? thumbnail picks present? `segments_completed` length vs `segment_purposes` length? `ending_locked` present? `status` at `filming-ready`?
 
 Each skill therefore writes its own distinguishing field in BOTH standalone and pipeline (sub-skill) mode, so the orchestrator can always read true state from the file.
 

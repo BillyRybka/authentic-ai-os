@@ -8,7 +8,7 @@ format: listicle
 goal: views
 title: "My Whole Shop Is 7 Hand Tools (No Table Saw)"
 voice_context: youtube-script
-selected_angle: "The 7 hand tools Nora builds every piece with in her one-car garage shop, each owning one job, handed over as a complete beginner kit so the viewer can skip the table saw and start building this weekend."
+frame: "The 7 hand tools Nora builds every piece with in her one-car garage shop, each owning one job, handed over as a complete beginner kit so the viewer can skip the table saw and start building this weekend."
 core_payoff: "You do not need a table saw. You need these 7 tools and a pile of reps."
 captured: 2026-07-20
 created: 2026-07-20
@@ -22,7 +22,7 @@ tags: [piece, format-listicle, pillar-hand-tool-fundamentals, fixture]
 
 # Seven Hand Tools Full Kit
 
-> [!note] Test fixture. A planned (unpublished) video, framed for the vid-title eval. Not a published claim. Suite-local copy: frontmatter carries the current vid-framing schema (selected_angle, core_payoff); the brain-dump for this slug lives in the suite-local persona stage.
+> [!note] Test fixture. A planned (unpublished) video, framed for the vid-title eval. Not a published claim. Suite-local copy: frontmatter carries the current vid-framing schema (frame, core_payoff); the brain-dump for this slug lives in the suite-local persona stage.
 
 ## Locked angle (from vid-framing)
 

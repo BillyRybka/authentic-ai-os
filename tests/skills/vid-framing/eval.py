@@ -40,10 +40,11 @@ from frontmatter import split_frontmatter  # noqa: E402
 
 # --- field lists per SKILL.md "Output: piece.md" and piece-framing-additions.md ---
 
-# The six fields vid-framing ADDS to piece.md frontmatter.
+# The seven fields vid-framing ADDS to piece.md frontmatter.
 FRAMING_FIELDS = [
-    "selected_angle",
+    "frame",
     "core_payoff",
+    "mechanism",
     "format",
     "goal",
     "voice_context",
@@ -61,8 +62,10 @@ VALID_GOALS = {"sales", "emails", "views"}
 REQUIRED_SECTION_KEY = "considered + dropped angles"
 READ_SECTION_KEY = "the read"
 
-# The four fields '## The Read' must carry, per knowledge/piece-contract.md.
-READ_FIELDS = ("target", "transformation", "stakes", "core payoff")
+# The three fields '## The Read' must carry, per knowledge/piece-contract.md.
+# core_payoff is frontmatter only: it locks with the frame, before the read
+# exists, so there is no body copy for it to drift against.
+READ_FIELDS = ("target", "transformation", "stakes")
 
 
 def _load_manifest():
@@ -150,7 +153,7 @@ def check_piece_framing_frontmatter(piece_text):
     required to write, per SKILL.md 'Output: piece.md' and
     assets/piece-framing-additions.md.
 
-    Fields: selected_angle, core_payoff, format, goal, voice_context, last_updated.
+    Fields: frame, core_payoff, format, goal, voice_context, last_updated.
     """
     return t.check_frontmatter_complete(
         "piece_framing_frontmatter", piece_text, FRAMING_FIELDS
@@ -216,11 +219,11 @@ def check_required_section(piece_text):
 
 def check_read_section(piece_text):
     """
-    Assert piece.md body contains '## The Read' carrying all four fields.
+    Assert piece.md body contains '## The Read' carrying all three fields.
 
     The section is contracted in knowledge/piece-contract.md as Target /
-    Transformation / Stakes / Core payoff. It drifted shape twice while nothing
-    outside vid-framing specified it; this check is the mechanical half of that
+    Transformation / Stakes. It drifted shape twice while nothing outside
+    vid-framing specified it; this check is the mechanical half of that
     fix. Downstream readers are soft (vid-title presses on Stakes, vid-intro
     mines them for hooks, vid-structure builds toward Transformation), so a
     missing field degrades a reader silently rather than failing loudly.

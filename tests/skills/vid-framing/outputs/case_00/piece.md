@@ -6,7 +6,7 @@ status: ideating
 created: 2026-06-20
 last_updated: 2026-07-04
 # Written by vid-framing
-selected_angle: "You don't have a time problem, you have a systems problem, and there's a one-week fix."
+frame: "You don't have a time problem, you have a systems problem, and there's a one-week fix."
 core_payoff: "Pick one repeatable task this week, write the steps down so someone else can run it."
 format: deep-dive
 goal: views

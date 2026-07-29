@@ -11,7 +11,7 @@ How vid-structure runs in real sessions. The creator sees two proposals (the rou
 
 ## Example 1: Clean run, Listicle
 
-**Locked at framing (piece.md):** angle "The 'best practices' quietly killing your channel", core payoff "spot the advice tanking your retention and what to do instead", format listicle, goal views.
+**Locked at framing (piece.md):** frame "A video that shows creators which widely repeated best practices are quietly costing them retention", core payoff "spot the advice tanking your retention and what to do instead", format listicle, goal views.
 **Brain-dump:** thumbnail-copying flops, a year of daily posting tanked, the 12-minute retention cliff, Linus's bad first thumbnails, best mic under $200, the "5-second hook" myth, a lighting setup, "post consistently" trains the algorithm wrong, titles that overpromise killed Tom's channel.
 
 ### The spine (step 1)

@@ -5,7 +5,7 @@ pillar: delegation
 status: drafting
 created: 2026-06-20
 last_updated: 2026-06-22
-selected_angle: "delegation is not about trust, it is about documentation"
+frame: "delegation is not about trust, it is about documentation"
 core_payoff: "pick the one task only you can do right now and document it so it is no longer only you"
 format: case-study
 goal: emails

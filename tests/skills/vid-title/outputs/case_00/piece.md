@@ -8,7 +8,7 @@ format: case-study
 goal: trust
 title: "11 Ruined Boards, Then a $2,400 Table in 90 Days"
 voice_context: youtube-script
-selected_angle: "Nora's student Dana ruined 11 boards in her first 90 days, then sold her first trestle table for $2,400 with a 4-tool kit and no table saw; the dream shop is procrastination dressed as planning."
+frame: "Nora's student Dana ruined 11 boards in her first 90 days, then sold her first trestle table for $2,400 with a 4-tool kit and no table saw; the dream shop is procrastination dressed as planning."
 core_payoff: "Stop saving for the dream shop and start the reps: a small kit, sharp edges, and a first build you actually finish."
 captured: 2026-07-20
 created: 2026-07-20
@@ -22,7 +22,7 @@ tags: [piece, format-case-study, pillar-beginner-builds-that-finish, fixture]
 
 # Ruined Boards First Sale
 
-> [!note] Test fixture. A planned (unpublished) video, framed for the vid-title eval. Built on the synthetic persona's proof ([[proof-bank/student-dana-2400-trestle-table]]). Not a published claim. Suite-local copy: frontmatter carries the current vid-framing schema (selected_angle, core_payoff); the brain-dump for this slug lives in the suite-local persona stage.
+> [!note] Test fixture. A planned (unpublished) video, framed for the vid-title eval. Built on the synthetic persona's proof ([[proof-bank/student-dana-2400-trestle-table]]). Not a published claim. Suite-local copy: frontmatter carries the current vid-framing schema (frame, core_payoff); the brain-dump for this slug lives in the suite-local persona stage.
 
 ## Locked angle (from vid-framing)
 

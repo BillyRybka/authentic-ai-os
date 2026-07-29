@@ -31,7 +31,7 @@ still sits flat is a failing title here.
   carries no receipt, and holds 1 to 2 swings), and `## Recommendation`
   (names the recommended candidate and the reason, ceiling not floor)
 - The frozen fixtures for this case: the upstream `piece.md` (suite-local
-  `fixtures/{slug}/piece.md`: format, goal, selected_angle, core_payoff) and
+  `fixtures/{slug}/piece.md`: format, goal, frame, core_payoff) and
   the shared billy `brain-dump.md` (material, the lock-list ground truth)
 - The creator's banks: `pattern-bank.md` (competitor outliers with views and
   multipliers per channel), `title-bank.md` (named structures with worked

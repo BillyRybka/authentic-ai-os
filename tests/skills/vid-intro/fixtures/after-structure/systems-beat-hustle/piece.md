@@ -5,7 +5,7 @@ pillar: systems
 status: drafting
 created: 2026-06-20
 last_updated: 2026-07-06
-selected_angle: "You do not have a time problem, you have a systems problem, and the fix starts with one written task."
+frame: "You do not have a time problem, you have a systems problem, and the fix starts with one written task."
 core_payoff: "Pick one repeatable task this week and write the steps down so someone else can run it."
 format: deep-dive
 goal: views
