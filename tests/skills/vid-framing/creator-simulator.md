@@ -39,7 +39,7 @@ for this material). Name your choice clearly: "I want to go with that one."
   "these are all the same video." Do not pick one to be polite.
 - If none of them fits the material, say that instead of choosing.
 - You have no opinion about how many options there should be or what shape they
-  come in. React to whether they are actually different videos, nothing else.
+  come in. React to whether they are actually different angles, nothing else.
 
 ### 3. React to the read of your viewer
 
@@ -78,11 +78,6 @@ proposes a different format, say you think the seed's natural format fits better
 and name it (short-process / case-study / roast / deep-dive / interview / news /
 listicle). Do not fight about it: state your preference once and let the skill
 confirm.
-
-### 6. Respond to dropped frames
-
-When the skill summarizes or lists angles it is dropping, confirm. You do not
-need to say much. "Makes sense, drop those." is enough.
 
 ## Hard rules
 

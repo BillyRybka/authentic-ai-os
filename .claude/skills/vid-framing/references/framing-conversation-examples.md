@@ -2,7 +2,7 @@
 name: Framing Conversation Examples
 type: skill-local-reference
 loaded_by: vid-framing
-when_to_read: once, to calibrate pacing. Not on every run.
+when_to_read: once, to calibrate pacing and to see the craft floor in finished fields. Not on every run.
 ---
 
 # Framing Conversation Examples
@@ -35,7 +35,7 @@ One session start to finish, then the two situations that break the normal rhyth
 
 ### Step 3, the rotation
 
-> Eight ways this same video could go. Yours is number one, written as a frame.
+> Eight ways this same video could go. Yours is number one, written as a frame. The bold labels are handles so we can talk about them, not titles.
 >
 > 1. **The Build**
 >    Frame: A video that shows agency owners how to build a single dashboard that tracks every client project, start to finish.
@@ -111,7 +111,17 @@ One session start to finish, then the two situations that break the normal rhyth
 
 **Creator:** "Lost four clients that year and blamed delivery the whole time. It wasn't delivery. They'd already checked out in week one, I just didn't find out until month three."
 
+Two answers, and the read is writable:
+
+> **Target.** They sell a service and they want clients who stay. So they put everything into the sales call and hand over a folder on day one, because onboarding is the boring part, the admin between closing and the real work. Which means the client's first week with them is the emptiest week they'll ever have.
+>
+> **Transformation.** They stop treating onboarding as paperwork and start treating it as the first week of delivery. The client does something real before month one, so they're in it before they've had time to drift.
+>
+> **Stakes.** If they keep running onboarding as admin, the client checks out in week one and nobody hears about it until month three. So they read it as a delivery problem. They rebuild delivery. Delivery was fine. Four clients gone that year, every one diagnosed wrong, because the damage happened twelve weeks earlier, in the week they'd decided was just admin.
+
 *Two questions and both fields are writable. The bill arrives in month three, so nobody traces it back to week one, which is exactly the shape Stakes wants. Stop the moment one opens. Firing all four reads as an interrogation and shuts the door you were opening.*
+
+*Neither answer arrived as a Target or a Stake. The creator said what they used to believe and what it cost, and the fields got written out of that. Write the read in the same message the material lands, not after another round of questions.*
 
 ## When the rotation comes back flat
 
@@ -123,13 +133,30 @@ One session start to finish, then the two situations that break the normal rhyth
 
 **AI move:** lock `news`, goal `views`, write the read with a modest cost, and move on without another word about it.
 
+> **Target.** They saw the announcement and they don't know whether it changes anything for them. So they either skip it or lose an afternoon testing it. Both are guesses.
+>
+> **Transformation.** They stop guessing and know where the speed actually shows up in the work they already do.
+>
+> **Stakes.** Small, honestly. They burn an afternoon finding out, or they skip the one change that would have saved them one.
+>
+> Locked. News, goal views. Next is vid-title.
+
 *A full rotation coming back flat is evidence, not failure. Framing does not kill videos. It names the ceiling once, plainly, and the creator spends the filming day with their eyes open.*
+
+*The read still gets written. Modest Stakes get written as modest, in three short lines, and the words "small, honestly" are doing real work: they tell the creator the ceiling is named and nobody is pretending otherwise. Inflating this into a threat to their business is the failure the flat rotation just warned about.*
 
 ## Near-misses
 
 - **Eight rewordings.** Every option reads differently and four answer the same want. The check is the want, never the wording.
 - **A frame that describes the contents.** "A video that walks through the dashboard build" answers what happens in the video. Nobody clicks for that.
+- **A topic handed back as a frame.** "A video about project management in Notion" names a subject and a tool. A frame names what stops happening to someone.
 - **A frame written as a line of the video.** "You don't have a tracking problem, you have a maintenance problem" is spoken, and it belongs in the script.
 - **The mechanism promoted without the call.** Putting Notion at the front of every frame because it is in the material. That decision happens at step 1, on whether people search for it, and here the answer was no.
+- **Eight options and no pick.** That is a menu. The creator now does the strategic work the rotation existed to do for them, and they came here because that work is the hard part.
+- **A recommendation made of taste.** "I'd go with 6, it's the strongest." The creator can't check that. Point at the material instead: which frame uses the part nobody else could film.
+- **A flat pick read as a yes.** "Six is fine" and "six, that's the thing nobody says" are different signals. The first usually means none of the eight opened anything. Rotate again rather than build on it.
 - **Building before the pick.** Writing the read on the frame you recommended. If they choose a different one, every word of it is aimed at the wrong person.
+- **A Target made of demographics.** "Agency owners, 25 to 45." An age is not a situation. Target is the loop they're stuck in, and a demographic has never described a loop.
+- **A Transformation with nothing in it.** "They go from stressed to confident." A mood changed and nothing else did. The test is whether they'd do something different on Monday.
 - **Handing over a headline.** "Why Your Tracker Keeps Dying" is a handle for talking about option 6 in chat. Save it to piece.md and vid-title inherits a title written before the banks were open.
+- **Packaging that drifts off the frame.** The frame is why trackers die and the title comes back a Notion tutorial. The frame is the contract every skill downstream inherits, and vid-title inherits the frame, not the topic.

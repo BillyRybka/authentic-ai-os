@@ -17,6 +17,7 @@ The craft underneath is copywriting, and copywriting is not the words on screen,
 
 | Step | Load | For |
 |---|---|---|
+| session start | `knowledge/prose-craft.md` | the seven moves. Every candidate title, plus the recommendation and its reason |
 | 1 | `content/pieces/{slug}/piece.md`, `brain-dump.md` (and `script.md` if it exists) | the locked frame and payoff; the material, and the lock list pulled from it |
 | 1 | `foundation/creator-foundation.md` | avatar, iceberg (the on-brand filter), credibility reality |
 | 2 | `banks/pattern-bank.md` + `banks/title-bank.md` | the proven structures and their source outliers |
@@ -29,7 +30,7 @@ Stops: no `creator-foundation.md`, point to /foundation. No framed piece (no `fr
 
 ## Step 1: Inherit the frame, build the lock list
 
-Framing already did the deep viewer work. Inherit it, don't redo it. `frame` names which video this is, `core_payoff` names what the viewer walks away holding, and piece.md's `## The Read` carries the person as Target, Transformation, and Stakes. **The Stakes are what the title presses on:** framing escalated the consequences and landed the last one somewhere the viewer would not trace back to the cause, and that gap is what a title can open. The frame arrives as a description of the video, never as a headline, so every word of the title is yours to write. No Read section on an older piece, work from the frame and the dump. Orient in two lines, no ceremony.
+Framing already did the deep viewer work. Inherit it, don't redo it. `frame` names which video this is, `core_payoff` is the reason the viewer stays to the end (almost always the answer to a question already in their head), and piece.md's `## The Read` carries the person as Target, Transformation, and Stakes. That question is worth finding, because a title that raises it is a title the video is built to answer. **The Stakes are what the title presses on:** framing escalated the consequences and landed the last one somewhere the viewer would not trace back to the cause, and that gap is what a title can open. The frame arrives as a description of the video, never as a headline, so every word of the title is yours to write. No Read section on an older piece, work from the frame and the dump. Orient in two lines, no ceremony.
 
 Then build the **lock list** from the brain-dump: every number, dollar figure, timeframe, named tool, method, person, and result that actually appears in the material or the foundation. Titles may use only what is on this list. One invented number is the exact slop this brand exists to kill. If the creator wants a number-driven title and the material has none, say so and pick a structure that doesn't need one.
 

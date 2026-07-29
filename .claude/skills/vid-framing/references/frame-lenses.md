@@ -2,14 +2,14 @@
 name: Frame Lenses
 type: skill-local-reference
 loaded_by: vid-framing
-when_to_read: Step 3, every run, before writing any frame
+when_to_read: Step 2, every run, before writing any frame
 ---
 
 # Frame Lenses
 
 A lens is a want the viewer already has. Framing points the video at one.
 
-The move is small and the whole skill rests on it: **hold the material completely still and change only which want it answers.** Same demo, same story, same numbers, same tool. Eight lenses, eight videos, and the creator picks which one they are making.
+The move is small and the whole skill rests on it: **hold the material completely still and change only which want it answers.** Same demo, same story, same numbers, same tool. Eight lenses, eight angles on the one video, and the creator picks which one they are making.
 
 This is why a boring topic is not a boring video. Boring means the topic has not been pointed at anything yet.
 
@@ -28,7 +28,7 @@ Topic: a weekly review that catches problems before they blow up. Mechanism: a c
 | Convenience | A video that shows owners how to get ahead of next week in twenty minutes on a Friday, without another system to maintain. |
 | Repetition | A video that shows owners how to stop solving the same problem every single Monday. |
 
-Eight videos. One checklist. Nothing about the material changed.
+Eight angles. One checklist. Nothing about the material changed.
 
 ## The eight
 
@@ -116,4 +116,4 @@ Two that come up often enough to expect: **risk** (the thing they are exposed to
 
 - **A frame written as a line of the video.** "You are not disorganised, you are unprepared" is a spoken line. Frames describe the video from outside it, in third person, so vid-title inherits an argument rather than a headline it has to argue with.
 
-- **A payoff that restates the frame.** The frame is the direction. The core payoff is the one concrete thing they end up holding. If the payoff can be deleted without losing information, it was never written.
+- **A payoff that restates the frame.** The frame is the direction. The core payoff is the reason they stay to the end, which is almost always the answer to a question already in their head. If you cannot name the question, the payoff is a feature, and if the payoff can be deleted without losing information it was never written.

@@ -15,7 +15,7 @@ Insert under the existing lifecycle fields (`slug`, `pillar`, `created`, `status
 ```yaml
 # Written by vid-framing
 frame: "{the chosen video, described in third person: 'A video that shows {who} how to {the change}, {the condition that makes it theirs}.' Never a spoken line, never a headline, never a description of the contents}"
-core_payoff: "{the one concrete thing the viewer ends up holding, second person, opening on the thing itself. One deliverable, plain words. No 'By the end of this video' stem, no bonus asset, no second clause. No fixed opener either: if two pieces in a row start the same way, that is the form growing back}"
+core_payoff: "{the reason they stay to the end, which is almost always the answer to a question already in their head. Second person, one thing, plain words. Name the question to yourself before writing it: if you cannot, what you have is a feature, and nobody waits twelve minutes for a feature. No bonus asset, no second clause. No fixed opener either: if two pieces in a row start the same way, that is the form growing back}"
 mechanism: "{the call, not the case for it: what produces the result, named in a phrase, plus its kind: delivery | draw | qualifier}"
 format: short-process | case-study | roast | deep-dive | interview | news | listicle
 goal: sales | emails | views

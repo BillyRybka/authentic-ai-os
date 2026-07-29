@@ -12,6 +12,7 @@ Capture one item at a time (story, metaphor, proof, testimonial, framework) into
 | File | When | For |
 |---|---|---|
 | `knowledge/bank-contract.md` | session start | the schema every entry, wikilink, and person stub must match |
+| `knowledge/prose-craft.md` | session start | the seven moves the `illustrates` line and every written summary are held to. Never applied to the creator's verbatim words |
 | `knowledge/story-capture-guide.md` | Stage S | the 3 story types, the 6 story prompts, dig-deeper probes |
 | `references/metaphor-builder.md` | Stage M | the 3-step builder, everyday categories, visual vs non-visual |
 | `references/proof-capture-guide.md` | Stage P | the 2 proof types, the screenshot-immediately rule, anonymization |

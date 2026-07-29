@@ -145,6 +145,7 @@ Do not over-talk between rolls. Surface the new batch, repeat the one-line dial 
 | `assets/ideas-backlog-template.md` | Phase 4. The `content/ideas-backlog.md` file shape, created on first keep. |
 | `knowledge/iceberg-and-top-3-alignment.md` | Phase 2. The iceberg 2-layer fit check + 4 outcomes. Reuse, do not duplicate. |
 | `knowledge/theory-of-one-curation.md` | Phase 2. The audience-fit lens when an anchor works everywhere but may not fit this creator. |
+| `knowledge/prose-craft.md` | Phase 2, where the first generated line gets written. The seven moves. An idea line carrying the engine at full sharpness fails move 7 the moment the specific goes vague. |
 
 ## Principles (the why)
 

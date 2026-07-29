@@ -34,9 +34,10 @@ Worked calls, one title: "Why Hiring a VA Tanked My Revenue (Fix Inside)". Scrip
 
 | Step | Load | For |
 |---|---|---|
+| session start | `knowledge/prose-craft.md` | the seven moves. On text this short, moves 1, 6, and 7 do most of the work |
 | 1 | `content/pieces/{slug}/piece.md` | the locked title (the anchor), format, goal |
 | 1 | `content/pieces/{slug}/script.md` if complete, else `brain-dump.md` | the material and its numbers; a finished script supersedes the dump |
-| 2 | `knowledge/thumbnail-text-patterns.md` | the 5 patterns, anti-patterns, pairing rules, examples library. The one craft reference |
+| 2 | `knowledge/thumbnail-text-patterns.md` | the 5 patterns, anti-patterns, pairing rules, examples library. The pattern reference |
 | 2 | `foundation/packaging-system.md` and `banks/packaging-bank/*.md`, when present | packaging settings and receipts. **These override every default on this page** |
 
 Day one, no packaging-system yet: ALL CAPS, no strategy constraint. No locked `title` in piece.md yet: run `vid-title` first.

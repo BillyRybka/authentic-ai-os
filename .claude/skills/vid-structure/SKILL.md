@@ -24,6 +24,7 @@ Load each file at the step that needs it. Never bulk-load the banks; query one o
 
 | File | Step | For |
 |---|---|---|
+| `knowledge/prose-craft.md` | session start | the seven moves. Point titles and segment purposes are written lines, not labels, and the spine gets shown to the creator |
 | `content/pieces/{slug}/brain-dump.md` | 1 | the raw material to mine |
 | `content/pieces/{slug}/piece.md` | 1 | the locked frame, core payoff, format, goal, title, plus `## The Read` (the Transformation is what the outline has to deliver; absent on older pieces, work from the frame and payoff) |
 | `knowledge/format-planners/{format}.md` | 1 | the body shape this format runs |
