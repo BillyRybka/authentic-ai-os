@@ -15,15 +15,11 @@ One session start to finish, then the two situations that break the normal rhyth
 
 ### Step 1, in one message
 
-> Topic: knowing where every client project stands without asking anyone.
->
-> Mechanism: the Notion dashboard. It's a qualifier, not the draw. People search Notion, but not for this, so it narrows the video without carrying it.
->
-> Material: the dashboard itself, the story about the deliverable that slipped, and the three trackers you built before this one that nobody kept updating.
+> Notion's a qualifier here, not the draw. People search Notion, just not for this, so it can narrow a frame but it can't be what the video is about.
 >
 > Anything you're already thinking for the angle?
 
-*One message, no question until the last line. Naming the mechanism as a qualifier is the load-bearing call: Notion can appear in a frame as a condition, and cannot be what the frame is about.*
+*Two lines. The topic and the material were worked out before this message and neither one appears in it: the creator wrote the dump, so reading it back to them buys nothing. The mechanism call is here because it is the one thing on the table the creator can correct and the skill cannot check. If Notion had shipped something that week, the answer flips to draw and every frame below changes.*
 
 ### Step 2, their angle
 

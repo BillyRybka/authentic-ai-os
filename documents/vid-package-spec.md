@@ -48,7 +48,7 @@ creator (invisible machinery).
 5. Confirm format (lead with the packaging rotation, override allowed) and goal
    (sales/emails/views).
 
-Locks: `selected_angle`, `core_payoff`, `format`, `goal`.
+Locks: `frame`, `core_payoff`, `format`, `goal`.
 
 **What loads, and when (Stage 1):**
 
@@ -114,7 +114,7 @@ expression, color, or AI prompt (those live in the future visual generator).
 One packaged `piece.md`, fields appended across the stages (never overwriting another
 skill's fields; ownership map in `knowledge/vault-integration.md`):
 
-- Stage 1: `selected_angle`, `core_payoff`, `format`, `goal`
+- Stage 1: `frame`, `core_payoff`, `format`, `goal`
 - Stage 2: `title`, `title_lane`
 - Stage 3: thumbnail text picks
 
