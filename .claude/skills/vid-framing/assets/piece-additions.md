@@ -75,10 +75,8 @@ If the creator withheld a number, a client detail or something they have not cap
 - Never overwrite frontmatter owned by another skill. The ownership map is in `knowledge/piece-contract.md`.
 - Never fabricate. The frame, the read and the payoff trace to the brain-dump, the foundation, or something the creator said in the session. A gap is named rather than invented.
 - `frame` carries one direction and the condition that makes this viewer specific. Two benefits joined with a comma means the choice was never made, and a who with no condition is a category rather than a person.
-- `frame` is never a title and never a spoken line. If it reads like either, rewrite it as a description of the video and let vid-title do the selling.
-- `core_payoff` holds one outcome, which is not the same as one clause. "Five reasons people don't buy and how to overcome those objections" runs two clauses and delivers a single capability, and that is fine. "You'll have the list, and you'll never think about AI writing the same way again" is two payoffs bolted together, and "and you'll" is the tell. So is a colon that introduces a second thing.
+- `core_payoff` holds one outcome, which is not the same as one clause. "Five reasons people don't buy and how to overcome those objections" runs two clauses and delivers a single capability, and that is fine. "You'll have the list, and you'll never think about AI writing the same way again" is two payoffs bolted together, and "and you'll" is the tell. So is a colon that introduces a second thing, and so is a trailing "so" clause that restates the first half in softer words.
 - If `core_payoff` keeps coming out as a pile of features, the framing underneath it is vague. Sharpen the frame rather than rewriting the payoff.
 - `core_payoff` carries no fixed opener. "By the end of this video" is the specific one that keeps growing back.
-- No lens label reaches this file in any section. The eight registers are how the rotation was generated, not what the piece is about.
 - `mechanism` carries its kind, and stores the call in a phrase rather than the reasoning behind it. Frontmatter is a schema, and an argument parked in a string field is something nothing downstream can read.
 - Always set `last_updated` to today in YYYY-MM-DD.

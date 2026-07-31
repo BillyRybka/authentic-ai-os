@@ -8,120 +8,214 @@ tags: [reference, craft, writing]
 
 # Prose Craft
 
-The floor for any line this system writes. Not voice, which is whose it sounds like and lives in [[voice-profile-schema]]. Not pacing, which is how long a beat may live and lives in [[attention-craft]]. This is whether the sentence is any good, and it applies in every skill, for every creator, whether or not a voice profile exists.
+The floor for every line the system writes.
 
-Reference material to think with, never to paste at the creator. Examples lead, principles follow. Each move pairs a near-miss with the fix so the boundary is visible.
+Not voice. Not pacing. This decides whether the sentence is clear, specific and worth reading.
 
-Seven moves. Each one is here because this system produces its failure. A rule that catches nothing is a rule the model satisfies while writing beige, so nothing gets added here without a near-miss written from real output.
+## Say the thing plainly
 
-## 1. The plain noun exists. Use it.
+Do not make the reader translate the sentence.
 
-When a real word for the thing exists, reaching past it is always a downgrade.
+Weak:
 
-**Near-miss:** "an automated pre-output validation layer"
+> an automated post-output validation layer
 
-**Worked:** "autocorrect for AI"
+Better:
 
-The tell is a noun phrase with modifiers stacked in front of it. Count the words before the head noun. Three or more usually means the plain word was available and got avoided.
+> a final check on the draft
 
-## 2. Show the cost from inside. Don't report it from outside.
+Weak:
 
-A cost described from a distance is information. A cost the reader stands inside is a reason to keep going.
+> reduce cognitive overhead
 
-**Near-miss:** "The reading is the real tax."
+Better:
 
-**Worked:** "Every draft comes back looking clean, so they read all forty pages to find the one number that's wrong."
+> give them less to think about
 
-The fix is always the same shape: name what the person does, when they do it, and what it costs them the week it slips. Abstraction is what gets written when the specific isn't in hand.
+Use the words the person experiencing the problem would use.
 
-## 3. The verb does the work.
+## Show what happens
 
-A nominalization plus a weak verb is the most reliable AI tell in this system. Find the action and make it the verb.
+Do not name the problem when you can show the moment.
 
-**Near-miss:** "The dashboard provides visibility into project status."
+Weak:
 
-**Worked:** "The dashboard tells you which project is late."
+> AI creates more editing work.
 
-**Near-miss:** "This enables creators to achieve consistency."
+Better:
 
-**Worked:** "This makes them post every week."
+> The AI writes the draft. Then they rewrite the parts that sound like AI.
 
-Watch for provides, enables, allows, facilitates, ensures, delivers, achieves, drives. Each one is a real verb wearing a coat.
+Weak:
 
-## 4. Sentence length varies on purpose.
+> The system becomes unreliable.
 
-Long sentences carry reasoning. Short ones land blows. A run of same-length sentences reads as a summary no matter how good the content is.
+Better:
 
-**Near-miss (uniform):**
+> The board only works if someone updates it. They stop updating it. Now nobody knows which version is real.
 
-> "The problem is that most trackers require manual updates. This means someone has to remember to move the cards. When they forget, the board no longer matches reality."
+The reader should be able to picture the problem without having it explained twice.
 
-**Worked (varied):**
+## Make the verb do the work
 
-> "Most trackers need someone to remember. They forget. Now the board says one thing and the work says another, and the first time it's wrong, nobody trusts it again."
+Weak verbs make simple ideas sound distant.
 
-Same content. The second has a rhythm to lock onto. When a passage escalates, tighten as it climbs: the last consequence should hit in four or five words.
+Weak:
 
-For matching a specific creator's variation rather than merely having one, see [[voice-rhythm]] section 1.
+> The dashboard provides visibility into missed deadlines.
 
-## 5. One image per unit.
+Better:
 
-Two fresh constructions in the same breath don't compound. The second steals attention from the first and both read as reaching.
+> The dashboard shows what is late.
 
-**Near-miss:** "The tracker becomes a graveyard, a second job bolted onto the first, and the whole thing collapses like a house of cards."
+Weak:
 
-**Worked:** "The tracker becomes a second job bolted onto the first. Nobody signed up for two."
+> This enables creators to publish consistently.
 
-Pick the image that lands. Say the rest straight.
+Better:
 
-## 6. Cut the clause that didn't earn its length.
+> This helps them publish every week.
 
-**Near-miss:** "In order to make sure that the board stays accurate, what you really need to do is make the update a byproduct of the work itself."
+Watch for words such as:
 
-**Worked:** "Make the update a byproduct of the work."
+* provides
+* enables
+* allows
+* facilitates
+* delivers
+* drives
 
-Twenty-five words to eight, and the eight are stronger. Standing throat-clears: *in order to, what you need to do is, the thing about X is, it's worth noting that, at the end of the day, when it comes to.*
+Find the action. Make it the verb.
 
-The test runs per clause: cut it, read the sentence again. If nothing was lost, nothing was there. Shorter and better beats longer. Long is fine when every clause earns it.
+## Let the thought move
 
-This is clause-level. For a whole beat that overstays after its point already landed, see [[attention-craft]] section 1.
+One sentence should create the next.
 
-## 7. Name the specific thing.
+Weak:
 
-The general version of a claim is always weaker than the specific one, and the specific one is available whenever the material is real.
+> The prompt is not the real problem because instructions are not enforced consistently.
 
-**Near-miss:** "They lose revenue."
+Better:
 
-**Worked:** "They discount to close, and the client who paid the least emails the most."
+> They rewrite the instruction. The next paragraph follows it. A few paragraphs later, the same mistake is back.
 
-If the specific isn't there, that is not a writing problem. The material is thin, and the honest move is a `> [!todo]`, never a vaguer sentence that hides the gap. Every skill in this system bans invention; a general sentence written to cover a missing number is invention with better manners.
+The conclusion now has somewhere to come from.
 
-## The read-aloud test outranks all seven
+Do not announce the lesson before the reader has seen the thing that makes it true.
 
-Every move here can pass and the line can still be wrong. Read it as if the creator were saying it to one person. If they would pause and reword it, rewrite it. This is rule 8 in [[CLAUDE]] and it is the final gate everywhere.
+## Vary the rhythm
 
-## When this loads
+Long sentences carry the reasoning.
 
-**At session start, not at the step that writes the saved artifact.** Most of what a creator ever reads from this system is conversational: the reflect-back, the question that opens a stage, the recommendation and the reason under it, the ceiling call, the confirm line. All of it is written prose, and it starts in the first message. Loading at the step that produces the file means every line before it was written without a floor.
+Short ones land.
 
-This is a deliberate exception to the "never front-load" convention in the skill load tables. That rule exists to keep large references out of context until they are needed. This file is short and needed from message one, the same call `vid-capture` already makes for `bank-contract.md`.
+Weak:
 
-The one exception: a skill with a genuinely silent setup phase loads it at the phase that generates its first line instead. `vid-ideas` Phase 1 is silent loading plus one fixed question, so it loads at Phase 2.
+> The process depends on people remembering to update it, and when they fail to do that, the information becomes inaccurate and people stop trusting it.
 
-## Where this fires
+Better:
 
-Craft is judged at two moments, and both matter:
+> The process depends on someone remembering. They forget. Now the information is wrong, and nobody trusts it.
 
-1. **While drafting.** The moves are how a line gets written, not a filter applied afterward. A draft written flat and then sharpened keeps the flat structure underneath.
-2. **Before save.** Every skill's own pre-save checklist already ends on read-aloud. These seven are what to look for when a line fails that test and the reason isn't obvious.
+Do not let every sentence arrive at the same speed.
 
-Reference files and skill documentation are held to the same floor. A near-miss written into an examples file teaches the near-miss.
+## Use one image
 
-## What this file does not do
+One image can sharpen the point.
 
-- It does not carry any creator's voice. That is [[voice-profile-schema]] and the reference pieces in `foundation/reference-pieces/`.
-- It does not own beat length, pattern interrupts, or energy direction. That is [[attention-craft]].
-- It does not own cross-segment tension. That is [[script-tension-architecture]].
-- It does not enforce banned words or em-dashes. Vale and [[CLAUDE]] handle those. They are hard rules, not craft.
-- It does not replace a skill's own examples. Each skill shows how its own artifact fails. This shows how any sentence fails.
-- It does not license rewriting the creator's words. A brain-dump line stays in their phrasing; these moves govern what the system writes, not what the creator said.
+Three images make the sentence look like it is trying.
+
+Weak:
+
+> The process becomes a maze, a bottleneck and a house of cards.
+
+Better:
+
+> The process becomes a second job. Nobody wanted two.
+
+Choose the image that carries the point. Say the rest plainly.
+
+## Cut the setup
+
+Weak:
+
+> What you really need to do is make the update part of the work itself.
+
+Better:
+
+> Make the update part of the work.
+
+Cut phrases such as:
+
+* what you need to do is
+* the thing about
+* it is worth noting
+* when it comes to
+* in order to
+* at the end of the day
+
+If a clause can disappear without changing the thought, cut it.
+
+## Name what actually changes
+
+Broad claims hide the part that matters.
+
+Weak:
+
+> They lose money.
+
+Better:
+
+> They charge less to win the client, then spend more time doing the work.
+
+Weak:
+
+> Engagement drops.
+
+Better:
+
+> People stop opening the emails.
+
+Weak:
+
+> The workflow creates friction.
+
+Better:
+
+> They have to copy the same information into three different places.
+
+Use the action the person can see.
+
+If the material does not contain that detail, do not invent it.
+
+## Write discoveries, not summaries
+
+A summary gives the reader the point.
+
+A discovery lets them reach it.
+
+Weak:
+
+> Better instructions will not solve the problem.
+
+Better:
+
+> They make the instruction clearer. It works once. Then the old mistake comes back.
+
+The second version creates movement. The reader wants the next sentence because something still needs explaining.
+
+## Read it aloud
+
+Read every line as if the creator were saying it to one person.
+
+If they would stop to explain a phrase, replace it.
+
+If they would choose a simpler word, choose it now.
+
+If the sentence sounds polished but unnatural, rewrite it.
+
+Clear beats clever.
+
+Specific beats impressive.
+
+And a line nobody would actually say is not finished.

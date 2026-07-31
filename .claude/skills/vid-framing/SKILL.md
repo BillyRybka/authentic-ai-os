@@ -5,157 +5,140 @@ description: Turn a video idea into a decided video. Works out what this audienc
 
 # Video Framing
 
-A brain dump goes in. Several real framings of the same material come out, the creator picks one, and the piece leaves with its frame, its payoff, an understanding of the viewer, its format and its goal written to disk.
+A brain dump goes in. Several genuinely different framings of the same material come out, each one hitting the deeper desire, fear, want or need the viewer has about this topic. The creator picks one, and the piece leaves with its frame, its core payoff, an understanding of the viewer, its format and its goal for the business.
 
-Seven stages, four of which the creator sees. Read the file each stage names when you reach that stage, not before.
+```
+Material + avatar → core desire → framings → screen → pick → the read → save
+```
 
-This skill decides which video this is. It never sells it. No titles, no hooks, no thumbnail text: vid-title does that with the banks open, and it needs a decided video to work from.
+Six stages, five of which the creator sees. Read the file a stage names when you reach it.
+
+This skill decides the most interesting and compelling way to frame the raw idea and braindump.
 
 ## Before you start
 
-No `brain-dump.md`, point them at vid-intake. No `creator-foundation.md`, point them at /foundation. Neither can be worked around.
+No `brain-dump.md`, point them at vid-intake. No `creator-foundation.md`, point them at /foundation.
 
-If piece.md already has a `frame`, this is a re-frame. Ask whether they want fresh directions or that one sharpened. Sharpening stays on the same want, offers a few tighter versions of it, and skips to stage 5. `## The Read` gets replaced rather than appended to.
+If piece.md already has a `frame`, this is a re-frame. Ask whether they want fresh directions or that one sharpened. Sharpening stays on the same want, offers a few tighter versions, and skips to stage 5 with `## The Read` replaced rather than appended.
 
 If the pipeline invoked this with a slug, do not ask which piece.
 
 ---
 
-## Stage 1: Find out what they want and what they have already tried
+## 1. Read the material and ask
 
-**Read:** `knowledge/prose-craft.md` (in force from your first message) · `foundation/voice-profile.md` (the refusals list, needed now because framings get written at stage 4) · `content/pieces/{slug}/brain-dump.md` · `foundation/creator-foundation.md`
+**Read:** `content/pieces/{slug}/brain-dump.md` · `foundation/creator-foundation.md` · `foundation/voice-profile.md` · `knowledge/prose-craft.md` if the vault has one
 
-Read the dump twice. Once for what it is about, once for what is in it that nobody else could film.
+Two things to find, both privately.
 
-Write three lists privately. Fragments are fine. These are what stage 3 runs on. 
+**Every attempt that did not work.** Each distinct one and what went wrong with it. A dump usually holds three or four and names one out loud.
 
-1. **What this viewer wants here.** Only the wants this material can answer. Use the avatar's own words, because their language is what makes a framing land and your paraphrase is what makes it generic.The key here is to genuinely think deeply. Think almost as if we're looking for the one or two true core desires needs, wants they would have around this topic.
-2. **What they have already tried that did not work.** Every distinct attempt, and what went wrong with each. A dump often holds three or four and names one out loud. Two people with the same goal and different failed attempts need different videos, so this is the list that decides who the framings are aimed at.
-3. **What only this creator has.** The version that failed, the client, the number, the position they changed their mind about.
+Weak: *they had tried prompting it.* Strong: *the rule in the prompt, then in project instructions, then in a memory file. Same shape three times, failing the same way each time.* The pattern across the attempts is the finding, not the list. Somebody who never tried needs the method, somebody who tried three times needs to know why it keeps failing, and those are two different videos.
 
-The three lists stay internal. Reading somebody their own dump back to them buys nothing.
+**What only this creator has.** The version that failed, the client, the number, the position they changed their mind about.
 
-**Stop.** Their angle goes into stage 3 and competes. It does not skip the rotation. If it wins, say so and pick it.
+Weak: *he has experience with this.* Strong: *four clients lost in one year, every one blamed on delivery.* A number and a wrong belief, and neither one is available to anybody else making this video.
 
----
+**Call the mechanism.** The mechanism is whatever produces the result, and the call is whether it can appear in a framing.
 
-## Stage 2: Ladder the value
+- **Delivery.** This viewer would not search for it by name. Stays out of every framing, appears in the body once they care.
+- **The draw.** It has its own search demand, usually because it is new or trending. It can carry the framing, and the format is often `news`.
+- **Qualifier.** Known but not hot. Narrows a framing without carrying one.
 
-After laddering the value, identify the possible governing questions.
+Call it against this avatar, not in general. A linter plus a banned-word list, aimed at business owners who write with Claude, is delivery, because they would never search for a linter by name. The same tool aimed at developers who already run linters is a qualifier. It flips again the week it lands somewhere they read.
 
-Build them only from:
+**Send one short message.** The mechanism and its kind in a clause, then two questions: what had they already tried before this and what kept going wrong, and whether they already have an angle in mind.
 
-What the viewer already tried.
-Why it failed.
-A contradiction in the material.
-A hidden cause the material supports.
-A meaningful distinction.
-A tradeoff.
-A test or unresolved decision.
-Something that changed the creator’s mind.
+Ask both. What they tried is almost never in the dump, because they solved it and moved on. Their angle carries the phrase they have been using in their own head.
 
-For each possible direction, write privately:
-
-The viewer wants to know whether...
-
-Drop any direction whose answer is merely a benefit, a broad how-to, or the original topic restated.
-
-## Stage 3: Write the framings
-
-Read:
-
-`references/framing.md`
-
-Write as many genuinely different directions as the material supports.
-
-Each framing must change what the viewer is waiting to find out.
-
-Do not create variety by changing:
-
-The emotional register.
-The benefit.
-The adjective.
-The format.
-The level of urgency.
-
-Under each framing, privately complete:
-
-The viewer wants to know whether...
-
-If two answers are substantially the same, keep one.
-
-## Stage 4: Screen, then offer
-
-Read:
-
-`references/core-payoff.md`
-
-Before offering a framing, check:
-
-The viewer and their failed attempt are identifiable.
-The framing creates a question the topic alone does not.
-The creator-specific material changes the direction or supplies the proof.
-The material can support the answer without invention.
-The option is not merely useful information described cleanly.
-
-Write one core payoff for each survivor.
-
-The payoff must name what the viewer can do, decide, diagnose, catch, fix, choose, or stop after watching.
-
-Do not use “learn” or “understand” as the final payoff unless understanding itself is the complete result of the video.
-
-Recommendation
-
-Recommend the framing with the strongest combination of:
-
-A real unresolved question.
-A specific failed attempt.
-Creator-only proof.
-A payoff that changes a decision or behavior.
-
-Do not recommend an option because it is practical, broad, safe, or easy to execute.
-
-## Before save
-
-Confirm:
-
-The frame contains one direction.
-The viewer is under a condition, not merely inside a category.
-The frame creates a question the topic alone does not.
-The creator-specific material affects the direction.
-The payoff names one changed capability or decision.
-The payoff would not survive a materially different conclusion.
-Neither field contains an invented claim.
+**Stop.** Their answers change the next stage, so nothing gets written until they land.
 
 ---
 
-## Stage 5: Lock the pick
+## 2. Land the core desire
 
-The pick locks the framing and its payoff together, and it doubles as the excitement check, so do not ask separately whether they like it.
+**Read:** `references/core-desire.md`
 
-A clear choice with a reason means the rotation worked. Taking the recommendation with no comment usually means none of them opened anything. Say what you noticed and hand it back rather than deciding for them.
+Their answers are in. Take what the material offers and climb: what does that get them, then what does that get them, until the answers stop getting bigger. Then come back down one rung, because the top of any ladder is the biggest claim and the vaguest promise, and nobody can picture a vague promise.
+
+The climb is working. One rung is the output.
+
+**Say it in one sentence and stop.** Every framing is aimed at this, so a wrong rung wastes the whole set. One line, then wait.
 
 ---
 
-## Stage 6: Write who this is for, what changes for them, and what it costs
+## 3. Write the framings
+
+**Read:** `references/framing.md`
+
+Internal. Nothing is shown yet.
+
+Every framing serves the core desire and is aimed at somebody with a specific failed attempt behind them. Write as many as the material genuinely supports and no more. There is no target number.
+
+Each one has to change what the viewer is waiting to find out. Variety is not a different emotional register, a different benefit, a different adjective, or more urgency on the same want.
+
+No two share an opening or a shape. Two that both start "Show the business owner who" are one framing wearing different words, whatever the rest of the sentence says. At least one in the set should read like it came from a different video entirely.
+
+Under each, privately finish the sentence: the viewer wants to know whether... If two of those come out substantially the same, keep one.
+
+---
+
+## 4. Screen, then offer
+
+**Read:** `references/core-payoff.md`
+
+Six checks, run privately. Anything that fails one does not get offered and does not get patched, because a framing that needs defending is one the viewer would have to be talked into too.
+
+- The viewer and their failed attempt are identifiable.
+- It opens a question the topic alone does not, and a search cannot answer the whole thing in a line.
+- Something in it makes them feel caught, annoyed, curious or wronged. A framing can be structurally correct and dead on the page.
+- The creator-specific material changes the direction or supplies the proof.
+- The mechanism sits where stage 1 put it. A delivery mechanism that reappeared inside the sentence fails here, not later.
+- The material can carry the answer with nothing invented.
+
+Whether the creator is excited about a version is what the pick is for. Do not ask it here.
+
+Write one core payoff per survivor, third person.
+
+**First message, the options and the cuts.** One entry each, blank line between.
+
+3. **{short handle, so they can say "the third one"}**
+   {the framing}
+   Core payoff: {what they walk away able to do}
+
+Handles never get saved. A handle is title shaped, and putting one on disk hands vid-title a headline drafted before it looked at anything.
+
+Then the cuts, a clause each. If one of them was the angle they gave you at stage 1, say so explicitly.
+
+**Second message, the recommendation and the dial.** Recommend the one with the strongest combination of a real unresolved question, a specific failed attempt, creator-only proof, and a core payoff that changes a decision. Never recommend one because it is practical, broad, safe or easy to film. Then the dial in one line: more, a different direction, sharper, start again.
+
+Two messages rather than one, because a wall of options, cuts, recommendation and dial gives them everything to read before they can react to any of it.
+
+**If everything comes back flat**, that is better evidence that nothing is at stake here than one failed dig. Say so and give three options: narrow to the part that does have a stake, let a real number carry it, or film it fast knowing the ceiling. Flat means no distinct wants. It does not mean undramatic, and plenty of good educational videos pay off with a verdict or a number.
+
+**Stop. Nothing gets written until they pick.** The pick locks the framing and its core payoff together and doubles as the excitement check. A clear choice with a reason means the rotation worked. Taking the recommendation with no comment usually means none of them opened anything, so say what you noticed and hand it back rather than deciding for them.
+
+---
+
+## 5. Write who this is for, what changes for them, and what it costs
 
 **Read:** `references/the-read.md`
 
-Ask the cost question first, before writing anything: what does it actually cost them to keep doing it the way they do now. Ask it even when you could write Stakes without it.
+Ask the cost question first, before writing anything: what does it actually cost them to keep doing it this way. Ask it every time, including when you could write Stakes without it.
 
-Then write three fields on the locked framing, third person, one short paragraph each. Target is the situation as a causal chain ending on a cost. Transformation is what they stop doing and do instead. Stakes take that cost and compound it.
+Then three fields on the locked framing, third person, one short paragraph each. Target is the loop they are stuck in, as a causal chain ending on a cost. Transformation is what they stop doing and do instead. Stakes take that cost and follow what it causes.
 
-**Stop.** Show the three fields and nothing else in that message. No format, no goal, no save, no handoff line. Three downstream skills build on this, and a creator who never saw it cannot catch a read aimed at the wrong person.
+**Stop.** Show the three fields and nothing else in that message. Three downstream skills build on this, and a creator who never saw it cannot catch a read aimed at the wrong person.
 
 ---
 
-## Stage 7: Set the format and the goal, then save
+## 6. Set the format and the goal, then save
 
 **Read:** `references/format-index.md` · `assets/piece-additions.md`
 
-State the format and the goal, do not ask. "Short-process, goal emails. Say the word if either is wrong." Both fall out of decisions already made: format follows the material and the framing, goal follows how warm the audience is, with cold wanting views, warm wanting emails, hot wanting sales.
+State the format and the goal, do not ask. "Short-process, goal emails. Say the word if either is wrong." Format follows the material and the framing. Goal follows how warm the audience is: cold wants views, warm wants emails, hot wants sales.
 
-Leave `voice_context` on `youtube-script` unless the piece genuinely is a different medium. A walkthrough is still a YouTube script. That field decides which reference pieces every downstream writing skill loads.
+Leave `voice_context` on `youtube-script` unless the piece genuinely is a different medium. A walkthrough is still a YouTube script.
 
 Flip the core payoff to second person. Nothing else changes on the way to disk.
 
@@ -165,46 +148,43 @@ Write piece.md, then one line: format, goal, vid-title next.
 
 ## Before you save
 
-- The saved `frame` is the framing they picked, word for word. Merging it with a phrase from another option is a decision they never made. If a word has to change, say what changed in the same message.
-- The framing describes the video from outside it. If it could be read aloud in the video or pasted in as a title, it is the wrong shape.
-- The framing carries one direction, and a viewer with a condition on them rather than a category.
+- The saved `frame` is the framing they picked, word for word. If a word has to change, say what changed in the same message.
+- The framing carries one direction, and a viewer under a condition rather than inside a category.
+- The framing opens a question the topic alone does not.
 - The mechanism sits where its kind says it belongs.
-- `core_payoff` states what they walk away able to do, second person, one outcome, landing on the fix.
-- `core_payoff` reads clearly cold, does not give away the conclusion, and would not be equally true of a video that reached a different one.
+- `core_payoff` names what they can do, decide, diagnose, catch, fix, choose or stop. Second person, one outcome.
+- `core_payoff` reads clearly cold, does not give away the conclusion, and would not survive the video reaching a different one.
 - `core_payoff` has no fixed opener. "By the end of this video" is the one that grows back.
-- Nothing is bolted onto the payoff. "And you'll" and a second-thing colon are the tells.
-- Target is a causal chain, not a filled-in form. If "their goal is" or "their pain point is" appears, rewrite it.
-- Transformation names the same ending as the payoff.
-- Stakes escalate and land back where Target started. The misattribution is there if the material has one and absent if it does not.
-- Stakes belong to this piece. Put another video's framing on the paragraph. If it would still be true, replace at least one consequence with something that only follows from this video.
+- Target is a causal chain, not a profile. If "their goal is" or "their pain point is" appears, rewrite it.
+- Transformation reaches the same ending as the core payoff.
+- Stakes grow out of Target and land back where it started. A wrong diagnosis appears only if the material gives you one.
+- Stakes belong to this piece. Put another video's framing on the paragraph. If it would still be true, replace a consequence with something that only follows from this video.
 - Every claim, number, proportion and duration traces to the dump, the foundation, or something the creator said in this session. Every gap is a `> [!todo]`.
-- No lens label appears anywhere in the file.
 - `format` is one of the seven and `goal` is set.
-- Read every line aloud. Anything the creator would pause and reword gets rewritten, and `knowledge/prose-craft.md` is what to check against when the reason is not obvious.
+- Read every line aloud. Anything the creator would pause and reword gets rewritten.
 - No em-dashes and nothing from the refusals list.
 
 ## Never invent
 
-Every framing, payoff and line of the read traces to the dump, the foundation, or something the creator said in this session. If the material cannot support an angle, it does not get offered, so there is nothing to walk back later.
+Every framing, core payoff and line of the read traces to the dump, the foundation, or something the creator said in this session. If the material cannot support an angle, it does not get offered, so there is nothing to walk back later.
 
-This covers quantities as much as claims, and it applies to what you say in conversation, not only to what reaches the file. Half of their writing, a weekend of setup, dead by week two, months of doing it the old way. Be most careful with the creator's own history: telling somebody they spent months on something the material never dated asserts a fact about their life back to them, and they will either correct you or believe you.
+This covers quantities as much as claims, and it applies to what you say in conversation, not only what reaches the file. Be most careful with the creator's own history: telling somebody they spent months on something the material never dated asserts a fact about their life back to them, and they will either correct you or believe you.
 
 ## Output and handoff
 
-Appends to the piece.md vid-intake created. Never touches a field another skill owns. Ownership is in `knowledge/piece-contract.md`, the exact shape is in `assets/piece-additions.md`.
+Appends to the piece.md vid-intake created, never touching a field another skill owns. Ownership is in `knowledge/piece-contract.md`, the exact shape in `assets/piece-additions.md`.
 
-Frontmatter: `frame`, `core_payoff`, `mechanism`, `format`, `goal`, `voice_context`, `last_updated`. Body: `## The Read` with Target, Transformation and Stakes, plus any withheld proof as a `> [!todo]` kept out of the frame and the payoff.
+Frontmatter: `frame`, `core_payoff`, `mechanism`, `format`, `goal`, `voice_context`, `last_updated`. Body: `## The Read` with Target, Transformation and Stakes, plus any withheld proof as a `> [!todo]` kept out of both the frame and the core payoff.
 
 Prerequisite: vid-intake. Handoff: vid-title.
 
 ## References
 
-| File | What it is | When |
-|---|---|---|
-| `knowledge/prose-craft.md` | The seven moves every line here is held to | Stage 1, in force throughout |
-| `references/framing.md` | What a framing is, the source examples, what has to be in one | Stage 3 |
-| `references/frame-lenses.md` | The eight registers and where each does not apply | Stage 3 |
-| `references/core-payoff.md` | The payoff shape, the source examples, the four tests | Stage 4 |
-| `references/the-read.md` | Target, Transformation, Stakes, with calibration and the dig questions | Stage 6 |
-| `references/format-index.md` | The seven formats with their views, sales and trust scores | Stage 7 |
-| `references/worked-example.md` | One session start to finish, plus the two situations that break the rhythm | Once, to calibrate pacing |
+| File | When |
+|---|---|
+| `references/core-desire.md` | Stage 2 |
+| `references/framing.md` | Stage 3 |
+| `references/core-payoff.md` | Stage 4 |
+| `references/the-read.md` | Stage 5 |
+| `references/format-index.md` | Stage 6 |
+| `references/worked-example.md` | Once, to calibrate pacing |

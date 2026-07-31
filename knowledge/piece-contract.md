@@ -20,7 +20,7 @@ type: content-piece
 project: authentic-ai-os
 slug: video-slug
 pillar: {pillar-slug}           # creator's content pillar
-frame: "..."                    # the chosen video described in third person: "A video that shows {who} how to {the change}." Never a spoken line, never a headline, never a description of the contents. Set by vid-framing.
+frame: "..."                    # the chosen video described in third person, in the grammar of its want ("A video that shows {who} how to {the change}" is one shape, not the shape). Never a spoken line, never a headline, never a description of the contents. Set by vid-framing.
 core_payoff: "..."              # the reason the viewer stays to the end, almost always the answer to a question already in their head. Second person, one thing, 1-2 sentences. Locked with the frame. Set by vid-framing. vid-structure orders the points so this lands late.
 mechanism: "..."                # what produces the result, plus its kind: delivery | draw | qualifier. Delivery stays out of the frame, draw carries it, qualifier narrows it. Set by vid-framing.
 format: short-process           # from the 7 formats: short-process | case-study | roast | deep-dive | interview | news | listicle. Set by vid-framing.

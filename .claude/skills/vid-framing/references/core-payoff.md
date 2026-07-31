@@ -74,14 +74,20 @@ It should not be equally true if the video reached a different conclusion.
 
 ## One outcome
 
-Do not bolt on a second promise with “and,” a colon, or another sentence.
+Do not bolt on a second promise. It arrives as “and,” as a colon, as another sentence, and most often as a trailing “so” clause that restates the first half in softer words.
 
 Weak:
 
 > The viewer will know how to make the rule hold, and they will spend less time editing.
 
+Weak:
+
+> The viewer can hand off their own cleanup pass, so what lands on their screen has already been fixed.
+
 Stronger:
 
 > The viewer will know what has to change when repeating the rule no longer changes the output.
+
+If the sentence has a comma in it, check what follows the comma. Usually it is the same promise a second time, and cutting it costs nothing.
 
 The saved version flips from third person to second person. Nothing else changes.

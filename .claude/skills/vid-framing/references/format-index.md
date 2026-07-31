@@ -2,7 +2,7 @@
 name: Format Index
 type: skill-local-reference
 loaded_by: vid-framing
-when_to_read: Stage 7, when setting the format
+when_to_read: Stage 6, when setting the format
 ---
 
 # Format index

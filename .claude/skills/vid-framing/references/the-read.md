@@ -2,16 +2,8 @@
 name: The Read
 type: skill-local-reference
 loaded_by: vid-framing
-when_to_read: Stage 6, when writing Target, Transformation and Stakes
+when_to_read: Stage 5, after the framing and core payoff are locked
 ---
-
----
-
-name: The Read
-type: skill-local-reference
-loaded_by: vid-framing
-when_to_read: Stage 6, after the framing and payoff are locked
---------------------------------------------------------------
 
 # The Read
 

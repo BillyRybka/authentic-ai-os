@@ -7,55 +7,89 @@ when_to_read: Stage 3, before writing any framing
 
 # Framing
 
-An idea is a topic. It points in every direction, which means it points at nobody. Framing gives it one direction aimed at one person.
+An idea is a topic. It points everywhere, so it points at nobody. Framing gives it one direction aimed at one person.
 
-From the source, three ideas and what each became:
+Three from the source, idea and what each became:
 
 > "I want to make a video where I show people how to do meal prep."
-> becomes "I'm going to show students how to meal prep on a budget."
+> "I'm going to show students how to meal prep on a budget."
 
 > "I want to make a video where I discuss the BBC adaptation of Sherlock."
-> becomes "I'm going to explain why BBC's Sherlock is bad and always has been."
+> "I'm going to explain why BBC's Sherlock is bad and always has been."
 
 > "I want to make a video where I learn how to crack a whip."
-> becomes "I'm going to test how dangerous a whip is by trying to break increasingly difficult targets."
+> "I'm going to test how dangerous a whip is by trying to break increasingly difficult targets."
 
-Look at the length. One line each. No clause stacking, no formula, and the audience only appears when it changes the video, which in the meal prep case it does twice over: students, and on a budget.
+One line each, none over fifteen words, no formula shared between them.
 
-## There is no template
+Meal prep names the audience twice, students and on a budget, and each one changes what gets filmed. Cut either and it goes back to being a topic.
 
-Write a sentence that describes the video. That is the whole instruction on form. Any fixed shape you follow across a whole rotation makes the options harder to tell apart, which works against the thing the rotation exists to do.
+Sherlock works because "and always has been" picks the fight. Without it you have a review. With it, the people who like the show click to argue.
 
-What has to be in it:
+The whip one puts the structure in three words, increasingly difficult targets, and the creator does not know how it ends either. Neither does the viewer, which is the point.
 
-**One direction.** "Strip AI language, apply your brand rules, and cut your editing time" is three framings glued together, which means the choice was never made.
+## Narrowing is not framing
 
-**A viewer with a condition on them.** The condition is the constraint they are actually under: what they already tried, how much time they have, who they answer to, how far into the problem they are. "Business owners" is a category. "Business owners who have already put the rule in their instructions twice" is a person. This is what separates "how to lose weight fast" from "meal prep, for students, on a budget."
+"How to meal prep fast" and "how to meal prep without cooking" add a qualifier and are still aimed at everyone. The qualifier narrows the topic. Framing narrows the viewer. "Students, on a budget" is a different video from "parents, after a night shift," and the same material would have to be cut differently for each.
 
-**The mechanism where stage 1 said it belongs.** Out of the framing if it is delivery, in the framing if it is the draw.
+This is the near miss the model will actually produce, so check for it before checking anything else.
 
-**Heat.** A framing can be structurally correct and still dead on the page. It should name something that stops happening to somebody, in language with some blood in it. Flat: "how to improve your AI writing workflow." Alive: "stop cleaning up after your AI."
+## No template
+
+Write a sentence that describes the video. That is the whole instruction on form. A shape repeated across a whole set makes the options harder to tell apart, which is the opposite of what the set is for.
+
+Four things have to be in it:
+
+**One direction.** "Strip AI language, apply your brand rules, and cut your editing time" is three framings glued together, so the choice never got made.
+
+**A viewer under a condition.** What they already tried, how much time they have, who they answer to, how far into the problem they are. "Business owners" is a category. "Business owners who have already put the rule in their instructions twice" is a person. This is the difference between "how to lose weight fast" and "meal prep, for students, on a budget."
+
+**The mechanism where stage 1 put it.** Out if it is delivery, in if it is the draw.
+
+**Heat.** A framing can be structurally correct and dead on the page. It should name something that stops happening to somebody, in language with blood in it.
 
 ## Readability
 
-If you cannot say it aloud in one breath, it is the wrong shape. The usual cause is a long condition wedged between the verb and its object: "shows business owners who have given the same correction five sessions in a row how to make a correction hold" cannot be read. Move the condition, split the sentence, or cut the framing. Do not shorten the condition, because the condition is the part doing the work.
+If you cannot say it aloud in one breath, it is the wrong shape. The usual cause is a long condition wedged between the verb and its object. Move the condition or split the sentence. Do not shorten the condition, because the condition is doing the work.
 
-## Cutting duplicates
+## What good sounds like, and why
 
-Under each framing, write the sentence the viewer would say to themselves. "I want to never see an em dash again." "I want to stop being the one who checks everything." If two of those could be swapped without either reading wrong, that is one framing written twice, however different the descriptions read.
+> "I spent $3000 on YouTube courses and they all missed this one thing"
 
-Never dedupe by comparing lens labels. One lens per framing makes the labels distinct automatically, so they always pass and prove nothing.
+A real number and a real loss, and "this one thing" stays open. There is no way to close it except watching.
 
-## Where this goes wrong
+> "What nobody tells you about being stuck at 50 subscribers"
 
-**Describing the contents.** "This video walks through the five steps of the weekly review" answers what happens in the video. Nobody clicked to ask that.
+50 is a specific place to be stuck, so the viewer either is there or is not. "Nobody tells you" says the answer is not in the ten videos they already watched, which is the objection they were about to have.
 
-**Handing back the topic.** "A video about AI writing tools" names a subject. A framing names what changes for somebody.
+> "Stop cleaning up after your AI"
 
-**Writing a line of the video.** "You are not disorganised, you are unprepared" is spoken and belongs in the script. A framing describes the video from outside, so vid-title inherits an argument rather than a headline it has to argue with.
+Names a job they are already doing and never agreed to. The heat is in "cleaning up after," which is what you say about a person who is letting you down.
 
-*(Open question for Billy: your own example, "Stop letting AI write your scripts, it's keeping you broke," has exactly the heat this file asks for and it also reads as a title. Either the not-a-title rule needs narrowing or that example belongs in vid-title. Worth settling before the next real run.)*
+## What bad sounds like, and why
 
-**Smuggling the mechanism back in.** A framing that names the tool has become a video about the tool. The exception is when the tool is what people are searching for this week, and that call was already made at stage 1.
+> "The Ultimate Guide to Getting Your First 1000 Subscribers"
 
-**Hitting a number.** There is no target count. If the material supports five real wants, five is correct, and inventing three more produces the duplicates above.
+Aimed at everyone at zero, so there is no condition on the viewer. "Ultimate guide" promises completeness, and completeness is the opposite of an open question.
+
+> "How to improve your AI writing workflow"
+
+Improve from what, to what. Nothing is wrong yet, so nothing needs resolving.
+
+> "5 Proven Strategies to Grow Your Channel Fast"
+
+The count and the word "proven" are doing the persuading instead of the idea. Swap the topic for any other and the sentence still works, which means it belongs to no video in particular.
+
+That last one is the fastest test on this page. Put a different subject in the sentence. If it still reads fine, the framing was never about this material.
+
+## Where it goes wrong
+
+**Describing the contents.** "This video walks through the five steps" answers what happens in the video. Nobody clicked to ask that.
+
+**Handing back the topic.** "A video about AI writing tools" names a subject, not what changes for somebody.
+
+**Running long.** Every example on this page fits in one breath. Thirty words usually means two framings got glued together with an "and" or a "so," and the choice never got made.
+
+**Smuggling the mechanism back in.** A framing that names the tool has become a video about the tool, unless stage 1 called it the draw.
+
+**Hitting a number.** No target count. Five real wants means five, and inventing three more produces duplicates.

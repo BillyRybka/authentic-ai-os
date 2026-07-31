@@ -21,9 +21,10 @@ not score it: the mechanical floor was not met.
 
 ## What this skill is trying to do
 
-It turns one captured topic into one chosen video. It holds the material still
-and points it at eight different viewer wants, the creator picks one, and only
-then does it write the read of the person that want belongs to.
+It turns one captured topic into one chosen video. It holds the material still,
+mines the wants the material can honestly support, and points the video at a
+different one in each offered angle. The creator picks one, and only then does
+it write the read of the person that want belongs to.
 
 Two consequences for scoring:
 
@@ -49,19 +50,24 @@ on plainness, not on cadence.
 **What it measures:** did the creator get a genuine choice between different
 videos, or a menu of one idea reworded?
 
-Read the eight frames in the transcript and ask of each pair: do these answer
+Read the offered frames in the transcript and ask of each pair: do these answer
 different viewer wants, or the same want in different words? Wording variety is
-not the test. Eight frames that all promise "save time" are one frame, however
+not the test. Six frames that all promise "save time" are one frame, however
 distinct they read. Also check that the recommendation carried a reason grounded
 in the material rather than taste, and that the frames stayed inside what the
 brain-dump can actually support.
 
+The count is not scored. Eight is a ceiling, not a quota: the honest number is
+however many wants the material supports. Fewer than eight with every want
+distinct is full credit. Frames padded in to reach eight are rewordings, and
+they count against this dimension like any other duplicate.
+
 | Score | Description | Example |
 |-------|-------------|---------|
 | 1 | No options offered. One frame proposed and taken, or the frames are transparently the same idea renumbered. | Three frames, all "stop wasting time on X." |
-| 2 | Options offered but most collapse into two or three real wants, or several promise things the material cannot deliver. | Eight frames, five of which are time-saving. |
+| 2 | Options offered but most collapse into two or three real wants, or several promise things the material cannot deliver, or the list was padded to a count with frames the material cannot support. | Eight frames, five of which are time-saving. |
 | 3 | Most frames answer distinct wants, with one or two duplicates left in. Recommendation present but justified by preference rather than by material. | "I'd go with 4, it's the strongest." |
-| 4 | Eight frames, eight distinct wants, every one supported by something actually in the dump. The recommendation names why, and the reason points at specific material. | "I'd take 6. It's the only one that uses the three dead trackers, and that's the part nobody else can film." |
+| 4 | Every offered frame answers a distinct want, each one supported by something actually in the dump, with no duplicates kept to round out the list. The recommendation names why, and the reason points at specific material. | "I'd take 6. It's the only one that uses the three dead trackers, and that's the part nobody else can film." |
 | 5 | All of 4, plus at least one frame the creator would not have arrived at alone, and the recommendation argues the ceiling rather than the safest option. Where the creator offered their own angle, it was converted into a frame and weighed on the merits rather than adopted or dismissed. | Creator says "just a walkthrough"; the skill puts it in as option 1 written as a frame, then argues for a different one on material grounds. |
 
 ### 2. frame_quality
