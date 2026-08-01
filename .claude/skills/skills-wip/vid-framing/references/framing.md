@@ -2,37 +2,47 @@
 name: Framing
 type: skill-local-reference
 loaded_by: vid-framing
-when_to_read: Stage 3, before writing any framing
+when_to_read: Stage 1, before writing any framing
 ---
 
 # Framing
 
 An idea is a topic. It points everywhere, so it points at nobody. Framing gives it one direction aimed at one person.
 
-Three from the source, idea and what each became:
+Here are idea and what each became:
 
-> "I want to make a video where I show people how to do meal prep."
-> "I'm going to show students how to meal prep on a budget."
+> Idea: "I want to make a video where I show people how to do meal prep."
+> Framed: "I'm going to show students how to meal prep on a budget."
 
-> "I want to make a video where I discuss the BBC adaptation of Sherlock."
-> "I'm going to explain why BBC's Sherlock is bad and always has been."
+> Idea: "I want to make a video where I discuss the BBC adaptation of Sherlock."
+> Framed: "I'm going to explain why BBC's Sherlock is bad and always has been."
 
-> "I want to make a video where I learn how to crack a whip."
-> "I'm going to test how dangerous a whip is by trying to break increasingly difficult targets."
-
-One line each, none over fifteen words, no formula shared between them.
-
-Meal prep names the audience twice, students and on a budget, and each one changes what gets filmed. Cut either and it goes back to being a topic.
-
-Sherlock works because "and always has been" picks the fight. Without it you have a review. With it, the people who like the show click to argue.
-
-The whip one puts the structure in three words, increasingly difficult targets, and the creator does not know how it ends either. Neither does the viewer, which is the point.
+> Idea: "I want to make a video where I learn how to crack a whip."
+> Framed: "I'm going to test how dangerous a whip is by trying to break increasingly difficult targets."
 
 ## Narrowing is not framing
 
 "How to meal prep fast" and "how to meal prep without cooking" add a qualifier and are still aimed at everyone. The qualifier narrows the topic. Framing narrows the viewer. "Students, on a budget" is a different video from "parents, after a night shift," and the same material would have to be cut differently for each.
 
-This is the near miss the model will actually produce, so check for it before checking anything else.
+## What they actually want
+
+Every framing serves something the viewer wants. Find it by climbing off the material: what does that get them, then what does that get them, until the answers stop getting bigger. Then take the rung below the top, because the top of any ladder is the biggest claim and the vaguest promise.
+
+> They cook once for the week, so they stop buying lunch every day, so they eat properly on the money they actually have, so they stop choosing between eating well and making rent.
+
+Lands on eating properly on the money they actually have. "They take control of their life" is too high and true of any video. "They batch cook on Sunday" is too low and is just the mechanism.
+
+> The AI remembers the rules, so they stop re-explaining the same correction, so they have a co-writer instead of a first draft to repair, so more of what they write actually goes out.
+
+Lands on a co-writer that already sounds like them. "AI that is actually usable" cannot be framed. "The AI remembers" is the mechanism wearing a want's clothes.
+
+> They hear the objection coming, so they answer it before it hardens, so they stop losing deals they were told were a yes.
+
+Lands on not losing deals they were told were a yes. "They get better at sales" is too high. "They can name five objections" is a fact, not a want.
+
+The climb is working. One rung is the output, and printing the whole ladder gives every framing three things to serve, so it serves none of them.
+
+Two tests. Would they say it out loud in their own words, closer to "I'm sick of fixing the same thing" than "consistent brand voice across all content"? And if you ask "so what" once more, is the answer another benefit or the end of the line?
 
 ## No template
 

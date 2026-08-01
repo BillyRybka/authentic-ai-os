@@ -1,198 +1,120 @@
 ---
 name: vid-framing
-description: Turn a captured topic into one chosen video. Reads the material for what it's about versus what merely delivers it, finds the wants the material can honestly support, spins one frame per want for the creator to pick between, then writes the read (Target, Transformation, Stakes) on the one they chose. Saves frame, core payoff, format, and goal to piece.md and hands to vid-title. Use whenever a piece needs its direction decided, even if the creator never says "frame". Triggers include "frame the video", "pick the angle", "what should this video be about", "what's the angle here", "re-frame this piece", "I don't know how to position this one".
+description: Turn a video idea into a decided video. Reads the brain dump and the creator foundation, writes several genuinely different framings of the same idea with a core payoff on each, and recommends one. Once the creator picks, writes the target, transformation and stakes, sets the format and the goal, and saves it all to piece.md before handing to vid-title. Use this whenever a piece needs its direction decided, including when the creator never says the word "frame". Triggers include "frame this video", "pick the angle", "what should this video be about", "what's the angle here", "what part of this do people care about", "re-frame this piece", "I don't know how to position this one", and any point where a creator has an idea but has not decided why anyone would watch it.
 ---
 
 # Video Framing
 
-A brain-dump goes in. One chosen video comes out: the angle the creator picked, the payoff the viewer stays for, the person it is for, the format, the goal. vid-title runs next.
+A brain dump goes in. Several genuinely different framings come out with a recommendation, the creator picks one, and the piece leaves with its frame, its core payoff, an understanding of the viewer, its format and its goal on disk.
 
-**Scope: which video this is, never how it gets sold.** No titles, no hooks, no thumbnail text. vid-title does the selling with the banks open.
+```
+Material + avatar → framings + recommendation → pick → the read, format, goal, save
+```
 
-## Core principles
-
-- **The frame is why someone watches, not what happens in the video.** A walkthrough is a format. A tool is a mechanism. "Stop cleaning up after your AI" is a frame. Describe the contents and you have answered a question nobody clicked to ask.
-
-- **Interest comes from which want the video answers, never from better wording.** The same material pointed at a different want is a different video. Choosing the want is the whole job, and because it is a choice, the creator is the one who makes it.
-
-- **Wants are found, not brainstormed.** Each one gets worked out of the dump and the foundation before any frame exists. An angle built on a guessed want is a guess wearing a frame.
-
-- **The person gets written after the pick.** Who the viewer is depends on which want the video answers. Write the person first and the person quietly picks the angle for you, and the creator's choice was never real.
-
-- **Nothing at stake, nothing to click.** If the material has no cost in it, say so out loud instead of inventing one.
-
-- **Never invent.** An angle the material cannot support never gets offered, so there is nothing to walk back later. A missing number is a `> [!todo]`, never a promise in the frame.
+Generate first. Do not interview the creator before you have shown them anything.
 
 ## Before you start
 
-Read only the files a step names. Do not read ahead.
+No `brain-dump.md`, point them at vid-intake. No `creator-foundation.md`, point them at /foundation. If the pipeline invoked this with a slug, do not ask which piece.
 
-Stops: no `brain-dump.md`, point to vid-intake. No `creator-foundation.md`, point to /foundation.
+If piece.md already has a `frame`, this is a re-frame. Ask whether they want fresh directions or that one sharpened, then run stage 1 or skip to stage 3 with `## The Read` replaced rather than appended.
 
-Re-frame: if piece.md already carries a `frame`, look at it and ask whether to spin fresh or sharpen that one.
+---
 
-If the pipeline invokes with a slug, skip the "which piece?" question.
+## 1. Generate
 
-## The workflow
+**Read:** `references/framing.md` · `references/core-payoff.md` · `content/pieces/{slug}/brain-dump.md` · `foundation/creator-foundation.md` 
 
-One pass, three stops. The creator answers one question, picks one video, and sees the read before anything is saved.
+Work these out privately. None of it gets shown.
 
-### 1. Read the material
+- **Every attempt that did not work**, and what went wrong with each. Somebody who never tried needs what's in the video. Somebody who tried three times needs to know why it keeps failing.
+- **What struggle do they think is unique to them?** What would make them feel instantly seen? What shift gives them hope without dismissing the pain?
 
-**REQUIRED READING:**
+Now you need to make sure that truly the audience will care about it and that it's written in a way that genuinely speaks to them and uses precise language and puts things in clear relatable terms that would make them understand and identify with it.
 
-- `knowledge/prose-craft.md`
-- `content/pieces/{slug}/brain-dump.md`
-- `foundation/creator-foundation.md`
+Then write the framings. As many as the material genuinely supports, no target number. Each one aimed the audience and coming at it from a different, intriguing angle and would make the audience want to click.
 
-Work two things out before saying anything.
+Look at the `references/framing.md` to see real worked examples. It's critical you do this.
 
-**What the video is about, versus what merely delivers it.** The topic is this idea with no tool in it. The mechanism is whatever produces the result. Then make the call: would this viewer search for the mechanism by name?
+One core payoff per framing, third person.
 
-- **No: it is delivery.** It stays out of every frame and shows up in the video body, once they already care.
-- **Yes, and it is hot right now: it is the draw.** It can carry the frame, and the format is usually `news`.
-- **Known, not hot: a qualifier.** It narrows a frame without carrying one.
+**Screen before you show.** Anything that fails does not get offered and does not get patched, because a framing that needs defending is one the viewer would have to be talked into too.
 
-The same tool is delivery for one audience and the draw for another, and it flips the week it lands somewhere they read. Call it against this avatar, never in general. Both mistakes are expensive: delivery treated as the draw makes a video about a tool nobody asked about, and the draw buried throws away the exact thing people are searching for this week.
+- The viewer and their failed attempt are identifiable.
+- It opens a question the topic alone does not, and a search cannot answer it in a line.
+- Something in it makes them feel caught, annoyed, curious or wronged.
+- The creator-specific material changes the direction or supplies the proof.
+- The mechanism sits where you put it.
+- The material can carry the answer with nothing invented.
 
-**What the audience gets out of it, at four levels.** What the thing does. What that immediately hands them. What they can then do that they could not before. How that changes how they feel. The first two levels are how the video delivers; the last two are where angles live. A level the dump cannot fill stays empty, and an empty level means the wants are being guessed: that is dig or ceiling territory, never a cue to invent. Each want also carries its situation: which slice of the avatar feels it, and when, so frames come out aimed at a person in a moment rather than at the whole market.
+**Then show it.** Options first, one entry each, blank line between.
 
-None of this reaches the chat. The creator wrote the dump; reading any of it back buys nothing.
+1. **{short handle, so they can say "the third one"}**
 
-**Then say two things.** The mechanism call with its reason in one clause, because it is the one call here the creator can correct and you cannot verify. And the question: do they already have an angle in mind?
+   {the framing}
+   Core payoff: {what they walk away able to do}
 
-**Stop here.** Wait for the answer.
+Handles never get saved. A handle is title shaped and hands vid-title a headline drafted before it looked at anything.
 
-If they have an angle, it competes in step 2 like any other. **It does not skip the rotation.** A first instinct is usually the most obvious take on the topic, which makes it worth comparing rather than adopting. If it wins, say so plainly and pick it.
+Say how many you wrote and how many survived, in a clause. Do not list what got cut, because a framing that failed the screen costs attention to read and invites rescuing. The one exception is the creator's own angle: if you cut that, say so and say where it does belong, or they learn to stop offering one.
 
-### 2. Spin the videos it could be
+Then the recommendation and the dial in a separate message: recommend the one with the strongest combination of a real unresolved question, a specific failed attempt, creator-only proof, and a core payoff that changes a decision. Never because it is practical, broad, safe or easy to film. Dial in one line: more, a different direction, sharper, start again.
 
-**REQUIRED READING:**
+**If the batch misses**, do not reshuffle. Ask two questions: what had they already tried before this and what kept going wrong, and what angle are they leaning toward. What they tried is almost never in the dump because they solved it and moved on, and their angle carries the phrase they have been using in their own head. Then regenerate. Their angle competes rather than skipping the rotation.
 
-- `references/frame-lenses.md`: the want ladder worked end to end, the eight reliable wants, what a frame in each sounds like, and when each one does not apply.
+**If everything comes back flat**, that is evidence rather than failure. Say so and give three options: narrow to the part that does have a stake, let a real number carry it, or film it fast knowing the ceiling.
 
-The angle is the direction. The frame is the sentence that describes it, and it is what gets saved.
+---
 
-1. **One frame per want.** Each want from step 1 that the material can honestly deliver becomes one frame: third person, describing the video from outside it. Never a spoken line, never a pitch, never a headline, never a walkthrough of the contents. Two frames tracing to the same want are one frame written twice, however differently they read. Cut one. This is how the step fails.
+## 2. The pick
 
-2. **Let the grammar follow the want.** Curiosity explains why. Frustration ends something. Familiarity carries its analogy. Identity becomes someone. "A video that shows {who} how to {the change}" is one shape, not the shape: six openings on the same stem read as one idea with six captions, and the pick stops meaning anything.
+**Stop. Nothing gets written until they pick.** A clear choice with a reason means it worked. Taking the recommendation with no comment usually means none of them opened anything, so say what you noticed and hand it back rather than deciding for them.
 
-3. **Give each frame its own core payoff.** The reason a viewer would stay to the end of *that* version, which is almost always the answer to a question already in their head. One thing, plain words, third person so the list scans.
+---
 
-   The test is whether you can name the question. If you cannot, what you have written is a feature, and nobody waits twelve minutes for a feature.
+## 3. Write the read, set the format, save
 
-   - Flat: "a better discovery call framework." Nobody is holding that question.
-   - Sharp: "why they go quiet at the price, and the one question that gets them talking again." They have asked themselves this.
+**Read:** `references/the-read.md` · `references/format-index.md` · `assets/piece-additions.md`
 
-4. **Offer only what passes three tests.** This avatar cares about this want, in this situation. The frame opens a question they are still holding at minute ten. The material can deliver what the frame promises. Fail one and the frame gets cut before the creator sees it. Eight is a ceiling, not a quota: five angles that each answer a different want beat eight with three rewordings in it. Creator conviction is not one of the tests. That is what the pick is for, and guessing it in advance only removes the frame they would have chosen. The mechanism call governs every frame offered, not just the one that wins.
+Ask the cost question first: what does it actually cost them to keep doing it this way. Ask it every time, including when you could write Stakes without it.
 
-5. **Recommend one and say why.** You are a partner with a point of view, not a menu. Recommend the ceiling, not the floor: the angle you would bet on, not the one with the fewest ways to fail. The reason names material, not taste.
+Then three fields, third person, one short paragraph each. Target is the loop they are stuck in as a causal chain ending on a cost. Transformation is what they stop doing and do instead. Stakes take that cost and follow what it causes.
 
-6. **Offer the dial in one line.** More, a different lens, sharper, or rotate again.
+State the format and the goal, do not ask. "Short-process, goal emails. Say the word if either is wrong." Format follows the material and the framing. Goal follows how warm the audience is: cold wants views, warm wants emails, hot wants sales. Leave `voice_context` on `youtube-script` unless the piece genuinely is a different medium.
 
-The shape, one blank line between entries:
+Flip the core payoff to second person. Show the read, then write piece.md, then one line: format, goal, vid-title next.
 
-```
-3. **{short handle, for talking about it}**
-   Frame: {the video described in third person, in the grammar of its want}.
-   Core payoff: {the answer they stay for}.
-```
-
-The handle is a label so the creator can say "the second one." It never gets saved: a handle is title-shaped, and putting one on disk hands vid-title a line drafted before the banks were open. The want label is never shown at all. It is what guarantees the frames are different, and a creator who sees it reads it as the video's category.
-
-**If nothing passes the tests**, that is far better evidence that nothing is at stake here than one failed dig. Say it plainly and give three honest options: narrow to the one part that does have a stake, let a real number carry it, or film it fast and know the ceiling going in. Framing does not kill videos. Measurement does.
-
-**Stop here.** Nothing gets written until a frame is chosen.
-
-The pick locks the frame and its core payoff together, and it doubles as the excitement check, so there is no separate question about whether they like the direction. Choosing it is liking it.
-
-Watch how they pick. A clean choice with a reason attached means the rotation landed. Picking the recommendation with no comment usually means none of the frames opened anything, which is a signal to spin again rather than move on.
-
-### 3. Write the person
-
-**REQUIRED READING:** none. Everything this step needs is already loaded.
-
-The chosen frame names a want. This step writes the person who has it. Three fields, about them, in third person, all pointed at the locked frame.
-
-- **Target.** Who this video is for and the situation they are in, as one causal chain. They want something, but this keeps happening, so they end up doing this, which costs them that. **There is no template here.** Writing "their goal is / their challenge is / their pain point is" produces a form, not a person. The connectives carry it: *but*, *so*, *which means*.
-
-  The middle of the chain is usually the move that keeps them stuck: they add another rule, they fix it themselves, they buy the next tool. It comes out of the material or it does not exist. Never invent one to give the chain a turn.
-
-  - Flat: "coaches who want more clients."
-  - Sharp: "They get plenty of discovery calls booked and they want to convert more of them. But they spend the call proving they're good, running credentials and case studies and the method, so the prospect leaves informed and unconvinced. So they hear 'let me think about it,' and they never find out what the hesitation actually was. Which means every call teaches them nothing and the next one goes the same way."
-
-- **Transformation.** They stop doing X and do Y instead, plus what that gets them. The test is whether something actually changed or they just felt something for a few minutes.
-
-  - Flat: "they close more calls."
-  - Sharp: "They stop performing credibility and start running a diagnosis instead. The prospect does most of the talking, and by the time there's a pitch it's aimed at the thing the prospect actually said, not the thing the coach assumed."
-
-- **Stakes.** Open with "if they keep working the old way," then run a chain where each consequence causes the next. Near the end, name the **misattribution**: what they blame and try to fix instead, because the real cause is invisible to them. Then land it back where Target started.
-
-  A cost worth escalating is almost always one of four things: a bill that arrives late enough that nobody connects it to the cause, a fix that costs more than the problem it solves, a thing that quietly stops happening, or a number they watch that says everything is fine. If the cost you have is none of those, it is a symptom and the real one is further down.
-
-  - Flat: "they lose revenue."
-  - Sharp: "If they keep running calls the old way, the close rate stays where it is and they blame the leads. So they buy more leads. More calls, same conversion, more hours on Zoom for the same money. And because every call ends in a polite maybe, they never hear a real objection, so they never fix the offer either. They start discounting to get someone over the line, which brings in clients who pay less and expect more. Eventually they're working more for less, and it reads like a soft market, when the real problem is a call that never asked a question."
-
-Keep the lanes clean. Target describes the situation and stops; the compounding belongs to Stakes. Transformation is the shift itself, not the tactic that delivers it. Written well the three run as one piece: Target ends on a cost, Stakes compounds that cost, and the last line of Stakes lands on the thing Target opened with.
-
-**If Stakes will not come**, the cost is usually in the creator's head and never made it into the dump, because they have held the position long enough to forget it was ever contested. Ask one question, in flow, in your own words, and stop the moment one opens:
-
-- What do people get wrong about this?
-- What did you believe before? (Their old position is the viewer's current one. This one lands most often.)
-- What does it cost them to keep doing it the way they do now?
-- Who pushed back on this, and what did they say?
-
-Never run all four. That is an interrogation, it makes the creator defensive, and it shuts the door you are opening. If two rounds surface nothing, the video has a modest cost and that is honest: Target runs its chain and stops, Stakes stay small, and the ceiling gets named the same way it was at step 2.
-
-**Stop here.** Show all three fields, one short paragraph each, and nothing else in that message. No format, no goal, no save, no handoff line.
-
-Three downstream skills build on these fields, and a creator who never saw them cannot catch a read aimed at the wrong person. Waiting is also what makes a correction cheap: one message here, a rewrite if vid-intro finds it.
-
-### 4. Lock the format and the goal, then save
-
-**REQUIRED READING:**
-
-- `references/format-index.md`: the seven formats and their jobs.
-- `foundation/voice-profile.md`: the refusals list, so nothing saved carries a banned word.
-- `assets/piece-framing-additions.md`: the exact shape of what gets written.
-
-- **State the format and the goal, do not ask.** "Short-process, goal emails. Say the word if either's wrong." Format follows the material and the frame: a client transformation is a case study, a launch reaction is news, disconnected tips are a listicle. Goal follows audience temperature: cold wants views, warm wants emails, hot wants sales. Both fall out of decisions already made, and asking spends the creator's attention on something they have effectively answered. The reason stays in the conversation. No format rationale gets written to piece.md: the file holds the call, and a justification parked in a schema field is one nothing downstream can read.
-
-- **Set `voice_context` only if this piece is genuinely not a YouTube script.** It defaults to `youtube-script` and decides which reference pieces every downstream writing skill loads, so changing it on a hunch changes the voice of everything after this.
-
-- **Rewrite the core payoff in second person before it goes to disk.** It was written in third person to be scannable in a list. On disk it addresses the viewer: "By the end of this video you'll know why they go quiet at the price, and the one question that gets them talking again." Same answer, same question behind it, nothing added.
-
-- **Write piece.md** per `assets/piece-framing-additions.md`.
-
-- **One line, then hand off.** Format, goal, vid-title next. It never restates the frame they just chose and never stands in for the read.
-
-## Output and handoff
-
-vid-framing appends to the piece.md that vid-intake created and never touches another skill's fields. Ownership lives in `knowledge/piece-contract.md`; the exact shape lives in `assets/piece-framing-additions.md`.
-
-Frontmatter it writes: `frame`, `core_payoff`, `mechanism`, `format`, `goal`, `voice_context`, `last_updated`.
-
-Body it writes: `## The Read` (Target, Transformation, Stakes), plus any withheld proof as a one-line `> [!todo]` kept out of the frame and the payoff. vid-title presses on the Stakes, vid-intro mines them for hooks, vid-structure builds toward the Transformation and orders the points so the payoff lands late.
-
-Prerequisite: vid-intake. Handoff: vid-title.
+---
 
 ## Before you save
 
-- The frame describes a video in third person. If it could be read aloud as a line in the video, or pasted in as a title, it is the wrong shape.
-- The mechanism sits where its call says it belongs: out of every frame offered if it is delivery, in the frame if it is the draw.
-- No stem hardened across the list. The offered frames each opened in the grammar of their own want, and the count was however many wants the material honestly supported, never padded.
-- Every offered frame passed the three tests: this avatar cares, a question stays open, the material can deliver.
-- `core_payoff` answers a question the viewer is actually holding, in second person, one thing, no second clause bolted on. Name the question to yourself. If you cannot, rewrite the payoff.
-- Target is a causal chain, not a filled-in form. If "their goal is" or "their pain point is" appears, rewrite it.
-- Stakes escalate, name the misattribution, and land back where Target started.
-- Every claim traces to the dump, the foundation, or something the creator said in this session. Every gap is a `> [!todo]`.
-- `format` is one of the seven planners and `goal` is set. No rationale for either went to disk.
-- Read every line aloud. Anything the creator would pause and reword gets rewritten. When a line fails and the reason is not obvious, the seven moves in `knowledge/prose-craft.md` are what to check.
-- No em-dashes, no words from the refusals list.
+- The saved `frame` is the framing they picked, word for word. If a word changed, say what changed.
+- The framing carries one direction, and a viewer under a condition rather than inside a category.
+- `core_payoff` names what they can do, decide, diagnose, catch, fix, choose or stop. Second person, one outcome, no second clause bolted on with "and" or "so".
+- `core_payoff` reads clearly cold, does not give away the conclusion, and has no fixed opener. "By the end of this video" is the one that grows back.
+- Target is a causal chain, not a profile. If "their goal is" or "their pain point is" appears, rewrite it.
+- Transformation reaches the same ending as the core payoff.
+- Stakes grow out of Target and land back where it started. A wrong diagnosis appears only if the material gives you one.
+- Stakes belong to this piece. Put another video's framing on the paragraph, and if it would still be true, replace a consequence.
+- Every claim, number and duration traces to the dump, the foundation, or something the creator said. Every gap is a `> [!todo]`.
+- `format` is one of the seven and `goal` is set.
+- No em-dashes and nothing from the refusals list.
 
-## References for depth
+## Never invent
 
-- `knowledge/prose-craft.md`: the seven moves every line in this system is held to. Step 1, and in force from the first message.
-- `references/frame-lenses.md`: the want ladder worked end to end, the eight reliable wants, and where each one does not apply. Step 2, every run.
-- `references/format-index.md`: the seven formats with their views, sales, and trust scores. Step 4.
-- `references/framing-conversation-examples.md`: one worked session from dump to saved piece, plus a dig and a ceiling call. Read once to calibrate pacing, not on every run.
+Every framing, core payoff and line of the read traces to the dump, the foundation, or something the creator said in this session. If the material cannot support an angle, it does not get offered, so there is nothing to walk back later. This applies to what you say in conversation, not only what reaches the file. Be most careful with the creator's own history: telling somebody they spent months on something the material never dated asserts a fact about their life back to them.
+
+## Output and handoff
+
+Appends to the piece.md vid-intake created, never touching a field another skill owns. Ownership is in `knowledge/piece-contract.md`, the exact shape in `assets/piece-additions.md`.
+
+Frontmatter: `frame`, `core_payoff`, `mechanism`, `format`, `goal`, `voice_context`, `last_updated`. Body: `## The Read` with Target, Transformation and Stakes, plus any withheld proof as a `> [!todo]`.
+
+Prerequisite: vid-intake. Handoff: vid-title.
+
+| File | When |
+|---|---|
+| `references/framing.md` | Stage 1 |
+| `references/core-payoff.md` | Stage 1 |
+| `references/the-read.md` | Stage 3 |
+| `references/format-index.md` | Stage 3 |

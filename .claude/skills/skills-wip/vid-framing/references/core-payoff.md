@@ -2,7 +2,7 @@
 name: Core Payoff
 type: skill-local-reference
 loaded_by: vid-framing
-when_to_read: Stage 4, when writing the payoff for each surviving framing
+when_to_read: Stage 1, when writing the payoff for each surviving framing
 ---
 
 # Core Payoff

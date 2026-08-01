@@ -2,7 +2,7 @@
 name: The Read
 type: skill-local-reference
 loaded_by: vid-framing
-when_to_read: Stage 5, after the framing and core payoff are locked
+when_to_read: Stage 3, after the framing and core payoff are locked
 ---
 
 # The Read

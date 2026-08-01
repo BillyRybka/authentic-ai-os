@@ -1,190 +1,366 @@
 ---
 name: vid-framing
-description: Turn a video idea into a decided video. Works out what this audience actually wants from the material, writes several genuinely different framings of the same idea, screens them, and lets the creator pick one. Then writes the core payoff, the target, transformation and stakes, the format and the goal, and saves all of it to piece.md before handing to vid-title. Use this whenever a piece needs its direction decided, including when the creator never says the word "frame". Triggers include "frame this video", "pick the angle", "what should this video be about", "what's the angle here", "what part of this do people care about", "re-frame this piece", "I don't know how to position this one", and any point where a creator has an idea but has not decided why anyone would watch it.
+description: Transform a video idea into 3-5 distinct, audience-specific concepts with a clear Strategic Frame, Framing Expression, and Grand Payoff. Use when developing video angles, positioning content, or finding the strongest psychological entry point.
 ---
 
 # Video Framing
 
-A brain dump goes in. Several genuinely different framings of the same material come out, each one hitting the deeper desire, fear, want or need the viewer has about this topic. The creator picks one, and the piece leaves with its frame, its core payoff, an understanding of the viewer, its format and its goal for the business.
+Turn a broad video idea into a concept the target audience feels was made specifically for them.
 
-```
-Material + avatar → core desire → framings → screen → pick → the read → save
-```
+## What This Creates
 
-Six stages, five of which the creator sees. Read the file a stage names when you reach it.
+For one video idea, create 3-5 distinct framing options.
 
-This skill decides the most interesting and compelling way to frame the raw idea and braindump.
+Each option includes:
 
-## Before you start
+- **Strategic Frame:** What the video is actually doing
+- **Framing Expression:** One natural audience-facing statement
+- **Grand Payoff:** What the viewer receives by staying to the end
+- **Framing DNA:** The patterns used
+- **Psychological Hook:** The audience tension being targeted
+- **Why They Will Stop Scrolling:** Why this viewer needs this video now
+- **Must Deliver:** What the video must prove or reveal
 
-No `brain-dump.md`, point them at vid-intake. No `creator-foundation.md`, point them at /foundation.
+The Strategic Frame determines the video.
 
-If piece.md already has a `frame`, this is a re-frame. Ask whether they want fresh directions or that one sharpened. Sharpening stays on the same want, offers a few tighter versions, and skips to stage 5 with `## The Read` replaced rather than appended.
+The Framing Expression earns attention.
 
-If the pipeline invoked this with a slug, do not ask which piece.
+The Grand Payoff rewards it.
 
----
+## Essential Principles
 
-## 1. Read the material and ask
+1. **Frame the viewer's problem, not just the topic.**
+2. **Build the Strategic Frame before writing the Framing Expression.**
+3. **Use one primary pattern and up to two supporting patterns.**
+4. **Make every option a meaningfully different video.**
+5. **Use specific audience context without inventing facts, stories, or results.**
+6. **Create curiosity the video can genuinely satisfy.**
+7. **Prefer three strong options over five repetitive ones.**
 
-**Read:** `content/pieces/{slug}/brain-dump.md` · `foundation/creator-foundation.md` · `foundation/voice-profile.md` · `knowledge/prose-craft.md` if the vault has one
+## Audience Context
 
-Two things to find, both privately.
+Required Reading: `foundation/avatar.md` 
 
-**Every attempt that did not work.** Each distinct one and what went wrong with it. A dump usually holds three or four and names one out loud.
+Use only the audience details relevant to the current idea:
 
-Weak: *they had tried prompting it.* Strong: *the rule in the prompt, then in project instructions, then in a memory file. Same shape three times, failing the same way each time.* The pattern across the attempts is the finding, not the list. Somebody who never tried needs the method, somebody who tried three times needs to know why it keeps failing, and those are two different videos.
+- Desired result
+- Current situation
+- Pain points
+- Failed attempts
+- Beliefs
+- Fears
+- Internal language
+- Desired transformation
 
-**What only this creator has.** The version that failed, the client, the number, the position they changed their mind about.
+Do not require a separate audience-building process.
 
-Weak: *he has experience with this.* Strong: *four clients lost in one year, every one blamed on delivery.* A number and a wrong belief, and neither one is available to anybody else making this video.
+## Process
 
-**Call the mechanism.** The mechanism is whatever produces the result, and the call is whether it can appear in a framing.
+### 1. Read the References
 
-- **Delivery.** This viewer would not search for it by name. Stays out of every framing, appears in the body once they care.
-- **The draw.** It has its own search demand, usually because it is new or trending. It can carry the framing, and the format is often `news`.
-- **Qualifier.** Known but not hot. Narrows a framing without carrying one.
+Read:
 
-Call it against this avatar, not in general. A linter plus a banned-word list, aimed at business owners who write with Claude, is delivery, because they would never search for a linter by name. The same tool aimed at developers who already run linters is a qualifier. It flips again the week it lands somewhere they read.
+- `references/patterns.md`
+- `references/examples.md`
+- `content/pieces/{slug}/brain-dump.md` when framing an existing piece; otherwise work from the idea the creator gives directly
+- `foundation/avatar.md` when using the default audience
+- `foundation/iceberg.md` (Iceberg statement, machinery, content notes, the 8 pillars)
 
-**Send one short message.** The mechanism and its kind in a clause, then two questions: what had they already tried before this and what kept going wrong, and whether they already have an angle in mind.
+These are the only foundation files this skill reads.
 
-Ask both. What they tried is almost never in the dump, because they solved it and moved on. Their angle carries the phrase they have been using in their own head.
+Use the pattern file for selection and blending.
 
-**Stop.** Their answers change the next stage, so nothing gets written until they land.
+Use the examples file for quality calibration.
 
----
+Do not repeat their teaching inside the output.
 
-## 2. Land the core desire
+### 2. Find the Audience Entry Point
 
-**Read:** `references/core-desire.md`
+Identify the thought or tension already present in the viewer's mind before they see the video.
 
-Their answers are in. Take what the material offers and climb: what does that get them, then what does that get them, until the answers stop getting bigger. Then come back down one rung, because the top of any ladder is the biggest claim and the vaguest promise, and nobody can picture a vague promise.
+Ask internally:
 
-The climb is working. One rung is the output.
+- What do they want from this topic?
+- What have they already tried?
+- Why do they think it is not working?
+- What are they afraid the problem says about them?
+- What would make them feel immediately understood?
+- What would they need to believe the video?
 
-**Say it in one sentence and stop.** Every framing is aimed at this, so a wrong rung wastes the whole set. One line, then wait.
+The best framing usually begins with a gap between:
 
----
+- Effort and results
+- Belief and reality
+- Common advice and lived experience
+- Current state and desired outcome
+- What the viewer sees and what is actually causing it
 
-## 3. Write the framings
+### 3. Scan the Market
 
-**Read:** `references/framing.md`
+Use `banks/pattern-bank.md` when it exists (built by `vid-research`).
 
-Internal. Nothing is shown yet.
+Read:
 
-Every framing serves the core desire and is aimed at somebody with a specific failed attempt behind them. Write as many as the material genuinely supports and no more. There is no target number.
+- The **Synthesis** sections (convergent, niche-specific, adjacent, unique)
+- The **Confirmed winners**
+- The **per-channel raw outlier rows** (winning titles, views, xMed)
 
-Each one has to change what the viewer is waiting to find out. Variety is not a different emotional register, a different benefit, a different adjective, or more urgency on the same want.
+Extract:
 
-No two share an opening or a shape. Two that both start "Show the business owner who" are one framing wearing different words, whatever the rest of the sentence says. At least one in the set should read like it came from a different video entirely.
+- Proven topic clusters
+- Outlier title structures
+- Emotional angles
+- Proof mechanisms
+- Saturated framings
+- Missing perspectives
+- Questions competitors leave unresolved
 
-Under each, privately finish the sentence: the viewer wants to know whether... If two of those come out substantially the same, keep one.
+Use the market scan to inform demand and packaging.
 
----
+Do not copy titles.
 
-## 4. Screen, then offer
+Do not let the market choose the angle instead of the audience.
 
-**Read:** `references/core-payoff.md`
+If the pattern bank does not exist yet, continue without it.
 
-Six checks, run privately. Anything that fails one does not get offered and does not get patched, because a framing that needs defending is one the viewer would have to be talked into too.
+### 4. Create Distinct Strategic Frames
 
-- The viewer and their failed attempt are identifiable.
-- It opens a question the topic alone does not, and a search cannot answer the whole thing in a line.
-- Something in it makes them feel caught, annoyed, curious or wronged. A framing can be structurally correct and dead on the page.
-- The creator-specific material changes the direction or supplies the proof.
-- The mechanism sits where stage 1 put it. A delivery mechanism that reappeared inside the sentence fails here, not later.
-- The material can carry the answer with nothing invented.
+Generate several framing territories using `references/patterns.md`.
 
-Whether the creator is excited about a version is what the pick is for. Do not ask it here.
+Each Strategic Frame should establish:
 
-Write one core payoff per survivor, third person.
+- Who the video is for
+- Their current situation
+- The central problem, belief, or desire
+- The story, mechanism, test, analysis, or process used
+- What changes for the viewer by the end
 
-**First message, the options and the cuts.** One entry each, blank line between.
+Each option must change the substance of the video, not just the wording.
 
-3. **{short handle, so they can say "the third one"}**
-   {the framing}
-   Core payoff: {what they walk away able to do}
+Good batch variety may include:
 
-Handles never get saved. A handle is title shaped, and putting one on disk hands vid-title a headline drafted before it looked at anything.
+- Story-led
+- Diagnostic or mechanism-led
+- Proof or experiment-led
+- Practical or system-led
+- Contrarian or belief-shifting
 
-Then the cuts, a clause each. If one of them was the angle they gave you at stage 1, say so explicitly.
+Do not force a pattern that does not fit the available evidence.
 
-**Second message, the recommendation and the dial.** Recommend the one with the strongest combination of a real unresolved question, a specific failed attempt, creator-only proof, and a core payoff that changes a decision. Never recommend one because it is practical, broad, safe or easy to film. Then the dial in one line: more, a different direction, sharper, start again.
+### 5. Define the Grand Payoff
 
-Two messages rather than one, because a wall of options, cuts, recommendation and dial gives them everything to read before they can react to any of it.
+For each Strategic Frame, define the main reason to watch until the end.
 
-**If everything comes back flat**, that is better evidence that nothing is at stake here than one failed dig. Say so and give three options: narrow to the part that does have a stake, let a real number carry it, or film it fast knowing the ceiling. Flat means no distinct wants. It does not mean undramatic, and plenty of good educational videos pay off with a verdict or a number.
+The Grand Payoff should resolve a clear question through:
 
-**Stop. Nothing gets written until they pick.** The pick locks the framing and its core payoff together and doubles as the excitement check. A clear choice with a reason means the rotation worked. Taking the recommendation with no comment usually means none of them opened anything, so say what you noticed and hand it back rather than deciding for them.
+- An answer
+- A verdict
+- A realization
+- A result
+- A decision
+- A practical transformation
 
----
+Avoid vague payoffs such as:
 
-## 5. Write who this is for, what changes for them, and what it costs
+> The viewer learns how to grow.
 
-**Read:** `references/the-read.md`
+Prefer:
 
-Ask the cost question first, before writing anything: what does it actually cost them to keep doing it this way. Ask it every time, including when you could write Stakes without it.
+> The viewer identifies the main reason their consistent uploads are not producing growth and knows what to change first.
 
-Then three fields on the locked framing, third person, one short paragraph each. Target is the loop they are stuck in, as a causal chain ending on a cost. Transformation is what they stop doing and do instead. Stakes take that cost and follow what it causes.
+### 6. Write the Framing Expression
 
-**Stop.** Show the three fields and nothing else in that message. Three downstream skills build on this, and a creator who never saw it cannot catch a read aimed at the wrong person.
+Compress the Strategic Frame into one natural audience-facing statement.
 
----
+It should:
 
-## 6. Set the format and the goal, then save
+- Sound natural aloud
+- Preserve the central tension
+- Reflect the intended viewer
+- Suggest the Grand Payoff
+- Open a meaningful curiosity gap
+- Avoid unsupported specificity
+- Avoid obvious marketing formulas
 
-**Read:** `references/format-index.md` · `assets/piece-additions.md`
+Do not assume the Framing Expression is the final title.
 
-State the format and the goal, do not ask. "Short-process, goal emails. Say the word if either is wrong." Format follows the material and the framing. Goal follows how warm the audience is: cold wants views, warm wants emails, hot wants sales.
+Do not force every expression into:
 
-Leave `voice_context` on `youtube-script` unless the piece genuinely is a different medium. A walkthrough is still a YouTube script.
+- "How to"
+- "Why"
+- "I tried"
+- "What nobody tells you"
+- "The secret"
+- "The ultimate guide"
 
-Flip the core payoff to second person. Nothing else changes on the way to disk.
+A colon is allowed when it reads naturally. Do not use it to join two weak ideas.
 
-Write piece.md, then one line: format, goal, vid-title next.
+### 7. Define What the Video Must Deliver
 
----
+State the minimum content required to fulfill the promise.
 
-## Before you save
+Examples:
 
-- The saved `frame` is the framing they picked, word for word. If a word has to change, say what changed in the same message.
-- The framing carries one direction, and a viewer under a condition rather than inside a category.
-- The framing opens a question the topic alone does not.
-- The mechanism sits where its kind says it belongs.
-- `core_payoff` names what they can do, decide, diagnose, catch, fix, choose or stop. Second person, one outcome.
-- `core_payoff` reads clearly cold, does not give away the conclusion, and would not survive the video reaching a different one.
-- `core_payoff` has no fixed opener. "By the end of this video" is the one that grows back.
-- Target is a causal chain, not a profile. If "their goal is" or "their pain point is" appears, rewrite it.
-- Transformation reaches the same ending as the core payoff.
-- Stakes grow out of Target and land back where it started. A wrong diagnosis appears only if the material gives you one.
-- Stakes belong to this piece. Put another video's framing on the paragraph. If it would still be true, replace a consequence with something that only follows from this video.
-- Every claim, number, proportion and duration traces to the dump, the foundation, or something the creator said in this session. Every gap is a `> [!todo]`.
-- `format` is one of the seven and `goal` is set.
-- Read every line aloud. Anything the creator would pause and reword gets rewritten.
-- No em-dashes and nothing from the refusals list.
+- Reveal the exact behavior that caused the problem
+- Explain the hidden mechanism clearly
+- Show the experiment conditions and result
+- Demonstrate a credible before and after
+- Provide a decision rule the viewer can use
+- Prove why the apparent solution is failing
 
-## Never invent
+Reject any frame the creator cannot honestly support.
 
-Every framing, core payoff and line of the read traces to the dump, the foundation, or something the creator said in this session. If the material cannot support an angle, it does not get offered, so there is nothing to walk back later.
+### 8. Validate
 
-This covers quantities as much as claims, and it applies to what you say in conversation, not only what reaches the file. Be most careful with the creator's own history: telling somebody they spent months on something the material never dated asserts a fact about their life back to them, and they will either correct you or believe you.
+Every option must pass:
 
-## Output and handoff
+1. **Audience Relevance**
 
-Appends to the piece.md vid-intake created, never touching a field another skill owns. Ownership is in `knowledge/piece-contract.md`, the exact shape in `assets/piece-additions.md`.
+  - Does it target a specific goal, pain point, belief, or fear?
 
-Frontmatter: `frame`, `core_payoff`, `mechanism`, `format`, `goal`, `voice_context`, `last_updated`. Body: `## The Read` with Target, Transformation and Stakes, plus any withheld proof as a `> [!todo]` kept out of both the frame and the core payoff.
+2. **Emotional Pull**
 
-Prerequisite: vid-intake. Handoff: vid-title.
+  - Does it create recognition, hope, concern, relief, frustration, or curiosity?
 
-## References
+3. **Curiosity Depth**
 
-| File | When |
+  - Does the viewer need the video to resolve the question?
+
+4. **Strategic Substance**
+
+  - Is there enough here for a meaningful video?
+
+5. **Grand Payoff Clarity**
+
+  - Is the end result specific and worth staying for?
+
+6. **Credibility**
+
+  - Can the creator support the claim? Check `foundation/credibility.md` (the three proof points) when a frame leans on the creator's own results.
+
+7. **Channel Fit**
+
+  - Does it align with the Iceberg statement and pillars in `foundation/iceberg.md`?
+
+8. **Distinctiveness**
+
+  - Is it different from the other options and common market framings?
+
+Revise or remove any option that fails audience relevance, substance, payoff, credibility, or channel fit.
+
+Do not display scores unless requested.
+
+## Channel Positioning
+
+Use `foundation/iceberg.md` (Iceberg statement, machinery, content notes, the 8 pillars) as the final filter.
+
+- Stay within the creator's pillars
+- Support the transformation the Iceberg statement promises
+- Do not drift into generic advice outside the creator's lane
+- Do not use internal brand language in the Framing Expression unless the audience understands it
+
+## Anti-Formulaic Guard
+
+- Use a different primary pattern for each option
+- Do not repeat the same pattern blend in one batch
+- Do not make every option personal-story-led
+- Vary the emotional entry point
+- Vary the source of curiosity
+- Include at least one option from a different video genre
+- Remove options that are only rewrites of the same idea
+
+## Output Format
+
+## Option [Number]: [Short Working Label]
+
+**Strategic Frame:**  
+[One concise paragraph describing the video direction.]
+
+**Framing Expression:**  
+"[One clean, natural audience-facing statement.]"
+
+**Grand Payoff:**  
+[The answer, result, realization, verdict, or transformation delivered by the end.]
+
+**Framing DNA:**  
+[Primary pattern] + [Supporting pattern] + [Optional supporting pattern]
+
+**Psychological Hook:**  
+[The audience belief, pain point, fear, desire, or internal tension being targeted.]
+
+**Why They Will Stop Scrolling:**  
+[Why this specific viewer needs this video now.]
+
+**Must Deliver:**  
+[What the video must prove, reveal, or demonstrate.]
+
+After all options:
+
+## Recommendation
+
+**Strongest Direction:** [Option name]
+
+[Briefly explain why it has the best combination of audience relevance, emotional pull, curiosity, credibility, Grand Payoff, and channel fit.]
+
+**Creator Check:**  
+Does this direction feel exciting enough to make, or is another option more compelling?
+
+The creator's passion is the only validation point the skill cannot decide.
+
+## When a Batch Is Rejected
+
+Do not simply rewrite the expressions or reshuffle patterns.
+
+Identify the likely failure:
+
+- The topic was framed instead of the viewer
+- The audience entry point was too broad
+- The options used the same emotional angle
+- The Grand Payoff was weak
+- The expression was stronger than the actual video
+- The concept required unavailable proof
+- The options did not fit the channel
+- The market scan influenced the angle too heavily
+- The wording felt formulaic
+
+Generate new Strategic Frame territories before writing new expressions.
+
+## After a Direction Is Selected
+
+Once the user selects a direction:
+
+1. Keep the Strategic Frame fixed
+2. Keep the Grand Payoff fixed
+3. Generate 3-5 Framing Expression variations
+4. Vary wording, emphasis, and curiosity
+5. Recommend the strongest expression
+6. Do not turn the variations into different videos
+
+## Final Check
+
+Before presenting the batch, confirm:
+
+- Are these genuinely different videos?
+- Is each option built around the audience?
+- Is each Strategic Frame clear?
+- Does each expression accurately represent the video?
+- Is each Grand Payoff worth staying for?
+- Can every claim be supported?
+- Does every option fit the channel?
+- Have generic and repetitive options been removed?
+
+Only output the strongest options.
+
+## Reference Files
+
+| Need | Read |
 |---|---|
-| `references/core-desire.md` | Stage 2 |
-| `references/framing.md` | Stage 3 |
-| `references/core-payoff.md` | Stage 4 |
-| `references/the-read.md` | Stage 5 |
-| `references/format-index.md` | Stage 6 |
-| `references/worked-example.md` | Once, to calibrate pacing |
+| Pattern selection and blending | `references/patterns.md` |
+| Annotated quality examples | `references/examples.md` |
+| Default audience | `foundation/avatar.md` (avatar, Top 3 perceived problems) |
+| Channel positioning | `foundation/iceberg.md` (Iceberg statement, machinery, content notes, 8 pillars) |
+| Proof check, when a frame leans on creator results | `foundation/credibility.md` |
+| Market signal, when present | `banks/pattern-bank.md` |
+| Raw material, when framing a piece | `content/pieces/{slug}/brain-dump.md` |
+
+This table is exhaustive. Read nothing outside it.

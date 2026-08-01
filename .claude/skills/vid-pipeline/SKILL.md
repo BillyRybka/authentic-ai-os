@@ -55,11 +55,11 @@ Pass the absolute folder to every sub-skill in the context line, for the same re
 
 Two checks, both silent. Surface output only if action is needed.
 
-**Foundation (hard).** If `foundation/creator-foundation.md` doesn't exist, halt and point at `/foundation`:
+**Foundation (hard).** If `foundation/iceberg.md` or `foundation/avatar.md` doesn't exist, halt and point at `/foundation`:
 
 > "No foundation yet. The pipeline writes from your avatar, Iceberg, and pillars. Run `/foundation` first, then come back."
 
-Do not route further until foundation exists.
+Do not route further until both exist. Checking existence is not reading; the orchestrator loads neither file. Each sub-skill reads the foundation files it needs, never the whole set.
 
 **Voice (soft).** If `foundation/voice-profile.md` doesn't exist, warn once and continue:
 
