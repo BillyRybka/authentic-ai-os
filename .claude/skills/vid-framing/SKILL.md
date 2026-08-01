@@ -1,6 +1,6 @@
 ---
 name: vid-framing
-description: Transform a video idea into 3-5 distinct, audience-specific concepts with a clear Strategic Frame, Framing Expression, and Grand Payoff. Use when developing video angles, positioning content, or finding the strongest psychological entry point.
+description: Transform a video idea into 3-5 distinct, audience-specific concepts with a clear Strategic Frame, Framing Expression, and Core Payoff. Use when developing video angles, positioning content, or finding the strongest psychological entry point.
 ---
 
 # Video Framing
@@ -15,7 +15,7 @@ Each option includes:
 
 - **Strategic Frame:** What the video is actually doing
 - **Framing Expression:** One natural audience-facing statement
-- **Grand Payoff:** What the viewer receives by staying to the end
+- **Core Payoff:** What the viewer receives by staying to the end
 - **Framing DNA:** The patterns used
 - **Psychological Hook:** The audience tension being targeted
 - **Why They Will Stop Scrolling:** Why this viewer needs this video now
@@ -25,7 +25,7 @@ The Strategic Frame determines the video.
 
 The Framing Expression earns attention.
 
-The Grand Payoff rewards it.
+The Core Payoff rewards it.
 
 ## Essential Principles
 
@@ -36,23 +36,6 @@ The Grand Payoff rewards it.
 5. **Use specific audience context without inventing facts, stories, or results.**
 6. **Create curiosity the video can genuinely satisfy.**
 7. **Prefer three strong options over five repetitive ones.**
-
-## Audience Context
-
-Required Reading: `foundation/avatar.md` 
-
-Use only the audience details relevant to the current idea:
-
-- Desired result
-- Current situation
-- Pain points
-- Failed attempts
-- Beliefs
-- Fears
-- Internal language
-- Desired transformation
-
-Do not require a separate audience-building process.
 
 ## Process
 
@@ -95,35 +78,7 @@ The best framing usually begins with a gap between:
 - Current state and desired outcome
 - What the viewer sees and what is actually causing it
 
-### 3. Scan the Market
-
-Use `banks/pattern-bank.md` when it exists (built by `vid-research`).
-
-Read:
-
-- The **Synthesis** sections (convergent, niche-specific, adjacent, unique)
-- The **Confirmed winners**
-- The **per-channel raw outlier rows** (winning titles, views, xMed)
-
-Extract:
-
-- Proven topic clusters
-- Outlier title structures
-- Emotional angles
-- Proof mechanisms
-- Saturated framings
-- Missing perspectives
-- Questions competitors leave unresolved
-
-Use the market scan to inform demand and packaging.
-
-Do not copy titles.
-
-Do not let the market choose the angle instead of the audience.
-
-If the pattern bank does not exist yet, continue without it.
-
-### 4. Create Distinct Strategic Frames
+### 3. Create Distinct Strategic Frames
 
 Generate several framing territories using `references/patterns.md`.
 
@@ -147,11 +102,11 @@ Good batch variety may include:
 
 Do not force a pattern that does not fit the available evidence.
 
-### 5. Define the Grand Payoff
+### 4. Define the Core Payoff
 
 For each Strategic Frame, define the main reason to watch until the end.
 
-The Grand Payoff should resolve a clear question through:
+The Core Payoff should resolve a clear question through:
 
 - An answer
 - A verdict
@@ -168,7 +123,7 @@ Prefer:
 
 > The viewer identifies the main reason their consistent uploads are not producing growth and knows what to change first.
 
-### 6. Write the Framing Expression
+### 5. Write the Framing Expression
 
 Compress the Strategic Frame into one natural audience-facing statement.
 
@@ -177,7 +132,7 @@ It should:
 - Sound natural aloud
 - Preserve the central tension
 - Reflect the intended viewer
-- Suggest the Grand Payoff
+- Suggest the Core Payoff
 - Open a meaningful curiosity gap
 - Avoid unsupported specificity
 - Avoid obvious marketing formulas
@@ -195,7 +150,7 @@ Do not force every expression into:
 
 A colon is allowed when it reads naturally. Do not use it to join two weak ideas.
 
-### 7. Define What the Video Must Deliver
+### 6. Define What the Video Must Deliver
 
 State the minimum content required to fulfill the promise.
 
@@ -210,7 +165,7 @@ Examples:
 
 Reject any frame the creator cannot honestly support.
 
-### 8. Validate
+### 7. Validate
 
 Every option must pass:
 
@@ -230,13 +185,13 @@ Every option must pass:
 
   - Is there enough here for a meaningful video?
 
-5. **Grand Payoff Clarity**
+5. **Core Payoff Clarity**
 
   - Is the end result specific and worth staying for?
 
 6. **Credibility**
 
-  - Can the creator support the claim? Check `foundation/credibility.md` (the three proof points) when a frame leans on the creator's own results.
+  - Can the creator support the claim based on the Braindump.
 
 7. **Channel Fit**
 
@@ -279,7 +234,7 @@ Use `foundation/iceberg.md` (Iceberg statement, machinery, content notes, the 8 
 **Framing Expression:**  
 "[One clean, natural audience-facing statement.]"
 
-**Grand Payoff:**  
+**Core Payoff:**  
 [The answer, result, realization, verdict, or transformation delivered by the end.]
 
 **Framing DNA:**  
@@ -300,7 +255,7 @@ After all options:
 
 **Strongest Direction:** [Option name]
 
-[Briefly explain why it has the best combination of audience relevance, emotional pull, curiosity, credibility, Grand Payoff, and channel fit.]
+[Briefly explain why it has the best combination of audience relevance, emotional pull, curiosity, credibility, Core Payoff, and channel fit.]
 
 **Creator Check:**  
 Does this direction feel exciting enough to make, or is another option more compelling?
@@ -316,7 +271,7 @@ Identify the likely failure:
 - The topic was framed instead of the viewer
 - The audience entry point was too broad
 - The options used the same emotional angle
-- The Grand Payoff was weak
+- The Core Payoff was weak
 - The expression was stronger than the actual video
 - The concept required unavailable proof
 - The options did not fit the channel
@@ -330,7 +285,7 @@ Generate new Strategic Frame territories before writing new expressions.
 Once the user selects a direction:
 
 1. Keep the Strategic Frame fixed
-2. Keep the Grand Payoff fixed
+2. Keep the Core Payoff fixed
 3. Generate 3-5 Framing Expression variations
 4. Vary wording, emphasis, and curiosity
 5. Recommend the strongest expression
@@ -344,7 +299,7 @@ Before presenting the batch, confirm:
 - Is each option built around the audience?
 - Is each Strategic Frame clear?
 - Does each expression accurately represent the video?
-- Is each Grand Payoff worth staying for?
+- Is each Core Payoff worth staying for?
 - Can every claim be supported?
 - Does every option fit the channel?
 - Have generic and repetitive options been removed?
@@ -359,8 +314,6 @@ Only output the strongest options.
 | Annotated quality examples | `references/examples.md` |
 | Default audience | `foundation/avatar.md` (avatar, Top 3 perceived problems) |
 | Channel positioning | `foundation/iceberg.md` (Iceberg statement, machinery, content notes, 8 pillars) |
-| Proof check, when a frame leans on creator results | `foundation/credibility.md` |
-| Market signal, when present | `banks/pattern-bank.md` |
 | Raw material, when framing a piece | `content/pieces/{slug}/brain-dump.md` |
 
 This table is exhaustive. Read nothing outside it.

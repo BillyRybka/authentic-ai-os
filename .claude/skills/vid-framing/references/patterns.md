@@ -6,7 +6,7 @@ A pattern is not a complete frame by itself. It is a creative direction that can
 
 - The **Strategic Frame**, which defines what the video is actually doing
 - The **Framing Expression**, which compresses that direction into a compelling audience-facing statement
-- The **Grand Payoff**, which defines what the viewer receives by watching to the end
+- The **Core Payoff**, which defines what the viewer receives by watching to the end
 
 Choose patterns based on the audience's goals, fears, frustrations, beliefs, and current stage.
 
@@ -392,7 +392,7 @@ Before using a pattern, confirm:
 - Does it create an emotional or intellectual reaction?
 - Does it open a curiosity gap the video can resolve?
 - Is the claim honest and supportable?
-- Is the Grand Payoff clear?
+- Is the Core Payoff clear?
 - Can the video fully deliver what the Framing Expression implies?
 
 Patterns generate possibilities.
@@ -403,4 +403,4 @@ The Strategic Frame determines the video.
 
 The Framing Expression earns attention.
 
-The Grand Payoff rewards it.
+The Core Payoff rewards it.

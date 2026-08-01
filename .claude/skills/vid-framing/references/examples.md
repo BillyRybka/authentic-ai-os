@@ -10,9 +10,9 @@ Each example below includes three connected elements:
 
 **Framing Expression:** A concise, audience-facing expression of that direction. This may inspire the title, premise, hook, or packaging.
 
-**Grand Payoff:** The main answer, realization, result, or transformation the viewer receives by watching to the end.
+**Core Payoff:** The main answer, realization, result, or transformation the viewer receives by watching to the end.
 
-The framing expression attracts attention. The strategic frame determines what the video is actually about. The Grand Payoff gives the viewer a reason to stay.
+The framing expression attracts attention. The strategic frame determines what the video is actually about. The Core Payoff gives the viewer a reason to stay.
 
 # Good Examples
 
@@ -29,7 +29,7 @@ A personal transformation story showing how a creator remained stuck at 57 subsc
 **Framing Expression:**  
 "I stayed at 57 subscribers for 6 months until I stopped doing what everyone told me to do"
 
-**Grand Payoff:**  
+**Core Payoff:**  
 The viewer discovers which popular behavior kept the creator stuck, why it failed at such an early stage, and what the creator did differently to begin building momentum.
 
 **Framing DNA:**  
@@ -68,7 +68,7 @@ A diagnostic video showing how a small creator's most polished or personally sat
 **Framing Expression:**  
 "Why your best videos are probably killing your channel growth"
 
-**Grand Payoff:**  
+**Core Payoff:**  
 The viewer learns how to identify whether their supposed best videos are building momentum or quietly teaching them to repeat ideas that the intended audience does not want.
 
 **Framing DNA:**  
@@ -107,7 +107,7 @@ A reflective personal story built around the moment a struggling creator finally
 **Framing Expression:**  
 "The day I realized why my channel wasn't growing changed everything"
 
-**Grand Payoff:**  
+**Core Payoff:**  
 The viewer reaches the same realization as the creator and gains a new way to interpret their own lack of growth.
 
 **Framing DNA:**  
@@ -146,7 +146,7 @@ A review and synthesis video in which a creator compares the lessons gained from
 **Framing Expression:**  
 "I spent $3,000 on YouTube courses and they all missed this one thing"
 
-**Grand Payoff:**  
+**Core Payoff:**  
 The viewer discovers the recurring gap across the courses and learns how to address it without buying another program.
 
 **Framing DNA:**  
@@ -186,7 +186,7 @@ A direct explanation of the hidden emotional and strategic problems creators exp
 **Framing Expression:**  
 "What nobody tells you about being stuck at 200 subscribers"
 
-**Grand Payoff:**  
+**Core Payoff:**  
 The viewer understands why this stage feels so difficult and learns which channel problem deserves attention before they continue uploading in the same way.
 
 **Framing DNA:**  
@@ -231,7 +231,7 @@ A behind-the-scenes personal story showing how a gaming creator secured a first 
 **Framing Expression:**  
 "I got my first sponsor at 2,000 subscribers and the email I sent was embarrassingly simple"
 
-**Grand Payoff:**  
+**Core Payoff:**  
 The viewer sees the exact kind of outreach that worked and realizes that they may already be large enough to approach relevant brands.
 
 **Framing DNA:**  
@@ -275,7 +275,7 @@ A mistake-driven case study showing how an established educator rejected three u
 **Framing Expression:**  
 "I turned down three brand deals before I realized I was negotiating wrong"
 
-**Grand Payoff:**  
+**Core Payoff:**  
 The viewer learns which negotiation mistake was weakening otherwise promising opportunities and how to evaluate future offers more strategically.
 
 **Framing DNA:**  
@@ -313,7 +313,7 @@ The gaming creator needs permission, proof, and a low-pressure first action. The
 
 Neither framing should be transferred directly to the other audience.
 
-Strong framing does not simply place a new title on the same information. It changes the central problem, the emotional stakes, the examples, the argument, and the Grand Payoff.
+Strong framing does not simply place a new title on the same information. It changes the central problem, the emotional stakes, the examples, the argument, and the Core Payoff.
 
 # Bad Examples
 
@@ -445,11 +445,11 @@ Behind it, the video still needs:
 2. A clearly understood audience.
 3. An emotionally relevant problem or desire.
 4. A meaningful curiosity gap.
-5. A Grand Payoff that resolves the central question.
+5. A Core Payoff that resolves the central question.
 6. Content that fully delivers on the promise.
 
 The framing expression earns the click.
 
 The strategic frame determines the video.
 
-The Grand Payoff earns the viewer's attention until the end.
+The Core Payoff earns the viewer's attention until the end.
