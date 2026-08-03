@@ -4,15 +4,13 @@ Study these examples before developing a video idea. Match this level of audienc
 
 A strong frame is more than a catchy sentence.
 
-Each example below includes three connected elements:
+Each example below includes two connected elements:
 
-**Strategic Frame:** The specific direction the video will take. This guides the content, argument, examples, and structure.
-
-**Framing Expression:** A concise, audience-facing expression of that direction. This may inspire the title, premise, hook, or packaging.
+**Frame:** The specific direction the video will take. This guides the content, argument, examples, and structure.
 
 **Core Payoff:** The main answer, realization, result, or transformation the viewer receives by watching to the end.
 
-The framing expression attracts attention. The strategic frame determines what the video is actually about. The Core Payoff gives the viewer a reason to stay.
+The frame determines what the video is actually about. The Core Payoff gives the viewer a reason to stay.
 
 # Good Examples
 
@@ -23,11 +21,9 @@ The video idea is "how to get more YouTube subscribers."
 
 The audience is a creator with 57 subscribers after six months. They have followed popular YouTube advice, uploaded consistently, and tried to improve. Nothing seems to be working. They feel invisible and are beginning to fear that they are not cut out for YouTube.
 
-**Strategic Frame:**  
-A personal transformation story showing how a creator remained stuck at 57 subscribers while following conventional growth advice, then escaped the pattern by rejecting one commonly recommended behavior and replacing it with a more audience-focused approach.
+**Frame:**  
+A story about how the advice every creator repeats is what kept one channel stuck at 57 subscribers for six months, and the thing they did instead that finally blew it up.
 
-**Framing Expression:**  
-"I stayed at 57 subscribers for 6 months until I stopped doing what everyone told me to do"
 
 **Core Payoff:**  
 The viewer discovers which popular behavior kept the creator stuck, why it failed at such an early stage, and what the creator did differently to begin building momentum.
@@ -47,11 +43,10 @@ Someone is finally admitting that popular advice does not work equally well for 
 - The creator shares the viewer's past situation rather than speaking down to them.
 - The problem is presented as a strategic mismatch, not a lack of talent.
 - The phrase "stopped doing" creates curiosity about what was removed.
-- The video promises a specific turning point rather than general motivation.
-- The expression sounds like the beginning of a real story, not a generic marketing headline.
+- The video promises a specific turning point rather than general motivation..
 
 **What the Video Must Deliver:**  
-The video needs to reveal the specific advice or behavior that failed, explain why it failed for a very small creator, and show what changed afterward. Without that concrete contrast, the framing expression becomes empty clickbait.
+The video needs to reveal the specific advice or behavior that failed, explain why it failed for a very small creator, and show what changed afterward. Without that concrete contrast, the framing becomes empty clickbait.
 
 ---
 
@@ -62,11 +57,8 @@ The video idea and audience are the same.
 
 The creator believes they are making good videos. They may be proud of the editing, information, or production quality, but those videos are not attracting viewers or subscribers.
 
-**Strategic Frame:**  
-A diagnostic video showing how a small creator's most polished or personally satisfying videos may be reinforcing the wrong channel direction. The video explains how creators can mistake effort, production quality, or positive feedback from friends for evidence that a concept has genuine audience demand.
-
-**Framing Expression:**  
-"Why your best videos are probably killing your channel growth"
+**Frame:**  
+A video showing how a small creator was putting out their most polished, most satisfying videos and still going nowhere, and why those were the exact videos steering the channel in the wrong direction. It explains how effort, production quality, and friends saying it was great get mistaken for proof that real people want the idea.
 
 **Core Payoff:**  
 The viewer learns how to identify whether their supposed best videos are building momentum or quietly teaching them to repeat ideas that the intended audience does not want.
@@ -101,11 +93,9 @@ The video idea and audience remain the same.
 
 The creator is no longer just frustrated by slow growth. They are privately asking whether they have wasted six months and whether continuing would only waste more time.
 
-**Strategic Frame:**  
-A reflective personal story built around the moment a struggling creator finally understood why the channel was not growing. The video explores the mistaken assumption that kept them stuck, the realization that challenged it, and the practical decisions that changed afterward.
+**Frame:**  
+A video about the moment a struggling creator finally understood why their channel was not growing despite following the best practices. They reveal the advice that was keeping them stuck, the realization that challenged it, and exactly what they did to fix it and explode their channel.
 
-**Framing Expression:**  
-"The day I realized why my channel wasn't growing changed everything"
 
 **Core Payoff:**  
 The viewer reaches the same realization as the creator and gains a new way to interpret their own lack of growth.
@@ -140,11 +130,8 @@ The video idea is "best YouTube courses."
 
 The audience has purchased courses, memberships, templates, or coaching but is not seeing meaningful results. They feel disappointed and may also feel embarrassed about the money they have spent.
 
-**Strategic Frame:**  
-A review and synthesis video in which a creator compares the lessons gained from spending $3,000 on YouTube education, identifies the important issue that the courses failed to solve, and explains why that missing element mattered more than collecting additional tactics.
-
-**Framing Expression:**  
-"I spent $3,000 on YouTube courses and they all missed this one thing"
+**Frame:**  
+A breakdown of what $3,000 of YouTube courses actually delivered, and the one thing every single one of them skipped that mattered more than all their tactics combined.
 
 **Core Payoff:**  
 The viewer discovers the recurring gap across the courses and learns how to address it without buying another program.
@@ -180,11 +167,8 @@ The video idea is "why small channels fail."
 
 The audience has approximately 200 subscribers after one year. They feel stuck between being a complete beginner and having a channel with genuine momentum.
 
-**Strategic Frame:**  
-A direct explanation of the hidden emotional and strategic problems creators experience when they remain around 200 subscribers for an extended period. The video addresses why this stage feels unusually discouraging, what the subscriber count can and cannot reveal, and which decisions usually matter next.
-
-**Framing Expression:**  
-"What nobody tells you about being stuck at 200 subscribers"
+**Frame:**  
+A video about what actually happens to creators who sit at 200 subscribers for a year, covering both the emotional side nobody warns them about and the channel problems sitting underneath it. It explains why this stage feels so much more discouraging than starting from zero, what the subscriber count does and does not tell them, and which decision matters most next.
 
 **Core Payoff:**  
 The viewer understands why this stage feels so difficult and learns which channel problem deserves attention before they continue uploading in the same way.
@@ -225,11 +209,8 @@ The audience is a gaming creator with 2,000 subscribers who has been posting for
 
 They have never contacted a brand because they believe their channel is too small.
 
-**Strategic Frame:**  
-A behind-the-scenes personal story showing how a gaming creator secured a first sponsor with only 2,000 subscribers. The video breaks down the simple outreach email, explains why the creator had enough value despite the small audience, and removes the belief that large subscriber numbers are required before starting.
-
-**Framing Expression:**  
-"I got my first sponsor at 2,000 subscribers and the email I sent was embarrassingly simple"
+**Frame:**  
+A behind-the-scenes video showing how a gaming creator landed their first sponsor with only 2,000 subscribers. It breaks down the embarrassingly simple email they sent, explains why a channel that small was already worth paying for, and kills the belief that you have to wait until you are big before you can even ask.
 
 **Core Payoff:**  
 The viewer sees the exact kind of outreach that worked and realizes that they may already be large enough to approach relevant brands.
@@ -269,11 +250,8 @@ The audience is an online educator with 50,000 subscribers who teaches business 
 
 They suspect they should be earning more from sponsorships, but they do not know what a good agreement looks like.
 
-**Strategic Frame:**  
-A mistake-driven case study showing how an established educator rejected three unsuitable brand deals, then realized the deeper problem was not simply the brands or the offers. The creator had been evaluating and negotiating deals using the wrong criteria.
-
-**Framing Expression:**  
-"I turned down three brand deals before I realized I was negotiating wrong"
+**Frame:**  
+A video about a creator with 50,000 subscribers who turned down three $1,000 sponsorship offers for being too low, and later found out every one of those brands had a much bigger budget sitting behind that first number. They break down how to find out what a brand can actually pay, what to send back instead of a no, and why treating an opening offer as the final offer is what was costing them.
 
 **Core Payoff:**  
 The viewer learns which negotiation mistake was weakening otherwise promising opportunities and how to evaluate future offers more strategically.
@@ -319,10 +297,7 @@ Strong framing does not simply place a new title on the same information. It cha
 
 ## Anti-Example 1: The Generic Guide
 
-**Framing Expression:**  
-"The Ultimate Guide to Getting Your First 1,000 Subscribers"
-
-**Implied Strategic Frame:**  
+**Implied Frame:**  
 A broad collection of general advice intended for almost anyone who wants more subscribers.
 
 **Why This Fails:**
@@ -349,10 +324,7 @@ This version implies a story, a strategic mistake, a defined audience stage, and
 
 ## Anti-Example 2: The Hype Machine
 
-**Framing Expression:**  
-"YouTube Growth Hacks That Actually Work in 2026"
-
-**Implied Strategic Frame:**  
+**Implied Frame:**  
 A list of fast tactics presented as current and effective.
 
 **Why This Fails:**
@@ -379,10 +351,7 @@ This version introduces a real test, a small-channel context, a verdict, and a r
 
 ## Anti-Example 3: The Vague Promise
 
-**Framing Expression:**  
-"How to Grow Your Channel Fast: 5 Proven Strategies"
-
-**Implied Strategic Frame:**  
+**Implied Frame:**  
 A list of strategies that supposedly creates rapid channel growth.
 
 **Why This Fails:**
@@ -428,7 +397,7 @@ Bad framing usually describes a category of information:
 - Hacks
 - Advice
 
-Good framing creates an emotional and intellectual reaction:
+Good framing creates an emotional and intellectual reaction that will attract the right viewer:
 
 - "That is exactly where I am."
 - "I thought the opposite was true."
@@ -436,8 +405,6 @@ Good framing creates an emotional and intellectual reaction:
 - "Someone else has experienced this."
 - "I need to know what changed."
 - "This result might be possible for someone like me."
-
-A good framing expression should attract the right viewer, but the expression alone is not enough.
 
 Behind it, the video still needs:
 
@@ -448,8 +415,7 @@ Behind it, the video still needs:
 5. A Core Payoff that resolves the central question.
 6. Content that fully delivers on the promise.
 
-The framing expression earns the click.
 
-The strategic frame determines the video.
+The Frame determines the video.
 
 The Core Payoff earns the viewer's attention until the end.

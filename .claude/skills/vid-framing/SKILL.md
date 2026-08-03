@@ -1,6 +1,6 @@
 ---
 name: vid-framing
-description: Transform a video idea into 3-5 distinct, audience-specific concepts with a clear Strategic Frame, Framing Expression, and Core Payoff. Use when developing video angles, positioning content, or finding the strongest psychological entry point.
+description: Transform a video idea into 3-5 distinct, audience-specific concepts with a clear Frame and Core Payoff. Use when developing video angles, positioning content, or finding the strongest psychological entry point.
 ---
 
 # Video Framing
@@ -13,29 +13,25 @@ For one video idea, create 3-5 distinct framing options.
 
 Each option includes:
 
-- **Strategic Frame:** What the video is actually doing
-- **Framing Expression:** One natural audience-facing statement
+- **Frame:** The specific direction the video will take for this audience
 - **Core Payoff:** What the viewer receives by staying to the end
 - **Framing DNA:** The patterns used
 - **Psychological Hook:** The audience tension being targeted
 - **Why They Will Stop Scrolling:** Why this viewer needs this video now
 - **Must Deliver:** What the video must prove or reveal
 
-The Strategic Frame determines the video.
+The Frame determines the video.
 
-The Framing Expression earns attention.
-
-The Core Payoff rewards it.
+The Core Payoff rewards the viewer for staying.
 
 ## Essential Principles
 
 1. **Frame the viewer's problem, not just the topic.**
-2. **Build the Strategic Frame before writing the Framing Expression.**
-3. **Use one primary pattern and up to two supporting patterns.**
-4. **Make every option a meaningfully different video.**
-5. **Use specific audience context without inventing facts, stories, or results.**
-6. **Create curiosity the video can genuinely satisfy.**
-7. **Prefer three strong options over five repetitive ones.**
+2. **Use one primary pattern and up to two supporting patterns.**
+3. **Make every option a meaningfully different video.**
+4. **Use specific audience context without inventing facts, stories, or results.**
+5. **Create curiosity the video can genuinely satisfy.**
+6. **Prefer three strong options over five repetitive ones.**
 
 ## Process
 
@@ -59,11 +55,11 @@ Do not repeat their teaching inside the output.
 
 ### 2. Find the Audience Entry Point
 
-Identify the thought or tension already present in the viewer's mind before they see the video.
+Identify the thought or tension already present in the viewer's mind before they see the video. It should feel like you're reading their minds.
 
 Ask internally:
 
-- What do they want from this topic?
+- What do they REALLY want from this topic?
 - What have they already tried?
 - Why do they think it is not working?
 - What are they afraid the problem says about them?
@@ -78,11 +74,15 @@ The best framing usually begins with a gap between:
 - Current state and desired outcome
 - What the viewer sees and what is actually causing it
 
-### 3. Create Distinct Strategic Frames
+This should be real, should be visceral. They should feel it: feel the pain, the want, the transformation, the desire, the excitement, whatever it is. 
+
+Then present it to the user and wait for approval. 
+
+### 3. Create Distinct Frames
 
 Generate several framing territories using `references/patterns.md`.
 
-Each Strategic Frame should establish:
+Each Frame should establish:
 
 - Who the video is for
 - Their current situation
@@ -90,12 +90,36 @@ Each Strategic Frame should establish:
 - The story, mechanism, test, analysis, or process used
 - What changes for the viewer by the end
 
+**Write it in plain language.**
+
+A frame should sound like a creator clearly explaining the video they want to make, not a strategist writing a report. Keep it to 1-2 sentences. The list above is what the frame has to make clear, not five clauses to cram into one sentence.
+
+Avoid unnecessary terms such as:
+
+- diagnostic
+- strategic bottleneck
+- central tension
+- audience-facing
+- transformation journey
+- strategic substance
+
+Prefer clear language such as:
+
+- A video about...
+- A video that shows...
+- A video that helps...
+- A story about...
+- An experiment that tests...
+- A breakdown of...
+
+Be specific rather than vague. The hidden thing, the part that is not obvious to everyone else, is what creates intrigue, so keep the answer withheld. Just make the setup around it concrete enough to picture. Do not over-explain. `references/examples.md` shows the difference between a frame that reads like a report and one a creator could picture filming.
+
 Each option must change the substance of the video, not just the wording.
 
 Good batch variety may include:
 
 - Story-led
-- Diagnostic or mechanism-led
+- Cause or mechanism-led
 - Proof or experiment-led
 - Practical or system-led
 - Contrarian or belief-shifting
@@ -104,7 +128,7 @@ Do not force a pattern that does not fit the available evidence.
 
 ### 4. Define the Core Payoff
 
-For each Strategic Frame, define the main reason to watch until the end.
+For each Frame, define the main reason to watch until the end.
 
 The Core Payoff should resolve a clear question through:
 
@@ -121,36 +145,9 @@ Avoid vague payoffs such as:
 
 Prefer:
 
-> The viewer identifies the main reason their consistent uploads are not producing growth and knows what to change first.
+> The viewer learns the main reason their consistent uploads are not growing their channel and knows exactly what needs to change
 
-### 5. Write the Framing Expression
-
-Compress the Strategic Frame into one natural audience-facing statement.
-
-It should:
-
-- Sound natural aloud
-- Preserve the central tension
-- Reflect the intended viewer
-- Suggest the Core Payoff
-- Open a meaningful curiosity gap
-- Avoid unsupported specificity
-- Avoid obvious marketing formulas
-
-Do not assume the Framing Expression is the final title.
-
-Do not force every expression into:
-
-- "How to"
-- "Why"
-- "I tried"
-- "What nobody tells you"
-- "The secret"
-- "The ultimate guide"
-
-A colon is allowed when it reads naturally. Do not use it to join two weak ideas.
-
-### 6. Define What the Video Must Deliver
+### 5. Define What the Video Must Deliver
 
 State the minimum content required to fulfill the promise.
 
@@ -165,7 +162,7 @@ Examples:
 
 Reject any frame the creator cannot honestly support.
 
-### 7. Validate
+### 6. Validate
 
 Every option must pass:
 
@@ -181,7 +178,7 @@ Every option must pass:
 
   - Does the viewer need the video to resolve the question?
 
-4. **Strategic Substance**
+4. **Substance**
 
   - Is there enough here for a meaningful video?
 
@@ -212,7 +209,7 @@ Use `foundation/iceberg.md` (Iceberg statement, machinery, content notes, the 8 
 - Stay within the creator's pillars
 - Support the transformation the Iceberg statement promises
 - Do not drift into generic advice outside the creator's lane
-- Do not use internal brand language in the Framing Expression unless the audience understands it
+- Do not use internal brand language in the Frame unless the audience understands it
 
 ## Anti-Formulaic Guard
 
@@ -228,11 +225,8 @@ Use `foundation/iceberg.md` (Iceberg statement, machinery, content notes, the 8 
 
 ## Option [Number]: [Short Working Label]
 
-**Strategic Frame:**  
+**Frame:**  
 [One concise paragraph describing the video direction.]
-
-**Framing Expression:**  
-"[One clean, natural audience-facing statement.]"
 
 **Core Payoff:**  
 [The answer, result, realization, verdict, or transformation delivered by the end.]
@@ -264,7 +258,7 @@ The creator's passion is the only validation point the skill cannot decide.
 
 ## When a Batch Is Rejected
 
-Do not simply rewrite the expressions or reshuffle patterns.
+Do not simply rewrite the frames or reshuffle patterns.
 
 Identify the likely failure:
 
@@ -272,24 +266,22 @@ Identify the likely failure:
 - The audience entry point was too broad
 - The options used the same emotional angle
 - The Core Payoff was weak
-- The expression was stronger than the actual video
+- The frame promised more than the actual video
 - The concept required unavailable proof
 - The options did not fit the channel
 - The market scan influenced the angle too heavily
 - The wording felt formulaic
 
-Generate new Strategic Frame territories before writing new expressions.
+Generate new framing territories before writing new frames.
 
 ## After a Direction Is Selected
 
 Once the user selects a direction:
 
-1. Keep the Strategic Frame fixed
+1. Keep the Frame fixed
 2. Keep the Core Payoff fixed
-3. Generate 3-5 Framing Expression variations
-4. Vary wording, emphasis, and curiosity
-5. Recommend the strongest expression
-6. Do not turn the variations into different videos
+3. Tighten the wording only if it is unclear or longer than it needs to be
+4. Do not let a tightening pass turn it into a different video
 
 ## Final Check
 
@@ -297,8 +289,8 @@ Before presenting the batch, confirm:
 
 - Are these genuinely different videos?
 - Is each option built around the audience?
-- Is each Strategic Frame clear?
-- Does each expression accurately represent the video?
+- Is each Frame clear?
+- Does each frame accurately represent the video?
 - Is each Core Payoff worth staying for?
 - Can every claim be supported?
 - Does every option fit the channel?

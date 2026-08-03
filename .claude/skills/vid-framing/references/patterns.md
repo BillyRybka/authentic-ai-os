@@ -1,105 +1,99 @@
 # Framing Patterns
 
-Use these patterns to develop specific, audience-relevant video concepts.
+Use these patterns to find strong, audience-specific directions for a video idea.
 
-A pattern is not a complete frame by itself. It is a creative direction that can help shape:
+Choose patterns based on the audience's situation, goals, frustrations, fears, and beliefs.
 
-- The **Strategic Frame**, which defines what the video is actually doing
-- The **Framing Expression**, which compresses that direction into a compelling audience-facing statement
-- The **Core Payoff**, which defines what the viewer receives by watching to the end
-
-Choose patterns based on the audience's goals, fears, frustrations, beliefs, and current stage.
-
-Do not default to the same pattern repeatedly. The purpose of this library is to create variety without losing audience relevance.
+Do not default to the same pattern every time. The purpose of this library is to create variety while keeping every frame relevant to the viewer.
 
 ---
 
-# Strategic Direction Patterns
+# Core Framing Patterns
 
-These patterns shape the main tension, argument, or emotional direction of the video.
+These patterns shape what the video is really about.
 
 ## Personal Story
 
-Uses the creator's experience to mirror the viewer's current situation.
+Uses the creator's experience to reflect what the viewer is going through.
 
-**Best for:** Viewers who need to feel understood before they will trust advice.
+**Best for:** Viewers who need to feel understood before they will trust the lesson.
 
-**Example Expression:**  
-"I stayed at 57 subscribers for 6 months until I stopped doing what everyone told me to do"
+**Example Frame:**  
+A video about how a channel was stuck at 57 subscribers for six months because of outdated but common YouTube advice, and what finally helped them explode their channel
 
 **Why It Works:**  
-When the creator's past resembles the viewer's present, the viewer becomes emotionally invested in discovering what changed.
+When the creator's past looks like the viewer's present, the viewer wants to know what changed.
 
 **Must Deliver:**  
-A real before, turning point, and meaningful after.
+A real starting point, turning point, and result.
 
 ---
 
 ## Myth-Busting
 
-Challenges advice, assumptions, or beliefs the audience currently accepts.
+Challenges advice or beliefs the audience currently accepts.
 
-**Best for:** Viewers who are following common advice but not seeing results.
+**Best for:** Viewers who are doing what they were told but are not getting the expected result.
 
-**Example Expression:**  
-"Why your best videos might be keeping your channel small"
+**Example Frame:**  
+A video showing why the videos a small creator feels most proud of may not be the ones helping the channel grow.
 
 **Why It Works:**  
-The contradiction creates tension. The viewer needs to understand how something they consider positive could be causing the problem.
+It creates tension between what the viewer believes and what may actually be happening.
 
 **Must Deliver:**  
-A clear explanation of why the belief is incomplete or wrong, plus a more useful alternative.
+A clear explanation of why the belief is incomplete, plus a better way to think about the problem.
 
 ---
 
 ## Problem-Solution
 
-Names a specific problem and promises a focused route toward relief.
+Focuses on one clear problem and the most useful way to solve it.
 
-**Best for:** Viewers experiencing an immediate and recognizable frustration.
+**Best for:** Viewers who recognize the problem and want help fixing it.
 
-**Example Expression:**  
-"Your videos feel boring because they are missing this"
+**Example Frame:**  
+A video that helps creators understand why their videos feel slow or boring, then shows them what to change first.
 
 **Why It Works:**  
-The viewer recognizes the symptom and becomes curious about the diagnosis.
+The viewer recognizes their own frustration and sees a clear reason to keep watching.
 
 **Must Deliver:**  
-A specific cause and a practical solution, not a broad collection of tips.
+A specific cause and a practical solution, not a loose collection of tips.
 
 ---
 
 ## Mistake or Warning
 
-Shows the cost of a decision, habit, or misunderstanding.
+Shows how a decision, habit, or misunderstanding is creating a negative result.
 
-**Best for:** Viewers who fear wasting time, money, effort, or opportunity.
+**Best for:** Viewers who are afraid of wasting time, money, effort, or opportunity.
 
-**Example Expression:**  
-"The mistake that kept my channel below 100 subscribers"
+**Example Frame:**  
+A video about the mistake that keeps small creators uploading more without learning why their channel is still stuck.
 
 **Why It Works:**  
-Loss feels immediate. The viewer wants to determine whether they are making the same mistake.
+The viewer wants to know whether they are making the same mistake.
 
 **Must Deliver:**  
-A concrete mistake, its consequences, and a realistic way to avoid or correct it.
+The mistake, the damage it causes, and a realistic way to correct it.
 
 ---
 
 ## Transformation
 
-Builds the video around a clear before-and-after change.
+Builds the video around a clear change from one state to another.
 
 **Best for:** Viewers who need proof that improvement is possible.
 
-**Example Expression:**  
-"30 days of changing my video ideas completely changed my channel"
+**Example Frame:**  
+A video following how changing the way a creator chooses video ideas affects their channel over 30 days.
 
 **Why It Works:**  
-The viewer can compare the starting point with the outcome and imagine a similar change for themselves.
+The viewer can see the starting point, the change, and the result.
 
 **Must Deliver:**  
-Visible or clearly explained change, including what caused it.
+A clear before and after, including what caused the change.
 
 ---
 
@@ -109,83 +103,83 @@ Centers the video on a realization that changed how the creator understood the p
 
 **Best for:** Viewers who feel discouraged, confused, or close to giving up.
 
-**Example Expression:**  
-"The day I realized why my channel was not growing changed everything"
+**Example Frame:**  
+A video about the moment a struggling creator realized why consistent uploading was not leading to growth, and what they changed afterward.
 
 **Why It Works:**  
-It promises one meaningful insight rather than another long list of tactics.
+It promises one important realization instead of another long list of advice.
 
 **Must Deliver:**  
-The belief before the realization, the event or evidence that challenged it, and the actions that changed afterward.
+What the creator believed before, what changed their mind, and how their actions changed afterward.
 
 ---
 
-## Hidden Mechanism
+## Hidden Cause
 
-Explains an unseen process that produces the visible problem or result.
+Explains what is happening underneath a visible problem.
 
-**Best for:** Viewers who know what is happening but do not understand why.
+**Best for:** Viewers who know something is wrong but do not understand why.
 
-**Example Expression:**  
-"The invisible cycle keeping small creators stuck"
+**Example Frame:**  
+A video explaining how low views can push small creators toward safer, less specific ideas, which makes the channel even harder to notice.
 
 **Why It Works:**  
-It gives the problem a mechanism. The viewer wants to recognize the cycle and learn how to interrupt it.
+It helps the viewer see the pattern behind their results.
 
 **Must Deliver:**  
-A clear sequence of cause and effect that the viewer can identify in their own situation.
+A clear chain of cause and effect that the viewer can recognize in their own situation.
 
 ---
 
 ## Hypothetical Restart
 
-Shows what an experienced creator would do differently if starting again.
+Shows what an experienced creator would do differently if they had to begin again.
 
-**Best for:** Beginners or viewers who believe they have taken the wrong path.
+**Best for:** Beginners or viewers who feel they have taken the wrong path.
 
-**Example Expression:**  
-"If I had to grow a channel from zero again, I would start here"
+**Example Frame:**  
+A video showing how an experienced creator would approach their first ten uploads if they had to start again with no audience.
 
 **Why It Works:**  
-The creator's past mistakes are converted into a simpler path for the viewer.
+The viewer benefits from lessons the creator learned through experience.
 
 **Must Deliver:**  
-A realistic plan shaped by experience, not an idealized strategy that ignores beginner constraints.
+A realistic plan that respects the limits and uncertainty of starting from zero.
 
 ---
 
 # Proof Patterns
 
-These patterns strengthen credibility. They support the Strategic Frame rather than replacing it.
+These patterns make a frame more believable. They support the main direction of the video rather than replacing it.
 
 ## Case Study
 
 Uses a real person, channel, project, or result as evidence.
 
-**Best for:** Skeptical viewers who want proof before accepting a claim.
+**Best for:** Viewers who want to see proof before accepting the lesson.
 
-**Example Expression:**  
-"How a 200-subscriber channel doubled its views without uploading more"
+**Example Frame:**  
+A breakdown of how a channel with 200 subscribers increased its views without uploading more often.
 
 **Why It Works:**  
-The viewer can examine what happened in a specific situation instead of relying on abstract advice.
+The viewer can learn from a specific example instead of relying on general advice.
 
 **Must Deliver:**  
-The starting point, relevant actions, result, and explanation of why the result occurred.
+The starting point, the relevant changes, the result, and a fair explanation of what caused it.
 
 ---
 
-## Documented Experiment
+## Experiment
 
-Tests an idea for a defined period or under clear conditions.
+Tests an idea over a set period or under clear conditions.
 
-**Best for:** Viewers who want someone else to test the risk first.
+**Best for:** Viewers who want someone else to test an approach before they try it.
 
-**Example Expression:**  
-"I followed YouTube's most common growth advice for 30 days"
+**Example Frame:**  
+A video testing common YouTube growth advice on a small channel for 30 days to see which advice makes a noticeable difference.
 
 **Why It Works:**  
-The viewer receives a verdict based on observed experience.
+The viewer receives a result without having to run the test themselves.
 
 **Must Deliver:**  
 The test conditions, what happened, what did not happen, and what can reasonably be concluded.
@@ -194,160 +188,127 @@ The test conditions, what happened, what did not happen, and what can reasonably
 
 ## Specific Result
 
-Uses a measurable outcome to create stakes and credibility.
+Uses a measurable change to make the outcome easier to understand.
 
-**Best for:** Topics involving growth, time, money, performance, or efficiency.
+**Best for:** Videos involving growth, money, time, performance, or efficiency.
 
-**Example Expression:**  
-"The change that took my videos from 40 views to 400"
+**Example Frame:**  
+A video showing what changed when a creator's average views increased from 40 to 400.
 
 **Why It Works:**  
-Specific numbers make the transformation easier to understand.
+A clear result gives the viewer something concrete to follow.
 
 **Must Deliver:**  
-Accurate context around the result. The number should clarify the story, not exaggerate it.
+Honest context around the number and a clear explanation of what contributed to it.
 
 ---
 
-# Presentation Patterns
+# Video Format Patterns
 
-These patterns determine how the video will organize and deliver the idea.
+These patterns shape how the idea is organized and delivered.
 
 ## System or Framework
 
-Turns a confusing process into a clear sequence or model.
+Turns a confusing process into a small number of clear parts.
 
-**Best for:** Viewers who feel overwhelmed and want an understandable path.
+**Best for:** Viewers who feel overwhelmed and want a simple path.
 
-**Example Expression:**  
-"The 3-part system I use to find stronger video ideas"
+**Example Frame:**  
+A video that gives small creators a three-part process for choosing stronger video ideas.
 
 **Why It Works:**  
-A defined structure reduces uncertainty and makes the solution feel manageable.
+A clear structure makes the problem feel easier to manage.
 
 **Must Deliver:**  
-A real system with distinct parts that work together.
+A useful process with parts that are distinct and work together.
 
 ---
 
 ## Comparison
 
-Evaluates two or more approaches, tools, or decisions.
+Compares two or more approaches, tools, or decisions.
 
-**Best for:** Viewers experiencing decision paralysis.
+**Best for:** Viewers who are unsure which option to choose.
 
-**Example Expression:**  
-"I tested broad video ideas against specific ones. The difference was obvious"
+**Example Frame:**  
+A video comparing broad video ideas with audience-specific ideas to show how each affects clicks and viewer interest.
 
 **Why It Works:**  
-The creator performs the comparison so the viewer does not have to.
+The creator does the comparison so the viewer can make a clearer decision.
 
 **Must Deliver:**  
-Fair criteria, meaningful differences, and a useful verdict.
+Fair criteria, meaningful differences, and a useful conclusion.
 
 ---
 
 ## Review or Ranking
 
-Sorts multiple options according to usefulness, quality, or fit.
+Sorts several options by usefulness, quality, or fit.
 
-**Best for:** Viewers overwhelmed by too many choices.
+**Best for:** Viewers who are overwhelmed by too many choices.
 
-**Example Expression:**  
-"Ranking common YouTube advice from useless to essential"
+**Example Frame:**  
+A video ranking common YouTube advice based on how useful it is for creators with fewer than 100 subscribers.
 
 **Why It Works:**  
-The viewer receives order, prioritization, and judgment instead of another unsorted list.
+The viewer receives priorities instead of another unsorted list.
 
 **Must Deliver:**  
 Clear ranking criteria and enough explanation to justify the order.
 
 ---
 
-## Expert Analysis
+## Expert Breakdown
 
-Applies a knowledgeable perspective to a familiar example, event, or piece of content.
+Uses the creator's experience to explain why something worked or failed.
 
-**Best for:** Viewers who already understand the subject but want a deeper interpretation.
+**Best for:** Viewers who already know what happened but want to understand why.
 
-**Example Expression:**  
-"A YouTube strategist explains why this small channel suddenly took off"
+**Example Frame:**  
+A breakdown of why one small channel suddenly began growing after months of weak results.
 
 **Why It Works:**  
-The value comes from explaining why something worked, not merely observing that it worked.
+The value comes from explaining the reasons behind the result.
 
 **Must Deliver:**  
-Specific analysis supported by visible evidence.
-
----
-
-# Packaging Expressions
-
-Some constructions are useful for compressing a frame into a clickable statement. They should only be used when they accurately represent the video.
-
-## What They Do Not Tell You
-
-Useful when common information is genuinely incomplete.
-
-**Example:**  
-"What nobody tells you about being stuck at 200 subscribers"
-
-Avoid using this expression when the video does not reveal a meaningful gap.
-
----
-
-## X Plus Y Equals Z
-
-Useful when combining tools or methods creates a specific result.
-
-**Example:**  
-"Audience research + stronger framing = easier video ideas"
-
-Avoid using it when the combination is obvious or the promised result is exaggerated.
-
----
-
-## So You Do Not Have To
-
-Useful when the creator has completed meaningful research, testing, or comparison.
-
-**Example:**  
-"I tested 12 creator tools so you do not have to"
-
-Avoid using it when the creator has not done enough work to provide a credible verdict.
+A clear explanation supported by examples or visible evidence.
 
 ---
 
 # Blending Patterns
 
-Strong framing often combines one primary pattern with one or two supporting patterns.
+Strong frames often combine one main pattern with one or two supporting patterns.
 
-The combination should feel natural. The audience should not see the formula.
+The blend should feel natural. Do not add patterns simply to make the idea sound more dramatic.
 
 ## Example 1
 
-**Expression:**  
-"I stayed at 57 subscribers for 6 months until I stopped doing what everyone told me to do"
+**Frame:**  
+A video about how a creator stayed at 57 subscribers for six months while following common advice, and what finally helped them grow.
 
 **Primary Pattern:** Personal Story  
 **Supporting Pattern:** Myth-Busting  
 **Supporting Pattern:** Transformation
 
+---
+
 ## Example 2
 
-**Expression:**  
-"Why your best videos might be keeping your channel small"
+**Frame:**  
+A video showing why a small creator's most polished videos may be teaching them to repeat the wrong ideas.
 
 **Primary Pattern:** Myth-Busting  
-**Supporting Pattern:** Hidden Mechanism  
+**Supporting Pattern:** Hidden Cause  
 **Supporting Pattern:** Problem-Solution
+
+---
 
 ## Example 3
 
-**Expression:**  
-"I tested 12 YouTube growth tips on a channel with 83 subscribers. Only two made a difference"
+**Frame:**  
+A video testing 12 common YouTube growth tips on a channel with 83 subscribers to find out which ones make a real difference.
 
-**Primary Pattern:** Documented Experiment  
+**Primary Pattern:** Experiment  
 **Supporting Pattern:** Specific Result  
 **Supporting Pattern:** Review or Ranking
 
@@ -355,16 +316,16 @@ The combination should feel natural. The audience should not see the formula.
 
 # Blending Rules
 
-1. Choose one primary pattern to control the concept.
+1. Choose one primary pattern to control the direction.
 2. Add no more than two supporting patterns.
-3. Select patterns that serve the same audience need.
-4. Write one natural Framing Expression.
-5. Remove any pattern that adds complexity without increasing relevance.
-6. Confirm that the video can fully deliver the implied promise.
+3. Use patterns that serve the same audience need.
+4. Make sure the blend changes the video, not just the wording.
+5. Remove any pattern that adds complexity without adding value.
+6. Confirm that the video can honestly deliver the Core Payoff.
 
-Do not combine patterns merely to make the expression sound more dramatic.
+Do not combine several competing directions in one frame.
 
-A Personal Story, Experiment, Warning, Ultimate Guide, and Ranking should not all compete inside the same concept.
+A personal story, experiment, warning, framework, and ranking should not all fight for attention inside the same video.
 
 ---
 
@@ -372,14 +333,14 @@ A Personal Story, Experiment, Warning, Ultimate Guide, and Ranking should not al
 
 | Audience State | Useful Patterns |
 |---|---|
-| Overwhelmed and needs clarity | System, Problem-Solution, Hidden Mechanism |
-| Skeptical and needs evidence | Case Study, Documented Experiment, Specific Result |
+| Overwhelmed and needs clarity | System or Framework, Problem-Solution, Hidden Cause |
+| Skeptical and needs proof | Case Study, Experiment, Specific Result |
 | Discouraged and needs hope | Personal Story, Transformation, Emotional Turning Point |
-| Feels misled by common advice | Myth-Busting, Hidden Mechanism, Mistake or Warning |
+| Feels misled by common advice | Myth-Busting, Hidden Cause, Mistake or Warning |
 | Afraid of wasting time or money | Mistake or Warning, Comparison, Review or Ranking |
 | Starting from zero | Personal Story, Hypothetical Restart, System or Framework |
 | Choosing between options | Comparison, Review or Ranking |
-| Wants deeper understanding | Expert Analysis, Case Study, Hidden Mechanism |
+| Wants deeper understanding | Expert Breakdown, Case Study, Hidden Cause |
 
 ---
 
@@ -387,20 +348,18 @@ A Personal Story, Experiment, Warning, Ultimate Guide, and Ranking should not al
 
 Before using a pattern, confirm:
 
-- Does it speak to the audience's actual situation?
-- Does it shape the video, not just the title?
-- Does it create an emotional or intellectual reaction?
-- Does it open a curiosity gap the video can resolve?
-- Is the claim honest and supportable?
+- Does it fit the audience's actual situation?
+- Does it shape the direction of the video?
+- Does it create a real emotional or intellectual reaction?
+- Does it open a question the video can answer?
+- Is the idea honest and supportable?
 - Is the Core Payoff clear?
-- Can the video fully deliver what the Framing Expression implies?
+- Can the video fully deliver what the frame promises?
 
-Patterns generate possibilities.
+Patterns create possible directions.
 
-The audience determines which possibility matters.
+The audience determines which direction matters.
 
-The Strategic Frame determines the video.
+The Frame defines the video.
 
-The Framing Expression earns attention.
-
-The Core Payoff rewards it.
+The Core Payoff gives the viewer a reason to stay.
