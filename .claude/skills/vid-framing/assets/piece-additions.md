@@ -16,7 +16,6 @@ Insert under the existing lifecycle fields (`slug`, `pillar`, `created`, `status
 # Written by vid-framing
 frame: "{the locked Frame, third person, one direction only. Never a spoken line, never a headline, never a description of the contents}"
 core_payoff: "{what they walk away able to do, second person, one outcome. Reads clearly to somebody who has not seen the material, and does not give away the conclusion}"
-mechanism: "{what produces the result, named in a phrase, plus its kind: delivery | draw | qualifier. The call, not the argument for it}"
 format: short-process | case-study | roast | deep-dive | interview | news | listicle
 goal: sales | emails | views
 voice_context: youtube-script   # default. Another medium (tutorial | shorts | newsletter | linkedin | twitter | instagram | podcast | casual | talk) only if this piece genuinely is one. A walkthrough is still a YouTube script.
@@ -81,5 +80,4 @@ If the creator withheld a number, a client detail or something they have not cap
 - `core_payoff` holds one outcome, which is not the same as one clause. "Five reasons people don't buy and how to overcome those objections" runs two clauses and delivers a single capability, and that is fine. "You'll have the list, and you'll never think about AI writing the same way again" is two payoffs bolted together, and "and you'll" is the tell. So is a colon that introduces a second thing, and so is a trailing "so" clause that restates the first half in softer words.
 - If `core_payoff` keeps coming out as a pile of features, the Frame underneath it is vague. Sharpen the Frame rather than rewriting the payoff.
 - `core_payoff` carries no fixed opener. "By the end of this video" is the specific one that keeps growing back.
-- `mechanism` carries its kind, and stores the call in a phrase rather than the reasoning behind it. Frontmatter is a schema, and an argument parked in a string field is something nothing downstream can read.
 - Always set `last_updated` to today in YYYY-MM-DD.

@@ -32,7 +32,7 @@ The Core Payoff rewards the viewer for staying.
 
 The Frame determines the video.
 
-Once the creator picks one, the piece leaves with its Frame, Core Payoff, mechanism, format, and goal on disk, ready for `vid-title`.
+Once the creator picks one, the piece leaves with its Frame, Core Payoff, format, and goal on disk, ready for `vid-title`.
 
 ## Essential Principles
 
@@ -301,7 +301,6 @@ Read `references/format-index.md`.
 
 - **Format** follows the material and the locked Frame. A client transformation is a case study. A reaction to something that just happened is news. A "here is my process" is short-process. A frame that spends real time discrediting the old way before building anything is a deep-dive. Lock one of the seven, and never lock one with no planner in `knowledge/format-planners/`.
 - **Goal** follows how warm the audience is: cold wants views, warm wants emails, hot wants sales. One only.
-- **Mechanism** is what produces the result, named in a phrase, plus its kind: `delivery`, `draw`, or `qualifier`. Delivery stays out of the frame, draw carries it, qualifier narrows it. Store the call, not the argument for it.
 - **Voice context** stays `youtube-script` unless the piece genuinely is another medium. A walkthrough is still a YouTube script.
 
 ### Write the file
@@ -331,7 +330,7 @@ Then one line back to the creator: format, goal, and `vid-title` next.
 
 Appends to the piece.md `vid-intake` created, never touching a field another skill owns. Ownership is in `knowledge/piece-contract.md`, the exact shape in `assets/piece-additions.md`.
 
-Frontmatter: `frame`, `core_payoff`, `mechanism`, `format`, `goal`, `voice_context`, `last_updated`. Body: `## The Read` with Target, Transformation, and Stakes, plus any withheld proof as a `> [!todo]`.
+Frontmatter: `frame`, `core_payoff`, `format`, `goal`, `voice_context`, `last_updated`. Body: `## The Read` with Target, Transformation, and Stakes, plus any withheld proof as a `> [!todo]`.
 
 Prerequisite: `vid-intake`. Handoff: `vid-title`.
 
