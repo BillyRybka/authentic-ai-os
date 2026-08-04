@@ -20,9 +20,9 @@ Each option includes:
 - **Why They Will Stop Scrolling:** Why this viewer needs this video now
 - **Must Deliver:** What the video must prove or reveal
 
-The Frame determines the video.
-
 The Core Payoff rewards the viewer for staying.
+
+The Frame determines the video.
 
 ## Essential Principles
 
@@ -35,25 +35,17 @@ The Core Payoff rewards the viewer for staying.
 
 ## Process
 
-### 1. Read the References
+Each step names what it reads. The table at the end of this file is the full list of what this skill may open. Never repeat a reference file's teaching inside the output.
 
-Read:
+### 1. Get the Material
 
-- `references/patterns.md`
-- `references/examples.md`
-- `content/pieces/{slug}/brain-dump.md` when framing an existing piece; otherwise work from the idea the creator gives directly
-- `foundation/avatar.md` when using the default audience
-- `foundation/iceberg.md` (Iceberg statement, machinery, content notes, the 8 pillars)
+Read `content/pieces/{slug}/brain-dump.md` when framing an existing piece. Otherwise work from the idea the creator gives directly.
 
-These are the only foundation files this skill reads.
-
-Use the pattern file for selection and blending.
-
-Use the examples file for quality calibration.
-
-Do not repeat their teaching inside the output.
+Read `foundation/avatar.md` when using the default audience.
 
 ### 2. Find the Audience Entry Point
+
+Read `references/finding-the-core.md`.
 
 Identify the thought or tension already present in the viewer's mind before they see the video. It should feel like you're reading their minds.
 
@@ -74,13 +66,13 @@ The best framing usually begins with a gap between:
 - Current state and desired outcome
 - What the viewer sees and what is actually causing it
 
-This should be real, should be visceral. They should feel it: feel the pain, the want, the transformation, the desire, the excitement, whatever it is. 
-
-Then present it to the user and wait for approval. 
+Present the entry point to the creator and wait. They confirm you read the viewer right before any frame gets written. Every option in Step 3 comes off this one approved context.
 
 ### 3. Create Distinct Frames
 
-Generate several framing territories using `references/patterns.md`.
+Read `references/patterns.md` and `references/examples.md`.
+
+Hold the approved context still. Every option below is a different video made from the same context, not a different context.
 
 Each Frame should establish:
 
@@ -300,12 +292,13 @@ Only output the strongest options.
 
 ## Reference Files
 
-| Need | Read |
-|---|---|
-| Pattern selection and blending | `references/patterns.md` |
-| Annotated quality examples | `references/examples.md` |
-| Default audience | `foundation/avatar.md` (avatar, Top 3 perceived problems) |
-| Channel positioning | `foundation/iceberg.md` (Iceberg statement, machinery, content notes, 8 pillars) |
-| Raw material, when framing a piece | `content/pieces/{slug}/brain-dump.md` |
+| Need | Read | When |
+|---|---|---|
+| Digging the real desire out of a messy dump | `references/finding-the-core.md` | Step 2 |
+| Pattern selection and blending | `references/patterns.md` | Step 3 |
+| Frame quality, batch variety, register | `references/examples.md` | Step 3 |
+| Default audience | `foundation/avatar.md` (avatar, Top 3 perceived problems) | Step 1 |
+| Channel positioning | `foundation/iceberg.md` (Iceberg statement, machinery, content notes, 8 pillars) | Step 6 |
+| Raw material, when framing a piece | `content/pieces/{slug}/brain-dump.md` | Step 1 |
 
 This table is exhaustive. Read nothing outside it.

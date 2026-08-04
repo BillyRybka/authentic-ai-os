@@ -1,421 +1,225 @@
 # Framing Examples
 
-Study these examples before developing a video idea. Match this level of audience specificity, emotional relevance, strategic depth, and curiosity.
+Read these at Step 3, after the audience entry point is approved.
 
-A strong frame is more than a catchy sentence.
+**Frame:** the specific direction the video will take for this audience. It decides the content, the argument, and the structure.
 
-Each example below includes two connected elements:
+**Core Payoff:** what the viewer walks away with for staying to the end.
 
-**Frame:** The specific direction the video will take. This guides the content, argument, examples, and structure.
+The Frame determines the video. The Core Payoff is why they stay.
 
-**Core Payoff:** The main answer, realization, result, or transformation the viewer receives by watching to the end.
+One approved context produces several genuinely different videos. The batches below show what that looks like, and what it looks like when it fails.
 
-The frame determines what the video is actually about. The Core Payoff gives the viewer a reason to stay.
+# Fixing a Stiff Frame
 
-# Good Examples
+The most common failure is not a wrong idea. It is a right idea described from too far away, in words no creator would say out loud.
 
-## Example 1: The Invisible Creator
+Each pair below is the same video. Only the language changed.
 
-**Context:**  
-The video idea is "how to get more YouTube subscribers."
+## The polished videos problem
 
-The audience is a creator with 57 subscribers after six months. They have followed popular YouTube advice, uploaded consistently, and tried to improve. Nothing seems to be working. They feel invisible and are beginning to fear that they are not cut out for YouTube.
+**Stiff:**  
+A diagnostic video showing how a small creator's most polished or personally satisfying videos may be reinforcing the wrong channel direction. The video explains how creators can mistake effort, production quality, or positive feedback from friends for evidence that a concept has genuine audience demand.
+
+**Fixed:**  
+A video showing how a small creator was putting out their most polished, most satisfying videos and still going nowhere, and why those were the exact videos steering the channel in the wrong direction. It explains how effort, production quality, and friends saying it was great get mistaken for proof that real people want the idea.
+
+**What changed:** "Diagnostic," "reinforcing the wrong channel direction," and "genuine audience demand" are report words. Every detail from the original survived. It is just said the way the creator would say it.
+
+## The 200-subscriber plateau
+
+**Stiff:**  
+A direct explanation of the hidden emotional and strategic problems creators experience when they remain around 200 subscribers for an extended period. The video addresses why this stage feels unusually discouraging, what the subscriber count can and cannot reveal, and which decisions usually matter next.
+
+**Fixed:**  
+A video about what actually happens to creators who sit at 200 subscribers for a year, covering both the emotional side nobody warns them about and the channel problems sitting underneath it. It explains why this stage feels so much more discouraging than starting from zero, what the subscriber count does and does not tell them, and which decision matters most next.
+
+**What changed:** "A direct explanation of" describes the format instead of the video. "For an extended period" is a phrase nobody says out loud, and "for a year" is the same fact in real words.
+
+## The turning point
+
+**Stiff:**  
+A reflective personal story built around the moment a struggling creator finally understood why the channel was not growing. The video explores the mistaken assumption that kept them stuck, the realization that challenged it, and the practical decisions that changed afterward.
+
+**Fixed:**  
+A video about the moment a struggling creator finally understood why their channel was not growing despite following the best practices. They reveal the advice that was keeping them stuck, the realization that challenged it, and exactly what they did to fix it and explode their channel.
+
+**What changed:** The stiff version narrates from outside the video ("explores the mistaken assumption"). The fixed version says what the video actually reveals, and adds the sting: they were following best practices, which is why it hurts.
+
+**The rule all three share:** keep every piece of framing information, change only the language. A frame that drops detail to sound cleaner is worse, not better.
+
+---
+
+# Batch 1: Four videos from one context
+
+**Context (approved at Step 2):**  
+The idea is "how to get more YouTube subscribers." The audience is a creator with 57 subscribers after six months. They have followed popular advice, uploaded consistently, and tried to improve. Nothing is working. They feel invisible and are starting to think they are not cut out for this.
+
+This context does not change for any of the four options below. Only the video does.
+
+## Option A: The advice that kept them stuck
 
 **Frame:**  
 A story about how the advice every creator repeats is what kept one channel stuck at 57 subscribers for six months, and the thing they did instead that finally blew it up.
 
-
 **Core Payoff:**  
-The viewer discovers which popular behavior kept the creator stuck, why it failed at such an early stage, and what the creator did differently to begin building momentum.
+The viewer finds out which popular behavior kept the creator stuck, why it fails specifically at that size, and what to do instead.
 
 **Framing DNA:**  
 Personal Story + Myth-Busting + Transformation
 
-**Psychological Hook:**  
-This frame targets the viewer's feeling of invisibility and their frustration with following every supposedly proven formula. It validates their experience without suggesting that they were foolish for trusting common advice.
+**Must Deliver:**  
+The specific advice that failed, why it fails at that size, and what replaced it. Without that contrast it is empty clickbait.
 
-**Why They Will Stop Scrolling:**  
-Someone is finally admitting that popular advice does not work equally well for every creator or every stage of growth. The viewer is promised a real turning point rather than another vague instruction to work harder.
-
-**Why This Works:**
-
-- The exact number and timeline make the video feel personally targeted.
-- The creator shares the viewer's past situation rather than speaking down to them.
-- The problem is presented as a strategic mismatch, not a lack of talent.
-- The phrase "stopped doing" creates curiosity about what was removed.
-- The video promises a specific turning point rather than general motivation..
-
-**What the Video Must Deliver:**  
-The video needs to reveal the specific advice or behavior that failed, explain why it failed for a very small creator, and show what changed afterward. Without that concrete contrast, the framing becomes empty clickbait.
-
----
-
-## Example 2: The Counterintuitive Problem
-
-**Context:**  
-The video idea and audience are the same.
-
-The creator believes they are making good videos. They may be proud of the editing, information, or production quality, but those videos are not attracting viewers or subscribers.
+## Option B: Testing what they already tried
 
 **Frame:**  
-A video showing how a small creator was putting out their most polished, most satisfying videos and still going nowhere, and why those were the exact videos steering the channel in the wrong direction. It explains how effort, production quality, and friends saying it was great get mistaken for proof that real people want the idea.
+A video that takes the twelve pieces of advice this creator has already followed, runs every one of them on a channel that size for thirty days, and reports which two did anything at all.
 
 **Core Payoff:**  
-The viewer learns how to identify whether their supposed best videos are building momentum or quietly teaching them to repeat ideas that the intended audience does not want.
+The viewer gets a verdict on the advice they are currently following, so they can stop spending effort on the ten that do nothing at this stage.
 
 **Framing DNA:**  
-Myth-Busting + Problem-Solution + Insider Knowledge
+Experiment + Specific Result + Review or Ranking
 
-**Psychological Hook:**  
-The frame speaks to the confusion created when effort does not translate into growth. The viewer believes they are improving, but the channel remains stagnant. This suggests that the problem may not be effort or quality. It may be the definition of a "good video" they are using.
+**Must Deliver:**  
+The test conditions, what each piece of advice actually produced, and an honest accounting of what the test could not prove.
 
-**Why They Will Stop Scrolling:**  
-The combination of "best videos" and "killing your growth" creates an apparent contradiction. The viewer needs to understand how both statements could be true.
-
-**Why This Works:**
-
-- The central idea is counterintuitive and demands an explanation.
-- It does not accuse the creator of being lazy or untalented.
-- It introduces a problem the viewer may not know to look for.
-- It implies that the solution requires a strategic shift, not additional grinding.
-- It creates several natural questions about topic selection, audience demand, and misleading performance signals.
-- The framing expression is short enough to remember and natural enough to say aloud.
-
-**What the Video Must Deliver:**  
-The video must define what "best" means in this context. It should contrast videos that feel impressive to the creator with videos that clearly serve the intended viewer. It should also provide a practical method for deciding which type deserves to be repeated.
-
----
-
-## Example 3: The Emotional Turning Point
-
-**Context:**  
-The video idea and audience remain the same.
-
-The creator is no longer just frustrated by slow growth. They are privately asking whether they have wasted six months and whether continuing would only waste more time.
+## Option C: What the first hour decides
 
 **Frame:**  
-A video about the moment a struggling creator finally understood why their channel was not growing despite following the best practices. They reveal the advice that was keeping them stuck, the realization that challenged it, and exactly what they did to fix it and explode their channel.
-
+A video about why a channel this size gets shown to almost nobody no matter how good the video is, what YouTube is actually deciding in the first hour after upload, and the one part of that a small creator can control.
 
 **Core Payoff:**  
-The viewer reaches the same realization as the creator and gains a new way to interpret their own lack of growth.
+The viewer understands the mechanism deciding their reach and knows which single input is theirs to move.
 
 **Framing DNA:**  
-Personal Story + Transformation + Emotional Journey
+Hidden Cause + Problem-Solution
 
-**Psychological Hook:**  
-The frame mirrors the viewer's fear that their effort may be going nowhere. At the same time, it promises the breakthrough moment they hope to experience during every late-night search for YouTube advice.
+**Must Deliver:**  
+A clear, honest chain of cause and effect, and a controllable input that is genuinely controllable at 57 subscribers.
 
-**Why They Will Stop Scrolling:**  
-The viewer is not being promised another collection of tips. They are being promised a specific realization that reorganized how someone understood the entire problem.
-
-**Why This Works:**
-
-- "The day I realized" suggests one identifiable moment or insight.
-- The story begins with emotional uncertainty rather than expert authority.
-- The viewer can map their current struggle onto the narrator's past.
-- The phrase implies a clear before and after.
-- The video offers hope without claiming that growth became effortless.
-- It feels like the start of an honest story rather than a formula.
-
-**What the Video Must Deliver:**  
-The realization needs to be specific and meaningful enough to justify the language. The video should show what the creator believed before, what caused that belief to collapse, and what changed in their actions afterward.
-
----
-
-## Example 4: The Specific Investment
-
-**Context:**  
-The video idea is "best YouTube courses."
-
-The audience has purchased courses, memberships, templates, or coaching but is not seeing meaningful results. They feel disappointed and may also feel embarrassed about the money they have spent.
+## Option D: The wrong conclusion
 
 **Frame:**  
-A breakdown of what $3,000 of YouTube courses actually delivered, and the one thing every single one of them skipped that mattered more than all their tactics combined.
+A video about the six months a creator spent quietly deciding they were not talented enough, and the boring mechanical reason their videos were not being seen that had nothing to do with talent at all.
 
 **Core Payoff:**  
-The viewer discovers the recurring gap across the courses and learns how to address it without buying another program.
+The viewer sees that the conclusion they reached about themselves was drawn from a signal that never measured what they thought it measured.
 
 **Framing DNA:**  
-Money and ROI + Tool Review + What They Do Not Tell You
+Emotional Turning Point + Myth-Busting
 
-**Psychological Hook:**  
-This frame validates the viewer's financial investment and the frustration of applying advice without receiving the expected result. It promises a missing piece rather than simply declaring that every course was worthless.
+**Must Deliver:**  
+Name the misreading directly, show what the numbers actually measure, and do it without promising that fixing it makes growth easy.
 
-**Why They Will Stop Scrolling:**  
-Someone who spent a meaningful amount of money has already completed the expensive research. The viewer may be able to learn the most important conclusion without making another purchase.
+## Why this is four videos and not one
 
-**Why This Works:**
+Different genre: a story, a test, an explainer, a reckoning. You would film these four differently, on different days, with different footage.
 
-- The specific dollar amount signals real investment and genuine stakes.
-- The number makes the claim more credible than saying "a lot of money."
-- "They all missed this one thing" creates a focused knowledge gap.
-- The courses are not automatically attacked or dismissed.
-- The viewer is not insulted for buying similar products.
-- The creator is positioned as a thoughtful evaluator, not an angry customer.
-- The video promises synthesis, comparison, and a verdict.
+Different reason to click: curiosity about what worked, curiosity about a verdict, curiosity about a mechanism, recognition of a private thought.
 
-**What the Video Must Deliver:**  
-The missing element must genuinely appear across the reviewed products. The video should explain what each course did offer, where the shared limitation appeared, and why that gap prevented the viewer from translating information into results.
+Different obligation: A owes a real turning point. B owes real test data. C owes a correct explanation of the machine. D owes emotional honesty and nothing else.
+
+Different failure: A fails if the advice is generic. B fails if the test is rigged. C fails if the mechanism is wrong. D fails if it turns into a pep talk.
+
+If two options in a batch fail the same way, they are the same video.
+
+## What a fake batch looks like
+
+Same context. These four are one video wearing four outfits:
+
+> The advice keeping small creators stuck at 57 subscribers, and what to do instead.
+>
+> Why following popular YouTube advice is why your channel is not growing.
+>
+> The common advice that keeps beginner channels invisible, and the fix.
+>
+> What every small creator is told to do that is quietly killing their growth.
+
+Every one is Myth-Busting. Every one has the same Core Payoff. Every one would be filmed identically. The words rotate and the video does not move.
+
+The tell: read the Must Deliver for each. If they are the same sentence, you wrote one option four times.
 
 ---
 
-## Example 5: The Direct Address
+# Batch 2: Three videos from one context
 
-**Context:**  
-The video idea is "why small channels fail."
+This context comes out of the second trace in `finding-the-core.md`. Different world, same method.
 
-The audience has approximately 200 subscribers after one year. They feel stuck between being a complete beginner and having a channel with genuine momentum.
+**Context (approved at Step 2):**  
+The audience is a freelance designer who is genuinely good at the work and still feels like they are auditioning on every sales call. They perform, they send a careful proposal, and then they refresh their email waiting to be chosen. They think they need a better pitch. What they actually want is to stop being the one who is being evaluated.
+
+## Option A: The last proposal
 
 **Frame:**  
-A video about what actually happens to creators who sit at 200 subscribers for a year, covering both the emotional side nobody warns them about and the channel problems sitting underneath it. It explains why this stage feels so much more discouraging than starting from zero, what the subscriber count does and does not tell them, and which decision matters most next.
+A video about the last proposal this designer ever sent into a void, why they stopped writing them entirely after that one, and what happens on their calls now instead.
 
 **Core Payoff:**  
-The viewer understands why this stage feels so difficult and learns which channel problem deserves attention before they continue uploading in the same way.
+The viewer sees what replaced the proposal, and why the replacement moves the decision into the call instead of leaving it to somebody else's inbox.
 
 **Framing DNA:**  
-What They Do Not Tell You + Beginner's Journey + Insider Knowledge
+Personal Story + Transformation
 
-**Psychological Hook:**  
-The exact subscriber number makes the viewer feel seen. The word "stuck" validates that their experience is a recognizable stage rather than proof of laziness or personal failure.
+**Must Deliver:**  
+What the old process cost, what specifically replaced it, and honest numbers or an honest admission that the numbers are not tracked.
 
-**Why They Will Stop Scrolling:**  
-The framing promises information that cannot be found in broad beginner advice. It suggests that being stuck at this particular stage produces problems that larger creators may have forgotten.
-
-**Why This Works:**
-
-- The number immediately identifies the intended viewer.
-- "Nobody tells you" opens a knowledge gap.
-- "Being stuck" normalizes the experience without minimizing it.
-- The frame combines emotional validation with strategic usefulness.
-- It avoids promising instant growth or a universal shortcut.
-- The expression is simple and does not expose an obvious formula.
-
-**What the Video Must Deliver:**  
-The video should discuss problems that are genuinely specific to this stage. It cannot simply recycle general advice about thumbnails, consistency, or patience. It needs to explain the meaning of the plateau and help the viewer choose a practical next move.
-
-# Same Idea, Different Audience
-
-This section demonstrates that framing is not determined by the raw topic alone. It is determined by who the video is for, what they currently believe, what they fear, what they want, and what stage of the journey they have reached.
-
-The same raw idea can produce completely different videos for different audience segments.
-
-## Raw Idea: How to Get Your First Brand Deal
-
-## Framing A: The Gaming Creator
-
-**Context:**  
-The audience is a gaming creator with 2,000 subscribers who has been posting for one year. They see other gaming creators being sponsored by companies such as GFuel and Razer. They assume brand deals are reserved for channels with more than 100,000 subscribers.
-
-They have never contacted a brand because they believe their channel is too small.
+## Option B: Two versions of the same call
 
 **Frame:**  
-A behind-the-scenes video showing how a gaming creator landed their first sponsor with only 2,000 subscribers. It breaks down the embarrassingly simple email they sent, explains why a channel that small was already worth paying for, and kills the belief that you have to wait until you are big before you can even ask.
+A video putting two recordings of the same kind of sales call side by side, one where the designer is auditioning and one where they are not, and breaking down the exact moments where the power moves across the table.
 
 **Core Payoff:**  
-The viewer sees the exact kind of outreach that worked and realizes that they may already be large enough to approach relevant brands.
+The viewer can hear the difference and knows which specific moments in their own calls are the ones that hand over the evaluation.
 
 **Framing DNA:**  
-Personal Story + Beginner's Journey + Behind-the-Scenes
+Comparison + Expert Breakdown
 
-**Psychological Hook:**  
-The frame targets the belief that sponsorships are reserved for large creators. The specific subscriber count mirrors the viewer's situation and provides evidence that the opportunity may already be available.
+**Must Deliver:**  
+Real call material, and specific moments named rather than a general vibe about confidence.
 
-**Why They Will Stop Scrolling:**  
-Someone at their size has achieved the result they assumed was impossible. The phrase "embarrassingly simple" lowers the perceived difficulty and suggests that the creator did not rely on a secret connection or advanced sales system.
-
-**Why This Works:**
-
-- The deliberately small subscriber count challenges the audience's limiting assumption.
-- The creator provides proof from a comparable stage.
-- "Embarrassingly simple" makes the action feel approachable.
-- The video is framed as a real experience rather than a theoretical guide.
-- The implied email provides a concrete object of curiosity.
-- The creator offers permission to act now rather than after years of growth.
-
-**Why This Framing Would Fail for the Educator Below:**
-
-- An established educator does not need permission to contact brands.
-- The educator is more concerned about deal quality than access.
-- "Embarrassingly simple" may sound amateur to someone with existing leverage.
-- The subscriber count is too small to reflect the educator's situation.
-- The problem begins before the conversation, while the educator's problem occurs during negotiation.
-
----
-
-## Framing B: The Educator
-
-**Context:**  
-The audience is an online educator with 50,000 subscribers who teaches business or professional skills. Several brands have contacted them, but they rejected the offers because the compensation felt low or the products seemed irrelevant.
-
-They suspect they should be earning more from sponsorships, but they do not know what a good agreement looks like.
+## Option C: Why a better pitch makes it worse
 
 **Frame:**  
-A video about a creator with 50,000 subscribers who turned down three $1,000 sponsorship offers for being too low, and later found out every one of those brands had a much bigger budget sitting behind that first number. They break down how to find out what a brand can actually pay, what to send back instead of a no, and why treating an opening offer as the final offer is what was costing them.
+A video about why polishing the portfolio and tightening the pitch make the audition worse instead of better, and what actually decides which side of the table is being evaluated.
 
 **Core Payoff:**  
-The viewer learns which negotiation mistake was weakening otherwise promising opportunities and how to evaluate future offers more strategically.
+The viewer stops working on the thing they thought was the problem and learns what the audition is actually made of.
 
 **Framing DNA:**  
-Mistake and Warning + Insider Knowledge + Money and ROI
+Myth-Busting + Hidden Cause
 
-**Psychological Hook:**  
-The frame targets the fear of leaving money on the table. "Turned down three" validates the viewer's instinct to reject weak offers, while suggesting that repeatedly saying no may also be hiding a costly skill gap.
+**Must Deliver:**  
+A clear reason more polish backfires, and a concrete alternative that is not just "be confident."
 
-**Why They Will Stop Scrolling:**  
-The viewer has probably rejected, ignored, or mishandled offers too. The video promises a specific mistake that may be costing them real income.
+## Why this is three videos and not one
 
-**Why This Works:**
+A is retrospective and personal. B is a teardown of live material and could be made with no story at all. C is an argument that requires no footage and no story, only a correct idea.
 
-- The story starts from a position of leverage rather than desperation.
-- The creator is already receiving opportunities.
-- "Negotiating wrong" identifies a fixable skill gap.
-- The number three adds credibility without feeling inflated.
-- The frame respects the audience's existing experience.
-- The stakes are financial and immediately relevant.
-- The video promises a better decision process, not simply more brand deals.
-
-**Why This Framing Would Fail for the Gaming Creator Above:**
-
-- A creator with 2,000 subscribers may not have received an offer to reject.
-- The framing assumes access to conversations that have not started.
-- Negotiation advice does not solve the gaming creator's belief that they are too small.
-- The story begins from a level of confidence and leverage that the beginner does not possess.
-- The framing could make the smaller creator feel even further behind.
-
-## The Takeaway
-
-The raw idea is identical, but the videos are fundamentally different.
-
-The gaming creator needs permission, proof, and a low-pressure first action. The educator needs negotiation strategy, financial confidence, and a better method for evaluating opportunities.
-
-Neither framing should be transferred directly to the other audience.
-
-Strong framing does not simply place a new title on the same information. It changes the central problem, the emotional stakes, the examples, the argument, and the Core Payoff.
-
-# Bad Examples
-
-## Anti-Example 1: The Generic Guide
-
-**Implied Frame:**  
-A broad collection of general advice intended for almost anyone who wants more subscribers.
-
-**Why This Fails:**
-
-- It sounds like hundreds of existing videos.
-- "Ultimate Guide" is an overused phrase with little concrete meaning.
-- The target viewer is unclear.
-- Someone with zero subscribers and someone with 900 subscribers have different problems.
-- No emotional experience is acknowledged.
-- There is no distinctive perspective or mechanism.
-- The video promises completeness rather than relevance.
-- The viewer has no reason to believe this guide is different from the others they have ignored.
-
-**How to Improve It:**  
-Choose a specific stage, frustration, or mistaken belief.
-
-For example:
-
-"I stayed below 100 subscribers until I stopped making videos for other creators"
-
-This version implies a story, a strategic mistake, a defined audience stage, and a transformation.
+A needs the creator's past. B needs recordings. C needs neither. Three different production requirements is a reliable sign of three different videos.
 
 ---
 
-## Anti-Example 2: The Hype Machine
+# The second axis: same idea, different audience
 
-**Implied Frame:**  
-A list of fast tactics presented as current and effective.
+Batches 1 and 2 hold the context still and vary the video. The other axis holds the raw idea still and varies who it is for. Both matter. This one is usually more obvious.
 
-**Why This Fails:**
+**Raw idea:** how to get your first brand deal.
 
-- "Growth hacks" can trigger skepticism.
-- "Actually work" is an unsupported claim.
-- The year is being used as a substitute for a distinctive idea.
-- The audience stage is undefined.
-- No specific fear, goal, or obstacle is addressed.
-- The framing contains no story, tension, or meaningful contrast.
-- The title could be produced by filling in a generic template.
-- The viewer does not know why this creator's perspective matters.
+**Audience 1:** a gaming creator with 2,000 subscribers who has never contacted a brand because they assume deals start at 100,000.
 
-**How to Improve It:**  
-Replace broad hype with a clear audience, test, or counterintuitive finding.
+> **Frame:** A behind-the-scenes video showing how a gaming creator landed their first sponsor with only 2,000 subscribers. It breaks down the embarrassingly simple email they sent, explains why a channel that small was already worth paying for, and kills the belief that you have to wait until you are big before you can even ask.
 
-For example:
+**Audience 2:** an educator with 50,000 subscribers who keeps turning down offers that feel too low and does not know what a good deal looks like.
 
-"I tested 12 YouTube growth tips on a channel with 83 subscribers. Only two made a difference"
+> **Frame:** A video about a creator with 50,000 subscribers who turned down three $1,000 sponsorship offers for being too low, and later found out every one of those brands had a much bigger budget sitting behind that first number. They break down how to find out what a brand can actually pay, what to send back instead of a no, and why treating an opening offer as the final offer is what was costing them.
 
-This version introduces a real test, a small-channel context, a verdict, and a reason to stay.
+Neither frame transfers. The gaming creator has no offers to negotiate, so negotiation advice solves a problem they do not have yet. The educator does not need permission to ask, so "embarrassingly simple" reads as amateur to someone with leverage.
+
+The raw idea is identical. The central problem, the emotional stakes, the examples, and the Core Payoff are all different, which is what makes them different videos rather than one video retitled.
 
 ---
 
-## Anti-Example 3: The Vague Promise
+# On Framing DNA labels
 
-**Implied Frame:**  
-A list of strategies that supposedly creates rapid channel growth.
-
-**Why This Fails:**
-
-- "Fast" has no defined meaning.
-- "Proven" is not supported by evidence.
-- The number five adds structure but not relevance.
-- The promise could apply to almost any creator.
-- The title does not identify a meaningful problem.
-- There is no emotional connection.
-- There is no curiosity beyond wanting a list.
-- The viewer has no reason to trust this creator over another.
-- The framing describes information but does not create tension.
-
-**How to Improve It:**  
-Diagnose a specific reason the viewer's current effort is not working.
-
-For example:
-
-"Posting more will not save your small channel. This is what to fix first"
-
-This version challenges an existing behavior and promises a prioritized solution.
-
-# Good Versus Bad Comparison
-
-| Bad | Good | What Changed |
-|---|---|---|
-| "How to Get More Subscribers" | "I stayed at 47 subscribers for 6 months until I changed one thing" | Generic advice became a specific personal story with a number, timeline, and turning point. |
-| "YouTube Tips for Beginners" | "My first week on YouTube was a disaster. Here is what saved me" | A broad category became an emotional journey with stakes and recovery. |
-| "Best AI Tools for Creators" | "I tried 12 AI tools so you do not have to. Only 3 were worth it" | A recommendation list became a tested experience with a clear verdict. |
-| "How to Make Better Videos" | "Your videos feel boring because you are missing this" | A positive aspiration became a direct diagnosis with a knowledge gap. |
-| "How to Get a Brand Deal" | "I got my first sponsor at 2,000 subscribers with one simple email" | A general tutorial became proof that the result is possible at the viewer's current stage. |
-| "How to Grow on YouTube" | "The videos I was proudest of were keeping my channel small" | A broad outcome became a counterintuitive personal realization. |
-
-# The Pattern
-
-Bad framing usually describes a category of information:
-
-- Tips
-- Strategies
-- Tools
-- Guides
-- Hacks
-- Advice
-
-Good framing creates an emotional and intellectual reaction that will attract the right viewer:
-
-- "That is exactly where I am."
-- "I thought the opposite was true."
-- "How could that possibly be happening?"
-- "Someone else has experienced this."
-- "I need to know what changed."
-- "This result might be possible for someone like me."
-
-Behind it, the video still needs:
-
-1. A specific strategic direction.
-2. A clearly understood audience.
-3. An emotionally relevant problem or desire.
-4. A meaningful curiosity gap.
-5. A Core Payoff that resolves the central question.
-6. Content that fully delivers on the promise.
-
-
-The Frame determines the video.
-
-The Core Payoff earns the viewer's attention until the end.
+Use only pattern names that exist in `patterns.md`. If a frame does not map cleanly onto the library, the frame is probably doing two jobs, or the pattern is missing from the library and worth naming properly rather than inventing on the spot.
