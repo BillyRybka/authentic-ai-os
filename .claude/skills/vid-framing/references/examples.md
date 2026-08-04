@@ -2,11 +2,7 @@
 
 Read these at Step 3, after the audience entry point is approved.
 
-**Frame:** the specific direction the video will take for this audience. It decides the content, the argument, and the structure.
-
-**Core Payoff:** what the viewer walks away with for staying to the end.
-
-The Frame determines the video. The Core Payoff is why they stay.
+Frame and Core Payoff are defined in `SKILL.md`. This file is not the definition, it is the standard: what a good one reads like, and what a bad one reads like next to it.
 
 One approved context produces several genuinely different videos. The batches below show what that looks like, and what it looks like when it fails.
 

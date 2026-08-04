@@ -190,7 +190,13 @@ Every option must pass:
 
   - Is it different from the other options and common market framings?
 
+9. **Frame Accuracy**
+
+  - Is the Frame clear, and does it describe the video that would actually get made?
+
 Revise or remove any option that fails audience relevance, substance, payoff, credibility, or channel fit.
+
+This is the only validation pass. Run it once, here, before presenting the batch, and only output the strongest options.
 
 Do not display scores unless requested.
 
@@ -215,7 +221,7 @@ Use `foundation/iceberg.md` (Iceberg statement, machinery, content notes, the 8 
 
 ## Output Format
 
-## Option [Number]: [Short Working Label]
+### Option [Number]: [Short Working Label]
 
 **Frame:**  
 [One concise paragraph describing the video direction.]
@@ -266,29 +272,47 @@ Identify the likely failure:
 
 Generate new framing territories before writing new frames.
 
-## After a Direction Is Selected
+## Lock and Save
 
-Once the user selects a direction:
+The section above handles a rejected batch. This one handles a chosen direction, and it is not optional. A frame that is never saved does not exist to any skill after this one.
+
+Once the creator selects a direction:
 
 1. Keep the Frame fixed
 2. Keep the Core Payoff fixed
 3. Tighten the wording only if it is unclear or longer than it needs to be
 4. Do not let a tightening pass turn it into a different video
 
-## Final Check
+Then write the decision to `content/pieces/{slug}/piece.md`. Nothing downstream can see the frame until this happens: the orchestrator routes on `frame` being present, and `vid-title`, `vid-intro`, `vid-structure`, and `vid-ending` all read this file.
 
-Before presenting the batch, confirm:
+Append to the frontmatter:
 
-- Are these genuinely different videos?
-- Is each option built around the audience?
-- Is each Frame clear?
-- Does each frame accurately represent the video?
-- Is each Core Payoff worth staying for?
-- Can every claim be supported?
-- Does every option fit the channel?
-- Have generic and repetitive options been removed?
+```yaml
+frame: "..."         # the locked Frame, third person, one sentence
+core_payoff: "..."   # the locked Core Payoff, second person, 1-2 sentences
+```
 
-Only output the strongest options.
+The Core Payoff is presented to the creator in third person ("the viewer finds out...") because they are reading about their audience. It is stored in second person because the writing skills downstream address the viewer directly.
+
+Then append the body section, built from the entry point approved at Step 2 and the direction locked above. Third person, all three fields pointed at the locked frame:
+
+```markdown
+## The Read
+
+**Target:** [Who this is for and the situation, as one causal chain ending on a cost.]
+
+**Transformation:** [They stop doing X and do Y instead, plus what that gets them.]
+
+**Stakes:** [Each consequence causing the next, the misattribution named near the end, landing back where Target started.]
+```
+
+The misattribution is the thing the viewer believes is the problem when it is not, which Step 2 already surfaced. `vid-title` presses on the Stakes, `vid-intro` mines them for hooks, and `vid-structure` builds toward the Transformation.
+
+Do not set `status`. The piece stays `ideating` until `vid-structure` moves it. The presence of `frame` is what tells the orchestrator framing is done.
+
+On a re-frame, replace this section rather than appending a second one. It describes the current frame, not a history.
+
+Do not touch any field this skill does not own. The full schema is in `knowledge/piece-contract.md`.
 
 ## Reference Files
 
@@ -300,5 +324,8 @@ Only output the strongest options.
 | Default audience | `foundation/avatar.md` (avatar, Top 3 perceived problems) | Step 1 |
 | Channel positioning | `foundation/iceberg.md` (Iceberg statement, machinery, content notes, 8 pillars) | Step 6 |
 | Raw material, when framing a piece | `content/pieces/{slug}/brain-dump.md` | Step 1 |
+| Field and section schema, when saving | `knowledge/piece-contract.md` | Lock and Save |
 
-This table is exhaustive. Read nothing outside it.
+This table is exhaustive for reading. Read nothing outside it.
+
+One file is written, not read: `content/pieces/{slug}/piece.md`, at Lock and Save.

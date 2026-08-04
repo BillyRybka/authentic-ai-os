@@ -344,22 +344,10 @@ A personal story, experiment, warning, framework, and ranking should not all fig
 
 ---
 
-# Final Check
+# Choosing Between Two That Fit
 
-Before using a pattern, confirm:
+When more than one pattern fits, the tiebreaker is not which sounds better. It is which one the available evidence can actually carry. Check the Must Deliver line under each candidate against what is in the dump. A pattern whose Must Deliver you cannot meet is the wrong pattern no matter how well it fits the audience.
 
-- Does it fit the audience's actual situation?
-- Does it shape the direction of the video?
-- Does it create a real emotional or intellectual reaction?
-- Does it open a question the video can answer?
-- Is the idea honest and supportable?
-- Is the Core Payoff clear?
-- Can the video fully deliver what the frame promises?
+Patterns create possible directions. The audience determines which direction matters.
 
-Patterns create possible directions.
-
-The audience determines which direction matters.
-
-The Frame defines the video.
-
-The Core Payoff gives the viewer a reason to stay.
+Validation of the finished options happens once, at Step 6 of `SKILL.md`. Do not run a second pass here.
