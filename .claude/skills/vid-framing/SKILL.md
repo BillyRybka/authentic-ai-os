@@ -9,13 +9,13 @@ Turn a broad video idea into a concept the target audience feels was made specif
 
 ## Before You Start
 
-No `content/pieces/{slug}/brain-dump.md`, point them at `vid-intake` and stop. No `foundation/avatar.md` or `foundation/iceberg.md`, point them at `/foundation` and stop. If `vid-pipeline` invoked this with a slug, prerequisites are already verified: do not re-check and do not ask which piece.
+No `content/pieces/{slug}/brain-dump.md`, point them at `vid-intake` and stop. No `foundation/avatar.md` or `foundation/iceberg.md`, point them at `/foundation` and stop. 
 
 If piece.md already has a `frame`, this is a re-frame. Ask whether they want fresh directions or that one sharpened, then run from Step 2 or skip to Lock and Save with `## The Read` replaced rather than appended.
 
 ## What This Creates
 
-For one video idea, as many genuinely different framing options as the material supports. No target number: a count makes you pad to reach it, and three real angles beat five where two are filler. Say how many survived, in a clause.
+For one video idea, as many genuinely different framing options as the material supports.
 
 Each option includes:
 
@@ -91,11 +91,11 @@ Each Frame should establish:
 
 A frame should sound like a creator clearly explaining the video they want to make, not a strategist writing a report. Keep it to 1-2 sentences. The list above is what the frame has to make clear, not five clauses to cram into one sentence.
 
-`references/examples.md` opens with three stiff frames rewritten. Read the register off those pairs rather than off a list of approved words. No fixed opener: two options starting the same way means the form is growing back.
+`references/examples.md` opens with three stiff frames rewritten. Read the register off those pairs. Vary how they open: two options starting the same way read as one idea reworded.
 
 Be specific rather than vague. The hidden thing, the part that is not obvious to everyone else, is what creates intrigue, so keep the answer withheld. Just make the setup around it concrete enough to picture. Do not over-explain.
 
-Each option must change the substance of the video, not just the wording. Vary what kind of video it is, and let the material decide which patterns are available. Do not force a pattern the evidence cannot carry, and do not manufacture a fifth angle to round out the batch.
+Each option must change the substance of the video, not just the wording. Vary what kind of video it is, and let the material decide which patterns are available. Do not force a pattern the evidence cannot carry.
 
 ### 4. Define the Core Payoff
 
@@ -135,7 +135,7 @@ Reject any frame the creator cannot honestly support.
 
 ### 6. Validate
 
-Whether a frame lands on the audience is Step 2's job and it has already been done. This pass catches the five things a good frame can still fail:
+Every option must pass:
 
 1. **Substance.** Is there enough here for a whole video, or is it one good line?
 2. **Payoff.** Is the end result specific, worth staying for, and something the viewer cannot get without watching?
@@ -145,11 +145,11 @@ Whether a frame lands on the audience is Step 2's job and it has already been do
 
 Anything that fails does not get offered and does not get patched, because a frame that needs defending is one the viewer would have to be talked into too.
 
-This is the only validation pass. Run it once, here, before presenting the batch. Do not display scores unless requested.
+Do not display scores unless requested.
 
 ## Are These Actually Different Videos
 
-Two tests, both from the batches in `references/examples.md`. Vague variety instructions produce the same video in four outfits; these catch it.
+Two tests, both drawn from the batches in `references/examples.md`.
 
 **The Must Deliver test.** Read the Must Deliver for each option. Four options that fail the same way are one option written four times.
 
@@ -209,8 +209,6 @@ Then find new framing territory. Their angle competes with the others rather tha
 
 ## Lock and Save
 
-The section above handles a rejected batch. This one handles a chosen direction, and it is not optional. A frame that is never saved does not exist to any skill after this one.
-
 Once the creator selects a direction:
 
 1. Keep the Frame fixed
@@ -232,15 +230,13 @@ Read `references/format-index.md`.
 
 Read `assets/piece-additions.md` for the exact shape, then write to `content/pieces/{slug}/piece.md`.
 
-Left in the conversation, the whole decision is gone by the next session.
-
 Ask the cost question first, every time, including when you could write Stakes without it: what does it actually cost them to keep doing it this way.
 
 Show the read, then write the file.
 
 ### Before you save
 
-The field-level rules live in `assets/piece-additions.md`. These are the ones that fail the whole save:
+Field-level rules are in `assets/piece-additions.md`. These fail the whole save:
 
 - The saved `frame` is the option the creator picked, word for word. If a word changed, say what changed.
 - The `frame` describes the video that would actually get made, not a better one.
