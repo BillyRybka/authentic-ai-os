@@ -1,6 +1,6 @@
 ---
 name: vid-framing
-description: Turn a video idea into a decided video. Reads the brain dump and the creator foundation, writes 3-5 genuinely different framings of the same idea each with a Core Payoff, and recommends one. Once the creator picks, writes the read, sets the format and the goal, and saves it all to piece.md before handing to vid-title. Use whenever a piece needs its direction decided, including when the creator never says the word "frame". Triggers include "frame this video", "pick the angle", "what should this video be about", "what's the angle here", "what part of this do people actually care about", "re-frame this piece", "I don't know how to position this one", and any point where a creator has an idea but has not decided why anyone would watch it.
+description: Turn a video idea into a decided video. Reads the brain dump and the creator foundation, writes several genuinely different framings of the same idea each with a Core Payoff, and recommends one. Once the creator picks, writes the read, sets the format and the goal, and saves it all to piece.md before handing to vid-title. Use whenever a piece needs its direction decided, including when the creator never says the word "frame". Triggers include "frame this video", "pick the angle", "what should this video be about", "what's the angle here", "what part of this do people actually care about", "re-frame this piece", "I don't know how to position this one", and any point where a creator has an idea but has not decided why anyone would watch it.
 ---
 
 # Video Framing
@@ -17,7 +17,7 @@ If piece.md already has a `frame`, this is a re-frame. Ask whether they want fre
 
 ## What This Creates
 
-For one video idea, create 3-5 distinct framing options.
+For one video idea, as many genuinely different framing options as the material supports. No target number: a count makes you pad to reach it, and three real angles beat five where two are filler. Say how many survived, in a clause.
 
 Each option includes:
 
@@ -34,14 +34,11 @@ The Frame determines the video.
 
 Once the creator picks one, the piece leaves with its Frame, Core Payoff, format, and goal on disk, ready for `vid-title`.
 
-## Essential Principles
+## Never Invent
 
-1. **Frame the viewer's problem, not just the topic.**
-2. **Use one primary pattern and up to two supporting patterns.**
-3. **Make every option a meaningfully different video.**
-4. **Use specific audience context without inventing facts, stories, or results.**
-5. **Create curiosity the video can genuinely satisfy.**
-6. **Prefer three strong options over five repetitive ones.**
+Every frame, every payoff, and every line of the read traces to the brain dump, the foundation, or something the creator said in this session. If the material cannot support an angle, it does not get offered, so there is nothing to walk back later.
+
+This applies to what you say in conversation, not only what reaches the file. Be most careful with the creator's own history: telling somebody they spent months on something the material never dated asserts a fact about their life back to them.
 
 ## Process
 
@@ -96,37 +93,11 @@ Each Frame should establish:
 
 A frame should sound like a creator clearly explaining the video they want to make, not a strategist writing a report. Keep it to 1-2 sentences. The list above is what the frame has to make clear, not five clauses to cram into one sentence.
 
-Avoid unnecessary terms such as:
+`references/examples.md` opens with three stiff frames rewritten. Read the register off those pairs rather than off a list of approved words. No fixed opener: two options starting the same way means the form is growing back.
 
-- diagnostic
-- strategic bottleneck
-- central tension
-- audience-facing
-- transformation journey
-- strategic substance
+Be specific rather than vague. The hidden thing, the part that is not obvious to everyone else, is what creates intrigue, so keep the answer withheld. Just make the setup around it concrete enough to picture. Do not over-explain.
 
-Prefer clear language such as:
-
-- A video about...
-- A video that shows...
-- A video that helps...
-- A story about...
-- An experiment that tests...
-- A breakdown of...
-
-Be specific rather than vague. The hidden thing, the part that is not obvious to everyone else, is what creates intrigue, so keep the answer withheld. Just make the setup around it concrete enough to picture. Do not over-explain. `references/examples.md` shows the difference between a frame that reads like a report and one a creator could picture filming.
-
-Each option must change the substance of the video, not just the wording.
-
-Good batch variety may include:
-
-- Story-led
-- Cause or mechanism-led
-- Proof or experiment-led
-- Practical or system-led
-- Contrarian or belief-shifting
-
-Do not force a pattern that does not fit the available evidence.
+Each option must change the substance of the video, not just the wording. Vary what kind of video it is, and let the material decide which patterns are available. Do not force a pattern the evidence cannot carry, and do not manufacture a fifth angle to round out the batch.
 
 ### 4. Define the Core Payoff
 
@@ -166,68 +137,27 @@ Reject any frame the creator cannot honestly support.
 
 ### 6. Validate
 
-Every option must pass:
+Whether a frame lands on the audience is Step 2's job and it has already been done. This pass catches the five things a good frame can still fail:
 
-1. **Audience Relevance**
+1. **Substance.** Is there enough here for a whole video, or is it one good line?
+2. **Payoff.** Is the end result specific, worth staying for, and something the viewer cannot get without watching?
+3. **Credibility.** Can the creator support every claim in it from the brain dump?
+4. **Channel fit.** Read `foundation/iceberg.md`. Does it serve the Iceberg statement and sit inside the pillars, rather than drifting into generic advice outside the creator's lane? Internal brand language stays out of the Frame unless the audience already knows it.
+5. **Distinctiveness.** Apply both tests below.
 
-  - Does it target a specific goal, pain point, belief, or fear?
+Anything that fails does not get offered and does not get patched, because a frame that needs defending is one the viewer would have to be talked into too.
 
-2. **Emotional Pull**
+This is the only validation pass. Run it once, here, before presenting the batch. Do not display scores unless requested.
 
-  - Does it create recognition, hope, concern, relief, frustration, or curiosity?
+## Are These Actually Different Videos
 
-3. **Curiosity Depth**
+Two tests, both from the batches in `references/examples.md`. Vague variety instructions produce the same video in four outfits; these catch it.
 
-  - Does the viewer need the video to resolve the question?
+**The Must Deliver test.** Read the Must Deliver for each option. Four options that fail the same way are one option written four times.
 
-4. **Substance**
+**The production test.** Would you film these on different days, with different footage, needing different things to exist first? One needs the creator's past, one needs recordings, one needs neither. Different production requirements is the reliable sign of different videos.
 
-  - Is there enough here for a meaningful video?
-
-5. **Core Payoff Clarity**
-
-  - Is the end result specific and worth staying for?
-
-6. **Credibility**
-
-  - Can the creator support the claim based on the Braindump.
-
-7. **Channel Fit**
-
-  - Does it align with the Iceberg statement and pillars in `foundation/iceberg.md`?
-
-8. **Distinctiveness**
-
-  - Is it different from the other options and common market framings?
-
-9. **Frame Accuracy**
-
-  - Is the Frame clear, and does it describe the video that would actually get made?
-
-Revise or remove any option that fails audience relevance, substance, payoff, credibility, or channel fit.
-
-This is the only validation pass. Run it once, here, before presenting the batch, and only output the strongest options.
-
-Do not display scores unless requested.
-
-## Channel Positioning
-
-Use `foundation/iceberg.md` (Iceberg statement, machinery, content notes, the 8 pillars) as the final filter.
-
-- Stay within the creator's pillars
-- Support the transformation the Iceberg statement promises
-- Do not drift into generic advice outside the creator's lane
-- Do not use internal brand language in the Frame unless the audience understands it
-
-## Anti-Formulaic Guard
-
-- Use a different primary pattern for each option
-- Do not repeat the same pattern blend in one batch
-- Do not make every option personal-story-led
-- Vary the emotional entry point
-- Vary the source of curiosity
-- Include at least one option from a different video genre
-- Remove options that are only rewrites of the same idea
+If a batch fails both, the problem is upstream in the entry point, not in the wording.
 
 ## Output Format
 
@@ -268,19 +198,16 @@ The creator's passion is the only validation point the skill cannot decide.
 
 Do not simply rewrite the frames or reshuffle patterns.
 
-Identify the likely failure:
+A rejected batch usually means one thing went wrong upstream, and reshuffling patterns cannot reach it:
 
-- The topic was framed instead of the viewer
-- The audience entry point was too broad
-- The options used the same emotional angle
-- The Core Payoff was weak
-- The frame promised more than the actual video
-- The concept required unavailable proof
-- The options did not fit the channel
-- The market scan influenced the angle too heavily
-- The wording felt formulaic
+- The topic got framed instead of the viewer, or the entry point was too broad to bite
+- Every option came off the same emotional angle, so the batch was one video
+- The frame promised more than the video can pay
+- The concept needed proof the creator does not have
 
-Generate new framing territories before writing new frames.
+Ask two questions before regenerating: what had they already tried before this and what kept going wrong, and what angle are they leaning toward. What they tried is almost never in the dump, because they solved it and moved on. Their angle carries the phrase they have been using in their own head.
+
+Then find new framing territory. Their angle competes with the others rather than replacing the batch.
 
 ## Lock and Save
 
@@ -318,6 +245,7 @@ Show the read, then write the file.
 The field-level rules live in `assets/piece-additions.md`. These are the ones that fail the whole save:
 
 - The saved `frame` is the option the creator picked, word for word. If a word changed, say what changed.
+- The `frame` describes the video that would actually get made, not a better one.
 - Target is a causal chain, not a profile. If "their goal is" or "their pain point is" appears, rewrite it.
 - Transformation reaches the same ending as `core_payoff`.
 - Stakes belong to this piece. Put another video's frame on the paragraph. If it would still be true, replace a consequence.
