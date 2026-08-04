@@ -7,8 +7,6 @@ description: Turn a video idea into a decided video. Reads the brain dump and th
 
 Turn a broad video idea into a concept the target audience feels was made specifically for them.
 
-**Scope: the angle, never the words.** It does not capture raw material (`vid-intake`), pick the topic (`vid-ideas`), write the title (`vid-title`) or thumbnail (`vid-thumbnail`), build the outline (`vid-structure`), or draft a line of script. It decides what the video is and who it is for, then stops.
-
 ## Before You Start
 
 No `content/pieces/{slug}/brain-dump.md`, point them at `vid-intake` and stop. No `foundation/avatar.md` or `foundation/iceberg.md`, point them at `/foundation` and stop. If `vid-pipeline` invoked this with a slug, prerequisites are already verified: do not re-check and do not ask which piece.
@@ -32,7 +30,7 @@ The Core Payoff rewards the viewer for staying.
 
 The Frame determines the video.
 
-Once the creator picks one, the piece leaves with its Frame, Core Payoff, format, and goal on disk, ready for `vid-title`.
+Once the creator picks one, the piece leaves with its Frame, Core Payoff, format, and goal on disk.
 
 ## Never Invent
 
@@ -234,7 +232,7 @@ Read `references/format-index.md`.
 
 Read `assets/piece-additions.md` for the exact shape, then write to `content/pieces/{slug}/piece.md`.
 
-Nothing downstream can see the frame until this happens: the orchestrator routes on `frame` being present, and `vid-title`, `vid-intro`, `vid-structure`, and `vid-ending` all read this file.
+Left in the conversation, the whole decision is gone by the next session.
 
 Ask the cost question first, every time, including when you could write Stakes without it: what does it actually cost them to keep doing it this way.
 
@@ -252,15 +250,7 @@ The field-level rules live in `assets/piece-additions.md`. These are the ones th
 - Every claim, number, and duration traces to the brain dump, the foundation, or something the creator said in this session. Every gap is a `> [!todo]`.
 - `format` is one of the seven and `goal` is set.
 
-Then one line back to the creator: format, goal, and `vid-title` next.
-
-## Output and Handoff
-
-Appends to the piece.md `vid-intake` created, never touching a field another skill owns. Ownership is in `knowledge/piece-contract.md`, the exact shape in `assets/piece-additions.md`.
-
-Frontmatter: `frame`, `core_payoff`, `format`, `goal`, `voice_context`, `last_updated`. Body: `## The Read` with Target, Transformation, and Stakes, plus any withheld proof as a `> [!todo]`.
-
-Prerequisite: `vid-intake`. Handoff: `vid-title`.
+Then one line back to the creator: the format, the goal, and that `vid-title` is next.
 
 ## Reference Files
 

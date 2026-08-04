@@ -6,7 +6,7 @@ purpose: The frontmatter fields and body sections vid-framing appends to content
 
 # piece.md framing additions
 
-`vid-intake` created piece.md. vid-framing appends its decisions to that file and never touches a field another skill owns.
+piece.md already exists. Append to it, never create it, and never touch a field another skill owns.
 
 ## Frontmatter to add
 
@@ -24,7 +24,7 @@ last_updated: {YYYY-MM-DD}
 
 Add `format-{format}` to the existing `tags` list.
 
-Do not set `status`. The piece stays `ideating` until `vid-structure` moves it to `drafting`. The orchestrator knows framing is done because `frame` is present.
+Do not set `status`. The piece stays `ideating`, and the presence of `frame` is what signals framing is done.
 
 `core_payoff` lives in frontmatter only. It locks with the Frame before the read exists, so there is no second copy anywhere for it to drift against.
 
@@ -34,7 +34,7 @@ It is shown to the creator in third person, because a run of second person lines
 
 ### The Read
 
-Three fields, third person, in the words the creator confirmed at Step 2. `vid-title` presses on the Stakes, `vid-intro` mines them for hooks, and `vid-structure` builds toward the Transformation. Left in the conversation, all of it is gone by the next session.
+Three fields, third person, in the words the creator confirmed at Step 2. 
 
 ```markdown
 ## The Read
@@ -52,7 +52,7 @@ Read all three aloud before writing them. Anything the creator would pause and r
 
 On a re-frame, replace this section. It describes the current frame rather than a history.
 
-The options that lost stay in the conversation. Nothing downstream reads them, and their working labels are title shaped, so writing them to disk hands `vid-title` a line drafted before it looked at anything that already works on this channel.
+The options that lost stay in the conversation. Nothing reads them later, and their working labels are title shaped, so saving them commits a headline before anything has looked at what already works on this channel.
 
 ### Proof gaps
 
