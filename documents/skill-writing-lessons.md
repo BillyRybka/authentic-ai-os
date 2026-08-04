@@ -101,6 +101,32 @@ The last pass was making whatever survived read like a person talking instead of
 
 **How to apply:** When a downstream skill re-interviews the user or re-derives a decision, look upstream. The prior skill's output is incomplete. Complete the plan in the planner. A writer that re-plans is a boundary bug, not a feature.
 
+### 19. Never argue for an instruction. The argument is what plants the doubt. [structural]
+
+**Principle:** State the instruction and stop. A sentence defending it against an objection nobody raised introduces the exact idea it is trying to rule out.
+
+**What happened (vid-framing, 2026-08-04):** After a cleanup pass, seven lines had grown a defense of themselves. The clearest:
+
+> **Arguing:** For one video idea, as many genuinely different framing options as the material supports. No target number: a count makes you pad to reach it, and three real angles beat five where two are filler. Say how many survived, in a clause.
+>
+> **Instructing:** For one video idea, as many genuinely different framing options as the material supports.
+
+Nothing in the first sentence makes a reader think about counting until the second sentence starts arguing against it. The defense created the problem it was defending against. The trailing "say how many survived" was worse: it had been carried over from a version with a visible screen-and-cut step, so in this skill it counted nothing.
+
+Most of the seven were defending an edit against a version the reader never saw, which is changelog written into the skill:
+
+> **Arguing:** Read the register off those pairs rather than off a list of approved words.
+>
+> **Instructing:** Read the register off those pairs.
+
+The list of approved words had been deleted two commits earlier. The only reader who needed that clause was me.
+
+Same shape in the other five: "This is the only validation pass, run it once" guarded against duplicate checklists that no longer existed. "Whether a frame lands on the audience is Step 2's job and it has already been done" explained which criteria had been removed. "Two tests... vague variety instructions produce the same video in four outfits" argued with the guard they replaced.
+- Before: 14,409 characters, seven instructions each trailed by its own defense.
+- After: 12,601 characters, same instructions.
+
+**How to apply:** After writing a rule, read the sentence that follows it. If it exists to justify the rule rather than to change what gets done, cut it. Two tests that separate the cases. **Does the reader know about the alternative?** If the instruction is the only thing they have seen, warning them off the alternative introduces it. **Would they do the wrong thing without this sentence?** A why earns its place when it changes behavior in a case the rule does not cover (keep "state the format, do not ask, because a question here spends attention on a call you can already make"). It does not earn its place when it defends the rule's existence. Above all, never write the diff into the file: the reader did not see the old version, and explaining what you removed is the surest way to put it back in their head.
+
 ---
 
 ## Flow and voice (creative skills)
