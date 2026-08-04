@@ -1,11 +1,19 @@
 ---
 name: vid-framing
-description: Transform a video idea into 3-5 distinct, audience-specific concepts with a clear Frame and Core Payoff. Use when developing video angles, positioning content, or finding the strongest psychological entry point.
+description: Turn a video idea into a decided video. Reads the brain dump and the creator foundation, writes 3-5 genuinely different framings of the same idea each with a Core Payoff, and recommends one. Once the creator picks, writes the read, sets the format and the goal, and saves it all to piece.md before handing to vid-title. Use whenever a piece needs its direction decided, including when the creator never says the word "frame". Triggers include "frame this video", "pick the angle", "what should this video be about", "what's the angle here", "what part of this do people actually care about", "re-frame this piece", "I don't know how to position this one", and any point where a creator has an idea but has not decided why anyone would watch it.
 ---
 
 # Video Framing
 
 Turn a broad video idea into a concept the target audience feels was made specifically for them.
+
+**Scope: the angle, never the words.** It does not capture raw material (`vid-intake`), pick the topic (`vid-ideas`), write the title (`vid-title`) or thumbnail (`vid-thumbnail`), build the outline (`vid-structure`), or draft a line of script. It decides what the video is and who it is for, then stops.
+
+## Before You Start
+
+No `content/pieces/{slug}/brain-dump.md`, point them at `vid-intake` and stop. No `foundation/avatar.md` or `foundation/iceberg.md`, point them at `/foundation` and stop. If `vid-pipeline` invoked this with a slug, prerequisites are already verified: do not re-check and do not ask which piece.
+
+If piece.md already has a `frame`, this is a re-frame. Ask whether they want fresh directions or that one sharpened, then run from Step 2 or skip to Lock and Save with `## The Read` replaced rather than appended.
 
 ## What This Creates
 
@@ -23,6 +31,8 @@ Each option includes:
 The Core Payoff rewards the viewer for staying.
 
 The Frame determines the video.
+
+Once the creator picks one, the piece leaves with its Frame, Core Payoff, mechanism, format, and goal on disk, ready for `vid-title`.
 
 ## Essential Principles
 
@@ -283,36 +293,47 @@ Once the creator selects a direction:
 3. Tighten the wording only if it is unclear or longer than it needs to be
 4. Do not let a tightening pass turn it into a different video
 
-Then write the decision to `content/pieces/{slug}/piece.md`. Nothing downstream can see the frame until this happens: the orchestrator routes on `frame` being present, and `vid-title`, `vid-intro`, `vid-structure`, and `vid-ending` all read this file.
+### Set the format and the goal
 
-Append to the frontmatter:
+Read `references/format-index.md`.
 
-```yaml
-frame: "..."         # the locked Frame, third person, one sentence
-core_payoff: "..."   # the locked Core Payoff, second person, 1-2 sentences
-```
+**State both, do not ask.** "Short-process, goal emails. Say the word if either is wrong." The creator corrects if it is wrong; a question here spends their attention on a call you can already make.
 
-The Core Payoff is presented to the creator in third person ("the viewer finds out...") because they are reading about their audience. It is stored in second person because the writing skills downstream address the viewer directly.
+- **Format** follows the material and the locked Frame. A client transformation is a case study. A reaction to something that just happened is news. A "here is my process" is short-process. A frame that spends real time discrediting the old way before building anything is a deep-dive. Lock one of the seven, and never lock one with no planner in `knowledge/format-planners/`.
+- **Goal** follows how warm the audience is: cold wants views, warm wants emails, hot wants sales. One only.
+- **Mechanism** is what produces the result, named in a phrase, plus its kind: `delivery`, `draw`, or `qualifier`. Delivery stays out of the frame, draw carries it, qualifier narrows it. Store the call, not the argument for it.
+- **Voice context** stays `youtube-script` unless the piece genuinely is another medium. A walkthrough is still a YouTube script.
 
-Then append the body section, built from the entry point approved at Step 2 and the direction locked above. Third person, all three fields pointed at the locked frame:
+### Write the file
 
-```markdown
-## The Read
+Read `assets/piece-additions.md` for the exact shape, then write to `content/pieces/{slug}/piece.md`.
 
-**Target:** [Who this is for and the situation, as one causal chain ending on a cost.]
+Nothing downstream can see the frame until this happens: the orchestrator routes on `frame` being present, and `vid-title`, `vid-intro`, `vid-structure`, and `vid-ending` all read this file.
 
-**Transformation:** [They stop doing X and do Y instead, plus what that gets them.]
+Ask the cost question first, every time, including when you could write Stakes without it: what does it actually cost them to keep doing it this way.
 
-**Stakes:** [Each consequence causing the next, the misattribution named near the end, landing back where Target started.]
-```
+Show the read, then write the file.
 
-The misattribution is the thing the viewer believes is the problem when it is not, which Step 2 already surfaced. `vid-title` presses on the Stakes, `vid-intro` mines them for hooks, and `vid-structure` builds toward the Transformation.
+### Before you save
 
-Do not set `status`. The piece stays `ideating` until `vid-structure` moves it. The presence of `frame` is what tells the orchestrator framing is done.
+The field-level rules live in `assets/piece-additions.md`. These are the ones that fail the whole save:
 
-On a re-frame, replace this section rather than appending a second one. It describes the current frame, not a history.
+- The saved `frame` is the option the creator picked, word for word. If a word changed, say what changed.
+- Target is a causal chain, not a profile. If "their goal is" or "their pain point is" appears, rewrite it.
+- Transformation reaches the same ending as `core_payoff`.
+- Stakes belong to this piece. Put another video's frame on the paragraph. If it would still be true, replace a consequence.
+- Every claim, number, and duration traces to the brain dump, the foundation, or something the creator said in this session. Every gap is a `> [!todo]`.
+- `format` is one of the seven and `goal` is set.
 
-Do not touch any field this skill does not own. The full schema is in `knowledge/piece-contract.md`.
+Then one line back to the creator: format, goal, and `vid-title` next.
+
+## Output and Handoff
+
+Appends to the piece.md `vid-intake` created, never touching a field another skill owns. Ownership is in `knowledge/piece-contract.md`, the exact shape in `assets/piece-additions.md`.
+
+Frontmatter: `frame`, `core_payoff`, `mechanism`, `format`, `goal`, `voice_context`, `last_updated`. Body: `## The Read` with Target, Transformation, and Stakes, plus any withheld proof as a `> [!todo]`.
+
+Prerequisite: `vid-intake`. Handoff: `vid-title`.
 
 ## Reference Files
 
@@ -324,6 +345,7 @@ Do not touch any field this skill does not own. The full schema is in `knowledge
 | Default audience | `foundation/avatar.md` (avatar, Top 3 perceived problems) | Step 1 |
 | Channel positioning | `foundation/iceberg.md` (Iceberg statement, machinery, content notes, 8 pillars) | Step 6 |
 | Raw material, when framing a piece | `content/pieces/{slug}/brain-dump.md` | Step 1 |
+| Picking the format | `references/format-index.md` | Lock and Save |
 | Field and section schema, when saving | `knowledge/piece-contract.md` | Lock and Save |
 
 This table is exhaustive for reading. Read nothing outside it.
