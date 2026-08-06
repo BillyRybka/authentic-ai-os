@@ -37,7 +37,7 @@ A context with too little material gets no folder (no stub) and is noted in `con
 
 ## Prerequisites
 
-- `foundation/creator-foundation.md` exists (positioning and avatar shape how voice reads in context).
+- `foundation/iceberg.md` and `foundation/avatar.md` exist (positioning and avatar shape how voice reads in context).
 - Source material. Minimum viable depends on format-length: 3 to 5 pieces for short-form contexts (`shorts`, `linkedin`, `twitter`); 3 to 5 transcripts or ~5,000 words for long-form contexts (`youtube-script`, `tutorial`, `newsletter`, `podcast`, `talk`). Thinner runs still work but flag low confidence and defer contexts. Full floor in `knowledge/voice-extraction-methods.md`.
 
 ## Load at session start
@@ -45,7 +45,7 @@ A context with too little material gets no folder (no stub) and is noted in `con
 1. `knowledge/interview-posture.md`. Shared posture. Non-negotiable.
 2. `knowledge/voice-profile-schema.md`. The two-artifact contract and load contract, including both artifacts' frontmatter.
 3. `knowledge/vault-integration.md`. The foundation-doc schema `voice-profile.md` is written against, plus tag and naming conventions.
-4. `foundation/creator-foundation.md`. Avatar and positioning.
+4. `foundation/iceberg.md` and `foundation/avatar.md`. Positioning and avatar.
 5. `knowledge/voice-extraction-methods.md` when curation starts. Source grouping, passage selection, guardrail build.
 6. `knowledge/voice-pressure-test.md` at the read-aloud stage.
 

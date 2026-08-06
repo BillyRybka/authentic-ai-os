@@ -26,7 +26,7 @@ For each, look for a source.
 ## Source-checking order
 
 1. brain-dump.md (creator's own raw material for this piece)
-2. foundation/creator-foundation.md (avatar, Top 3, credibility brags)
+2. foundation/avatar.md (avatar, Top 3) and foundation/credibility.md (the three proof points)
 3. foundation/voice-profile.md (recurring phrases section)
 4. banks/story-bank/*.md
 5. banks/proof-bank/*.md
@@ -77,7 +77,7 @@ brain-dump.md has no source for "47%". foundation has no stat. No banks referenc
 Location: Segment 2 line 3
 Quote: "47% of CEOs say they struggle with this exact problem."
 Issue: The number 47% is not in brain-dump, foundation, or any bank. Likely fabricated.
-Suggested fix: Drop the number. Rewrite as "most of my coaching clients struggle with this" (which traces to creator-foundation.md credibility brag: "200+ clients coached").
+Suggested fix: Drop the number. Rewrite as "most of my coaching clients struggle with this" (which traces to foundation/credibility.md: "200+ clients coached").
 ```
 
 ### Example 2: real claim, vague source (SOFT)

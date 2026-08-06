@@ -25,7 +25,7 @@ Hard requirements:
 - `content/pieces/{slug}/script.md` exists with intro + all body segments + ending all written (no stub sections)
 - `content/pieces/{slug}/piece.md` exists with `frame`, `format`, `goal` locked
 - `content/pieces/{slug}/brain-dump.md` exists (claim traceability source)
-- `foundation/creator-foundation.md`, `foundation/voice-profile.md` (the refusals section carries the banned phrases and required swaps)
+- `foundation/avatar.md`, `foundation/credibility.md`, `foundation/voice-profile.md` (the refusals section carries the banned phrases and required swaps)
 
 Soft requirements:
 - `foundation/reference-pieces/{voice_context}.md` (the gold-standard passages as `## ` sections, loaded by `vid-voice-audit` when reviewer 2 runs, matched to piece.md `voice_context`)
@@ -49,7 +49,7 @@ Silent loads (do NOT paste into chat):
 1. `content/pieces/{slug}/script.md` (the full audit target)
 2. `content/pieces/{slug}/piece.md` (goal, format, voice_context drive rubric weighting)
 3. `content/pieces/{slug}/brain-dump.md` (traceability source)
-4. `foundation/creator-foundation.md` (avatar, Top 3, credibility brags)
+4. `foundation/avatar.md` (avatar, Top 3) and `foundation/credibility.md` (the three proof points)
 5. `foundation/voice-profile.md` (the thin guardrail: refusals, signature phrases, POV/energy. Contract in `knowledge/voice-profile-schema.md`)
 6. `foundation/reference-pieces/{voice_context}.md` (the voice engine: real intact passages as `## ` sections, matched to piece.md `voice_context`, default `youtube-script`. The gold standard for the read-aloud test)
 7. `knowledge/script-tension-architecture.md` (retention-logic source)
@@ -277,6 +277,6 @@ vid-pipeline reads `pressure_test_audit` from piece.md frontmatter directly. No 
 - `vid-structure` writes the skeleton that the body skills filled
 - `vid-framing` locks the frame the reviewers test against
 - `vid-intake` produced the brain-dump that source-traceability checks
-- The `/foundation` chain produced creator-foundation; `vid-voice-capture` produced voice-profile; `vid-research` produced packaging-system
+- The `/foundation` chain produced the `foundation/` files; `vid-voice-capture` produced voice-profile; `vid-research` produced packaging-system
 - `vid-pipeline` invokes this skill after vid-ending completes
 - `vid-measurement` (future) reads pressure-test results post-publish to correlate with retention data

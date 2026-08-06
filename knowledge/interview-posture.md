@@ -160,7 +160,7 @@ If you already have what you need, don't ask. Move forward. The creator's time i
 
 ## Save what matters as you go
 
-Each phase locks → write the locked section to `creator-foundation.md` (or wherever that skill saves) right then. Don't batch. If chat closes mid-conversation, the work is on disk and the next session resumes clean.
+Each phase locks → write the locked section to its own foundation file (`iceberg.md`, `avatar.md`, `credibility.md`, `backstory.md`, `offer.md`) right then. Don't batch. If chat closes mid-conversation, the work is on disk and the next session resumes clean.
 
 ### Show-before-save (hard rule)
 

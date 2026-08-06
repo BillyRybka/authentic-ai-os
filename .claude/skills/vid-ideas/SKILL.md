@@ -27,7 +27,7 @@ Generates a small batch of video ideas for the blank-slate moment, grounded in t
 ## Prerequisites
 
 Hard requirements:
-- `foundation/creator-foundation.md` exists with the iceberg statement, content pillars, avatar, and Top 3 problems. If missing, hard stop: "No foundation docs. Run `/foundation` first so I know your positioning and audience."
+- `foundation/iceberg.md` (iceberg statement, content pillars) and `foundation/avatar.md` (avatar, Top 3 problems) exist. If either is missing, hard stop: "No foundation docs. Run `/foundation` first so I know your positioning and audience."
 - `banks/pattern-bank.md` exists (the signal source). If missing, hard stop: "No pattern bank yet. Run `vid-research` first so ideas can anchor to what actually works, first build takes ~1.5 hours. I can still range off your pillars alone if you want, but the ideas will be guesses, not signals."
 
 Soft requirements:
@@ -43,7 +43,7 @@ Soft requirements:
 
 **Silent loads** (do NOT paste into chat). Load ONLY these, and only the named slices. This skill stays lean on purpose.
 
-1. `foundation/creator-foundation.md`, but only: the **Iceberg Statement**, the **Content Pillars** list, the **Avatar** description, and the **Top 3 problems**. Skip credibility, backstory, offer.
+1. `foundation/iceberg.md` (the **Iceberg Statement** and the **Content Pillars** list) and `foundation/avatar.md` (the **Avatar** description and the **Top 3 problems**).
 2. `banks/pattern-bank.md`: the **Synthesis** sections (convergent / niche-specific / adjacent / unique), **Confirmed winners** for orientation (which shapes have spread, what is on-lane), AND the **per-channel raw outlier rows** (the actual winning titles + views + xMed). You generate from the raw titles, not the labels, so the rows are working material, not just citations. The Synthesis is the map; the raw titles are the evidence you decompose.
 3. `content/ideas-backlog.md` if it exists, for prior keepers (surface them) and dropped entries (never re-propose).
 4. `references/idea-generation-rules.md`, the signal-anchoring, engine-as-form, sharpness, and posture-dial logic. This is your thinking, not chat content.
@@ -156,7 +156,7 @@ Do not over-talk between rolls. Surface the new batch, repeat the one-line dial 
 
 ## Related skills
 
-- The `/foundation` chain produces `creator-foundation.md` (iceberg, pillars, avatar, Top 3) this skill reads
+- The `/foundation` chain produces `iceberg.md` (iceberg, pillars) and `avatar.md` (avatar, Top 3) this skill reads
 - `vid-research` produces `banks/pattern-bank.md`, the signal source this skill anchors ideas to
 - `vid-intake` receives the picked idea seed and captures the brain dump (this skill's downstream handoff); it persists the seed's anchor receipt into piece.md
 - `vid-framing` runs after intake and picks the angle (this skill picks the topic, not the angle)

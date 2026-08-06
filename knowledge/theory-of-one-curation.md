@@ -33,7 +33,7 @@ For each draft pattern surfaced from extraction, the AI presents a short structu
 > 3. ...
 > 
 > Theory of One check:
-> Your iceberg: "{iceberg statement from creator-foundation}"
+> Your iceberg: "{iceberg statement from foundation/iceberg.md}"
 > Your audience expects: {brief audience expectation summary}
 > {off-positioning note, only when it applies: "This prints views but leans off your lane (e.g. {off-lane theme}). It is still a real signal. Lean toward Keep or Modify (adapt it to your lane), not Drop, unless it is true noise."}
 > 

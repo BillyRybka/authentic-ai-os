@@ -67,7 +67,7 @@ Caption: {the caption that expands the idea and holds the CTA}
 
 - Source: [[{parent-slug}]]
 - Post-type: {post_type} | Platforms: {platforms} | Hook: {hook_type}
-- Fit: [[creator-foundation#Top 3 perceived problems|problem {n}]], {clean fit | outlier within iceberg}
+- Fit: [[avatar#Top 3 perceived problems|problem {n}]], {clean fit | outlier within iceberg}
 - Source unit: "{the exact phrase this was built from}"
 - Drew on: {any bank entries used, in the vault convention: [[story-bank/slug]], [[metaphor-bank/slug]], [[proof-bank/slug]]. No "banks/" prefix. People as [[Full Name]], never [[people/Full Name]]. Cite only entries that exist; if a person is named, create the people stub.}
 ```

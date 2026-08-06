@@ -29,7 +29,7 @@ The shared core every skill that writes to this vault follows: where things live
 
 | Folder | What lives here |
 |---|---|
-| `foundation/` | Creator identity. creator-foundation.md, voice-profile.md, packaging-system.md, and `reference-pieces/` (full polished pieces preserved verbatim for piece-level voice rhythm). |
+| `foundation/` | Creator identity, one concern per file so skills load only the slice they need: iceberg.md (iceberg statement, machinery, content notes, the 8 pillars), avatar.md (avatar plus the Top 3 perceived problems), credibility.md (the three proof points), backstory.md, offer.md. Plus voice-profile.md, packaging-system.md, and `reference-pieces/` (full polished pieces preserved verbatim for piece-level voice rhythm). |
 | `banks/` | Evergreen material the creator builds over time. Stories, proofs, testimonials, metaphors, frameworks, packaging winners, plus single-file banks (title, hook, transition, pattern). |
 | `content/pieces/` | Per-video work. One folder per piece: piece.md (all locked decisions), brain-dump.md (raw material), script.md (the deliverable), plus per-platform derivatives. Single newsletters and one-off posts also live here as their own piece folder. |
 | `content/ideas/` | Swipe file for not-yet-built content. Raw ideas, hooks, framings the creator wants to come back to. |
@@ -86,12 +86,12 @@ Claude proposes the slug. Creator approves or overrides before saving.
 
 ## Foundation doc schema
 
-Location: `foundation/creator-foundation.md`, `foundation/voice-profile.md`, `foundation/packaging-system.md`, `foundation/channel-audit.md`
+Location: `foundation/iceberg.md`, `foundation/avatar.md`, `foundation/credibility.md`, `foundation/backstory.md`, `foundation/offer.md`, `foundation/voice-profile.md`, `foundation/packaging-system.md`, `foundation/channel-audit.md`
 
 ```yaml
 ---
 type: foundation
-doc: creator-foundation    # or voice-profile, packaging-system, channel-audit
+doc: iceberg               # or avatar, credibility, backstory, offer, voice-profile, packaging-system, channel-audit
 project: authentic-ai-os
 status: active
 date: YYYY-MM-DD

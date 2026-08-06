@@ -1,113 +1,70 @@
 # Framing Examples
 
-Read these at Step 3, after the audience entry point is approved.
+Read these at Step 3, after the viewer is approved.
 
 Frame and Core Payoff are defined in `SKILL.md`. This file is not the definition, it is the standard: what a good one reads like, and what a bad one reads like next to it.
 
-One approved context produces several genuinely different videos. The batches below show what that looks like, and what it looks like when it fails.
+One approved viewer produces several genuinely different videos. The batches below show what that looks like, and what it looks like when it fails. The viewer paragraph heading each batch is what went into it, not something the creator gets shown a second time.
 
-# Fixing a Stiff Frame
+## Batch 1 Examples: Four videos for one idea
 
-The most common failure is not a wrong idea. It is a right idea described from too far away, in words no creator would say out loud.
+**The Idea:**
 
-Each pair below is the same video. Only the language changed.
+Small YouTube creators who have been uploading consistently for several months but are still seeing little or no growth. They are often below a few hundred subscribers and feel like their effort is not translating into views, momentum, or signs that the channel is working. They have already tried common advice such as uploading consistently, improving their editing, making better thumbnails, studying successful creators, changing their hooks, and posting more often. Despite doing the work, they still feel invisible. Their deeper fear is that the lack of growth means they are not talented, interesting, or capable enough to succeed on YouTube. They want to understand why their effort is not producing results, which advice matters at their current stage, what they should change next, and whether their channel still has a real chance to grow. A creator with 57 subscribers after six months is one specific example of this audience.
 
-## The polished videos problem
-
-**Stiff:**  
-A diagnostic video showing how a small creator's most polished or personally satisfying videos may be reinforcing the wrong channel direction. The video explains how creators can mistake effort, production quality, or positive feedback from friends for evidence that a concept has genuine audience demand.
-
-**Fixed:**  
-A video showing how a small creator was putting out their most polished, most satisfying videos and still going nowhere, and why those were the exact videos steering the channel in the wrong direction. It explains how effort, production quality, and friends saying it was great get mistaken for proof that real people want the idea.
-
-**What changed:** "Diagnostic," "reinforcing the wrong channel direction," and "genuine audience demand" are report words. Every detail from the original survived. It is just said the way the creator would say it.
-
-## The 200-subscriber plateau
-
-**Stiff:**  
-A direct explanation of the hidden emotional and strategic problems creators experience when they remain around 200 subscribers for an extended period. The video addresses why this stage feels unusually discouraging, what the subscriber count can and cannot reveal, and which decisions usually matter next.
-
-**Fixed:**  
-A video about what actually happens to creators who sit at 200 subscribers for a year, covering both the emotional side nobody warns them about and the channel problems sitting underneath it. It explains why this stage feels so much more discouraging than starting from zero, what the subscriber count does and does not tell them, and which decision matters most next.
-
-**What changed:** "A direct explanation of" describes the format instead of the video. "For an extended period" is a phrase nobody says out loud, and "for a year" is the same fact in real words.
-
-## The turning point
-
-**Stiff:**  
-A reflective personal story built around the moment a struggling creator finally understood why the channel was not growing. The video explores the mistaken assumption that kept them stuck, the realization that challenged it, and the practical decisions that changed afterward.
-
-**Fixed:**  
-A video about the moment a struggling creator finally understood why their channel was not growing despite following the best practices. They reveal the advice that was keeping them stuck, the realization that challenged it, and exactly what they did to fix it and explode their channel.
-
-**What changed:** The stiff version narrates from outside the video ("explores the mistaken assumption"). The fixed version says what the video actually reveals, and adds the sting: they were following best practices, which is why it hurts.
-
-**The rule all three share:** keep every piece of framing information, change only the language. A frame that drops detail to sound cleaner is worse, not better.
+This audience stays the same across all four options below. Only the direction of the video changes.
 
 ---
 
-# Batch 1: Four videos from one context
-
-**Context (approved at Step 2):**  
-The idea is "how to get more YouTube subscribers." The audience is a creator with 57 subscribers after six months. They have followed popular advice, uploaded consistently, and tried to improve. Nothing is working. They feel invisible and are starting to think they are not cut out for this.
-
-This context does not change for any of the four options below. Only the video does.
-
-## Option A: The advice that kept them stuck
+## Option A: The Advice That Kept Them Stuck
 
 **Frame:**  
-A story about how the advice every creator repeats is what kept one channel stuck at 57 subscribers for six months, and the thing they did instead that finally blew it up.
+A Video about how the advice every small creator hears kept one channel trapped at 57 subscribers for six months, and the change that finally got it moving.
 
 **Core Payoff:**  
-The viewer finds out which popular behavior kept the creator stuck, why it fails specifically at that size, and what to do instead.
-
-**Framing DNA:**  
-Personal Story + Myth-Busting + Transformation
+The viewer discovers which popular advice was holding the creator back, why it fails at such an early stage, and what to do instead.
 
 **Must Deliver:**  
-The specific advice that failed, why it fails at that size, and what replaced it. Without that contrast it is empty clickbait.
+The exact advice that failed, why it failed for a channel that size, and what replaced it. Without that contrast, the frame becomes empty clickbait.
 
-## Option B: Testing what they already tried
+---
+
+## Option B: Testing What They Already Tried
 
 **Frame:**  
-A video that takes the twelve pieces of advice this creator has already followed, runs every one of them on a channel that size for thirty days, and reports which two did anything at all.
+A Video about a 30-day test of the YouTube advice small creators keep hearing, to find out what actually helps at this stage and what only wastes their time.
 
 **Core Payoff:**  
-The viewer gets a verdict on the advice they are currently following, so they can stop spending effort on the ten that do nothing at this stage.
-
-**Framing DNA:**  
-Experiment + Specific Result + Review or Ranking
+The viewer learns which advice is worth following while their channel is still small, and which advice they should stop spending time on.
 
 **Must Deliver:**  
-The test conditions, what each piece of advice actually produced, and an honest accounting of what the test could not prove.
+The advice tested, what happened, and an honest explanation of what the test can and cannot prove.
 
-## Option C: What the first hour decides
+---
+
+## Option C: What a Small Creator Can Actually Change
 
 **Frame:**  
-A video about why a channel this size gets shown to almost nobody no matter how good the video is, what YouTube is actually deciding in the first hour after upload, and the one part of that a small creator can control.
+A video about why a good video can still go nowhere on a small channel, what happens in the early hours after upload, and the one part a small creator can actually change.
 
 **Core Payoff:**  
-The viewer understands the mechanism deciding their reach and knows which single input is theirs to move.
-
-**Framing DNA:**  
-Hidden Cause + Problem-Solution
+The viewer understands why quality alone is not enough and knows what to change before publishing their next video.
 
 **Must Deliver:**  
-A clear, honest chain of cause and effect, and a controllable input that is genuinely controllable at 57 subscribers.
+A clear explanation of what happens after upload and one part of the process the creator can genuinely control.
 
-## Option D: The wrong conclusion
+---
+
+## Option D: The Wrong Conclusion
 
 **Frame:**  
-A video about the six months a creator spent quietly deciding they were not talented enough, and the boring mechanical reason their videos were not being seen that had nothing to do with talent at all.
+A video about how six months of low views can convince a creator they have no talent, even when the real problem has nothing to do with talent.
 
 **Core Payoff:**  
-The viewer sees that the conclusion they reached about themselves was drawn from a signal that never measured what they thought it measured.
-
-**Framing DNA:**  
-Emotional Turning Point + Myth-Busting
+The viewer stops treating weak results as proof they are not cut out for YouTube and learns what to change so their videos have a better chance of being seen.
 
 **Must Deliver:**  
-Name the misreading directly, show what the numbers actually measure, and do it without promising that fixing it makes growth easy.
+A believable explanation of what was actually holding the videos back, why the creator confused that problem with a lack of ability, and what they changed afterward.
 
 ## Why this is four videos and not one
 
@@ -121,9 +78,9 @@ Different failure: A fails if the advice is generic. B fails if the test is rigg
 
 If two options in a batch fail the same way, they are the same video.
 
-## What a fake batch looks like
+## What a bad batch looks like
 
-Same context. These four are one video wearing four outfits:
+Same viewer. These four are one video wearing four outfits:
 
 > The advice keeping small creators stuck at 57 subscribers, and what to do instead.
 >
@@ -133,89 +90,78 @@ Same context. These four are one video wearing four outfits:
 >
 > What every small creator is told to do that is quietly killing their growth.
 
+### Why those are bad:
+
 Every one is Myth-Busting. Every one has the same Core Payoff. Every one would be filmed identically. The words rotate and the video does not move.
 
-The tell: read the Must Deliver for each. If they are the same sentence, you wrote one option four times.
+How to Know: Compare the main question, Core Payoff, and Must Deliver. If all three are essentially the same, you wrote one frame several times.
 
 ---
 
-# Batch 2: Three videos from one context
+# Batch 2 Examples: Three videos for one viewer
 
-This context comes out of the second trace in `finding-the-core.md`. Different world, same method.
+This viewer comes out of the second example in `finding-the-viewer.md`. Different world, same method.
 
-**Context (approved at Step 2):**  
-The audience is a freelance designer who is genuinely good at the work and still feels like they are auditioning on every sales call. They perform, they send a careful proposal, and then they refresh their email waiting to be chosen. They think they need a better pitch. What they actually want is to stop being the one who is being evaluated.
+**The Idea:**
 
-## Option A: The last proposal
-
-**Frame:**  
-A video about the last proposal this designer ever sent into a void, why they stopped writing them entirely after that one, and what happens on their calls now instead.
-
-**Core Payoff:**  
-The viewer sees what replaced the proposal, and why the replacement moves the decision into the call instead of leaving it to somebody else's inbox.
-
-**Framing DNA:**  
-Personal Story + Transformation
-
-**Must Deliver:**  
-What the old process cost, what specifically replaced it, and honest numbers or an honest admission that the numbers are not tracked.
-
-## Option B: Two versions of the same call
-
-**Frame:**  
-A video putting two recordings of the same kind of sales call side by side, one where the designer is auditioning and one where they are not, and breaking down the exact moments where the power moves across the table.
-
-**Core Payoff:**  
-The viewer can hear the difference and knows which specific moments in their own calls are the ones that hand over the evaluation.
-
-**Framing DNA:**  
-Comparison + Expert Breakdown
-
-**Must Deliver:**  
-Real call material, and specific moments named rather than a general vibe about confidence.
-
-## Option C: Why a better pitch makes it worse
-
-**Frame:**  
-A video about why polishing the portfolio and tightening the pitch make the audition worse instead of better, and what actually decides which side of the table is being evaluated.
-
-**Core Payoff:**  
-The viewer stops working on the thing they thought was the problem and learns what the audition is actually made of.
-
-**Framing DNA:**  
-Myth-Busting + Hidden Cause
-
-**Must Deliver:**  
-A clear reason more polish backfires, and a concrete alternative that is not just "be confident."
-
-## Why this is three videos and not one
-
-A is retrospective and personal. B is a teardown of live material and could be made with no story at all. C is an argument that requires no footage and no story, only a correct idea.
-
-A needs the creator's past. B needs recordings. C needs neither. Three different production requirements is a reliable sign of three different videos.
+freelance designer who is good at the work but still feels like they are auditioning on every sales call. They explain their value, present the portfolio, send a careful proposal, and then wait for the client to decide whether they are good enough. They think they need a stronger pitch. What they really want is to stop chasing approval, lead the conversation, and reach a clear decision without spending days waiting to be chosen.
 
 ---
 
-# The second axis: same idea, different audience
+## Option A: Stop Sending Proposals Into the Void
 
-Batches 1 and 2 hold the context still and vary the video. The other axis holds the raw idea still and varies who it is for. Both matter. This one is usually more obvious.
+**Frame:**  
+A video showing why this designer stopped sending proposals after sales calls and started getting the client to make a real decision while they were still on the call.
 
-**Raw idea:** how to get your first brand deal.
+**Core Payoff:**  
+The viewer learns how to replace the post-call proposal with a process that gets the client to commit, decline, or reveal the real objection before the conversation ends.
 
-**Audience 1:** a gaming creator with 2,000 subscribers who has never contacted a brand because they assume deals start at 100,000.
-
-> **Frame:** A behind-the-scenes video showing how a gaming creator landed their first sponsor with only 2,000 subscribers. It breaks down the embarrassingly simple email they sent, explains why a channel that small was already worth paying for, and kills the belief that you have to wait until you are big before you can even ask.
-
-**Audience 2:** an educator with 50,000 subscribers who keeps turning down offers that feel too low and does not know what a good deal looks like.
-
-> **Frame:** A video about a creator with 50,000 subscribers who turned down three $1,000 sponsorship offers for being too low, and later found out every one of those brands had a much bigger budget sitting behind that first number. They break down how to find out what a brand can actually pay, what to send back instead of a no, and why treating an opening offer as the final offer is what was costing them.
-
-Neither frame transfers. The gaming creator has no offers to negotiate, so negotiation advice solves a problem they do not have yet. The educator does not need permission to ask, so "embarrassingly simple" reads as amateur to someone with leverage.
-
-The raw idea is identical. The central problem, the emotional stakes, the examples, and the Core Payoff are all different, which is what makes them different videos rather than one video retitled.
+**Must Deliver:**  
+The old sales process, the exact process that replaced it, how the decision is handled on the call, and what changed afterward. Use real results when available and say clearly when they were not tracked.
 
 ---
 
-# On Framing DNA labels
+## Option B: The Moment You Start Auditioning
 
-Use only pattern names that exist in `patterns.md`. If a frame does not map cleanly onto the library, the frame is probably doing two jobs, or the pattern is missing from the library and worth naming properly rather than inventing on the spot.
+**Frame:**  
+A side-by-side breakdown of two sales calls that shows the exact moments one designer starts trying to be chosen while the other takes control of the conversation.
+
+**Core Payoff:**  
+The viewer learns which questions, explanations, and reactions put them in the position of being judged, and what to say or do differently in those moments.
+
+**Must Deliver:**  
+Real call recordings or accurate call examples, the specific moments where the dynamic changes, and a clear alternative for each one. The lesson cannot be reduced to vague advice about confidence.
+
+---
+
+## Option C: A Better Pitch Will Not Fix This
+
+**Frame:**  
+A video showing why polishing the portfolio and tightening the pitch can make the designer even easier to evaluate, while doing nothing to change who is leading the decision.
+
+**Core Payoff:**  
+The viewer learns why proving their value keeps them in audition mode and how to lead the call by deciding whether the client is a good fit, instead of waiting for the client to judge them.
+
+**Must Deliver:**  
+A clear explanation of why more proof does not change the sales dynamic, the behaviors that create the audition, and a practical way to lead the conversation without relying on confidence or performance.
+
+---
+
+# Why These Are Three Different Videos
+
+Option A is about changing the sales process so the decision happens on the call.
+
+Option B is about identifying the exact moments when a designer gives away control during the conversation.
+
+Option C is about challenging the belief that a stronger pitch solves the problem.
+
+Each video requires something different:
+
+- Option A needs the creator's real process before and after the change.
+- Option B needs call recordings or detailed call examples.
+- Option C needs a clear argument and a practical alternative.
+
+Compare the main question, Core Payoff, and Must Deliver. If all three are different, the frames are genuinely different
+```
+
+```

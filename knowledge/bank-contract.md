@@ -289,7 +289,7 @@ Never leave the graph in a silently inconsistent state. If a write fails, the cr
 **4. Expected file missing.**
 - A bank folder does not exist: create the folder, proceed.
 - `content/pieces/{slug}/piece.md` does not exist: create it per [[piece-contract]], proceed.
-- `foundation/creator-foundation.md` missing: hard stop. Tell the creator to run `/foundation` first.
+- `foundation/iceberg.md` or `foundation/avatar.md` missing: hard stop. Tell the creator to run `/foundation` first.
 
 **5. Person stub creation fails** (permission error on `people/`).
 - Report visibly and ask the creator to create the profile manually before proceeding.

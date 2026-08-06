@@ -27,7 +27,11 @@ This is what `creator-setup` actually scaffolds in the current release. More fol
 ./
 ├── .claude/skills/              # Installed skills (read-only for the creator)
 ├── foundation/                  # Creator identity (created by the /foundation command chain)
-│   └── creator-foundation.md    # Avatar, positioning (Iceberg), pillars, credibility, backstory
+│   ├── iceberg.md              # Iceberg statement, machinery, content notes, the 8 pillars
+│   ├── avatar.md               # Avatar plus the Top 3 perceived problems
+│   ├── credibility.md          # The three proof points
+│   ├── backstory.md            # Full and 3-sentence versions
+│   └── offer.md                # The offer
 ├── banks/
 │   └── proof-bank/              # Creator's own evidence: numbers, stats, credentials
 │       └── assets/              # Screenshots/charts referenced by proof entries
@@ -57,7 +61,11 @@ When meaningful info comes up (a correction, a fact about the creator, a new sto
 
 | Type | Route to |
 |------|----------|
-| Creator positioning, avatar, pillars, credibility, backstory | `foundation/creator-foundation.md` (via the `/foundation` command) |
+| Creator positioning and pillars | `foundation/iceberg.md` (via the `/foundation` command) |
+| Avatar and Top 3 perceived problems | `foundation/avatar.md` (via the `/foundation` command) |
+| Credibility proof points | `foundation/credibility.md` (via the `/foundation` command) |
+| Backstory | `foundation/backstory.md` (via the `/foundation` command) |
+| The offer | `foundation/offer.md` (via the `/foundation` command) |
 | A proof point (number, result, credential) | `banks/proof-bank/{slug}.md` (via `vid-credibility`) |
 | A person (client, guest, testimonial source) | `people/{Full Name}.md`. Stub created by the skill that banks their material, per rule 5. |
 

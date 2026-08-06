@@ -30,7 +30,7 @@ Two layers never collapse: **post-type is the shape of the idea** (what job it h
 ## Prerequisites
 
 Hard requirements:
-- `foundation/creator-foundation.md` exists with the Iceberg Statement, Content pillars, Avatar, and Top 3 perceived problems. If missing, hard stop: "No foundation docs. Run `/foundation` first so I know your positioning and audience, otherwise the posts will be generic."
+- `foundation/iceberg.md` (Iceberg Statement, Content pillars) and `foundation/avatar.md` (Avatar, Top 3 perceived problems) exist. If either is missing, hard stop: "No foundation docs. Run `/foundation` first so I know your positioning and audience, otherwise the posts will be generic."
 - Source material to work from. Either the creator pastes a batch or names a long-form source, or points at an existing piece folder. If there is no source, hard stop: "Give me the ideas or the source piece. This skill repurposes what you already have, it does not invent topics. For that, run `vid-ideas`."
 
 Soft requirements (loaded if present, graceful fallback if not):
@@ -50,7 +50,7 @@ Soft requirements (loaded if present, graceful fallback if not):
 
 1. `knowledge/vault-integration.md` (shared conventions) plus `knowledge/piece-contract.md` and `knowledge/bank-contract.md`. The frontmatter and wikilink contract for everything this skill saves.
 2. `knowledge/voice-profile-schema.md`. The voice load contract. Follow it exactly.
-3. `foundation/creator-foundation.md`, but only the **Iceberg Statement**, the **Content pillars** list, the **Avatar** description, and the **Top 3 perceived problems**. Skip offer, credibility, backstory.
+3. `foundation/iceberg.md` (the **Iceberg Statement** and the **Content pillars** list) and `foundation/avatar.md` (the **Avatar** description and the **Top 3 perceived problems**).
 4. `foundation/voice-profile.md` if it exists, plus `foundation/reference-pieces/{voice_context}.md` for each platform in play. Graceful fallback per the load contract if absent.
 5. `references/format-rubric.md`. The decision tree (idea job to post-type) and the platform adaptation matrix. Your thinking, not chat content.
 6. `references/anti-slop.md`. The slop tells, the hook rotation library, and the editorial-pass checklist. This is the quality bar for every post.
@@ -153,7 +153,7 @@ When the batch is done (or the creator stops):
 
 ## Related skills
 
-- The `/foundation` chain produces `creator-foundation.md` (iceberg, pillars, avatar, Top 3) this skill reads.
+- The `/foundation` chain produces `iceberg.md` (iceberg, pillars) and `avatar.md` (avatar, Top 3) this skill reads.
 - `vid-voice-capture` produces `voice-profile.md` and `reference-pieces/{voice_context}.md`, the voice this skill writes in.
 - `vid-ideas` picks topics from a blank slate. This skill repurposes material the creator already has; it does not ideate.
 - The iceberg + Top 3 alignment gate this skill reuses is the shared `knowledge/iceberg-and-top-3-alignment.md`, authored for `vid-intake` and used across the system.

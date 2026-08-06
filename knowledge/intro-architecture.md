@@ -102,7 +102,7 @@ Lead with a massive result.
 
 > "I've been in business for 13 years, I've sold 9 companies. My last company I sold for 46.2 million."
 
-When to use: when the creator's credibility is loud enough to stop cold viewers in their tracks. The default pattern: **small or new channels usually under-perform with this hook** because cold viewers don't trust an unknown "I" yet. They'd rather see what the value is than hear about the creator. If the creator-foundation shows a small channel, the skill should flag this hook as risky and propose one of the other 4 as the safer default. The creator can choose to use it anyway. Sometimes a single dramatic result IS the value, even on a small channel. Their call, not the skill's.
+When to use: when the creator's credibility is loud enough to stop cold viewers in their tracks. The default pattern: **small or new channels usually under-perform with this hook** because cold viewers don't trust an unknown "I" yet. They'd rather see what the value is than hear about the creator. If `foundation/credibility.md` shows a small channel, the skill should flag this hook as risky and propose one of the other 4 as the safer default. The creator can choose to use it anyway. Sometimes a single dramatic result IS the value, even on a small channel. Their call, not the skill's.
 
 ### Step 3: Problem / Result (3 options)
 
@@ -133,7 +133,7 @@ The pivot is "But..." which signals the resolution after the problem is establis
 
 When to use: when both sides matter. The problem is high-emotion AND the result is impressive. Most powerful option, longest.
 
-**The problem you're poking should be a real problem the avatar actually has.** Usually that's one of the Top 3 from `foundation/creator-foundation.md`, but a fresh angle on a related problem the avatar genuinely feels works too. The test is resonance, not a checklist match. The video's problem was already chosen at framing, so you're poking THAT, not re-picking from the list. If the intro pokes a problem the avatar doesn't actually have, the viewer feels disconnected and leaves.
+**The problem you're poking should be a real problem the avatar actually has.** Usually that's one of the Top 3 from `foundation/avatar.md`, but a fresh angle on a related problem the avatar genuinely feels works too. The test is resonance, not a checklist match. The video's problem was already chosen at framing, so you're poking THAT, not re-picking from the list. If the intro pokes a problem the avatar doesn't actually have, the viewer feels disconnected and leaves.
 
 ### Step 4: Setup (max 3 things)
 

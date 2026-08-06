@@ -9,7 +9,7 @@ Capture the raw material for one video into `content/pieces/{slug}/brain-dump.md
 
 ## What loads, and when
 
-- **Check at startup:** `foundation/creator-foundation.md` exists. If it does not, tell the creator to run `/foundation` first, and stop. (If `vid-pipeline` routed you here, it already verified this. Skip the re-check.)
+- **Check at startup:** `foundation/iceberg.md` exists. If it does not, tell the creator to run `/foundation` first, and stop. (If `vid-pipeline` routed you here, it already verified this. Skip the re-check.)
 - **Load on-demand, only at the phase that needs it:**
 
 | File | Phase | For |
@@ -17,7 +17,7 @@ Capture the raw material for one video into `content/pieces/{slug}/brain-dump.md
 | `references/digging-deeper.md` | 3 (deeper pass) | which spots to push, when to save with a TODO |
 | `references/verify-subagent.md` | 3, uncertain claim | the isolated verification sub-agent |
 | `knowledge/story-capture-guide.md` | 3, thin story | the 6 drill prompts |
-| `foundation/creator-foundation.md` | 4 (fit) | the iceberg statement and pillars |
+| `foundation/iceberg.md` | 4 (fit) | the iceberg statement and pillars |
 | `knowledge/piece-contract.md` | 1 (piece creation) | the piece.md creation subset and field ownership |
 | `references/mode-conversation-examples.md` | optional | worked example dialogues of the capture flow |
 
@@ -31,7 +31,7 @@ Five phases, one spine, every time. What the creator hands you shifts how you op
 
 3. **Offer one deeper pass, updating as you go.** Open `references/digging-deeper.md` now; it calibrates which spots are worth pushing and when to pause. You are a co-writer, not a stenographer: name the 2-3 highest-payoff spots and offer once to push or save as-is. If they say go, ask in flow, one question at a time, no re-asking permission before each. Every answer that lands is new material: add it to `brain-dump.md` as it comes, in their words, and clear or add TODOs. Stop the moment they signal done (save it, I'll come back, that's it), never push one spot more than twice, and never invent to fill a gap, a gap is a TODO. If the creator brings something uncertain, verify it with `references/verify-subagent.md` rather than swapping in something safer; never research inline. For a thin story, use the prompts in `knowledge/story-capture-guide.md`.
 
-4. **Fit and pillar, in one move.** Load `creator-foundation.md` now. In one line, confirm it fits the iceberg and name the most likely pillar, and let them correct either. Set `iceberg_aligned` and lock the pillar in `piece.md` from their answer. If it is a deliberate stretch, set `true` plus a one-line `alignment_note` in their words. If it does not fit, set `false`, ask whether it is the wrong channel or their iceberg has shifted, and let them decide whether to save anyway. Never block the save. The flag plus any note tells downstream skills the call was deliberate.
+4. **Fit and pillar, in one move.** Load `foundation/iceberg.md` now. In one line, confirm it fits the iceberg and name the most likely pillar, and let them correct either. Set `iceberg_aligned` and lock the pillar in `piece.md` from their answer. If it is a deliberate stretch, set `true` plus a one-line `alignment_note` in their words. If it does not fit, set `false`, ask whether it is the wrong channel or their iceberg has shifted, and let them decide whether to save anyway. Never block the save. The flag plus any note tells downstream skills the call was deliberate.
 
 5. **Finalize and hand off.** The piece has been on disk since the open and the dump since the checkpoint, so this is the close, not a first write. Make sure `brain-dump.md` holds everything the deeper pass surfaced and `piece.md` carries the fit and pillar, then confirm the save in one line and point to vid-framing as next. If the creator bailed earlier, their words are already safe from the checkpoint; leave it at `status: ideating` with the open TODOs, and the missing fit (`iceberg_aligned` still unset) is what tells the pipeline the piece still needs intake when they come back.
 
@@ -55,73 +55,9 @@ There is one intake: the creator's own material, talked through or pasted. The s
 
 Stamp `intake_mode` for what the material turned out to be (idea, notes, own-transcript, news-jacking, client-win, story-first). It is a record, not a routing decision, and the creator never hears it. Worked example dialogues live in `references/mode-conversation-examples.md`.
 
-## Output: brain-dump.md
+Read `templates/output-brain-dump-md.md`.
 
-```yaml
----
-type: brain-dump
-slug: {kebab-case-slug}
-intake_mode: idea | notes | own-transcript | news-jacking | client-win | story-first
-captured: YYYY-MM-DD
-iceberg_aligned: true | false
-alignment_note: "{Only when the fit is a deliberate stretch or an off-iceberg save. One line in the creator's words. Omit the field entirely for a clean fit.}"
----
-
-## Raw dump (verbatim)
-
-{The creator's complete dump, exactly as said. Nothing cut, reordered, or cleaned beyond obvious transcription fixes. This is the lossless source of truth and the voice reservoir every downstream skill pulls from; the sections below are a light index built from it. For a pasted transcript or doc, this is the pasted text in full.}
-
-## Topic
-
-{What the video is about, in the creator's own words and sentence shapes, not a summary. Capture the topic only. The angle is vid-framing's job; do not name one here.}
-
-## Audience
-
-{Only if the creator described who this is for and why it matters to them, in their words. Omit the section entirely if they did not raise it. Never invent a pain rationale.}
-
-## Outcome
-
-{Only if the creator stated what they want the viewer to walk away with, in their words. Omit the section if unstated; vid-framing sets the core payoff. Never synthesize one, and never reduce a listicle to a single action.}
-
-## Material
-
-### Lessons / points
-- {Each lesson in the creator's exact phrasing}
-
-### Stories
-- {A story or anecdote, including cautionary ones. [[story-bank/slug]] if pulled, or captured here in P-A-O shape.}
-
-### Proof
-- {Evidence something WORKS: a result, what you did, a testimonial. [[proof-bank/slug]] if pulled, or captured here.}
-
-### Metaphors
-- {[[metaphor-bank/slug]] if pulled, or captured here.}
-
-### Claims (no proof attached yet)
-- {Claim}. TODO: source proof from [bank or new capture]
-
-## Open questions / TODOs
-
-- {Anything thin or missing the creator wants to chase later, or that vid-framing / vid-segment will need.}
-```
-
-## Output: piece.md
-
-The per-piece identity ledger. vid-intake creates it the moment the topic is known; every downstream skill appends its own fields and never overwrites another's.
-
-```yaml
----
-type: content-piece
-project: authentic-ai-os
-slug: {kebab-case-slug}
-pillar: {pillar-slug or null}
-status: ideating
-created: YYYY-MM-DD       # today, stamped once, never changed
-last_updated: YYYY-MM-DD  # today; every skill that writes piece.md bumps this
-anchor: "{Only when vid-ideas handed a picked seed: the full outlier receipt, source title + @channel + views + xMed. Omit otherwise.}"
-tags: [piece, pillar-{slug}]
----
-```
+Read `templates/output-piece-md.md` when saving.
 
 These fields and no others. Everything else in the full schema belongs to a later skill; absent is the correct state, so never pre-stub a field nobody has decided yet.
 

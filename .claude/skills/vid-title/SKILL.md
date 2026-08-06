@@ -19,14 +19,14 @@ The craft underneath is copywriting, and copywriting is not the words on screen,
 |---|---|---|
 | session start | `knowledge/prose-craft.md` | the seven moves. Every candidate title, plus the recommendation and its reason |
 | 1 | `content/pieces/{slug}/piece.md`, `brain-dump.md` (and `script.md` if it exists) | the locked frame and payoff; the material, and the lock list pulled from it |
-| 1 | `foundation/creator-foundation.md` | avatar, iceberg (the on-brand filter), credibility reality |
+| 1 | `foundation/avatar.md` · `foundation/iceberg.md` · `foundation/credibility.md` | avatar, iceberg (the on-brand filter), credibility reality |
 | 2 | `banks/pattern-bank.md` + `banks/title-bank.md` | the proven structures and their source outliers |
 | 3 | `banks/power-words-bank.md` + `knowledge/BENS-framework.md` | the words and the feeling lens while writing |
 | on demand | `references/title-filters.md` | soft flags, natural English shapes, the fallback when banks are missing |
 | on demand | `references/angle-anchor-rules.md` | the canonical receipt rule: name the real entry or call it a swing |
 | on demand | `references/reframe-toolkit.md` | the five shapes to pour the stake into, when the plainest statement is not landing |
 
-Stops: no `creator-foundation.md`, point to /foundation. No framed piece (no `frame` and no brain-dump), point to vid-framing or vid-intake. Banks missing: offer vid-research, and if the creator wants titles anyway, write from the natural English shapes in `references/title-filters.md`, flagged honestly as unproven shapes with no receipts. Invoked by the pipeline, prerequisites are already verified.
+Stops: no `foundation/avatar.md` or `foundation/iceberg.md`, point to /foundation. No framed piece (no `frame` and no brain-dump), point to vid-framing or vid-intake. Banks missing: offer vid-research, and if the creator wants titles anyway, write from the natural English shapes in `references/title-filters.md`, flagged honestly as unproven shapes with no receipts. Invoked by the pipeline, prerequisites are already verified.
 
 ## Step 1: Inherit the frame, build the lock list
 
@@ -140,5 +140,5 @@ Pipeline mode also returns the title string and its BENS letters to the caller. 
 - `vid-framing` locks the frame this skill packages; frame problems route back there, never get fixed here
 - `vid-thumbnail` runs next and writes the thumbnail text
 - `vid-ideas` may leave a seed line; when `piece.md` carries its `anchor:` receipt, the seed enters as the leading candidate to beat (Step 3), otherwise it stays one candidate, free to beat
-- /foundation produces `creator-foundation.md`; `vid-research` produces the banks
+- /foundation produces the `foundation/` files; `vid-research` produces the banks
 - `vid-pipeline` orchestrates and calls this skill during packaging

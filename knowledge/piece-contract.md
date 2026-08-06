@@ -118,4 +118,4 @@ Each skill therefore writes its own distinguishing field in BOTH standalone and 
 
 - **piece.md does not exist** when a downstream skill expects it: create it from the creation subset above and proceed. Do not invent decisions the earlier skills never made.
 - **A field you need is absent**: that means its owning skill has not run. Route to that skill, or ask the creator. Never fill in another skill's field to unblock yourself.
-- **`foundation/creator-foundation.md` missing**: hard stop. Tell the creator to run `/foundation` first.
+- **`foundation/iceberg.md` or `foundation/avatar.md` missing**: hard stop. Tell the creator to run `/foundation` first.

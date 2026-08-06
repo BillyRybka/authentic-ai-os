@@ -17,14 +17,14 @@ Energy direction decides the close. A close that decelerates dies: "alright, so 
 
 Read each file when its phase starts. Never front-load.
 
-- **Phase 1:** `content/pieces/{slug}/piece.md` (format, goal, pillar, frame) · `content/pieces/{slug}/script.md` (full body, plus the `## Intro` verbatim for the callback rules) · `foundation/creator-foundation.md` (avatar + Top 3 problems) · `knowledge/format-planners/{format}.md` (close shape, authoritative) · `references/end-screen-design.md` (picking the next video).
+- **Phase 1:** `content/pieces/{slug}/piece.md` (format, goal, pillar, frame) · `content/pieces/{slug}/script.md` (full body, plus the `## Intro` verbatim for the callback rules) · `foundation/avatar.md` (avatar + Top 3 problems) · `knowledge/format-planners/{format}.md` (close shape, authoritative) · `references/end-screen-design.md` (picking the next video).
 - **Phase 2:** `foundation/voice-profile.md` + the matching `foundation/reference-pieces/{voice_context}.md` (voice only; the spec wins any conflict with Pivot/Gap/Bridge) · `knowledge/transition-patterns.md` Sections 3 + 4 (BE-1..BE-8 close patterns, banned tiers) · `banks/transition-bank.md` if the vault has it (creator-grown supplement; missing is fine) · `knowledge/attention-craft.md` (energy + pacing calibration) · `knowledge/prose-craft.md` (the seven moves, loaded before drafting rather than as a filter after it) · `references/pivot-gap-bridge-shapes.md` · `references/cta-placement-by-format.md` · `references/ending-anti-patterns.md`. Conditional: the story/proof/metaphor/parable files, only if the close pulls one (rare).
 - **Phase 4:** `knowledge/voice-pressure-test.md` + `knowledge/voice-rhythm.md` (the two-pass voice check) · `knowledge/bank-contract.md` (update-both-sides on bank pulls).
 
 ## Prerequisites
 
 - `content/pieces/{slug}/script.md` has the FULL body written and a non-stub `## Intro`. Partial body → hard stop: "Run `vid-segment` for every section first." Stub intro → hard stop: "Run `vid-intro` first; the close calls back to the opening."
-- `content/pieces/{slug}/piece.md` with `format`, `goal`, `pillar`; `foundation/creator-foundation.md` with the Top 3 problems.
+- `content/pieces/{slug}/piece.md` with `format`, `goal`, `pillar`; `foundation/avatar.md` with the Top 3 problems.
 - `foundation/voice-profile.md`: load if present; if missing, note it and continue on the universal hard rules. Voice is never a blocker.
 
 **Invoked by the pipeline:** prerequisites are verified; skip re-checking and questions the caller already answered. Never skip the creator's pick. The saves are identical in both modes.

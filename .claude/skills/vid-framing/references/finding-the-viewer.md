@@ -1,14 +1,14 @@
-# Finding the Core
+# Finding the Viewer
 
-Read this at Step 2, before writing the audience entry point.
+Read this at Step 2, before writing up the viewer.
 
-A brain dump is not an outline. It is somebody thinking out loud over hours or days, changing their mind, arguing with themselves, and burying the best thing they said inside a sentence about something else. The job is to find the one live nerve in it and say it back so plainly the viewer flinches.
+A brain dump is not an outline. It is somebody thinking out loud over hours or days, changing their mind, arguing with themselves, and burying the best thing they said inside a sentence about something else. The job is to find the one live thing in it and say it back so plainly the viewer flinches.
 
-## Where the core actually hides
+## Where it hides in the brain dump
 
-The dump has a surface and it has a nerve. The surface is what the creator says the video is about. The nerve is what they cannot stop circling.
+A brain dump has a surface and it has the thing underneath. The surface is what the creator says the video is about. Underneath is what they cannot stop circling.
 
-The nerve is almost never in the part labeled for it. Look in the asides, the self-corrections, the places the creator argues with a previous decision, the thing they said twice in two different ways without noticing, and the thing they got wrong about their own work. People state their conclusions flatly and reveal their convictions accidentally.
+It is almost never in the part labeled for it. Look in the asides, the self-corrections, the places the creator argues with a previous decision, the thing they said twice in two different ways without noticing, and the thing they got wrong about their own work. People state their conclusions flatly and reveal their convictions accidentally.
 
 When the creator gets emotional about a detail that seems minor, that detail is not minor. Follow the heat, not the headings.
 
@@ -18,15 +18,15 @@ Clear is not plain. Plain is "they feel frustrated that clients undervalue their
 
 Clear is the line that makes the viewer stop because someone finally described the inside of their head. It is specific, it names the thing they have not admitted, and it is short enough to land in one beat.
 
-Write the entry point the way you would say it to the person if they were across the table and you had one sentence.
+Write the viewer up the way you would say it to them if they were across the table and you had one sentence.
 
 ---
 
-# Trace 1: The long accretive dump
+# Example 1: A brain dump built up over several sessions
 
-Multiple sessions. The creator keeps revising. The core arrives as a correction on day three, not as a headline on day one.
+Multiple sessions. The creator keeps revising. It arrives as a correction on day three, not as a headline on day one.
 
-## The dump
+## The brain dump
 
 > **Session 1, Feb 3**
 >
@@ -56,15 +56,15 @@ Multiple sessions. The creator keeps revising. The core arrives as a correction 
 >
 > TODO: check whether I can pull the actual number on client dropoff by week. I think it spikes around week 5-6 but I'd be guessing.
 
-## The surface read
+## The obvious answer
 
-*What a shallow pass returns:*
+*What you get from reading it once:*
 
 > The audience is a beginner lifter who struggles to stay consistent with a strength program. They miss sessions, get discouraged, and quit around week four or five.
 
 Accurate. Useless. It restates the dump's own vocabulary back at it, lands on "stay consistent," and produces a video that eleven thousand other channels have made.
 
-## The dig
+## What is actually going on
 
 The programming content in Session 1 is the surface. The creator abandons it themselves in Session 2, which is the first signal.
 
@@ -74,21 +74,21 @@ Session 3 carries the actual correction, and it is the most valuable line in the
 
 Session 4 is the creator getting defensive about the line, which confirms it matters to them.
 
-The entry point is not "you struggle with consistency." It is that missing one session changes what walking back in *means*, and the viewer has already decided what it means about them.
+It is not "you struggle with consistency." It is that missing one session changes what walking back in *means*, and the viewer has already decided what it means about them.
 
-## The context
+## The viewer
 
-> The audience is someone who started a lifting program, missed a week, and has not been back since. They are not tired and the program was not too hard. They stopped because coming back now means admitting they fell off, and every week they wait makes that admission bigger. They think the problem is discipline. They are actually avoiding a feeling.
+> The audience is someone who started a lifting program, missed a week, and has not been back since. They are not tired and the program was not too hard. They stopped because coming back now means admitting they fell off, and every week they wait makes that admission bigger. They think the problem is discipline. They are actually avoiding shame.
 
-Notice what the context does not contain: the programming material, the RPE debate, the dropoff number the creator flagged as unverified. Those are for the video. The context is only the viewer's head.
+Notice what this does not contain: the programming material, the RPE debate, the dropoff number the creator flagged as unverified. Those are for the video. It is only the viewer's head.
 
 ---
 
-# Trace 2: The single verbatim dump
+# Example 2: One brain dump, spoken in a single sitting
 
-One sitting, spoken, loose. The creator explains a process. The core is in one sentence about how they feel, dropped between two sentences about what they do.
+One sitting, spoken, loose. The creator explains a process. The viewer is in one sentence about how they feel, dropped between two sentences about what they do.
 
-## The dump
+## The brain dump
 
 > Okay so the thing I want to make is basically how I do discovery calls now versus how I used to do them. I used to just get on and talk about the project, like what do you need, what's the timeline, what's the budget, and then I'd go write a proposal and send it over and then wait around for a week.
 >
@@ -104,17 +104,17 @@ One sitting, spoken, loose. The creator explains a process. The core is in one s
 >
 > Oh also I should mention I do charge for discovery now for bigger projects but that might be a whole separate thing.
 
-## The surface read
+## The obvious answer
 
-*What a shallow pass returns:*
+*What you get from reading it once:*
 
 > The audience is a freelance designer who wants to improve their discovery call process and close more clients. They currently send proposals as documents and have a low close rate.
 
 That is a summary of the tactics. It targets a designer looking for a better script, which is a real but shallow want, and it produces a tutorial.
 
-## The dig
+## What is actually going on
 
-The whole dump is process, except for one paragraph that is not.
+The whole brain dump is process, except for one paragraph that is not.
 
 *"I was so sick of feeling like I was auditioning."* Then: performing, trying to seem impressive enough to be chosen, refreshing email, begging for work I was already good enough to do.
 
@@ -122,19 +122,19 @@ That paragraph is the only place the creator uses the word "hated," it is the on
 
 The tactics are downstream of it. The six questions are not a better script, they are what it looks like to stop auditioning. The live proposal is not a close-rate hack, it is refusing to send your work into a void and wait to be picked.
 
-The core desire is not "close more clients." It is to stop feeling like the supplicant in a conversation between two professionals.
+What they actually want is not "close more clients." It is to stop feeling like the supplicant in a conversation between two professionals.
 
-## The context
+## The viewer
 
 > The audience is a freelance designer who is genuinely good at the work and still feels like they are auditioning on every sales call. They perform, they send a careful proposal, and then they refresh their email waiting to be chosen. They think they need a better pitch. What they actually want is to stop being the one who is being evaluated.
 
 ---
 
-# Trace 3: The short meta dump
+# Example 3: A short brain dump that argues with itself
 
-Barely about the content at all. The creator is arguing about whether to make the video. The core is inside the argument.
+Barely about the content at all. The creator is arguing about whether to make the video. The viewer is inside the argument.
 
-## The dump
+## The brain dump
 
 > I don't know if I want to make this one. It's about how most small business owners have no idea whether they're actually profitable and I've done versions of it before.
 >
@@ -148,19 +148,19 @@ Barely about the content at all. The creator is arguing about whether to make th
 >
 > Maybe that's the video. I'd have to ask him if I can use it, and I'd anonymize the details.
 
-## The surface read
+## The obvious answer
 
-*What a shallow pass returns:*
+*What you get from reading it once:*
 
 > The audience is a small business owner who does not track profitability and relies on gut feel instead of financial statements. They need to learn to read their P&L.
 
 This is the video the creator explicitly refuses to make. They say so directly: *there's a version of this that's just dunking on people who don't read their own P&L and I'm not interested in that.* A frame built on this read gets rejected by the creator, and correctly.
 
-## The dig
+## What is actually going on
 
-The dump is 80% the creator working out whether they can make this fairly. That protectiveness is the signal. They defend the landscaper twice, unprompted: *he's not stupid, he's good at landscaping, nobody ever taught him this.*
+The brain dump is 80% the creator working out whether they can make this fairly. That protectiveness is the signal. They defend the landscaper twice, unprompted: *he's not stupid, he's good at landscaping, nobody ever taught him this.*
 
-The nerve is one line, and the creator flags it themselves as the part they keep thinking about:
+It is one line, and the creator flags it themselves as the part they keep thinking about:
 
 *"The money was moving."*
 
@@ -170,21 +170,21 @@ That is not an education gap. It is a broken instrument. The owner's felt sense 
 
 The creator's refusal to dunk is not squeamishness to be worked around. It is the frame. Build on the wrong read and the creator will reject the batch.
 
-## The context
+## The viewer
 
 > The audience is an owner who has run their business for years, feels like it is going fine, and has no reason to think otherwise because money keeps coming in every week. Nobody taught them that busy and profitable are different things, and cash moving through the account feels exactly like doing well right up until someone shows them otherwise. They are not careless. Their gauge is broken and it has never once looked broken.
 
 ---
 
-# What the traces have in common
+# What all three have in common
 
-In each one the creator handed over the surface and buried the nerve, and in each one the nerve announced itself the same way: heat in the wrong place.
+In each one the creator handed over the surface and buried what was underneath, and in each one it announced itself the same way: heat in the wrong place.
 
 The fitness creator corrected themselves. The designer said "honestly." The bookkeeper defended someone who was not being attacked.
 
 None of the three would have said "this is the important part." One of them wondered aloud if the important part was too soft to use.
 
-## Before you present the entry point
+## Before you show the creator
 
 Say it out loud. If it sounds like a description of an audience segment, it is the surface and you have not dug yet. If it sounds like something you would say to one specific person to make them go quiet, you found it.
 

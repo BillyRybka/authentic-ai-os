@@ -160,5 +160,5 @@ When the format planner says credibility is "often skipped," skip it. Don't forc
 ## What this file does NOT do
 
 - It does not enforce a credibility weave on every intro. Some formats skip it.
-- It does not pick the credibility content (the actual numbers, names, results). That comes from `creator-foundation.md` credibility brags or the brain dump's lock list.
+- It does not pick the credibility content (the actual numbers, names, results). That comes from `foundation/credibility.md` or the brain dump's lock list.
 - It does not generate the entire Hook or Problem/Result. It tells the skill where to put the credibility once the slot's draft is in hand.

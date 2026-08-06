@@ -20,9 +20,9 @@ It does NOT exist to gate every video. Creator overrides allowed. The frontmatte
 
 ## The 2 layers
 
-Layer 1: **Iceberg fit.** Is this video INSIDE the iceberg? Does it match who this channel is for and what they come back for? Sourced from `foundation/creator-foundation.md` iceberg statement.
+Layer 1: **Iceberg fit.** Is this video INSIDE the iceberg? Does it match who this channel is for and what they come back for? Sourced from the iceberg statement in `foundation/iceberg.md`.
 
-Layer 2: **Top 3 fit.** Does it address one of the 3 specific problems the audience comes back for? Sourced from `foundation/creator-foundation.md` Top 3 problems list.
+Layer 2: **Top 3 fit.** Does it address one of the 3 specific problems the audience comes back for? Sourced from the Top 3 problems list in `foundation/avatar.md`.
 
 Run both. Surface both. Lock both in frontmatter.
 

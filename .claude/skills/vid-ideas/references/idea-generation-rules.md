@@ -69,7 +69,7 @@ Do not bend ideas toward the creator's positioning. The differentiator is the cr
 
 Generate for the click first. THEN check fit, as a gate, not a target:
 
-- Inside the iceberg (the boundary in `creator-foundation.md`)? If no, drop it. Off-iceberg never surfaces. This is the only hard fit gate. (`knowledge/iceberg-and-top-3-alignment.md` is the fit check; use its iceberg layer.)
+- Inside the iceberg (the boundary in `foundation/iceberg.md`)? If no, drop it. Off-iceberg never surfaces. This is the only hard fit gate. (`knowledge/iceberg-and-top-3-alignment.md` is the fit check; use its iceberg layer.)
 - The Top 3 problems are an OPTIONAL lens, not a requirement. Tag a problem when the idea genuinely serves one, leave it blank when it does not. An idea that is a strong video inside a pillar and inside the iceberg is valid whether or not it maps to one of the three pains. Do not force a problem tag, do not stamp ideas "outlier" for not hitting one, do not require the batch to cover 2 of 3.
 - Theory of One (`knowledge/theory-of-one-curation.md`): a shape that wins on every channel can still miss THIS audience. When fit is uncertain, name the tension instead of assuming it transfers.
 

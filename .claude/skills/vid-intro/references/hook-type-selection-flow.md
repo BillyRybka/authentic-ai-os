@@ -18,7 +18,7 @@ Examples-first contrastive: every rule shows a worked match plus a near-miss wit
 
 1. **Format** (from `content/pieces/{slug}/piece.md`'s `format:` field) → consult the format planner's intro-adaptation table for recommended hook lanes
 2. **Voice profile** (from `foundation/voice-profile.md`'s `preferred_hook_types`) → which lanes the creator naturally lands
-3. **Channel size and creator credibility** (from `foundation/creator-foundation.md`) → whether Credibility Hook is safe
+3. **Channel size and creator credibility** (from `foundation/credibility.md`) → whether Credibility Hook is safe
 4. **Video material** (from `brain-dump.md` / `piece.md`) → does the actual content support the lane (e.g. a Fact Hook needs a real surprising stat in the material)
 
 When all four agree, lock the lane. When they disagree, the format planner usually wins because the format's identity is the audience's expectation. Voice profile breaks ties between two format-allowed lanes.
