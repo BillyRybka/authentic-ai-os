@@ -9,7 +9,7 @@ Turn a broad video idea into a concept the target audience feels was made specif
 
 ## Before You Start
 
-No `content/pieces/{slug}/brain-dump.md`, point them at `vid-intake` and stop. No `foundation/avatar.md` or `foundation/iceberg.md`, point them at `/foundation` command and stop.
+No `content/pieces/{slug}/brain-dump.md`, point them at `vid-intake` and stop.
 
 If piece.md already has a `frame`, this is a re-frame. Ask whether they want fresh directions or that one sharpened, then run from Step 2 or skip to Lock and Save with `## The Read` replaced rather than appended.
 
@@ -33,15 +33,29 @@ Read each reference file at the step that names it.ONLY read the Cited reference
 
 ONLY read the Cited references.
 
-### 1. Get the Material
+### 1. Understand the Material
 
-Read `content/pieces/{slug}/brain-dump.md` when framing an existing piece. Otherwise work from the idea the creator gives directly. 
+Read `content/pieces/{slug}/brain-dump.md` when framing an existing piece. Otherwise work from the idea the creator gives directly.
 
 Read `foundation/avatar.md` (avatar) when using the default audience.
 
+State what the material is, with the evidence, before writing anything:
+
+- a set of discrete items that can be counted
+- a belief the creator is overturning
+- one story with a turn in it
+- a process with steps
+- a comparison between two ways of doing something
+
+Material is often more than one. Name which ones and which is load bearing.
+
+If it is a countable set, count it now. State the working number, every call that moves it (a summary sitting among the items, two items saying one thing, an item with nothing under it), and the range those calls produce. Flag separately any item whose evidence needs verifying before filming; that does not move the count.
+
+The shape follows the material. A single idea does not get enumerated, and a real set of nineteen does not get collapsed into one thesis. A count that needs padding to reach a round number is not a count.
+
 ### 2. Find the idea that "reads their minds"
 
-Identify the thought or tension already present in the viewer's mind before they see the video. It should feel like you're reading their minds.
+Identify the thought or tension already present in the viewer's mind regarding the idea we are framing before they ever see the video. It should feel like you're reading their minds.
 
 This is an internal process for you. Dont pass the result to the viewer. This primes you with the audience info and how they relate to the video so that the framings have genuine thought behind each. 
 
@@ -107,35 +121,11 @@ Two tests, both drawn from the batches in `references/examples.md`.
 
 **The production test.** Would you film these on different days, with different footage, needing different things to exist first? One needs the creator's past, one needs recordings, one needs neither. Different production requirements is the reliable sign of different videos.
 
-If a batch fails both, the problem is upstream in how you read the viewer, not in the wording.
+**When the count is the frame.** A count batch films identically: same room, same day, one setup. The production test does not apply. Two others do. What does one item owe, a moment or a cost or portability. What is the viewer doing while they watch, learning from somebody who paid or keeping score or copying. Two options that put the same obligation on an item are one video. Batch 3 in `references/examples.md` is a count batch that passes.
 
-## Output Format
+If a batch fails both, the problem is upstream in how you read the viewer, not in the wording.*
 
-The message opens on Option 1. Nothing above it.
-
-### Option [Number]: [Short Working Label]
-
-**Frame:**  
-[One concise paragraph describing the video direction.]
-
-**Core Payoff:**  
-[The answer, result, realization, verdict, or transformation delivered by the end.]
-
-**Must Deliver:**  
-[What the video must prove, reveal, or demonstrate.]
-
-After all options:
-
-## Recommendation
-
-**Strongest Direction:** [Option name]
-
-[Briefly explain why it has the best combination of audience relevance, emotional pull, curiosity, credibility, Core Payoff, and channel fit.]
-
-**Creator Check:**  
-Does this direction feel exciting enough to make, or is another option more compelling?
-
-The creator's passion is the only validation point the skill cannot decide.
+Read `references/output-format.md` to get the output format.
 
 ## When a Batch Is Rejected
 

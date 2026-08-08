@@ -146,6 +146,14 @@ Uses the creator's experience to explain why something worked or failed.
 
 **Must Deliver:** A clear explanation supported by examples or visible evidence.
 
+## Enumerated Set
+
+Delivers a counted set of items the creator has actually accumulated.
+
+**Best for:** Viewers who want the whole map in one sitting and want to keep score against their own situation.
+
+**Must Deliver:** An honest count, and a story, example, or picture above every item. A third of the list stated bare turns it into a tips video.
+
 ---
 
 # Blending Patterns
@@ -153,6 +161,8 @@ Uses the creator's experience to explain why something worked or failed.
 Strong frames fuse one main pattern with one or two supporting ones, and never say so out loud. Batch 1 Option A in `references/examples.md` is a personal story that is also a myth-bust and a transformation. Option B is an experiment carrying a ranking. Neither names a pattern anywhere in the frame.
 
 One pattern controls the direction and the rest serve it. Use patterns that answer the same audience need, and do not let competing directions fight inside one frame: a personal story, an experiment, a warning, a framework and a ranking cannot all be the point of the same video.
+
+When Enumerated Set controls the direction, the other patterns live inside individual items rather than across the video. One item is a personal story, the next is a hidden cause, the next is a comparison.
 
 The blend should feel natural. Do not add patterns simply to make the idea sound more dramatic.
 
@@ -170,6 +180,7 @@ The blend should feel natural. Do not add patterns simply to make the idea sound
 | Starting from zero | Personal Story, Hypothetical Restart, System or Framework |
 | Choosing between options | Comparison, Review or Ranking |
 | Wants deeper understanding | Expert Breakdown, Case Study, Hidden Cause |
+| Has done the thing many times and wants the whole map | Enumerated Set, Expert Breakdown, Mistake or Warning |
 
 ---
 
