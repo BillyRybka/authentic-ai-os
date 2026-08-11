@@ -1,10 +1,23 @@
 # Framing Examples
 
-Read these at Step 3, after the viewer is approved.
+Read these at Step 3, before you write any options.
 
 Frame and Core Payoff are defined in `SKILL.md`. This file is not the definition, it is the standard: what a good one reads like, and what a bad one reads like next to it.
 
-One approved viewer produces several genuinely different videos. The batches below show what that looks like, and what it looks like when it fails. The viewer paragraph heading each batch is what went into it, not something the creator gets shown a second time.
+One viewer produces several genuinely different videos. The batches below show what that looks like, and what it looks like when it fails. The viewer paragraph heading each batch is what went into it, not something the creator gets shown a second time.
+
+## What the construction is
+
+Four things, and the sentence shape is the least of them.
+
+1. **The who is a thing they physically do.** "Business owners who rewrite every AI draft line by line." An action you could film, specific enough to sting. Not a demographic, not a feeling. Batch 1 Option D is the licensed exception: its who is a private thought, and that is exactly what makes it a different video from A, B and C.
+2. **The what has a handle they already own.** "An autocorrect." A noun from the viewer's real life, not an invented label. Never "a system for catching AI language."
+3. **The clause after the verb carries the insight.** "Before the draft ever reaches them" is where the video's actual idea lives.
+4. **The verb is physical.** Install, drop, run, put side by side. Not understand, not learn about.
+
+Core payoff is second person, present tense, and states what they walk out able to do. Not what they will know, and never opening with "by the end of this video."
+
+The "I'm going to show X how to Y" spine is not a mould. The seven options below run seven different spines. Copying one shape is how a batch turns into one video wearing outfits.
 
 ## Batch 1 Examples: Four videos for one idea
 
@@ -19,52 +32,52 @@ This audience stays the same across all four options below. Only the direction o
 ## Option A: The Advice That Kept Them Stuck
 
 **Frame:**  
-A Video about how the advice every small creator hears kept one channel trapped at 57 subscribers for six months, and the change that finally got it moving.
+I'm going to show small youtube creators whose channels have been stuck for months, which popular youtube advice is actually the thing holding the channel down, and what I put in its place.
 
 **Core Payoff:**  
-The viewer discovers which popular advice was holding the creator back, why it fails at such an early stage, and what to do instead.
+You can drop the one habit that's costing you and know exactly what replaces it.
 
 **Must Deliver:**  
-The exact advice that failed, why it failed for a channel that size, and what replaced it. Without that contrast, the frame becomes empty clickbait.
+The exact advice, why it fails at that size, and what replaced it. Without the swap it's clickbait.
 
 ---
 
 ## Option B: Testing What They Already Tried
 
 **Frame:**  
-A Video about a 30-day test of the YouTube advice small creators keep hearing, to find out what actually helps at this stage and what only wastes their time.
+I'm going to run every piece of advice small creators get handed for 30 days, so anyone still stuck under a few hundred subscribers can see which ones moved the numbers and which ones just ate their week.
 
 **Core Payoff:**  
-The viewer learns which advice is worth following while their channel is still small, and which advice they should stop spending time on.
+You can stop spending your week on the advice that failed the test and put those hours into what didn't.
 
 **Must Deliver:**  
-The advice tested, what happened, and an honest explanation of what the test can and cannot prove.
+What was tested, what happened, and an honest line on what the test can't prove.
 
 ---
 
-## Option C: What a Small Creator Can Actually Change
+## Option C: What They Can Actually Change
 
 **Frame:**  
-A video about why a good video can still go nowhere on a small channel, what happens in the early hours after upload, and the one part a small creator can actually change.
+I'm going to show creators who know their video was good and watched it go nowhere anyway what YouTube is actually doing in the first few hours after you publish, and the one part of that you can reach.
 
 **Core Payoff:**  
-The viewer understands why quality alone is not enough and knows what to change before publishing their next video.
+You can see where the video actually stalled and change the one piece that's yours before the next upload.
 
 **Must Deliver:**  
-A clear explanation of what happens after upload and one part of the process the creator can genuinely control.
+What happens after upload, and one part of it the creator genuinely controls.
 
 ---
 
 ## Option D: The Wrong Conclusion
 
 **Frame:**  
-A video about how six months of low views can convince a creator they have no talent, even when the real problem has nothing to do with talent.
+I'm going to show creators who have quietly started to think they are not talented enough what was actually wrong with their videos, and it has nothing to do with talent.
 
 **Core Payoff:**  
-The viewer stops treating weak results as proof they are not cut out for YouTube and learns what to change so their videos have a better chance of being seen.
+You can stop reading your view count as a verdict on you and see the boring mechanical thing that was really in the way.
 
 **Must Deliver:**  
-A believable explanation of what was actually holding the videos back, why the creator confused that problem with a lack of ability, and what they changed afterward.
+What was really holding the videos back, why it got mistaken for a lack of ability, and what changed after.
 
 ## Why this is four videos and not one
 
@@ -82,17 +95,19 @@ If two options in a batch fail the same way, they are the same video.
 
 Same viewer. These four are one video wearing four outfits:
 
-> The advice keeping small creators stuck at 57 subscribers, and what to do instead.
+> I'm going to show small creators which advice is keeping them stuck, and what to do instead.
 >
-> Why following popular YouTube advice is why your channel is not growing.
+> I'm going to show small creators why the popular advice is why their channel isn't growing.
 >
-> The common advice that keeps beginner channels invisible, and the fix.
+> I'm going to show beginner creators the common advice that keeps them invisible, and the fix.
 >
-> What every small creator is told to do that is quietly killing their growth.
+> I'm going to show small creators what they were told to do that is quietly killing their growth.
 
 ### Why those are bad:
 
 Every one is Myth-Busting. Every one has the same Core Payoff. Every one would be filmed identically. The words rotate and the video does not move.
+
+The who never gets more specific than "small creators," and not one of them names a thing the viewer physically does. The construction is correct and the batch is still worthless.
 
 How to Know: Compare the main question, Core Payoff, and Must Deliver. If all three are essentially the same, you wrote one frame several times.
 
@@ -100,7 +115,7 @@ How to Know: Compare the main question, Core Payoff, and Must Deliver. If all th
 
 # Batch 2 Examples: Three videos for one viewer
 
-This viewer comes out of the second example in `finding-the-viewer.md`. Different world, same method.
+Different world, same method.
 
 **The Idea:**
 
@@ -111,39 +126,39 @@ freelance designer who is good at the work but still feels like they are auditio
 ## Option A: Stop Sending Proposals Into the Void
 
 **Frame:**  
-A video showing why this designer stopped sending proposals after sales calls and started getting the client to make a real decision while they were still on the call.
+I'm going to show designers who send a careful proposal and then wait three days for a reply how to get the yes, the no, or the real objection out of the client before the call ends.
 
 **Core Payoff:**  
-The viewer learns how to replace the post-call proposal with a process that gets the client to commit, decline, or reveal the real objection before the conversation ends.
+You can run your next call so it ends with a decision instead of a proposal.
 
 **Must Deliver:**  
-The old sales process, the exact process that replaced it, how the decision is handled on the call, and what changed afterward. Use real results when available and say clearly when they were not tracked.
+The old process, the one that replaced it, how the decision gets handled live, and what changed. Real numbers where they exist, and say plainly where they weren't tracked.
 
 ---
 
 ## Option B: The Moment You Start Auditioning
 
 **Frame:**  
-A side-by-side breakdown of two sales calls that shows the exact moments one designer starts trying to be chosen while the other takes control of the conversation.
+I'm going to put two sales calls side by side so designers who feel like they are being interviewed can hear the exact sentence where one of them handed the decision over.
 
 **Core Payoff:**  
-The viewer learns which questions, explanations, and reactions put them in the position of being judged, and what to say or do differently in those moments.
+You can catch yourself in the moment you start auditioning and say something else instead.
 
 **Must Deliver:**  
-Real call recordings or accurate call examples, the specific moments where the dynamic changes, and a clear alternative for each one. The lesson cannot be reduced to vague advice about confidence.
+Real recordings or accurate call examples, the specific moments the dynamic flips, and an alternative for each. Cannot reduce to advice about confidence.
 
 ---
 
 ## Option C: A Better Pitch Will Not Fix This
 
 **Frame:**  
-A video showing why polishing the portfolio and tightening the pitch can make the designer even easier to evaluate, while doing nothing to change who is leading the decision.
+I'm going to show designers who keep rebuilding the portfolio and rewriting the pitch why every round of polish makes them easier to judge, and what actually decides who is doing the judging.
 
 **Core Payoff:**  
-The viewer learns why proving their value keeps them in audition mode and how to lead the call by deciding whether the client is a good fit, instead of waiting for the client to judge them.
+You can stop proving you are good enough and start deciding whether the client is a fit.
 
 **Must Deliver:**  
-A clear explanation of why more proof does not change the sales dynamic, the behaviors that create the audition, and a practical way to lead the conversation without relying on confidence or performance.
+Why more proof doesn't change the dynamic, the behaviors that create the audition, and a practical way to lead without performing.
 
 ---
 
@@ -161,7 +176,4 @@ Each video requires something different:
 - Option B needs call recordings or detailed call examples.
 - Option C needs a clear argument and a practical alternative.
 
-Compare the main question, Core Payoff, and Must Deliver. If all three are different, the frames are genuinely different
-```
-
-```
+Compare the main question, Core Payoff, and Must Deliver. If all three are different, the frames are genuinely different.

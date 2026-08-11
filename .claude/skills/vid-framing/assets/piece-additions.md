@@ -14,7 +14,7 @@ Insert under the existing lifecycle fields (`slug`, `pillar`, `created`, `status
 
 ```yaml
 # Written by vid-framing
-frame: "{the locked Frame, third person, one direction only. Never a spoken line, never a headline, never a description of the contents}"
+frame: "{the locked Frame, first person and spoken, one direction only. The who is a thing the viewer physically does, the what has a handle they already own, the clause after the verb carries the insight, and the verb is physical. Never a headline, never a description of the contents}"
 core_payoff: "{what they walk away able to do, second person, one outcome. Reads clearly to somebody who has not seen the material, and does not give away the conclusion}"
 format: short-process | case-study | roast | deep-dive | interview | news | listicle
 goal: sales | emails | views
@@ -28,7 +28,7 @@ Do not set `status`. The piece stays `ideating`, and the presence of `frame` is 
 
 `core_payoff` lives in frontmatter only. It locks with the Frame before the read exists, so there is no second copy anywhere for it to drift against.
 
-It is shown to the creator in third person, because a run of second person lines does not scan in a list of options. It saves in second person. That flip is the whole transform: same deliverable, same plain words, one grammatical person changed, nothing added on the way to disk.
+It is shown to the creator in second person and it saves in second person, the same words both times. Nothing gets added on the way to disk.
 
 ## Body to append
 

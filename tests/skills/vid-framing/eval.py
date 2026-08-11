@@ -40,11 +40,17 @@ from frontmatter import split_frontmatter  # noqa: E402
 
 # --- field lists per SKILL.md "Output: piece.md" and piece-framing-additions.md ---
 
-# The seven fields vid-framing ADDS to piece.md frontmatter.
+# The six fields vid-framing ADDS to piece.md frontmatter.
+# Authority is knowledge/piece-contract.md (field ownership table), which lists
+# frame, core_payoff, format, voice_context, goal for vid-framing, plus the
+# last_updated bump every writing skill makes.
+#
+# `mechanism` was required here until 2026-08-06 and was removed: it appears
+# nowhere in piece-contract.md and nothing downstream reads it. It came from a
+# parallel draft of the skill that never became the shipped one.
 FRAMING_FIELDS = [
     "frame",
     "core_payoff",
-    "mechanism",
     "format",
     "goal",
     "voice_context",

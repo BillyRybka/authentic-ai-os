@@ -5,7 +5,7 @@ The message opens on Option 1. Nothing above it.
 ### Option [Number]: [Short Working Label]
 
 **Frame:**  
-[One concise paragraph describing the video direction.]
+[I'm going to (physical verb) (the viewers, named by a thing they physically do) (what they get, in a noun they already own) (the clause that carries the insight).]
 
 **Core Payoff:**  
 [The answer, result, realization, verdict, or transformation delivered by the end.]

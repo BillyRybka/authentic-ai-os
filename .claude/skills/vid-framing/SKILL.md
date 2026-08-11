@@ -37,21 +37,11 @@ ONLY read the Cited references.
 
 Read `content/pieces/{slug}/brain-dump.md` when framing an existing piece. Otherwise work from the idea the creator gives directly.
 
-Read `foundation/avatar.md` (avatar) when using the default audience.
+Rewrite every idea as a flat assertion: "X is true," "Y doesn't work," "if you do Z, W happens." No connective tissue, no story order. A 20-minute ramble usually collapses into 8–15 claims.
 
-State what the material is, with the evidence, before writing anything:
+This step matters more than it sounds. Delivery energy fools you. The thing you said loudest is the thing that's most alive *for you*, which is not the same as most valuable *to them*. Flattening removes your voice from the evaluation.
 
-- a set of discrete items that can be counted
-- a belief the creator is overturning
-- one story with a turn in it
-- a process with steps
-- a comparison between two ways of doing something
-
-Material is often more than one. Name which ones and which is load bearing.
-
-If it is a countable set, count it now. State the working number, every call that moves it (a summary sitting among the items, two items saying one thing, an item with nothing under it), and the range those calls produce. Flag separately any item whose evidence needs verifying before filming; that does not move the count.
-
-The shape follows the material. A single idea does not get enumerated, and a real set of nineteen does not get collapsed into one thesis. A count that needs padding to reach a round number is not a count.
+Read `foundation/avatar.md` (avatar) so you understand the audience. Dont assume surface, dive into their minds when it comes to this topic. Why could they actually care about this, what real problem would this actually solve for them that would make a meaningful impact. Why or why not do they want this. 
 
 ### 2. Find the idea that "reads their minds"
 
@@ -69,14 +59,7 @@ Read:
 
 Every framing is a different video for the same viewer, not a different viewer.
 
-Each Frame should establish:
-
-- Their current situation
-- The central problem, belief, or desire
-- The story, method, test, analysis, or process used
-- What changes for the viewer by the end (they must care)
-
-Focus on making it instantly recongizable, relatable on an emotional level and clear simple, clear 5th grade language meaning we dont need to read between the lines or think hard to understand a unclear meaning. Write like the Fixed versions in `references/examples.md`.
+Focus on making it instantly recongizable, relatable on an emotional level and clear simple, clear 5th grade language meaning we dont need to read between the lines or think hard to understand a unclear meaning. Write like the worked options in `references/examples.md`.
 
 If there is an easier, more interesting and relatable way to frame something within the video, do so. 
 
@@ -125,7 +108,7 @@ Two tests, both drawn from the batches in `references/examples.md`.
 
 If a batch fails both, the problem is upstream in how you read the viewer, not in the wording.*
 
-Read `references/output-format.md` to get the output format.
+Read `templates/output-format.md` to get the output format.
 
 ## When a Batch Is Rejected
 

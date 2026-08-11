@@ -2,14 +2,12 @@ extends: existence
 message: "Hedge word: '%s'. Cut it or commit to a position."
 level: warning
 ignorecase: true
-tokens:
-  - "kind of"
-  - "sort of"
-  - "tends to"
-  - "tend to"
-  - "I think maybe"
-  - "perhaps"
-  - "arguably"
-  - "essentially"
-  - "basically"
-  - "literally"
+# raw, not tokens: "kind of" / "sort of" only hedge when a linking verb sits in
+# front. Bare tokens fired on "what kind of material", which is categorical,
+# not hedging. Go's regex has no lookbehind, so the verb is required rather
+# than "what" excluded. The two list entries concatenate into one pattern.
+# Vale does NOT alternate raw with tokens, so everything has to live here; a
+# file with both silently matches nothing.
+raw:
+  - '(?:(?:\b(?:is|was|are|were|am|be|been|feels?|felt|seems?|seemed|looks?|looked|sounds?|sounded|gets?|got)|[''’](?:s|re))\s+(?:kind|sort) of\b'
+  - '|\b(?:tends? to|I think maybe|perhaps|arguably|essentially|basically|literally)\b)'

@@ -15,7 +15,10 @@ skill never invalidate a fixture.
 
 | Path | Produced by | Date | Notes |
 |---|---|---|---|
-| foundation/creator-foundation.md | hand-authored | 2026-01-10 | Iceberg, avatar, Top 3, pillars. The alignment-check input. |
+| foundation/iceberg.md | split from creator-foundation.md | 2026-08-06 | Iceberg statement + content pillars. Text unchanged, file boundary new. |
+| foundation/avatar.md | split from creator-foundation.md | 2026-08-06 | Avatar + Top 3 perceived problems. Text unchanged, file boundary new. |
+| foundation/credibility.md | split from creator-foundation.md | 2026-08-06 | The proof points. Text unchanged, file boundary new. |
+| foundation/creator-foundation.md | hand-authored | 2026-01-10 | **Superseded, kept for un-migrated suites.** See the split note below. |
 | foundation/voice-profile.md | hand-authored | 2026-01-10 | Thin guardrail. Refusals + banned words mirror .vale/. |
 | foundation/reference-pieces/youtube-script.md | hand-authored | 2026-01-10 | Read-aloud anchor for the Tier B judge (5/5 calibration). |
 | banks/story-bank/agency-owner-fired-himself.md | hand-authored | 2026-01-08 | Delegation story, problem 2. Referenced by seeds 2, 4. |
@@ -24,6 +27,35 @@ skill never invalidate a fixture.
 | banks/framework-bank/3-part-onboarding-system.md | hand-authored | 2026-01-08 | The example framework. |
 | banks/pattern-bank.md, title-bank.md, transition-bank.md | hand-authored | 2026-01-09 | Thin single-file banks so downstream skills have signal. |
 | people/Marcus Lane.md | hand-authored | 2026-01-08 | Client stub referenced by the story and proof. |
+
+## The foundation split (2026-08-06)
+
+Commit 5fa8146 rewired the runtime skills to read five foundation files instead
+of one, and the fixtures were left behind. Every skill that gates on
+`foundation/avatar.md` or `foundation/iceberg.md` was aborting at its own
+precondition check before producing any output, so those suites were reporting
+nothing rather than failing loudly.
+
+`iceberg.md`, `avatar.md` and `credibility.md` are a faithful repartition of
+`creator-foundation.md`. No text was added, removed or reworded.
+
+`backstory.md` and `offer.md` are deliberately absent. Nothing in the current
+suites reads them, and authoring a backstory for a fictional creator that
+nothing consumes is invention with no consumer. Add them when a skill under
+test actually reads them.
+
+`creator-foundation.md` stays on disk until the suites below are migrated.
+Delete it only when this list is empty.
+
+| Suite | Still references creator-foundation.md |
+|---|---|
+| post-write | rubric.md |
+| vid-ending | eval.py, rubric.md, test_cases.json |
+| vid-framing | rubric.md |
+| vid-ideas | eval.py, rubric.md |
+| vid-intake | rubric.md |
+| vid-intro | eval.py, rubric.md |
+| vid-title | rubric.md, test_cases.json, fixtures/persona/ |
 
 ## billy/ (removed)
 

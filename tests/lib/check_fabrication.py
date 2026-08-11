@@ -27,6 +27,14 @@ _PERCENT_RE = re.compile(r"\b\d[\d,]*(?:\.\d+)?\s?%")
 _MULTIPLIER_RE = re.compile(r"\b\d[\d,]*(?:\.\d+)?\s?[xX]\b")
 _BIG_NUMBER_RE = re.compile(r"\b\d{3,}(?:,\d{3})*(?:\.\d+)?\b")
 
+# Foundation docs a [[link]] might cross-reference. These are not bank entries,
+# so they are skipped rather than looked up in banks/. Covers both the pre-split
+# single file and the five split files that replaced it.
+_FOUNDATION_DOCS = (
+    "creator-foundation",
+    "iceberg", "avatar", "credibility", "backstory", "offer",
+)
+
 # Bank subfolders that a [[link]] might point into (per bank-contract.md).
 _BANK_DIRS = [
     "story-bank", "proof-bank", "metaphor-bank",
@@ -53,7 +61,7 @@ def _bank_link_targets(text):
         if not t:
             continue
         # foundation cross-refs and headings are not bank entries
-        if t.lower().startswith("creator-foundation"):
+        if t.lower().startswith(_FOUNDATION_DOCS):
             continue
         targets.append(t)
     return targets
