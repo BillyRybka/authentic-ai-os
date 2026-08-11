@@ -1,0 +1,14 @@
+# Run directories hold a full vault copy per arm per case. Regenerable, large,
+# and never worth reviewing in a diff.
+runs/
+__pycache__/
+
+# Forked skills under test. Scratch by definition: a candidate either wins and
+# gets copied back to the live skill on purpose, or it gets deleted.
+candidates/
+
+# Real creator material never enters this repo. cases.local.json holds paths
+# into the creator's own vault, and golds/local/ holds outputs built from it.
+# The committed corpus stays synthetic.
+cases.local.json
+golds/local/

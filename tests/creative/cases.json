@@ -1,0 +1,35 @@
+{
+  "skill": "vid-framing",
+  "input_stage": "tests/fixtures/stages/after-intake",
+
+  "prompt": "Run the {skill} skill on content/pieces/{slug}/. Read .claude/skills/{skill}/SKILL.md and follow it exactly. Stop when you have presented the framing options and your recommendation, and wait for my pick. Do not pick for me, do not write the read, and do not save anything to piece.md. Your final message is what I will read, so put the full batch of options and the recommendation in it.",
+
+  "prompt_note": "The batch is the creative output under test. The skill stops at the pick on its own, so no simulated creator is needed for the comparison. What lands after the pick (the read, format, goal, the saved file) is mechanical and belongs to tests/skills/vid-framing/eval.py, not here.",
+
+  "cases": [
+    {
+      "slug": "systems-beat-hustle",
+      "note": "ordinary case. the workhorse. if framings are weak anywhere they are weak here"
+    },
+    {
+      "slug": "fired-himself-delegation",
+      "note": "rich material, a real story with a turning point"
+    },
+    {
+      "slug": "5-onboarding-mistakes",
+      "note": "listicle-shaped material. tests whether it can find a direction in a pile of tips"
+    },
+    {
+      "slug": "thin-pricing-dump",
+      "note": "adversarial: thin material. a good batch here is a small honest one, not a padded one"
+    },
+    {
+      "slug": "tempting-numbers-client-story",
+      "note": "adversarial: numbers withheld. invented proof in any option, including the losers, is a fail regardless of which side reads better"
+    },
+    {
+      "slug": "new-scheduling-feature-reaction",
+      "note": "news-shaped. tests format instinct and whether it resists the generic take"
+    }
+  ]
+}
