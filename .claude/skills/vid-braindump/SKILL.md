@@ -36,6 +36,8 @@ Dates are today's date from the environment, not guessed. Fill every field in th
 
 `source_mode` gets your best read of the material at this point. It is the one thing in either file you are allowed to correct later, and you correct it at the close, once you know what the capture actually turned out to be.
 
+`anchor` exists only when `vid-ideas` handed over a picked seed. Copy its receipt across word for word. No seed, no field, and nothing to ask the creator.
+
 ## 3. Pass one: empty the head
 
 Read what the material is. Never ask which one it is.

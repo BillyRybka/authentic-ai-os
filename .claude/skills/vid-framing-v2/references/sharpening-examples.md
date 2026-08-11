@@ -2,65 +2,89 @@
 name: Sharpening Examples
 type: skill-local-reference
 loaded_by: vid-framing-v2
-when_to_read: Before building the question set and before deciding whether to block
+when_to_read: Before intent dialogue and before forming the package
 ---
 
 # Sharpening examples
 
-## 1. Stop when no video is selected
+## No selected video
 
-If the creator invokes framing without naming or selecting a piece, ask only:
+Ask only:
 
 > What video do you want to frame?
 
-Do not read files or add explanation before they answer.
+Do not read or add explanation before the creator answers.
 
-## 2. Preserve and sharpen the creator's decision-log direction
+## Ask for audience language when none exists
 
-The dump says freelance designers hear a clear "yes" on a client kickoff call, start the work, and then lose unpaid hours when the client reopens those decisions. The creator uses a one-page decision log after every call and wants to show the process without turning the video into contract advice or a client-blaming rant.
+The dump calls the problem a "decision-governance failure," but no supplied comment, DM, word list, avatar, or research says how freelance designers describe it.
 
-Those facts already establish the audience, situation, viewer outcome, and boundary. If the piece has no goal, ask only:
+Ask:
 
-> Is this video mainly meant to drive sales, collect emails, or earn views?
+> When this happens, how would the designer describe the frustrating part in their own words?
 
-Do not ask for details about the log, its demonstration, or its handoff during intent discovery. Those are Must deliver decisions after intent is clear.
+Do not turn "decision-governance failure" into a supposed audience phrase.
 
-After confirmed answers, a faithful proposal is:
+## Use supplied audience language when it exists
 
-> **Frame:** I want to show freelance designers who lose hours to reopened kickoff decisions how to make those decisions stick before they turn into another revision round.
+A supplied DM says, "The client agrees on the kickoff call, then acts like we never decided anything." The creator wants to teach a one-page decision log. Use the recognizable pain without claiming that any unsourced wording came from the audience:
+
+> **Frame:** I want to show freelance designers whose clients act like kickoff decisions never happened how to make those decisions stick before they turn into another revision round.
 >
 > **Core payoff:** You can build a one-page record from a kickoff call, get the client to confirm it, and use it when a settled decision reopens.
 >
 > **Must deliver:** Show a realistic kickoff excerpt, build the one-page decision log from it, send the exact confirmation request, then use the confirmed log to handle one later request that reopens a settled decision.
 
-This is one promise. A batch such as "better kickoff calls," "how to price revisions," and "manage difficult clients" would replace sharpening with concept generation.
+## Use a named mechanism when it is the compelling handle
 
-## 3. Check an unsupported promise after intent is clear
+Supplied parent DMs repeatedly say, "I hit 6 p.m. and have no idea what to make." The creator's established method is called the Dinner Map, and the audience already recognizes that name.
 
-The dump claims the decision log cuts revision time by 40 percent, but it contains no time records, before-and-after projects, or other evidence for that number.
+> **Frame:** I want to show parents who hit 6 p.m. with no idea what to make how the Dinner Map turns what is already in the fridge into a week of no-panic dinners.
+>
+> **Core payoff:** You can map five dinners from ingredients you already have before the week starts.
+>
+> **Must deliver:** Start with one real fridge inventory, build the Dinner Map on screen, and cook one mapped dinner without adding an unplanned grocery run.
 
-> I can't honestly promise a 40 percent reduction in revision time from what is here yet. The smallest fix is to provide the project records behind the number or drop it and promise the relief the demonstrated decision-log process can honestly earn. Which version can this video support?
+The mechanism belongs in this Frame because it is a meaningful audience-facing handle. An implementation-only tool name would stay in Core payoff or Must deliver.
 
-Do not lock the numeric promise and hide the gap in "must deliver." Missing required proof is a blocker.
+## Ask only for missing intent
 
-## 4. Keep sequential delivery together
+If audience, situation, and outcome are explicit but goal is absent, ask only:
 
-Giving the viewer a decision-log template and showing how to use it are sequential parts of one outcome. Do not call this a fork, split it automatically, or ask the creator to choose between the tool and its use.
+> Is this video mainly meant to drive sales, collect emails, or earn views?
 
-If the creator's dump separately promises a usable decision-log process and preparation for a contract renegotiation, those are independent endings. Ask only: "Should they leave able to document kickoff decisions, or prepared to renegotiate an existing contract?"
+Ask about `must_not_become` only if the material contains a real directional ambiguity.
 
-Do not announce that the material contains two videos.
+## Correct one field without regenerating the package
 
-## 5. Reuse explicit intent
+Creator: "The Core payoff still sounds like a process. They should leave able to use the record when a client changes their mind."
 
-If the dump explicitly says, "This is not a contract-negotiation video," the boundary is established. Do not ask for it again and do not announce that it was derived.
+Respond only:
 
-If the dump and piece contain no boundary, ask a short creator-facing question. Never fill the field with a stock boundary.
+> **Core payoff:** You can use a client-confirmed kickoff record when a settled decision reopens.
+
+Do not restate Frame, Must deliver, format, or goal. Do not ask to save or approve.
+
+## Keep a sequential promise together
+
+Giving the viewer a decision-log template and showing them how to use it serve one end capability. Keep them in one video.
+
+If the same dump separately promises preparation for a contract renegotiation, ask one focused question because that has a different ending:
+
+> Should they leave able to document kickoff decisions, or prepared to renegotiate an existing contract?
+
+Do not announce a fork or declare that the creator has two videos.
+
+## Handle unsupported claims after intent
+
+If a confirmed Frame promises a 40 percent reduction in revision time but the material contains no supporting records, say naturally that the number is not supportable yet. Offer to use supporting records or remove the number while keeping the relief the demonstrated process can honestly earn. Ask one focused question only if a decision is needed.
 
 ## Construction checks
 
-- Ask only for a missing intent decision. Do not narrate reads, counts, skipping, or reasoning.
-- A frame preserves the dump's subject, evidence, and intended change while leading with the person's desired relief. The mechanism remains the vehicle and satisfying answer, not the headline promise.
-- A core payoff names the one capability or vehicle that fulfills the frame's promised relief, not a feature list or a second promise.
-- Build Must deliver after intent is clear; keep production details out of the intent interview unless the promise cannot otherwise be honest.
-- "Clickable" is a property of specificity, stakes, and consequence here. It is never permission to write titles.
+- Verify core intent progressively; never convert a model hypothesis into silent fact.
+- Use real or creator-confirmed audience language for pain and relief.
+- Keep the Frame transformation-first, while allowing a genuinely compelling named handle.
+- Keep Core payoff direct second person and limited to one end capability.
+- Make Must deliver concrete and filmable after intent is clear.
+- Answer follow-up fields locally instead of regenerating the package.
+- Preserve one creator-faithful direction without batch generation or packaging copy.

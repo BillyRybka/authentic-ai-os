@@ -156,7 +156,7 @@ When the batch is done (or the creator stops):
 - The `/foundation` chain produces `iceberg.md` (iceberg, pillars) and `avatar.md` (avatar, Top 3) this skill reads.
 - `vid-voice-capture` produces `voice-profile.md` and `reference-pieces/{voice_context}.md`, the voice this skill writes in.
 - `vid-ideas` picks topics from a blank slate. This skill repurposes material the creator already has; it does not ideate.
-- The iceberg + Top 3 alignment gate this skill reuses is the shared `knowledge/iceberg-and-top-3-alignment.md`, authored for `vid-intake` and used across the system.
+- The iceberg + Top 3 alignment gate this skill reuses is the shared `knowledge/iceberg-and-top-3-alignment.md`, used across the system.
 - The script pipeline (`vid-structure` and the segment skills) writes video scripts. Their finished scripts are a valid source for this skill to repurpose into posts.
 - `vid-pipeline` (future) may invoke this after a script locks, to spin platform derivatives.
 - Future `post-` siblings (carousel rendering, scheduling) will consume the post notes this skill saves.

@@ -60,7 +60,7 @@ Deferred loads: `knowledge/format-planners/{format}.md` and `knowledge/attention
 
 - script.md has any stub section (e.g. `## Segment 3` with empty body) → reject. "Script not complete. Finish writing segment N first."
 - piece.md missing `frame` or `format` → reject. "Run vid-framing first."
-- brain-dump.md missing → reject. "Run vid-intake first."
+- brain-dump.md missing → reject. "Run vid-braindump first."
 - foundation docs missing → reject. "Run /foundation sequence first."
 
 **Rubric weighting from piece.md:**
@@ -231,7 +231,7 @@ vid-pipeline reads `pressure_test_audit` from piece.md frontmatter directly. No 
 
 1. script.md incomplete (any stub section) → redirect to vid-segment, vid-intro, or vid-ending
 2. piece.md missing frame or format → redirect to vid-framing
-3. brain-dump.md missing → redirect to vid-intake
+3. brain-dump.md missing → redirect to vid-braindump
 4. Foundation docs missing → redirect to /foundation
 5. Em-dashes in any productized output (this skill's chat, suggested rewrites, frontmatter)
 6. Attribution leaks in productized output (no named-source language)
@@ -276,7 +276,7 @@ vid-pipeline reads `pressure_test_audit` from piece.md frontmatter directly. No 
 - `vid-segment`, `vid-intro`, `vid-ending` write the script this skill audits
 - `vid-structure` writes the skeleton that the body skills filled
 - `vid-framing` locks the frame the reviewers test against
-- `vid-intake` produced the brain-dump that source-traceability checks
+- `vid-braindump` produced the brain-dump that source-traceability checks
 - The `/foundation` chain produced the `foundation/` files; `vid-voice-capture` produced voice-profile; `vid-research` produced packaging-system
 - `vid-pipeline` invokes this skill after vid-ending completes
 - `vid-measurement` (future) reads pressure-test results post-publish to correlate with retention data

@@ -1,6 +1,6 @@
 ---
 name: vid-pipeline
-description: Thin orchestrator for one video, idea to filming-ready script. Reads where a piece is in the writing pipeline and auto-invokes the next skill (vid-ideas when the creator is blank on ideas, then vid-intake, vid-framing, vid-title, vid-thumbnail, vid-structure, vid-intro, vid-segment, vid-ending, vid-pressure-test). Use this when the creator says "work on my video", "continue this piece", "what's next on {piece}", "move this video forward", "run the pipeline", "let's make a video", or "/vid-pipeline". It routes and delegates; it never writes content itself.
+description: Thin orchestrator for one video, idea to filming-ready script. Reads where a piece is in the writing pipeline and auto-invokes the next skill (vid-ideas when the creator is blank on ideas, then vid-braindump, vid-framing, vid-title, vid-thumbnail, vid-structure, vid-intro, vid-segment, vid-ending, vid-pressure-test). Use this when the creator says "work on my video", "continue this piece", "what's next on {piece}", "move this video forward", "run the pipeline", "let's make a video", or "/vid-pipeline". It routes and delegates; it never writes content itself.
 ---
 
 # Video Pipeline
@@ -9,9 +9,9 @@ Thin orchestrator. It reads one piece's `piece.md` to find where it is, then inv
 
 The chain it routes through:
 
-`vid-intake` → `vid-framing` → `vid-title` → `vid-thumbnail` → `vid-structure` → `vid-intro` → `vid-segment` (once per body segment) → `vid-ending` → `vid-pressure-test`.
+`vid-braindump` → `vid-framing` → `vid-title` → `vid-thumbnail` → `vid-structure` → `vid-intro` → `vid-segment` (once per body segment) → `vid-ending` → `vid-pressure-test`.
 
-Optional front door: when the creator is blank on ideas, `vid-ideas` runs first and its picked seed packet enters the chain at `vid-intake`.
+Optional front door: when the creator is blank on ideas, `vid-ideas` runs first and its picked seed packet enters the chain at `vid-braindump`.
 
 ## Response format
 
@@ -28,7 +28,7 @@ While this section is present, trace what the skill is doing for the builder. At
 - {next action} → {reason}
 ```
 
-Group each step's actions under the one header instead of repeating the skill and step on every line, and keep each action to a single line. Trace file loads, saves, routing decisions, and skips. Carry this through the whole run: every skill you invoke from here (vid-intake, vid-framing, and on down the chain) gets its own block, including the ones that do not repeat this instruction. This is for the builder, not the creator: it deliberately breaks the invisible-machinery rule, which is why it comes out before release.
+Group each step's actions under the one header instead of repeating the skill and step on every line, and keep each action to a single line. Trace file loads, saves, routing decisions, and skips. Carry this through the whole run: every skill you invoke from here (vid-braindump, vid-framing, and on down the chain) gets its own block, including the ones that do not repeat this instruction. This is for the builder, not the creator: it deliberately breaks the invisible-machinery rule, which is why it comes out before release.
 <!-- DEBUG-TRACE:END -->
 
 <!-- DEBUG-TRACE:START — bench run. Builder-only fast path for vid-bench. Safe here in .claude/skills (never ships); release.ps1 hard-stops it from the plugin tree. -->
@@ -44,7 +44,7 @@ The marker carries an absolute path: `[bench run: piece folder is {abs}]`. That 
 
 - Read `{abs}/piece.md` directly, then go straight to Step 3 routing.
 - Do NOT run the Step 2 entry menu, the in-progress scan, or any glob over `content/pieces/`. The piece is already resolved, and scanning a 30-piece vault to re-derive an answer you were handed is pure latency.
-- If `{abs}` has no `piece.md`, that is the pre-intake state, not a lookup failure. Route to `vid-intake` for that folder. Do not go hunting for a different piece.
+- If `{abs}` has no `piece.md`, that is the pre-capture state, not a lookup failure. Route to `vid-braindump` for that folder. Do not go hunting for a different piece.
 
 Pass the absolute folder to every sub-skill in the context line, for the same reason.
 <!-- DEBUG-TRACE:END -->
@@ -72,12 +72,12 @@ Voice is never a blocker.
 First, two fast paths that skip the menu, because the intent is already clear:
 
 - **The creator named a slug** (`/vid-pipeline {slug}`, or "work on the retention piece"): load `content/pieces/{slug}/piece.md` and go to Step 3.
-- **The creator led with material** (a brain dump, "I want to make a video about X", a pasted transcript): treat it as a new piece, invoke `vid-intake` via the Skill tool, and stop here. Do not also run the scan below.
+- **The creator led with material** (a brain dump, "I want to make a video about X", a pasted transcript): treat it as a new piece, invoke `vid-braindump` via the Skill tool, and stop here. Do not also run the scan below.
 
 **Otherwise the intent is ambiguous** (a bare `/vid-pipeline`, "work on my video", "what's next" with no piece named and no material). Surface the entry menu with `AskUserQuestion`. Four options, plus the always-available Other escape:
 
-- **"New video, I have an idea or material"** → invoke `vid-intake`. This is the single authoritative path that starts a new piece; when it is chosen, do NOT also fire the zero-in-progress branch below, or intake double-fires.
-- **"New video, I'm blank on ideas"** → invoke `vid-ideas`. It generates a signal-backed batch, the creator picks one, and `vid-ideas` hands the picked seed packet to `vid-intake` itself. When `vid-intake` has created the piece folder, re-read `piece.md` and resume routing at Step 3.
+- **"New video, I have an idea or material"** → invoke `vid-braindump`. This is the single authoritative path that starts a new piece; when it is chosen, do NOT also fire the zero-in-progress branch below, or capture double-fires.
+- **"New video, I'm blank on ideas"** → invoke `vid-ideas`. It generates a signal-backed batch, the creator picks one, and `vid-ideas` hands the picked seed packet to `vid-braindump` itself. When `vid-braindump` has created the piece folder, re-read `piece.md` and resume routing at Step 3.
 - **"Pick up where I left off"** → run the in-progress scan below.
 - **"I have a script, just pressure-test it"** → run the in-progress scan below to resolve which piece, then follow the pressure-test shortcut note below.
 
@@ -85,7 +85,7 @@ If the creator picks Other and just tells you what they want, follow it. The men
 
 **The in-progress scan** (used by the two resume options, or whenever a slug was not named): scan `content/pieces/*/piece.md`, and consider ONLY files whose frontmatter has `type: content-piece`. A vault can hold `piece.md` files created by other systems; skip any without that type so they are never mistaken for in-progress videos. Among the real pieces, an in-progress one has `status` that is NOT `filming-ready`, `filmed`, `editing`, or `published`.
 
-- **Zero in-progress pieces:** nothing to resume or test. Say so, and offer to start a new piece with `vid-intake` via the Skill tool.
+- **Zero in-progress pieces:** nothing to resume or test. Say so, and offer to start a new piece with `vid-braindump` via the Skill tool.
 - **One in-progress piece:** name it and continue. "Picking up `{slug}` ({current phase}, last touched {last_updated})." Go to Step 3.
 - **More than one:** list them and ask. One line each: slug, derived phase, `last_updated`. End with "Which one, or start a new piece?" Wait for the answer. Never silently pick.
 
@@ -99,7 +99,8 @@ Read `piece.md` frontmatter plus the presence of sibling files. Match top-to-bot
 
 | State of the piece | Next skill |
 |---|---|
-| No `piece.md` for the slug | `vid-intake` |
+| No `piece.md` for the slug | `vid-braindump` |
+| `brain-dump.md` still carries `## Still capturing` | `vid-braindump` (resume the dump) |
 | No `frame` | `vid-framing` |
 | `frame` set, no `title` | `vid-title` |
 | `title` set, no `thumbnail_text` | `vid-thumbnail` |

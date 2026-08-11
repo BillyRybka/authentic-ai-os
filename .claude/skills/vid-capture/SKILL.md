@@ -175,4 +175,4 @@ Report what changed: entries captured (as wikilinks), people stubs created, anyt
 - **Never fabricate.** No invented clients, numbers, results, quotes, or metaphors. A gap is a TODO.
 - **One item at a time.** Batching encourages sloppy captures.
 - **The contract is one file.** Bank schemas, the wikilink and person-stub rules, and failure behavior live in `knowledge/bank-contract.md`. Every entry matches it.
-- **Person stubs are created here, not upstream.** `vid-intake` captures names as plain text and deliberately creates nothing, because a name in a raw dump is material, not yet an entity. This skill is where a named person becomes a `people/` profile: the moment their material becomes a bank entry.
+- **Person stubs are created here, not upstream.** `vid-braindump` captures names as plain text and deliberately creates nothing, because a name in a raw dump is material, not yet an entity. This skill is where a named person becomes a `people/` profile: the moment their material becomes a bank entry.

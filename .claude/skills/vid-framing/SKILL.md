@@ -9,7 +9,7 @@ Turn a broad video idea into a concept the target audience feels was made specif
 
 ## Before You Start
 
-No `content/pieces/{slug}/brain-dump.md`, point them at `vid-intake` and stop.
+No `content/pieces/{slug}/brain-dump.md`, point them at `vid-braindump` and stop.
 
 If piece.md already has a `frame`, this is a re-frame. Ask whether they want fresh directions or that one sharpened, then run from Step 2 or skip to Lock and Save with `## The Read` replaced rather than appended.
 

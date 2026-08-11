@@ -15,7 +15,7 @@ Turn the brain-dump plus the locked frame into a complete plan: the main points 
 - **Payoff late is judgment, not a rule.** The viewer clicked holding one question, and once the full answer lands, their reason to stay is gone. So the title's answer lands past the midpoint by default, and the locked format outranks the default.
 - **Never fabricate.** No invented stories, numbers, results, or bank entries. Where the banks and the dump have nothing, the plan names the hole and it lands in `## To build`. Flagging the gap is the job.
 - **Cuts are logged, never dropped silent.** In the spine, and in script.md's CUTS comment so re-structure runs do not re-propose them. The creator may know a cut is the real gold, which means the frame is wrong.
-- **Never pad to a count.** Mining yields what it yields. A gap between the points and the format's shape gets surfaced, thin dump back to `vid-intake` or wrong format back to `vid-framing`, never filled with tangents.
+- **Never pad to a count.** Mining yields what it yields. A gap between the points and the format's shape gets surfaced, thin dump back to `vid-braindump` or wrong format back to `vid-framing`, never filled with tangents.
 - **Machinery stays invisible.** No step numbers, no "mining complete." The creator sees the spine, then the built plan, then the confirm.
 
 ## What loads, and when
@@ -36,7 +36,7 @@ Load each file at the step that needs it. Never bulk-load the banks; query one o
 | `assets/script-skeleton-template.md` | 3 | the exact shape of script.md |
 | `assets/piece-structure-additions.md` | 3 | the fields to append to piece.md |
 
-Stops: no `brain-dump.md`, point to `vid-intake`. No `frame`, `core_payoff`, `format`, or `goal` in piece.md, point to `vid-framing`. No planner on disk for the locked format, show the seven and let the creator lock a real one.
+Stops: no `brain-dump.md`, point to `vid-braindump`. No `frame`, `core_payoff`, `format`, or `goal` in piece.md, point to `vid-framing`. No planner on disk for the locked format, show the seven and let the creator lock a real one.
 
 Re-structure: if piece.md already carries `segment_purposes`, the piece is outlined. Show the existing spine and ask whether to refine or rebuild. Never discard prior points unless the creator says so.
 

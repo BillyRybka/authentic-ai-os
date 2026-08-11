@@ -1,13 +1,13 @@
 ---
 name: vid-ideas
-description: Generate signal-backed video ideas for a creator blank on what to make next. Reads the iceberg, pillars, avatar, and Top 3 plus the pattern-bank, proposes ~5-6 ideas anchored to proven outliers with 1-2 flagged swings, and re-rolls on a more / tighter / wilder / sharper dial. Keepers save to content/ideas-backlog.md; the pick hands a full-receipt seed packet to vid-intake. Triggers on "give me video ideas", "what should I make", "I'm out of ideas", "I'm blank on content".
+description: Generate signal-backed video ideas for a creator blank on what to make next. Reads the iceberg, pillars, avatar, and Top 3 plus the pattern-bank, proposes ~5-6 ideas anchored to proven outliers with 1-2 flagged swings, and re-rolls on a more / tighter / wilder / sharper dial. Keepers save to content/ideas-backlog.md; the pick hands a full-receipt seed packet to vid-braindump. Triggers on "give me video ideas", "what should I make", "I'm out of ideas", "I'm blank on content".
 ---
 
 # Video Ideas
 
-Generates a small batch of video ideas for the blank-slate moment, grounded in the creator's positioning and in the evidence of what has actually worked. Reads the iceberg, pillars, avatar, and Top 3 problems plus the pattern-bank, proposes ~5-6 signal-anchored ideas, lets the creator turn a dial until the batch lands, then hands the picked idea to `vid-intake`.
+Generates a small batch of video ideas for the blank-slate moment, grounded in the creator's positioning and in the evidence of what has actually worked. Reads the iceberg, pillars, avatar, and Top 3 problems plus the pattern-bank, proposes ~5-6 signal-anchored ideas, lets the creator turn a dial until the batch lands, then hands the picked idea to `vid-braindump`.
 
-**Scope boundary:** this skill picks WHAT video to make (the topic), from a blank slate or the backlog. It does NOT pick the angle (`vid-framing`), capture raw material or create the piece folder (`vid-intake`), craft the final title (`vid-title`) or thumbnails (`vid-thumbnail`), or write any script. It surfaces each idea as a short line wearing the borrowed shape at full sharpness (the number, the kicker, the named system), with the real outlier receipt, as a seed for judging the idea. The seed may stay close to its source; the do-not-copy ceiling governs the final title `vid-title` crafts later from the captured material. This skill hands the chosen idea seed to `vid-intake` and stops.
+**Scope boundary:** this skill picks WHAT video to make (the topic), from a blank slate or the backlog. It does NOT pick the angle (`vid-framing`), capture raw material or create the piece folder (`vid-braindump`), craft the final title (`vid-title`) or thumbnails (`vid-thumbnail`), or write any script. It surfaces each idea as a short line wearing the borrowed shape at full sharpness (the number, the kicker, the named system), with the real outlier receipt, as a seed for judging the idea. The seed may stay close to its source; the do-not-copy ceiling governs the final title `vid-title` crafts later from the captured material. This skill hands the chosen idea seed to `vid-braindump` and stops.
 
 > **Resolving `knowledge/` and skill paths.** Any path written `knowledge/X.md` is a plugin reference file. Load it from `${CLAUDE_PLUGIN_ROOT}/knowledge/X.md` when running as an installed plugin. If `${CLAUDE_PLUGIN_ROOT}` is unset or that path does not exist (running from the source repo during development), load the repo-relative path instead. The same applies to skill references named `.claude/skills.../...`.
 
@@ -15,14 +15,14 @@ Generates a small batch of video ideas for the blank-slate moment, grounded in t
 
 - A surfaced batch of ~5-6 video ideas in chat, shown as a numbered list of 2-line entries: the idea line carrying the engine at full sharpness, then one receipt line (real outlier title + @channel + views + xMed, the engine it carried, and the why-it-could-land) or a flagged swing line. The full record form (receipt + engine + pillar, signal tier, iceberg-fit verdict, and an optional Top 3 problem tag where one genuinely fits) persists in files and appears when the creator asks for the receipts.
 - `content/ideas-backlog.md`, created from `assets/ideas-backlog-template.md` on the first keep. Only ideas the creator flags to keep are saved (status `kept`). Dropped backlog ideas are marked `dropped` and never re-proposed.
-- A seed packet handed to `vid-intake` for the one idea the creator picks to make now: `{idea_title, pillar, top_3_problem, iceberg_fit, anchor}`, where anchor is the FULL receipt (source title + @channel + views + xMed). `vid-intake` persists the anchor into piece.md so `vid-title` inherits it. This skill writes no piece folder; `vid-intake` creates it.
+- A seed packet handed to `vid-braindump` for the one idea the creator picks to make now: `{idea_title, pillar, top_3_problem, iceberg_fit, anchor}`, where anchor is the FULL receipt (source title + @channel + views + xMed). `vid-braindump` persists the anchor into piece.md so `vid-title` inherits it. This skill writes no piece folder; `vid-braindump` creates it.
 
 ## When to run this
 
 - The creator does not know what video to make and wants options
 - The creator wants to refill their idea queue from what is working in the niche
 - The creator wants to revisit kept ideas from `content/ideas-backlog.md`
-- NOT when the creator already has a topic. Send them straight to `vid-intake`.
+- NOT when the creator already has a topic. Send them straight to `vid-braindump`.
 
 ## Prerequisites
 
@@ -35,7 +35,7 @@ Soft requirements:
 
 ## Invocation modes
 
-**Standalone or via `vid-pipeline`:** the creator invokes directly, or the pipeline's blank-on-ideas branch fires it. Same flow either way, ending with the pick handed to `vid-intake`.
+**Standalone or via `vid-pipeline`:** the creator invokes directly, or the pipeline's blank-on-ideas branch fires it. Same flow either way, ending with the pick handed to `vid-braindump`.
 
 ## The 4 phases
 
@@ -111,7 +111,7 @@ Do not over-talk between rolls. Surface the new batch, repeat the one-line dial 
 ### Phase 4: Save keepers and hand off
 
 1. **Save keepers.** For each idea the creator flagged to keep (but is not making now), append a row to `content/ideas-backlog.md` (create it from `assets/ideas-backlog-template.md` on the first keep) with status `kept`, today's date, pillar, problem, and anchor. Do NOT save the unflagged ideas. If the creator explicitly drops a backlog idea, set its status to `dropped` (sticky, never re-proposed).
-2. **Hand off the pick.** Pass the seed packet `{idea_title, pillar, top_3_problem, iceberg_fit, anchor}` to `vid-intake`, with anchor carrying the full receipt (source title + @channel + views + xMed) exactly as it appears in the pattern-bank row. Tell the creator: "Handing this to `vid-intake` to capture what you'd actually say. It'll drill you for the material and build the brain dump." `vid-intake` runs its idea+dump flow seeded from this packet and creates the piece folder, persisting the anchor into piece.md. This skill creates no piece folder.
+2. **Hand off the pick.** Pass the seed packet `{idea_title, pillar, top_3_problem, iceberg_fit, anchor}` to `vid-braindump`, with anchor carrying the full receipt (source title + @channel + views + xMed) exactly as it appears in the pattern-bank row. Tell the creator: "Handing this to `vid-braindump` to capture what you'd actually say. It'll drill you for the material and build the brain dump." `vid-braindump` runs its idea+dump flow seeded from this packet and creates the piece folder, persisting the anchor into piece.md. This skill creates no piece folder.
 3. If the picked idea came FROM the backlog, set that backlog row's status to `picked`.
 
 ## Conversational discipline
@@ -158,8 +158,8 @@ Do not over-talk between rolls. Surface the new batch, repeat the one-line dial 
 
 - The `/foundation` chain produces `iceberg.md` (iceberg, pillars) and `avatar.md` (avatar, Top 3) this skill reads
 - `vid-research` produces `banks/pattern-bank.md`, the signal source this skill anchors ideas to
-- `vid-intake` receives the picked idea seed and captures the brain dump (this skill's downstream handoff); it persists the seed's anchor receipt into piece.md
+- `vid-braindump` receives the picked idea seed and captures the brain dump (this skill's downstream handoff); it persists the seed's anchor receipt into piece.md
 - `vid-framing` runs after intake and picks the angle (this skill picks the topic, not the angle)
 - `vid-title` owns ALL title craft. The idea line this skill surfaces is a provisional seed (a borrowed proven shape, at full sharpness), never a crafted title; `vid-title` writes the real title later from the captured material. The do-not-copy ceiling applies to `vid-title`'s final title, not to this seed, which may stay close to its source. Where piece.md carries the seed's `anchor:` receipt, `vid-title` treats the seed as the leading candidate to beat. vid-ideas loads no title source.
-- `vid-pipeline` invokes this skill from its Step 2 blank-on-ideas branch; the picked seed packet enters the chain at `vid-intake`
+- `vid-pipeline` invokes this skill from its Step 2 blank-on-ideas branch; the picked seed packet enters the chain at `vid-braindump`
 - `vid-measurement` (future) will feed published performance back into the pattern-bank's Confirmed winners, sharpening this skill's signals over time

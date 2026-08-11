@@ -1,7 +1,7 @@
 ---
 type: asset-template
 loaded_by: vid-framing-v2
-purpose: Candidate-owned fields and body section written to an existing content piece only after the creator locks one frame
+purpose: Candidate-owned fields and body section written to an existing content piece only after the creator approves one package
 ---
 
 # piece.md candidate additions
@@ -11,22 +11,24 @@ purpose: Candidate-owned fields and body section written to an existing content 
 ## Owned frontmatter
 
 ```yaml
-frame: "{locked first-person spoken strategic promise that leads with the person's desired relief rather than the mechanism}"
-core_payoff: "{locked second-person one capability or outcome; it may name the vehicle that fulfills the frame}"
+frame: "{approved first-person spoken strategic promise using sourced or creator-confirmed audience language for pain and relief; include a named mechanism only when it is the compelling audience-facing handle}"
+core_payoff: "{approved direct second-person end capability; it may name the vehicle that fulfills the frame}"
 format: short-process | case-study | deep-dive | roast | listicle | news | interview
-goal: sales | emails | views  # Required creator intent from the dump, existing piece field, or a direct creator answer. Never infer from channel fit.
+goal: sales | emails | views  # Required explicit creator intent. Never infer from channel fit.
 voice_context: youtube-script
-must_not_become: "{boundary explicitly stated in the dump or piece, or confirmed by the creator before lock}"
+must_not_become: "{optional boundary explicitly stated in the selected material or confirmed when a real ambiguity required it}"
 last_updated: {YYYY-MM-DD}
 ```
 
 Add `format-{format}` to the existing `tags` list if it is not already present.
 
-`goal` and `must_not_become` are required before lock. Reuse an explicit value from the selected piece; otherwise ask the creator. Never infer either from general channel fit or a stock boundary.
+`goal` is required before approval and must come from the selected piece or a direct creator answer. Never infer it from channel fit.
+
+`must_not_become` is optional. Write it only when the selected material establishes a boundary or a real ambiguity led the creator to confirm one. Omit it otherwise; never invent a stock boundary.
 
 `voice_context` defaults to `youtube-script`. Use another established medium value only when the existing piece context clearly says the piece is not a YouTube script.
 
-Do not save `must_deliver`. It is a conversational lock-time obligation used to validate the promise. Required missing material triggers a blocker before save.
+Do not save `must_deliver`. It is a conversational obligation used after intent is clear to validate that the promise can be filmed and supported.
 
 ## Owned body section
 
@@ -35,18 +37,18 @@ Append this section, or replace the existing `## The Read` section on a reframe:
 ```markdown
 ## The Read
 
-**Target:** {one recognizable person plus the current situation and behavior that make this video relevant}
+**Target:** {one recognizable person plus the current situation and behavior that make this video relevant, using sourced or creator-confirmed audience language}
 
 **Transformation:** {what they stop doing, what they can do instead, and the same result named by core_payoff}
 
-**Stakes:** {the creator-grounded cost or fear if the current behavior continues}
+**Stakes:** {the audience-grounded cost or fear if the current behavior continues; never invent audience wording or source support}
 ```
 
-The three fields must trace to the dump, existing piece context, or creator answers from this framing session. They cannot introduce a broader audience, a second payoff, or a stronger claim than the locked frame.
+The three fields must trace to the dump, selected piece context, supplied audience-language sources, or creator answers from this framing session. They cannot introduce a broader audience, a second payoff, or a stronger claim than the approved Frame.
 
 ## Write protocol
 
-1. Re-read the current `piece.md` immediately before writing.
+1. Write only after the creator explicitly approves saving the package, then re-read the current `piece.md`.
 2. Confirm its content-piece type and slug.
 3. Insert or replace only the owned frontmatter fields.
 4. Add the one compatible format tag without changing other tags.

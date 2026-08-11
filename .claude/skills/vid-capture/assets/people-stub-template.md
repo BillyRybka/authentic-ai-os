@@ -13,7 +13,7 @@ tags: [person, client]
 
 ## Filling instructions (delete this section before save)
 
-This template creates a `people/{Full Name}.md` stub whenever a bank entry mentions a client by name and no profile exists yet. Per the person-stub rule in `knowledge/bank-contract.md`, which is also where the deferral lives: `vid-intake` never creates stubs, this skill does.
+This template creates a `people/{Full Name}.md` stub whenever a bank entry mentions a client by name and no profile exists yet. Per the person-stub rule in `knowledge/bank-contract.md`, which is also where the deferral lives: `vid-braindump` never creates stubs, this skill does.
 
 **Frontmatter fields:**
 

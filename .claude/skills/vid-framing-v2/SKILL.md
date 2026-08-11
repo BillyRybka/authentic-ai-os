@@ -1,143 +1,144 @@
 ---
 name: vid-framing-v2
-description: Sharpen one explicitly selected, completed video brain dump into one creator-faithful strategic frame, core payoff, and must-deliver obligation. Use after vid-braindump capture is complete and before title or thumbnail packaging. After a specific piece is selected, reads its full dump and context, asks only for missing creator-intent decisions, and can update only its documented piece fields. Not for capture, title generation, thumbnail ideation, structure, or batches of alternate video concepts.
+description: Sharpen one explicitly selected, completed video brain dump into one creator-faithful strategic frame, core payoff, and must-deliver obligation. Use after vid-braindump capture is complete and before title or thumbnail packaging. Reads the selected piece and supplied audience-language sources, verifies core intent progressively, and writes only its documented piece fields after approval. Not for capture, title generation, thumbnail ideation, structure, or batches of alternate video concepts.
 ---
 
 # Video Framing V2 Candidate
 
-This is an isolated behavior-test candidate. It is not the live `vid-framing` skill and is not wired into routing.
+This is the active behavior-test candidate. It does not replace the original `vid-framing` contract or change pipeline routing.
 
-## The gold standard
+## The standard
 
-Given a creator who says, "The client agrees on the kickoff call, then acts like we never decided anything," do not invent ten angles or turn that phrase into a title. Sharpen the direction they already brought:
+A supplied audience DM says, "The client agrees on the kickoff call, then acts like we never decided anything." The creator wants to teach a one-page decision log.
 
-> **Frame:** I want to show freelance designers who lose hours to reopened kickoff decisions how to make those decisions stick before they turn into another revision round.
+> **Frame:** I want to show freelance designers whose clients act like kickoff decisions never happened how to make those decisions stick before they turn into another revision round.
 >
 > **Core payoff:** You can build a one-page record from a kickoff call, get the client to confirm it, and use it when a settled decision reopens.
 >
 > **Must deliver:** Show a realistic kickoff excerpt, build the one-page decision log from it, send the exact confirmation request, then use the confirmed log to handle one later request that reopens a settled decision.
 
-The frame is a first-person, spoken strategic promise. Lead with the relief or transformation the creator's person wants. The mechanism is the vehicle and satisfying answer, not the headline promise. The core payoff is the one concrete capability the viewer leaves with. The must-deliver statement is the evidence and instruction the video owes that promise.
+Lead the Frame with the audience's pain and desired relief. Use a named mechanism in the Frame when it is a compelling audience-facing handle, not merely implementation. Reveal the concrete vehicle in Core payoff. Use Must deliver to name the filmable material that earns the promise.
 
-Read `references/sharpening-examples.md` for the full example and blocker examples.
+Read `references/sharpening-examples.md` before framing.
 
 ## 1. Select the video before reading
 
-If the creator has not explicitly supplied or selected a specific piece or video in the current conversation, ask only:
+If no specific piece or video is explicitly supplied or selected in the current conversation, ask only:
 
 > What video do you want to frame?
 
-Stop there. Do not inspect the vault, infer a likely piece, summarize files, or begin framing before the creator answers.
+Stop. Do not inspect the vault, infer a likely piece, summarize files, or begin framing before the creator answers.
 
-Once the video is selected, read the complete files, not excerpts or summaries:
+## 2. Read the selected context silently
+
+Once the video is selected, read these complete files when present:
 
 1. `content/pieces/{slug}/brain-dump.md`
 2. `content/pieces/{slug}/piece.md`
-3. `foundation/avatar.md` and `foundation/iceberg.md` when present
+3. `foundation/avatar.md` and `foundation/iceberg.md`
+4. Audience-language sources supplied or directly linked for this piece, such as comments, DMs, a word list, or trusted avatar/research
 
-The brain dump is read-only provenance for this skill. Never clean it up or add framing answers to it.
+Do not scan unrelated content for convenient language. Treat the brain dump as read-only provenance. Do not frame a dump explicitly marked as still capturing.
 
-Do not frame a dump explicitly marked as still capturing. For a completed dump, identify internally:
+Separate internally:
 
-- the single direction the creator is already trying to make
-- the specific audience and recognizable person
-- that person's current situation or other struggle
-- the desired viewer outcome
-- the video's stated goal, if present
-- the creator's stated boundary
+- what the creator explicitly intends
+- what audience members actually said and where it came from
+- what trusted audience research supports
+- what is only a hypothesis suggested by the material
 
-Do not announce what files were read, narrate capture state, describe this process, or explain what the skill will replace. Do not reduce "one person" to a broad market label.
+Do not tell the creator what files were read, narrate capture state, announce a workflow, or expose internal labels.
 
-## 2. Ask only for missing intent
+## 3. Verify intent progressively
 
-Treat an input as known only when the dump, existing piece fields, or creator has established it clearly:
+Establish these in order:
 
-1. **Specific audience:** one recognizable person, not a broad segment.
-2. **Audience situation:** what that person is doing, noticing, or repeatedly struggling with now.
-3. **Viewer outcome:** what becomes possible for them after watching.
-4. **Video goal:** `sales`, `emails`, or `views`.
-5. **Must not become:** the creator's boundary for this video.
+1. **Audience:** one recognizable prospective viewer, not a broad segment.
+2. **Audience situation:** the pain, frustration, or other struggle happening now.
+3. **Viewer outcome:** the relief or end capability they want after watching.
+4. **Goal:** `sales`, `emails`, or `views`.
 
-Ask only for inputs that cannot be grounded from the selected piece. Use one short creator-facing question at a time, or a compact set when the missing decisions are tightly related. Ground each question in the creator's language where useful. If all five inputs are known, ask nothing and sharpen the frame.
+An explicit creator statement or existing piece field can establish intent. A model interpretation cannot. When the material only suggests an answer, offer one short hypothesis in natural language and let the creator confirm or correct it. Never silently infer audience, situation, outcome, or goal.
 
-When goal is absent, ask directly: "Is this video mainly meant to drive sales, collect emails, or earn views?" Goal is required before lock. Never replace this decision with a general statement about channel fit.
+Ask one short question at a time. Combine questions only when the missing decisions are inseparable. Do not announce question counts, invite skipping, defend a hypothesis, or explain why a question is required.
 
-Do not announce a question count, invite skipping, expose internal reasoning labels, or explain why each question is being asked. Do not ask for an "angle."
+Verify audience, situation, and outcome before asking goal. When goal is absent, ask:
 
-Do not ask about platform details, installation or handoff readiness, build work, demonstrations, proof capture, closing packaging, or other production choices during intent discovery. Consider those only after the five intent inputs are clear, and surface one only if it directly prevents the requested promise from being honest.
+> Is this video mainly meant to drive sales, collect emails, or earn views?
 
-Treat sequential parts of one transformation as one video. Giving someone a tool and showing them how to use it is one promise when both serve the same viewer outcome. Never announce a fork or declare that the creator has two videos. Only when the creator's own material contains genuinely independent transformations or incompatible endings, ask a focused outcome clarification in natural language.
+Goal is required before the full package can be presented or saved. Never substitute a generic channel-fit statement.
 
-## 3. Sharpen one direction
+`must_not_become` is optional. Reuse an explicit boundary from the selected material. Ask about a boundary only when a real ambiguity could pull the video away from the creator's direction.
 
-Produce exactly one proposal:
+## 4. Use audience language honestly
 
-- **Frame:** first person, natural to say aloud, and one sentence where possible. It leads with one recognizable person's current behavior/problem and promised relief. It may imply the mechanism, but does not have to name it when that would turn the vehicle into the headline. It is not a title, hook, summary, or list of benefits.
-- **Core payoff:** second person and one outcome. It states what the viewer can actually do, decide, or produce after watching. It may reveal the mechanism as the satisfying answer, provided that capability fulfills the frame's promised relief rather than adding a second outcome. It must remain honest without hidden prerequisites.
-- **Must deliver:** a short obligation naming the instruction, proof, story, or demo that has to appear for the frame to be true. This is a lock-time check, not a `piece.md` field.
+Write the Frame and Core payoff in language the prospective viewer uses for the pain, frustration, and desired relief.
 
-Preserve the creator's existing direction. Do not generate a batch, present competing videos, or silently substitute a more clickable topic. When the direction is weak, make the smallest sharpening move that preserves its subject, evidence, and intended change.
+- Prefer supplied comments, DMs, word lists, and trusted avatar/research over creator jargon.
+- Use a direct quote only when the source is actually a quote. Never invent quoted audience language or imply that research supports wording it does not support.
+- When no real audience-language source exists, ask the creator how this person would say the relevant pain or desired relief.
+- Translate creator terminology into audience language only after the creator confirms the translation.
 
-Choose one compatible `format`: `short-process`, `case-study`, `deep-dive`, `roast`, `listicle`, `news`, or `interview`. Use the established `goal`; never infer it from channel fit. Format is an implementation choice after the promise is clear, not a new angle.
+Audience language is evidence, not decoration. Preserve the creator's strategic direction while making the promise recognizable to the person it serves.
 
-## 4. Check deliverability after intent is clear
+## 5. Keep intent separate from production
 
-Build Must deliver only after the five intent inputs are established. Put ordinary demonstration, handoff, build, and proof-capture work in Must deliver rather than turning it into interview questions or blockers.
+Do not ask about platform details, setup, installation, handoff, build work, demonstrations, proof capture, closing packaging, or other production choices while audience, situation, outcome, and goal are still being established.
 
-Interrupt the proposal only when:
+Treat sequential parts of one transformation as one video. Giving someone a tool and showing them how to use it is one promise when both serve the same viewer outcome. Never announce a fork or declare that the creator has two videos.
 
-- the requested transformation depends on evidence, a story, or a demonstration the available material cannot honestly support
-- the creator's requested transformation conflicts with the established `must_not_become` boundary
+Only when the creator's own material contains genuinely independent transformations or incompatible endings, ask one brief outcome clarification in natural language. Do not frame the clarification as a diagnosis.
 
-Do not rubber-stamp an unsupported claim. Missing optional production polish is not a blocker.
+## 6. Sharpen one direction
 
-Speak naturally, give the smallest honest fix, and ask one focused question. Do not expose internal labels:
+Produce one proposal only after the required intent is confirmed:
 
-```text
-I can't honestly promise {specific transformation} from what is here yet. The smallest fix is {one reduction, artifact, fact, or choice}. {one focused question}
-```
+- **Frame:** first person, natural to say aloud, and one sentence where possible. Lead with one recognizable viewer's pain or situation and desired relief. Include a named concept or mechanism when it is the compelling audience-facing handle; omit implementation detail that distracts from the transformation. Never write a title, hook, summary, or benefit list.
+- **Core payoff:** direct second person and one end capability. State what the viewer can actually do, decide, or produce after watching. The vehicle may be explicit, but it must fulfill rather than expand the Frame's promise.
+- **Must deliver:** a short, concrete, filmable obligation naming the instruction, proof, story, demonstration, or artifact required to earn the Frame and Core payoff.
 
-Do not lock or write the frame until the blocker is resolved. If the creator cannot supply the missing material, narrow the promise rather than fabricate support.
+Choose one compatible `format`: `short-process`, `case-study`, `deep-dive`, `roast`, `listicle`, `news`, or `interview`. Use the confirmed `goal`; never infer it from channel fit.
 
-## 5. Validate and lock
+Preserve the creator's existing direction. Do not generate a batch, present competing videos, or silently substitute a more clickable topic.
 
-Before showing the proposal, verify:
+## 7. Check honest deliverability
 
-- It remains the creator's video, not a substitute direction.
-- It promises one video to one recognizable person in a current situation.
-- Audience, situation, viewer outcome, goal, and boundary are all established.
-- The core payoff gives the viewer one usable capability that fulfills the frame's promised transformation. It may be more concrete than the frame by naming the vehicle, but cannot change or expand the promise.
-- The available material can fulfill the must-deliver obligation.
-- It respects `must_not_become`.
-- No creator fact, fear, proof, quote, or result was invented.
-- It is strategic promise language, not title or thumbnail packaging.
+Consider production evidence only after intent is clear. Put ordinary setup, demonstration, handoff, build, and proof-capture work into Must deliver.
 
-Show:
+Interrupt only when the requested transformation cannot be honestly supported by the available material, or when it conflicts with an established boundary. Missing optional production polish is not a blocker.
+
+Speak naturally, give the smallest honest fix, and ask one focused question. Do not emit internal labels or a canned blocker template. Narrow an unsupported claim rather than fabricate support.
+
+## 8. Respond to follow-ups locally
+
+Answer the exact field or question the creator raises first.
+
+- If the creator questions the Frame, discuss or revise only the Frame.
+- If the creator questions Core payoff, discuss or revise only Core payoff.
+- If the creator questions Must deliver, discuss or revise only Must deliver.
+- Do not regenerate the full package, defend prior wording, or ask for approval after every clarification.
+
+Present the full package only when the creator asks for it or when audience, situation, outcome, and goal are all confirmed. A full package may include `Must not become` only when a boundary was established:
 
 ```text
 Frame: {first-person strategic promise}
-Core payoff: {second-person one outcome}
-Must deliver: {concrete obligation}
+Core payoff: {direct second-person end capability}
+Must deliver: {concrete filmable obligation}
 Format: {format}
-Goal: {goal}
-
-Lock this frame?
+Goal: {sales | emails | views}
+Must not become: {established boundary; omit when absent}
 ```
 
-When the creator asks for a correction, revise the one proposal. Do not branch into options.
+## 9. Validate and write only after approval
 
-## 6. Write only after lock
+Before writing, verify:
 
-Read `assets/piece-additions.md` and follow its append/replace protocol. This candidate owns only:
+- It remains the creator's video and one strategic direction.
+- It serves one recognizable person in a current situation.
+- Audience pain and relief use supplied or creator-confirmed audience language.
+- Core payoff is direct second person and fulfills the Frame with one capability.
+- Available material can fulfill Must deliver.
+- No fact, quote, fear, proof, or result was invented.
+- It is strategic promise language, not title or thumbnail packaging.
 
-- `frame`
-- `core_payoff`
-- `format`
-- `goal`
-- `voice_context`
-- `must_not_become`, when explicitly present in the selected piece or confirmed by the creator
-- `last_updated`
-- the `format-{format}` tag
-- `## The Read` with `Target`, `Transformation`, and `Stakes`
-
-Never write `title`, `thumbnail`, `status`, capture provenance, or another skill's fields. Never modify `brain-dump.md`.
+Read `assets/piece-additions.md` and follow its write protocol only after the creator explicitly approves saving the package. Never modify `brain-dump.md`. Never write `title`, `thumbnail`, `status`, or another skill's fields.

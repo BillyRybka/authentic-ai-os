@@ -99,7 +99,7 @@ Walk the brain-dump in the order it was written. For each block:
 **Surviving main points:** #1 (thesis), #7 (mechanism), #10 (solution). Three main points.
 **Cuts logged:** #5, #6, #9.
 
-If the format is short-process, three points maps to three lean steps. If it wants more, surface the gap (add a step, or the dump is thin, route to vid-intake), do not pad with tangents to hit a count.
+If the format is short-process, three points maps to three lean steps. If it wants more, surface the gap (add a step, or the dump is thin, route to vid-braindump), do not pad with tangents to hit a count.
 
 ## Tag-disagreement protocol
 
@@ -115,4 +115,4 @@ The creator may push back on a cut or a tag.
 - **Cutting silently.** Always log cuts. The creator may know the cut is the gold.
 - **Combining destructively.** Keep both stories and proofs when merging, discard only the redundant framing.
 - **Forcing every main point into its own section.** Some serving material lives as a subpoint inside another point, not as a section of its own.
-- **Counting points against a format target.** If mining yields three and the format wants six, surface the gap. Either the dump is thin (vid-intake) or the format is wrong (vid-framing). Never pad.
+- **Counting points against a format target.** If mining yields three and the format wants six, surface the gap. Either the dump is thin (vid-braindump) or the format is wrong (vid-framing). Never pad.

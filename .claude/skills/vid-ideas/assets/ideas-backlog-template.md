@@ -12,7 +12,7 @@ Video ideas the creator generated with `vid-ideas` and chose to keep. This is a 
 
 **Status meanings:**
 - `kept`: liked, not started yet. Fair game to surface and pick later.
-- `picked`: handed to `vid-intake` to develop. Leave the row for history.
+- `picked`: handed to `vid-braindump` to develop. Leave the row for history.
 - `used`: a published or in-progress piece exists. Links to `content/pieces/{slug}`.
 - `dropped`: the creator killed it. Sticky. Never re-propose.
 

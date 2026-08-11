@@ -19,46 +19,64 @@ Load this if you write to `piece.md` or route on it. Shared vault rules (folder 
 type: content-piece
 project: authentic-ai-os
 slug: video-slug
-pillar: {pillar-slug}           # creator's content pillar
-frame: "..."                    # the chosen video described in third person, in the grammar of its want ("A video that shows {who} how to {the change}" is one shape, not the shape). Never a spoken line, never a headline, never a description of the contents. Set by vid-framing.
-core_payoff: "..."              # the reason the viewer stays to the end, almost always the answer to a question already in their head. Second person, one thing, 1-2 sentences. Locked with the frame. Set by vid-framing. vid-structure orders the points so this lands late.
-format: short-process           # from the 7 formats: short-process | case-study | roast | deep-dive | interview | news | listicle. Set by vid-framing.
-voice_context: youtube-script   # delivery medium for voice: youtube-script (default) | tutorial | shorts | newsletter | linkedin | twitter | instagram | podcast | casual | talk. Orthogonal to format. Set by vid-framing (videos) or post-write (posts). Drives which foundation/reference-pieces/{voice_context}.md a writing skill loads.
-goal: sales                     # sales | emails | views (ONE only). Set by vid-framing.
 status: ideating                # ideating | drafting | filming-ready | filmed | editing | published. The one lifecycle field. See "Lifecycle" below.
-created: YYYY-MM-DD             # stamped once by vid-intake at piece creation, never changed
+created: YYYY-MM-DD             # stamped once by vid-braindump at piece creation, never changed
 last_updated: YYYY-MM-DD        # bumped to today by EVERY skill that writes this file
 published: null                 # YYYY-MM-DD when published
+anchor: "..."                   # the outlier receipt from a vid-ideas seed: source title + @channel + views + xMed. Absent when no seed arrived. vid-title reads it as the candidate to beat.
+
+pillar: {pillar-slug}           # creator's content pillar. Set by vid-framing at the channel-fit check.
+frame: "..."                    # the locked video, first person and spoken, one direction only. Never a headline, never a description of the contents. Set by vid-framing.
+core_payoff: "..."              # the reason the viewer stays to the end, almost always the answer to a question already in their head. Second person, one outcome. Locked with the frame. Set by vid-framing. vid-structure orders the points so this lands late.
+must_not_become: "..."          # a shape the whole video must not take, in the creator's words. Never a thing that must not appear. Set by vid-framing from the interview; absent when they had no answer.
+format: short-process           # from the 7 formats: short-process | case-study | roast | deep-dive | interview | news | listicle. Set by vid-framing.
+goal: sales                     # sales | emails | views (ONE only). Set by vid-framing.
+voice_context: youtube-script   # delivery medium for voice: youtube-script (default) | tutorial | shorts | newsletter | linkedin | twitter | instagram | podcast | casual | talk. Orthogonal to format. Set by vid-framing (videos) or post-write (posts). Drives which foundation/reference-pieces/{voice_context}.md a writing skill loads.
+
+title: "..."                    # set by vid-title
+thumbnail_text: []              # 1-2 locked picks, set by vid-thumbnail
+thumbnail_shape: []             # same count, same order as thumbnail_text
+
 segment_purposes: []            # set by vid-structure: the planned body segments
 segments_completed: []          # appended by vid-segment, one label per locked body segment. The pipeline compares its length to segment_purposes to know when the body is done.
+tension_plan: {}                # set by vid-structure: central_question plus title_promise_segment
+intro_locked: true              # set by vid-intro
+viewer_questions: []            # the Top 3 questions the locked title and thumbnail raised. Set by vid-intro, confirmed by the creator.
+ending_locked: true             # set by vid-ending
+next_video: "[[slug]]"          # the already-published video the close points at. Set by vid-ending.
+
 stories_used: []                # [[story-bank/slug]] wikilinks added when writing skills use them
 metaphors_used: []
 proofs_used: []
 testimonials_used: []           # added when a writing skill weaves a testimonial
 frameworks_used: []             # added when a segment teaches a creator framework
-tags: [piece, format-{slug}, pillar-{slug}, {other-tags}]
+
+pressure_test_audit: {}         # the full audit block. Shape and field definitions in vid-pressure-test/assets/pressure-test-frontmatter.md
+pressure_test_status: passed    # passed | issues-flagged | resolved. Namespaced so it never reads as a competing lifecycle status.
+pressure_tested_at: YYYY-MM-DD
+
+tags: [piece, pillar-{slug}, format-{slug}, {other-tags}]
 ---
 ```
 
-## Creation subset (vid-intake)
+## Creation subset (vid-braindump)
 
-`vid-intake` creates the file the moment the topic is known, with only what is true that early. It writes exactly these fields and no others:
+`vid-braindump` creates the file the moment the topic is known, with only what is true that early. It writes exactly these fields and no others:
 
 ```yaml
 ---
 type: content-piece
 project: authentic-ai-os
 slug: {kebab-case-slug}
-pillar: {pillar-slug or null}
 status: ideating
 created: YYYY-MM-DD
 last_updated: YYYY-MM-DD
 anchor: "{Only when vid-ideas handed a picked seed: the full outlier receipt, source title + @channel + views + xMed. Omit otherwise.}"
-tags: [piece, pillar-{slug}]
+tags: [piece]
 ---
 ```
 
-`format-{slug}` joins `tags` when `vid-framing` sets `format`. Everything else in the full schema is absent until its owning skill writes it. Absent is the correct state; do not pre-stub fields with empty values that no skill has decided yet.
+`pillar-{slug}` and `format-{slug}` join `tags` when `vid-framing` sets `pillar` and `format`. Everything else in the full schema is absent until its owning skill writes it. Absent is the correct state; do not pre-stub fields with empty values that no skill has decided yet.
 
 ## Field ownership
 
@@ -66,12 +84,12 @@ Skills append their own fields and never overwrite another skill's.
 
 | Skill | Writes |
 |---|---|
-| vid-intake | `type`, `project`, `slug`, `pillar`, `status: ideating`, `created`, `last_updated`, `anchor`, `tags` |
-| vid-framing | `frame`, `core_payoff`, `format`, `voice_context`, `goal`, plus the `## The Read` body section |
+| vid-braindump | `type`, `project`, `slug`, `status: ideating`, `created`, `last_updated`, `anchor`, `tags` |
+| vid-framing | `pillar`, `frame`, `core_payoff`, `format`, `voice_context`, `goal`, `must_not_become`, plus the `## The viewer` body section |
 | vid-title | `title` |
 | vid-thumbnail | `thumbnail_text`, `thumbnail_shape` |
 | vid-structure | `segment_purposes`, `tension_plan`, `status: drafting` |
-| vid-intro | `intro_locked`, plus bank-use arrays it pulled into |
+| vid-intro | `intro_locked`, `viewer_questions`, plus bank-use arrays it pulled into |
 | vid-segment | `segments_completed`, plus bank-use arrays it pulled into |
 | vid-ending | `ending_locked`, `next_video`, plus bank-use arrays it pulled into |
 | vid-pressure-test | the `pressure_test_audit` block, `claims_to_source_before_filming`, `soft_issues_list`, `status: filming-ready` |
@@ -82,11 +100,13 @@ Every skill that writes this file bumps `last_updated` to today. `created` never
 
 ## Body sections
 
-piece.md carries body sections as well as frontmatter, and they are contracted here for the same reason the fields are: `## The Read` silently changed shape twice because nothing outside the owning skill specified it.
+piece.md carries body sections as well as frontmatter, and they are contracted here for the same reason the fields are: this section silently changed shape twice because nothing outside the owning skill specified it.
 
 | Section | Owner | Shape | Re-run behavior |
 |---|---|---|---|
-| `## The Read` | vid-framing | Three fields in this order, third person, all pointed at the locked frame: **Target** (who this is for and the situation, as one causal chain ending on a cost), **Transformation** (they stop doing X and do Y instead, plus what that gets them), **Stakes** (each consequence causing the next, the misattribution named near the end, landing back where Target started) | Replaced on a re-frame. It describes the current frame, not a history. |
+| `## The viewer` | vid-framing | Three fields in this order, third person, all pointed at the locked frame: **Target** (who this is for and the situation, as one causal chain ending on a cost), **Transformation** (they stop doing X and do Y instead, plus what that gets them), **Stakes** (each consequence causing the next, the misattribution named near the end, landing back where Target started) | Replaced on a re-frame. It describes the current frame, not a history. |
+
+Each field starts from the creator's own interview answers in vid-framing and adds the one shape the answer does not have. Target adds the causal chain and the terminal cost. Transformation adds the "stop doing X." Stakes adds the escalation and the misattribution. An answer the creator skipped gets derived from the dump and labeled as derived when the frame is shown.
 
 `core_payoff` is frontmatter only. It is locked with the frame, before the read exists, so there is no second copy in the body to drift against.
 
@@ -102,7 +122,7 @@ Decisions a later skill or the pipeline reads, not a diary of how each skill wor
 
 `status` is the single lifecycle field. The pipeline advances it at three points:
 
-- `ideating` set by vid-intake on creation
+- `ideating` set by vid-braindump on creation
 - `drafting` set by vid-structure once the outline locks (writing has begun)
 - `filming-ready` set by vid-pressure-test when the script passes
 
@@ -111,6 +131,8 @@ Decisions a later skill or the pipeline reads, not a diary of how each skill wor
 ## How the pipeline routes
 
 `vid-pipeline` decides the next writing step by reading which artifact already exists, not by a micro-status: `frame` present? `title` present? thumbnail picks present? `segments_completed` length vs `segment_purposes` length? `ending_locked` present? `status` at `filming-ready`?
+
+One route reads inside a body file rather than frontmatter: `## Still capturing` in `brain-dump.md` means the dump was abandoned mid-capture and routes back to `vid-braindump`. Its absence means the capture closed. That marker is written on every turn rather than at an exit, which is what makes it trustworthy for the sessions that never got an exit.
 
 Each skill therefore writes its own distinguishing field in BOTH standalone and pipeline (sub-skill) mode, so the orchestrator can always read true state from the file.
 

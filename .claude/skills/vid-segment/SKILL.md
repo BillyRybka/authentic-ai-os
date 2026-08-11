@@ -11,7 +11,7 @@ Co-write ONE body segment of a bingeworthy script in the creator's voice. One po
 
 ## Prerequisites
 
-- `content/pieces/{slug}/piece.md` with `format` and `goal`, plus `brain-dump.md`. Both missing → hard stop, route to `vid-intake` / `vid-framing`.
+- `content/pieces/{slug}/piece.md` with `format` and `goal`, plus `brain-dump.md`. Both missing → hard stop, route to `vid-braindump` / `vid-framing`.
 - `content/pieces/{slug}/script.md` skeleton from `vid-structure`, with this segment's section and its blocks picked. No skeleton → run `vid-structure` first.
 - `foundation/voice-profile.md` + `foundation/reference-pieces/`: load if present. If missing, anchor voice in the brain dump's verbatim phrasing plus the universal hard rules (no em-dashes, no AI-isms, no hedging), note "Run `vid-voice-capture` for sharper voice fit," and continue. Voice is never a blocker.
 

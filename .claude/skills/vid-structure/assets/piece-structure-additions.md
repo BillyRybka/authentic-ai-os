@@ -7,7 +7,7 @@ last_updated: 2026-07-28
 
 # piece.md structure additions
 
-vid-structure does not create piece.md. vid-intake created it and vid-framing appended the frame. vid-structure appends the outline decisions without touching another skill's fields.
+vid-structure does not create piece.md. vid-braindump created it and vid-framing appended the frame. vid-structure appends the outline decisions without touching another skill's fields.
 
 ## Frontmatter fields to add
 
