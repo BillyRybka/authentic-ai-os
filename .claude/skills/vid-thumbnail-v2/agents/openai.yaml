@@ -1,0 +1,4 @@
+interface:
+  display_name: "Video Thumbnail Text V2"
+  short_description: "Create three distinct thumbnail text tests"
+  default_prompt: "Use $vid-thumbnail-v2 to create three truthful thumbnail-text tests for my locked video title."
