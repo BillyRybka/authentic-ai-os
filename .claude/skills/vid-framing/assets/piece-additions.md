@@ -1,83 +1,61 @@
 ---
 type: asset-template
 loaded_by: vid-framing
-purpose: The frontmatter fields and body sections vid-framing appends to content/pieces/{slug}/piece.md
+purpose: Candidate-owned fields and body section written to an existing content piece only after the creator approves one package
 ---
 
-# piece.md framing additions
+# piece.md candidate additions
 
-piece.md already exists. Append to it, never create it, and never touch a field another skill owns.
+`piece.md` already exists. Update it in place only after validating `type: content-piece` and matching the slug. Preserve every unowned field and body section.
 
-## Frontmatter to add
-
-Insert under the existing lifecycle fields (`slug`, `pillar`, `created`, `status`).
+## Owned frontmatter
 
 ```yaml
-# Written by vid-framing
-frame: "{the locked Frame, first person and spoken, one direction only. The who is a thing the viewer physically does, the what has a handle they already own, the clause after the verb carries the insight, and the verb is physical. Never a headline, never a description of the contents}"
-core_payoff: "{what they walk away able to do, second person, one outcome. Reads clearly to somebody who has not seen the material, and does not give away the conclusion}"
-format: short-process | case-study | roast | deep-dive | interview | news | listicle
-goal: sales | emails | views
-voice_context: youtube-script   # default. Another medium (tutorial | shorts | newsletter | linkedin | twitter | instagram | podcast | casual | talk) only if this piece genuinely is one. A walkthrough is still a YouTube script.
+frame: "{approved first-person spoken strategic promise using sourced or creator-confirmed audience language for pain and relief; include a named mechanism only when it is the compelling audience-facing handle}"
+core_payoff: "{approved direct second-person end capability; it may name the vehicle that fulfills the frame}"
+format: short-process | case-study | deep-dive | roast | listicle | news | interview
+goal: sales | emails | views  # Required explicit creator intent. Never infer from channel fit.
+voice_context: youtube-script
+must_not_become: "{optional boundary explicitly stated in the selected material or confirmed when a real ambiguity required it}"
 last_updated: {YYYY-MM-DD}
 ```
 
-Add `format-{format}` to the existing `tags` list.
+Add `format-{format}` to the existing `tags` list if it is not already present.
 
-Do not set `status`. The piece stays `ideating`, and the presence of `frame` is what signals framing is done.
+`goal` is required before approval and must come from the selected piece or a direct creator answer. Never infer it from channel fit.
 
-`core_payoff` lives in frontmatter only. It locks with the Frame before the read exists, so there is no second copy anywhere for it to drift against.
+`must_not_become` is optional. Write it only when the selected material establishes a boundary or a real ambiguity led the creator to confirm one. Omit it otherwise; never invent a stock boundary.
 
-It is shown to the creator in second person and it saves in second person, the same words both times. Nothing gets added on the way to disk.
+`voice_context` defaults to `youtube-script`. Use another established medium value only when the existing piece context clearly says the piece is not a YouTube script.
 
-## Body to append
+Do not save `must_deliver`. It is a conversational obligation used after intent is clear to validate that the promise can be filmed and supported.
 
-### The Read
+## Owned body section
 
-Three fields, third person, in the words the creator confirmed at Step 2. 
+Append this section, or replace the existing `## The Read` section on a reframe:
 
 ```markdown
 ## The Read
 
-**Target:** {who this is for and the situation, as one causal chain: they want something, but this keeps happening, so they end up doing this, which costs them that. No "their goal is / their challenge is" scaffold. The middle of the chain is the move that keeps them stuck, and it comes out of the material or it is not there}
+**Target:** {one recognizable person plus the current situation and behavior that make this video relevant, using sourced or creator-confirmed audience language}
 
-**Transformation:** {they stop doing X and do Y instead, plus what that gets them. Names the same ending as core_payoff}
+**Transformation:** {what they stop doing, what they can do instead, and the same result named by core_payoff}
 
-**Stakes:** {what happens if they keep working the old way, each consequence causing the next, sentences tightening as it escalates, landing back where Target started. Name what they blame instead where the material says so, and leave it out where it does not}
+**Stakes:** {the audience-grounded cost or fear if the current behavior continues; never invent audience wording or source support}
 ```
 
-Never compress a field away to save space. Target with no cost at the end of it is a demographic. Stakes that do not escalate are one sentence of consequence. A Transformation with no "stop doing X" is a feature description. Each field is what a different downstream skill reads.
+The three fields must trace to the dump, selected piece context, supplied audience-language sources, or creator answers from this framing session. They cannot introduce a broader audience, a second payoff, or a stronger claim than the approved Frame.
 
-Read all three aloud before writing them. Anything the creator would pause and reword gets fixed first: plain nouns where the thing has a name, one image per field rather than three stacked, and the cost put in front of the reader rather than described from a distance.
+## Write protocol
 
-On a re-frame, replace this section. It describes the current frame rather than a history.
+1. Write only after the creator explicitly approves saving the package, then re-read the current `piece.md`.
+2. Confirm its content-piece type and slug.
+3. Insert or replace only the owned frontmatter fields.
+4. Add the one compatible format tag without changing other tags.
+5. Append or replace only `## The Read`.
+6. Set `last_updated` to today in `YYYY-MM-DD`.
+7. Re-read the saved file and verify unowned fields and sections are unchanged.
 
-The options that lost stay in the conversation. Nothing reads them later, and their working labels are title shaped, so saving them commits a headline before anything has looked at what already works on this channel.
+## Hard boundary
 
-### Proof gaps
-
-If the creator withheld a number, a client detail or something they have not captured yet, flag it in the body and keep it out of both `frame` and `core_payoff`.
-
-```markdown
-> [!todo] Proof gap: {what is missing}, mark it and pull it later. {YYYY-MM-DD}
-```
-
-## Append protocol
-
-1. Read the existing piece.md frontmatter. Confirm `type: content-piece` and that the `slug` matches.
-2. Insert the framing fields after the last lifecycle field, preserving every existing field untouched.
-3. Add `format-{format}` to `tags`.
-4. Set `last_updated` to today.
-5. Write `## The Read`. On a re-frame, replace the existing section.
-6. Add any proof-gap lines to the body.
-7. Write the file.
-
-## Hard rules
-
-- Never overwrite frontmatter owned by another skill. The ownership map is in `knowledge/piece-contract.md`.
-- Never fabricate. The frame, the read and the payoff trace to the brain-dump, the foundation, or something the creator said in the session. A gap is named rather than invented.
-- `frame` carries one direction and the condition that makes this viewer specific. Two benefits joined with a comma means the choice was never made, and a who with no condition is a category rather than a person.
-- `core_payoff` holds one outcome, which is not the same as one clause. "Five reasons people don't buy and how to overcome those objections" runs two clauses and delivers a single capability, and that is fine. "You'll have the list, and you'll never think about AI writing the same way again" is two payoffs bolted together, and "and you'll" is the tell. So is a colon that introduces a second thing, and so is a trailing "so" clause that restates the first half in softer words.
-- If `core_payoff` keeps coming out as a pile of features, the Frame underneath it is vague. Sharpen the Frame rather than rewriting the payoff.
-- `core_payoff` carries no fixed opener. "By the end of this video" is the specific one that keeps growing back.
-- Always set `last_updated` to today in YYYY-MM-DD.
+This candidate never writes or removes `title`, `thumbnail`, `status`, `slug`, `pillar`, `created`, or any other skill-owned field. It never writes `brain-dump.md`. It does not create a new `piece.md`.

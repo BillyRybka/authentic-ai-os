@@ -1,163 +1,167 @@
 ---
 name: vid-framing
-description: Use whenever a piece needs its direction decided, including when the creator never says the word "frame". Turns a video idea into a decided video: reads the brain dump and the creator foundation, writes several genuinely different framings of the same idea each with a Core Payoff, and recommends one. Once the creator picks, writes the read, sets the format and the goal, and saves it all to piece.md before handing to vid-title. Triggers include "frame this video", "pick the angle", "what should this video be about", "what's the angle here", "what part of this do people actually care about", "re-frame this piece", "I don't know how to position this one", and any point where a creator has an idea but has not decided why anyone would watch it.
+description: Sharpen one explicitly selected, completed video brain dump into one creator-faithful strategic frame, core payoff, and must-deliver obligation. Use after vid-braindump capture is complete and before title or thumbnail packaging. Reads the selected piece and supplied audience-language sources, verifies core intent progressively, and writes only its documented piece fields after approval. Not for capture, title generation, thumbnail ideation, structure, or batches of alternate video concepts.
 ---
 
 # Video Framing
+Turn a completed brain dump into a clear direction for one video, who it’s for, what’s at stake, what they should walk away able to do, and what the video needs to achieve.
+## The standard
 
-Turn a broad video idea into a concept the target audience feels was made specifically for them.
+> **Frame:** I want to show freelance designers how to keep client-approved design decisions from being reopened once the work is underway.
+>
+> **Core payoff:** You can capture the key design decisions from your kickoff call in a one-page record the client confirms, giving you something concrete to point back to if one of those decisions comes into question later.
+>
+> **Must deliver:** Show a realistic kickoff excerpt, build the one-page decision log from it, send the exact confirmation request, then use the confirmed log to handle one later request that reopens a settled decision.
 
-## Before You Start
+Lead the Frame with the audience's pain and desired relief. Use a named mechanism in the Frame when it is a compelling audience-facing handle, not merely implementation. Reveal the concrete vehicle in Core payoff. Use Must deliver to name the filmable material that earns the promise.
 
-No `content/pieces/{slug}/brain-dump.md`, point them at `vid-braindump` and stop.
+Read `references/sharpening-examples.md` before framing.
 
-If piece.md already has a `frame`, this is a re-frame. Ask whether they want fresh directions or that one sharpened, then run from Step 2 or skip to Lock and Save with `## The Read` replaced rather than appended.
+## 1. Select the video before reading
 
-ONLY read the Cited references at each step and nothing else.
+If no specific piece or video is explicitly supplied or selected in the current conversation, ask only:
 
-## What This Creates
+> What video do you want to frame?
 
-For one video idea, as many genuinely different framing options as the material supports. No target number: a count makes you pad to reach it, and three real angles beat five where two are filler. The ones that failed are not mentioned; the creator counts what is in front of them.
+Stop. Do not inspect the vault, infer a likely piece, summarize files, or begin framing before the creator answers.
 
-## Never Invent
+## 2. Read the selected context silently
 
-Every frame, every core payoff, and every line of the read traces to the brain dump, or something the creator said in this session. If the material cannot support an frame, it does not get offered.
+Once the video is selected, read these complete files when present:
 
-This applies to what you say in conversation, not only what reaches the file. Be most careful with the creator's own history: telling somebody they spent months on something the material never dated asserts a fact about their life back to them.
+1. `content/pieces/{slug}/brain-dump.md`
+2. `content/pieces/{slug}/piece.md`
+3. `foundation/avatar.md`
+4. Audience-language sources supplied or directly linked for this piece, such as comments, DMs, a word list, or trusted avatar/research
 
-ONLY read the Cited references. 
+Do not scan unrelated content for convenient language. Treat the brain dump as read-only provenance. Do not frame a dump explicitly marked as still capturing.
 
-## Process
+Separate internally:
 
-Read each reference file at the step that names it.ONLY read the Cited references.
+- what the creator explicitly intends
+- how the audience would say the pain, frustration, and desired relief in their own words
+- what trusted audience research supports
+- what is only a hypothesis suggested by the material
 
-ONLY read the Cited references.
+Do not tell the creator what files were read, narrate capture state, announce a workflow, or name internal steps.
 
-### 1. Understand the Material
+## 3. Set the foundation
 
-Read `content/pieces/{slug}/brain-dump.md` when framing an existing piece. Otherwise work from the idea the creator gives directly.
+Four things get settled here. They go into piece.md and everything downstream reads them.
 
-Rewrite every idea as a flat assertion: "X is true," "Y doesn't work," "if you do Z, W happens." No connective tissue, no story order. A 20-minute ramble usually collapses into 8–15 claims.
+1. **Target.** One recognizable person and what is happening to them right now.
+2. **Transformation.** What is different for them by the end.
+3. **Stakes.** What happens to them if nothing changes.
+4. **Goal.** `sales`, `emails`, or `views`. Never inferred from channel fit. But if the braindump talks about giving something, its email, if it talks about their product, working with them etc, its sales. If the braindump isnt clear, ask. Views are a more "intentional decision". 
 
-This step matters more than it sounds. Delivery energy fools you. The thing you said loudest is the thing that's most alive *for you*, which is not the same as most valuable *to them*. Flattening removes your voice from the evaluation.
+Work each one out from the material. Make sure target, transformation, stakes and goal are labled clearly in your response:
 
-Read `foundation/avatar.md` (avatar) so you understand the audience. Dont assume surface, dive into their minds when it comes to this topic. Why could they actually care about this, what real problem would this actually solve for them that would make a meaningful impact. Why or why not do they want this. 
+- Clear in the material → state it in one line with the words you got it from.
+- Not clear, or reads two ways → ask for it. Do not assume.
 
-### 2. Find the idea that "reads their minds"
+All four go in one response, read or asked. The creator corrects what is wrong.
 
-Identify the thought or tension already present in the viewer's mind regarding the idea we are framing before they ever see the video. It should feel like you're reading their minds.
+A read is not an answer. None of the four is settled until the creator confirms or corrects it, and an explicit creator statement or existing piece field settles one on its own.
 
-This is an internal process for you. Dont pass the result to the viewer. This primes you with the audience info and how they relate to the video so that the framings have genuine thought behind each. 
+Do not work through them like a form, announce question counts, invite skipping, defend a read, or explain why a question is required.
 
-### 3. Create Distinct Frames
 
-Framing means choosing the specific direction a broad video idea will take for a particular audience. Good framing makes the viewer feel understood, creates a clear question or tension, and leads to a payoff worth watching for.
+## 4. Write it the way they would say it
 
-Read:
+Write the Frame and Core payoff in clear, familiar language for this person’s pain and desired relief. Use the avatar and selected material to understand them. Comments, DMs, and word lists sharpen the wording when they exist; their absence is never a reason to reach for a safe abstraction.
 
-`references/patterns.md` 
+- Name the thing with a noun the viewer can picture: a checklist, a one-page record, a map. A creator’s established name can work when it is concrete and makes the promise easier to understand.
+- Do not replace a clear name with a vague label such as a guard, layer, system, or framework.
+- Lead with the situation and desired result, not the mechanism. Put a named mechanism in the Frame only when it makes the promise easier to recognize.
+- When no strong name exists, you may propose a familiar, concrete handle. Present it as a proposal, not as language the audience used, and let the creator confirm or correct it.
+- Quote only exact language from one identifiable source. Do not invent, merge, or lightly rewrite fragments and present them as a quote or as exact audience wording.
+- When you genuinely cannot tell what wording will feel natural to this person, ask the creator.
 
-Every framing is a different video for the same viewer, not a different viewer.
+Audience language is evidence, not decoration. Preserve the creator’s direction while making the promise recognizable to the person it serves.
 
-Focus on making it instantly recongizable, relatable on an emotional level and clear simple, clear 5th grade language meaning we dont need to read between the lines or think hard to understand a unclear meaning. Write like the worked options in `references/examples.md`.
+## 5. Keep intent separate from production
 
-If there is an easier, more interesting and relatable way to frame something within the video, do so. 
+Do not ask about platform details, setup, installation, handoff, build work, demonstrations, proof capture, closing packaging, or other production choices while Target, Stakes, Transformation, and Goal are still being established.
 
-### 4. Define the Core Payoff
+Treat sequential parts of one transformation as one video. Giving someone a tool and showing them how to use it is one promise when both serve the same Transformation. Never announce a fork or declare that the creator has two videos.
 
-For each Frame, define the main reason to watch until the end.
+Only when the creator's own material contains genuinely independent transformations or incompatible endings, ask one brief outcome clarification in natural language. Do not frame the clarification as a diagnosis.
 
-It resolves a clear question: an answer, a verdict, a realization, a result, a decision, or a practical transformation.
+## 6. Sharpen one direction
 
-Avoid vague payoffs such as:
+Produce one proposal only after the required intent is confirmed:
 
-> The viewer learns how to grow.
+- **Frame:** first person, natural to say aloud, and one sentence where possible. Lead with one recognizable viewer's pain or situation and desired relief. Include a named concept or mechanism when it is the compelling audience-facing handle; omit implementation detail that distracts from the transformation. Never write a title, hook, summary, or benefit list.
+- **Core payoff:** direct second person and one end capability. State what the viewer can actually do, decide, or produce after watching. The vehicle may be explicit, but it must fulfill rather than expand the Frame's promise.
+- **Must deliver:** a short, concrete, filmable obligation naming the instruction, proof, story, demonstration, or artifact required to earn the Frame and Core payoff.
 
-Prefer:
+## Choose the format
+Choose one format only after the audience, their situation, desired viewer outcome, and goal are locked.
+Choose the simplest format that can honestly deliver the approved outcome for that audience and goal. Use the natural shape of the material as the main evidence, but do not treat format as something merely “read off” the dump. It is a delivery decision.
+- short-process: Choose when the viewer can follow a bounded sequence in one sitting and reach a concrete result. The steps are the spine; the payoff comes from completing them.
 
-> The viewer learns the main reason their consistent uploads are not growing their channel and knows exactly what needs to change
+- case-study: Choose when one person, business, or project’s before → decision/action → after transformation carries the value. The audience should learn through that specific journey, not just hear generic advice.
 
-### 5. Define What the Video Must Deliver
+- deep-dive: Choose when the outcome depends on connected explanation, nuance, or several linked stages that would become misleading if compressed into a quick process. Use it to build understanding, not just to make a video longer.
 
-State the minimum content required to fulfill the promise, the way every worked option in `references/examples.md` states its own.
+- roast: Choose when another person’s work, asset, decision, or approach is the evidence. The value comes from showing what does not work, why, and what to do instead.
 
-Reject any frame the creator cannot honestly support.
+- listicle: Choose when several distinct items each create value independently. Do not use it when the items only make sense as steps in one process.
 
-### 6. Validate
+- news: Choose when a recent event, release, change, or development is the reason the viewer should care now. The newness must materially affect the outcome.
 
-Every option must pass:
+- interview: Choose when another person’s firsthand answers, experience, or expertise carries the primary value. Do not use it merely because another person appears in the video.
 
-1. **Payoff.** Is the end result specific, worth staying for, and something the viewer cannot get without watching?
-2. **Credibility.** Can the creator support every claim in it from the brain dump?
-3. **Channel fit.** Read `foundation/iceberg.md`. Does it serve the Iceberg statement and sit inside the pillars, rather than drifting into generic advice outside the creator's lane? Internal brand language stays out of the Frame unless the audience already knows it.
-4. **Distinctiveness.** Apply both tests below.
+If two formats are plausible, recommend the one that most directly serves the approved outcome and goal. Briefly name the tradeoff and ask the creator to break the tie. Do not silently choose a weaker “next best” format.
+If an explicit boundary says the video must not take a certain shape, rule out any format that would violate it. If that leaves no honest fit, name the conflict before locking the frame.
+Never choose format from channel fit alone. Never invent evidence to force a format.
 
-Anything that fails does not get offered and does not get patched, because a frame that needs defending is one the viewer would have to be talked into too.
+Preserve the creator's existing direction. Do not generate a batch, present competing videos, or silently substitute a more clickable topic.
 
-Do not display scores unless requested.
+## 7. Check honest deliverability
 
-## Are These Actually Different Videos
+Consider production evidence only after intent is clear. Put ordinary setup, demonstration, handoff, build, and proof-capture work into Must deliver.
 
-Two tests, both drawn from the batches in `references/examples.md`.
+Interrupt only when the requested transformation cannot be honestly supported by the available material, or when it conflicts with an established boundary. Missing optional production polish is not a blocker.
 
-**The Must Deliver test.** Read the Must Deliver for each option. Four options that fail the same way are one option written four times.
+Speak naturally, give the smallest honest fix, and ask one focused question. Do not emit internal labels or a canned blocker template. Narrow an unsupported claim rather than fabricate support.
 
-**The production test.** Would you film these on different days, with different footage, needing different things to exist first? One needs the creator's past, one needs recordings, one needs neither. Different production requirements is the reliable sign of different videos.
+## 8. Respond to follow-ups locally
 
-**When the count is the frame.** A count batch films identically: same room, same day, one setup. The production test does not apply. Two others do. What does one item owe, a moment or a cost or portability. What is the viewer doing while they watch, learning from somebody who paid or keeping score or copying. Two options that put the same obligation on an item are one video. Batch 3 in `references/examples.md` is a count batch that passes.
+Answer the exact field or question the creator raises first.
 
-If a batch fails both, the problem is upstream in how you read the viewer, not in the wording.*
+- If the creator questions the Frame, discuss or revise only the Frame.
+- If the creator questions Core payoff, discuss or revise only Core payoff.
+- If the creator questions Must deliver, discuss or revise only Must deliver.
+- Do not regenerate the full package, defend prior wording, or ask for approval after every clarification.
 
-Read `templates/output-format.md` to get the output format.
+Present the full package only when the creator asks for it or when Target, Stakes, Transformation, and Goal are all settled. Present it as plain labeled lines the creator can read aloud, never as a code block or config:
 
-## When a Batch Is Rejected
+> **Frame:** {first-person strategic promise}
+>
+> **Core payoff:** {direct second-person end capability}
+>
+> **Must deliver:** {concrete filmable obligation}
+>
+> **Format:** {format}
+>
+> **Goal:** {sales | emails | views}
 
-Do not simply rewrite the frames or reshuffle patterns.
+Each value's wording is final on presentation and gets saved verbatim. Fenced blocks belong in the write step, not the conversation.
 
-A rejected batch usually means one thing went wrong upstream, and reshuffling patterns cannot reach it:
+## 9. Validate and write only after approval
 
-- The topic got framed instead of the viewer, or the viewer was drawn so broadly that nothing bit
-- Every option came off the same emotional angle, so the batch was one video
-- The frame promised more than the video can pay
-- The concept needed proof the creator does not have
+Before writing, verify:
 
-Ask two questions before regenerating: what had they already tried before this and what kept going wrong, and what angle are they leaning toward. What they tried is almost never in the dump, because they solved it and moved on. Their angle carries the phrase they have been using in their own head.
+- Target, Stakes, Transformation, and Goal were each settled by the creator, not read off the material.
+- It remains the creator's video and one strategic direction.
+- It serves one recognizable person in a current situation.
+- Audience pain and relief use supplied or creator-confirmed audience language.
+- Core payoff is direct second person and fulfills the Frame with one capability.
+- Available material can fulfill Must deliver.
+- No fact, quote, fear, proof, or result was invented.
+- It is strategic promise language, not title or thumbnail packaging.
 
-Then find new framing territory. Their angle competes with the others rather than replacing the batch.
+Read `assets/piece-additions.md` and follow its write protocol only after the creator explicitly approves saving the package. Never modify `brain-dump.md`. Never write `title`, `thumbnail`, `status`, or another skill's fields.
 
-## Lock and Save
-
-Once the creator selects a direction:
-
-1. Keep the Frame fixed
-2. Keep the Core Payoff fixed
-3. Tighten the wording only if it is unclear or longer than it needs to be
-4. Do not let a tightening pass turn it into a different video
-
-### Set the format and the goal
-
-Read `references/format-index.md`.
-
-**State both, do not ask.** "Short-process, goal emails. Say the word if either is wrong." The creator corrects if it is wrong; a question here spends their attention on a call you can already make.
-
-- **Format** follows the material and the locked Frame. A client transformation is a case study. A reaction to something that just happened is news. A "here is my process" is short-process. A frame that spends real time discrediting the old way before building anything is a deep-dive. Lock one of the seven, and never lock one with no planner in `knowledge/format-planners/`.
-- **Goal** follows how warm the audience is: cold wants views, warm wants emails, hot wants sales. One only.
-- **Voice context** stays `youtube-script` unless the piece genuinely is another medium. A walkthrough is still a YouTube script.
-
-### Write the file
-
-Read `assets/piece-additions.md` for the exact shape, then write to `content/pieces/{slug}/piece.md`.
-
-Ask the cost question first, every time, including when you could write Stakes without it: what does it actually cost them to keep doing it this way.
-
-Show the read, then write the file.
-
-### Before you save
-
-Field-level rules are in `assets/piece-additions.md`. These fail the whole save:
-
-- The saved `frame` is the option the creator picked, word for word. If a word changed, say what changed.
-- The `frame` describes the video that would actually get made, not a better one.
-- Stakes belong to this piece. Put another video's frame on the paragraph. If it would still be true, replace a consequence.
-
-Then one line back to the creator: the format, the goal, and that `vid-title` is next.
+After saving, reply only with ‘Saved the framing to piece dot md.’" Do not list fields, narrate verification, or mention anything not saved unless the creator asks.
