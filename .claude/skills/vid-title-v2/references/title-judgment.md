@@ -27,12 +27,12 @@ Useful title shapes:
 
 - `Why Clients Keep Reopening Approved Designs`
 - `The Approval Mistake That Creates Free Revisions`
-- `Stop Letting Approved Designs Become Debates`
+- `Stop Explaining Yourself to Clients. Do This Instead.`
 
 Weak title shapes:
 
 - `How to Make a One-Page Decision Record`
-- `My Design Approval Workflow`
+- `The Approval Mistake That Creates Free Revisions`
 - `The 7-Step Client Communication System`
 
 The useful set titles the tension or consequence. The weak set recites a process, uses a generic label, or invents a step count.

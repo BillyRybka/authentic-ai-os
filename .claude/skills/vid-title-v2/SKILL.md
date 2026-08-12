@@ -9,11 +9,7 @@ Package the locked video. Do not improve, reinterpret, or repair its frame.
 
 Keep research and drafting private. The creator sees strong choices, not a work log.
 
-Work the six steps below in order.
-
-## Step 1: Select one locked piece
-
-**Lock the promise and limits.** Read the selected video's framing, audience, source material, and factual boundaries. Never reframe it here.
+## 1. Select one locked piece
 
 Require a specific video or `content/pieces/{slug}`. If none is selected, ask which video to title without scanning the vault.
 
@@ -36,7 +32,7 @@ Treat these framing decisions as locked:
 
 Older pieces may lack `## The Read` or `goal`. Use the locked fields and source material that exist. If `frame` or `core_payoff` is missing, route to `vid-framing`; do not fill the gap. If the frame seems weak, title it faithfully or tell the creator it needs reframing. Never repair it here.
 
-## Step 2: Lock the facts privately
+## 2. Lock the facts privately
 
 Build an internal list of what the title may claim. Admit only facts supported by the selected piece, raw material, script, or foundation:
 
@@ -47,9 +43,7 @@ Build an internal list of what the title may claim. Admit only facts supported b
 
 Do not invent, round, strengthen, combine, or borrow any of these from a bank example. A title-bank row proves a shape, not this video's facts.
 
-## Step 3: Shop evidence selectively
-
-**Shop proven structures.** Search creator winners, then direct-niche evidence, then adjacent evidence for the strongest relevant starting structure.
+## 3. Shop evidence selectively
 
 Read `banks/title-bank.md` and `banks/pattern-bank.md` only as far as needed to find relevant evidence. Search in this order:
 
@@ -57,7 +51,7 @@ Read `banks/title-bank.md` and `banks/pattern-bank.md` only as far as needed to 
 2. Direct-niche patterns that fit this promise and audience
 3. Adjacent patterns whose structure transfers cleanly
 
-Treat these banks as the evidence source for proven and transferable structures. Direct structural reuse is the normal move when a structure fits. **Preserve the engine.** Keep that structure's central tension, emotional pull, and sentence shape as intact as the locked promise permits. Change or abandon it only when preserving it would create an unsupported claim, confuse the right audience, or clash with the title-thumbnail package. Stop when a small set of useful, distinct shapes is clear. Do not load or summarize the full banks merely because they exist. Keep titles, channels, metrics, pattern names, and receipts out of the creator-facing response unless asked.
+Stop when a small set of useful, distinct shapes is clear. Do not load or summarize the full banks merely because they exist. Keep titles, channels, metrics, pattern names, and receipts out of the creator-facing response unless asked.
 
 If `piece.md` contains an `anchor`, use it as a strong seed only when its receipt is complete, its promise still matches the locked frame, and every factual word is supported. Make it compete with the other candidates. It receives no automatic win.
 
@@ -65,32 +59,25 @@ If the banks are absent or have no relevant evidence, continue with natural titl
 
 Read `references/title-judgment.md` when bank evidence is thin or the candidate set needs a sharper range of shapes.
 
-## Step 4: Write wide and cut privately
-
-**Rebuild the payload.** Write the claim, proof, specifics, and language from this video's factual lock list and audience. Never settle for swapped nouns.
+## 4. Write wide and cut privately
 
 Identify three to five meaningfully different title shapes. Write enough candidates to discover the strongest language, usually 12 to 20, then discard weak ones privately.
 
-Read `knowledge/BENS-framework.md` before selecting finalists. Use BENS as the core quiet emotional and clickability lens, not the goal or a scorecard. Every finalist needs at least one strong BENS driver; keep one or two and do not stack or maximize all four.
+Judge every survivor against these requirements:
 
-Use its worked titles as valid internal cross-niche examples of emotional engine and sentence shape. For any bank or BENS example, identify privately why it works, such as tension, curiosity, credibility, novelty, ease, desire, or consequence, then rebuild that pull around the locked promise and factual lock list. Do not noun-swap or copy the payload. Never borrow an example's numbers, results, named methods, authorities, audience, or claims. Make the rewrite more specific, relevant, and interesting for this video while keeping it true and coherent.
-
-**Gate and filter privately.** Judge every survivor against these requirements:
-
-- Pass the truth gate: preserve the locked video's promise and audience, use only supported claims, and ensure the video can honestly fulfill the title's implication.
+- Preserve the locked video's promise and audience.
 - Title the wound, tension, curiosity, consequence, or desired result. Do not recite the process.
-- Give the right viewer a genuine reason to click. Curiosity is common, not required; consequence, desire, contrast, proof, or novelty can carry the click.
-- Keep one meaningful central question or tension without opening unrelated loops.
-- Use one coherent click mechanism. One or two complementary BENS drivers may support it without adding clutter.
+- Open one meaningful question in the viewer's mind.
+- Use one dominant click mechanism, such as curiosity, consequence, desire, contrast, or proof.
 - Read aloud as one natural human thought.
 - Use only facts on the internal lock list.
 - Leave room for the thumbnail to add a second beat.
 
-After the truth gate, choose by clickability: which title gives this viewer the strongest genuine reason to click? Prefer clear tension over clever wording. Cut labels, vague benefit claims, stitched fragments, stacked mechanisms, unsupported specificity, and titles whose question the wording already answers.
+Prefer clear tension over clever wording. Cut labels, vague benefit claims, stitched fragments, stacked mechanisms, unsupported specificity, and titles whose question the wording already answers.
 
-## Step 5: Present only the decision set
+## 5. Present only the decision set
 
-**Present and hand off.** Show three to five finalists. Give each one brief, human reasoning tied to its likely effect, not the internal framework. Recommend one decisively.
+Show three to five finalists. Give each one brief, human reasoning tied to its likely effect, not the internal framework. Recommend one decisively.
 
 Use this shape:
 
@@ -102,11 +89,11 @@ Use this shape:
 > 2. **"{title}"**: {brief human reason}
 > 3. **"{title}"**: {brief human reason}
 
-Do not expose BENS letters, scores, framework explanations, character counts, receipts, bank research, rejected candidates, kill passes, files read, lock lists, or process narration unless the creator asks. Do not present a research report before the titles.
+Do not expose BENS letters, character counts, receipts, bank research, rejected candidates, kill passes, files read, lock lists, or process narration unless the creator asks. Do not present a research report before the titles.
 
 If the creator proposes an unsupported title, name the unsupported claim briefly and offer the closest truthful version. Otherwise accept their judgment on soft style choices.
 
-## Step 6: Save only after approval
+## 6. Save only after approval
 
 After the creator approves one title:
 
