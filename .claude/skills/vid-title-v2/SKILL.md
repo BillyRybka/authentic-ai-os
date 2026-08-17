@@ -18,21 +18,21 @@ Read silently, when present:
 1. `content/pieces/{slug}/piece.md`
 2. `content/pieces/{slug}/brain-dump.md`
 3. `content/pieces/{slug}/script.md`
-4. `foundation/avatar.md`
-5. `foundation/iceberg.md`
-6. `foundation/credibility.md`
 
-Treat these framing decisions as locked:
+Do not title a source explicitly marked as incomplete. Treat these framing decisions as locked:
 
 - `frame`
 - `core_payoff`
 - `goal`
 - `## The Read`: Target, Transformation, and Stakes
+- any locked must-deliver obligation or factual direction
 - any explicit `must_not_become`
 
 Older pieces may lack `## The Read` or `goal`. Use the locked fields and source material that exist. If `frame` or `core_payoff` is missing, route to `vid-framing`; do not fill the gap. If the frame seems weak, title it faithfully or tell the creator it needs reframing. Never repair it here.
 
-## 2. Lock the facts privately
+## 2. Lock the frame and facts privately
+
+Use the approved promise, audience, transformation, stakes, goal, core payoff, boundaries, and factual direction as the title's perimeter. Packaging may increase the pull of what is already there. It may not change who the video is for, what it delivers, why it matters, or what it claims.
 
 Build an internal list of what the title may claim. Admit only facts supported by the selected piece, raw material, script, or foundation:
 
@@ -43,41 +43,58 @@ Build an internal list of what the title may claim. Admit only facts supported b
 
 Do not invent, round, strengthen, combine, or borrow any of these from a bank example. A title-bank row proves a shape, not this video's facts.
 
-## 3. Shop evidence selectively
+Audience language helps explain what matters to the audience; it does not require a literal complaint title. Choose the most interesting truthful expression of the selected source structure's existing click mechanism.
 
-Read `banks/title-bank.md` and `banks/pattern-bank.md` only as far as needed to find relevant evidence. Search in this order:
+## 3. Select proven structures
+
+Treat `banks/title-bank.md` and `banks/pattern-bank.md` as the authoritative source of proven structures. Read them only as far as needed to find relevant evidence. Search in this order:
 
 1. The creator's own proven winners that fit this promise
 2. Direct-niche patterns that fit this promise and audience
 3. Adjacent patterns whose structure transfers cleanly
 
-Stop when a small set of useful, distinct shapes is clear. Do not load or summarize the full banks merely because they exist. Keep titles, channels, metrics, pattern names, and receipts out of the creator-facing response unless asked.
+Select several relevant bank-backed structures, generally three to five, that naturally fit the locked promise. Each selected structure must retain a private lineage to one concrete bank source or receipt. Do not require coverage of generic categories or formulas.
+
+For each selected structure, identify privately:
+
+- the exact source title and its receipt
+- its central tension
+- the question it leaves unresolved
+- its sentence shape
+- its dominant click mechanism
+
+Treat that engine as the reusable evidence. The source's subject, audience, claims, authority, numbers, results, proof, method, and named payload do not transfer. Do not load or summarize the full banks merely because they exist. Keep titles, channels, metrics, pattern names, lineages, and receipts out of the creator-facing response unless asked.
 
 If `piece.md` contains an `anchor`, use it as a strong seed only when its receipt is complete, its promise still matches the locked frame, and every factual word is supported. Make it compete with the other candidates. It receives no automatic win.
 
-If the banks are absent or have no relevant evidence, continue with natural title judgment. Mention the gap only when it materially lowers confidence in the recommendation. Do not turn missing evidence into an error lecture.
+If fewer than three relevant proven structures exist, do not pad the set with generic formulas. Use natural, non-proven title judgment only as a private fallback and never misrepresent it as bank-backed. Mention thin coverage only when it materially lowers confidence in the decision set. Do not turn missing evidence into an error lecture.
 
-Read `references/title-judgment.md` when bank evidence is thin or the candidate set needs a sharper range of shapes.
+## 4. Rebuild the payload inside each lineage
 
-## 4. Write wide and cut privately
+For each selected structure, strip away the source title's payload and rebuild it from the locked video's facts, proof, and audience understanding. Draft multiple native variations within that lineage. Do not noun-swap, imitate the source too closely, or bend the locked promise to fill its slots.
 
-Identify three to five meaningfully different title shapes. Write enough candidates to discover the strongest language, usually 12 to 20, then discard weak ones privately.
+Apply BENS quietly within each selected source structure to identify the strongest truthful click pull. Consult `C:\Users\billr\projects\business-os\Content\banks\power-words-bank.md` to help express that pull, using fitting bank language or stronger natural wording. Respect the bank's fit constraints and do not stack language mechanically. Neither BENS nor power words may choose the structure, force a quota or category, or justify unsupported claims.
+
+Carry forward one strongest natural descendant from each lineage, then compare the three to five lineages. Discard the other drafts privately.
+
+## 5. Filter for truth and clickability
 
 Judge every survivor against these requirements:
 
-- Preserve the locked video's promise and audience.
-- Title the wound, tension, curiosity, consequence, or desired result. Do not recite the process.
-- Open one meaningful question in the viewer's mind.
-- Use one dominant click mechanism, such as curiosity, consequence, desire, contrast, or proof.
+- Preserve every locked framing decision and factual boundary.
+- Make the strongest truthful tension, implication, proof, consequence, contrast, or desire clear enough to earn a click.
+- Open one meaningful question that the video resolves.
+- Each title must be between 40-65 characters ideal
+- Keep one central pull rather than stacking unrelated mechanisms.
 - Read aloud as one natural human thought.
 - Use only facts on the internal lock list.
 - Leave room for the thumbnail to add a second beat.
 
-Prefer clear tension over clever wording. Cut labels, vague benefit claims, stitched fragments, stacked mechanisms, unsupported specificity, and titles whose question the wording already answers.
+Truth and deliverability are gates, not scoring dimensions. Cut noun-swapped bank titles, topic labels, complaint restatements with no further pull, vague benefit claims, stitched fragments, unsupported specificity, borrowed authority, and titles whose wording answers its own question. Prefer a strong native line over visible formula compliance.
 
-## 5. Present only the decision set
+## 6. Present only the decision set
 
-Show three to five finalists. Give each one brief, human reasoning tied to its likely effect, not the internal framework. Recommend one decisively.
+Present three to five finalists when the evidence supports them. Give each one a concise reason grounded in the video's true tension, proof, implication, or promise. Recommend one decisively.
 
 Use this shape:
 
@@ -89,11 +106,11 @@ Use this shape:
 > 2. **"{title}"**: {brief human reason}
 > 3. **"{title}"**: {brief human reason}
 
-Do not expose BENS letters, character counts, receipts, bank research, rejected candidates, kill passes, files read, lock lists, or process narration unless the creator asks. Do not present a research report before the titles.
+Do not invent audience consensus or behavior such as "everyone knows" or "they all did this." Do not expose BENS, power-word strategy, character counts, receipts, bank research, lineages, rejected candidates, files read, lock lists, or drafting work unless the creator asks. Do not present a research report before the titles.
 
 If the creator proposes an unsupported title, name the unsupported claim briefly and offer the closest truthful version. Otherwise accept their judgment on soft style choices.
 
-## 6. Save only after approval
+## 7. Save only after approval
 
 After the creator approves one title:
 
@@ -108,4 +125,4 @@ Do not create a titles file. Do not write the receipt, rationale, or candidate l
 
 > Title locked: "{title}". Saved to piece.md.
 
-Stop. Thumbnail, hook, and structure belong to other skills.
+Stop. Thumbnail owns three separate tests and does not reopen the title. Hook and structure belong to other skills.

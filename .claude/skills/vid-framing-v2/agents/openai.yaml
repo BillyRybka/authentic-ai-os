@@ -1,4 +1,0 @@
-interface:
-  display_name: "Video Framing V2 Candidate"
-  short_description: "Sharpen one captured video direction"
-  default_prompt: "Use $vid-framing-v2 to sharpen this completed brain dump into one strategic frame without generating titles or alternate video concepts."
