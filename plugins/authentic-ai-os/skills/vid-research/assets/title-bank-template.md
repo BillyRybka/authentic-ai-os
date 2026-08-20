@@ -53,18 +53,18 @@ Each heading is a STRUCTURE, not a phrase. The `[SLOTS]` get filled with the cre
 
 **When not to use:** audiences that prefer analytical authority to direct commands; can read aggressive for professional niches.
 
-### `The [Specific Thing] [Mistake/Trap/Problem] [Audience Descriptor] Makes`
+### `The [Specific Thing] Mistake [Audience Descriptor] Makes`
 
 - pattern_id: authority-diagnosis
-- spread: 3 of 11 channels
-- channels: [[@CoachX]], [[@CoachZ]], [[@CoachW]]
+- spread: 2 of 11 channels
+- channels: [[@CoachX]], [[@CoachZ]]
 - own_channel_proven: false
 
 **Why it lands:** an authority names a specific failure mode the audience is making, which feels diagnostic and personal.
 
 **Worked examples:**
 - "The Programming Mistake Every Intermediate Lifter Makes" → [[pattern-bank]] (@CoachX)
-- "The Texas Method Trap (And What I Run Instead)" → [[pattern-bank]] (@CoachZ)
+- "The Deload Mistake Most Powerlifters Make" → [[pattern-bank]] (@CoachZ)
 
 **Near-miss:** "5 Mistakes Every Lifter Makes." No specific failure mode named, slips into listicle territory.
 

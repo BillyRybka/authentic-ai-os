@@ -1,94 +1,110 @@
 ---
 name: vid-thumbnail
-description: Write thumbnail TEXT that completes a locked title, never restates it. Mines the video's real numbers, paradoxes, and named systems from its own material, never invented, and locks 1-2 picks into piece.md. Text only; visual design is parked. Standalone or pipeline-invoked after vid-title, before vid-structure. Triggers on "thumbnail text", "thumbnail options for [video]", "thumbnail copy", "what should the thumbnail say", "pair a thumbnail with this title", "let's do the thumbnail".
+description: Present exactly ten strong, distinct thumbnail-text options for one selected YouTube video, then let the creator choose exactly three tests to approve and lock. Use after the title, frame, and core payoff are set when a creator asks for thumbnail text, thumbnail copy, options, or a text-only thumbnail package. Read the selected piece, source material, and relevant packaging evidence privately; keep upstream decisions closed; then save the three chosen texts with aligned measurement labels in piece.md. Never provide visual direction.
 ---
 
-# Video Thumbnail Text
+# Choose three thumbnail-text tests from ten
 
-The title is locked. This skill writes the other half of the package: thumbnail TEXT that completes it. Read the title, mine what the title does not already say, shape options, lock 1-2 picks with the creator.
+Create a decision set of exactly ten strong options for one locked title. Let the creator choose exactly three tests to save. Keep the title, frame, audience, and promise closed. Do not repair packaging by rewriting an upstream decision.
 
-**Scope: text only.** No layout, hero, expression, color, or image prompts. Text is the testable half of the package, so it gets its own pass; the visual comes later, and designing it is drift. **This is a conversation, not a document.** Short messages; references feed your thinking and never get pasted at the creator.
+Keep research, generation, and filtering private. The creator sees the locked title once, ten options, and a short reason each option is worth considering.
 
-## What makes thumbnail text win
+## 1. Start from one locked video
 
-**The text completes the title; it never restates it.** The viewer reads title and thumbnail in one glance, as one unit; both carrying the same beat wastes half the package. The pair must raise more curiosity than either half alone, and one repeated word means rewrite one side. The four winning pairings:
+Require a selected video or `content/pieces/{slug}`. If none is selected, ask which video needs thumbnail text without scanning the vault.
 
-- **Title states it, text proves it.** "Why Hiring a VA Tanked My Revenue (Fix Inside)" + "-30% IN 6 WEEKS". Cause in the title, receipt in the text.
-- **Title asks it, text flips it.** "Should You Buy a House?" + "DO NOT BUY A HOUSE". The text is the unexpected answer.
-- **Title teases it, text names it.** "The One Rule That Killed My Procrastination" + "THE 15-SECOND RULE".
-- **Title shows the result, text shows the data.** "How I Got 481% Faster at Mile Times" + "23:07 → 19:42". Abstraction above, raw proof below.
+Read `content/pieces/{slug}/piece.md`. Require `title`, `frame`, and `core_payoff`.
 
-**One hero idea.** A thumbnail never summarizes the video. One contrarian point, one dramatic number, one name, carried hard. Two ideas fused into one text is a cut, not a rewrite.
+- If `title` is missing, route to `vid-title`, the current Title V3 handoff.
+- If `frame` or `core_payoff` is missing, route to `vid-framing`.
+- Never fill another skill's field to unblock this one.
 
-**The glance test.** Readable at feed size, in one breath. 2-4 words is the winning band, 5 is the ceiling, 6+ is dead. One high-curiosity word ("LIAR", "BACKWARDS") is valid. A pure number or arc ("275 → 175") counts as one unit.
+Use the locked title, frame, core payoff, goal, `## The Read`, `must_not_become`, and any must-deliver obligation as boundaries. Older pieces may lack some newer fields; continue from the locked material that exists.
 
-**Specificity earns the click the title promised.** "$712,921.88" beats "$700K". "29 DAYS" beats "quickly". Real numbers, verbatim from the material, read as true; round paraphrase reads as marketing. A named system works only when the name carries its own mystery: "THE 90 MINUTE RULE" makes you ask "of what?", while "THE 12-SOP RULE" answers before you ask. A label is not a hook.
+Read a complete `script.md` when present. Use it as evidence for what the video actually says and can deliver, but never let it override the locked framing. Read `brain-dump.md` when no complete script exists and whenever factual provenance, omitted source material, or a material gap needs checking. Creator-provided context and directly linked source material may also support a claim.
 
-Worked calls, one title: "Why Hiring a VA Tanked My Revenue (Fix Inside)". Script numbers available: -30%, 6 weeks, +40%, 9 weeks, 12 SOPs.
+## 2. Establish support privately
 
-- Weak: "VA TANKED MY REVENUE" restates the title; the viewer already read that. Strong: "-30% IN 6 WEEKS" adds the receipt instead, shares no words with the title, and matches the failure tone.
-- Weak: "+40% IN 9 WEEKS" is a real number in the wrong register; a positive result against a failure title reads as contradiction, not curiosity. Strong: "STOP DELEGATING" keeps the dark register from a different angle, and the video pays it off.
-- Weak: "BOTTLENECK" fits a hundred founder videos. Strong: "BACKWARDS" only makes sense for THIS video's wrong-order insight. If the word fits any other video in the niche, it is not a hero.
+Identify the locked title's main hook, the question it plants, and its tone. Then identify factual material the thumbnail may use: exact figures, timeframes, names, tools, results, proof, mechanisms, commands, consequences, and genuine belief clashes.
 
-## What loads, and when
+Every claim must trace to the selected video's material. Never invent, round, strengthen, merge, or borrow a fact from a bank or example. A script can demonstrate delivery; use the brain dump or source material when provenance is uncertain.
 
-| Step | Load | For |
-|---|---|---|
-| 1 | `content/pieces/{slug}/piece.md` | the locked title (the anchor), format, goal |
-| 1 | `content/pieces/{slug}/script.md` if complete, else `brain-dump.md` | the material and its numbers; a finished script supersedes the dump |
-| 2 | `knowledge/thumbnail-text-patterns.md` | the 5 patterns, anti-patterns, pairing rules, examples library. The pattern reference |
-| 2 | `foundation/packaging-system.md` and `banks/packaging-bank/*.md`, when present | packaging settings and receipts. **These override every default on this page** |
+## 3. Calibrate, then use packaging evidence selectively
 
-Day one, no packaging-system yet: ALL CAPS, no strategy constraint. No locked `title` in piece.md yet: run `vid-title` first.
+Before generating any candidates, read `references/title-thumbnail-calibration.md` in full on every run. Treat it as read-only source material and never edit it during normal thumbnail work. Use the recorded pairs to calibrate how a title and thumbnail create a stronger package together, not to copy wording or force a formula. In addition, notice the length, and emotional response it would create together with the title. 
 
-## Step 1: Read the title, then mine for its partner
+Treat every example as structural evidence only. It never supplies facts for this video. Do not reveal sources, receipts, pattern names, metrics, files read, or research notes.
 
-Name the title's hook (the question it plants) and its tone: failure, success, mystery, contrarian, instructive, news. Open with one line to the creator: the title, and that you are pairing it with the strongest material. Then mine the script (or brain dump) for what the title does NOT already say:
+## 4. Generate wide and filter hard
 
-- verbatim numbers, dollar figures, percentages, timeframes. Also the **lock list**: the only numbers a candidate may use. Nothing invented, ever.
-- belief-clashes and paradoxes the video argues, named systems and rules, the single most dramatic moment or claim
+Draft widely enough in private to find exactly ten meaningfully different options. Each option must add a useful second beat to the title, such as proof, consequence, contradiction, mechanism, specificity, or unresolved tension. The main goal is to create a mental itch that would make someone want to click. We need to create a curiousity gap.
 
-## Step 2: Shape candidates against the title
+Keep every survivor:
 
-Load the patterns file and generate wide, privately. Write the title at the top of your working space and draft every candidate beneath it, each read as "title + this text, one glance." Same beat twice, dead on arrival. Know why each candidate makes someone click before it earns a spot.
+- truthful and deliverable by the video
+- specific to this video rather than generic to the niche
+- focused on one idea and readable at a glance, usually one to four words and never more than five
+- compatible with the title's hook and tone, whether matching or productively contrasting
+- curious or provocative without pre-delivering the full payoff
+- free of vague hype, stacked claims, filler, and language that needs visual direction to make sense
 
-Spread across the 5 patterns (cognitive dissonance, number-hero, named system, single-word curiosity, imperative command); they are lenses, not cages, so a text the material begs for that fits none still earns a spot, with the why said out loud. Honor the vault when it speaks: a strategy test in packaging-system biases part of the set, and packaging-bank winners outrank generic best practice.
+Read the title and each candidate as one package. Cut a candidate when the pair merely repeats itself, fights the locked promise, feels generic enough for many unrelated videos, or removes the reason to watch.
 
-## Step 3: Filter hard, then show the package
+Apply a private package-reaction gate to every survivor. Read the locked title and thumbnail text as one semantic unit. Keep the option only when that pair creates a distinct, compelling reaction, question, tension, or expectation. A true detail is not enough by itself. Reject options that merely name a fact, tool, setup detail, warning, exception, generic problem, implementation caveat, or standalone label. Also reject unsupported scarcity and unexplained tool names. A detail from any of those categories may survive only when the complete title-plus-thumbnail pair creates a clear hook the video can deliver.
 
-Only the strongest 3-5 survive, ranked, strongest first. Two strong means show two. Never pad, never caveat a flaw; a known flaw is a cut. Cut before the creator sees:
+Judge the package by meaning, not literal word overlap. Shared words remain allowed when they strengthen clarity, curiosity, or force.
 
-1. **Fabrication.** Any number off the lock list.
-2. **Pre-delivered payoff.** "SOPs BEFORE PEOPLE" does not tease the lesson, it removes the reason to watch. The bar is click-pull plus deliverability, not spoiler-avoidance: "STOP DELEGATING" names the lesson and still pulls the click because the how stays inside the video.
-3. **Package break.** Repeats a title word (parentheticals count), or its tone fights the title instead of matching or productively contrasting.
-4. **Generic.** Would fit 100 other videos in the niche. The text must signal THIS story.
-5. **Anti-pattern.** Per the patterns file: visual-metaphor words, vague paradoxes, hedges, stock hype, open-mouth language.
+The ten options must create meaningfully different learning signals. Cosmetic rewrites, punctuation changes, casing changes, or synonyms do not count as separate options.
 
-Then three tests on every survivor, through the ideal buyer's eyes, answered silently; a fail cuts:
+Before presenting, verify each option one last time against the script when complete and the video's evidence when provenance matters. If the material cannot yet support ten strong options, do not pad. Briefly name the missing kind of evidence and ask one focused question before presenting the set. Do not show fewer than ten as the decision set.
 
-1. **Context.** Does title + text together carry what the video is about? If not, the image has to, allowed only for a standout candidate, and noted at lock.
-2. **Curiosity.** Does the pair make the buyer think what, why, or how?
-3. **Clarity.** One idea, one glance?
+## 5. Present exactly ten options
 
-Show the package, not a list in a vacuum: title on the first line, numbered candidates beneath, each line the text in quotes plus its pattern name and nothing else. No rationale paragraphs, no self-grading. They scan and pick. **Kill criteria:** after one full regeneration the options are still weak, the problem is upstream (vague title, or material with no number or moment worth a thumbnail); say so and stop.
+Show the locked title once, followed by exactly ten numbered options. Give each one short, practical description of the viewer response or package hypothesis it tests.
 
-## Step 4: Pick
+> **Title:** "{locked title}"
+>
+> 1. **"{thumbnail text}"**: Tests whether {brief viewer-facing hypothesis}.
+> 2. **"{thumbnail text}"**: Tests whether {different hypothesis}.
+> 3. **"{thumbnail text}"**: Tests whether {different hypothesis}.
+> 4. **"{thumbnail text}"**: Tests whether {different hypothesis}.
+> 5. **"{thumbnail text}"**: Tests whether {different hypothesis}.
+> 6. **"{thumbnail text}"**: Tests whether {different hypothesis}.
+> 7. **"{thumbnail text}"**: Tests whether {different hypothesis}.
+> 8. **"{thumbnail text}"**: Tests whether {different hypothesis}.
+> 9. **"{thumbnail text}"**: Tests whether {different hypothesis}.
+> 10. **"{thumbnail text}"**: Tests whether {different hypothesis}.
 
-Ask which 1-2 they would actually test, by number. Two picks should be meaningfully different (different tension, different pattern) so a test teaches something; two variants of one idea as a copy test is fine, note it. Before locking, one last package check per pick, and confirm the video delivers what the text implies. Clickbait is fine only when delivered; otherwise kick it back.
+Do not show rejected drafts, scoring, pattern labels, factual lock lists, workflow narration, title alternatives, or visual advice. Ask the creator to choose exactly three options by number.
 
-## Step 5: Save, then hand off
+If the creator wants a replacement before choosing, revise only the affected option or options and present the complete ten-option set again. After one focused revision pass, if the same weakness remains, ask for the one missing fact or clarify the package tension preventing a strong replacement. Never reopen the title or frame.
 
-Append to `content/pieces/{slug}/piece.md`, never overwriting another skill's fields:
+## 6. Save the chosen three
+
+Treat the creator's explicit selection of exactly three option numbers as approval to save those tests. Before writing, verify that each chosen option remains truthful, distinct from the other two, and deliverable by the video. If one fails, explain the specific conflict briefly and ask for a replacement choice from the remaining options.
+
+After three options are approved:
+
+1. Re-read `content/pieces/{slug}/piece.md` and confirm `type: content-piece` plus the selected slug.
+2. Set `thumbnail_text` to exactly the three chosen texts, verbatim and in the creator's selected order.
+3. Set `thumbnail_shape` to exactly three aligned measurement labels in the same order.
+4. Set `last_updated` to today's date in `YYYY-MM-DD`.
+5. Preserve every other frontmatter field and every body line unchanged.
+6. Re-read the saved file and verify that only `thumbnail_text`, `thumbnail_shape`, and `last_updated` changed.
+
+Choose each `thumbnail_shape` label privately to describe what the selected test is measuring. Use a simple accurate category such as `belief-clash`, `proof`, `consequence`, `mechanism`, `number`, `command`, `curiosity`, `named-method`, or `other`. These labels are measurement metadata, not creator-facing patterns, and they do not need to cover different categories when the actual hypotheses differ.
+
+Use aligned YAML arrays:
 
 ```yaml
-thumbnail_text: ["{pick verbatim}"]   # 1-2 locked picks
-thumbnail_shape: [{pattern name}]     # same count, same order
+thumbnail_text: ["{option 1}", "{option 2}", "{option 3}"]
+thumbnail_shape: [{shape 1}, {shape 2}, {shape 3}]
 ```
 
-Bump `last_updated:`. Same write in standalone and pipeline mode; `thumbnail_text` present is the pipeline's done signal. Candidates and rationale stay in chat. Close: picks saved, then point to `vid-structure`, which builds the outline that has to pay the package off.
+Replace earlier thumbnail arrays if present. Never save rationale, drafts, research, or test results.
 
-## Related skills
+After saving, reply only:
 
-- `vid-title` runs right before and locks the title this skill pairs against; a strong title candidate that lost there often lives again here
-- `vid-structure` runs next and reads the locked package plus the framing fields from piece.md
-- `vid-research` produces `packaging-system.md` and the packaging-bank; `vid-pipeline` orchestrates and invokes this skill after `vid-title`
+> Three thumbnail-text tests saved to piece.md.
+
+Stop. Do not add visual direction or reopen the package.

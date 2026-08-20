@@ -34,8 +34,8 @@ goal: sales                     # sales | emails | views (ONE only). Set by vid-
 voice_context: youtube-script   # delivery medium for voice: youtube-script (default) | tutorial | shorts | newsletter | linkedin | twitter | instagram | podcast | casual | talk. Orthogonal to format. Set by vid-framing (videos) or post-write (posts). Drives which foundation/reference-pieces/{voice_context}.md a writing skill loads.
 
 title: "..."                    # set by vid-title
-thumbnail_text: []              # 1-2 locked picks, set by vid-thumbnail
-thumbnail_shape: []             # same count, same order as thumbnail_text
+thumbnail_text: []              # exactly 3 creator-selected tests from the 10 options shown by vid-thumbnail-v2
+thumbnail_shape: []             # exactly 3 measurement labels, aligned with thumbnail_text
 
 segment_purposes: []            # set by vid-structure: the planned body segments
 segments_completed: []          # appended by vid-segment, one label per locked body segment. The pipeline compares its length to segment_purposes to know when the body is done.
@@ -87,7 +87,7 @@ Skills append their own fields and never overwrite another skill's.
 | vid-braindump | `type`, `project`, `slug`, `status: ideating`, `created`, `last_updated`, `anchor`, `tags` |
 | vid-framing | `pillar`, `frame`, `core_payoff`, `format`, `voice_context`, `goal`, `must_not_become`, plus the `## The viewer` body section |
 | vid-title | `title` |
-| vid-thumbnail | `thumbnail_text`, `thumbnail_shape` |
+| vid-thumbnail-v2 | `thumbnail_text`, `thumbnail_shape` |
 | vid-structure | `segment_purposes`, `tension_plan`, `status: drafting` |
 | vid-intro | `intro_locked`, `viewer_questions`, plus bank-use arrays it pulled into |
 | vid-segment | `segments_completed`, plus bank-use arrays it pulled into |

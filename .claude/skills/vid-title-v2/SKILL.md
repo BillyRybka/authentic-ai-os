@@ -1,128 +1,210 @@
 ---
 name: vid-title-v2
-description: Package one locked YouTube video into a concise set of strong, truthful title finalists and recommend one. Use after framing when a creator asks for title ideas, title options, a title recommendation, or to lock a title for a selected piece. Read the creator's evidence and relevant title-bank patterns silently, preserve the approved frame, and write only title and last_updated after approval. Not for reframing, thumbnail writing, hooks, outlines, or topic ideation.
+description: Any idea in, a title worth clicking out. Works only with the context it's handed. It never goes looking for material. No material for a move means that move is off the table.
 ---
+Any idea in, a title worth clicking out.
 
-# Write the video title
+Works only with the context it's handed. It never goes looking for material. No material for a move means that move is off the table.
 
-Package the locked video. Do not improve, reinterpret, or repair its frame.
+## Run this
 
-Keep research and drafting private. The creator sees strong choices, not a work log.
+### 0. Read the context
+Require a selected video or `content/pieces/{slug}`. If none is selected, ask which video to title without scanning the vault.
 
-## 1. Select one locked piece
-
-Require a specific video or `content/pieces/{slug}`. If none is selected, ask which video to title without scanning the vault.
-
-Read silently, when present:
+Read these selected-piece files silently when present:
 
 1. `content/pieces/{slug}/piece.md`
 2. `content/pieces/{slug}/brain-dump.md`
 3. `content/pieces/{slug}/script.md`
 
-Do not title a source explicitly marked as incomplete. Treat these framing decisions as locked:
 
-- `frame`
-- `core_payoff`
-- `goal`
-- `## The Read`: Target, Transformation, and Stakes
-- any locked must-deliver obligation or factual direction
-- any explicit `must_not_become`
+### 1. Strip the material
 
-Older pieces may lack `## The Read` or `goal`. Use the locked fields and source material that exist. If `frame` or `core_payoff` is missing, route to `vid-framing`; do not fill the gap. If the frame seems weak, title it faithfully or tell the creator it needs reframing. Never repair it here.
+Fill every slot from the context. Write EMPTY where there's nothing. Never invent one.
 
-## 2. Lock the frame and facts privately
+- RESULT: what changes for them, and how big
+- MECHANISM: the thing that causes it, and whether it has a name
+- NUMBERS: real ones only. Time, money, speed, distance, age, count
+- CONTRADICTION: what this says that the niche believes the opposite of
+- BORROWED NAME: a person, brand, or tool the audience already trusts
+- STAKE: what it costs them not to know this
+- WHO: the specific stuck person, not a category
+- DELIVERS: what's actually in the video
+- STANDING: known or unknown to a cold viewer
 
-Use the approved promise, audience, transformation, stakes, goal, core payoff, boundaries, and factual direction as the title's perimeter. Packaging may increase the pull of what is already there. It may not change who the video is for, what it delivers, why it matters, or what it claims.
+Say the empties in one line, then move. If RESULT and CONTRADICTION are both EMPTY, stop and ask for more. There's nothing to be big or new about yet.
 
-Build an internal list of what the title may claim. Admit only facts supported by the selected piece, raw material, script, or foundation:
+### 2. Pick 8 structures
 
-- numbers, prices, timeframes, and results
-- people, products, tools, methods, and named concepts
-- audience descriptions and audience language
-- causal claims, comparisons, proof, and consequences
+Never blank-page. Use any outlier or proven title in the context first. Then the library below.
 
-Do not invent, round, strengthen, combine, or borrow any of these from a bank example. A title-bank row proves a shape, not this video's facts.
+Each pick gets one line: which slot it's built on.
 
-Audience language helps explain what matters to the audience; it does not require a literal complaint title. Choose the most interesting truthful expression of the selected source structure's existing click mechanism.
+### 3. Write 8 titles
 
-## 3. Select proven structures
+One per structure. Adjust the structure to the material, don't fill blanks. Swap
+the noun to the thing they actually care about. Invert a structure when the material contradicts it.
 
-Treat `banks/title-bank.md` and `banks/pattern-bank.md` as the authoritative source of proven structures. Read them only as far as needed to find relevant evidence. Search in this order:
+### 4. Run the gates
 
-1. The creator's own proven winners that fit this promise
-2. Direct-niche patterns that fit this promise and audience
-3. Adjacent patterns whose structure transfers cleanly
+Kill silently. Don't show the corpses. One exception: if a whole class died for a structural reason, say it in a line. "Everything using a number died, you have no real numbers." That's information about the material.
 
-Select several relevant bank-backed structures, generally three to five, that naturally fit the locked promise. Each selected structure must retain a private lineage to one concrete bank source or receipt. Do not require coverage of generic categories or formulas.
+### 5. Read each survivor
 
-For each selected structure, identify privately:
+- The engine letter. The one actually doing the work.
+- Three thought bubbles, in the viewer's voice, specific to this title.
+- The payoff moment. Point at what in the video pays this off.
 
-- the exact source title and its receipt
-- its central tension
-- the question it leaves unresolved
-- its sentence shape
-- its dominant click mechanism
+Don't score out of four. Name what's driving it and move.
 
-Treat that engine as the reusable evidence. The source's subject, audience, claims, authority, numbers, results, proof, method, and named payload do not transfer. Do not load or summarize the full banks merely because they exist. Keep titles, channels, metrics, pattern names, lineages, and receipts out of the creator-facing response unless asked.
+### 6. Sharpen
 
-If `piece.md` contains an `anchor`, use it as a strong seed only when its receipt is complete, its promise still matches the locked frame, and every factual word is supported. Make it compete with the other candidates. It receives no automatic win.
+Push the engine letter harder, or repair the letter that's deterring. Show before and after on one line.
 
-If fewer than three relevant proven structures exist, do not pad the set with generic formulas. Use natural, non-proven title judgment only as a private fallback and never misrepresent it as bank-backed. Mention thin coverage only when it materially lowers confidence in the decision set. Do not turn missing evidence into an error lecture.
+### 7. Present 5, ranked
 
-## 4. Rebuild the payload inside each lineage
+Call the winner and say why it beat the rest. Don't hedge across five.
 
-For each selected structure, strip away the source title's payload and rebuild it from the locked video's facts, proof, and audience understanding. Draft multiple native variations within that lineage. Do not noun-swap, imitate the source too closely, or bend the locked promise to fill its slots.
+### 8. Wait for the dial
 
-Apply BENS quietly within each selected source structure to identify the strongest truthful click pull. Consult `C:\Users\billr\projects\business-os\Content\banks\power-words-bank.md` to help express that pull, using fitting bank language or stronger natural wording. Respect the bank's fit constraints and do not stack language mechanically. Neither BENS nor power words may choose the structure, force a quota or category, or justify unsupported claims.
+Bigger. Easier. Newer. Safer. More specific. More urgent. Weirder. Cleaner. Less like AI wrote it. Re-run from step 6.
 
-Carry forward one strongest natural descendant from each lineage, then compare the three to five lineages. Discard the other drafts privately.
+---
 
-## 5. Filter for truth and clickability
+## The levers
 
-Judge every survivor against these requirements:
+### Big
+Size of the RESULT. Not the size of the topic, not how hard you worked.
 
-- Preserve every locked framing decision and factual boundary.
-- Make the strongest truthful tension, implication, proof, consequence, contrast, or desire clear enough to earn a click.
-- Open one meaningful question that the video resolves.
-- Each title must be between 40-65 characters ideal
-- Keep one central pull rather than stacking unrelated mechanisms.
-- Read aloud as one natural human thought.
-- Use only facts on the internal lock list.
-- Leave room for the thumbnail to add a second beat.
+- Claim bigger than the niche is used to hearing
+- Name a life-level consequence, not an outcome
+- Huge number on the work you did, never on what they have to absorb
+- Attach a specific result: $15,000,000 In 12 Months
+- Cut every lukewarm word
 
-Truth and deliverability are gates, not scoring dimensions. Cut noun-swapped bank titles, topic labels, complaint restatements with no further pull, vague benefit claims, stitched fragments, unsupported specificity, borrowed authority, and titles whose wording answers its own question. Prefer a strong native line over visible formula compliance.
+### Easy
+The path to the result feels short. The bar is low. Not sounding hard is enough.
 
-## 6. Present only the decision set
+- "Hack." "Trick." "Shortcut."
+- Small number on what they absorb: 3 lessons from 100 books
+- Small time number: The 15-Second Rule
+- Name the system or rule so it reads as a finished process
+- Show you already did the hard part
+- Fewer words
 
-Present three to five finalists when the evidence supports them. Give each one a concise reason grounded in the video's true tension, proof, implication, or promise. Recommend one decisively.
+### New
+Aim at blame transfer. They already failed at this and want it to not be their fault. The information doesn't have to be new, only feel new.
 
-Use this shape:
+- Do not name the mechanism. Naming it kills the video
+- Withhold what the video is about, not just how it works
+- Say the thing nobody in the niche says
+- Contradict what they hold as true
+- Bolt on a novelty flag: (NOT WHAT YOU THINK)
+- Old material inside your own story reads new
 
-> **My pick: "{title}"**
->
-> {One brief reason.}
->
-> 1. **"{title}"**: {brief human reason}
-> 2. **"{title}"**: {brief human reason}
-> 3. **"{title}"**: {brief human reason}
+### Safe
+A cold-viewer trust problem. It buys permission to spend time on a stranger.
 
-Do not invent audience consensus or behavior such as "everyone knows" or "they all did this." Do not expose BENS, power-word strategy, character counts, receipts, bank research, lineages, rejected candidates, files read, lock lists, or drafting work unless the creator asks. Do not present a research report before the titles.
+- Borrow a trusted name and attribute the claim to them, not yourself
+- A real specific number. $14,332 beats "make money"
+- Completed past tense. "I did," never "I tried"
+- Name a system so it reads as planned out
+- Make the claim so big only a competent person would dare it
 
-If the creator proposes an unsupported title, name the unsupported claim briefly and offer the closest truthful version. Otherwise accept their judgment on soft style choices.
+### Then two more
+- **Specific.** One real result in time, money, speed, distance, or age.
+- **Urgent.** Stakes. What happens if they wait.
 
-## 7. Save only after approval
+### When levers fight
+- Big carrying? Easy just has to not deter.
+- A number that makes it big can make it hard. Big number your side, small number theirs.
+- Big past your standing kills the click. Big past a threshold becomes proof.
+- Naming the thing kills New. Put the specificity somewhere else.
+- Vague about WHAT it is. Specific about the RESULT.
+- The thumbnail carries half. Don't cram it all into the title.
 
-After the creator approves one title:
+---
 
-1. Re-read the current `content/pieces/{slug}/piece.md`.
-2. Confirm it is the selected content piece.
-3. Set `title` to the approved wording exactly.
-4. Set `last_updated` to today's date in `YYYY-MM-DD`.
-5. Preserve every other frontmatter field and every body line unchanged.
-6. Re-read the saved file and verify only `title` and `last_updated` changed.
+## Gates
 
-Do not create a titles file. Do not write the receipt, rationale, or candidate list anywhere. After saving, reply only:
+Kill on any of these.
 
-> Title locked: "{title}". Saved to piece.md.
+- Over 50 characters. If it needs 51 to 55 and cutting kills it, keep it and flag the overage
+- A colon. Emdash, semi-colon. Any clutter
+- Keyword stuffing
+- "I" or "My" leading when STANDING is unknown
+- Vague
+- Cute
+- A general life-changing claim with no named result
+- Any word that isn't in DELIVERS
+- **Swap test.** Swap the topic for a different one. Still works? It's generic.
+  Kill it
+- **Bubbles test.** Can't write three specific thought bubbles? Dead
+- **Payoff test.** Can't point at the moment that pays it off? That's clickbait,
+  not curiosity
 
-Stop. Thumbnail owns three separate tests and does not reopen the title. Hook and structure belong to other skills.
+---
+
+## Structure library
+
+**Real outliers handed to you beat everything in this section.** If the contextcarries titles with view counts attached, build from those and skip the fallback
+list. Strip the winner to its shape, swap the noun to what this audience cares about, and invert it if your material contradicts it.
+
+The list below is the fallback for when nothing real is in front of you. Every shape here has performance behind it somewhere, but not on this channel and not in this niche. Treat them as starting shapes, never as finished titles.
+
+- Huge Lies X Are Telling You!
+- X New Y is a Game-Changer
+- What's Coming is WORSE Than X
+- The X That Terrified Y
+- Why People Struggle to Say X
+- I NEVER Felt Like X (How I changed)
+- 8 X Habits That Keep You Y
+- It's Actually Pretty Easy to X
+- 5 Things Successful X Do Before Y
+- Why I Stopped Using X
+- 5 Things Smart X Should Never Do
+- I Wish Someone Had Told Me X
+- How I Learned to X in a Week
+- My Worst Mistakes X
+
+If eight shapes can't be built from the material and the fallback list, say so instead of padding to eight.
+
+**Two format rules that override the shape.**
+- Interviews: lead with what the guest did, never their name, unless the
+  audience already knows the name.
+- News: specific or dead. "Big Changes in Tech This Week" is a non-title.
+
+---
+
+## Calibration
+
+Match this bar.
+
+- **How to get SO rich you question the meaning of making money.** Engine is
+  Big, so big it's almost all you need. Easy is weak and it doesn't matter.
+- **The Silent Hack YouTubers Use To Hook You.** All four. "Hack" is Easy. The
+  named YouTubers are Safe, and the claim isn't the creator's own. Not naming
+  the hack is New.
+- **How YouTubers Use Body Language.** Same idea, mechanism named. Dead.
+- **The 15-Second Rule That Makes Procrastination Impossible.** Named rule, tiny
+  time number, absolute result.
+- **Drumming MISTAKES That KILL Your Progress** sharpened to **...That KILL Your
+  Hand Speed.** Same structure, noun swapped to the thing they actually want.
+- **The rule of attraction will give you cult-like fans.** Loaded with curiosity
+  and craft. Guaranteed flop, because that channel's audience didn't come for
+  that. Audience fit sits above all of this. It isn't a fifth letter.
+
+---
+
+## Output
+
+For each of the 5:
+
+```
+{title}  ({n} chars)
+Engine: {letter}
+Bubbles: "{one}" / "{two}" / "{three}"
+Pays off: {the moment}
+```
+
+Then one line: which one wins and why.

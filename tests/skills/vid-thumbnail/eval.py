@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Tier A eval for vid-thumbnail. The read-only "does it work" judge.
+Tier A eval for vid-thumbnail-v2. The read-only "does it work" judge.
 DO NOT MODIFY during an autoresearch loop. Lock it, then optimize the skill.
 
 Reads each run from outputs/case_NN/ (piece.md, transcript.md) and scores it
@@ -9,10 +9,10 @@ stage. An output passes Tier A only when every error-level assertion passes.
 Warnings are reported but never gate. Prints a per-assertion breakdown and a
 final METRIC line the autoresearch optimizer reads.
 
-vid-thumbnail is thumbnail TEXT only (no visual design). It shows 3-5
-candidates against the locked title in chat, the creator picks 1-2, and the
-picks save to piece.md as thumbnail_text + thumbnail_shape. Candidates live in
-transcript.md only; piece.md holds the locked picks.
+vid-thumbnail-v2 is thumbnail TEXT only (no visual design). It shows exactly
+ten meaningful options against the locked title, the creator chooses three,
+and those three save to piece.md as aligned thumbnail_text and thumbnail_shape
+arrays.
 
 Scoping: piece.md is scored whole. From transcript.md only the extracted
 candidate texts are scored (for brand rules, word count, pairing, numbers);
@@ -30,11 +30,11 @@ fixtures/after-title because the global stage tree stops at after-intake):
 
 Assertions (error level, gate):
   no_em_dash, no_banned_words, no_fabrication, no_fabricated_numbers,
-  thumbnail_locked, candidate_count, word_count_cap, pairing_no_overlap,
-  no_anti_pattern, picks_from_candidates, pattern_annotation_present,
+  thumbnail_locked, option_count, word_count_cap, package_not_duplicate,
+  no_anti_pattern, saved_tests_from_shown,
   handoff_thumbnail_to_structure
 Warnings (reported only):
-  no_aiisms, no_hedge_words, word_count_ideal, casing_default
+  no_aiisms, no_hedge_words, word_count_ideal
 
 Usage:
   python eval.py [outputs_dir]
@@ -68,43 +68,25 @@ _ANTI_PATTERN_PHRASES = [
     "increase productivity", "grow your business", "get results",
 ]
 
-# Word count: 2-4 preferred, 5 is the ceiling, 6+ auto-rejects (hard rule 1).
+# Word count: 1-4 preferred, 5 is the ceiling.
 WORDS_ERROR = 5   # strictly greater than this fails
 WORDS_WARN = 4    # strictly greater than this is flagged
 
-# Candidate line in transcript.md: N. "TEXT" | pattern: <name>
-_CANDIDATE_RE = re.compile(r'^\s*(\d+)\.\s*"([^"]+)"\s*(.*)$')
-_PATTERN_LABEL_RE = re.compile(r"\bpattern\s*:\s*[^|\s]+", re.IGNORECASE)
+# Test line in transcript.md: N. **"TEXT"**: Tests whether ...
+# Bold markers are optional so plain-text transcripts remain parseable.
+_CANDIDATE_RE = re.compile(
+    r'^\s*(\d+)\.\s*(?:\*\*)?"([^"]+)"(?:\*\*)?\s*(.*)$'
+)
 _ANY_DIGIT_RE = re.compile(r"\d")
 
 # What vid-structure reads next (suite-local contract; tests/lib/check_handoff.py
 # has no thumbnail->structure boundary and lib is locked). vid-structure reads
 # the framing fields plus the title it must pay off late; the pipeline routes on
-# thumbnail_text. vid-thumbnail appends, it never overwrites.
+# thumbnail_text. vid-thumbnail-v2 appends, it never overwrites.
 HANDOFF_PIECE_FIELDS = [
     "type", "slug", "frame", "core_payoff",
     "format", "goal", "title", "thumbnail_text",
 ]
-
-# Words ignored when testing title-thumbnail overlap. Numbers always count as
-# content (repeating the title's number is a package break).
-_STOPWORDS = {
-    "a", "an", "the", "and", "or", "but", "of", "to", "in", "on", "for",
-    "with", "from", "by", "at", "as", "is", "are", "was", "were", "be",
-    "been", "being", "do", "does", "did", "done", "have", "has", "had",
-    "i", "you", "your", "yours", "my", "me", "mine", "we", "our", "us",
-    "they", "them", "their", "it", "its", "he", "she", "him", "his", "her",
-    "this", "that", "these", "those", "there", "here", "what", "which",
-    "who", "whom", "when", "where", "why", "how", "not", "no", "nor", "so",
-    "if", "then", "than", "too", "very", "just", "only", "also", "more",
-    "most", "less", "least", "much", "many", "own", "same", "can", "could",
-    "will", "would", "should", "shall", "may", "might", "must", "about",
-    "into", "over", "under", "again", "once", "out", "up", "down", "off",
-    "between", "through", "during", "before", "after", "without", "within",
-    "across", "per", "vs", "via", "all", "any", "both", "each", "few",
-    "other", "some", "such",
-}
-
 
 def _load_manifest():
     path = os.path.join(_HERE, "test_cases.json")
@@ -180,12 +162,12 @@ def _fixture_title(stage_root, slug):
     return str(fm.get("title", "")).strip().strip('"')
 
 
-# --- candidate + pick extraction helpers ---
+# --- shown-test + saved-test extraction helpers ---
 
 def _parse_candidates(transcript_text):
     """
     Parse the shown package from transcript.md: numbered lines in the form
-    N. "TEXT" | pattern: <name>. Returns a list of dicts {text, annotation}.
+    N. **"TEXT"**: Tests whether .... Returns {text, annotation} dictionaries.
 
     If the transcript carries more than one numbered block (a regeneration
     before the final shown set), the final block wins: parsing restarts at the
@@ -233,38 +215,24 @@ def _fm_list(raw):
     return [s.strip('"').strip("'").strip()]
 
 
-def _locked_picks(piece_text):
-    """Return (thumbnail_text list, thumbnail_shape list) from piece.md."""
+def _locked_tests(piece_text):
+    """Return the aligned thumbnail_text and thumbnail_shape lists."""
     fm, _ = split_frontmatter(piece_text)
     return _fm_list(fm.get("thumbnail_text")), _fm_list(fm.get("thumbnail_shape"))
 
 
-def _content_tokens(text):
-    """
-    Content tokens for the title-overlap test: lowercased alphanumeric runs,
-    stopwords dropped, plural 's' stemmed (both forms indexed). Digits always
-    count as content: repeating the title's number is a package break.
-    """
-    out = set()
-    for tok in re.findall(r"[a-z0-9]+", text.lower()):
-        if tok.isdigit():
-            out.add(tok)
-            continue
-        if len(tok) < 2 or tok in _STOPWORDS:
-            continue
-        out.add(tok)
-        if tok.endswith("s") and len(tok) > 3:
-            out.add(tok[:-1])
-    return out
+def _normalized_text(text):
+    """Normalize text for exact package-duplication and set comparisons."""
+    return re.sub(r"[^a-z0-9]+", " ", text.lower()).strip()
 
 
-def _scoped_files(piece_text, candidates, picks):
+def _scoped_files(piece_text, candidates, saved_tests):
     """
     Build the file dict for brand checks: piece.md whole, plus a synthetic file
-    holding only the extracted thumbnail texts (candidates + locked picks).
-    Transcript prose stays out of scope; pattern annotations stay out too.
+    holding only the extracted shown and saved thumbnail texts.
+    Transcript prose and option descriptions stay out of scope.
     """
-    thumb_texts = [c["text"] for c in candidates] + picks
+    thumb_texts = [c["text"] for c in candidates] + saved_tests
     return {
         "piece.md": piece_text,
         "thumbnail-text-only": "\n".join(thumb_texts),
@@ -273,9 +241,9 @@ def _scoped_files(piece_text, candidates, picks):
 
 # --- skill-specific assertion functions ---
 
-def check_no_fabricated_numbers(candidates, picks, source_text, is_adversarial):
+def check_no_fabricated_numbers(candidates, saved_tests, source_text, is_adversarial):
     """
-    Error gate: every number in a candidate or locked pick must trace to the
+    Error gate: every number in a shown or saved test must trace to the
     material, and thumbnail text never carries a wikilink.
 
     The lib number check runs on body prose, but thumbnail text lives in
@@ -283,12 +251,12 @@ def check_no_fabricated_numbers(candidates, picks, source_text, is_adversarial):
     directly. Any digit run (not just claim-shaped ones) must appear in the
     source: a "6 HOURS" against a "5 hours" source is fabrication at any size.
     On adversarial seeds the material carries no numbers at all, so any digit
-    in a candidate or pick fails with an explicit message.
+    in a shown or saved test fails with an explicit message.
     """
     failures = []
     source_norm = _normalize_numbers(source_text)
-    for kind, texts in (("candidate", [c["text"] for c in candidates]),
-                        ("pick", picks)):
+    for kind, texts in (("shown test", [c["text"] for c in candidates]),
+                        ("saved test", saved_tests)):
         for text in texts:
             if "[[" in text:
                 failures.append(f"{kind} carries a wikilink: \"{text}\"")
@@ -313,10 +281,9 @@ def check_no_fabricated_numbers(candidates, picks, source_text, is_adversarial):
 
 def check_thumbnail_locked(piece_text):
     """
-    Error gate: piece.md frontmatter carries thumbnail_text (1-2 non-empty
-    picks) and thumbnail_shape (same count, same order, non-empty pattern
-    names). This pair is the skill's only vault write and the pipeline's
-    signal that the step is done.
+    Error gate: piece.md carries exactly three approved thumbnail_text values
+    and exactly three non-empty, aligned thumbnail_shape measurement labels.
+    This pair is the skill's only vault write and the pipeline's done signal.
     """
     fm, _ = split_frontmatter(piece_text)
     texts = _fm_list(fm.get("thumbnail_text"))
@@ -324,14 +291,14 @@ def check_thumbnail_locked(piece_text):
     problems = []
     if "thumbnail_text" not in fm:
         problems.append("thumbnail_text field missing")
-    elif not 1 <= len(texts) <= 2:
-        problems.append(f"thumbnail_text must hold 1-2 picks, found {len(texts)}")
+    elif len(texts) != 3:
+        problems.append(f"thumbnail_text must hold exactly 3 tests, found {len(texts)}")
     if "thumbnail_shape" not in fm:
         problems.append("thumbnail_shape field missing")
+    elif len(shapes) != 3:
+        problems.append(f"thumbnail_shape must hold exactly 3 labels, found {len(shapes)}")
     elif len(shapes) != len(texts):
-        problems.append(
-            f"thumbnail_shape count {len(shapes)} != thumbnail_text count {len(texts)}"
-        )
+        problems.append(f"thumbnail_shape count {len(shapes)} != thumbnail_text count {len(texts)}")
     if any(not s for s in shapes):
         problems.append("empty thumbnail_shape entry")
     return t.CheckResult(
@@ -340,29 +307,27 @@ def check_thumbnail_locked(piece_text):
     )
 
 
-def check_candidate_count(candidates):
+def check_option_count(candidates):
     """
-    Error gate: the transcript shows 3-5 numbered candidates before locking.
-    SKILL.md Step 3: only the strongest 3-5 survive and get shown. The parse
-    failing (0 found) means the package was never shown in the contracted
-    shape, which is itself the failure.
+    Error gate: the final shown package contains exactly ten numbered options.
+    A parse failure means the package was not shown in the contracted shape.
     """
     n = len(candidates)
-    ok = 3 <= n <= 5
-    detail = {} if ok else {"count": n, "expected": "3-5"}
-    return t.CheckResult("candidate_count", ok, "error", detail)
+    ok = n == 10
+    detail = {} if ok else {"count": n, "expected": 10}
+    return t.CheckResult("option_count", ok, "error", detail)
 
 
-def check_word_count_cap(candidates, picks):
+def check_word_count_cap(candidates, saved_tests):
     """
-    Error gate: every candidate and locked pick is at most 5 words.
-    Patterns file hard rule 1: 2-4 preferred, 5 is the absolute ceiling,
+    Error gate: every shown and saved test is at most 5 words.
+    V2 contract: 1-4 words are usual and 5 is the absolute ceiling.
     6+ auto-rejects. A pure number or arc counts as one unit; whitespace
     tokens are the count.
     """
     failures = []
-    for kind, texts in (("candidate", [c["text"] for c in candidates]),
-                        ("pick", picks)):
+    for kind, texts in (("shown test", [c["text"] for c in candidates]),
+                        ("saved test", saved_tests)):
         for text in texts:
             words = len(text.split())
             if words > WORDS_ERROR:
@@ -370,45 +335,37 @@ def check_word_count_cap(candidates, picks):
     return t.CheckResult("word_count_cap", not failures, "error", failures)
 
 
-def check_word_count_ideal(candidates, picks):
-    """Warning: flag texts at exactly 5 words (over the 2-4 preferred band)."""
+def check_word_count_ideal(candidates, saved_tests):
+    """Warning: flag texts at exactly 5 words (over the 1-4 usual band)."""
     flags = []
-    for kind, texts in (("candidate", [c["text"] for c in candidates]),
-                        ("pick", picks)):
+    for kind, texts in (("shown test", [c["text"] for c in candidates]),
+                        ("saved test", saved_tests)):
         for text in texts:
             words = len(text.split())
             if WORDS_WARN < words <= WORDS_ERROR:
-                flags.append(f"{kind} at {words} words (2-4 preferred): \"{text}\"")
+                flags.append(f"{kind} at {words} words (1-4 usual): \"{text}\"")
     return t.CheckResult("word_count_ideal", not flags, "warning", flags)
 
 
-def check_pairing_no_overlap(candidates, picks, title):
+def check_package_not_duplicate(candidates, saved_tests, title):
     """
-    Error gate: no candidate or locked pick repeats a title content word.
-
-    Patterns file rule 6 and reject rule 3: the thumbnail adds a second,
-    different hook; repeating the title's key words is a package break that
-    gets cut before the creator ever sees it. Content words are lowercased,
-    stopword-free, plural-stemmed; numbers always count as content. Judged
-    against the locked title from the after-title fixture (the title the skill
-    was handed).
+    Error gate: no shown or saved test is merely the locked title repeated.
+    Shared words are allowed. Semantic package strength is judged in Tier B;
+    Tier A rejects only normalized full-title duplication.
     """
-    title_tokens = _content_tokens(title)
+    normalized_title = _normalized_text(title)
     failures = []
-    for kind, texts in (("candidate", [c["text"] for c in candidates]),
-                        ("pick", picks)):
+    for kind, texts in (("shown test", [c["text"] for c in candidates]),
+                        ("saved test", saved_tests)):
         for text in texts:
-            shared = sorted(_content_tokens(text) & title_tokens)
-            if shared:
-                failures.append(
-                    f"{kind} repeats title word(s) {shared}: \"{text}\""
-                )
-    return t.CheckResult("pairing_no_overlap", not failures, "error", failures)
+            if normalized_title and _normalized_text(text) == normalized_title:
+                failures.append(f"{kind} duplicates the locked title: \"{text}\"")
+    return t.CheckResult("package_not_duplicate", not failures, "error", failures)
 
 
-def check_no_anti_pattern(candidates, picks):
+def check_no_anti_pattern(candidates, saved_tests):
     """
-    Error gate: no candidate or locked pick hits the anti-pattern list from
+    Error gate: no shown or saved test hits the anti-pattern list from
     knowledge/thumbnail-text-patterns.md: visual-metaphor words (ROADMAP,
     BLUEPRINT, JOURNEY, FRAMEWORK, TOOLKIT), hedge words (MAYBE, PROBABLY,
     MIGHT, COULD), stock phrases (INSANE, REVOLUTIONARY, LIFE-CHANGING),
@@ -416,8 +373,8 @@ def check_no_anti_pattern(candidates, picks):
     phrases (THE TRUTH ABOUT, GET RESULTS, ...).
     """
     hits = []
-    for kind, texts in (("candidate", [c["text"] for c in candidates]),
-                        ("pick", picks)):
+    for kind, texts in (("shown test", [c["text"] for c in candidates]),
+                        ("saved test", saved_tests)):
         for text in texts:
             low = text.lower()
             for word in _ANTI_PATTERN_WORDS:
@@ -429,50 +386,20 @@ def check_no_anti_pattern(candidates, picks):
     return t.CheckResult("no_anti_pattern", not hits, "error", hits)
 
 
-def check_picks_from_candidates(candidates, picks):
+def check_saved_tests_from_shown(candidates, saved_tests):
     """
-    Error gate: every locked pick appears verbatim in the shown candidate set.
-    SKILL.md Step 4: the creator picks 1-2 of the shown options by number, and
-    the pick saves verbatim. A pick that was never shown is a consistency
-    failure. Comparison is case-insensitive with whitespace collapsed, so only
-    real text drift fails.
+    Error gate: the three saved tests are distinct, verbatim options from the
+    ten shown. Saved order follows the creator's selection, not display order.
     """
-    shown = {re.sub(r"\s+", " ", c["text"].lower()) for c in candidates}
+    shown = [c["text"] for c in candidates]
+    saved = list(saved_tests)
     failures = []
-    for pick in picks:
-        if re.sub(r"\s+", " ", pick.lower()) not in shown:
-            failures.append(f"locked pick was never shown: \"{pick}\"")
-    return t.CheckResult("picks_from_candidates", not failures, "error", failures)
-
-
-def check_pattern_annotation(candidates):
-    """
-    Error gate: every shown candidate line carries a pattern label.
-    SKILL.md Step 3: each line is the text in quotes plus its pattern name,
-    nothing else. The label keeps the set honest about which pattern each
-    candidate runs.
-    """
-    failures = []
-    for c in candidates:
-        if not _PATTERN_LABEL_RE.search(c["annotation"]):
-            failures.append(f"no pattern label: \"{c['text']}\"")
-    return t.CheckResult("pattern_annotation_present", not failures, "error", failures)
-
-
-def check_casing_default(candidates, picks):
-    """
-    Warning: flag texts that are not ALL CAPS. The default casing is ALL CAPS
-    (patterns file rule 9) unless the creator's packaging guardrails say
-    otherwise, and these fixtures ship no packaging-system.md override.
-    """
-    flags = []
-    for kind, texts in (("candidate", [c["text"] for c in candidates]),
-                        ("pick", picks)):
-        for text in texts:
-            letters = [ch for ch in text if ch.isalpha()]
-            if letters and any(ch.islower() for ch in letters):
-                flags.append(f"{kind} not ALL CAPS: \"{text}\"")
-    return t.CheckResult("casing_default", not flags, "warning", flags)
+    missing = [text for text in saved if text not in shown]
+    if missing:
+        failures.append({"saved_tests_not_shown": missing})
+    if len(set(saved)) != len(saved):
+        failures.append({"duplicate_saved_tests": saved})
+    return t.CheckResult("saved_tests_from_shown", not failures, "error", failures)
 
 
 def check_handoff_thumbnail_to_structure(piece_text, fixture_title):
@@ -482,7 +409,7 @@ def check_handoff_thumbnail_to_structure(piece_text, fixture_title):
 
     vid-structure reads frame, core_payoff, format, goal, and the
     title it must pay off late; the pipeline routes on thumbnail_text. The
-    skill appends thumbnail_text + thumbnail_shape and never overwrites
+    skill writes thumbnail_text + thumbnail_shape and never overwrites
     another skill's fields, so the framing fields and the exact title string
     must be present and unchanged from the after-title fixture.
     """
@@ -511,12 +438,12 @@ def evaluate_case(seed, files, fixtures_root, stage_root):
     is_adversarial = bool(seed.get("is_adversarial"))
 
     candidates = _parse_candidates(transcript)
-    picks, _shapes = _locked_picks(piece)
+    saved_tests, _shapes = _locked_tests(piece)
     fixture_title = _fixture_title(stage_root, slug)
 
-    # piece.md is the only vault file vid-thumbnail writes. transcript.md is
+    # piece.md is the only vault file vid-thumbnail-v2 writes. transcript.md is
     # excluded from lib checks: it legitimately echoes the creator's words.
-    # Candidate and pick texts are checked by the skill-specific assertions.
+    # Shown and saved tests are checked by the skill-specific assertions.
     vault_files = {"piece.md": piece}
     source_text = _source_text(seed, fixtures_root, stage_root, slug)
     bundle = {
@@ -525,27 +452,25 @@ def evaluate_case(seed, files, fixtures_root, stage_root):
         "fixtures_root": fixtures_root,
     }
 
-    scoped = _scoped_files(piece, candidates, picks)
+    scoped = _scoped_files(piece, candidates, saved_tests)
 
     results = []
     results.append(t.check_no_em_dash(scoped))
     results.append(t.check_no_banned_words(scoped))
     results.append(t.check_fabrication(bundle))
-    results.append(check_no_fabricated_numbers(candidates, picks, source_text, is_adversarial))
+    results.append(check_no_fabricated_numbers(candidates, saved_tests, source_text, is_adversarial))
     results.append(check_thumbnail_locked(piece))
-    results.append(check_candidate_count(candidates))
-    results.append(check_word_count_cap(candidates, picks))
-    results.append(check_pairing_no_overlap(candidates, picks, fixture_title))
-    results.append(check_no_anti_pattern(candidates, picks))
-    results.append(check_picks_from_candidates(candidates, picks))
-    results.append(check_pattern_annotation(candidates))
+    results.append(check_option_count(candidates))
+    results.append(check_word_count_cap(candidates, saved_tests))
+    results.append(check_package_not_duplicate(candidates, saved_tests, fixture_title))
+    results.append(check_no_anti_pattern(candidates, saved_tests))
+    results.append(check_saved_tests_from_shown(candidates, saved_tests))
     results.append(check_handoff_thumbnail_to_structure(piece, fixture_title))
 
     # warnings (reported, never gate)
     results.append(t.check_no_aiisms(scoped))
     results.append(t.check_no_hedge_words(scoped))
-    results.append(check_word_count_ideal(candidates, picks))
-    results.append(check_casing_default(candidates, picks))
+    results.append(check_word_count_ideal(candidates, saved_tests))
     return results
 
 
@@ -562,19 +487,17 @@ def main():
         "no_fabrication",
         "no_fabricated_numbers",
         "thumbnail_locked",
-        "candidate_count",
+        "option_count",
         "word_count_cap",
-        "pairing_no_overlap",
+        "package_not_duplicate",
         "no_anti_pattern",
-        "picks_from_candidates",
-        "pattern_annotation_present",
+        "saved_tests_from_shown",
         "handoff_thumbnail_to_structure",
     ]
     warn_assertions = [
         "no_aiisms",
         "no_hedge_words",
         "word_count_ideal",
-        "casing_default",
     ]
 
     total = 0
@@ -582,7 +505,7 @@ def main():
     assertion_pass = {a: 0 for a in error_assertions}
     warn_hits = {a: 0 for a in warn_assertions}
 
-    print(f"--- vid-thumbnail Tier A ({len(corpus)} seeds) ---")
+    print(f"--- vid-thumbnail-v2 Tier A ({len(corpus)} seeds) ---")
     for i, seed in enumerate(corpus):
         files = _read_case_files(outputs_dir, i)
         if files is None:
