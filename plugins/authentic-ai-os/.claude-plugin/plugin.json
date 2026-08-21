@@ -10,6 +10,14 @@
   "homepage": "https://github.com/BillyRybka/authentic-ai-os",
   "repository": "https://github.com/BillyRybka/authentic-ai-os",
   "license": "LicenseRef-Proprietary",
-  "keywords": ["youtube", "content", "creator-tools", "voice", "thumbnails", "obsidian", "scriptwriting"],
+  "keywords": [
+    "youtube",
+    "content",
+    "creator-tools",
+    "voice",
+    "thumbnails",
+    "obsidian",
+    "scriptwriting"
+  ],
   "category": "content-creation"
 }

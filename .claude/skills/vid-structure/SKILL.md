@@ -1,111 +1,129 @@
 ---
 name: vid-structure
-description: Build the outline for one video. Mine the brain-dump against the locked frame into the main points, shape them to the format, order so the title pays off late, and lock each point's parable, material, principle, and proof. Writes script.md, updates piece.md; vid-intro runs next. Triggers on "structure this video", "build the outline", "plan the body", "what points should this hit", "outline the script", "build the skeleton", "re-structure this piece".
+description: Co-plan the writer-ready body of one video from a completed brain dump and locked frame, payoff, format, goal, title, and thumbnail package. Use to structure or safely re-structure a selected piece without writing its intro, body prose, or ending. Adapts the plan to the material and format, resolves critical gaps, writes a sourced script skeleton, and updates structure-owned piece state after creator approval.
 ---
 
-# Video Structure
+# Video Structure V2
 
-Turn the brain-dump plus the locked frame into a complete plan: the main points shaped to the format, ordered so the title's promise pays off late, every point locked to its parable, its material, its principle, and its proof. `vid-intro` runs next. It hard-stops without this outline, and the transition it writes is the one segment 1 inherits.
+Build the body plan with the creator. Finish when the section order, jobs, source material, takeaways, and any useful supporting devices are approved and a writer can draft without needing to choose the structure, interview/mine stories, metaphors, examples again.
 
-**Scope: the plan, never the prose.** No intro, no segment prose, no ending, no title, no thumbnail. It does not re-pick the frame or the format; framing locked those.
+Scope is the plan, not the prose. Do not write the intro, body prose, ending, title, thumbnail, or a new frame.
 
-## Core principles
+## Operating rules
 
-- **Plan so completely the writers never re-plan.** Four locks per point: the parable type, the specific material, the principle, the proof. A writer that has to re-pick a block, re-derive a lesson, or hunt for proof is a boundary bug, and the fix is always here, never in the writer.
-- **Payoff late is judgment, not a rule.** The viewer clicked holding one question, and once the full answer lands, their reason to stay is gone. So the title's answer lands past the midpoint by default, and the locked format outranks the default.
-- **Never fabricate.** No invented stories, numbers, results, or bank entries. Where the banks and the dump have nothing, the plan names the hole and it lands in `## To build`. Flagging the gap is the job.
-- **Cuts are logged, never dropped silent.** In the spine, and in script.md's CUTS comment so re-structure runs do not re-propose them. The creator may know a cut is the real gold, which means the frame is wrong.
-- **Never pad to a count.** Mining yields what it yields. A gap between the points and the format's shape gets surfaced, thin dump back to `vid-braindump` or wrong format back to `vid-framing`, never filled with tangents.
-- **Machinery stays invisible.** No step numbers, no "mining complete." The creator sees the spine, then the built plan, then the confirm.
+- Preserve the locked package and the creator's stated boundaries. A format planner is a strong starting shape, not a cage.
+- Require only three things for every body section: its job, exact source material or provenance, and intended viewer takeaway.
+- Add a story, example, demonstration, metaphor, framework, evidence item, setup or payoff responsibility, or cross-section thread only when it helps that section do its job.
+- Keep a meaningful unresolved reason to continue through the body. Do not delay an answer by rule. Let the package, material, format, and next useful question determine where each payoff belongs.
+- Never fabricate a story, fact, result, quotation, source, bank entry, or link. Never pad a count.
+- Recommend one supporting device when the fit is clear. Surface alternatives only when the creative decision is genuinely close.
+- Log cuts with a reason. A cut the creator restores may expose a frame or format problem.
+- Keep private analysis private. The creator sees a concise map when it needs a decision, then one complete plan for approval.
 
-## What loads, and when
+## 1. Validate the selected piece
 
-Load each file at the step that needs it. Never bulk-load the banks; query one only when a point calls for a specific block.
+If no piece or slug was selected, ask which video. Do not scan for a likely one.
 
-| File | Step | For |
-|---|---|---|
-| `knowledge/prose-craft.md` | session start | the seven moves. Point titles and segment purposes are written lines, not labels, and the spine gets shown to the creator |
-| `content/pieces/{slug}/brain-dump.md` | 1 | the raw material to mine |
-| `content/pieces/{slug}/piece.md` | 1 | the locked frame, core payoff, format, goal, title, plus `## The Read` (the Transformation is what the outline has to deliver; absent on older pieces, work from the frame and payoff) |
-| `knowledge/format-planners/{format}.md` | 1 | the body shape this format runs |
-| `references/brain-dump-mining.md` | 1 | the four tags and the mining sequence |
-| `references/point-planning.md` | 2 | the ordering judgment and the four locks |
-| `knowledge/parable-decision-matrix.md` | 2 | picking the parable type per point |
-| one bank, on demand | 2 | the exact block a point calls for |
-| `knowledge/script-tension-architecture.md` | 2 | optional depth when a piece has an unusual arc |
-| `assets/script-skeleton-template.md` | 3 | the exact shape of script.md |
-| `assets/piece-structure-additions.md` | 3 | the fields to append to piece.md |
+Read the selected `piece.md` and `brain-dump.md`. Confirm:
 
-Stops: no `brain-dump.md`, point to `vid-braindump`. No `frame`, `core_payoff`, `format`, or `goal` in piece.md, point to `vid-framing`. No planner on disk for the locked format, show the seven and let the creator lock a real one.
+- `piece.md` has `type: content-piece` and its `slug` matches the folder.
+- `brain-dump.md` exists and has no `## Still capturing` marker.
+- `frame`, `core_payoff`, `format`, `goal`, `title`, and nonempty `thumbnail_text` exist.
+- The locked format is one of: `short-process`, `case-study`, `roast`, `deep-dive`, `interview`, `news`, `listicle`.
+- `knowledge/format-planners/{format}.md` exists.
 
-Re-structure: if piece.md already carries `segment_purposes`, the piece is outlined. Show the existing spine and ask whether to refine or rebuild. Never discard prior points unless the creator says so.
+Also read `must_not_become` and `## The Read` when present. Read only source files directly supplied or linked for this piece. Do not scan unrelated content or banks.
 
-If the pipeline invokes with a slug, skip the "which piece?" question.
+Route a missing or unfinished prerequisite to its owner. Do not fill another skill's field. If the pipeline already verified a prerequisite, do not narrate or repeat the check.
 
-## Format spines at a glance
+If `segment_purposes` or a planned `script.md` already exists, this is re-structure mode. Read [references/restructure-safety.md](references/restructure-safety.md) before proposing a change.
 
-Framing locked the format and this is only the silhouette. Read that one planner for the real shape.
+## 2. Map the body privately
 
-| Format | Spine shape |
-|---|---|
-| Listicle | N items, each its own point |
-| Deep Dive | 3-5 major lessons, each its own point |
-| Roast | per-subject reviews, same shape each |
-| Interview | per-question, a through-line the host pulls |
-| Short Process | one parable up front, then lean steps |
-| Case Study | one story arc: Setup, Problem, Action, Outcome, Lesson + Steps |
-| News | three tight parts: What Happened, Why It Matters, What To Do |
+Read the selected format planner's body structure and the matching section in [references/format-plans.md](references/format-plans.md). Ignore its packaging, upload, and promotion guidance.
 
-When the mined material clearly does not fit the locked format (eleven separate lessons, but the format is case study, which is one story), surface it before proposing a spine and give the creator two routes: re-frame to a format that fits, or pick the one thing this format can carry and demote the rest. They decide. Never force-fit, and never re-ask the format from scratch.
+Map the material against the locked package:
 
-## The workflow
+- must include: required to fulfill the frame, payoff, title, thumbnail promise, or approved transformation
+- support: strengthens another section but does not need its own section
+- combine: overlaps material that becomes stronger together
+- cut: off-angle, repeated, unsupported, or wrong for this video
+- missing: a fact, story beat, demonstration, answer, or evidence item needed to write honestly
 
-Three steps. The creator sees two proposals (the spine, then the built plan) and one confirmation.
+Check whether the locked format still fits. When it does not, show the conflict before building a plan. Offer the smallest real choices: customize the format, narrow the material to fit, or return to framing. The creator decides.
 
-### 1. Rough the spine
+Choose the lightest creator gate that protects a real decision:
 
-1. **Mine the dump against the frame.** Every block gets one tag: main point, subpoint, combine, or tangent. Silent work; the method and a worked tagging pass are in `references/brain-dump-mining.md`.
-2. **Check the fit.** If the surviving material does not fit the locked format, surface it now rather than shaping a spine around a mismatch.
-3. **Shape the survivors to the format.** Lay the main points into the planner's body shape. Each main point gets a couple of subpoints that state, in a line, what it actually says.
-4. **Show the spine.** Points, subpoints, and the cuts. The creator adds, cuts, merges, reorders. Lock the spine before anything gets built out.
+- Show a separate section map when membership, grouping, order, cuts, or format fit is meaningfully contestable.
+- For a simple piece with an obvious shape, combine the section map and complete plan into one proposal.
 
-### 2. Build out the plan
+Never call either proposal a step, pass, mining result, or workflow stage.
 
-1. **Order the locked spine.** Withhold what the avatar does not already believe, front-load what they already know, and let the format set how late "late" is. The judgment and a worked reorder are in `references/point-planning.md`.
-2. **Lock all four per point.** This is the step the writers count on; a half-built plan here becomes a re-interview there, one segment at a time.
-3. **Mark the arc.** The central question, which point pays off the title, and 1 or 2 threads. That becomes `tension_plan`.
-4. **Show the built plan.** Point by point, with one line on why the order changed. The creator locks or adjusts a point. No prose.
+## 3. Build the writer-ready plan
 
-### 3. Write it down
+For every body section, decide:
 
-1. **Write script.md** per `assets/script-skeleton-template.md`.
-2. **Append to piece.md** per `assets/piece-structure-additions.md`.
-3. **Confirm in one line:** format, point count, which point pays off the title, what still needs building, handed to `vid-intro`.
+1. **Job:** what this section must accomplish in the body.
+2. **Sources:** the exact dump moment, supplied source, creator-approved session material, or validated bank entry it may use.
+3. **Takeaway:** what the viewer should understand, feel, decide, or do when the section lands.
 
-Worked sessions (a clean run, a re-structure, a format mismatch) are in `references/structure-conversation-examples.md`.
+Then add only the useful optional decisions described by the matching format plan. Read [references/source-and-gap-policy.md](references/source-and-gap-policy.md) before selecting a bank entry, external source, or evidence item.
 
-## Output and handoff
+Plan the package arc once for the whole body:
 
-`content/pieces/{slug}/script.md`, the skeleton: an empty `## Intro` stub for `vid-intro`, one body section per point carrying only its **Parable:** and **Principle:** plan lines, an empty `## Ending` stub for `vid-ending`, a `## To build` list of the blocks the banks did not have, and the CUTS comment.
+- `central_question`: the main question raised by the approved title and thumbnail package
+- `reason_to_continue`: what remains meaningfully unresolved as the body advances
+- `payoff_section`: the exact section that fulfills the package's central promise; it may be early, middle, or late
+- `threads`: zero or more cross-section dependencies, each with an exact open section and close section
 
-`content/pieces/{slug}/piece.md`, appended: `status: drafting`, `segment_purposes`, `segments_completed: []`, `tension_plan`, `last_updated`. Append only, never overwriting another skill's fields; the ownership map is in `knowledge/piece-contract.md`.
+Do not invent a thread for disconnected items. Do not preserve curiosity by withholding information the viewer needs now. A payoff may land early when the next section opens a real new question.
 
-Then `vid-intro`, which reads the outline and writes the opening the first segment inherits.
+## 4. Resolve gaps before handoff
 
-## Before you save
+Classify every missing item:
 
-- Every point carries all four locks, or a named `to build` where the material genuinely does not exist yet.
-- Every `to build` flag has a matching row in `## To build`. An empty list means the script is fully sourced.
-- Headers are material-anchored. Never `## Point 3: {placeholder}`.
-- Cuts are logged, in the spine the creator saw and in the CUTS comment.
-- `tension_plan` names the central question, the point that pays off the title, and any threads.
-- After the payoff point, nothing is left running that the viewer already got. If a later point exists, it opens something new.
-- Parable and principle are one line each. No prose anywhere in the file.
-- No em-dashes, and the point headers read the way the creator talks.
+- **Critical:** the writer cannot make the section true, specific, or complete without it. Resolve it by capturing or sourcing the material, merging, cutting, changing the claim, or changing the plan. Do not save a writer-ready outline while one remains.
+- **Production follow-up:** the decision and factual content are complete, but a known asset still needs retrieval or capture, such as exporting an already verified screenshot. Record the exact follow-up without handing the writer a creative decision.
 
-## References for depth
+Ask one focused question at a time when creator knowledge is required. When a gap exposes a weak section, recommend the smallest sound repair rather than protecting the old outline.
 
-- `references/brain-dump-mining.md`: the four tags, the mining sequence, the tag-disagreement protocol.
-- `references/point-planning.md`: the ordering judgment and the four locks, with worked examples and how the locks flex by format.
-- `references/structure-conversation-examples.md`: full sessions, including a re-structure and a format mismatch.
-- `assets/script-skeleton-template.md` and `assets/piece-structure-additions.md`: the exact shape of both files this skill writes.
+## 5. Approve the complete plan
+
+Show one concise plan in final order. Include each section's job, sources, takeaway, and only the optional decisions that matter. Show cuts, the package payoff location, any operational threads, and production follow-ups.
+
+Ask for one approval or a concrete adjustment. The creator may override the proposed shape. Recheck truth, package fulfillment, source coverage, and format fit after an override.
+
+Do not save before explicit approval.
+
+## 6. Save and verify
+
+Read [assets/script-plan-template.md](assets/script-plan-template.md) and [assets/piece-state-template.md](assets/piece-state-template.md). On first write:
+
+1. Prepare both complete edits before changing either file.
+2. Write `script.md` first, then update only structure-owned state in `piece.md`.
+3. Re-read both files. Verify the Intro and Ending stubs exist, section order and count agree, all required sources resolve, `## To build` is empty, critical gaps are absent, and non-owned fields are unchanged.
+4. If either write or verification fails, restore only the files changed in this save attempt and report the failure.
+
+On re-structure, follow the separate safety reference. Never rebuild a partially written script from the first-write template.
+
+Set `status: drafting` only when advancing from `ideating`. Never regress a later lifecycle state. Initialize `segments_completed: []` only on the first outline when the field is absent.
+
+Planning a bank entry does not count as using it. Do not change `*_used`, `used_in`, or bank entry status.
+
+For a pre-recording Interview, writer-ready means the host's framing, questions, and follow-up prompts are fully planned. `vid-segment` writes those host-authored lines and never invents the guest's answer. Material marked `to elicit in recording` is an intentional production input for this format, not permission to script an answer.
+
+Confirm the saved format, section count, payoff section, production follow-ups, and handoff to `vid-intro` in one short message.
+
+## Before declaring writer-ready
+
+- The creator approved the section membership and final order.
+- Every section has a job, exact source provenance, and takeaway.
+- Optional devices and evidence appear only where useful.
+- Every bank wikilink points to a real, readable, matching entry.
+- No critical gap remains.
+- Cuts are preserved with reasons.
+- On a first write, `segment_purposes`, script headings, and `tension_plan` use the same exact section labels. A legacy re-structure follows the protected-label exception in the safety reference.
+- `script.md` contains planning lines, not body prose.
+- No downstream writer must choose the section structure or interview the creator for missing content.
+
+Promotion requires coordinated downstream contract updates. They are listed in [references/promotion-contract.md](references/promotion-contract.md). Do not promote or wire this candidate by itself.

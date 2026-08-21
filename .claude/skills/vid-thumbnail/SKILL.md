@@ -29,28 +29,34 @@ Identify the locked title's main hook, the question it plants, and its tone. The
 
 Every claim must trace to the selected video's material. Never invent, round, strengthen, merge, or borrow a fact from a bank or example. A script can demonstrate delivery; use the brain dump or source material when provenance is uncertain.
 
-## 3. Calibrate, then use packaging evidence selectively
+## 3. Calibrate before drafting
 
-Before generating any candidates, read `references/title-thumbnail-calibration.md` in full on every run. Treat it as read-only source material and never edit it during normal thumbnail work. Use the recorded pairs to calibrate how a title and thumbnail create a stronger package together, not to copy wording or force a formula. In addition, notice the length, and emotional response it would create together with the title. 
+Before generating any candidates, read `references/title-thumbnail-calibration.md` in full on every run. Treat it as read-only source material and never edit it during normal thumbnail work. Use it to calibrate the relationship, length, and viewer response. Do not copy wording, force a formula, or treat an example as evidence for this video.
 
 Treat every example as structural evidence only. It never supplies facts for this video. Do not reveal sources, receipts, pattern names, metrics, files read, or research notes.
 
 ## 4. Generate wide and filter hard
 
-Draft widely enough in private to find exactly ten meaningfully different options. Each option must add a useful second beat to the title, such as proof, consequence, contradiction, mechanism, specificity, or unresolved tension. The main goal is to create a mental itch that would make someone want to click. We need to create a curiousity gap.
+Draft a larger private pool before choosing the ten options. Build from the locked title, the video's evidence, and the calibration pairs. Push beyond obvious paraphrases and do not stop when the first ten viable phrases appear. Find strong phrases before naming their category.
+
+Before filtering, make one concrete-element pass through the evidence. Look for an exact command, artifact, interface, file, template, tool, receipt, or named thing that the viewer could recognize, use, or take away. When one exists and the title makes it meaningful, explore its exact natural form as well as written variations. This is a conditional opportunity, not a required thumbnail type. Never invent or force one.
+
+Each option must give the right viewer a stronger reason to click beside this exact title. It may add proof, consequence, contradiction, mechanism, specificity, or an unresolved expectation.
+
+After drafting, read `references/thumbnail-strategy-lens.md` in full. Use it only to classify and judge the directions already on the table. Never generate an option merely to cover one of its classifications.
 
 Keep every survivor:
 
 - truthful and deliverable by the video
 - specific to this video rather than generic to the niche
-- focused on one idea and readable at a glance, usually one to four words and never more than five
+- focused on one idea and readable at a glance, usually one to three words and never more than four
 - compatible with the title's hook and tone, whether matching or productively contrasting
 - curious or provocative without pre-delivering the full payoff
 - free of vague hype, stacked claims, filler, and language that needs visual direction to make sense
 
-Read the title and each candidate as one package. Cut a candidate when the pair merely repeats itself, fights the locked promise, feels generic enough for many unrelated videos, or removes the reason to watch.
+Read the title and each candidate as one package. Cut a candidate when the pair merely repeats itself, fights the locked promise, feels generic enough for many unrelated videos, or removes the reason to watch. Productive contradiction may challenge an audience belief inside the promise. It must never tell the viewer to reject the title's solution, take the opposite action, or expect a different video.
 
-Apply a private package-reaction gate to every survivor. Read the locked title and thumbnail text as one semantic unit. Keep the option only when that pair creates a distinct, compelling reaction, question, tension, or expectation. A true detail is not enough by itself. Reject options that merely name a fact, tool, setup detail, warning, exception, generic problem, implementation caveat, or standalone label. Also reject unsupported scarcity and unexplained tool names. A detail from any of those categories may survive only when the complete title-plus-thumbnail pair creates a clear hook the video can deliver.
+Apply the context, curiosity, and clarity test from the strategy lens to every survivor. Judge the locked title and thumbnail text as one package, so the title may supply context the thumbnail does not repeat. Keep the option only when the package is instantly legible and creates a distinct, compelling reaction, question, tension, or expectation. A true detail is not enough by itself. Reject options that merely name a fact, tool, setup detail, warning, exception, generic problem, implementation caveat, or standalone label. Also reject unsupported scarcity and unexplained tool names. A detail from any of those categories may survive only when the complete package creates a clear hook the video can deliver.
 
 Judge the package by meaning, not literal word overlap. Shared words remain allowed when they strengthen clarity, curiosity, or force.
 
@@ -60,7 +66,7 @@ Before presenting, verify each option one last time against the script when comp
 
 ## 5. Present exactly ten options
 
-Show the locked title once, followed by exactly ten numbered options. Give each one short, practical description of the viewer response or package hypothesis it tests.
+Show the locked title once, followed by exactly ten numbered options. Give each one a single concise clause describing the viewer response or package hypothesis it tests. Do not defend or over-explain an option.
 
 > **Title:** "{locked title}"
 >
@@ -92,7 +98,7 @@ After three options are approved:
 5. Preserve every other frontmatter field and every body line unchanged.
 6. Re-read the saved file and verify that only `thumbnail_text`, `thumbnail_shape`, and `last_updated` changed.
 
-Choose each `thumbnail_shape` label privately to describe what the selected test is measuring. Use a simple accurate category such as `belief-clash`, `proof`, `consequence`, `mechanism`, `number`, `command`, `curiosity`, `named-method`, or `other`. These labels are measurement metadata, not creator-facing patterns, and they do not need to cover different categories when the actual hypotheses differ.
+Choose each `thumbnail_shape` label privately to describe what the selected test is measuring. Use a simple accurate category such as `belief-clash`, `comparison`, `result`, `proof`, `borrowed-recognition`, `consequence`, `mechanism`, `number`, `command`, `curiosity`, `named-method`, or `other`. These labels are measurement metadata, not creator-facing patterns, and they do not need to cover different categories when the actual hypotheses differ.
 
 Use aligned YAML arrays:
 

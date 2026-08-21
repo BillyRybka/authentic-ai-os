@@ -1,0 +1,43 @@
+{
+  "_comment": [
+    "What goes IN each plugin. marketplace.json holds the metadata and version;",
+    "this file holds the composition. plugins/ is generated from the two of them by",
+    "scripts/generate-plugins.mjs and is disposable: never hand-edit anything under it.",
+    "",
+    "A skill listed under two plugins is stored once in shared-skills/ and copied into",
+    "both at build time. That is the point of the split.",
+    "",
+    "knowledge/ files are detected automatically from `knowledge/<file>.md` references",
+    "inside each skill, so you only list one here to force-include a file no skill names.",
+    "",
+    "Adding a plugin: add a block here AND an entry in marketplace.json. The generator",
+    "fails loudly if one exists without the other, so a half-added plugin can never ship."
+  ],
+  "plugins": {
+    "authentic-ai-os": {
+      "release": {
+        "mirror": "BillyRybka/aaios-releases",
+        "_why": "Each plugin needs its OWN public mirror. The client update check reads releases/latest from this repo and takes whatever .plugin asset is attached, so a shared mirror would serve the wrong plugin's file to the wrong clients."
+      },
+      "skills": [
+        "aaios-feedback",
+        "creator-setup",
+        "foundation",
+        "vid-avatar",
+        "vid-backstory",
+        "vid-credibility",
+        "vid-pillars",
+        "vid-positioning",
+        "vid-research"
+      ],
+      "connectors": [],
+      "agents": [],
+      "commands": [],
+      "files": [
+        "plugin-files/authentic-ai-os/LICENSE",
+        "plugin-files/authentic-ai-os/README.md",
+        "plugin-files/authentic-ai-os/.gitattributes"
+      ]
+    }
+  }
+}
