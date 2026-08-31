@@ -47,7 +47,7 @@ if ($branch -ne 'dev') { throw "Run this from 'dev' (currently on '$branch')." }
 if ((git status --porcelain | Out-String).Trim()) {
     throw "Working tree is dirty. Commit or stash on 'dev' first."
 }
-if (-not ((git remote | Out-String) -match '(?m)^public$')) {
+if (-not (@(git remote) -contains 'public')) {
     throw "No 'public' remote. Add it: git remote add public https://github.com/BillyRybka/authentic-ai.git"
 }
 
