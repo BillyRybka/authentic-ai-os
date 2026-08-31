@@ -38,7 +38,7 @@ A context with too little material gets no folder (no stub) and is noted in `con
 ## Prerequisites
 
 - `foundation/iceberg.md` and `foundation/avatar.md` exist (positioning and avatar shape how voice reads in context).
-- Source material. Minimum viable depends on format-length: 3 to 5 pieces for short-form contexts (`shorts`, `linkedin`, `twitter`); 3 to 5 transcripts or ~5,000 words for long-form contexts (`youtube-script`, `tutorial`, `newsletter`, `podcast`, `talk`). Thinner runs still work but flag low confidence and defer contexts. Full floor in `knowledge/voice-extraction-methods.md`.
+- Source material. Minimum viable depends on format-length: 3 to 5 pieces for short-form contexts (`shorts`, `linkedin`, `twitter`); 3 to 5 transcripts or ~5,000 words for long-form contexts (`youtube-script`, `tutorial`, `newsletter`, `podcast`, `talk`). Thinner runs still work but flag low confidence and defer contexts. Full floor in `references/voice-extraction-methods.md`.
 
 ## Load at session start
 
@@ -46,7 +46,7 @@ A context with too little material gets no folder (no stub) and is noted in `con
 2. `knowledge/voice-profile-schema.md`. The two-artifact contract and load contract, including both artifacts' frontmatter.
 3. `knowledge/vault-integration.md`. The foundation-doc schema `voice-profile.md` is written against, plus tag and naming conventions.
 4. `foundation/iceberg.md` and `foundation/avatar.md`. Positioning and avatar.
-5. `knowledge/voice-extraction-methods.md` when curation starts. Source grouping, passage selection, guardrail build.
+5. `references/voice-extraction-methods.md` when curation starts. Source grouping, passage selection, guardrail build.
 6. `knowledge/voice-pressure-test.md` at the read-aloud stage.
 
 ## Pre-check (silent)
@@ -77,11 +77,11 @@ Ask what content is available. Every source ends up as a file on disk in `raw/vo
 - **They point you at a folder or files.** Read them in place if already under `raw/voice-sources/`, otherwise copy them there.
 - **They paste a transcript into chat.** Expected and fine. Do not refuse it. Write each pasted transcript to `raw/voice-sources/{slug}.txt` yourself (slug from what it is, e.g. `yt-4-blind-spots-ai.txt`), confirm the save, then work from the file. Never analyze a long paste inline.
 
-As sources land, group each by `voice_context` (the medium/mode it was produced in): `youtube-script`, `tutorial`, `shorts`, `newsletter`, `linkedin`, `twitter`, `podcast`, `casual`, `talk`. Confirm which contexts clear the source floor (3 to 5 pieces for short-form; ~5,000 words or 3 to 5 transcripts for long-form, per `knowledge/voice-extraction-methods.md`). Those earn a reference set. Thin contexts feed the guardrail only and are flagged. Record the source list and grouping in the worksheet (`assets/extraction-worksheet-template.md`).
+As sources land, group each by `voice_context` (the medium/mode it was produced in): `youtube-script`, `tutorial`, `shorts`, `newsletter`, `linkedin`, `twitter`, `podcast`, `casual`, `talk`. Confirm which contexts clear the source floor (3 to 5 pieces for short-form; ~5,000 words or 3 to 5 transcripts for long-form, per `references/voice-extraction-methods.md`). Those earn a reference set. Thin contexts feed the guardrail only and are flagged. Record the source list and grouping in the worksheet (`assets/extraction-worksheet-template.md`).
 
 ## Stage 2: Diagnose the range, then select passages
 
-Run `knowledge/voice-extraction-methods.md` Step 2. It is the method; this Stage is the operational beats:
+Run `references/voice-extraction-methods.md` Step 2. It is the method; this Stage is the operational beats:
 
 1. Read the context's sources and form the rough range picture Step 2 describes (a coverage lens, not a sorting job).
 2. State that picture back to the creator in plain language and get it confirmed before selecting anything. Confirm-then-fill, not guess-pick-correct.
@@ -150,7 +150,7 @@ If the creator wants to keep moving, they invoke `vid-research`.
 ## References
 
 - `knowledge/voice-profile-schema.md`: the two-artifact contract and the unified load contract.
-- `knowledge/voice-extraction-methods.md`: source grouping, passage selection, guardrail build.
+- `references/voice-extraction-methods.md`: source grouping, passage selection, guardrail build.
 - `knowledge/voice-pressure-test.md`: how writing skills validate against the reference pieces.
 - `knowledge/voice-rhythm.md`: the lens for hearing rhythm (loaded by writing skills, not this one).
 

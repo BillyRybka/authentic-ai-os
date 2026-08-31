@@ -27,7 +27,7 @@ Verify every slot has real material behind it: entries readable and specific eno
 
 Usually skipped. Fires on exactly three triggers: a `## To build` row names something missing for this segment; a picked entry is absent or too thin to write from; or the creator wants to change the plan.
 
-Repairs, creator deciding: route to `vid-bank` mid-flow (it returns the new wikilink and this skill continues); build inline (the framework 5-step per `knowledge/framework-builder.md`, saved via vid-bank Stage F; a visual demo per `references/visual-demo-builder.md`); re-pick via `knowledge/parable-decision-matrix.md` plus ONE bank query, max 3 candidates surfaced with a one-line why each; or consciously cut the slot. Never invent material to fill a hole.
+Repairs, creator deciding: route to `vid-bank` mid-flow (it returns the new wikilink and this skill continues); build inline (the framework 5-step per `knowledge/framework-builder.md`, saved via vid-bank Stage F; a visual demo per `references/visual-demo-builder.md`); re-pick via `references/parable-decision-matrix.md` plus ONE bank query, max 3 candidates surfaced with a one-line why each; or consciously cut the slot. Never invent material to fill a hole.
 
 ## Step 3: Draft fast, for tension
 

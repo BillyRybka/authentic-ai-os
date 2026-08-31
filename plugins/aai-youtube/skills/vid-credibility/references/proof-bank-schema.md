@@ -8,7 +8,7 @@ tags: [reference, proof-bank, schema, contract]
 
 # Proof bank schema
 
-The contract for writing proof entries to `banks/proof-bank/`. `vid-credibility` loads this when it writes leftover wins that did not make the locked three. `vid-bank` follows the same schema at its Proof stage.
+The contract for writing proof entries to `banks/proof-bank/`. `vid-credibility` loads this when it writes leftover wins that did not make the locked three. `vid-bank` writes the same entry shape at its Proof stage, guided by its own proof-capture-guide.
 
 Proof is tangible evidence the creator can cite: numbers, stats, credentials, before/afters, screenshots, results. Anything that answers "why should I trust this person on this topic?"
 

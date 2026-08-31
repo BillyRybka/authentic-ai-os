@@ -7,7 +7,7 @@ description: Captures a creator's feedback on an Authentic AI OS skill that just
 
 Turn a creator's reaction into a structured report Billy can act on, and send it. The creator should feel like they said one or two sentences and were done. You do the assembly.
 
-> **Loads.** Read `${CLAUDE_PLUGIN_ROOT}/knowledge/feedback-submit.md` (the endpoint, payload, curl recipe, fallback), `${CLAUDE_PLUGIN_ROOT}/knowledge/feedback-capture-map.md` (what to capture per skill), and `${CLAUDE_PLUGIN_ROOT}/knowledge/vault-integration.md` (frontmatter discipline for the local copy). The offer protocol that may have sent you here lives in `knowledge/feedback-offer.md`. Resolve `knowledge/X.md` via `${CLAUDE_PLUGIN_ROOT}` at runtime, or repo-relative in dev.
+> **Loads.** Read `references/feedback-submit.md` (the endpoint, payload, curl recipe, fallback), `references/feedback-capture-map.md` (what to capture per skill), and `${CLAUDE_PLUGIN_ROOT}/knowledge/vault-integration.md` (frontmatter discipline for the local copy). The offer protocol that may have sent you here lives in `knowledge/feedback-offer.md`. Resolve `knowledge/X.md` via `${CLAUDE_PLUGIN_ROOT}` at runtime, or repo-relative in dev.
 
 ## What this produces
 
@@ -29,7 +29,7 @@ You have the session in context. Pull, without asking:
 
 - **Which skill(s) ran** and which one this feedback is about. If several ran, name the one that prompted the feedback plus the others as context.
 - **Where it went sideways.** The specific moment, message, or output that broke or disappointed. Hold the verbatim span around it for the excerpt.
-- **Look the skill up in the capture map and build the replay bundle.** Open `knowledge/feedback-capture-map.md` and find the entry for the skill that ran. Build three things from its lines: a `reproductionCase` (a seeds.json-shaped JSON reconstructed from this session, the raw input plus the persona reveals and withholds drawn from how the creator actually responded), a `fixturesSnapshot` (the full content of the determinative vault files the entry names, each under a `--- path ---` header), and the `badOutputVerbatim` (the produced artifact that was bad). Tag `failureMode` and `sessionMode`. Record the touched paths in `artifactsTouched`. If the skill has no entry (any WIP skill), use the file's default principle. Never snapshot held-out quote files (`audience/held-out/`).
+- **Look the skill up in the capture map and build the replay bundle.** Open `references/feedback-capture-map.md` and find the entry for the skill that ran. Build three things from its lines: a `reproductionCase` (a seeds.json-shaped JSON reconstructed from this session, the raw input plus the persona reveals and withholds drawn from how the creator actually responded), a `fixturesSnapshot` (the full content of the determinative vault files the entry names, each under a `--- path ---` header), and the `badOutputVerbatim` (the produced artifact that was bad). Tag `failureMode` and `sessionMode`. Record the touched paths in `artifactsTouched`. If the skill has no entry (any WIP skill), use the file's default principle. Never snapshot held-out quote files (`audience/held-out/`).
 - **Plugin version.** Read `${CLAUDE_PLUGIN_ROOT}/.claude-plugin/plugin.json`, take `version`. If it does not resolve, search the install dir for `.claude-plugin/plugin.json`. If you cannot find it, leave it out.
 - **Runtime.** Cowork, OS, anything useful. Optional.
 
