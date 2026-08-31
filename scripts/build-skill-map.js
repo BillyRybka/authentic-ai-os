@@ -534,7 +534,7 @@ const SETUP = [
     steps: [
       { title: '1. Three-Circle pull',
         reads: [['foundation/creator-foundation.md\npackaging-system.md', 'found'],
-                ['YouTube API key from .env\nNEVER hallucinated data', 'craft'],
+                ['Public YouTube channel pages\nNEVER hallucinated data', 'craft'],
                 ['knowledge/three-circle-research.md\noutlier-identification-rules.md', 'craft']],
         writes: [] },
       { title: '2. Synthesis + curation',

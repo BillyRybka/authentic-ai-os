@@ -45,10 +45,9 @@ The folders the released foundation skills need:
 - `banks/proof-bank/assets/` (where `vid-credibility` writes proof entries and their screenshots)
 - `people/` (where `vid-credibility` and `vid-backstory` write person stubs by default. Skipped if the creator chose a path override; see "Path overrides" below.)
 
-Plus two files at the workspace root:
+Plus one file at the workspace root:
 
 - `CLAUDE.md` (Claude's scoped rules for this workspace; written from `assets/CLAUDE.md`). **Mandatory. Always written. Never skipped.** See "Why CLAUDE.md is mandatory" below.
-- `.env.example` (placeholder for API keys future skills will need)
 
 No `_guide.md` (deprecated; CLAUDE.md serves both Claude and the creator). No `knowledge/` (it ships with the plugin and is referenced from there). No `title-bank.md`, no `story-bank/`, no `packaging-system.md`. Those arrive when their skills ship and get manifest rows.
 
@@ -90,15 +89,7 @@ Then route:
 
 Read `manifest.md`. For each row in the current-release table, act on its class: **structure** rows create the named folder at CWD; **seed** rows copy the named template from `${CLAUDE_PLUGIN_ROOT}/knowledge/` into the workspace at the row's path, but only if that file does not already exist. A seeded file lands as a creator-owned starter bank: the writing skills read it as a supplement to the plugin's pattern libraries (which stay the craft reference), and the creator grows it with their own proven winners.
 
-Then write:
-- `assets/CLAUDE.md` → `./CLAUDE.md`
-- `./.env.example` containing exactly:
-
-  ```
-  # Authentic AI OS environment.
-  # Copy this file to .env and paste your keys. .env is never committed.
-  # Future skills will document the keys they need.
-  ```
+Then write `assets/CLAUDE.md` → `./CLAUDE.md`.
 
 In Step 2A, the workspace CLAUDE.md ships with the default Path overrides section (none set, since there's no surrounding vault to integrate with).
 
@@ -192,8 +183,7 @@ Once `TARGET` and the people/ override (if any) are settled:
 
 1. Read `manifest.md`. Create the listed folders inside `TARGET`. If a people/ override is in effect, skip the `people/` row.
 2. Write `assets/CLAUDE.md` → `TARGET/CLAUDE.md`. **Always.** If a people/ override is in effect, fill in the "Path overrides" section in the written CLAUDE.md with the redirect. If no overrides, leave that section empty or note "no overrides."
-3. Write `TARGET/.env.example` (same content as Step 2A).
-4. **Root routing block.** Read the root `claude.md` or `CLAUDE.md`. Check whether it already contains a `## Content work` (or equivalent) section pointing at this workspace. If absent:
+3. **Root routing block.** Read the root `claude.md` or `CLAUDE.md`. Check whether it already contains a `## Content work` (or equivalent) section pointing at this workspace. If absent:
    - Read `assets/root-routing-block.md`.
    - Substitute `{TARGET_PATH}` with the relative path to `TARGET` from the vault root.
    - Show the creator the exact block to be appended and ask yes/no.
@@ -202,13 +192,13 @@ Once `TARGET` and the people/ override (if any) are settled:
 
    Always offer. Do not skip silently.
 
-5. **Do not create folder index files inside `TARGET`.** If the creator's vault uses a `content.md` or `README.md` index convention, that's theirs to maintain.
+4. **Do not create folder index files inside `TARGET`.** If the creator's vault uses a `content.md` or `README.md` index convention, that's theirs to maintain.
 
 Go to **Step 4**.
 
 ### Step 3: Additive update
 
-The workspace already exists. Read `manifest.md`. For every **structure** row the manifest now lists that does not yet exist in `TARGET`, create the folder. For every **seed** row, copy its template from `${CLAUDE_PLUGIN_ROOT}/knowledge/` into `TARGET` at the named path, but only if that file does not already exist (never overwrite an edited bank; seeded banks are creator-owned starter banks, per Step 2A). If `CLAUDE.md` or `.env.example` is missing at the workspace root, write it from `assets/`.
+The workspace already exists. Read `manifest.md`. For every **structure** row the manifest now lists that does not yet exist in `TARGET`, create the folder. For every **seed** row, copy its template from `${CLAUDE_PLUGIN_ROOT}/knowledge/` into `TARGET` at the named path, but only if that file does not already exist (never overwrite an edited bank; seeded banks are creator-owned starter banks, per Step 2A). If `CLAUDE.md` is missing at the workspace root, write it from `assets/`.
 
 Never modify, overwrite, or delete anything the creator authored (`foundation/*`, bank entries, `people/*`, their `.env`, their CLAUDE.md if they edited it). The one sanctioned read of creator content is Step 4's foundation state check; read nothing else of theirs.
 
@@ -240,7 +230,7 @@ Report plainly:
   If yes, invoke `/foundation` via the Skill tool.
 
 - **Foundation is complete in the split files:** do not suggest `/foundation`. Close with a status line:
-  > "Workspace is current. Your foundation is locked. The next step is vid-research, which builds your pattern banks from real YouTube data (it needs a free YouTube API key). Run it when you're ready. Voice capture and content production are still on the way."
+  > "Workspace is current. Your foundation is locked. The next step is vid-research, which builds your pattern banks from real YouTube data. Run it when you're ready. Voice capture and content production are still on the way."
 
   If Step 3 added new folders, name them. If nothing was added, say "Nothing new to add."
 

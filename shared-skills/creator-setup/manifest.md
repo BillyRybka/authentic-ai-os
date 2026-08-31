@@ -25,14 +25,13 @@ The map from currently released skill to the workspace structure it needs before
 | vid-backstory | `foundation/` | structure | v1 |
 | vid-backstory | `people/` | structure | v1 |
 
-Distinct folders to create: `foundation/`, `banks/proof-bank/assets/`, `people/`. Plus `CLAUDE.md` and `.env.example` at the workspace root.
+Distinct folders to create: `foundation/`, `banks/proof-bank/assets/`, `people/`. Plus `CLAUDE.md` at the workspace root.
 
 The `people/` row is conditional. If the creator chose a path override during setup (person stubs go to an existing root-level People folder), `creator-setup` skips the local `people/` and records the override in the workspace `CLAUDE.md`.
 
 ## Class meanings
 
 - **structure**: an empty directory a released skill writes into. Create if missing, never touch otherwise.
-- **env-template**: the `.env.example` scaffold. Create if missing. Never create or read the real `.env`.
 - **seed**: a starter bank file copied from a plugin template (the `template` column names a file under `${CLAUDE_PLUGIN_ROOT}/knowledge/`) into the workspace. Copy only if the target file does not already exist. Never overwrite a creator's edited bank. Once copied, the creator owns and grows it. The writing skills read the seeded bank as a supplement to the plugin's pattern libraries, which stay the craft reference; a missing bank is fine.
 
 ## Deliberately NOT scaffolded

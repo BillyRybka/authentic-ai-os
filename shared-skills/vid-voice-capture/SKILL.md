@@ -124,7 +124,7 @@ Save the folders and the guardrail. Update `sources_analyzed` and the single `up
 
 Voice capture is the last foundation step before research. Announce completion. Do not auto-invoke the next skill.
 
-> "Voice captured. That completes your foundation. Next: run `vid-research` to build your pattern banks and author your packaging defaults from real channel evidence (it needs a YouTube API key and about 90 minutes). Run it when you are ready."
+> "Voice captured. That completes your foundation. Next: run `vid-research` to build your pattern banks and author your packaging defaults from real channel evidence (about 90 minutes). Run it when you are ready."
 
 If the creator wants to keep moving, they invoke `vid-research`.
 

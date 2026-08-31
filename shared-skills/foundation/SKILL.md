@@ -123,7 +123,7 @@ When all 5 foundation interview skills have locked their sections, congratulate 
 
 > "Foundation complete. Your avatar, Iceberg, pillars, credibility, and backstory are locked.
 >
-> The natural next step is `vid-research`. It builds your pattern banks from real YouTube data, what's actually working in your niche, so the videos you plan are grounded in evidence instead of guesses. It needs a free YouTube API key (I'll walk you through it) and runs a real session, so do it when you have the time.
+> The natural next step is `vid-research`. It builds your pattern banks from real YouTube data, what's actually working in your niche, so the videos you plan are grounded in evidence instead of guesses. It runs a real session, so do it when you have the time.
 >
 > Want to start it now, or come back to it later?"
 

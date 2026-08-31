@@ -81,29 +81,11 @@ Words that resonate uniquely for THIS creator's audience because of domain exper
 
 {...}
 
-## Words avoided (flop signals)
+## Words avoided
 
-Words that surfaced in flops or that the creator rejected during curation. The skill should AVOID generating titles containing these.
-
-### "{word}"
-
-- Reason avoided: {one-line rationale}
-- Bucket: {tone-mismatch | audience-sophistication | brand-off-axis | hype | other}
-- Source: {flop analysis | creator drop}
-
-## Considered + dropped
-
-Power words AI proposed that the creator dropped. Rationale captured.
+Words the creator dropped during curation. The writing skills never generate titles containing these, and future refreshes don't re-surface them.
 
 > [!quote] Dropped: "{word}"
 > Rationale: {one-liner}
+> Bucket: {tone-mismatch | audience-sophistication | brand-off-axis | hype | other}
 > Date: {YYYY-MM-DD}
-
-## Field reference
-
-- **When this lands**: the conditions under which this word strengthens a title. The fit criterion.
-- **When this fails**: the conditions under which this word weakens a title. The guard.
-- **Worked example**: a real title from the research, linked back to its full outlier row in `pattern-bank.md` for context.
-- **Audience context** (audience-specific words only): why this word resonates uniquely for this creator's audience.
-
-Fields deliberately not captured: `frequency`, `channels_used`, `confidence` rank. The popularity of a word in the research set does not equal its fit for the next title. Fit is judged by the when-it-lands / when-it-fails criteria, not the count.

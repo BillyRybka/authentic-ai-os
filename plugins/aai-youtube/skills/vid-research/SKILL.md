@@ -5,7 +5,7 @@ description: Builds and refreshes the creator's pattern banks from real YouTube 
 
 # Video Research
 
-Builds and refreshes the creator's three pattern banks. Pattern banks are the raw research outputs that vid-framing and vid-title load at runtime to ground every decision in evidence rather than guesses. The skill handles the full Three-Circle Research workflow (own channel + 5 niche competitors + 3-5 adjacent niche channels), the YouTube data fetch, the thumbnail vision analysis, the cross-channel pattern synthesis, and the Theory of One curation pass with the creator.
+Builds and refreshes the creator's three pattern banks. Pattern banks are the raw research outputs that vid-title loads at runtime (and future idea-fitting will) to ground decisions in evidence rather than guesses. The skill handles the full Three-Circle Research workflow (own channel + 5 niche competitors + 3-5 adjacent niche channels), the YouTube data fetch, the thumbnail vision analysis, the cross-channel pattern synthesis, and the Theory of One curation pass with the creator.
 
 This skill exists because the alternative, making videos based on what the creator THINKS will work, is the dominant failure mode for business channels. Pattern research turns guesses into hypotheses backed by the data of what audiences actually click, watch, and come back for. The pattern bank is the difference between shipping a video that aligns with proven outliers and shipping a video that feels right but flops.
 
@@ -15,8 +15,8 @@ This skill exists because the alternative, making videos based on what the creat
 
 Three bank files in `banks/`:
 
-- `pattern-bank.md`: the outlier evidence + cross-channel synthesis. A full inventory of every qualifying outlier per channel (the whole set, not just the top performer), plus full-package rows for the studied subset (title linked to video URL, channel, view count, outlier multiplier, pub date, thumbnail image + strategy + text + hero element, patterns linked to the sub-banks by `pattern_id`). Plus the synthesis sections (convergent / niche-specific / adjacent / unique), each pattern tagged with `spread` (how many channels, which ones) and `own_channel_proven`. Plus topic clusters folded into synthesis (own + niche only, NEVER adjacent). Plus Considered+dropped and Confirmed winners sections. The creator's entry point for browsing what works for their audience and the file vid-framing loads for angle selection.
-- `title-bank.md`: fill-in-the-blank title shapes with worked examples (linked back to outlier rows) and near-miss anti-patterns. Research output + creator's curated set in the same file (creator edits in place, deleting patterns they would not use). vid-title loads this.
+- `pattern-bank.md`: the outlier evidence + cross-channel synthesis. A full inventory of every qualifying outlier per channel (the whole set, not just the top performer), plus full-package rows for the studied subset (title linked to video URL, channel, view count, outlier multiplier, pub date, thumbnail image + strategy + text + hero element, packaging read). Plus the synthesis sections (convergent / niche-specific / adjacent / unique), each pattern tagged with `spread` (how many channels, which ones) and `own_channel_proven`. Plus topic clusters folded into synthesis (own + niche only, NEVER adjacent). Plus a Considered+dropped section. The creator's entry point for browsing what works for their audience, and the evidence layer vid-title reads behind the sub-banks.
+- `title-bank.md`: fill-in-the-blank title shapes, each with its spread, `own_channel_proven`, one why-it-lands line, and worked examples linked back to outlier rows. Nothing else per entry. Research output + creator's curated set in the same file (creator edits in place, deleting patterns they would not use). vid-title loads this.
 - `power-words-bank.md`: a comprehensive word list mined from the FULL title set, not a token few. Global (pull on any audience) + Audience-specific (resonate uniquely for this creator's audience). Each entry: word, when-it-lands, when-it-fails, worked example linked back to an outlier row. No frequency or confidence ranks (that is what "lean" means, no junk, not a short list). A 100-plus-title set should yield a couple dozen words. vid-title loads this.
 
 **Not banks (by design):**
@@ -29,11 +29,10 @@ Plus one synthesis artifact: `foundation/packaging-system.md`. vid-research auth
 
 ## When to run this
 
-- **First build (Mode 1):** creator has just run /foundation. No pattern banks exist yet. Run vid-research before vid-framing for the first time. (Voice capture is still in development; it is not a prerequisite.)
+- **First build (Mode 1):** creator has just run /foundation. No pattern banks exist yet. (Voice capture is still in development; it is not a prerequisite.)
 - **Quarterly refresh (Mode 2):** 90+ days since `last_full_rebuild` in `pattern-bank.md` frontmatter. Or when new outliers have stacked up the creator wants surfaced.
 - **Single outlier add (Mode 3):** creator spotted an outlier between rebuilds and wants to capture it without a full session.
 
-If the creator runs vid-framing without any pattern banks present, vid-framing should redirect them to vid-research first.
 
 ## Prerequisites
 
@@ -42,7 +41,7 @@ If the creator runs vid-framing without any pattern banks present, vid-framing s
 Hard requirements:
 
 - `foundation/iceberg.md` and `foundation/avatar.md` exist. vid-research reads the iceberg statement and content pillars from iceberg.md and the audience profile from avatar.md to help the creator name their competitors and to suggest a few only if they're stuck. A vault still on the old single-file `creator-foundation.md` migrates first via `${CLAUDE_PLUGIN_ROOT}/knowledge/foundation-migration.md`.
-- YouTube Data API key configured. The key lives in a `.env` file at the vault root as `YT_API_KEY=...`. `.env` is gitignored and the key is NEVER written into any skill file, committed, or saved to the foundation docs. `creator-setup` scaffolds a `.env.example` with the `YT_API_KEY=` line; the creator copies it to `.env` and pastes their key. The `youtube_fetch.py` script reads `YT_API_KEY` from the environment. If first run and no key is set, walk the creator through `assets/api-key-setup-guide.md` (5-minute Google Cloud Console flow), then have them put the key in `.env`.
+- Internet access and Python 3. `youtube_fetch.py` reads each channel's public Videos tab, the same data anyone sees in a browser. If YouTube temporarily blocks the script (it retries with backoff and then fails loudly), wait a few minutes and rerun, or pull the channel page through the browser tool and collect the same fields there.
 
 Soft requirements:
 
@@ -77,18 +76,17 @@ Load silently. Never narrate it to the creator.
 **Setup checks (silent unless missing):**
 
 1. `foundation/iceberg.md` and `foundation/avatar.md` exist → load the iceberg statement, pillars, and audience; top 12 outliers if existing channel.
-2. YouTube Data API key configured as `YT_API_KEY` in a `.env` file at the vault root (see Prerequisites). If missing, walk through `assets/api-key-setup-guide.md` first.
-3. Test API call against creator's own channel handle. If fails, walk creator through troubleshooting (key invalid, channel handle wrong, quota exhausted).
+2. Test fetch against the creator's own channel handle via `scripts/youtube_fetch.py`. If it fails, the usual causes are a wrong handle or YouTube throttling: fix the handle, or wait and retry (browser fallback per Prerequisites).
 
 **Own channel pull:**
 
-4. Confirm the creator's own channel handle. If it's saved in their foundation, reflect it back ("Your channel is @handle, right?"). If it isn't saved, just ask for it in one plain line. Asking is normal here, not an error.
-5. Confirm the research window in one plain line: default last 12 months, offer to expand to 24 if a channel posts rarely and 12 is too thin. Then run `scripts/youtube_fetch.py --handle {creator-handle} --days {window}` (365 for 12 months). Returns JSON with channel metadata, the median view count, posting cadence (videos per window), and per-video data (`title, view_count, video_id, thumbnail_url, published_at`).
-6. Set the channel's outlier floor: from the median and posting cadence, propose a floor scaled to the channel (start at 2x median, real bar ~3 to 4x for normal cadence, higher for hyper-cadence, mega-only for giants), say it plainly, and let the creator confirm or adjust (see `references/outlier-identification-rules.md`). Record EVERY video that clears the floor as a full inventory row in `pattern-bank.md`. The whole set, never just the top performer.
-7. **Run the fluke filter on every outlier.** For each outlier, AI summarizes the channel's primary themes from the last 30 video titles, then checks "is this outlier on-niche for this channel?" Off-niche flukes get flagged: "This 700K-view video is about [topic], but the channel is about [primary themes]. Likely a fluke. Skip, or study?" Default skip. See `references/pattern-extraction-prompts.md` for the fluke detection prompt.
-8. For the studied subset (top ~10 own-channel outliers prioritized; the rest stay in the inventory URL-saved without vision): pull thumbnail via `scripts/thumbnail_download.py`, run vision classification per `references/thumbnail-vision-classification.md` (which of 6 strategies, hero element, color palette, text content, expression).
-9. Extract patterns per `references/pattern-extraction-prompts.md`: power words (global + audience-specific), title patterns, thumbnail patterns. Capture topic clusters into the pattern-bank synthesis (own + niche only).
-10. **Save partial state:** append draft entries to `pattern-bank.md` per-channel section + draft entries flagged `status: draft-pending-curation` to relevant banks (`power-words-bank.md`, `title-bank.md`). Thumbnail strategy and visual data live IN the outlier rows of pattern-bank, not a separate bank. Frontmatter `last_phase_completed: 1` so resume works if session ends here.
+3. Confirm the creator's own channel handle. If it's saved in their foundation, reflect it back ("Your channel is @handle, right?"). If it isn't saved, just ask for it in one plain line. Asking is normal here, not an error.
+4. Confirm the research window in one plain line: default last 12 months, offer to expand to 24 if a channel posts rarely and 12 is too thin. Then run `scripts/youtube_fetch.py --handle {creator-handle} --days {window}` (365 for 12 months). Returns JSON with channel metadata, the median view count, posting cadence (videos per window), and per-video data (`title, view_count, video_id, thumbnail_url, published_at`). View counts, dates, and subscriber counts come off the public page labels, so some are rounded or approximate; that precision is plenty for setting floors.
+5. Set the channel's outlier floor: from the median and posting cadence, propose a floor scaled to the channel (start at 2x median, real bar ~3 to 4x for normal cadence, higher for hyper-cadence, mega-only for giants), say it plainly, and let the creator confirm or adjust (see `references/outlier-identification-rules.md`). Then run `scripts/video_details.py --from-fetch {fetch}.json --min-views {floor}` to swap the outliers' approximate dates and rounded view counts for exact figures (about a second per outlier). A row flagged `outside_window: true` is actually older than the research window (the page label rounded it in); drop it from the outlier set. Record EVERY remaining video that clears the floor as a full inventory row in `pattern-bank.md`. The whole set, never just the top performer.
+6. **Run the fluke filter on every outlier.** For each outlier, AI summarizes the channel's primary themes from the last 30 video titles, then checks "is this outlier on-niche for this channel?" Off-niche flukes get flagged: "This 700K-view video is about [topic], but the channel is about [primary themes]. Likely a fluke. Skip, or study?" Default skip. See `references/pattern-extraction-prompts.md` for the fluke detection prompt.
+7. For the studied subset (top ~10 own-channel outliers prioritized; the rest stay in the inventory URL-saved without vision): pull thumbnail via `scripts/thumbnail_download.py`, run vision classification per `references/thumbnail-vision-classification.md` (which of 6 strategies, hero element, color palette, text content, expression).
+8. Extract patterns per `references/pattern-extraction-prompts.md`: power words (global + audience-specific), title patterns, thumbnail patterns. Capture topic clusters into the pattern-bank synthesis (own + niche only).
+9. **Save partial state:** append draft entries to `pattern-bank.md` per-channel section + draft entries flagged `status: draft-pending-curation` to relevant banks (`power-words-bank.md`, `title-bank.md`). Thumbnail strategy and visual data live IN the outlier rows of pattern-bank, not a separate bank. Frontmatter `last_phase_completed: 1` so resume works if session ends here.
 
 ### Phase 2: Niche research (the creator's direct competitors)
 
@@ -113,7 +111,7 @@ Ask the creator first, they know their world. You bring the expertise: pull real
 
 **Per-channel research on the confirmed competitors (silent, same engine as Phase 1):**
 
-6. From the pulled data, set the channel's scaled floor and record every outlier that clears it as full inventory (`references/outlier-identification-rules.md`).
+6. From the pulled data, set the channel's scaled floor, run `scripts/video_details.py` on the videos that clear it (exact dates and counts; drop `outside_window` rows), and record every outlier as full inventory (`references/outlier-identification-rules.md`).
 7. Run the fluke filter. Surface a fluke only when it needs the creator's call: "This big one is about [topic], off from what that channel usually does. Worth studying, or skip?"
 8. The top 5 outliers per channel are the studied subset and get thumbnail vision analysis; the rest stay inventory-only.
 9. Extract patterns.
@@ -129,7 +127,7 @@ Adjacent channels make a similar kind of content for a different topic or indust
 
 **Per-channel research (silent):**
 
-4. Pull, set the scaled floor, record every outlier as full inventory, run the fluke filter.
+4. Pull, set the scaled floor, run `scripts/video_details.py` on the videos that clear it, record every outlier as full inventory, run the fluke filter.
 5. The top 3 outliers per channel are the studied subset and get thumbnail vision analysis; the rest stay inventory-only.
 6. Capture title structures, power words, thumbnail patterns, formats. Never capture topics from adjacent niches, the structure transfers, the subject matter does not. This is the one rule that keeps the bank clean.
 7. **Save partial state.** Frontmatter `last_phase_completed: 3`, `adjacent_channels_done: [list]`.
@@ -182,9 +180,7 @@ After curation, all `status: draft-pending-curation` entries either become `stat
 2. Confirm with a short, plain message. Not a stats table read aloud. Something like:
 
 ```
-Done. I went through the channels you picked and pulled out the titles, thumbnails, and hooks that are actually working in your space. The ones that fit you are saved and ready to use.
-
-When you want to plan your next video, run vid-framing. It pulls straight from this.
+Done. I went through the channels you picked and pulled out the titles, thumbnails, and hooks that are actually working in your space. The ones that fit you are saved and ready to use. Your titles and thumbnails pull straight from this.
 ```
 
 If the creator wants the numbers (how many channels, how many kept), give them, but don't lead with them. The counts and the suggested next-refresh date live in the file's frontmatter either way.
@@ -220,7 +216,7 @@ Detected when `last_full_rebuild` exists in `pattern-bank.md` and is 60+ days ol
 Detected when creator opens with "I just saw an outlier" or similar phrasing.
 
 1. Creator drops the video URL or channel + title.
-2. Skill pulls the channel context (themes from last 30 videos), identifies if outlier is on-niche, runs fluke filter.
+2. Skill pulls the channel context (themes from last 30 videos), grabs the video's exact date and view count via `scripts/video_details.py --ids {id}`, identifies if outlier is on-niche, runs fluke filter.
 3. If confirmed outlier: thumbnail vision analysis, pattern extraction.
 4. Theory of One filter on the extracted patterns.
 5. Append to relevant banks. Update `pattern-bank.md` synthesis if patterns shift.
@@ -232,7 +228,7 @@ Load `knowledge/interview-posture.md` and follow it: one question at a time, pla
 
 - **Expert-led, creator-decided.** You are the strategist in the room. Lead: pull the data, read it, propose buckets and patterns, teach what matters in plain terms. The creator brings knowledge of their world and makes the final calls. Don't make them drive, and don't make them feel they need to know YouTube strategy to use this.
 - **Data first.** When the creator names a channel, even a "maybe," pull the real numbers before judging it. Confirm on facts, not vibes. Never open with a list you generated, and don't hunt for new channels while they're still naming their own.
-- **Keep the machinery silent.** Medians, the scaled floor, posting cadence, the fluke filter, vision analysis, quota, draft states: that is how you think, not how you talk. Surface a number only when the creator has a decision to make, and say it plainly.
+- **Keep the machinery silent.** Medians, the scaled floor, posting cadence, the fluke filter, vision analysis, fetch mechanics, draft states: that is how you think, not how you talk. Surface a number only when the creator has a decision to make, and say it plainly.
 - **Make curation fast.** Offer to bulk-keep the obvious winners and skip the obvious no's. Don't march the creator through thirty questions.
 - **Talk straight about big channels.** Channels are channels. A big channel's outliers still teach packaging (the titles, thumbnails, hooks, and formats transfer), so study them. Just never promise their reach. Say the packaging is worth stealing and the view count is theirs, not a target the creator can hit yet (a channel with a big following pulls numbers off that following, not off the thumbnail). Flag a fame-driven spike when you see one so the creator studies the move, not the magnitude.
 - **Obsidian output.** The bank files use Obsidian syntax (embedded thumbnails, callouts, wikilinks). The creator reads them there, not as raw text.
@@ -241,7 +237,7 @@ Load `knowledge/interview-posture.md` and follow it: one question at a time, pla
 ## Hard friction (auto-flag)
 
 1. **Foundation missing.** Don't run without `foundation/iceberg.md` and `foundation/avatar.md`. Tell creator to run /foundation first.
-2. **API key missing or invalid.** Walk through setup before proceeding. Don't skip with "we'll just use LLM knowledge of channels", that's hallucination territory.
+2. **Fetch blocked or failing.** Retry after a wait, or pull the channel pages through the browser as the fallback. Don't skip with "we'll just use LLM knowledge of channels", that's hallucination territory. Real data or no research.
 3. **Off-niche outliers (flukes).** Default skip. Creator can override only with explicit Theory of One rationale.
 4. **Adjacent niche topics polluting the bank.** Hard rule: never extract topics from adjacent niches. Title structures, power words, thumbnail patterns, formats yes. Topics no.
 5. **Em-dashes.** Brand-level no.
@@ -268,8 +264,8 @@ Load `knowledge/interview-posture.md` and follow it: one question at a time, pla
 | `assets/pattern-bank-template.md` | Phase 6, file structure for pattern-bank.md (outlier evidence + synthesis). |
 | `assets/title-bank-template.md` | Phase 6, file structure for title-bank.md (fill-in-the-blank title shapes, research + creator-curated in one file). |
 | `assets/power-words-bank-template.md` | Phase 6, file structure for power-words-bank.md (lean word list). |
-| `assets/api-key-setup-guide.md` | Phase 1 setup if API key not configured. Walks creator through Google Cloud Console flow. |
-| `scripts/youtube_fetch.py` | Phase 1, 2, 3, pulls channel videos with view counts, thumbnail URLs, median, and posting cadence via YouTube Data API. |
+| `scripts/youtube_fetch.py` | Phase 1, 2, 3, pulls channel videos with view counts, thumbnail URLs, median, and posting cadence straight off the channel's public Videos tab. |
+| `scripts/video_details.py` | Phase 1, 2, 3, after the floor is set: exact publish dates and exact view counts for the outlier subset, off each video's watch page. Flags rows the grid's rounded labels wrongly pulled into the window. |
 | `scripts/analyze.py` | Phase 1, 2, 3, consolidates fetch outputs into the outlier inventory using the per-channel floors. UTF-8 safe; use it instead of ad-hoc Python one-liners (titles with emoji crash a cp1252 console). |
 | `scripts/thumbnail_download.py` | Phase 1, 2, 3, downloads thumbnail images for vision analysis. |
 
@@ -286,10 +282,6 @@ Load `knowledge/interview-posture.md` and follow it: one question at a time, pla
 
 - `/foundation` produces the foundation files (iceberg.md for the statement and pillars, avatar.md for the audience), vid-research reads.
 - `vid-voice-capture` (in development) will produce voice-profile.md; when it exists, vid-research reads it for mirroring style only.
-- `vid-framing` reads pattern banks vid-research produces, picks angle for THIS video grounded in patterns.
-- `vid-title` reads `power-words-bank.md` and `title-bank.md`, generates titles using patterns and words.
-- `vid-thumbnail` reads `foundation/packaging-system.md` (current thumbnail strategy) plus `knowledge/thumbnail-text-patterns.md` for text candidates. Future `vid-thumbnail-gen` (Phase 5) queries `pattern-bank.md` outlier rows by thumbnail strategy for visual references.
-- `vid-title`, `vid-thumbnail`, `vid-framing`, `vid-structure`, `vid-pressure-test` also read `foundation/packaging-system.md`, which vid-research authors in Phase 7 (replaces the deleted vid-packaging skill for the evidence fields).
-- `vid-pipeline` (future) may invoke vid-research during onboarding before the first video is built.
-- `vid-measurement` (future) writes confirmed winners back to relevant banks with the `own_channel_proven: true` flag, closing the feedback loop.
-- `vid-channel-audit` (future) shares `references/three-circle-research.md` and `references/outlier-identification-rules.md`.
+- `vid-title` reads `title-bank.md`, `power-words-bank.md`, and the `pattern-bank.md` outlier evidence behind them, generates titles using patterns and words.
+- `vid-pressure-test` reads `foundation/packaging-system.md`, which vid-research authors in Phase 7.
+- Idea-fitting (future) will fit video ideas to the banks.

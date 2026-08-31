@@ -33,9 +33,9 @@ Study only relevant evidence in:
 - `banks/pattern-bank.md` for the outlier evidence behind them
 - `banks/power-words-bank.md` for fitting vocabulary and its use constraints
 
-Learn why an example works, then write for this video. For example, a bank row may teach "direct challenge plus a replacement." Use that relationship only when the locked video supports it; do not swap nouns into the source wording.
+Learn why an example works, then write for this video. For example, a bank row may teach "direct challenge plus a replacement." Use that relationship only when the locked video supports it. Filling a proven shape with this video's real subject is a legitimate move when the claim holds.
 
-Banks are evidence, not permission or a fill-in exercise. Do not require exact wording, rigid slots, lineage, receipts, one candidate per pattern, or coverage of any pattern set. Original candidates compete equally.
+Banks are evidence, not a quota. Do not require exact wording, lineage, receipts, one candidate per pattern, or coverage of any pattern set. Original candidates compete equally.
 
 Apply BENS quietly as a clickability lens. One useful driver can be enough. Use the power-word bank actively when a word makes the title stronger and more natural. Neither creates a quota or permits a larger claim.
 
@@ -54,7 +54,7 @@ Cut weak drafts, then compare the best on:
 - concise wording, with 40 to 65 characters as the usual target
 - room for the thumbnail to add a second beat
 
-Reject topic labels, vague benefits, stitched phrases, noun-swapped bank titles, unsupported specificity, borrowed authority, and lines that reveal the whole payoff. Do not write thumbnail text. `vid-thumbnail-v2` owns its three tests.
+Reject topic labels, vague benefits, stitched phrases, unsupported specificity, borrowed authority, and lines that reveal the whole payoff. Do not write thumbnail text. `vid-thumbnail-v2` owns its three tests.
 
 ## Present the choice
 

@@ -115,7 +115,7 @@ These come from `CLAUDE.md` and apply to anything the skills produce:
 
 ## Security considerations
 
-- Never commit secrets. `.env`, `*.pem`, `*.key`, and `secrets/` are gitignored; `.env.example` is the placeholder for the `YT_API_KEY` that `vid-research` needs.
+- Never commit secrets. `.env`, `*.pem`, `*.key`, and `secrets/` are gitignored.
 - Creator/vault content (`foundation/`, `banks/`, `content/`, `people/`, `raw/`, `notes/`) is gitignored and **never ships**. Test fixtures intentionally mirror these folder names and are re-included via `!tests/` negations in `.gitignore` — do not "fix" those patterns.
 - `tests/`, `documents/`, `plans/`, `scripts/`, `.vale/`, and `.claude/` never reach clients; the release script copies only its allowlist. Do not widen the allowlist in `scripts/release.ps1` without understanding that everything on it ships.
 - The release script pushes branches and creates public GitHub Releases; use `-DryRun` first when unsure. Beware its printed rollback line (`git reset --hard origin/dev`) — it destroys unpushed dev work.

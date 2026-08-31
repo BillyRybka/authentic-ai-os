@@ -147,7 +147,6 @@ Identify pattern shapes appearing in 2+ titles. One template = one pattern; spli
 
 Format per pattern:
 Template: "{template}"
-pattern_id: {short-kebab-slug derived from the template}
 Pattern shape: {descriptive label}
 spread: {N} of {M} channels
 Examples:
@@ -159,7 +158,6 @@ Examples:
 
 ```
 Template: "Why I [reversal action] [specific subject] After [time/quantity]"
-pattern_id: authority-reversal
 Pattern shape: Authority Reversal
 spread: 4 of 11 channels
 Examples:
@@ -168,7 +166,6 @@ Examples:
 - "Why I Quit Tracking Macros (And What Replaced It)"
 
 Template: "STOP [common practice] (Do This)"
-pattern_id: stop-do-this
 Pattern shape: Contrarian Command
 spread: 6 of 11 channels
 Examples:
@@ -218,7 +215,7 @@ Why this pulls: audience trusts authorities who admit being wrong; reversals sig
 - Prompt 1 (themes) → per-channel section in pattern-bank.md
 - Prompt 2 (fluke) → skip/study decision, no direct bank entry
 - Prompt 3 (power words) → power-words-bank.md (global + audience-specific)
-- Prompt 4 (title patterns) → title-bank.md as blocks where the heading IS the template string and the body carries pattern_id + spread + channels
+- Prompt 4 (title patterns) → title-bank.md as blocks where the heading IS the template string and the body carries spread + own_channel_proven + why it lands + worked examples
 - Prompt 5 (topics) → topic-cluster section inside pattern-bank.md (own + niche only), not a standalone bank
 
 All entries start `status: draft-pending-curation` until Theory of One curation pass promotes them.
