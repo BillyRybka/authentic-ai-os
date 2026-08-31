@@ -263,6 +263,22 @@ for (const n of pluginNames) {
     blocker('empty-plugin', `plugins/${n}/ ships zero skills`, `plugins/${n}`);
 }
 
+// --- 9b. shipped files must not be gitignored ------------------------------
+// why: an unanchored vault pattern (`foundation/`) once matched
+// plugins/aai-youtube/skills/foundation/ and git silently never tracked it.
+// The release then built main WITHOUT that skill, and nothing noticed because
+// ignored files are invisible to git status. Any ignored file under plugins/
+// will be missing from the release commit, so it is always a blocker.
+if (!NO_GIT) {
+  const shipped = walk(OUT).map((f) => `plugins/${f}`);
+  for (let i = 0; i < shipped.length; i += 200) {
+    const batch = shipped.slice(i, i + 200);
+    const ignored = git(['check-ignore', ...batch]);
+    if (ignored) for (const f of ignored.trim().split('\n').filter(Boolean))
+      blocker('gitignored-shipped-file', `${f} is gitignored, so it will silently drop out of the release commit`, f);
+  }
+}
+
 // --- 10. release-state checks ---------------------------------------------
 if (!NO_GIT) {
   const status = git(['status', '--porcelain']);
