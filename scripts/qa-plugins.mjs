@@ -164,6 +164,13 @@ if (existsSync(SHARED))
 // why: a skill that says "read references/foo.md" when there is no foo.md sends
 // the agent looking for a file the client does not have.
 const KNOWLEDGE_REF = /knowledge\/([A-Za-z0-9_./-]+\.md)/g;
+// Runtime-resolved paths like knowledge/format-planners/{format}.md: the skill
+// picks the file at runtime, so treat every file under that dir as referenced.
+const KNOWLEDGE_DIR_REF = /knowledge\/([A-Za-z0-9_./-]+)\/\{[a-z_-]+\}\.md/g;
+const expandDirRefs = (text, into) => {
+  for (const m of text.matchAll(KNOWLEDGE_DIR_REF))
+    for (const f of walk(join(ROOT, 'knowledge', m[1]))) into.add(`${m[1]}/${f}`);
+};
 const LOCAL_REF = /(?:^|[\s(`"'])((?:references|assets|scripts|templates)\/[A-Za-z0-9_./-]+\.[a-z0-9]+)/gi;
 const neededKnowledge = new Set();
 
@@ -181,6 +188,7 @@ for (const id of allSkills) {
       if (m[1] === 'X.md') continue; // documented placeholder string
       neededKnowledge.add(m[1]);
     }
+    expandDirRefs(text, neededKnowledge);
     for (const m of text.matchAll(LOCAL_REF)) {
       const target = m[1].replace(/^\.\//, '');
       if (!own.has(target))
@@ -219,6 +227,12 @@ for (const k of [...neededKnowledge].sort()) {
         if (m[1] === 'X.md') continue;
         if (!consumers.has(m[1])) consumers.set(m[1], new Set());
         consumers.get(m[1]).add(id);
+      }
+      const viaDir = new Set();
+      expandDirRefs(text, viaDir);
+      for (const k of viaDir) {
+        if (!consumers.has(k)) consumers.set(k, new Set());
+        consumers.get(k).add(id);
       }
     }
   }

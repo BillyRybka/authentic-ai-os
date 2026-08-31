@@ -33,6 +33,15 @@ const DESCRIPTION_LIMIT = 1024; // plugin validator rejects the whole plugin abo
 const KNOWLEDGE_REF = /knowledge\/([A-Za-z0-9_./-]+\.md)/g;
 
 /**
+ * Placeholder references like `knowledge/format-planners/{format}.md` are resolved
+ * at RUNTIME by the skill, so no literal filename ever appears in its markdown.
+ * Seven skills read the format planners this way; without this rule they would
+ * ship only as long as some other skill happened to name the files literally.
+ * A placeholder match pulls in every file under that knowledge directory.
+ */
+const KNOWLEDGE_DIR_REF = /knowledge\/([A-Za-z0-9_./-]+)\/\{[a-z_-]+\}\.md/g;
+
+/**
  * Build junk that must never reach a client. The generator copies from the working
  * tree, not from git, so gitignored files are present on disk and would otherwise
  * be packaged. Anything matched here is skipped.
@@ -146,13 +155,18 @@ function skillDescription(skillMd) {
   return first.trim();
 }
 
-/** knowledge/*.md paths referenced by any markdown inside a directory. */
+/** knowledge/*.md paths referenced by any markdown inside a directory,
+ *  including every file under a directory named via a {placeholder} path. */
 function knowledgeRefs(dir) {
   const found = new Set();
   for (const rel of walk(dir)) {
     if (!rel.endsWith('.md')) continue;
     const text = readFileSync(join(dir, rel), 'utf8');
     for (const m of text.matchAll(KNOWLEDGE_REF)) found.add(m[1]);
+    for (const m of text.matchAll(KNOWLEDGE_DIR_REF)) {
+      const sub = join(SRC.knowledge, m[1]);
+      for (const f of walk(sub)) found.add(`${m[1]}/${f}`);
+    }
   }
   return found;
 }
