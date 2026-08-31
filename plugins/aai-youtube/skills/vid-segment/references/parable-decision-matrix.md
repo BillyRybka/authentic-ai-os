@@ -42,7 +42,7 @@ If the type choice and the format planner conflict, the format planner wins. The
 
 **Story** runs Problem-Action-Outcome in 20-30 spoken seconds, starting at the WORST moment, not the first thing that happened, with real names and numbers. Boundary: a story with no specifics ("my client was struggling, we tried something, it worked") activates nothing; if the bank entry is that thin, route to `vid-bank` to dig deeper before pulling. Craft: `knowledge/story-capture-guide.md`, pull filter: `knowledge/story-pulling-criteria.md`.
 
-**Metaphor** swaps an abstract idea for one familiar image in three sentences or fewer. Boundary: one metaphor per parable, never mixed, never explained after the fact; if it needs a paragraph, it isn't working, use a story or demo. Craft: vid-bank's `references/metaphor-builder.md`, integration rules: `knowledge/metaphor-integration.md`.
+**Metaphor** swaps an abstract idea for one familiar image in three sentences or fewer. Boundary: one metaphor per parable, never mixed, never explained after the fact; if it needs a paragraph, it isn't working, use a story or demo. Craft lives with `vid-bank` (route there to build one), integration rules: `knowledge/metaphor-integration.md`.
 
 ## Bridge to the principle
 

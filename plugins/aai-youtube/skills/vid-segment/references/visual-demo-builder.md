@@ -30,7 +30,7 @@ The creator's signature visual style (icon charts, color-coded thumbnails) lives
 ## When this fires
 
 vid-segment loads this file inline when:
-- The segment's parable is Visual Demo (per `knowledge/parable-decision-matrix.md`)
+- The segment's parable is Visual Demo (per `references/parable-decision-matrix.md`)
 - The creator wants help generating a demo for a specific point mid-write
 
 The creator never invokes a "vid-visual-demo-craft" sub-skill. The 3-step brainstorm runs inline in vid-segment's structure pass.

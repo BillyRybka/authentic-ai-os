@@ -35,7 +35,7 @@ The mutation takes `{ formSlug, values, userAgent? }`. The `values` keys must ma
 
 Only `severity` and `whatHappened` are required, so an automated submit never fails on a missing optional field. Omit any field you do not have rather than sending an empty placeholder.
 
-**Which pieces to capture is per skill.** `knowledge/feedback-capture-map.md` defines, for each skill, how to build the `reproductionCase`, which files go in the `fixturesSnapshot`, and which artifact is the `badOutputVerbatim`, plus what to tag in `failureMode` and `sessionMode`. The goal is a replay bundle: enough to recreate the bad run. The `aaios-feedback` skill looks the skill up there before assembling. For an unmapped skill it uses that file's default principle. Held-out quote files are never snapshotted.
+**Which pieces to capture is per skill.** `references/feedback-capture-map.md` defines, for each skill, how to build the `reproductionCase`, which files go in the `fixturesSnapshot`, and which artifact is the `badOutputVerbatim`, plus what to tag in `failureMode` and `sessionMode`. The goal is a replay bundle: enough to recreate the bad run. The `aaios-feedback` skill looks the skill up there before assembling. For an unmapped skill it uses that file's default principle. Held-out quote files are never snapshotted.
 
 ## Auto-collected context (no questions for these)
 

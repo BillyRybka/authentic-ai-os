@@ -4,7 +4,7 @@ The reproduction layer for the `aaios-feedback` skill. When a creator reports a 
 
 The bar comes from Billy's eval harness (the `tests/` tree in the source repo). That tree does not ship in the plugin, and this doc spells out the seed shape inline below, so nothing here depends on `tests/` at runtime. For reference: a seed in `tests/corpus/seeds.json` is a frozen, reproducible scenario, and a fixtures vault in `tests/fixtures/shared/` is the state a skill reads. A creator-simulator plays the persona (reveals what is in `reveals`, withholds what is in `withholds`, never invents) so the fabrication test stays honest. A real feedback report is the same thing rebuilt from an actual session: a seed reconstructed from how the creator really responded, plus the creator's real vault files in place of the shared Sam Rivera fixtures.
 
-Read this alongside `knowledge/feedback-submit.md` (the payload and submit contract) and `knowledge/vault-integration.md` (schema for the vault files you snapshot and for the local copy).
+Read this alongside `references/feedback-submit.md` (the payload and submit contract) and `knowledge/vault-integration.md` (schema for the vault files you snapshot and for the local copy).
 
 ## How a reproduction entry reads
 

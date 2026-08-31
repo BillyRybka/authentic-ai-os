@@ -2,7 +2,7 @@
 
 When and how a skill proactively offers feedback. The goal is to catch friction Billy would never otherwise hear about, without nagging. Conservative by default. One light offer, easy to decline, never blocks the creator's work.
 
-Any skill can reference this. The `aaios-feedback` skill owns the actual capture and submit (see `knowledge/feedback-submit.md`). This file only governs the offer.
+Any skill can reference this. The `aaios-feedback` skill owns the actual capture and submit (its own references cover the payload contract). This file only governs the offer.
 
 ## The once-per-session guard
 

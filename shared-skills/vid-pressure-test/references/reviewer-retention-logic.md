@@ -42,7 +42,7 @@ Read piece.md `frame`. Walk each segment. Does the segment material serve THAT a
 
 ### Gate 5: Ending pivots correctly per goal × audience temperature
 
-Read piece.md `goal`. Judge audience temperature (cold/warm/hot) from the script itself, then cross-check against `knowledge/audience-temperature-model.md` and the format planner's ending guidance.
+Read piece.md `goal`. Judge audience temperature (cold/warm/hot) from the script itself, then cross-check against `references/audience-temperature-model.md` and the format planner's ending guidance.
 
 - `goal: sales` → ending CTA should reference offer / sales link. Clear ask.
 - `goal: emails` → ending CTA should reference lead magnet / list signup. Specific to the piece's challenge.

@@ -44,7 +44,7 @@ Each circle answers a different question. Together they triangulate the patterns
 
 **Question:** "What's already worked for me?"
 
-If the channel has any history, this is the fastest, highest-signal research. Find your own outliers (videos that cleared the channel's scaled floor, see `knowledge/outlier-identification-rules.md`). Repeat what worked. The audience that came back already told you what they want.
+If the channel has any history, this is the fastest, highest-signal research. Find your own outliers (videos that cleared the channel's scaled floor, see `references/outlier-identification-rules.md`). Repeat what worked. The audience that came back already told you what they want.
 
 **Worked example:** A channel averages 200k views per video. One video pulled 700k. That's the channel's most reliable data point, those 700k viewers came back for that specific topic, in that specific frame, with that specific thumbnail style. The next move: repeat it with minimal variation. Change the outfit color. Swap the specific stat. Don't redesign from scratch.
 
@@ -119,7 +119,7 @@ Same method applies in all three circles:
 3. Identify every video that clears the floor (the full set, not just the top one).
 4. Run the fluke filter: is the outlier on-niche for the channel's primary themes? Off-niche flukes don't transfer to the audience and shouldn't be studied.
 
-See `knowledge/outlier-identification-rules.md` for full implementation.
+See `references/outlier-identification-rules.md` for full implementation.
 
 ## What gets extracted per circle
 
