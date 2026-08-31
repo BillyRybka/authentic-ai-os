@@ -202,6 +202,32 @@ for (const k of [...neededKnowledge].sort()) {
     blocker('uncommitted-knowledge', `knowledge/${k} exists on disk but is not committed on "${REF}", so it will not ship`, 'knowledge/');
 }
 
+// --- 6b. knowledge files must earn their folder ----------------------------
+// why: knowledge/ is for files SHARED by multiple skills. A file with exactly
+// one consumer belongs in that skill's references/, where it travels with the
+// skill and cannot silently outlive it. Warning, not blocker: single-consumer
+// is sometimes transitional (a second consumer is planned), so a human decides.
+{
+  const consumers = new Map();
+  for (const id of allSkills) {
+    const dir = join(SHARED, id);
+    if (!existsSync(dir)) continue;
+    for (const rel of walk(dir)) {
+      if (!rel.endsWith('.md') || /WORKING-NOTES\.md$/i.test(rel)) continue;
+      const text = readFileSync(join(dir, rel), 'utf8');
+      for (const m of text.matchAll(KNOWLEDGE_REF)) {
+        if (m[1] === 'X.md') continue;
+        if (!consumers.has(m[1])) consumers.set(m[1], new Set());
+        consumers.get(m[1]).add(id);
+      }
+    }
+  }
+  for (const [k, who] of [...consumers].sort()) {
+    if (who.size === 1)
+      warning('single-consumer-knowledge', `knowledge/${k} is read only by "${[...who][0]}", consider moving it into that skill's references/`, `knowledge/${k}`);
+  }
+}
+
 // --- 7. generated tree is in sync -----------------------------------------
 // why: plugins/ is what actually ships. If someone edited a skill and did not
 // regenerate, the release ships the old copy.
