@@ -1,0 +1,54 @@
+{
+  "_comment": [
+    "What goes IN each plugin. marketplace.json holds the metadata and version;",
+    "this file holds the composition. plugins/ is generated from the two of them by",
+    "scripts/generate-plugins.mjs and is disposable: never hand-edit anything under it.",
+    "",
+    "A skill listed under two plugins is stored once in shared-skills/ and copied into",
+    "both at build time. That is the point of the split.",
+    "",
+    "knowledge/ files are detected automatically from `knowledge/<file>.md` references",
+    "inside each skill, so you only list one here to force-include a file no skill names.",
+    "",
+    "Adding a plugin: add a block here AND an entry in marketplace.json. The generator",
+    "fails loudly if one exists without the other, so a half-added plugin can never ship."
+  ],
+  "plugins": {
+    "aai-youtube": {
+      "skills": [
+        "aaios-feedback",
+        "creator-setup",
+        "foundation",
+        "vid-avatar",
+        "vid-backstory",
+        "vid-bank",
+        "vid-braindump",
+        "vid-credibility",
+        "vid-ending",
+        "vid-format-plan",
+        "vid-framing",
+        "vid-intro",
+        "vid-pillars",
+        "vid-pipeline",
+        "vid-positioning",
+        "vid-pressure-test",
+        "vid-research",
+        "vid-segment",
+        "vid-structure",
+        "vid-thumbnail",
+        "vid-title",
+        "vid-voice-audit",
+        "vid-voice-capture",
+        "vid-voice-update"
+      ],
+      "connectors": [],
+      "agents": [],
+      "commands": [],
+      "files": [
+        "plugin-files/aai-youtube/LICENSE",
+        "plugin-files/aai-youtube/README.md",
+        "plugin-files/aai-youtube/.gitattributes"
+      ]
+    }
+  }
+}

@@ -1,0 +1,41 @@
+# Repo-wide line-ending rules.
+#
+# core.autocrlf is true on this machine, so anything without an explicit rule
+# gets CRLF on checkout. Cowork's YAML frontmatter parser rejects CRLF and
+# silently leaks the entire frontmatter into the body of the skill.
+#
+# plugins/authentic-ai-os/.gitattributes used to be the only place this was set,
+# which meant skills were protected ONLY while they lived inside that folder.
+# Moving them to shared-skills/ would have quietly dropped the guarantee. These
+# rules are repo-wide so source location can never change the answer.
+#
+# scripts/generate-plugins.mjs also normalizes line endings when it writes into
+# plugins/, so a bad checkout still cannot ship. Belt and suspenders on purpose.
+
+*.md      text eol=lf
+*.json    text eol=lf
+*.yaml    text eol=lf
+*.yml     text eol=lf
+*.py      text eol=lf
+*.sh      text eol=lf
+*.mjs     text eol=lf
+*.js      text eol=lf
+*.txt     text eol=lf
+LICENSE   text eol=lf
+
+# Windows-only tooling keeps CRLF.
+*.ps1     text eol=crlf
+
+# Binary: never touch.
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.gif     binary
+*.webp    binary
+*.pdf     binary
+*.zip     binary
+*.plugin  binary
+
+# This file, and dotfiles like it, keep LF too.
+.gitattributes text eol=lf
+.gitignore    text eol=lf

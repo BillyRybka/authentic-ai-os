@@ -1,0 +1,23 @@
+{
+  "name": "aai-youtube",
+  "displayName": "AAI YouTube",
+  "description": "Authentic AI for YouTube. Skills for foundation setup, voice capture, story/proof/metaphor banks, thumbnail and title development.",
+  "version": "0.4.0",
+  "author": {
+    "name": "Billy Rybka",
+    "email": "billy@peaksystems.io"
+  },
+  "homepage": "https://github.com/BillyRybka/authentic-ai",
+  "repository": "https://github.com/BillyRybka/authentic-ai",
+  "license": "LicenseRef-Proprietary",
+  "keywords": [
+    "youtube",
+    "content",
+    "creator-tools",
+    "voice",
+    "thumbnails",
+    "obsidian",
+    "scriptwriting"
+  ],
+  "category": "content-creation"
+}

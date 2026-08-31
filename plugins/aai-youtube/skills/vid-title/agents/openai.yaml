@@ -1,0 +1,4 @@
+interface:
+  display_name: "Video Title Writer V3"
+  short_description: "Package a locked video into strong titles"
+  default_prompt: "Use $vid-title-v3 to write and recommend titles for this locked YouTube video."

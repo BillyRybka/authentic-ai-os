@@ -41,17 +41,18 @@ _notes/
 # Bank schemas live in knowledge/{bank}-schema.md.
 # Clients get an empty workspace scaffolded by creator-setup at runtime.
 # If any of these folders appear locally (test runs, accidental scaffold), keep them out of git.
-foundation/
-content/
-people/
-companies/
-resources/
-raw/
-notes/
-banks/
-Authentic-AI-OS/
-!plugins/authentic-ai-os/
-!plugins/authentic-ai-os/**
+# Anchored to repo root ON PURPOSE. Unanchored `foundation/` once swallowed
+# plugins/aai-youtube/skills/foundation/ and silently dropped a skill from a
+# release build. Anchored patterns cannot reach inside plugins/ or shared-skills/.
+/foundation/
+/content/
+/people/
+/companies/
+/resources/
+/raw/
+/notes/
+/banks/
+/Authentic-AI-OS/
 
 # Test fixtures intentionally mirror a real vault (foundation/, banks/, people/,
 # content/) so the vid-* skills can run against them. Re-include the whole tests/
