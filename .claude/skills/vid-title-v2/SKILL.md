@@ -20,7 +20,7 @@ Read these selected-piece files silently when present:
 
 ### 1. Strip the material
 
-Fill every slot from the context. Write EMPTY where there's nothing. Never invent one.
+Fill every slot from the context. Write EMPTY where there's nothing. Never invent one. You must look at the video wholistically and really understand it to fill these. 
 
 - RESULT: what changes for them, and how big
 - MECHANISM: the thing that causes it, and whether it has a name
@@ -67,7 +67,7 @@ Call the winner and say why it beat the rest. Don't hedge across five.
 
 ### 8. Wait for the dial
 
-Bigger. Easier. Newer. Safer. More specific. More urgent. Weirder. Cleaner. Less like AI wrote it. Re-run from step 6.
+Bigger. Easier. Newer. Safer. More specific. More urgent. Weirder. Cleaner. Less like AI wrote it. Generate 5 new titles that follow our best practices and remain true to the source material. Then pick up at step 6. 
 
 ---
 
@@ -129,25 +129,22 @@ A cold-viewer trust problem. It buys permission to spend time on a stranger.
 
 Kill on any of these.
 
-- Over 50 characters. If it needs 51 to 55 and cutting kills it, keep it and flag the overage
+- Over 60 characters. If it needs 61 to 65 and cutting kills it, keep it and flag the overage
 - A colon. Emdash, semi-colon. Any clutter
 - Keyword stuffing
-- "I" or "My" leading when STANDING is unknown
 - Vague
 - Cute
+- An insider term they would know AFTER watching the video.
 - A general life-changing claim with no named result
 - Any word that isn't in DELIVERS
-- **Swap test.** Swap the topic for a different one. Still works? It's generic.
-  Kill it
 - **Bubbles test.** Can't write three specific thought bubbles? Dead
-- **Payoff test.** Can't point at the moment that pays it off? That's clickbait,
-  not curiosity
+- **Payoff test.** Can't point at the moment that pays it off? That's clickbait, not curiosity
 
 ---
 
 ## Structure library
 
-**Real outliers handed to you beat everything in this section.** If the contextcarries titles with view counts attached, build from those and skip the fallback
+**Real outliers handed to you beat everything in this section.** If the context carries titles with view counts attached, build from those and skip the fallback
 list. Strip the winner to its shape, swap the noun to what this audience cares about, and invert it if your material contradicts it.
 
 The list below is the fallback for when nothing real is in front of you. Every shape here has performance behind it somewhere, but not on this channel and not in this niche. Treat them as starting shapes, never as finished titles.

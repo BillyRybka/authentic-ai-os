@@ -173,6 +173,9 @@ for (const id of allSkills) {
   const own = new Set(walk(dir));
   for (const rel of own) {
     if (!rel.endsWith('.md')) continue;
+    // WORKING-NOTES are builder-only and never ship (generator JUNK list), so
+    // their references to dev paths and retired files are not shipping bugs.
+    if (/WORKING-NOTES\.md$/i.test(rel)) continue;
     const text = readFileSync(join(dir, rel), 'utf8');
     for (const m of text.matchAll(KNOWLEDGE_REF)) {
       if (m[1] === 'X.md') continue; // documented placeholder string

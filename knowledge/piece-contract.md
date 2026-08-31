@@ -25,9 +25,8 @@ last_updated: YYYY-MM-DD        # bumped to today by EVERY skill that writes thi
 published: null                 # YYYY-MM-DD when published
 anchor: "..."                   # the outlier receipt from a vid-ideas seed: source title + @channel + views + xMed. Absent when no seed arrived. vid-title reads it as the candidate to beat.
 
-pillar: {pillar-slug}           # creator's content pillar. Set by vid-framing at the channel-fit check.
 frame: "..."                    # the locked video, first person and spoken, one direction only. Never a headline, never a description of the contents. Set by vid-framing.
-core_payoff: "..."              # the reason the viewer stays to the end, almost always the answer to a question already in their head. Second person, one outcome. Locked with the frame. Set by vid-framing. vid-structure orders the points so this lands late.
+core_payoff: "..."              # the reason the viewer stays to the end, almost always the answer to a question already in their head. Second person, one outcome. Locked with the frame. Set by vid-framing. vid-structure orders the points so it resolves where the format's tension plan puts it, never before the video has earned it.
 must_not_become: "..."          # a shape the whole video must not take, in the creator's words. Never a thing that must not appear. Set by vid-framing from the interview; absent when they had no answer.
 format: short-process           # from the 7 formats: short-process | case-study | roast | deep-dive | interview | news | listicle. Set by vid-framing.
 goal: sales                     # sales | emails | views (ONE only). Set by vid-framing.
@@ -55,7 +54,7 @@ pressure_test_audit: {}         # the full audit block. Shape and field definiti
 pressure_test_status: passed    # passed | issues-flagged | resolved. Namespaced so it never reads as a competing lifecycle status.
 pressure_tested_at: YYYY-MM-DD
 
-tags: [piece, pillar-{slug}, format-{slug}, {other-tags}]
+tags: [piece, format-{slug}, {other-tags}]
 ---
 ```
 
@@ -76,7 +75,7 @@ tags: [piece]
 ---
 ```
 
-`pillar-{slug}` and `format-{slug}` join `tags` when `vid-framing` sets `pillar` and `format`. Everything else in the full schema is absent until its owning skill writes it. Absent is the correct state; do not pre-stub fields with empty values that no skill has decided yet.
+`format-{slug}` joins `tags` when `vid-framing` sets `format`. Everything else in the full schema is absent until its owning skill writes it. Absent is the correct state; do not pre-stub fields with empty values that no skill has decided yet.
 
 ## Field ownership
 
@@ -85,7 +84,7 @@ Skills append their own fields and never overwrite another skill's.
 | Skill | Writes |
 |---|---|
 | vid-braindump | `type`, `project`, `slug`, `status: ideating`, `created`, `last_updated`, `anchor`, `tags` |
-| vid-framing | `pillar`, `frame`, `core_payoff`, `format`, `voice_context`, `goal`, `must_not_become`, plus the `## The viewer` body section |
+| vid-framing | `frame`, `core_payoff`, `format`, `voice_context`, `goal`, `must_not_become`, plus the `## The viewer` body section |
 | vid-title | `title` |
 | vid-thumbnail | `thumbnail_text`, `thumbnail_shape` |
 | vid-structure | `segment_purposes`, `tension_plan`, `status: drafting` |

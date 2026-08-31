@@ -274,7 +274,7 @@ Never leave the graph in a silently inconsistent state. If a write fails, the cr
 **1. No bank entry matches the query.** The skill asks for a story illustrating this segment's point and the bank returns nothing.
 - Do NOT fabricate one.
 - Tell the creator: "No story in your bank illustrates this point yet. Want to capture one now, or skip this and use a different tension tool?"
-- Route to `vid-capture` if they want to capture.
+- Route to `vid-bank` if they want to capture.
 
 **2. Entry frontmatter malformed or missing required fields.**
 - Do NOT auto-fix.

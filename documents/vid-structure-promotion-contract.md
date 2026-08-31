@@ -49,7 +49,7 @@ Regenerate:
 
 - `documents/skill-knowledge-map.md`
 - `documents/SYSTEM-MAP.md`
-- any generated skill map maintained by `scripts/build-skill-map.js`
+- any generated skill map the builder maintains
 
 ## Tests
 

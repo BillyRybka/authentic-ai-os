@@ -244,7 +244,7 @@ Report plainly:
 
   If Step 3 added new folders, name them. If nothing was added, say "Nothing new to add."
 
-Do NOT mention skills that have not shipped (no `vid-voice-capture`, `vid-capture`). `vid-research` HAS shipped and is the post-foundation step, so naming it is fine. The principle: facilitate, do not prescribe. The creator's state determines the offer.
+Do NOT mention skills that have not shipped (no `vid-voice-capture`, `vid-bank`). `vid-research` HAS shipped and is the post-foundation step, so naming it is fine. The principle: facilitate, do not prescribe. The creator's state determines the offer.
 
 ## Safety rules
 

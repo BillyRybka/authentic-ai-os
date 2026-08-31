@@ -27,7 +27,7 @@ This is what `creator-setup` actually scaffolds in the current release. More fol
 ./
 ├── .claude/skills/              # Installed skills (read-only for the creator)
 ├── foundation/                  # Creator identity (created by the /foundation command chain)
-│   ├── iceberg.md              # Iceberg statement, machinery, content notes, the 8 pillars
+│   ├── iceberg.md              # Iceberg statement, machinery, content notes, the content pillars
 │   ├── avatar.md               # Avatar plus the Top 3 perceived problems
 │   ├── credibility.md          # The three proof points
 │   ├── backstory.md            # Full and 3-sentence versions

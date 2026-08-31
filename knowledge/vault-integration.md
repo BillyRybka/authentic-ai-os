@@ -15,7 +15,7 @@ The shared core every skill that writes to this vault follows: where things live
 | You are writing | Load | Who loads it |
 |---|---|---|
 | A piece (`content/pieces/{slug}/piece.md`) | `knowledge/piece-contract.md` | vid-intake, vid-framing, vid-title, vid-thumbnail, vid-structure, vid-intro, vid-segment, vid-ending, vid-pressure-test, vid-pipeline |
-| A bank entry (story, proof, metaphor, testimonial, framework), or pulling one into a script | `knowledge/bank-contract.md` | vid-capture, vid-segment, vid-intro, vid-ending, vid-credibility |
+| A bank entry (story, proof, metaphor, testimonial, framework), or pulling one into a script | `knowledge/bank-contract.md` | vid-bank, vid-segment, vid-intro, vid-ending, vid-credibility |
 | A foundation doc | this file, "Foundation doc schema" below | vid-avatar, vid-positioning, vid-pillars, vid-credibility, vid-backstory |
 | The voice profile or a reference-piece set | `knowledge/voice-profile-schema.md` | vid-voice-capture, vid-voice-update |
 | The ideas backlog | `.claude/skills/vid-ideas/assets/ideas-backlog-template.md` | vid-ideas |
@@ -29,7 +29,7 @@ The shared core every skill that writes to this vault follows: where things live
 
 | Folder | What lives here |
 |---|---|
-| `foundation/` | Creator identity, one concern per file so skills load only the slice they need: iceberg.md (iceberg statement, machinery, content notes, the 8 pillars), avatar.md (avatar plus the Top 3 perceived problems), credibility.md (the three proof points), backstory.md, offer.md. Plus voice-profile.md, packaging-system.md, and `reference-pieces/` (full polished pieces preserved verbatim for piece-level voice rhythm). |
+| `foundation/` | Creator identity, one concern per file so skills load only the slice they need: iceberg.md (iceberg statement, machinery, content notes, the content pillars), avatar.md (avatar plus the Top 3 perceived problems), credibility.md (the three proof points), backstory.md, offer.md. Plus voice-profile.md, packaging-system.md, and `reference-pieces/` (full polished pieces preserved verbatim for piece-level voice rhythm). |
 | `banks/` | Evergreen material the creator builds over time. Stories, proofs, testimonials, metaphors, frameworks, packaging winners, plus single-file banks (title, hook, transition, pattern). |
 | `content/pieces/` | Per-video work. One folder per piece: piece.md (all locked decisions), brain-dump.md (raw material), script.md (the deliverable), plus per-platform derivatives. Single newsletters and one-off posts also live here as their own piece folder. |
 | `content/ideas/` | Swipe file for not-yet-built content. Raw ideas, hooks, framings the creator wants to come back to. |

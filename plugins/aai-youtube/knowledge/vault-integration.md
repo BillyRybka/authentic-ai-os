@@ -15,7 +15,7 @@ The shared core every skill that writes to this vault follows: where things live
 | You are writing | Load | Who loads it |
 |---|---|---|
 | A piece (`content/pieces/{slug}/piece.md`) | `knowledge/piece-contract.md` | vid-intake, vid-framing, vid-title, vid-thumbnail, vid-structure, vid-intro, vid-segment, vid-ending, vid-pressure-test, vid-pipeline |
-| A bank entry (story, proof, metaphor, testimonial, framework), or pulling one into a script | `knowledge/bank-contract.md` | vid-capture, vid-segment, vid-intro, vid-ending, vid-credibility |
+| A bank entry (story, proof, metaphor, testimonial, framework), or pulling one into a script | `knowledge/bank-contract.md` | vid-bank, vid-segment, vid-intro, vid-ending, vid-credibility |
 | A foundation doc | this file, "Foundation doc schema" below | vid-avatar, vid-positioning, vid-pillars, vid-credibility, vid-backstory |
 | The voice profile or a reference-piece set | `knowledge/voice-profile-schema.md` | vid-voice-capture, vid-voice-update |
 | The ideas backlog | `.claude/skills/vid-ideas/assets/ideas-backlog-template.md` | vid-ideas |

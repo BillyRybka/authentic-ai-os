@@ -37,7 +37,7 @@ const KNOWLEDGE_REF = /knowledge\/([A-Za-z0-9_./-]+\.md)/g;
  * tree, not from git, so gitignored files are present on disk and would otherwise
  * be packaged. Anything matched here is skipped.
  */
-const JUNK = [/(^|[\\/])__pycache__([\\/]|$)/, /\.pyc$/, /(^|[\\/])\.DS_Store$/, /(^|[\\/])Thumbs\.db$/, /(^|[\\/])\.env$/];
+const JUNK = [/(^|[\\/])__pycache__([\\/]|$)/, /\.pyc$/, /(^|[\\/])\.DS_Store$/, /(^|[\\/])Thumbs\.db$/, /(^|[\\/])\.env$/, /(^|[\\/])WORKING-NOTES\.md$/i];
 const isJunk = (p) => JUNK.some((re) => re.test(p));
 
 /**
