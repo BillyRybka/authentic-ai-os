@@ -10,6 +10,9 @@ The submission contract for the `aai-feedback` skill. One place holds the endpoi
 - **Form slug:** `aaios-feedback`
 - **Public form URL (fallback link):** `https://app.peaksystems.io/f/aaios-feedback`
 
+> [!warning] The form slug is `aaios-feedback` on purpose
+> The skill was renamed to `aai-feedback` in Aug 2026; the live Convex form kept its original slug. Every `aaios-feedback` in this file and in the form asset refers to that endpoint. Do not "fix" these to `aai-feedback`, that breaks submission. They change only if the form itself is renamed on app.peaksystems.io.
+
 The endpoint is a public, no-auth Convex mutation (the same surface anyone hits from the live `/f/aaios-feedback` page). Nothing secret ships in the plugin.
 
 The form slug stays `aaios-feedback` even though the skill is now `aai-feedback`. The slug is the live Convex form identity and the public URL creators are pointed at. Renaming it would orphan every submission already filed. Do not "fix" the mismatch here; it is deliberate.
