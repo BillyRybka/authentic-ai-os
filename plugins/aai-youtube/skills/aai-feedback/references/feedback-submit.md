@@ -1,6 +1,6 @@
 # Feedback submit
 
-The submission contract for the `aaios-feedback` skill. One place holds the endpoint, the payload shape, the curl recipe, and the fallback. The skill body stays thin and points here.
+The submission contract for the `aai-feedback` skill. One place holds the endpoint, the payload shape, the curl recipe, and the fallback. The skill body stays thin and points here.
 
 ## Constants
 
@@ -10,7 +10,12 @@ The submission contract for the `aaios-feedback` skill. One place holds the endp
 - **Form slug:** `aaios-feedback`
 - **Public form URL (fallback link):** `https://app.peaksystems.io/f/aaios-feedback`
 
+> [!warning] The form slug is `aaios-feedback` on purpose
+> The skill was renamed to `aai-feedback` in Aug 2026; the live Convex form kept its original slug. Every `aaios-feedback` in this file and in the form asset refers to that endpoint. Do not "fix" these to `aai-feedback`, that breaks submission. They change only if the form itself is renamed on app.peaksystems.io.
+
 The endpoint is a public, no-auth Convex mutation (the same surface anyone hits from the live `/f/aaios-feedback` page). Nothing secret ships in the plugin.
+
+The form slug stays `aaios-feedback` even though the skill is now `aai-feedback`. The slug is the live Convex form identity and the public URL creators are pointed at. Renaming it would orphan every submission already filed. Do not "fix" the mismatch here; it is deliberate.
 
 ## The payload
 
@@ -19,7 +24,7 @@ The mutation takes `{ formSlug, values, userAgent? }`. The `values` keys must ma
 | Field ID | Type | Required | What goes in it |
 |---|---|---|---|
 | `severity` | radio | yes | one of `blocker`, `annoying`, `nitpick`, `idea`, `praise` |
-| `failureMode` | text | no | short tag for the kind of break: `fabrication`, `wrong-voice`, `broken-wikilink`, `wrong-alignment`, `missing-input`, `other` |
+| `failureMode` | text | no | one tag for the kind of problem, from the list in `feedback-capture-map.md`: `low-quality`, `messy`, `slow`, `wrong-output`, `broke`, `fabricated`, `wrong-voice`, `worked-well`, `other` |
 | `whatHappened` | textarea | yes | the creator's own words plus your short reconstruction of what went wrong |
 | `whatTheyWanted` | textarea | no | what the creator expected or wanted instead |
 | `skillName` | text | no | which skill(s) ran this session, comma-separated |
@@ -35,7 +40,7 @@ The mutation takes `{ formSlug, values, userAgent? }`. The `values` keys must ma
 
 Only `severity` and `whatHappened` are required, so an automated submit never fails on a missing optional field. Omit any field you do not have rather than sending an empty placeholder.
 
-**Which pieces to capture is per skill.** `references/feedback-capture-map.md` defines, for each skill, how to build the `reproductionCase`, which files go in the `fixturesSnapshot`, and which artifact is the `badOutputVerbatim`, plus what to tag in `failureMode` and `sessionMode`. The goal is a replay bundle: enough to recreate the bad run. The `aaios-feedback` skill looks the skill up there before assembling. For an unmapped skill it uses that file's default principle. Held-out quote files are never snapshotted.
+**Which pieces to capture is per skill.** `references/feedback-capture-map.md` defines, for each skill, how to build the `reproductionCase`, which files go in the `fixturesSnapshot`, and which artifact is the `badOutputVerbatim`, plus what to tag in `failureMode` and `sessionMode`. The goal is a replay bundle: enough to recreate the bad run. The `aai-feedback` skill looks the skill up there before assembling. For an unmapped skill it uses that file's default principle. Held-out quote files are never snapshotted.
 
 ## Auto-collected context (no questions for these)
 

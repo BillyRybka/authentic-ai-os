@@ -131,7 +131,7 @@ Backstory is the last foundation interview. Announce the lock, that foundation i
 
 > "Backstory locked. Full version plus the 3-sentence intro version. That completes your foundation identity.
 >
-> The next step is `vid-research`. It builds your pattern banks from real YouTube data, what's working in your niche, so every video you plan is grounded in evidence. It needs a free YouTube API key (I'll walk you through it) and runs a real session.
+> The next step is `vid-research`. It builds your pattern banks from real YouTube data, what's working in your niche, so every video you plan is grounded in evidence. It runs a real session.
 >
 > Want to start it now, or come back to it later?"
 

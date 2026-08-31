@@ -1,9 +1,9 @@
 ---
-name: aaios-feedback
-description: Captures a creator's feedback on an Authentic AI OS skill that just ran (or the whole session) and sends it to Billy, the plugin's author, with a reproduction bundle, after preview and consent. Use whenever a creator wants to report on the plugin or one of its skills. Triggers on "give feedback", "leave feedback", "send feedback", "AAIOS feedback", "that didn't work", "report a bug", "this is broken", "something went wrong", or "that's not what I wanted".
+name: aai-feedback
+description: Captures a creator's feedback on an Authentic AI OS skill that just ran (or the whole session) and sends it to Billy, the plugin's author, with a reproduction bundle, after preview and consent. Use whenever a creator wants to report on the plugin or one of its skills. Triggers on "give feedback", "leave feedback", "send feedback", "AAI feedback", "AAIOS feedback", "that didn't work", "report a bug", "this is broken", "something went wrong", or "that's not what I wanted".
 ---
 
-# AAIOS feedback
+# AAI feedback
 
 Turn a creator's reaction into a structured report Billy can act on, and send it. The creator should feel like they said one or two sentences and were done. You do the assembly.
 
@@ -23,13 +23,21 @@ Both paths land in the same flow below. If you arrived from the offer protocol a
 
 ## The flow
 
+### Phase 0: Triage (silent)
+
+Open `references/feedback-capture-map.md` and read its "Is this worth reporting?" section first. It carries the `failureMode` tags and the three kinds of friction that route somewhere else instead of becoming a report.
+
+The one that comes up most: a voice correction is not a bug. When the creator reworded a line, that belongs to `vid-voice-update`, which asks one-off vs standing rule and writes the answer to their voice profile. Point them there and stop. Only file `wrong-voice` when the skill ignored a rule already sitting in `foundation/voice-profile.md`.
+
+If nothing in the session is reportable, say so in one line and do not file an empty report.
+
 ### Phase 1: Reconstruct context (silent)
 
 You have the session in context. Pull, without asking:
 
 - **Which skill(s) ran** and which one this feedback is about. If several ran, name the one that prompted the feedback plus the others as context.
 - **Where it went sideways.** The specific moment, message, or output that broke or disappointed. Hold the verbatim span around it for the excerpt.
-- **Look the skill up in the capture map and build the replay bundle.** Open `references/feedback-capture-map.md` and find the entry for the skill that ran. Build three things from its lines: a `reproductionCase` (a seeds.json-shaped JSON reconstructed from this session, the raw input plus the persona reveals and withholds drawn from how the creator actually responded), a `fixturesSnapshot` (the full content of the determinative vault files the entry names, each under a `--- path ---` header), and the `badOutputVerbatim` (the produced artifact that was bad). Tag `failureMode` and `sessionMode`. Record the touched paths in `artifactsTouched`. If the skill has no entry (any WIP skill), use the file's default principle. Never snapshot held-out quote files (`audience/held-out/`).
+- **Look the skill up in the capture map and build the replay bundle.** Open `references/feedback-capture-map.md` and find the entry for the skill that ran. Build three things from its lines: a `reproductionCase` (a seeds.json-shaped JSON reconstructed from this session, the raw input plus the persona reveals and withholds drawn from how the creator actually responded), a `fixturesSnapshot` (the full content of the determinative vault files the entry names, each under a `--- path ---` header), and the `badOutputVerbatim` (the artifact in full). On a `worked-well` report that last field carries the GOOD artifact, which is worth more to the eval harness than any bug report. Tag `failureMode` from the Phase 0 table, and `sessionMode`. Record the touched paths in `artifactsTouched`. If the skill has no entry (any WIP skill), use the file's default principle. Never snapshot held-out quote files (`audience/held-out/`).
 - **Plugin version.** Read `${CLAUDE_PLUGIN_ROOT}/.claude-plugin/plugin.json`, take `version`. If it does not resolve, search the install dir for `.claude-plugin/plugin.json`. If you cannot find it, leave it out.
 - **Runtime.** Cowork, OS, anything useful. Optional.
 

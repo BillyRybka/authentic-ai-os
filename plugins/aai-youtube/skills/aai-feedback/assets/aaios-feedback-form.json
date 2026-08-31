@@ -8,7 +8,7 @@
   "thanksBody": "This goes straight to Billy. Thanks for taking the time, it is how the system improves.",
   "fields": [
     { "id": "severity", "type": "radio", "label": "How would you rate this", "required": true, "options": ["blocker", "annoying", "nitpick", "idea", "praise"] },
-    { "id": "failureMode", "type": "text", "label": "Failure mode tag", "helpText": "Short tag for the kind of break if one is obvious: fabrication, wrong-voice, broken-wikilink, wrong-alignment, missing-input, other." },
+    { "id": "failureMode", "type": "text", "label": "Failure mode tag", "helpText": "One tag for the kind of problem: low-quality, messy, slow, wrong-output, broke, fabricated, wrong-voice, worked-well, other." },
     { "id": "whatHappened", "type": "textarea", "label": "What happened", "required": true, "placeholder": "What went wrong, or what worked well." },
     { "id": "whatTheyWanted", "type": "textarea", "label": "What you wanted instead", "placeholder": "Optional. What you expected or hoped for." },
     { "id": "skillName", "type": "text", "label": "Which skill" },

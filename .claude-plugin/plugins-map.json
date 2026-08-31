@@ -16,7 +16,7 @@
   "plugins": {
     "aai-youtube": {
       "skills": [
-        "aaios-feedback",
+        "aai-feedback",
         "creator-setup",
         "foundation",
         "vid-avatar",
