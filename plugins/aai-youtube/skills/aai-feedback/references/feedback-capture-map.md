@@ -1,6 +1,6 @@
 # Feedback capture map
 
-The reproduction layer for the `aaios-feedback` skill. When a creator reports a skill produced bad content, the report has to carry enough to RECREATE the problem, not just describe it. A description gets a sympathetic nod. A reproduction gets a fix. So when feedback fires, the skill looks the skill up here in Phase 1 and works the entry to assemble three captures: a replay case, a fixtures snapshot, and the bad output verbatim.
+The reproduction layer for the `aai-feedback` skill. When a creator reports a skill produced bad content, the report has to carry enough to RECREATE the problem, not just describe it. A description gets a sympathetic nod. A reproduction gets a fix. So when feedback fires, the skill looks the skill up here in Phase 1 and works the entry to assemble three captures: a replay case, a fixtures snapshot, and the bad output verbatim.
 
 The bar comes from Billy's eval harness (the `tests/` tree in the source repo). That tree does not ship in the plugin, and this doc spells out the seed shape inline below, so nothing here depends on `tests/` at runtime. For reference: a seed in `tests/corpus/seeds.json` is a frozen, reproducible scenario, and a fixtures vault in `tests/fixtures/shared/` is the state a skill reads. A creator-simulator plays the persona (reveals what is in `reveals`, withholds what is in `withholds`, never invents) so the fabrication test stays honest. A real feedback report is the same thing rebuilt from an actual session: a seed reconstructed from how the creator really responded, plus the creator's real vault files in place of the shared Sam Rivera fixtures.
 
@@ -84,13 +84,6 @@ Locks the Problem-Action-Outcome backstory (full plus 3-sentence compressed) int
 - fixturesSnapshot: `foundation/avatar.md` and `foundation/iceberg.md` (full, for Avatar and Iceberg), `foundation/voice-profile.md` (full, if it exists), and `people/{Full Name}.md` (full, if a client was named).
 - badOutputVerbatim: the exact backstory draft shown before save (the blockquote), the creator's reworded version if they changed anything, and any draft the skill rejected internally if it is informative.
 
-### aaios-feedback
-The feedback channel itself. A creator rarely reports a problem with the feedback skill via the feedback skill, so it carries no special entry. Use the default principle below in the rare case it comes up.
-
-## Staged skills (built in `.claude/skills/`, not yet shipped)
-
-These three have full reproduction entries ready, but they live in `.claude/skills/` and are not listed in the map, so they do not ship to creators. A creator on a release cannot have run them. They move up to Released the moment they graduate into `shared-skills/` and get listed. Until then only Billy's dev environment runs them, and the entries below are pre-built so the move is a copy, not a rewrite.
-
 ### vid-research
 Builds or refreshes the pattern, title, and power-words banks plus packaging-system.md from YouTube research.
 
@@ -98,19 +91,117 @@ Builds or refreshes the pattern, title, and power-words banks plus packaging-sys
 - fixturesSnapshot: `foundation/iceberg.md` and `foundation/avatar.md` (full, for iceberg, audience, and niche match) and `foundation/voice-profile.md` (full, if it exists). For the banks, snapshot only the broken entries (the flagged patterns, the bad title templates) under their bank path headers, never the full bank. Snapshot `foundation/packaging-system.md` in full if the packaging defaults were the break.
 - badOutputVerbatim: the specific wrong entries (flagged patterns, off title candidates, bad packaging defaults), any Keep/Drop/Modify exchange, the Phase 5 or 6 confirmation message. Point `artifactsTouched` at the full bank files.
 
+### vid-pipeline
+Router skill. No seed, no persona. Reproduce from the piece state and the routing decision.
+
+- Reproduction note: into `reproductionCase` as a plain JSON object: `piece_slug`, `status` at entry, which piece.md fields read as present (title, thumbnail_text, segment_purposes, segments_completed vs purposes, intro_locked, ending_locked, pressure_test_status), `skill_invoked`, and the creator's ask verbatim. This reproduces which next skill the router chose.
+- fixturesSnapshot: the routed piece's `piece.md` in full. Nothing else is determinative.
+- badOutputVerbatim: the "where you are" message and the invocation result (right skill, wrong skill, or error).
+
+### vid-braindump
+Captures one video's raw material verbatim into brain-dump.md, creates piece.md.
+
+- reproductionCase: `seed` is the creator's raw material as it arrived (talk, pasted notes, transcript), verbatim. `persona.reveals` is what surfaced across the capture passes; `persona.withholds` is gaps left open at close. `mode` is fresh / resume. `distinctive_phrases` is wording that had to survive into the file unpolished. `expected_problem` (e.g. `over-polished-voice`, `fabricated-content`, `lost-material`, `wrong-piece-resumed`). `fabrication_traps` is anything in the file that was not said.
+- fixturesSnapshot: on resume, the prior `brain-dump.md` in full. Fresh runs have no determinative fixtures.
+- badOutputVerbatim: the full `brain-dump.md` as saved and the `piece.md` frontmatter as created. The break is whether the creator's words survived.
+
+### vid-framing
+Locks frame, core_payoff, must_not_become, format, goal, voice_context, and The viewer section into piece.md.
+
+- reproductionCase: `seed` is the brain dump the frame was built from plus the creator's interview answers. `persona.reveals` is their intent answers and reactions to the proposed frame; `persona.withholds` is any question they skipped. `distinctive_phrases` is their spoken frame wording (the frame must be first person and spoken, never a headline). `expected_problem` (e.g. `headline-not-spoken`, `invented-frame`, `wrong-format`, `reopened-locked-field`).
+- fixturesSnapshot: `brain-dump.md` and `piece.md` (full), `foundation/avatar.md` (full), and any audience-language sources the creator supplied.
+- badOutputVerbatim: every framing field as written plus the The viewer section.
+
+### vid-title
+Writes truthful title options against the locked frame, saves the pick to piece.md.
+
+- reproductionCase: `seed` is the locked frame, core_payoff, and anchor from piece.md plus the creator's reactions per round. `persona.reveals` is their picks and pushes; `distinctive_phrases` is wording they insisted on. `expected_problem` (e.g. `payoff-leaked`, `frame-drift`, `claim-not-in-material`, `bland-finalists`). `bank_pulls_allowed` is the title/pattern/power-word rows cited. `fabrication_traps` is any claim or number not in the material.
+- fixturesSnapshot: `piece.md` (full) and the specific bank rows cited, never the full banks.
+- badOutputVerbatim: every candidate shown and the locked title as saved.
+
+### vid-thumbnail
+Presents ten thumbnail texts, locks three with measurement shapes into piece.md.
+
+- reproductionCase: `seed` is the locked title plus the numbers, paradoxes, and named systems mined from the piece's own material. `persona.reveals` is the three picks and reactions; `expected_problem` (e.g. `restates-title`, `invented-number`, `payoff-leaked`, `fewer-than-ten-distinct`). `fabrication_traps` is any number or claim not present in the material verbatim.
+- fixturesSnapshot: `piece.md` and `brain-dump.md` (or `script.md` when it exists), full, since the mined numbers must trace there.
+- badOutputVerbatim: all ten options plus the three locked `thumbnail_text` and `thumbnail_shape` values as saved.
+
+### vid-structure
+Plans the writer-ready body: segment_purposes, tension_plan, script.md skeleton.
+
+- reproductionCase: `seed` is the brain dump plus the locked package (title, thumbnail_text, format, goal). `persona.reveals` is gap answers and approval calls on the proposed skeleton; `persona.withholds` is critical gaps left unresolved. `expected_problem` (e.g. `early-payoff-plan`, `section-without-source`, `invented-material`, `re-structure-clobbered-completed-section`).
+- fixturesSnapshot: `brain-dump.md` and `piece.md` in full. The format planner is plugin material, cite it in `artifactsTouched`.
+- badOutputVerbatim: the proposed outline, the `script.md` skeleton as written, and `segment_purposes` plus `tension_plan` as saved.
+
+### vid-intro
+Writes the opening against the questions the locked title and thumbnail raised.
+
+- reproductionCase: `seed` is the locked title, thumbnail_text, and the material the hook pulls from, plus the creator's confirmation of the Top 3 viewer questions. `persona.reveals` is their reactions per candidate round. `distinctive_phrases` is their voice the intro had to keep. `expected_problem` (e.g. `question-never-raised`, `credibility-misplaced`, `off-voice`, `payoff-leaked`).
+- fixturesSnapshot: `piece.md`, `brain-dump.md`, `foundation/credibility.md`, `foundation/voice-profile.md`, and the matched `foundation/reference-pieces/` file, each full.
+- badOutputVerbatim: the assembled intro plus the rejected candidates for the failed phase.
+
+### vid-segment
+Writes one body segment from its locked plan slot.
+
+- reproductionCase: `seed` is the segment's plan slot (job, sources, takeaway from script.md) plus its material anchors. `persona.reveals` is approval and correction beats; `distinctive_phrases` is creator wording the prose had to carry. `expected_problem` (e.g. `claim-without-source`, `off-voice`, `closed-the-open-thread`, `payoff-early`). `bank_pulls_allowed` is entries pulled this segment. `fabrication_traps` is any claim not in the dump or a cited bank entry.
+- fixturesSnapshot: `script.md`, `piece.md`, `foundation/voice-profile.md`, the matched reference-pieces file, and the pulled bank entries, each full.
+- badOutputVerbatim: the full segment prose as written.
+
+### vid-ending
+Writes the Pivot/Gap/Bridge close, points at a real published video.
+
+- reproductionCase: `seed` is the script body being closed plus the goal. `persona.reveals` is the next-video choice and reactions; `expected_problem` (e.g. `announced-the-ending`, `invented-next-video`, `wrong-goal-pivot`, `off-voice`). `fabrication_traps` is a `next_video` that does not exist as a published piece.
+- fixturesSnapshot: `script.md`, `piece.md`, `foundation/voice-profile.md`, and cited bank entries, full.
+- badOutputVerbatim: both draft candidates and the locked close plus `next_video` as saved.
+
+### vid-pressure-test
+Four adversarial reviewers plus the interactive fix loop and read-aloud gate.
+
+- reproductionCase: `seed` is the assembled script plus the piece.md fields the reviewers read (format, goal, tension_plan, viewer_questions). `persona.reveals` is the approve/deny/skip calls per issue and the read-aloud rewords. `expected_problem` (e.g. `missed-fabrication`, `false-positive-voice-flag`, `early-payoff-not-caught`, `rewrite-broke-voice`).
+- fixturesSnapshot: `script.md`, `brain-dump.md`, `piece.md`, `foundation/voice-profile.md`, and the bank entries the traceability reviewer checked, full.
+- badOutputVerbatim: the findings lists, the rewrites the creator rejected with their reasoning, and the audit block written to piece.md.
+
+### vid-bank
+Captures stories, metaphors, proof, testimonials, and frameworks into the evergreen banks.
+
+- reproductionCase: `seed` is the raw material as the creator dropped it. `persona.reveals` is answers to the capture walk; `persona.withholds` is details they could not give (which must stay absent). `expected_problem` (e.g. `duplicate-entry`, `invented-detail`, `wrong-bank`, `missing-person-stub`). `fabrication_traps` is anything in the entry the creator never said.
+- fixturesSnapshot: `foundation/iceberg.md`, `foundation/avatar.md`, any dedup-candidate entries checked, and any `people/` stub touched, full.
+- badOutputVerbatim: the saved bank entry in full with frontmatter, plus the session-close report.
+
+### vid-voice-capture
+Curates reference pieces plus the guardrail into the voice profile.
+
+- reproductionCase: `seed` is the source passages the creator supplied (what they wrote or said). `persona.reveals` is curation picks and refusals stated; `expected_problem` (e.g. `synthetic-reference-piece`, `guardrail-missed-refusal`, `wrong-context-file`).
+- fixturesSnapshot: the source materials supplied and, on refresh, the prior `foundation/voice-profile.md` and reference-pieces files, full.
+- badOutputVerbatim: the reference-pieces files and voice-profile as written.
+
+### vid-voice-audit
+Reads a finished script against the reference pieces and guardrail, flags every line failing the read-aloud test.
+
+- reproductionCase: `seed` is the script audited. `persona.reveals` is which flags the creator accepted vs rejected. `expected_problem` (e.g. `missed-off-voice-line`, `false-flag`, `rewrite-not-in-voice`, `guardrail-refusal-ignored`).
+- fixturesSnapshot: `script.md`, `foundation/voice-profile.md`, and the matched reference-pieces file, full.
+- badOutputVerbatim: the full findings list with per-beat verdicts (report only, no file write).
+
+### vid-voice-update
+Triages a mid-draft voice signal, appends permanent rules to the profile.
+
+- reproductionCase: `seed` is the creator's exact trigger phrase, never paraphrased. `persona.reveals` is their answer when the skill asked which signal type it was. `expected_problem` (e.g. `one-time-saved-as-rule`, `rule-not-saved`, `wrong-signal-type`).
+- fixturesSnapshot: `foundation/voice-profile.md` BEFORE the append, full.
+- badOutputVerbatim: the profile after the append plus the signal type tagged (hard rule / one-time / preference shift).
+
+### aai-feedback
+The feedback channel itself. A creator rarely reports a problem with the feedback skill via the feedback skill, so it carries no special entry. Use the default principle below in the rare case it comes up.
+
+## Staged skills (built in `.claude/skills/`, not yet shipped)
+
+These live in `.claude/skills/` and are not listed in the map, so they do not ship to creators. A creator on a release cannot have run them. Entries here are pre-built so graduation is a copy, not a rewrite.
+
 ### vid-ideas
 Surfaces 5 to 6 signal-backed video ideas, saves keepers to ideas-backlog.md, seeds vid-intake.
 
 - reproductionCase: `seed` is the creator's stated focus (pillar / problem / all) and dial turns in sequence. `persona.reveals` is the focus, the dial turns, the pick, and the keep flags; `persona.withholds` is rare. `mode` is the dial posture at the bad batch (more / tighter / wilder / different-pillar / different-problem). `pillar` and the problem tag for the batch. `distinctive_phrases` is the creator's voice the idea lines should mirror. `expected_problem` (e.g. `fabricated-receipt`, `off-iceberg-surfaced`, `transcribed-not-adapted`, `re-proposed-dropped`). `expected_iceberg_aligned` is whether the surfaced ideas should have passed the 2-layer gate. `bank_pulls_allowed` is the pattern-bank entries (by pattern_id) the receipts cite. `fabrication_traps` is any outlier or view count not in the pattern-bank.
 - fixturesSnapshot: `foundation/iceberg.md` and `foundation/avatar.md` (full, for Iceberg / Pillars / Avatar / Top 3), `content/ideas-backlog.md` (full, if it exists, to reproduce sticky drops and prior keepers), and the cited `banks/pattern-bank.md` rows. The pattern-bank can be large: snapshot the synthesis sections and the specific cited entries, not every per-outlier row, and point at the full file.
 - badOutputVerbatim: the full surfaced batch (all idea lines with receipts), any fabricated or misquoted receipt, any off-voice idea line, the seed packet passed to vid-intake (all required fields), the ideas-backlog.md rows added, the anchors cited.
-
-### vid-intake
-Captures raw material into brain-dump.md for one video, locks iceberg fit.
-
-- reproductionCase: `seed` is the creator's full brain dump (the conversational dump, pasted outline, transcript, or story). This IS the seed for this skill. `persona.reveals` is the dump plus their answers to drilling and alignment; `persona.withholds` is any detail they marked as a TODO or could not give. `mode` is which of the 7 intake modes was detected. `pillar` from the Phase 6 selection. `audience_temp` if captured. `distinctive_phrases` is the creator's exact phrasing that the brain dump had to preserve verbatim. `expected_problem` (e.g. `over-polished-voice`, `mode-misdetect`, `fabricated-content`, `broken-wikilink`). `expected_iceberg_aligned` is the fit outcome (true if the idea fits the iceberg, false if it does not). `bank_pulls_allowed` is any story / proof / metaphor entry the creator pulled in. `fabrication_traps` is anything added that was not in the dump.
-- fixturesSnapshot: `foundation/avatar.md` and `foundation/iceberg.md` (full, for Top 3 and iceberg), `foundation/voice-profile.md` (full, if it exists), and any cited bank entries the dump wikilinks to (full, under their path headers, to reproduce link resolution).
-- badOutputVerbatim: the full brain-dump.md as saved and the full piece.md frontmatter as saved. The brain dump is the creator's voice verbatim, so the break is whether their words survived. Capture it whole, then consent-gate it.
 
 ## Default principle (any unmapped skill)
 
@@ -131,18 +222,7 @@ These ship later. If one runs and goes bad, use the default principle. One-line 
 - **aud-intake:** seed is the raw call transcript or comment CSV reference; snapshot the generated call summary or vocabulary-sample files; bad output is the bad extraction plus the contamination report.
 - **aud-review:** seed is the piece under review plus content type; snapshot the validated avatar files used and the piece; bad output is the full synthesis.md (verdict, top 3 fixes, dissent block, median table).
 - **aud-validate:** seed is the draft avatar set; snapshot the avatar files and the validation report; bad output is the report plus the Billy-facing summary. Held-out sets are counts only, never snapshotted.
-- **vid-voice-audit:** seed is the script audited; snapshot script.md, voice-profile.md, and the matched reference-pieces; bad output is the full findings list and verdict map (report only, no file).
-- **vid-voice-update:** seed is the creator's exact trigger phrase (never paraphrased); snapshot voice-profile.md before the append; bad output is voice-profile.md after the append, plus the signal type tagged (hard rule / one-time / preference shift).
-- **vid-bank:** seed is the raw story / metaphor / proof / testimonial / framework; snapshot iceberg.md, avatar.md, and any dedup-candidate entries; bad output is the saved bank entry in full plus the session-close report.
-- **vid-voice-capture:** seed is the creator's source passages; snapshot the source materials and the existing voice-profile on refresh; bad output is the reference-pieces and voice-profile written.
-- **vid-pressure-test:** seed is the assembled script plus piece.md fields; snapshot script.md, brain-dump.md, voice-profile.md, and cited banks; bad output is the rejected rewrites with the creator's reasoning, the read-aloud exchange, and the piece.md audit block.
-- **vid-thumbnail:** seed is the locked title and script numbers; snapshot piece.md, script.md, and packaging-system.md; bad output is the candidate list plus the locked `thumbnail_text` picks written to piece.md. Fabrication trap: any number or claim not stated in the script verbatim.
-- **vid-structure:** seed is the brain-dump plus locked angle; snapshot brain-dump.md, piece.md, the foundation slice files the run read, and the format planner; bad output is the full outline proposal and the script.md skeleton.
-- **vid-intro:** seed is the brain-dump material plus locked title and thumbnail_text; snapshot piece.md, brain-dump.md, voice-profile.md, and the matched reference-pieces; bad output is the assembled intro plus the rejected candidate list for the failed phase.
-- **vid-ending:** seed is the script body it closes; snapshot script.md, piece.md, voice-profile.md, the format planner, and cited banks; bad output is both draft candidates and the locked close.
-- **vid-segment:** seed is the segment's outline slot plus its material anchors; snapshot script.md, piece.md, voice-profile.md, and the bank entries pulled; bad output is the full segment prose. Fabrication trap: any claim not in the brain-dump or a cited bank. (Provisional: derived from the pipeline pattern, no fingerprint yet.)
-- **vid-framing:** seed is the creator's reaction to the angle candidates; snapshot piece.md, avatar.md, iceberg.md, and cited pattern-bank rows; bad output is all angle candidates and the piece.md framing fields appended.
-- **vid-title:** seed is the locked hook and payoff; snapshot piece.md, script.md, and packaging-system.md; bad output is all 5 to 10 candidates and the locked title.
+- **vid-format-plan:** (parked in 0.4.1, untested) seed is the video idea plus format choice and blank-by-blank answers; snapshot the plan file produced; bad output is the filled plan. Never writes piece.md or script.md.
 - **post-write:** seed is the batch of raw ideas or the long-form source; snapshot iceberg.md, avatar.md, voice-profile.md, and the matched reference-pieces; bad output is the full post note and the batch summary.
 
 > [!warning] When the aud-* skills graduate

@@ -2,17 +2,17 @@
 
 When and how a skill proactively offers feedback. The goal is to catch friction Billy would never otherwise hear about, without nagging. Conservative by default. One light offer, easy to decline, never blocks the creator's work.
 
-Any skill can reference this. The `aaios-feedback` skill owns the actual capture and submit (its own references cover the payload contract). This file only governs the offer.
+Any skill can reference this. The `aai-feedback` skill owns the actual capture and submit (its own references cover the payload contract). This file only governs the offer.
 
 ## The once-per-session guard
 
 Run this check before offering. Scan the session so far:
 
 - Has feedback already been offered this session? Skip.
-- Has the creator already given feedback this session (the `aaios-feedback` skill ran)? Skip.
+- Has the creator already given feedback this session (the `aai-feedback` skill ran)? Skip.
 - Did the creator already wave off an offer this session ("not now", "no", "later")? Skip for the rest of the session.
 
-If any are true, do not offer again. The creator can still ask for the `aaios-feedback` skill by name at any time. The guard only limits the proactive offer, not manual use.
+If any are true, do not offer again. The creator can still ask for the `aai-feedback` skill by name at any time. The guard only limits the proactive offer, not manual use.
 
 ## When to offer
 
@@ -36,4 +36,4 @@ At the end of a completed journey:
 
 > "Before you go, anything about that run you'd want Billy to know, good or rough? I can send quick feedback. Otherwise you're all set."
 
-If the creator says yes (or starts describing the problem), invoke the `aaios-feedback` skill via the Skill tool and let it take over. If they decline or ignore it and move on, drop it for the rest of the session per the guard. Never push twice.
+If the creator says yes (or starts describing the problem), invoke the `aai-feedback` skill via the Skill tool and let it take over. If they decline or ignore it and move on, drop it for the rest of the session per the guard. Never push twice.

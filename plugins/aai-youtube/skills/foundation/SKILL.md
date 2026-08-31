@@ -129,7 +129,7 @@ When all 5 foundation interview skills have locked their sections, congratulate 
 
 If the creator says yes (or any clear go), invoke `vid-research` via the Skill tool.
 
-If they want to wait, respect it and close. A completed journey is also a natural moment for feedback: if the `aaios-feedback` skill is available, offer it once via the end-of-journey path in `${CLAUDE_PLUGIN_ROOT}/knowledge/feedback-offer.md` (honor its once-per-session guard), and invoke `aaios-feedback` only if the creator has something to say.
+If they want to wait, respect it and close. A completed journey is also a natural moment for feedback: if the `aai-feedback` skill is available, offer it once via the end-of-journey path in `${CLAUDE_PLUGIN_ROOT}/knowledge/feedback-offer.md` (honor its once-per-session guard), and invoke `aai-feedback` only if the creator has something to say.
 
 Voice capture and content production are still in development; do not route to them. `vid-research` is the only skill to offer after the foundation.
 

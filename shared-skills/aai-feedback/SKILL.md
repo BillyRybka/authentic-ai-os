@@ -1,9 +1,9 @@
 ---
-name: aaios-feedback
-description: Captures a creator's feedback on an Authentic AI OS skill that just ran (or the whole session) and sends it to Billy, the plugin's author, with a reproduction bundle, after preview and consent. Use whenever a creator wants to report on the plugin or one of its skills. Triggers on "give feedback", "leave feedback", "send feedback", "AAIOS feedback", "that didn't work", "report a bug", "this is broken", "something went wrong", or "that's not what I wanted".
+name: aai-feedback
+description: Captures a creator's feedback on an Authentic AI OS skill that just ran (or the whole session) and sends it to Billy, the plugin's author, with a reproduction bundle, after preview and consent. Use whenever a creator wants to report on the plugin or one of its skills. Triggers on "give feedback", "leave feedback", "send feedback", "AAI feedback", "AAIOS feedback", "that didn't work", "report a bug", "this is broken", "something went wrong", or "that's not what I wanted".
 ---
 
-# AAIOS feedback
+# AAI feedback
 
 Turn a creator's reaction into a structured report Billy can act on, and send it. The creator should feel like they said one or two sentences and were done. You do the assembly.
 
