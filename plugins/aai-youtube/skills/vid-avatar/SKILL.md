@@ -89,13 +89,19 @@ The creator's answer often spills into Phase 2 and 3 too. That's good. Use the a
 
 **If Phase 1 already painted the avatar,** absorb-first protocol applies. Surface what you heard:
 
-> "Sounds like this is for [paraphrased avatar]. That right, or sharper?"
+> "Sounds like this is for [paraphrased avatar]. Is that right?"
+
+Wait for the answer before probing further.
 
 **When the creator stays broad:**
 
-Broad labels like "business owners," "entrepreneurs," "creators" can be real. Probe once for a qualifier:
+Broad labels like "business owners," "entrepreneurs," "creators" can be real. First confirm the read-back and wait for the answer. Then, in the next message, ask for the specifics plainly:
 
-> "What flavor of [label]? Stage, industry, what they'd call themselves over a beer?"
+> "Let's get more specific about who this is for. The details that matter:
+>
+> - Stage they're at
+> - Industry
+> - What they call themselves"
 
 If they narrow, lock the narrower version. If they don't, accept the broad label. The specificity moves into the Iceberg Statement (via `vid-positioning`) through the tension and mechanism. Don't keep fighting for a label the creator would never say.
 
@@ -141,7 +147,7 @@ Creators reflexively list solutions ("they need confidence," "they need systems"
 
 "Lack of systems thinking." "Operational inefficiency." Push toward viewer language:
 
-> "What would THEY say out loud over a beer? Closer to 'I'm drowning' or 'I keep forgetting things.'"
+> "How would they say it in their own words? Closer to 'I'm drowning' or 'I keep forgetting things.'"
 
 Sanity-check against the viewer-voice bank in `references/avatar-guide.md`. Expert-column phrasing means send it back. Viewer-column phrasing means it locks.
 
