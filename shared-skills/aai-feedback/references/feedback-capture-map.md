@@ -20,6 +20,7 @@ Run this before anything else. Most session friction is not a bug, and filing it
 | `slow` | It took far more back and forth than the work deserved |
 | `wrong-output` | The skill did something other than what it said it would do |
 | `broke` | It errored, stopped cold, wrote to the wrong place, or lost work |
+| `wrong-voice` | The output ignored a rule already sitting in `foundation/voice-profile.md`. A reword with no standing rule behind it routes to `vid-voice-update` instead |
 | `worked-well` | Something landed. Capture the good artifact, not a compliment |
 
 **Do not report it. Route it instead.**
