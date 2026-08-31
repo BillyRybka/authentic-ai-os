@@ -72,11 +72,11 @@ Run in order. Stop at the first failure.
 3. **Commit the regenerated tree** if it changed. `plugins/` is tracked because `main` ships from it.
 4. **Run the gate against the release ref.** `node scripts/qa-plugins.mjs --ref dev`. Zero blockers required.
 5. **Confirm the version with the creator.** Which plugin, which number. This is a checkpoint, not a guess.
-6. **Release.** `pwsh scripts/release.ps1 -Version <x.y.z>`. Use `-DryRun` first on anything unusual: it builds `main` and the artifact locally, pushes nothing, and prints the rollback command.
+6. **Release.** `pwsh scripts/release.ps1 -Plugin <name> -Version <x.y.z>`. Use `-DryRun` first on anything unusual: it builds `main` and the artifact locally, pushes nothing, and prints the rollback command.
 
 Reminder from invariant 10: `main` must always carry every shipping plugin. Release selects which plugin versions and publishes, never which plugins exist. A single-plugin allowlist would delete the others from `main` and break those installs.
 
 ## 5. After the release
-- Verify the public mirror shows the new release and the `.plugin` asset is attached. The client update check reads `releases/latest` from that repo and takes whatever asset it finds.
-- Each plugin gets its own mirror repo. A shared mirror serves the wrong plugin's file to the wrong clients, because `releases/latest` is per repo and does not know which plugin an asset belongs to.
+- Verify the public marketplace repo (`BillyRybka/authentic-ai`, remote `public`) received the push. That repo is the distribution channel: clients added it once and Claude auto-updates their plugins from it. Nothing else needs publishing.
+- **Only history-free snapshots reach the public remote, never a branch.** main's own pre-allowlist history carries Billy's creator-foundation.md, banks/, audits/, and WIP skills; `git push public main` would leak all of it. release.ps1 builds a snapshot commit of main's tree on the separate `public-main` lineage and pushes that. If you ever publish manually, use the same commit-tree mechanism. A wrong push here is a data leak, not a broken build.
 - Confirm `dev` was synced forward to the released version so future work does not iterate from behind.

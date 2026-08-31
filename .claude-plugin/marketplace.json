@@ -1,26 +1,26 @@
 {
-  "name": "peak-systems",
+  "name": "authentic-ai",
   "owner": {
     "name": "Billy Rybka",
     "email": "billy@peaksystems.io"
   },
   "metadata": {
-    "description": "Billy Rybka's systems as installable plugins. Install the one that fits the job.",
+    "description": "Authentic AI. Systems for creators who want AI to sound like them, not like AI. Install the plugin that fits the job.",
     "version": "1.0.0"
   },
   "plugins": [
     {
-      "name": "authentic-ai-os",
-      "displayName": "Authentic AI OS",
-      "source": "./plugins/authentic-ai-os",
-      "description": "Authentic AI OS. Billy Rybka's YouTube content system. Skills for foundation setup, voice capture, story/proof/metaphor banks, thumbnail and title development.",
+      "name": "aai-youtube",
+      "displayName": "AAI YouTube",
+      "source": "./plugins/aai-youtube",
+      "description": "Authentic AI for YouTube. Skills for foundation setup, voice capture, story/proof/metaphor banks, thumbnail and title development.",
       "version": "0.3.2",
       "author": {
         "name": "Billy Rybka",
         "email": "billy@peaksystems.io"
       },
-      "homepage": "https://github.com/BillyRybka/authentic-ai-os",
-      "repository": "https://github.com/BillyRybka/authentic-ai-os",
+      "homepage": "https://github.com/BillyRybka/authentic-ai",
+      "repository": "https://github.com/BillyRybka/authentic-ai",
       "license": "LicenseRef-Proprietary",
       "category": "content-creation",
       "keywords": [

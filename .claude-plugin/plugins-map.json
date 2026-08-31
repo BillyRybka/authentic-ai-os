@@ -14,11 +14,7 @@
     "fails loudly if one exists without the other, so a half-added plugin can never ship."
   ],
   "plugins": {
-    "authentic-ai-os": {
-      "release": {
-        "mirror": "BillyRybka/aaios-releases",
-        "_why": "Each plugin needs its OWN public mirror. The client update check reads releases/latest from this repo and takes whatever .plugin asset is attached, so a shared mirror would serve the wrong plugin's file to the wrong clients."
-      },
+    "aai-youtube": {
       "skills": [
         "aaios-feedback",
         "creator-setup",
@@ -34,9 +30,9 @@
       "agents": [],
       "commands": [],
       "files": [
-        "plugin-files/authentic-ai-os/LICENSE",
-        "plugin-files/authentic-ai-os/README.md",
-        "plugin-files/authentic-ai-os/.gitattributes"
+        "plugin-files/aai-youtube/LICENSE",
+        "plugin-files/aai-youtube/README.md",
+        "plugin-files/aai-youtube/.gitattributes"
       ]
     }
   }

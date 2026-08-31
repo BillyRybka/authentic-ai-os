@@ -23,7 +23,7 @@ Read before the first change in a session. Every rule here exists because someth
 ## 3. Plugin names are namespaces
 Skills invoke as `<plugin>:<skill>`. The namespace is the plugin name, not the marketplace name, so two plugins named `marketing` from two different marketplaces collide on the same machine. Billy runs BenAI's plugins, which already include `marketing`, `youtube`, `design`, `content`, `seo`, `ads`, `obsidian`, and `meta`. Prefix every new plugin (`aai-`) and check the name against the installed set before proposing it.
 
-`authentic-ai-os` keeps its unprefixed name. Renaming it would orphan every existing client install.
+The original plugin was renamed `authentic-ai-os` to `aai-youtube` in August 2026, while the install base was a handful of testers. That window is closed: every rename from here orphans real client installs, so a name has to be right before it ships.
 
 ## 4. Line endings
 `core.autocrlf` is true in this repo. Any file without an explicit `eol=lf` rule is checked out with CRLF. Cowork's YAML frontmatter parser rejects CRLF and silently leaks the entire frontmatter block into the body of the skill, so the skill still loads and behaves wrong rather than failing loudly.
@@ -50,7 +50,9 @@ Over 1024 characters in a skill's frontmatter `description` and the plugin valid
 ## 8. Version lives in marketplace.json
 Each plugin's `version` is a field on its `marketplace.json` entry. The generator writes it into the built `plugin.json`. Do not edit a version in `plugins/`, it is overwritten.
 
-Two plugins on independent versions cannot share a `v1.2.3` git tag. Source-repo tags are prefixed per plugin (`authentic-ai-os-v0.3.3`). Public mirror repos are per plugin, one each, because the client update check reads `releases/latest` from a repo and takes whatever `.plugin` asset is attached. A shared mirror serves the wrong plugin's file to the wrong clients.
+Two plugins on independent versions cannot share a `v1.2.3` git tag, so source-repo tags are prefixed per plugin (`aai-youtube-v0.3.3`).
+
+Distribution is the public marketplace repo. Clients add it once and Claude auto-updates their installed plugins from it. There are no per-plugin mirror repos, no `releases/latest` update path, and no in-skill update check. That machinery existed for the private-repo era and was deleted; do not reintroduce a "check for updates" step in any skill.
 
 ## 9. Resist new plugins
 The failure mode to avoid is not too few plugins, it is too many overlapping ones. BenAI's marketplace has `marketing`, `benai-marketing`, `content`, and `marketing-os` all overlapping, plus `obsidian`, `agentic-os`, `aios`, and `vault-os`. His CLAUDE.md now carries defensive paragraphs explaining boundaries that stopped being obvious.

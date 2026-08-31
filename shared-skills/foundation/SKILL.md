@@ -1,9 +1,7 @@
 ---
 name: foundation
-description: Thin orchestrator for the Authentic AI OS foundation. Checks what's locked in creator-foundation.md and points the creator at the next skill in the foundation sequence. Use this when a creator is new to the system, when they're not sure what foundation step to run next, or when a downstream skill is missing inputs and the creator needs to know which foundation skill produces them. Triggers on "set up my channel", "run the foundation", "where am I in the foundation", or "what's next".
+description: Thin orchestrator for the Authentic AI OS foundation. Checks what's locked across the foundation files (offer, avatar, iceberg, credibility, backstory) and points the creator at the next skill in the foundation sequence. Use this when a creator is new to the system, when they're not sure what foundation step to run next, or when a downstream skill is missing inputs and the creator needs to know which foundation skill produces them. Triggers on "set up my channel", "run the foundation", "where am I in the foundation", or "what's next".
 ---
-
-> 🔄 **Pre-flight (mandatory).** Before doing anything else, read `${CLAUDE_PLUGIN_ROOT}/knowledge/update-check.md` and follow it. If a newer version exists, halt and tell the creator. If you're up to date, continue with the skill below.
 
 # Foundation
 
@@ -47,7 +45,7 @@ Same content. Broken by idea. Plain words. The creator can scan it in three seco
 
 ## Contract
 
-**Inputs (optional):** `foundation/creator-foundation.md`. Any state.
+**Inputs (optional):** the five foundation files (`foundation/offer.md`, `foundation/avatar.md`, `foundation/iceberg.md`, `foundation/credibility.md`, `foundation/backstory.md`). Any state. A legacy `foundation/creator-foundation.md` triggers the migration flow in `${CLAUDE_PLUGIN_ROOT}/knowledge/foundation-migration.md`.
 
 **Outputs:** none directly. This skill routes. The sub-skills produce.
 
@@ -55,7 +53,7 @@ Same content. Broken by idea. Plain words. The creator can scan it in three seco
 
 ### Step 1: Read state silently
 
-Two checks, in order. Both silent. Don't announce them. Only surface output if action is needed.
+Three checks, in order. All silent. Don't announce them. Only surface output if action is needed.
 
 **Workspace check.** Verify the workspace is scaffolded at the current location:
 
@@ -76,7 +74,9 @@ Shape (when partially set up, e.g. `foundation/` missing but `CLAUDE.md` exists)
 
 Then immediately invoke `creator-setup` via the Skill tool. After it completes, the creator can re-invoke `/foundation` to start the interview chain.
 
-**Foundation state check.** Read `foundation/creator-foundation.md` (silent). Does it exist? Which sections are populated (Offer, Avatar, Top 3, Iceberg Statement, Pillars, Credibility, Backstory)?
+**Migration check.** If `foundation/creator-foundation.md` exists, the breakup into the five foundation files hasn't finished. Follow `${CLAUDE_PLUGIN_ROOT}/knowledge/foundation-migration.md`: with any split file missing it asks upgrade, enhance, or start fresh and waits for the creator's pick; with all five present it finishes the breakup without asking. Either way the content moves first, gets verified in the five files, and only then is the original deleted. Continue once it's gone.
+
+**Foundation state check.** Read the five foundation files (silent): `foundation/offer.md`, `foundation/avatar.md`, `foundation/iceberg.md`, `foundation/credibility.md`, `foundation/backstory.md`. Which exist, and which sections are populated vs still `[pending ...]` (Offer, Avatar, Top 3, Iceberg Statement, Machinery, Pillars, Credibility, Backstory)?
 
 ### Step 2: Map state to next skill
 
@@ -85,11 +85,11 @@ Use this routing table:
 | State | Next skill to invoke |
 |---|---|
 | Nothing exists | `vid-avatar` |
-| Avatar/Offer/Top 3 missing or partial | `vid-avatar` |
-| Avatar locked, Iceberg Statement missing | `vid-positioning` |
-| Iceberg Statement locked, Content pillars missing | `vid-pillars` |
-| Content pillars locked, Credibility brags missing | `vid-credibility` |
-| Credibility brags locked, Backstory missing | `vid-backstory` |
+| `offer.md` or `avatar.md` missing or partial | `vid-avatar` |
+| Avatar locked, Iceberg Statement or Machinery missing or pending in `iceberg.md` | `vid-positioning` |
+| Iceberg Statement locked, Content pillars pending in `iceberg.md` | `vid-pillars` |
+| Content pillars locked, `credibility.md` missing or pending | `vid-credibility` |
+| Credibility brags locked, `backstory.md` missing or pending | `vid-backstory` |
 | Backstory locked (foundation identity complete) | Foundation done. Acknowledge, then offer `vid-research` (Step 5). |
 
 ### Step 3: Tell the creator where they are, then auto-invoke
@@ -141,7 +141,7 @@ Voice capture and content production are still in development; do not route to t
 
 If the creator asks foundation questions during this skill ("can you write my Iceberg Statement?"), redirect:
 
-> "That's `vid-positioning`'s job. It runs a focused session for the Iceberg Statement and saves it to `foundation/creator-foundation.md`. Want me to point you there?"
+> "That's `vid-positioning`'s job. It runs a focused session for the Iceberg Statement and saves it to `foundation/iceberg.md`. Want me to point you there?"
 
 ## Anti-patterns
 
