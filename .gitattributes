@@ -21,6 +21,7 @@
 *.mjs     text eol=lf
 *.js      text eol=lf
 *.txt     text eol=lf
+*.base    text eol=lf
 LICENSE   text eol=lf
 
 # Windows-only tooling keeps CRLF.

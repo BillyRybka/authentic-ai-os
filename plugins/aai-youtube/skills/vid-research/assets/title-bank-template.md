@@ -4,54 +4,40 @@ kind: title
 project: authentic-ai-os
 status: active
 last_refreshed: {YYYY-MM-DD}
-total_patterns: {N}
+shape_count: {N}
 ---
-
 # Title Bank
 
-Fill-in-the-blank title shapes proven in the research outlier set. Each heading IS the template: the `[SLOTS]` get filled with the creator's actual content (backticked so the brackets render as code, not broken links). Worked examples come from the [[pattern-bank]] outlier set. Loaded by `vid-title`.
+## Shapes
 
-This file is both the research output (vid-research writes the shapes it surfaced) AND the creator's curated set (the creator edits in place, deleting shapes they would not use). One file, one source of truth. Spread is the repeatability signal; `own_channel_proven` is the strongest one.
+### `STOP / DON'T [common practice] ([do Y instead])`
 
-## Patterns
+- [[{outlier note}]]
+- [[{outlier note}]]
 
-### `Why I [reversal action] [specific subject] After [time/quantity]`
+### `{next shape}`
 
-- spread: 4 of 11 channels
-- own_channel_proven: false
+- [[{outlier note}]]
+- [[{outlier note}]]
 
-**Why it lands:** the audience trusts an authority who admits being wrong; a reversal signals active learning, not dogma.
+---
 
-**Worked examples:**
-- "Why I Cut My Squat 20% After Coaching 100+ Lifters" → [[pattern-bank]] (@CoachX)
-- "Why I Stopped Running 5x a Week After 12 Years" → [[pattern-bank]] (@CoachY)
+**Not part of the file. Build rules, delete this section when writing the creator's bank.**
 
-### `STOP [common practice] (Do This)`
+The output above is the whole file. No preamble, no explanation of what a shape is, no "distilled from N titles" line. The creator opens this to grab a shape, not to read about the method.
 
-- spread: 6 of 11 channels
-- own_channel_proven: false
+What earns a place:
 
-**Why it lands:** a sophisticated audience will question a default if given a credible reason and a replacement.
+- **It won more than once.** A channel repeating its own move counts; three runs of the same house template is a shape that keeps working.
+- **It passes the fill test.** Fill the slots with arbitrary niche content and read the result. Publishable means right-sized. Mush means the fixed words are only connective tissue; tighten it or drop it. `[Outcome] in [N] Minutes` fails, and it wrongly merges three real shapes: `Master [N]% of [Tool] in [N] Minutes`, `How I Use [Tool] To [Outcome] In [N] Minutes`, and `[Topic] Fundamentals In [N] Minutes`.
+- **Specific is not too granular.** Keep the fixed words carrying the mechanism, slot only what varies. The percentage in `Master [N]% of [Tool]` IS the move; freezing the number would be too granular.
 
-**Worked examples:**
-- "STOP Following This Outdated Programming Advice" → [[pattern-bank]] (@CoachX)
-- "STOP Resting 3 Minutes Between Sets (Do This)" → [[pattern-bank]] (@CoachY)
+What does not belong:
 
-### `{next template string as research surfaces it}`
+- **Bolt-ons.** A phrase that clips onto structurally different titles (`in [N] Minutes`, `(Free Template)`, `Step-by-Step`, `(2026)`, `(No Employees)`) is a power word, not a shape. It goes in [[power-words-bank]].
+- **Spread counts and channel attributions on the shape line.** The linked examples carry that and one click gets the numbers. A shape proven on one channel is as usable as one proven on six.
 
-- spread: {N} of {M} channels
-- own_channel_proven: {true|false}
+Judging a shape:
 
-**Why it lands:** {one line}
-
-**Worked examples:**
-- "{real title}" → [[pattern-bank]] (@{channel})
-
-## Considered + dropped
-
-Title patterns the creator dropped after consideration. Rationale captured so future refreshes don't re-surface them.
-
-> [!quote] Dropped: `{template}`
-> Rationale: {one-liner}
-> Bucket: {tone-mismatch | audience-sophistication | off-positioning | authority-conflict | trend-chasing | other}
-> Date: {YYYY-MM-DD}
+- Judge the TITLE, never the thumbnail. A plain title on a weak thumbnail can still be a proven shape: "Claude Code Tutorial for Beginners" ran 24x its channel median while its thumbnail scored as having no clear strategy. Those are separate decisions, and a thumbnail flag is never grounds to drop a title shape.
+- Assign each real title to its single best-fitting shape, never to two.

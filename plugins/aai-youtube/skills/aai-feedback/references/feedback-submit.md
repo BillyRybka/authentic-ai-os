@@ -68,7 +68,7 @@ The session excerpt can be long and contain quotes and newlines, so never build 
       "sessionMode": "mode 3, own transcript, listicle, systems",
       "pluginVersion": "0.2.2",
       "reproductionCase": "{ \"slug\": \"...\", \"skill\": \"vid-intake\", \"seed\": \"...\", \"persona\": { \"reveals\": [], \"withholds\": [] } }",
-      "fixturesSnapshot": "--- foundation/avatar.md ---\n...\n--- foundation/iceberg.md ---\n...\n--- banks/pattern-bank.md (cited rows) ---\n...",
+      "fixturesSnapshot": "--- foundation/avatar.md ---\n...\n--- foundation/iceberg.md ---\n...\n--- banks/title-bank.md (cited rows) ---\n...",
       "badOutputVerbatim": "...",
       "artifactsTouched": "content/pieces/{slug}/brain-dump.md",
       "runtime": "Cowork",
@@ -97,7 +97,7 @@ curl -sS -X POST "<ENDPOINT>" \
 
 ## The consent rule
 
-The `fixturesSnapshot` ships the full content of the creator's real foundation and bank files, and the `reproductionCase` and `badOutputVerbatim` carry their words and material. Before the POST, show the creator exactly what will be sent, and name the files going out in the snapshot, then get a clear yes. Shape: "This sends your foundation doc, your voice profile, and 2 pattern-bank entries, plus the bad output and a replay case. OK to send?" The creator asked for this or accepted the offer; the preview is the final gate. If they say trim it or drop a file, honor that and send the rest. Held-out quote files (`audience/held-out/`) are never sent, not even named.
+The `fixturesSnapshot` ships the full content of the creator's real foundation and bank files, and the `reproductionCase` and `badOutputVerbatim` carry their words and material. Before the POST, show the creator exactly what will be sent, and name the files going out in the snapshot, then get a clear yes. Shape: "This sends your foundation doc, your voice profile, and 2 outlier notes, plus the bad output and a replay case. OK to send?" The creator asked for this or accepted the offer; the preview is the final gate. If they say trim it or drop a file, honor that and send the rest. Held-out quote files (`audience/held-out/`) are never sent, not even named.
 
 ## The fallback ladder
 

@@ -1,21 +1,24 @@
 ---
 name: foundation
-description: Thin orchestrator for the Authentic AI OS foundation. Checks what's locked across the foundation files (offer, avatar, iceberg, credibility, backstory) and points the creator at the next skill in the foundation sequence. Use this when a creator is new to the system, when they're not sure what foundation step to run next, or when a downstream skill is missing inputs and the creator needs to know which foundation skill produces them. Triggers on "set up my channel", "run the foundation", "where am I in the foundation", or "what's next".
+description: Thin orchestrator for the Authentic AI OS foundation. Checks what's locked across the foundation files (offer, avatar, iceberg, credibility, backstory, voice) and points the creator at the next skill in the foundation sequence. Use this when a creator is new to the system, when they're not sure what foundation step to run next, or when a downstream skill is missing inputs and the creator needs to know which foundation skill produces them. Triggers on "set up my channel", "run the foundation", "where am I in the foundation", or "what's next".
 ---
 
 # Foundation
 
 Thin orchestrator. Checks foundation state, points the creator at the next skill in the sequence. Doesn't run interviews itself.
 
-The actual interview work happens in five focused skills:
+The actual work happens in six focused skills:
 
 1. `vid-avatar`. Offer plus avatar plus Top 3 perceived problems.
 2. `vid-positioning`. Iceberg Statement.
 3. `vid-pillars`. 8 to 12 content pillars.
 4. `vid-credibility`. Three viewer-relevant brags.
 5. `vid-backstory`. Problem-Action-Outcome backstory.
+6. `vid-voice-capture`. Reference pieces (the real passages every writing skill drafts from) plus the guardrail.
 
-After the five foundation interviews, the next step is `vid-research`. It builds the creator's pattern banks from real YouTube data, and this skill offers it once the foundation is complete. Voice capture and content production are still in development and arrive in future updates.
+The first five are interviews and auto-advance into each other. Voice capture needs the creator to bring real material, so it is offered at the close of step 5 and launched only on their go.
+
+Once voice is captured the foundation is complete, and this skill offers `vid-research`. Content production skills are still in development and arrive in future updates.
 
 ## Response format
 
@@ -45,7 +48,7 @@ Same content. Broken by idea. Plain words. The creator can scan it in three seco
 
 ## Contract
 
-**Inputs (optional):** the five foundation files (`foundation/offer.md`, `foundation/avatar.md`, `foundation/iceberg.md`, `foundation/credibility.md`, `foundation/backstory.md`). Any state. A legacy `foundation/creator-foundation.md` triggers the migration flow in `${CLAUDE_PLUGIN_ROOT}/knowledge/foundation-migration.md`.
+**Inputs (optional):** the five foundation files (`foundation/offer.md`, `foundation/avatar.md`, `foundation/iceberg.md`, `foundation/credibility.md`, `foundation/backstory.md`), plus `foundation/voice-profile.md` and `foundation/reference-pieces/`. Any state. A legacy `foundation/creator-foundation.md` triggers the migration flow in `${CLAUDE_PLUGIN_ROOT}/knowledge/foundation-migration.md`.
 
 **Outputs:** none directly. This skill routes. The sub-skills produce.
 
@@ -53,7 +56,7 @@ Same content. Broken by idea. Plain words. The creator can scan it in three seco
 
 ### Step 1: Read state silently
 
-Three checks, in order. All silent. Don't announce them. Only surface output if action is needed.
+Four checks, in order. All silent. Don't announce them. Only surface output if action is needed.
 
 **Workspace check.** Verify the workspace is scaffolded at the current location:
 
@@ -78,6 +81,8 @@ Then immediately invoke `creator-setup` via the Skill tool. After it completes, 
 
 **Foundation state check.** Read the five foundation files (silent): `foundation/offer.md`, `foundation/avatar.md`, `foundation/iceberg.md`, `foundation/credibility.md`, `foundation/backstory.md`. Which exist, and which sections are populated vs still `[pending ...]` (Offer, Avatar, Top 3, Iceberg Statement, Machinery, Pillars, Credibility, Backstory)?
 
+**Voice check.** Voice is captured when `foundation/voice-profile.md` exists AND `foundation/reference-pieces/` holds at least one file. Check both. The guardrail alone is not a voice: the reference pieces are the passages the writing skills draft from, so a profile with an empty reference-pieces folder counts as not captured.
+
 ### Step 2: Map state to next skill
 
 Use this routing table:
@@ -90,7 +95,8 @@ Use this routing table:
 | Iceberg Statement locked, Content pillars pending in `iceberg.md` | `vid-pillars` |
 | Content pillars locked, `credibility.md` missing or pending | `vid-credibility` |
 | Credibility brags locked, `backstory.md` missing or pending | `vid-backstory` |
-| Backstory locked (foundation identity complete) | Foundation done. Acknowledge, then offer `vid-research` (Step 5). |
+| Backstory locked, voice not captured | Identity complete. Acknowledge, then offer `vid-voice-capture` (Step 5). |
+| Voice captured (guardrail plus at least one reference piece) | Foundation complete. Acknowledge, then offer `vid-research` (Step 6). |
 
 ### Step 3: Tell the creator where they are, then auto-invoke
 
@@ -117,11 +123,27 @@ If the creator says any of these, halt the chain and don't invoke the next skill
 
 If they're quiet between sub-skills but engaged in the previous one's content, that's not a stop signal. Continue.
 
-### Step 5: Foundation complete, then offer vid-research
+### Step 5: Identity locked, then offer voice capture
 
-When all 5 foundation interview skills have locked their sections, congratulate briefly and offer the next step:
+When all 5 interview skills have locked their sections, congratulate briefly, name what is still missing, and offer step 6:
 
-> "Foundation complete. Your avatar, Iceberg, pillars, credibility, and backstory are locked.
+> "Foundation's locked. Avatar, Iceberg, pillars, credibility, backstory.
+>
+> One thing left. The system knows who you're talking to and what you stand for. It doesn't know what you sound like.
+>
+> That's `vid-voice-capture`. It takes real passages you've already written or said and turns them into the reference every writing skill drafts from. Bring something you wrote, a transcript, anything in your own words.
+>
+> Want to do that now, or come back to it?"
+
+If the creator says yes, invoke `vid-voice-capture` via the Skill tool. If they want to wait, respect it and close.
+
+Never fire voice capture without the go. The other five run on conversation alone; this one needs material in hand, and launching into it empty wastes the session.
+
+### Step 6: Foundation complete, then offer vid-research
+
+When voice is captured (guardrail plus at least one reference piece), the foundation is done:
+
+> "Foundation complete. Who you're for, what you stand for, and what you sound like.
 >
 > The natural next step is `vid-research`. It builds your pattern banks from real YouTube data, what's actually working in your niche, so the videos you plan are grounded in evidence instead of guesses. It runs a real session, so do it when you have the time.
 >
@@ -131,12 +153,12 @@ If the creator says yes (or any clear go), invoke `vid-research` via the Skill t
 
 If they want to wait, respect it and close. A completed journey is also a natural moment for feedback: if the `aai-feedback` skill is available, offer it once via the end-of-journey path in `${CLAUDE_PLUGIN_ROOT}/knowledge/feedback-offer.md` (honor its once-per-session guard), and invoke `aai-feedback` only if the creator has something to say.
 
-Voice capture and content production are still in development; do not route to them. `vid-research` is the only skill to offer after the foundation.
+Content production is still in development; do not route to it. After voice, `vid-research` is the only skill to offer.
 
 ## What this is NOT
 
 - An interview. It doesn't ask the creator any of the foundation questions. Those live in the five sub-skills.
-- A combined run. It doesn't run all five skills back-to-back. Each interview deserves a dedicated session.
+- A combined run. It doesn't run all six skills back-to-back. Each session deserves its own sitting.
 - A refresh tool. If the creator wants to refresh a specific section, they run the sub-skill directly.
 
 If the creator asks foundation questions during this skill ("can you write my Iceberg Statement?"), redirect:
@@ -149,6 +171,6 @@ If the creator asks foundation questions during this skill ("can you write my Ic
 - Reading the references inside `vid-avatar`, `vid-positioning`, etc. Those belong to their skills.
 - Asking the creator to type the next command. Auto-invoke the next skill via the Skill tool.
 - Continuing to invoke skills after a clear stop signal.
-- Promising genuinely unreleased skills (voice capture, content production) as next steps. They are in development; acknowledge them, do not route to them. `vid-research` HAS shipped: offer it at the close and launch on consent (Step 5).
+- Promising genuinely unreleased skills (content production) as next steps. They are in development; acknowledge them, do not route to them. `vid-voice-capture` and `vid-research` HAVE shipped: offer each at its own close and launch on consent (Steps 5 and 6).
 - Surfacing jargon (Iceberg Statement, BENS, 3+1 rotation) without context. Translate when needed.
 - Lying about workspace state. If `foundation/` or `CLAUDE.md` is missing, say so. Don't proceed as if everything's there.

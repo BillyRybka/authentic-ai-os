@@ -30,33 +30,70 @@ is idempotent unless you delete the cache).
 import argparse
 import json
 import os
+import re
 import sys
 import urllib.request
 from urllib.error import URLError, HTTPError
 
 
+def is_jpeg(data: bytes) -> bool:
+    """True only for real JPEG bytes. YouTube's CDN happily serves WEBP from a
+    .jpg URL, and a WEBP saved as .jpg renders as a blank tile in Obsidian
+    (it trusts the extension). Verify the magic bytes, never the URL."""
+    return len(data) > 2000 and data[:2] == b"\xff\xd8"
+
+
+def variants_for(url: str) -> list:
+    """The CDN paths to try, best quality first. A video with no maxres frame
+    404s on that path, so fall back rather than giving up."""
+    m = re.search(r"/vi/([A-Za-z0-9_-]{11})/", url or "")
+    if not m:
+        return [url]
+    vid = m.group(1)
+    return [f"https://i.ytimg.com/vi/{vid}/{v}.jpg"
+            for v in ("maxresdefault", "sddefault", "hqdefault")]
+
+
 def download_one(url: str, dest_path: str, timeout: int = 15) -> dict:
-    """Download a single thumbnail. Returns status dict."""
+    """Download a single thumbnail as a real JPEG. Returns status dict."""
     if os.path.exists(dest_path) and os.path.getsize(dest_path) > 0:
-        return {"local_path": os.path.abspath(dest_path), "status": "cached"}
-    try:
-        req = urllib.request.Request(
-            url,
-            headers={
-                "User-Agent": "vid-research/1.0 (pattern bank thumbnail fetch)"
-            },
-        )
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            data = resp.read()
+        with open(dest_path, "rb") as f:
+            if is_jpeg(f.read(4096)):
+                return {"local_path": os.path.abspath(dest_path), "status": "cached"}
+        # Cached file is not a JPEG (an older run saved WEBP under a .jpg name).
+        # Fall through and re-fetch so the image actually renders.
+
+    last_error = "no variant returned JPEG bytes"
+    for candidate in variants_for(url):
+        try:
+            req = urllib.request.Request(
+                candidate,
+                headers={
+                    "User-Agent": "vid-research/1.0 (pattern bank thumbnail fetch)",
+                    # Ask for JPEG explicitly. Without this the CDN content-
+                    # negotiates and can hand back WEBP.
+                    "Accept": "image/jpeg,image/*;q=0.5",
+                },
+            )
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                data = resp.read()
+        except (URLError, HTTPError) as e:
+            last_error = str(e)
+            continue
+        except Exception as e:
+            last_error = f"unexpected: {e}"
+            continue
         if not data:
-            return {"local_path": None, "status": "failed", "error": "empty response"}
+            last_error = "empty response"
+            continue
+        if not is_jpeg(data):
+            last_error = "served non-JPEG bytes (likely WEBP)"
+            continue
         with open(dest_path, "wb") as f:
             f.write(data)
         return {"local_path": os.path.abspath(dest_path), "status": "ok"}
-    except (URLError, HTTPError) as e:
-        return {"local_path": None, "status": "failed", "error": str(e)}
-    except Exception as e:
-        return {"local_path": None, "status": "failed", "error": f"unexpected: {e}"}
+
+    return {"local_path": None, "status": "failed", "error": last_error}
 
 
 def main():

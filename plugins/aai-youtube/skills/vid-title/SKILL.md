@@ -30,7 +30,7 @@ Use only supported names, numbers, timeframes, results, comparisons, authority, 
 Study only relevant evidence in:
 
 - `banks/title-bank.md` for proven structures and examples
-- `banks/pattern-bank.md` for the outlier evidence behind them
+- `banks/outliers/` for the outlier evidence behind them
 - `banks/power-words-bank.md` for fitting vocabulary and its use constraints
 
 Learn why an example works, then write for this video. For example, a bank row may teach "direct challenge plus a replacement." Use that relationship only when the locked video supports it. Filling a proven shape with this video's real subject is a legitimate move when the claim holds.
@@ -54,7 +54,7 @@ Cut weak drafts, then compare the best on:
 - concise wording, with 40 to 65 characters as the usual target
 - room for the thumbnail to add a second beat
 
-Reject topic labels, vague benefits, stitched phrases, unsupported specificity, borrowed authority, and lines that reveal the whole payoff. Do not write thumbnail text. `vid-thumbnail-v2` owns its three tests.
+Reject topic labels, vague benefits, stitched phrases, unsupported specificity, borrowed authority, and lines that reveal the whole payoff. Do not write thumbnail text. `vid-thumbnail` owns its three tests.
 
 ## Present the choice
 
@@ -84,4 +84,4 @@ Do not create a titles file or save candidates, rationale, research, or process 
 
 > Title locked: "{title}". Saved to piece.md.
 
-Stop. Thumbnail work belongs to `vid-thumbnail-v2` and never reopens the title.
+Stop. Thumbnail work belongs to `vid-thumbnail` and never reopens the title.

@@ -10,7 +10,7 @@ tags: [reference, outliers, research, rules]
 
 The rules for deciding which videos count as outliers in pattern research. Examples-first. The core move: a video is an outlier when it clearly beat what is normal for THAT channel's size. 2x the median is the floor you start from, not the bar you stop at. The bar scales per channel.
 
-All examples here are generic placeholders (`@CoachX`, fitness niche). They illustrate the method. Real channel data lives only in the creator's `banks/pattern-bank.md`, never in this file.
+All examples here are generic placeholders (`@CoachX`, fitness niche). They illustrate the method. Real channel data lives only in the creator's `banks/research-log.md` and their outlier notes, never in this file.
 
 ## Why this exists
 

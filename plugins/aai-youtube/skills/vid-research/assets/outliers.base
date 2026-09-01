@@ -1,0 +1,82 @@
+filters:
+  and:
+    - file.inFolder("banks/outliers")
+    - 'type == "outlier"'
+views:
+  - type: cards
+    name: Gallery
+    image: note.thumbnail
+    imageFit: contain
+    sort:
+      - property: xmed
+        direction: DESC
+  - type: table
+    name: All outliers
+    order:
+      - file.name
+      - channel
+      - bucket
+      - views
+      - xmed
+      - published
+      - strategy
+      - thumbnail_text
+    sort:
+      - property: xmed
+        direction: DESC
+  - type: cards
+    name: Direct competitors
+    filters:
+      and:
+        - 'bucket == "direct"'
+    image: note.thumbnail
+    imageFit: contain
+    sort:
+      - property: xmed
+        direction: DESC
+  - type: cards
+    name: Top performers
+    filters:
+      and:
+        - xmed >= 15
+    image: note.thumbnail
+    imageFit: contain
+    sort:
+      - property: xmed
+        direction: DESC
+  - type: cards
+    name: Recent
+    filters:
+      and:
+        - published > now() - "90d"
+    image: note.thumbnail
+    imageFit: contain
+    sort:
+      - property: published
+        direction: DESC
+  - type: cards
+    name: By strategy
+    image: note.thumbnail
+    imageFit: contain
+    sort:
+      - property: strategy
+        direction: ASC
+      - property: xmed
+        direction: DESC
+  - type: table
+    name: Needs attention
+    filters:
+      or:
+        - 'workup == "pending"'
+        - 'strategy == "Generic / no clear strategy"'
+        - 'strategy == "Stacked / unclear primary"'
+    order:
+      - file.name
+      - channel
+      - views
+      - xmed
+      - published
+      - strategy
+    sort:
+      - property: xmed
+        direction: DESC

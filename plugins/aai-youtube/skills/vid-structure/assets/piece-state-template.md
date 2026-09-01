@@ -1,6 +1,6 @@
 ---
 type: skill-asset
-skill: vid-structure-v2
+skill: vid-structure
 purpose: canonical structure-owned state for piece.md
 ---
 

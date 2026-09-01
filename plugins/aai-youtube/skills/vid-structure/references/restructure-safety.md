@@ -1,6 +1,6 @@
 ---
 type: skill-reference
-skill: vid-structure-v2
+skill: vid-structure
 purpose: safe behavior when script.md or completed segments already exist
 ---
 
