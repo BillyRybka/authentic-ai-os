@@ -1,6 +1,6 @@
 ---
 name: vid-pipeline
-description: Thin orchestrator for one video, idea to filming-ready script. Reads where a piece is in the writing pipeline and auto-invokes the next skill (vid-ideas when the creator is blank on ideas, then vid-braindump, vid-framing, vid-title, vid-thumbnail, vid-structure, vid-intro, vid-segment, vid-ending, vid-pressure-test). Use this when the creator says "work on my video", "continue this piece", "what's next on {piece}", "move this video forward", "run the pipeline", "let's make a video", or "/vid-pipeline". It routes and delegates; it never writes content itself.
+description: Thin orchestrator for one video, idea to filming-ready script. Reads where a piece is in the writing pipeline and auto-invokes the next skill (vid-braindump, vid-framing, vid-title, vid-thumbnail, vid-structure, vid-intro, vid-segment, vid-ending, vid-pressure-test). Use this when the creator says "work on my video", "continue this piece", "what's next on {piece}", "move this video forward", "run the pipeline", "let's make a video", or "/vid-pipeline". It routes and delegates; it never writes content itself.
 ---
 
 # Video Pipeline
@@ -10,8 +10,6 @@ Thin orchestrator. It reads one piece's `piece.md` to find where it is, then inv
 The chain it routes through:
 
 `vid-braindump` → `vid-framing` → `vid-title` → `vid-thumbnail` → `vid-structure` → `vid-intro` → `vid-segment` (once per body segment) → `vid-ending` → `vid-pressure-test`.
-
-Optional front door: when the creator is blank on ideas, `vid-ideas` runs first and its picked seed packet enters the chain at `vid-braindump`.
 
 ## Response format
 
@@ -44,14 +42,13 @@ First, two fast paths that skip the menu, because the intent is already clear:
 - **The creator named a slug** (`/vid-pipeline {slug}`, or "work on the retention piece"): load `content/pieces/{slug}/piece.md` and go to Step 3.
 - **The creator led with material** (a brain dump, "I want to make a video about X", a pasted transcript): treat it as a new piece, invoke `vid-braindump` via the Skill tool, and stop here. Do not also run the scan below.
 
-**Otherwise the intent is ambiguous** (a bare `/vid-pipeline`, "work on my video", "what's next" with no piece named and no material). Surface the entry menu with `AskUserQuestion`. Four options, plus the always-available Other escape:
+**Otherwise the intent is ambiguous** (a bare `/vid-pipeline`, "work on my video", "what's next" with no piece named and no material). Surface the entry menu with `AskUserQuestion`. Three options, plus the always-available Other escape:
 
 - **"New video, I have an idea or material"** → invoke `vid-braindump`. This is the single authoritative path that starts a new piece; when it is chosen, do NOT also fire the zero-in-progress branch below, or capture double-fires.
-- **"New video, I'm blank on ideas"** → invoke `vid-ideas`. It generates a signal-backed batch, the creator picks one, and `vid-ideas` hands the picked seed packet to `vid-braindump` itself. When `vid-braindump` has created the piece folder, re-read `piece.md` and resume routing at Step 3.
 - **"Pick up where I left off"** → run the in-progress scan below.
 - **"I have a script, just pressure-test it"** → run the in-progress scan below to resolve which piece, then follow the pressure-test shortcut note below.
 
-If the creator picks Other and just tells you what they want, follow it. The menu is a convenience, never a cage. A stop signal (Step 5) at the menu halts cleanly. If the runtime does not render a selectable menu, present the same four options as a short numbered list and wait for a typed reply.
+If the creator picks Other and just tells you what they want, follow it. The menu is a convenience, never a cage. A stop signal (Step 5) at the menu halts cleanly. If the runtime does not render a selectable menu, present the same three options as a short numbered list and wait for a typed reply.
 
 **The in-progress scan** (used by the two resume options, or whenever a slug was not named): scan `content/pieces/*/piece.md`, and consider ONLY files whose frontmatter has `type: content-piece`. A vault can hold `piece.md` files created by other systems; skip any without that type so they are never mistaken for in-progress videos. Among the real pieces, an in-progress one has `status` that is NOT `filming-ready`, `filmed`, `editing`, or `published`.
 

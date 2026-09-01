@@ -20,7 +20,7 @@ This file stores the creator's starting video defaults. These are useful first c
 *What is the avatar's favorite thumbnail aesthetic?*
 
 - **Style:** [description]
-- **Evidence basis:** [creator judgment / source-backed default / own channel data / pattern-bank research]
+- **Evidence basis:** [creator judgment / source-backed default / own channel data / outlier research]
 - **Confidence:** [low / medium / high]
 - **Watch for:** [what would tell us to refine this]
 
@@ -28,7 +28,7 @@ This file stores the creator's starting video defaults. These are useful first c
 *What format does the avatar open most often?*
 
 - **Format:** [description]
-- **Evidence basis:** [creator judgment / source-backed default / own channel data / pattern-bank research]
+- **Evidence basis:** [creator judgment / source-backed default / own channel data / outlier research]
 - **Confidence:** [low / medium / high]
 - **Watch for:** [what would tell us to refine this]
 
@@ -36,7 +36,7 @@ This file stores the creator's starting video defaults. These are useful first c
 *What does the avatar keep coming back to this creator for? Systems, tactics, stories, frameworks, opinion, other?*
 
 - **Content type:** [description]
-- **Evidence basis:** [creator judgment / source-backed default / own channel data / pattern-bank research]
+- **Evidence basis:** [creator judgment / source-backed default / own channel data / outlier research]
 - **Confidence:** [low / medium / high]
 - **Watch for:** [what would tell us to refine this]
 
@@ -49,7 +49,7 @@ This file stores the creator's starting video defaults. These are useful first c
 ### Core Format 1
 - **Format:** [Short Process / Case Study / Roast / Deep Dive / Interview / News / Listicle]
 - **Why this is a good first test:** [one sentence]
-- **Evidence basis:** [creator judgment / source-backed default / own channel data / pattern-bank research]
+- **Evidence basis:** [creator judgment / source-backed default / own channel data / outlier research]
 - **Confidence:** [low / medium / high]
 - **Watch for:** [what would tell us this format is wrong]
 
@@ -70,7 +70,7 @@ This file stores the creator's starting video defaults. These are useful first c
 ### Experimental Slot (every 4th video)
 - **Format to test:**
 - **Hypothesis:** [what we're testing and why]
-- **Evidence basis:** [creator judgment / source-backed default / own channel data / pattern-bank research]
+- **Evidence basis:** [creator judgment / source-backed default / own channel data / outlier research]
 - **Confidence:** [experimental]
 - **Watch for:** [what result would make us promote, repeat, or drop it]
 
@@ -89,7 +89,7 @@ The Title Bank lives at `banks/title-bank.md`. It holds validated fill-in-the-bl
 ### Strategy 1
 - **Strategy:** [Cognitive Dissonance / Before & After / Result / Social Hacking / Curiosity / Minimal]
 - **Why this is a good first test:** [why this fits the avatar and format mix]
-- **Evidence basis:** [creator judgment / source-backed default / own channel data / pattern-bank research]
+- **Evidence basis:** [creator judgment / source-backed default / own channel data / outlier research]
 - **Confidence:** [low / medium / high]
 - **Watch for:** [what would tell us to keep, adjust, or drop it]
 

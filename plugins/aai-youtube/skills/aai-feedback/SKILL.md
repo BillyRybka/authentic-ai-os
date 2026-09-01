@@ -82,7 +82,7 @@ Body: what happened, what they wanted (if any), then the reproduction case, the 
 
 ### Phase 5: Preview and consent
 
-The `fixturesSnapshot` ships the creator's real foundation and bank files, and the `reproductionCase` and `badOutputVerbatim` carry their material. Show the creator a short preview of exactly what will be sent, and name the files going out in the snapshot. Shape: "This sends your foundation doc, your voice profile, and 2 pattern-bank entries, plus the bad output and a replay case. OK to send?" Get a clear yes. If they say trim it or drop a file, honor that and send the rest. This is the final gate. Held-out quote files are never sent.
+The `fixturesSnapshot` ships the creator's real foundation and bank files, and the `reproductionCase` and `badOutputVerbatim` carry their material. Show the creator a short preview of exactly what will be sent, and name the files going out in the snapshot. Shape: "This sends your foundation doc, your voice profile, and 2 outlier notes, plus the bad output and a replay case. OK to send?" Get a clear yes. If they say trim it or drop a file, honor that and send the rest. This is the final gate. Held-out quote files are never sent.
 
 ### Phase 6: Submit
 

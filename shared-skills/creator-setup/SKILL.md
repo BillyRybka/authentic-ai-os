@@ -230,11 +230,11 @@ Report plainly:
   If yes, invoke `/foundation` via the Skill tool.
 
 - **Foundation is complete in the split files:** do not suggest `/foundation`. Close with a status line:
-  > "Workspace is current. Your foundation is locked. The next step is vid-research, which builds your pattern banks from real YouTube data. Run it when you're ready. Voice capture and content production are still on the way."
+  > "Workspace is current. Your foundation is locked. If you have not captured your voice yet, `vid-voice-capture` is the next step: it turns real passages you have written or said into the reference the writing skills draft from. After that, `vid-research` builds your pattern banks from real YouTube data. Run them when you are ready. Content production is still on the way."
 
   If Step 3 added new folders, name them. If nothing was added, say "Nothing new to add."
 
-Do NOT mention skills that have not shipped (no `vid-voice-capture`, `vid-bank`). `vid-research` HAS shipped and is the post-foundation step, so naming it is fine. The principle: facilitate, do not prescribe. The creator's state determines the offer.
+Do NOT mention skills that have not shipped. `vid-voice-capture`, `vid-research`, and `vid-bank` HAVE shipped, so naming them is fine. The principle: facilitate, do not prescribe. The creator's state determines the offer.
 
 ## Safety rules
 

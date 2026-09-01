@@ -10,7 +10,7 @@ tags: [reference, vid-research, vision, thumbnails]
 
 Vision prompt template + the thumbnail strategies vid-research classifies outlier thumbnails into (five primary levers, with Social Hack as an enhancer layered on top). Used in Phase 1, 2, 3 when running vision analysis on confirmed-outlier thumbnails.
 
-**Budget:** ~50 vision calls per full session (top 10 own + 25 across niche + 15 across adjacent). Mode 2 refresh ~15-25 calls. Mode 3 single-add: 1 call.
+**Scope:** every confirmed outlier gets classified; a channel clearing more than ~10 outliers is a prompt to revisit its floor with the creator, not a reason to skip thumbnails. Mode 2 refresh classifies only the new outliers. Mode 3 single-add: 1 call.
 
 ## The vision prompt
 
@@ -155,7 +155,6 @@ When vision surfaces these, flag rather than auto-classify:
 
 ## Common mistakes
 
-- **Classifying every thumbnail.** Respect the prioritization (top 10 own / top 5 niche / top 3 adjacent). Lower-tier outliers get URL-saved without vision analysis.
 - **Forcing one of the levers when none fit.** Generic thumbnails happen. Classify as Generic and flag.
 - **Confusing Curiosity with Cognitive Dissonance.** Curiosity withholds. Dissonance contradicts. "What nobody tells you" is Curiosity. "Stop doing this" is Dissonance.
 - **Hallucinating thumbnail content from the title alone.** If vision is unavailable (download failed, file corrupted), mark `vision: unavailable`, don't invent.

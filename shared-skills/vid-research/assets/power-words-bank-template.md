@@ -4,88 +4,37 @@ kind: power-words
 project: authentic-ai-os
 status: active
 last_refreshed: {YYYY-MM-DD}
-total_words_global: {N}
-total_words_audience: {N}
 ---
-
 # Power Words Bank
 
-Words that carry above-average emotional or curiosity weight in the research outlier set. Two categories: Global (pull on virtually any audience) and Audience-Specific (resonate uniquely for this creator's audience because of domain expertise or jargon).
-
-Loaded by `vid-title` for headline candidate generation, `vid-intro` for hook construction, and `vid-thumbnail` for thumbnail text.
-
-## How to read this bank
-
-This bank is comprehensive: mine every recurring power word from the FULL outlier title set, not a token few. A 100-plus-title set should produce a couple dozen words. "Lean" means no frequency junk, not a short list. Each entry is a word + when it lands + when it fails + a real worked example. No frequency counts, no raw channel counts: those numbers anchor the AI on "this appeared most" rather than "this fits the line being written." The decision is fit-by-context, not popularity. The creator edits this file in place, deleting words they would not use and adding words they prefer.
-
-One word or short phrase per entry. Never combine two distinct words with a slash (for example "REAL" / "TRUTH"). Distinct words land and fail under different conditions, so each needs its own when-it-lands and when-it-fails lines. Downstream title generation also pulls a single word per slot, so a slashed pair gives it nothing clean to select.
-
-## Global power words
-
-Words that pull on virtually any audience. These transcend niches.
+## Global
 
 ### "STOP"
+- [[{outlier note that used it}]]
 
-- When this lands: contrarian command framing where the audience is doing something the creator has authority to push back on.
-- When this fails: used without a credible "do this instead" replacement; reads as scolding.
-- Worked example: "STOP Following This Outdated Programming Advice" → [[pattern-bank#outlier-row]]
+### "in [N] Minutes"
+- [[{outlier note}]]
 
-### "FAST"
+## Audience-specific
 
-- When this lands: result-oriented payoff for an audience under time pressure.
-- When this fails: when the actual content is slow or layered; raises a promise the body cannot keep.
-- Worked example: {populated by research}
+### "{tool name}"
+- [[{outlier note}]]
 
-### "EASY"
-
-- When this lands: relief framing for an audience that has tried complicated solutions.
-- When this fails: for sophisticated audiences who read "easy" as oversimplified.
-- Worked example: {populated}
-
-### "REAL"
-
-{when this lands / when this fails / worked example}
-
-### "TRUTH"
-
-{when this lands / when this fails / worked example}
-
-### "MISTAKE"
-
-{populated}
-
-### "NEVER"
-
-{populated}
-
-### "FIX"
-
-{populated}
-
-### "NEW"
-
-{populated}
-
-## Audience-specific power words
-
-Words that resonate uniquely for THIS creator's audience because of domain expertise or jargon. Pull only when the audience is sophisticated enough to recognize them; the title-thumbnail combo should signal niche-credibility from the first frame.
-
-### "{audience-specific word 1}"
-
-- When this lands: {why this word resonates uniquely for this audience}
-- When this fails: {when this word does not register or backfires}
-- Worked example: "{title}" → [[pattern-bank#outlier-row]]
-- Caution: may not register for general audiences. Use only when the title-thumbnail combo signals niche-credibility.
-
-### "{audience-specific word 2}"
-
-{...}
+### "{identity term}"
+- [[{outlier note}]]
 
 ## Words avoided
 
-Words the creator dropped during curation. The writing skills never generate titles containing these, and future refreshes don't re-surface them.
+- "{word}"
 
-> [!quote] Dropped: "{word}"
-> Rationale: {one-liner}
-> Bucket: {tone-mismatch | audience-sophistication | brand-off-axis | hype | other}
-> Date: {YYYY-MM-DD}
+---
+
+**Not part of the file. Build rules, delete this section when writing the creator's bank.**
+
+The output above is the whole file. No preamble, no explanation of the categories, no counts.
+
+- **One word or phrase per entry. Never two combined.** "Claude", "Claude Code", and "Claude Cowork" are three entries, not one slashed line. Same for "No Employees" and "No Code", or "Content Creators" and "Content Team". Distinct terms land differently and title generation pulls a single term per slot, so a combined entry gives it nothing clean to select.
+- **Phrases count.** A recurring bolt-on like `in [N] Minutes`, `Step-by-Step`, `(Free Template)`, `(2026)`, or `[N] Hour Course` is a power word even though it is several words. These clip onto many different title shapes, which is why they belong here and never in [[title-bank]] as shapes.
+- **The entry is the word plus one linked example. Nothing else.** No when-it-lands or when-it-fails commentary, no frequency counts. The example carries it, and the link gets the thumbnail and the numbers in one click.
+- **Mine the FULL outlier title set, not a token few.** A 100-plus-title set should yield a couple dozen entries.
+- **Words avoided** is the creator's list of terms the writing skills must never generate. It is a live constraint, not a record of what was considered.

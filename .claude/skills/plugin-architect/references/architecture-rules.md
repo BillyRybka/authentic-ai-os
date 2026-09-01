@@ -52,7 +52,7 @@ Each plugin's `version` is a field on its `marketplace.json` entry. The generato
 
 Two plugins on independent versions cannot share a `v1.2.3` git tag, so source-repo tags are prefixed per plugin (`aai-youtube-v0.3.3`).
 
-Distribution is the public marketplace repo. Clients add it once and Claude auto-updates their installed plugins from it. There are no per-plugin mirror repos, no `releases/latest` update path, and no in-skill update check. That machinery existed for the private-repo era and was deleted; do not reintroduce a "check for updates" step in any skill.
+Distribution is the public marketplace repo. Clients add it once and pull new versions on marketplace refresh. Refresh is automatic ONLY if the client enabled auto-update for this marketplace (`/plugin` > Marketplaces tab; third-party marketplaces are off by default), and even then it runs after session start with up to a 10-minute delay. Otherwise `/plugin marketplace update authentic-ai`. Cowork sources plugins from the claude.ai-synced Customize configuration, not `~/.claude`, so it has its own state and its own refresh. There are no per-plugin mirror repos, no `releases/latest` update path, and no in-skill update check. That machinery existed for the private-repo era and was deleted; do not reintroduce a "check for updates" step in any skill.
 
 ## 9. Resist new plugins
 The failure mode to avoid is not too few plugins, it is too many overlapping ones. BenAI's marketplace has `marketing`, `benai-marketing`, `content`, and `marketing-os` all overlapping, plus `obsidian`, `agentic-os`, `aios`, and `vault-os`. His CLAUDE.md now carries defensive paragraphs explaining boundaries that stopped being obvious.

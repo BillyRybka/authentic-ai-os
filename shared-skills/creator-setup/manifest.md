@@ -24,8 +24,9 @@ The map from currently released skill to the workspace structure it needs before
 | vid-credibility | `people/` | structure | v1 |
 | vid-backstory | `foundation/` | structure | v1 |
 | vid-backstory | `people/` | structure | v1 |
+| vid-voice-capture | `foundation/reference-pieces/` | structure | v0.4.3 |
 
-Distinct folders to create: `foundation/`, `banks/proof-bank/assets/`, `people/`. Plus `CLAUDE.md` at the workspace root.
+Distinct folders to create: `foundation/`, `foundation/reference-pieces/`, `banks/proof-bank/assets/`, `people/`. Plus `CLAUDE.md` at the workspace root.
 
 The `people/` row is conditional. If the creator chose a path override during setup (person stubs go to an existing root-level People folder), `creator-setup` skips the local `people/` and records the override in the workspace `CLAUDE.md`.
 

@@ -2,8 +2,10 @@
 # release.ps1 - Publish ONE plugin version to the public marketplace.
 #
 # Distribution model (since Aug 2026): clients add the PUBLIC marketplace repo
-# once (/plugin marketplace add BillyRybka/authentic-ai) and Claude auto-updates
-# their installed plugins from it. There are no mirror repos, no .plugin zips,
+# once (/plugin marketplace add BillyRybka/authentic-ai). Claude pulls new versions
+# on marketplace refresh: automatic only if the client enabled auto-update for this
+# marketplace (off by default for third-party marketplaces), otherwise on
+# /plugin marketplace update authentic-ai. Cowork keeps its own plugin state. There are no mirror repos, no .plugin zips,
 # no gh releases, and no in-skill update check. Publishing IS the git push.
 #
 # THE ONE RULE THAT MATTERS: only a HISTORY-FREE SNAPSHOT of the built storefront
@@ -135,8 +137,7 @@ if ($LASTEXITCODE -ne 0) { throw "git push origin main failed." }
 git push origin dev
 if ($LASTEXITCODE -ne 0) { throw "git push origin dev failed." }
 
-# The public push IS the release. Claude pulls marketplace updates from this repo
-# and auto-updates clients.
+# The public push IS the release. Clients pull it on their next marketplace refresh.
 #
 # Publish a SNAPSHOT, never the main branch itself: main's pre-allowlist history
 # contains private vault content, so its lineage must never leave this repo.
@@ -157,5 +158,5 @@ if ($LASTEXITCODE -ne 0) { throw "git push public public-main:main failed. Clien
 
 Write-Host ""
 Write-Host "Released $Plugin v$Version." -ForegroundColor Green
-Write-Host "  Clients auto-update from: https://github.com/BillyRybka/authentic-ai" -ForegroundColor Yellow
+Write-Host "  Clients pull this on marketplace refresh (auto if they enabled auto-update, else /plugin marketplace update authentic-ai)" -ForegroundColor Yellow
 Write-Host "  New client install: /plugin marketplace add BillyRybka/authentic-ai  then  /plugin install $Plugin@authentic-ai" -ForegroundColor DarkGray

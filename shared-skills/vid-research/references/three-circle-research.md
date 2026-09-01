@@ -3,7 +3,7 @@ type: reference
 scope: shared
 loaded_by: [vid-research, vid-channel-audit, vid-measurement]
 status: active
-tags: [reference, research, methodology, pattern-bank]
+tags: [reference, research, methodology, outliers]
 ---
 
 # Three-Circle Research

@@ -10,7 +10,7 @@ For each core format and the experimental slot, save:
 
 - **Format:** one of the seven formats below
 - **Why this is a good first test:** plain reason tied to the avatar, proof, and creator capability
-- **Evidence basis:** creator judgment / source-backed default / own channel data / pattern-bank research
+- **Evidence basis:** creator judgment / source-backed default / own channel data / outlier research
 - **Confidence:** low / medium / high / experimental
 - **Watch for:** what would tell us to keep, adjust, or drop it
 

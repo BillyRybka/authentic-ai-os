@@ -101,35 +101,42 @@ Audience: {description}
 
 Identify:
 1. GLOBAL power words appearing in these titles (transcend niches): "easy," "fast," "secret," "stop," "never," "fix," "real," "mistake," "new", and any similar.
-2. AUDIENCE-SPECIFIC power words: domain jargon or terms that resonate only for this audience.
+2. AUDIENCE-SPECIFIC power words: domain jargon, tool names, or identity terms that resonate only for this audience.
+3. RECURRING BOLT-ONS: phrases that attach to many different titles without changing their structure, usually a tail or a parenthetical. Time boxes ("in 11 Minutes"), completeness promises ("Step-by-Step", "full tutorial"), duration stamps ("10+ Hour Course"), year stamps ("(2026)"), constraint flexes ("No Employees", "No Code"), free assets ("(Free Template)"), permission tags ("(steal them)"). These are power words even though they are several words long. They belong here, never in the title-shape list.
 
 Pull only from the actual titles. Never invent. Be comprehensive: pull EVERY recurring power word, not a token few. A large outlier set (100-plus titles) should yield 20 or more global and 10 or more audience-specific. A short list means you under-mined the set.
 
-Output one word or short phrase per entry. Never combine distinct words with a slash; split them into separate entries (for example, "fast/easy" becomes two entries, "fast" and "easy").
+Output one word or phrase per entry. NEVER combine two distinct things in one entry. Split on slashes ("fast/easy" becomes "fast" and "easy"). Split product variants into separate entries: "Claude", "Claude Code", and "Claude Cowork" are three different products and three entries. "No Employees" and "No Code" are two. "Content Creators" and "Content Team" are two. Distinct terms land differently and downstream title generation pulls a single term per slot, so a combined entry gives it nothing clean to select.
+
+Give each entry one real example title, verbatim. No when-it-lands or when-it-fails commentary; the example carries it.
 
 Format:
 Global:
-- "{word}", {N} occurrences, example: "{title}"
+- "{word}", example: "{title}"
 
 Audience-specific:
-- "{word}", {N} occurrences, example: "{title}"
+- "{word}", example: "{title}"
 ```
 
 **Worked output (strength-programming niche):**
 
 ```
 Global:
-- "STOP", 2, "STOP Following This Outdated Programming Advice"
-- "MISTAKE", 1, "The Programming Mistake Every Intermediate Lifter Makes"
+- "STOP", example: "STOP Following This Outdated Programming Advice"
+- "MISTAKE", example: "The Programming Mistake Every Intermediate Lifter Makes"
+- "in [N] Minutes", example: "Fix Your Deadlift Setup in 6 Minutes"
+- "(Free Template)", example: "My 12-Week Peaking Block (Free Template)"
 
 Audience-specific:
-- "PROGRAMMING", 3, "STOP Following This Outdated Programming Advice"
-- "PLATEAU", 1, "The Bench Cue That Fixed My Plateau"
-- "TEXAS METHOD", 1, "The Texas Method Trap"
-- "CUE", 1, "The Bench Cue That Fixed My Plateau"
+- "PROGRAMMING", example: "STOP Following This Outdated Programming Advice"
+- "PLATEAU", example: "The Bench Cue That Fixed My Plateau"
+- "TEXAS METHOD", example: "The Texas Method Trap"
+- "CUE", example: "The Bench Cue That Fixed My Plateau"
 ```
 
 **Fails when:** AI hallucinates power words not in the input ("amazing," "great," "best"). Always pull from actual titles.
+
+**Also fails when:** it promotes a bolt-on to a title shape. If a phrase attaches to several structurally different titles, it is a power word, not a shape. See Prompt 4's fill test.
 
 ## Prompt 4: Title pattern extraction
 
@@ -145,10 +152,19 @@ Outlier titles:
 
 Identify pattern shapes appearing in 2+ titles. One template = one pattern; split any "or" variant into its own pattern. Express each as a template with [SLOT] placeholders.
 
+APPLY THE FILL TEST TO EVERY SHAPE. Fill its slots with arbitrary content from this niche and read the result. If you get a title worth publishing, the shape is right-sized. If you get generic mush, the shape is too loose: the fixed words are only connective tissue and the slots are doing all the work. Tighten it or drop it.
+
+Worked failure: "[Outcome] in [N] Minutes" fills to "Get More Clients in 15 Minutes", which is a nothing title. The only fixed words are "in" and "minutes". It is too loose, and it wrongly merges at least three real shapes: "Master [N]% of [Tool] in [N] Minutes" (the percentage promises near-complete mastery while admitting it is not all of it), "How I Use [Tool] To [Outcome] In [N] Minutes" (first-person demo of a named tool), and "[Topic] Fundamentals In [N] Minutes" (curriculum promise). Keep the fixed words that carry the mechanism; turn only the genuinely varying parts into slots.
+
+Being specific is not the same as being too granular. "Master [N]% of [Tool] in [N] Minutes" is correct because the percentage IS the mechanism. It would only be too granular if you froze the number ("Master 95% of [Tool]").
+
+A phrase that attaches to structurally different titles is a bolt-on, not a shape. "in [N] Minutes" rides on all three shapes above, so it goes to Prompt 3 as a power word and never becomes a shape of its own.
+
 Format per pattern:
 Template: "{template}"
 Pattern shape: {descriptive label}
 spread: {N} of {M} channels
+Fill test: "{slots filled with arbitrary niche content}" → publishable or mush
 Examples:
 - "{title}"
 - "{title}"
@@ -160,6 +176,7 @@ Examples:
 Template: "Why I [reversal action] [specific subject] After [time/quantity]"
 Pattern shape: Authority Reversal
 spread: 4 of 11 channels
+Fill test: "Why I Dropped Barbell Rows After 8 Years Coaching" → publishable
 Examples:
 - "Why I Cut My Squat 20% After Coaching 100+ Lifters"
 - "Why I Stopped Running 5x a Week After 12 Years"
@@ -168,6 +185,7 @@ Examples:
 Template: "STOP [common practice] (Do This)"
 Pattern shape: Contrarian Command
 spread: 6 of 11 channels
+Fill test: "STOP Warming Up With Static Stretches (Do This)" → publishable
 Examples:
 - "STOP Following This Outdated Programming Advice"
 - "STOP Resting 3 Minutes Between Sets (Do This)"
@@ -212,11 +230,11 @@ Why this pulls: audience trusts authorities who admit being wrong; reversals sig
 
 ## Where outputs land
 
-- Prompt 1 (themes) → per-channel section in pattern-bank.md
+- Prompt 1 (themes) → the Channels table in research-log.md
 - Prompt 2 (fluke) → skip/study decision, no direct bank entry
 - Prompt 3 (power words) → power-words-bank.md (global + audience-specific)
 - Prompt 4 (title patterns) → title-bank.md as blocks where the heading IS the template string and the body carries spread + own_channel_proven + why it lands + worked examples
-- Prompt 5 (topics) → topic-cluster section inside pattern-bank.md (own + niche only), not a standalone bank
+- Prompt 5 (topics) → topic clusters under Findings in research-log.md (own + niche only), not a standalone bank
 
 All entries start `status: draft-pending-curation` until Theory of One curation pass promotes them.
 

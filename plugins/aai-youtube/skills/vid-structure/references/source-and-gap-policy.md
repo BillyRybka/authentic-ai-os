@@ -1,6 +1,6 @@
 ---
 type: skill-reference
-skill: vid-structure-v2
+skill: vid-structure
 purpose: provenance, bank selection, evidence, and gap decisions
 ---
 

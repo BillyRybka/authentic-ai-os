@@ -196,7 +196,7 @@ Locks one frame, core payoff, format, goal, and the `## The Read` section.
 Writes and recommends title options against the locked frame.
 
 - **seed**: the creator's reactions to the title batch (keep / kill / reword) and any title they wrote themselves.
-- **fixtures**: `brain-dump.md`, the foundation slice, plus the CITED rows from `banks/title-bank.md`, `banks/pattern-bank.md`, `banks/power-words-bank.md`. Never the whole bank.
+- **fixtures**: `brain-dump.md`, the foundation slice, plus the CITED rows from `banks/title-bank.md`, `banks/power-words-bank.md`, and the cited outlier notes. Never the whole bank.
 - **bad output**: the full batch as shown, the recommendation, and the title saved to `piece.md`.
 - **traps**: any number or claim in a title that the brain dump does not contain verbatim.
 

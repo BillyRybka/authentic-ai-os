@@ -127,15 +127,17 @@ Write the full backstory and the 3-sentence version to `foundation/backstory.md`
 
 ## Closing the skill
 
-Backstory is the last foundation interview. Announce the lock, that foundation identity is complete, then offer `vid-research` as the next step (the foundation's natural follow-on, now shipped). Launch it only on the creator's go.
+Backstory is the last foundation interview. Announce the lock, that the identity work is complete, then offer `vid-voice-capture` as the next step. Launch it only on the creator's go.
 
 > "Backstory locked. Full version plus the 3-sentence intro version. That completes your foundation identity.
 >
-> The next step is `vid-research`. It builds your pattern banks from real YouTube data, what's working in your niche, so every video you plan is grounded in evidence. It runs a real session.
+> One thing left. The system knows who you're talking to and what you stand for. It doesn't know what you sound like.
 >
-> Want to start it now, or come back to it later?"
+> That's `vid-voice-capture`. It takes real passages you've already written or said and turns them into the reference every writing skill drafts from. Bring something you wrote, a transcript, anything in your own words.
+>
+> Want to do that now, or come back to it?"
 
-If the creator says yes, invoke `vid-research` via the Skill tool. If they want to wait, close warmly; they can run it whenever. Voice capture and content production are still in development, do not point at those.
+If the creator says yes, invoke `vid-voice-capture` via the Skill tool. If they want to wait, close warmly; they can run it whenever. Never fire it without the go: it needs material in hand. `vid-research` comes after voice, not instead of it. Content production is still in development, do not point at it.
 
 ## Edge cases
 

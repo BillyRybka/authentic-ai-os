@@ -182,6 +182,6 @@ ending_locked: true
 next_video: "[[slug-of-next-video]]"
 ```
 
-When `vid-measurement` is built, it will re-introduce a pattern-log field (the Bridge shape used) and read it alongside the actual end-screen click-through rate, so wins (CTR > threshold) can be logged back into the channel's `pattern-bank.md`. Until that reader exists, the ending does not journal its pattern into piece.md.
+When `vid-measurement` is built, it will re-introduce a pattern-log field (the Bridge shape used) and read it alongside the actual end-screen click-through rate, so wins (CTR > threshold) can be logged back into the channel's research. Until that reader exists, the ending does not journal its pattern into piece.md.
 
 The skill doesn't run measurement, it produces the structured data that measurement reads. This is what enables the channel to learn which Bridge shapes work over time.

@@ -25,3 +25,23 @@ It adds a genuine branch the core loop does not need yet: ingesting an external 
 **Where it plugs into v1 when we build it**
 
 Add a second entry to vid-intake alongside "your own material": "start from something you saw." It runs paste the source, capture the transcript, reflect it back as bulleted main points, then the riff. The one spine picks up from there (reflect, deeper pass, fit, save). Restore the removed `inspired-by` value to the `intake_mode` enum, and bring back a place in brain-dump.md to hold the source's points separate from the creator's take (the old `## Source notes` section).
+
+## vid-research: the scheduled competitor refresh
+
+**Status:** deferred. Mode 2 (quarterly refresh) already does the work; what is missing is an automatic trigger and a digest.
+
+**What it is**
+
+A recurring job, most likely a scheduled task in Claude Cowork, that keeps the outlier bank current instead of frozen at the last manual run. It runs Mode 2 unattended: pull the confirmed channel set, fetch only videos published since `last_refresh`, dedup against existing notes by `video_id`, write notes plus full workups for anything new that clears its floor, and recompute every channel's median, floor, and every multiplier.
+
+**Why it matters**
+
+The research window is 12 months but the bank is a snapshot. On the first real build, only 9 of 143 outliers were published in the last 90 days. Without a refresh the creator plans against what worked last year.
+
+**The rule that makes it safe**
+
+It recomputes and reports; it never silently deletes. A channel's median rises as it grows, so a video banked at 8x can read 5x next quarter and fall under its floor. That is real signal, not an error. The job surfaces it (new outliers added, multipliers that moved, notes now under the floor) and leaves the decision to the creator. A scheduled job that quietly rewrites the bank is worse than no job.
+
+**What to build**
+
+The trigger and the digest, not the research. Decide where "what changed" lands (a dated note, or an append to pattern-bank), and decide whether thumbnails for videos that dropped out get pruned or archived (see the Mode 2 archive rule already in the skill).
