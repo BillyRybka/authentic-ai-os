@@ -103,7 +103,7 @@ Word-for-word script. Talking-head can work. Light cinematic enhancements are fi
 ### Goal = Views (recommended for small or new channels)
 
 - NO external links in description (kills algorithm recommendations)
-- End screen → another deep dive (binge-drive) or short process for variety
+- End screen → another deep dive (binge-drive) or step-by-step for variety
 - Focus on retention through the whole length
 
 ### Goal = Emails
@@ -131,7 +131,7 @@ Avoid: **Curiosity** alone (deep dives need to show something specific or viewer
 ## End screen routing
 
 - **Sales goal** → past high-converting sales video (or another deep dive if it converts)
-- **Views goal** → another deep dive or a short process (drives binge or variety)
+- **Views goal** → another deep dive or a step-by-step (drives binge or variety)
 - **Emails goal** → past high-converting email video
 
 ## Strategy for compounding results

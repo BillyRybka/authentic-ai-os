@@ -1,11 +1,11 @@
 ---
 type: skill-reference
 skill: vid-structure
-format: short-process
+format: step-by-step
 purpose: format-specific minimum planning decisions
 ---
 
-# Short Process
+# Step-by-Step
 
 Plan a bounded route to one result.
 
@@ -15,7 +15,7 @@ Every section still carries the shared core: **Job**, **Sources**, and **Takeawa
 
 One parable up front, then sequential steps.
 
-This is the distinction that defines the format. It is **not** parable-principle-parable-principle like a Listicle. There is one emotional beat at the start, and everything after it is the process.
+This is the distinction that defines the format. It is **not** parable-principle-parable-principle like a List Video. There is one emotional beat at the start, and everything after it is the process.
 
 A second parable is allowed in exactly one situation: a step that is complex enough to lose the viewer, or a claim they will not believe. Insert it before that step only. Most videos need zero.
 
@@ -46,7 +46,7 @@ Useful optional fields: **Action**, **Input**, **Output**, **Demonstration**, **
 
 - give every step a fresh story
 - keep setup that delays the first useful action
-- alternate parable and principle like a listicle
+- alternate parable and principle like a list video
 - pad the step count
 - plan a step the avatar already knows
 - stack detail that makes a workable process feel hard

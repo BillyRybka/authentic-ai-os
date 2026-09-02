@@ -17,12 +17,12 @@ How piece.md fields (goal, format) plus the audience temperature the retention r
 
 ## By format
 
-- **case-study** → retention-logic: title-promise lands at Outcome beat; story traceability strict. source-traceability: story-bank entry for protagonist must exist; outcome numbers must trace to proof-bank.
-- **listicle** → retention-logic: each item N+1 > N expectation; named lesson lands at last item; item count promised matches item count delivered. voice-authenticity: item openers match creator's listicle rhythm.
-- **short-process** → retention-logic: each step a small payoff that compounds; full method = full step list. source-traceability: each step's mechanism traces to creator experience.
+- **success-story** → retention-logic: title-promise lands at Outcome beat; story traceability strict. source-traceability: story-bank entry for protagonist must exist; outcome numbers must trace to proof-bank.
+- **list video** → retention-logic: each item N+1 > N expectation; named lesson lands at last item; item count promised matches item count delivered. voice-authenticity: item openers match creator's list video rhythm.
+- **step-by-step** → retention-logic: each step a small payoff that compounds; full method = full step list. source-traceability: each step's mechanism traces to creator experience.
 - **deep-dive** → retention-logic: cross-segment thread tracking strict; concepts open early, deepen mid, resolve at synthesis. source-traceability: stricter on cited research/studies (invites "studies show" failure).
 - **news** → retention-logic: compressed arc; named answer lands earlier than other formats. source-traceability: news claims need source URLs/screenshots traceable to brain-dump.
-- **roast** → retention-logic: each call-out serves the central premise. AI-slop: stricter on hedge stacks (roasts cannot hedge).
+- **review** → retention-logic: each call-out serves the central premise. AI-slop: stricter on hedge stacks (reviews cannot hedge).
 - **interview** → retention-logic: questions promised get answered by guest; host setups hand off cleanly. source-traceability: guest credibility traces to guest's actual bio.
 
 ## By audience temperature (derived from the script, not a stored field)

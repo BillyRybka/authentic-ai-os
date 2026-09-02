@@ -88,7 +88,7 @@ Do not diagnose setup, tool, and use as separate videos. Ask one outcome questio
 
 ## Present one package after intent is settled
 
-The creator has confirmed independent dog groomers, same-day cancellations that leave unfillable gaps, the ability to set a cancellation policy clients accept, and an email-growth goal. The material supports a bounded process, so choose `short-process` deliberately and present one package:
+The creator has confirmed independent dog groomers, same-day cancellations that leave unfillable gaps, the ability to set a cancellation policy clients accept, and an email-growth goal. The material supports a bounded process, so choose `step-by-step` deliberately and present one package:
 
 > **Frame:** I want to show dog groomers how to stop same-day cancellations from leaving unpaid gaps in their calendar by setting a cancellation policy clients will actually accept.
 >
@@ -96,7 +96,7 @@ The creator has confirmed independent dog groomers, same-day cancellations that 
 >
 > **Must deliver:** Draft the policy from a realistic booking scenario, show the client message that introduces it, and walk through one cancellation handled under the new policy.
 >
-> **Format:** short-process
+> **Format:** step-by-step
 >
 > **Goal:** emails
 

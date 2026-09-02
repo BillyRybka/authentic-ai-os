@@ -184,7 +184,7 @@ The editor adds the visual chyron / slide at the corresponding moment in the vid
 
 - Single-point segments (no list to track)
 - Cycles, Venns, Pyramids: non-sequential shapes don't read as steps; use a labeled diagram instead
-- Listicle videos: the format planner already includes counted titles per point, which double as step markers without needing callouts
+- List Video videos: the format planner already includes counted titles per point, which double as step markers without needing callouts
 
 ### Tracking in piece.md
 

@@ -25,7 +25,7 @@ When all four agree, lock the lane. When they disagree, the format planner usual
 
 ## Worked: Format and voice agree
 
-**Setup:** Short Process video on Photoshop shortcuts. Voice profile says `preferred_hook_types: [question, statement]`. Brain dump has no surprising stat (rules out Fact). Channel is 8k subscribers (too small for naked Credibility).
+**Setup:** Step-by-Step video on Photoshop shortcuts. Voice profile says `preferred_hook_types: [question, statement]`. Brain dump has no surprising stat (rules out Fact). Channel is 8k subscribers (too small for naked Credibility).
 
 **Decision:** Lock lane = Question or Statement. Two candidates, one each, surface to creator.
 
@@ -33,11 +33,11 @@ When all four agree, lock the lane. When they disagree, the format planner usual
 
 ## Worked: Format and voice disagree, format wins
 
-**Setup:** Case Study video. Voice profile says `preferred_hook_types: [question, fact]`. Format planner recommends Question or Statement (lead with outcome). Brain dump has a $250k client outcome.
+**Setup:** Success Story video. Voice profile says `preferred_hook_types: [question, fact]`. Format planner recommends Question or Statement (lead with outcome). Brain dump has a $250k client outcome.
 
-**Decision:** Lock lane = Question or Statement. The Case Study format's "lead with the receipt" identity overrides the creator's natural Fact preference because the receipt IS the engine of the format. Surface a Question candidate AND a Statement candidate that both lead with the outcome.
+**Decision:** Lock lane = Question or Statement. The Success Story format's "lead with the receipt" identity overrides the creator's natural Fact preference because the receipt IS the engine of the format. Surface a Question candidate AND a Statement candidate that both lead with the outcome.
 
-**Why this lands:** format identity dominates because audience expectation for case studies is "show me the outcome up front." A Fact Hook here would feel like a misfiled video.
+**Why this lands:** format identity dominates because audience expectation for success stories is "show me the outcome up front." A Fact Hook here would feel like a misfiled video.
 
 ## Worked: Channel size flags Credibility risk
 
@@ -51,7 +51,7 @@ Creator's call. If they keep Credibility, surface one Cr candidate alongside one
 
 ## Near-miss: Picking Fact when the brain dump has no real fact
 
-**Setup:** Listicle video on productivity habits. Voice profile says `preferred_hook_types: [fact, statement]`. Brain dump has the 10 habits but no surprising stat.
+**Setup:** List video on productivity habits. Voice profile says `preferred_hook_types: [fact, statement]`. Brain dump has the 10 habits but no surprising stat.
 
 **Wrong move:** generate a Fact Hook anyway and invent a plausible-sounding stat ("Studies show 73% of people quit their habits in week 3").
 
@@ -86,7 +86,7 @@ Surface only the locked lanes to the creator. Don't show them the elimination pr
 These are the cases where the creator deliberately breaks the default and the override usually works:
 
 - **Single dramatic claim on a small channel.** A creator with 200 subscribers but a $1.2M sale of their last business CAN lead with Credibility. The dramatic claim earns the cold-trust override.
-- **Statement-Confession blend on a Listicle.** A Statement Hook delivered as a personal confession ("Did you think this would be easy? I did.") still counts as Statement lane but shifts the energy. The format planner allows it.
+- **Statement-Confession blend on a List Video.** A Statement Hook delivered as a personal confession ("Did you think this would be easy? I did.") still counts as Statement lane but shifts the energy. The format planner allows it.
 - **Contrarian in a niche where every other channel preaches the conventional wisdom.** Even if the creator's voice profile leans Question, the contrarian advantage outweighs the voice preference when the niche is starved for inversions.
 
 When the creator wants to override, the skill confirms once ("Going with Credibility on a smaller channel: the $1.2M sale should earn the cold-trust override. Cool to proceed?") then locks the lane. Don't argue twice.

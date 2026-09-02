@@ -17,7 +17,7 @@ Every skill that makes a structural decision about the script as a whole loads t
 
 A script runs two separate things at once. Keep them apart.
 
-**Per-segment content (lives in vid-segment).** Inside one segment: a parable (the show, the emotion brick) then a principle (the tell, the logic brick), each segment teaching one thing. How often the two bricks repeat is the format's call, and the planner owns it: persuasive formats (Listicle, Roast, Interview) run parable + principle at every point; instructional formats (Short Process, Case Study, Deep Dive, News) run one parable arc up front, then steps. Either way this is NOT a Setup/Tension/Payoff skeleton; it is the content layer. See `references/parable-principle-shapes.md`.
+**Per-segment content (lives in vid-segment).** Inside one segment: a parable (the show, the emotion brick) then a principle (the tell, the logic brick), each segment teaching one thing. How often the two bricks repeat is the format's call, and the planner owns it: persuasive formats (List Video, Review, Interview) run parable + principle at every point; instructional formats (Step-by-Step, Success Story, Deep Dive, News) run one parable arc up front, then steps. Either way this is NOT a Setup/Tension/Payoff skeleton; it is the content layer. See `references/parable-principle-shapes.md`.
 
 **Cross-segment tension (this file).** Across all segments: the title makes a promise, the intro raises the central question, segments deliver pieces of the answer in an order that withholds the BIG payoff until the moment of maximum tension, and the ending pivots to the next problem. Setups and payoffs live HERE, not inside a segment. The intro is one big setup; transitions are little setups; the points pay off curiosity one by one. The viewer stays through 5+ minutes because the central promise hasn't fully paid off yet.
 
@@ -82,7 +82,7 @@ A segment can open an "open loop" that another segment closes. This is what make
 
 **How vid-structure plans threads.** When proposing the cross-segment skeleton, identify at least ONE open loop running across the body. Mark it explicitly in the segment purposes: "Segment 1 opens the Steve thread; Segment 4 pays it off." vid-segment then knows to leave the thread open in segment 1's prose and close it in segment 4.
 
-**Anti-pattern: stacked lessons.** A script with five disconnected segments (each a complete lesson) reads as flat. The viewer learns each thing but feels no pull. A thread is the usual fix; a format that carries its own pull (news urgency, a listicle's ranking) can decline one deliberately.
+**Anti-pattern: stacked lessons.** A script with five disconnected segments (each a complete lesson) reads as flat. The viewer learns each thing but feels no pull. A thread is the usual fix; a format that carries its own pull (news urgency, a list video's ranking) can decline one deliberately.
 
 **Anti-pattern: too many open loops.** Loops are open promises. The more open at once, the easier it is for the viewer to lose track of any single one, and the harder for the creator to honor every payoff. Most scripts stay clearest with 1-2 prominent loops. More is doable but requires deliberate tracking and faster resolution. Test what your audience can follow.
 
@@ -110,12 +110,12 @@ The segment shapes themselves live in `knowledge/format-planners/{format}.md`, t
 
 | Format | Title-promise location | Active threads |
 |---|---|---|
-| Case Study | The outcome moment, after the obstacles. The lesson and steps are application, not the payoff. | 1: the protagonist's transformation, opened in the intro, closed at the outcome |
-| Listicle | The final item, or the item that delivers the title's core promise. The list builds toward it; never pay it off at the open. | 1 positional ("which one is the best?"), plus optional sub-threads across items |
-| Short Process | Between the last step and the close: "you now have the complete system." | 1: the viewer's growing capability |
+| Success Story | The outcome moment, after the obstacles. The lesson and steps are application, not the payoff. | 1: the protagonist's transformation, opened in the intro, closed at the outcome |
+| List Video | The final item, or the item that delivers the title's core promise. The list builds toward it; never pay it off at the open. | 1 positional ("which one is the best?"), plus optional sub-threads across items |
+| Step-by-Step | Between the last step and the close: "you now have the complete system." | 1: the viewer's growing capability |
 | Deep Dive | The synthesis lesson, usually the last big idea, where everything connects. | Concept threads that deepen across lessons; each lesson opens a question, pays it off, and raises the next one higher |
 | News | The "why it matters" moment. News compresses everything; the named answer cannot wait as long as elsewhere. | 1 max |
-| Roast | The promised lesson at the end of the review pattern, or the most egregious subject's reveal for entertainment titles. | 1: the pattern emerging across subjects |
+| Review | The promised lesson at the end of the review pattern, or the most egregious subject's reveal for entertainment titles. | 1: the pattern emerging across subjects |
 | Interview | The question whose answer delivers the title's promise, usually 2/3 through the conversation. | 1: the through-line the host weaves |
 
 Guests sometimes introduce their own thread (a story they keep returning to). Let it play.

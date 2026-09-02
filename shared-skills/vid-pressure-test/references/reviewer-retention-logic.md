@@ -14,7 +14,7 @@ This is the ONLY reviewer that reads the whole script in one go to catch emergen
 ## Sources of truth
 
 1. `knowledge/script-tension-architecture.md`: the three load-bearing tactics: title-promise lock, setup-payoff threading, segment handoffs
-2. `knowledge/format-planners/{format}.md`: format-native tension arc for this piece (Case Study, Listicle, Short Process, Deep Dive, News, Roast, Interview)
+2. `knowledge/format-planners/{format}.md`: format-native tension arc for this piece (Success Story, List Video, Step-by-Step, Deep Dive, News, Review, Interview)
 3. `content/pieces/{slug}/piece.md`: locked title, frame, format, goal (audience temperature is judged from the script itself, not read from a field)
 4. `content/pieces/{slug}/script.md`: the full script being audited
 
@@ -28,7 +28,7 @@ The intro's Setup section names "in this video I'm going to show you X, Y, Z" (o
 
 ### Gate 2: Title-promise location
 
-The title makes an implicit promise (the question the viewer clicked to answer). When does the full answer land in the body? Per script-tension-architecture.md, it should land LATE (past midpoint) for most formats. Case Study lands at the Outcome beat. Listicle lands at the final item. Short Process at step-end. News compresses the wait.
+The title makes an implicit promise (the question the viewer clicked to answer). When does the full answer land in the body? Per script-tension-architecture.md, it should land LATE (past midpoint) for most formats. Success Story lands at the Outcome beat. List Video lands at the final item. Step-by-Step at step-end. News compresses the wait.
 
 Read `tension_plan` from piece.md: the full answer landing before `title_promise_segment` is early-payoff. When the plan is absent, the fallback signal is the full answer landing in segment 1 or 2 of a 5-segment piece. Viewers who got the answer leave.
 
@@ -168,12 +168,12 @@ Focus on the structural spine.
 
 The format planner adjusts the gates:
 
-- **Case Study:** Gate 2 (title-promise) is the strongest gate. Outcome lands at narrative peak.
-- **Listicle:** Gate 1 (Setup delivery) and progression (each item N+1 > N).
-- **Short Process:** Gate 4 (each step serves the system) and step-end full-system payoff.
+- **Success Story:** Gate 2 (title-promise) is the strongest gate. Outcome lands at narrative peak.
+- **List Video:** Gate 1 (Setup delivery) and progression (each item N+1 > N).
+- **Step-by-Step:** Gate 4 (each step serves the system) and step-end full-system payoff.
 - **Deep Dive:** Gate 3 (cross-segment threads layered) most critical.
 - **News:** Gate 2 with compression (named answer lands earlier than other formats).
-- **Roast:** Gate 4 (each call-out serves the central premise).
+- **Review:** Gate 4 (each call-out serves the central premise).
 - **Interview:** Gate 1 (questions promised get answered).
 
 ## Meta-check

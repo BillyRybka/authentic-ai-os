@@ -1,17 +1,17 @@
 ---
 type: reference
 doc: format-card
-format: case-study
-tags: [format-card, case-study]
+format: success-story
+tags: [format-card, success-story]
 ---
 
-# Case study format card
+# Success story format card
 
 Fifteen blanks, in the order the file lays them out and the order they get asked. Nothing repeats in this format.
 
-`knowledge/format-planners/case-study.md` is the content source of truth. This card holds the wording of each ask and the bar a passing answer clears, and points back at the planner for everything else. Nothing from the planner gets restated here. Two copies of one rule drift the first time either gets edited.
+`knowledge/format-planners/success-story.md` is the content source of truth. This card holds the wording of each ask and the bar a passing answer clears, and points back at the planner for everything else. Nothing from the planner gets restated here. Two copies of one rule drift the first time either gets edited.
 
-**Load-bearing: the five story questions, and nothing else.** The planner is explicit about them: a missing one leaves the case study with a hole. Those five get up to two follow-ups when the answer comes back thin, then a gap callout. Every other blank gets one ask and takes whatever comes back.
+**Load-bearing: the five story questions, and nothing else.** The planner is explicit about them: a missing one leaves the success story with a hole. Those five get up to two follow-ups when the answer comes back thin, then a gap callout. Every other blank gets one ask and takes whatever comes back.
 
 **Section names in the plan file are the blank names below**, numbered as they are numbered here.
 
@@ -46,7 +46,7 @@ Fifteen blanks, in the order the file lays them out and the order they get asked
 - **Ask:** What three questions does that package put in their head?
 - **Push:** none.
 - **Passing:** three questions, phrased as questions, pulled off the package rather than out of the story.
-- **Notes:** the planner names the three that come up most for case studies. Offer them as candidates only after the creator has taken their own swing, never before. This blank is a plan check, not intro copy: the planner says the three get answered through the story, so if one is still dangling when the story blanks close, say so once. The intro that raises them gets written later, off this same field.
+- **Notes:** the planner names the three that come up most for success stories. Offer them as candidates only after the creator has taken their own swing, never before. This blank is a plan check, not intro copy: the planner says the three get answered through the story, so if one is still dangling when the story blanks close, say so once. The intro that raises them gets written later, off this same field.
 
 ## 4. The one transformation
 
@@ -71,7 +71,7 @@ Fifteen blanks, in the order the file lays them out and the order they get asked
 
 ## Body 1: the parable
 
-Blanks 6 through 10 are the five questions the planner says every case study answers. All five are load-bearing. They are the reason this format converts and the reason it fails.
+Blanks 6 through 10 are the five questions the planner says every success story answers. All five are load-bearing. They are the reason this format converts and the reason it fails.
 
 ## 6. Problem
 
@@ -188,4 +188,4 @@ Blanks 6 through 10 are the five questions the planner says every case study ans
 
 Six sibling cards run the other formats, all built to this one's shape. The field set is the contract and `SKILL.md` holds it, so this file never has to explain itself to the skill that loads it.
 
-Case study is the only card with five load-bearing blanks. That is the planner's doing, not a template: it names five questions and says a missing one leaves a hole. Other formats have one, two, or three, and each card's header names the line that earned the mark.
+Success story is the only card with five load-bearing blanks. That is the planner's doing, not a template: it names five questions and says a missing one leaves a hole. Other formats have one, two, or three, and each card's header names the line that earned the mark.

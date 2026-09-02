@@ -126,7 +126,7 @@ Example:
 - Intro of videos (shortened to 2-3 sentences, the credibility line).
 - Channel banner / about page.
 - First email in welcome sequence.
-- Case study videos (expanded into full story).
+- Success story videos (expanded into full story).
 - LinkedIn / Twitter bios.
 
 The full backstory lives in `foundation/backstory.md`. Shorter versions get pulled per-context by downstream skills.

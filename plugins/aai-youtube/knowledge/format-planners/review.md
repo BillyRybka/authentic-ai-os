@@ -1,10 +1,10 @@
 ---
 type: reference
-format: roast
-tags: [format-planner, roast, review]
+format: review
+tags: [format-planner, review]
 ---
 
-# Roast (Review) Format Planner
+# Review Format Planner
 
 A 10-25 minute video reviewing 1-3 viewer submissions, showing problems and demonstrating fixes. The highest-converting format when it works. Some have generated $3 per view. Never call it a roast publicly. Call it a "free review."
 
@@ -40,9 +40,9 @@ Test both. There's no right answer.
 
 ## Intro adaptation
 
-Roast intros are **submission-and-stakes-driven.** The hook usually IS a contestant submission or the contrast between bad and fixed.
+Review intros are **submission-and-stakes-driven.** The hook usually IS a contestant submission or the contrast between bad and fixed.
 
-| Universal intro step | Roast default | Why |
+| Universal intro step | Review default | Why |
 |---|---|---|
 | 1. Top 3 viewer questions | Same. Usually variants of "what's getting fixed?", "can I learn from this?", "could you fix mine?" | Frames the review as something the viewer can apply to themselves. |
 | 2. Hook | Often the contestant's submission OR a contrast (here's what they have, here's what's wrong, here's what we'll fix) | Statement Hook works, typically paired with a Visual Demo parable. The submission visible on screen carries the energy while the spoken hook frames the stakes. Contrarian Hook works when the contestant got something widely-believed wrong. The format gives you raw visual material. Use it as the parable, not as the hook itself. |
@@ -83,11 +83,11 @@ Keep the form SHORT. Long forms kill submissions.
 
 ### NEVER call it a roast publicly
 
-Word choice matters. "Free review" gets 1,000 submissions. "Free roast" gets 20. The audience hears "roast" and thinks public humiliation. Always call it a "review" in promotion. Internally, in production, we call it a roast, but never in the funnel.
+Word choice matters. "Free review" gets 1,000 submissions. "Free roast" gets 20. The audience hears "roast" and thinks public humiliation. Always call it a "review" in promotion. Internally, in production, we call it a review, but never in the funnel.
 
 ### Small audience workaround
 
-If the audience is too small to generate submissions, **roast famous people or brands instead.** Their material is public. You don't need their submission. Same format, different supply.
+If the audience is too small to generate submissions, **review famous people or brands instead.** Their material is public. You don't need their submission. Same format, different supply.
 
 ## Per-review structure
 
@@ -102,7 +102,7 @@ The fix is where the gold is. Pointing out the problem is one thing. Showing the
 
 ## Common mistakes
 
-- Calling it a roast in promotion (kills submissions)
+- Calling it a review in promotion (kills submissions)
 - Picking obscure problems instead of universal ones (doesn't serve the broader audience)
 - Going 10/10 mean (too mean equals unwatchable, brand damage)
 - Showing the problem without the fix (proves nothing)
@@ -143,19 +143,19 @@ Most creators end up doing option 2 after trying option 1 once and finding it to
 
 ## Thumbnail strategies for this format
 
-Lean into: **Cognitive Dissonance** (visual contrast: bad version vs fixed version), **Comparison** (before-and-after split), **Social Hacking** (when roasting famous brands or creators).
+Lean into: **Cognitive Dissonance** (visual contrast: bad version vs fixed version), **Comparison** (before-and-after split), **Social Hacking** (when reviewing famous brands or creators).
 
 The thumbnail should hint at the fix, not just the problem. "Here's what's broken" alone doesn't pull clicks. "Here's what's broken AND what we did about it" does.
 
 ## End screen routing
 
-- **Sales goal** → past high-converting sales video OR another high-fix roast
+- **Sales goal** → past high-converting sales video OR another high-fix review
 - **Emails goal** → past high-converting email video
-- **Always** → another roast (drives binge for the format-loyal audience)
+- **Always** → another review (drives binge for the format-loyal audience)
 
 ## Strategy for compounding results
 
-- Run a roast every 2-4 weeks to keep submissions flowing
+- Run a review every 2-4 weeks to keep submissions flowing
 - Build a simple submission funnel (community post, email, form, review)
 - Save problems and submissions as content fuel. The form's "biggest struggle" field gives you future content ideas
 - The submission list IS a buyer list. These viewers self-identified as having the problem. Treat them as warm leads.
@@ -164,6 +164,6 @@ The thumbnail should hint at the fix, not just the problem. "Here's what's broke
 
 - Don't call it a roast publicly
 - Don't review obscure problems
-- Don't roast at 10/10 mean
+- Don't review at 10/10 mean
 - Don't skip the fix
 - Don't run with a bare CTA. The submission funnel is the engine

@@ -86,7 +86,7 @@ A segment should exit higher than it entered. Energy rises toward the payoff; th
 
 > "...so that is one line of work for audio that sounds like a person talking. Step 5 is the export setting that makes or breaks YouTube quality, and it is one checkbox."
 
-Fast formats (news, short process) run flatter by design. Energy direction still applies inside each beat: end every beat on the thing that pulls into the next one, never on the thing that closes.
+Fast formats (news, step-by-step) run flatter by design. Energy direction still applies inside each beat: end every beat on the thing that pulls into the next one, never on the thing that closes.
 
 ## What this file does not do
 

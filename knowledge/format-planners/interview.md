@@ -121,7 +121,7 @@ Recorded conversation, then aggressively edited. Intro is scripted and recorded 
 
 ### NOT for Sales
 
-If sales is the goal, deep dive or case study is the right format. Interviews tank for sales. Don't fight it.
+If sales is the goal, deep dive or success story is the right format. Interviews tank for sales. Don't fight it.
 
 ## Title formulas
 

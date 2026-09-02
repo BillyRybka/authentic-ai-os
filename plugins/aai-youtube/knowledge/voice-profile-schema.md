@@ -106,7 +106,7 @@ Every source that fed the profile, with date and `voice_context` tag. One single
 
 ## `voice_context` (the medium axis)
 
-`voice_context` is the delivery medium or mode the creator's voice is in. It is orthogonal to `format` (the structural template of the video). A `listicle` could be delivered as a screen-share `tutorial` or a talking-head `youtube-script`. Do not derive one from the other.
+`voice_context` is the delivery medium or mode the creator's voice is in. It is orthogonal to `format` (the structural template of the video). A `list-video` could be delivered as a screen-share `tutorial` or a talking-head `youtube-script`. Do not derive one from the other.
 
 Values: `youtube-script` | `tutorial` | `shorts` | `newsletter` | `linkedin` | `twitter` | `instagram` | `podcast` | `casual` | `talk`.
 

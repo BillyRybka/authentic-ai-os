@@ -42,7 +42,7 @@ Pick that one. Bridge to it. Done.
 
 ### Option 2: Point to the previous high-performer in the same format
 
-If this video is the latest in a series (the third roast, the fifth case study, the second deep-dive on a topic):
+If this video is the latest in a series (the third review, the fifth success story, the second deep-dive on a topic):
 
 Bridge to the previous video in the same format that hit the goal. NOT automatically the most recent one. If the most recent was a flop, skip it. Always link to one that got results.
 
@@ -117,7 +117,7 @@ The creator's editor (or the creator if they edit themselves) will time the card
 
 ## 6. Worked decision examples
 
-### Example 1: Short Process video, sales goal, established channel
+### Example 1: Step-by-Step video, sales goal, established channel
 
 Creator's strongest sales-converting past video is "The 5-Step Onboarding System That Books Calls", a deep dive that walks the methodology.
 
@@ -125,13 +125,13 @@ Bridge: "Watch this next where I show you the full 5-step system in action."
 
 Why this works: matches Option 1 (best converter for goal). The Pivot recapped a tactic, the Gap revealed the system gap, the Bridge points to the full system video. Viewer gets sequential value.
 
-### Example 2: Roast video, sales goal, established channel
+### Example 2: Review video, sales goal, established channel
 
-This is the third roast in a roast series. The previous roast (roast #2) flopped on conversions. Roast #1 was the strongest sales-converting roast.
+This is the third review in a review series. The previous review (review #2) flopped on conversions. Review #1 was the strongest sales-converting review.
 
-Bridge: point to roast #1 (Option 2, previous high-performer in same format, NOT the most recent).
+Bridge: point to review #1 (Option 2, previous high-performer in same format, NOT the most recent).
 
-Why this works: per R-1, skip the underperformer. Format-loyal audiences want more roasts; route them to the strongest one.
+Why this works: per R-1, skip the underperformer. Format-loyal audiences want more reviews; route them to the strongest one.
 
 ### Example 3: News video, views goal, small channel
 
@@ -145,7 +145,7 @@ Why this works: converts the news algorithm spike into channel audience. The dee
 
 The guest is a notable creator. Viewers came for the guest. Per interview format planner, Bridge has to point to a video where the CREATOR is the expert, not another interview.
 
-Bridge: point to the creator's strongest evergreen short-process or deep-dive on the same topic the guest discussed.
+Bridge: point to the creator's strongest evergreen step-by-step or deep-dive on the same topic the guest discussed.
 
 Why this works: per R-5, never interview-to-interview. The end-screen converts guest-arrived viewers into creator's audience.
 

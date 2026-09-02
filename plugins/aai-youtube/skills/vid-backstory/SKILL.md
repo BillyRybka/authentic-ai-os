@@ -7,7 +7,7 @@ description: Locks the creator's Problem-Action-Outcome backstory in 1 to 2 conv
 
 Lock the creator's Problem-Action-Outcome backstory. 1 to 2 conversational paragraphs. Concrete actions. Real numbers. No corporate tone.
 
-The backstory establishes how the creator went from the avatar's problem to the avatar's outcome. It gets reused across video intros, channel banners, welcome emails, and case study scripts.
+The backstory establishes how the creator went from the avatar's problem to the avatar's outcome. It gets reused across video intros, channel banners, welcome emails, and success story scripts.
 
 ## Contract
 
@@ -17,7 +17,7 @@ The backstory establishes how the creator went from the avatar's problem to the 
 
 **Outputs:** `foundation/backstory.md`, created from its template in `${CLAUDE_PLUGIN_ROOT}/knowledge/foundation-templates.md` if missing. 1 to 2 short paragraphs plus a 3-sentence compressed version for quick intros.
 
-**Downstream consumers:** the 3-sentence version is built for quick intros; case study scripts, channel banner copy, and welcome email sequences pull the full version as those skills arrive.
+**Downstream consumers:** the 3-sentence version is built for quick intros; success story scripts, channel banner copy, and welcome email sequences pull the full version as those skills arrive.
 
 ## Load at session start
 

@@ -55,8 +55,8 @@ The intro-to-body bridge. The intro just promised three things in the Setup. Thi
 - Near-miss: "Most people fail here because they don't try hard enough. But when you do this next step, you'll succeed." Generic mistake plus generic outcome equals zero forward pull.
 
 **HF-7.** Starting with #[1] (or "the first one"), [result the count's first item delivers].
-- Worked: "Starting with number one, this is the lesson that finally got me consistent inbound leads instead of chasing every week." Listicle-format opener that promises a result, not just an item.
-- Worked: "The first one is the truth that took me ten years to admit and three days to implement." Tension framing on a personal-confession listicle.
+- Worked: "Starting with number one, this is the lesson that finally got me consistent inbound leads instead of chasing every week." List Video-format opener that promises a result, not just an item.
+- Worked: "The first one is the truth that took me ten years to admit and three days to implement." Tension framing on a personal-confession list video.
 - Near-miss: "Starting with number one." Zero forward pull. Pure announcement. Drops viewers on contact.
 
 **HF-8.** Now you know [setup recap one phrase], let me show you how to [first point's payoff].
@@ -73,7 +73,7 @@ The intro-to-body bridge. The intro just promised three things in the Setup. Thi
 
 ## Section 2. Segment-to-segment transitions (point to point)
 
-The lifeline of multi-point videos (listicles, deep dives with multiple sections, short-process step-by-step). Every transition between body points has to close the previous beat AND forward-hook the next. Listicles especially die without these. Length: one sentence is ideal, two is the cap.
+The lifeline of multi-point videos (list videos, deep dives with multiple sections, step-by-step walkthroughs). Every transition between body points has to close the previous beat AND forward-hook the next. List Videos especially die without these. Length: one sentence is ideal, two is the cap.
 
 ### Patterns
 
@@ -108,7 +108,7 @@ The lifeline of multi-point videos (listicles, deep dives with multiple sections
 - Near-miss: "That leads us into how to do the next thing." Zero verbs. Zero specifics. Skip.
 
 **SS-7.** Now you know [recap of point N's lesson], let me show you [point N+1's promise].
-- Worked: "Now you know your transitions are the lifeline, let me show you the three patterns that work in every listicle." Recap is one phrase. Promise has a count.
+- Worked: "Now you know your transitions are the lifeline, let me show you the three patterns that work in every list video." Recap is one phrase. Promise has a count.
 - Worked: "Now you know why the first hour of the day decides the next eight, let me show you the routine that protects it." Recap plus protective frame.
 - Near-miss: "Now you know that, let me show you this." Both halves are pronoun mush. Replace both.
 
@@ -153,13 +153,13 @@ The golden rule from [[intro-architecture]] applies double here: never end a vid
 - Near-miss: "So now you know how to do this, but here's the thing. There's more stuff." "More stuff" kills the bridge. Name the next problem specifically.
 
 **BE-2.** That's the [N] [things you teach]. But here's the gap most people hit next: [specific new problem].
-- Worked: "That's the four transitions every listicle lives or dies on. But here's the gap most people hit next: a strong listicle still needs a strong end-screen handoff or the next video doesn't get the click." Names the next problem the next video solves.
+- Worked: "That's the four transitions every list video lives or dies on. But here's the gap most people hit next: a strong list video still needs a strong end-screen handoff or the next video doesn't get the click." Names the next problem the next video solves.
 - Worked: "That's the three foundation moves. But here's the gap most people hit next: the foundation works, the offer doesn't convert, and they blame the foundation." Diagnostic gap framing.
 - Near-miss: "That's the four things. But here's the gap: you still have problems." Generic gap is no gap.
 
 **BE-3.** You now have everything you need to [primary outcome of the video]. The next problem is [the new problem the next video solves].
 - Worked: "You now have everything you need to write an intro that hooks. The next problem is keeping the body of the video tight enough that the hook's promise survives to the end." Bridges video N's payoff to video N+1's problem.
-- Worked: "You now have everything you need to plan a listicle viewers binge. The next problem is making the thumbnail and title earn the click in the first place." Promise plus hand-off.
+- Worked: "You now have everything you need to plan a list video viewers binge. The next problem is making the thumbnail and title earn the click in the first place." Promise plus hand-off.
 - Near-miss: "You now have everything you need. The next problem is more stuff." Empty bridge.
 
 **BE-4.** [Strong recap line]. The reason most creators still don't get the result is [the new lever]. That's what I'm going to show you next.

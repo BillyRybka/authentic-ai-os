@@ -1,15 +1,15 @@
 ---
 type: reference
 doc: format-card
-format: listicle
-tags: [format-card, listicle]
+format: list-video
+tags: [format-card, list-video]
 ---
 
-# Listicle format card
+# List Video format card
 
 Twelve numbered blanks, in the order the file lays them out and the order they get asked. Blanks 7, 8, and 9 repeat once per point, so the real count is 9 plus 3 per point.
 
-`knowledge/format-planners/listicle.md` is the content source of truth. This card holds the wording of each ask and the bar a passing answer clears, and points back at the planner for everything else. Nothing from the planner gets restated here. Two copies of one rule drift the first time either gets edited.
+`knowledge/format-planners/list-video.md` is the content source of truth. This card holds the wording of each ask and the bar a passing answer clears, and points back at the planner for everything else. Nothing from the planner gets restated here. Two copies of one rule drift the first time either gets edited.
 
 **Load-bearing: blank 9, the transition out of each point.** It is the one thing the planner gives a dedicated section to and names as fatal: weak transitions kill retention, and a transition that is just an announcement makes viewers drop. Nothing else in this doc is stated that way, so nothing else is marked. That blank gets up to two follow-ups when the answer comes back thin, then a gap callout. Every other blank gets one ask and takes whatever comes back.
 
@@ -27,7 +27,7 @@ Twelve numbered blanks, in the order the file lays them out and the order they g
 - **Ask:** Views, emails, or sales?
 - **Push:** none.
 - **Passing:** one goal named.
-- **Notes:** usually answered at step 0. The planner recommends views, with emails second and sales as the alternative when one strong point connects to an offer. It also carries an audience-fit caveat: listicles land for some channels and tank for others. If the creator has not run one before, say that once and move.
+- **Notes:** usually answered at step 0. The planner recommends views, with emails second and sales as the alternative when one strong point connects to an offer. It also carries an audience-fit caveat: list videos land for some channels and tank for others. If the creator has not run one before, say that once and move.
 
 ## 2. Title and thumbnail
 
@@ -48,7 +48,7 @@ Twelve numbered blanks, in the order the file lays them out and the order they g
 - **Ask:** What three questions does that package put in their head?
 - **Push:** none.
 - **Passing:** three questions, phrased as questions.
-- **Notes:** the planner names the three that come up most for listicles. Offer them as candidates only after the creator has taken their own swing.
+- **Notes:** the planner names the three that come up most for list videos. Offer them as candidates only after the creator has taken their own swing.
 
 ## 4. Brain dump: every point you might use
 
@@ -149,4 +149,4 @@ Twelve numbered blanks, in the order the file lays them out and the order they g
 - **Ask 2:** What number tells you this one worked?
 - **Push:** none.
 - **Passing:** a real published title and one metric tied to the goal in blank 1.
-- **Notes:** the planner routes views to another listicle for the binge, and the other two goals to a past converter. A video they intend to make is a gap, not an answer.
+- **Notes:** the planner routes views to another list video for the binge, and the other two goals to a past converter. A video they intend to make is a gap, not an answer.

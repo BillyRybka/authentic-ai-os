@@ -1,10 +1,10 @@
 ---
 type: reference
-format: short-process
-tags: [format-planner, short-process]
+format: step-by-step
+tags: [format-planner, step-by-step]
 ---
 
-# Short Process Format Planner
+# Step-by-Step Format Planner
 
 A 10-20 minute video that lays out a specific quick-fire process to get a specific result.
 
@@ -26,7 +26,7 @@ Format scores reflect patterns observed across creator channels. Your results de
 INTRO → PARABLE (one) → PRINCIPLE (sequential steps, max 8) → END
 ```
 
-This is the critical distinction. It's **NOT** parable-principle-parable-principle like a Listicle. You have ONE big emotional bit up front, then the rest is the step-by-step process.
+This is the critical distinction. It's **NOT** parable-principle-parable-principle like a List Video. You have ONE big emotional bit up front, then the rest is the step-by-step process.
 
 ### Optional: a second parable before a hard step
 
@@ -34,9 +34,9 @@ If one step in the principle is complex or viewers won't believe it, insert a se
 
 ## Intro adaptation
 
-Short Process uses a compressed intro. The whole format is "fast action steps." A long intro contradicts the format's identity. These are defaults. The creator can break them if their style or audience reward something different.
+Step-by-Step uses a compressed intro. The whole format is "fast action steps." A long intro contradicts the format's identity. These are defaults. The creator can break them if their style or audience reward something different.
 
-| Universal intro step | Short Process default | Why |
+| Universal intro step | Step-by-Step default | Why |
 |---|---|---|
 | 1. Top 3 viewer questions | Same. Derive from title and thumbnail | Same as every format. |
 | 2. Hook | Question, Contrarian, or Statement most common. Fact Hook works if there's a real surprising data point | These land fast and match the action energy. Credibility Hook works if the creator's credibility is loud enough to stop cold viewers. That's a creator-specific call, not a hard rule. On small channels it usually under-delivers because cold viewers don't trust an unknown "I" yet, but if the creator wants to lead with credibility anyway, do it. |
@@ -49,7 +49,7 @@ Short Process uses a compressed intro. The whole format is "fast action steps." 
 
 ## The 10-step planner
 
-Use this to plan a short process video before writing a single line of script.
+Use this to plan a step-by-step video before writing a single line of script.
 
 1. **Pick one goal.** Sales, emails, or views. Just pick one.
 2. **Thumbnails and title.** Decide the package before the script, since it sets the promise.
@@ -97,9 +97,9 @@ Why it works: Old way (concrete list of wrong pattern), then test period (credib
 
 ### Example: The Cake Analogy, scope definition
 
-> "A short process would really be: I'm gonna show you how to get just the sponge of every cake amazingly fluffy. Instead of: I'm gonna show you how to go from the beginning, buying all the stuff, the recipe, to putting the icing on the end."
+> "A step-by-step would really be: I'm gonna show you how to get just the sponge of every cake amazingly fluffy. Instead of: I'm gonna show you how to go from the beginning, buying all the stuff, the recipe, to putting the icing on the end."
 
-Why it works: Short process is NARROW. One specific result, not a full system. Deep Dives are the whole cake. Short process is the sponge.
+Why it works: Step-by-step is NARROW. One specific result, not a full system. Deep Dives are the whole cake. Step-by-step is the sponge.
 
 ## Rules
 
@@ -112,7 +112,7 @@ Why it works: Short process is NARROW. One specific result, not a full system. D
 
 ## Output format
 
-Word-for-word script. Short Process is scripted end to end, teleprompter-read. Not bullets.
+Word-for-word script. Step-by-Step is scripted end to end, teleprompter-read. Not bullets.
 
 ## Conversion strategy by goal
 
@@ -160,6 +160,6 @@ Stick to: **Result**, **Cognitive Dissonance**, **Comparison**, or **Curiosity**
 ## What to skip
 
 - Don't pad steps. Quality over quantity.
-- Don't alternate parable and principle like a listicle. This is one parable then principle steps.
+- Don't alternate parable and principle like a list video. This is one parable then principle steps.
 - Don't chase multiple goals. One per video.
 - Don't tie the lead magnet to something outside the video content.

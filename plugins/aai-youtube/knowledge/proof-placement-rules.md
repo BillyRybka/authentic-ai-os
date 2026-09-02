@@ -110,7 +110,7 @@ Why it misses: no visual instruction, no specific stat, no asset reference. Even
 
 Sometimes one proof isn't enough. The wall-of-wins (multiple screenshots scrolled at speed) lets the viewer see VOLUME, which proves "this isn't just one lucky case."
 
-**Worked (case-study takeaway segment):**
+**Worked (success-story takeaway segment):**
 
 > "And Steve's not the only one. Here are about 40 client wins from the past 6 months."
 >
@@ -122,12 +122,12 @@ Why it lands: volume proof. Viewer sees the method works for many, not one. Defe
 
 A segment where the wall-of-wins is the ONLY proof and there's no specific case shown.
 
-Why it misses: volume without specificity is weaker than one specific case. Pair the wall with one individual case study, not as a replacement.
+Why it misses: volume without specificity is weaker than one specific case. Pair the wall with one individual success story, not as a replacement.
 
 **When NOT to use wall-of-wins:**
 
 - The bank doesn't have ~20+ client-win entries with assets. A wall of 4 looks thin.
-- The format is news, short process, or roast. These don't carry the runtime for an 80-second scroll.
+- The format is news, step-by-step, or review. These don't carry the runtime for an 80-second scroll.
 - The segment's job is teaching the method, not establishing volume credibility.
 
 ---

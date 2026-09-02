@@ -98,15 +98,15 @@ Produce one proposal only after the required intent is confirmed:
 ## Choose the format
 Choose one format only after the audience, their situation, desired viewer outcome, and goal are locked.
 Choose the simplest format that can honestly deliver the approved outcome for that audience and goal. Use the natural shape of the material as the main evidence, but do not treat format as something merely “read off” the dump. It is a delivery decision.
-- short-process: Choose when the viewer can follow a bounded sequence in one sitting and reach a concrete result. The steps are the spine; the payoff comes from completing them.
+- step-by-step: Choose when the viewer can follow a bounded sequence in one sitting and reach a concrete result. The steps are the spine; the payoff comes from completing them.
 
-- case-study: Choose when one person, business, or project’s before → decision/action → after transformation carries the value. The audience should learn through that specific journey, not just hear generic advice.
+- success-story: Choose when one person, business, or project’s before → decision/action → after transformation carries the value. The audience should learn through that specific journey, not just hear generic advice.
 
 - deep-dive: Choose when the outcome depends on connected explanation, nuance, or several linked stages that would become misleading if compressed into a quick process. Use it to build understanding, not just to make a video longer.
 
-- roast: Choose when another person’s work, asset, decision, or approach is the evidence. The value comes from showing what does not work, why, and what to do instead.
+- review: Choose when another person’s work, asset, decision, or approach is the evidence. The value comes from showing what does not work, why, and what to do instead.
 
-- listicle: Choose when several distinct items each create value independently. Do not use it when the items only make sense as steps in one process.
+- list video: Choose when several distinct items each create value independently. Do not use it when the items only make sense as steps in one process.
 
 - news: Choose when a recent event, release, change, or development is the reason the viewer should care now. The newness must materially affect the outcome.
 

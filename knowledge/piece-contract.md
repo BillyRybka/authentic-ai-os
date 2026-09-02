@@ -28,7 +28,7 @@ anchor: "..."                   # the outlier receipt from a vid-ideas seed: sou
 frame: "..."                    # the locked video, first person and spoken, one direction only. Never a headline, never a description of the contents. Set by vid-framing.
 core_payoff: "..."              # the reason the viewer stays to the end, almost always the answer to a question already in their head. Second person, one outcome. Locked with the frame. Set by vid-framing. vid-structure orders the points so it resolves where the format's tension plan puts it, never before the video has earned it.
 must_not_become: "..."          # a shape the whole video must not take, in the creator's words. Never a thing that must not appear. Set by vid-framing from the interview; absent when they had no answer.
-format: short-process           # from the 7 formats: short-process | case-study | roast | deep-dive | interview | news | listicle. Set by vid-framing.
+format: step-by-step           # from the 7 formats: step-by-step | success-story | review | deep-dive | interview | news | list-video. Set by vid-framing.
 goal: sales                     # sales | emails | views (ONE only). Set by vid-framing.
 voice_context: youtube-script   # delivery medium for voice: youtube-script (default) | tutorial | shorts | newsletter | linkedin | twitter | instagram | podcast | casual | talk. Orthogonal to format. Set by vid-framing (videos) or post-write (posts). Drives which foundation/reference-pieces/{voice_context}.md a writing skill loads.
 

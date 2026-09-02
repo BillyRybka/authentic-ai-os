@@ -13,7 +13,7 @@ purpose: Candidate-owned fields and body section written to an existing content 
 ```yaml
 frame: "{approved first-person spoken strategic promise using sourced or creator-confirmed audience language for pain and relief; include a named mechanism only when it is the compelling audience-facing handle}"
 core_payoff: "{approved direct second-person end capability; it may name the vehicle that fulfills the frame}"
-format: short-process | case-study | deep-dive | roast | listicle | news | interview
+format: step-by-step | success-story | deep-dive | review | list-video | news | interview
 goal: sales | emails | views  # Required explicit creator intent. Never infer from channel fit.
 voice_context: youtube-script
 must_not_become: "{optional boundary explicitly stated in the selected material or confirmed when a real ambiguity required it}"

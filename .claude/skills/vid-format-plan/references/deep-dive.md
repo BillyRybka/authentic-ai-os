@@ -124,7 +124,7 @@ Fourteen numbered blanks, in the order the file lays them out and the order they
 - **Ask:** What proves that one works?
 - **Push:** none.
 - **Passing:** a client win, a before and after, or a number tied to this step.
-- **Notes:** the planner's ideal pattern is step, proof, step, proof. Each one is a line and a visual, not a nested case study; quick is part of what makes it work. Empty on a step or two is survivable. Empty on all of them is worth naming once at the close.
+- **Notes:** the planner's ideal pattern is step, proof, step, proof. Each one is a line and a visual, not a nested success story; quick is part of what makes it work. Empty on a step or two is survivable. Empty on all of them is worth naming once at the close.
 
 ## 11. Step {n}: does it need a parable
 

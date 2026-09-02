@@ -70,9 +70,9 @@ Adjust each reviewer's emphasis based on piece context. Weights are not numbers;
 - `goal: sales` → source-traceability and retention-logic weighted heavier (claim accuracy matters for buyer trust; ending CTA clarity scrutinized)
 - `goal: views` → retention-logic and AI-slop weighted heavier (cold viewers leave fast on slop and on flat retention curves)
 - `goal: emails` → retention-logic + ending lead-magnet specificity scrutinized
-- `format: case-study` → narrative arc retention rules apply (one rising arc, outcome lands late, story traceability strict)
-- `format: listicle` → item-progression retention rules apply (N+1 > N expectation; named lesson lands late)
-- `format: short-process` → step compounding retention rules (each step a small payoff; full method at step-end)
+- `format: success-story` → narrative arc retention rules apply (one rising arc, outcome lands late, story traceability strict)
+- `format: list-video` → item-progression retention rules apply (N+1 > N expectation; named lesson lands late)
+- `format: step-by-step` → step compounding retention rules (each step a small payoff; full method at step-end)
 - `format: deep-dive` → cross-lesson thread tracking strict (concept threads layered)
 - `format: news` → tight retention compression (named answer can't wait as long)
 - Audience temperature is DERIVED, not read from a field: judge cold/warm/hot from the finished script itself (topic breadth, how much trust the framing assumes, whether the CTA presumes the viewer knows the creator). Cold → AI-slop tighter (cold viewers have no trust to spend on weak prose). Hot → CTA scrutiny tighter (hot viewers need a clear next step).

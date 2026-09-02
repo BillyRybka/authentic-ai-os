@@ -31,7 +31,7 @@ Repairs, creator deciding: route to `vid-bank` mid-flow (it returns the new wiki
 
 ## Step 3: Draft fast, for tension
 
-Fill the plan top to bottom in one pass, no editing, no polishing. The shape comes from the format planner: a listicle point runs the full parable-principle cycle; a short-process or deep-dive step states the step and teaches it, earning a parable only where the step is complex or doubted; a case study is one arc. `references/parable-principle-shapes.md` holds the per-format worked segments to calibrate against. Some points are one line and move on. Spend the creativity where the point needs belief, and take the first demo or metaphor idea that fits instead of grinding for clever.
+Fill the plan top to bottom in one pass, no editing, no polishing. The shape comes from the format planner: a list video point runs the full parable-principle cycle; a step-by-step or deep-dive step states the step and teaches it, earning a parable only where the step is complex or doubted; a success story is one arc. `references/parable-principle-shapes.md` holds the per-format worked segments to calibrate against. Some points are one line and move on. Spend the creativity where the point needs belief, and take the first demo or metaphor idea that fits instead of grinding for clever.
 
 The seven tension disciplines, the spine of the draft:
 

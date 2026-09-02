@@ -48,7 +48,7 @@ A gap is critical when any of these is true:
 
 - the section's main claim has no honest source
 - a story is missing the event that makes its lesson true
-- a case-study outcome or causal action is unknown
+- a success-story outcome or causal action is unknown
 - a news fact that changes the conclusion is unverified
 - a demonstration is the promised deliverable but its real inputs or result are absent
 - an interview question relies on a factual premise that has not been confirmed

@@ -47,7 +47,7 @@ This file stores the creator's starting video defaults. These are useful first c
 *Three first formats to rotate plus one experimental slot. These choices should say why they are a good first test, what evidence supports them, how confident we are, and what would tell us to change.*
 
 ### Core Format 1
-- **Format:** [Short Process / Case Study / Roast / Deep Dive / Interview / News / Listicle]
+- **Format:** [Step-by-Step / Success Story / Review / Deep Dive / Interview / News / List Video]
 - **Why this is a good first test:** [one sentence]
 - **Evidence basis:** [creator judgment / source-backed default / own channel data / outlier research]
 - **Confidence:** [low / medium / high]

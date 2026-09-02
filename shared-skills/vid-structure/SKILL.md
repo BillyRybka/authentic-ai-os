@@ -31,7 +31,7 @@ Read the selected `piece.md` and `brain-dump.md`. Confirm:
 - `piece.md` has `type: content-piece` and its `slug` matches the folder.
 - `brain-dump.md` exists and has no `## Still capturing` marker.
 - `frame`, `core_payoff`, `format`, `goal`, `title`, and nonempty `thumbnail_text` exist.
-- The locked format is one of: `short-process`, `case-study`, `roast`, `deep-dive`, `interview`, `news`, `listicle`.
+- The locked format is one of: `step-by-step`, `success-story`, `review`, `deep-dive`, `interview`, `news`, `list-video`.
 - `knowledge/format-planners/{format}.md` exists.
 
 Also read `must_not_become` and `## The Read` when present. Read only source files directly supplied or linked for this piece. Do not scan unrelated content or banks.

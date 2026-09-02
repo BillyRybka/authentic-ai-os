@@ -1,6 +1,6 @@
 ---
 name: vid-format-plan
-description: Co-plan one video against its format planner, one blank at a time, into a plan file the creator watches fill. Covers all seven formats: case study, deep dive, listicle, roast, short process, news, interview. Use when a creator has a video in mind and wants the format worked out before anything gets written. Fires on "let's plan the video", "format plan for X", "plan this one as a case study", "walk me through the deep dive format", "what do I need for a listicle", "planning a review video", "I want to do a news video on this", "I've got an interview coming up", "I've got a client story I want to turn into a video". Also fires on returning to a plan that never finished, like "finish the format plan", "pick up that plan", "what's left on that plan". Not for capturing raw material, not for titles or thumbnails, not for writing intro, segment, or ending prose.
+description: Co-plan one video against its format planner, one blank at a time, into a plan file the creator watches fill. Covers all seven formats: success story, deep dive, list video, review, step-by-step, news, interview. Use when a creator has a video in mind and wants the format worked out before anything gets written. Fires on "let's plan the video", "format plan for X", "plan this one as a success story", "walk me through the deep dive format", "what do I need for a list video", "planning a review video", "I want to do a news video on this", "I've got an interview coming up", "I've got a client story I want to turn into a video". Also fires on returning to a plan that never finished, like "finish the format plan", "pick up that plan", "what's left on that plan". Not for capturing raw material, not for titles or thumbnails, not for writing intro, segment, or ending prose.
 ---
 
 # vid-format-plan
@@ -17,11 +17,11 @@ One card per format, in `references/`. The card is the question list. This file 
 
 | Creator says | Card |
 |---|---|
-| case study, client story, transformation, results video | `case-study.md` |
+| success story, client story, transformation, results video | `success-story.md` |
 | deep dive, full guide, the complete system, long one | `deep-dive.md` |
-| listicle, list video, N things, N mistakes, N lessons | `listicle.md` |
-| roast, review, reviewing submissions, fixing viewers' stuff | `roast.md` |
-| short process, how-to, quick system, walkthrough | `short-process.md` |
+| list video, N things, N mistakes, N lessons | `list-video.md` |
+| review, reviewing submissions, fixing viewers' stuff | `review.md` |
+| step-by-step, how-to, quick system, walkthrough | `step-by-step.md` |
 | news, breaking, reaction, this just happened | `news.md` |
 | interview, guest, podcast episode, conversation with | `interview.md` |
 
@@ -36,7 +36,7 @@ Five things, one turn. A line of setup, the five on five lines, a line saying ro
 > Quick setup, then we plan it.
 >
 > - What's the video?
-> - Which format? Case study, deep dive, listicle, roast, short process, news, interview
+> - Which format? Success story, deep dive, list video, review, step-by-step, news, interview
 > - Working title, if you have one
 > - What's on the thumbnail
 > - Sales, emails, or views
@@ -47,9 +47,9 @@ Five things, one turn. A line of setup, the five on five lines, a line saying ro
 
 **This is the only turn that asks for more than one thing.** These are five things the creator already has, not five things they have to think about. Everything after this is one ask per turn, because everything after this needs thinking.
 
-Never re-ask for something they already said in the message that started this. "Plan a case study about Steve" answers the format and answers the video, so those two lines come out of the list.
+Never re-ask for something they already said in the message that started this. "Plan a success story about Steve" answers the format and answers the video, so those two lines come out of the list.
 
-If they describe the video but not the format, and it clearly fits one, name that one instead of asking. "Reviewing three subscriber thumbnails" is a roast. Say which card you are opening and move.
+If they describe the video but not the format, and it clearly fits one, name that one instead of asking. "Reviewing three subscriber thumbnails" is a review. Say which card you are opening and move.
 
 Nothing here is a gate. Whatever comes back, take it and scaffold. Format, title, thumbnail, and goal are blanks 1 and 2 on the card: what they hand over lands in the file already filled, and what they skip stays empty and comes up in the walk like every other blank.
 
@@ -63,7 +63,7 @@ Then say the path, once:
 
 > `content/pieces/steve-80k-months/format-plan.md`. Keep it open if you want to watch it fill.
 
-**Blanks that repeat.** Every format except case study and news has blanks that run once per point, per step, per review, or per question, and the card marks them `Repeats` and names the blank that sets the count. Those cannot be scaffolded up front because the count does not exist yet.
+**Blanks that repeat.** Every format except success story and news has blanks that run once per point, per step, per review, or per question, and the card marks them `Repeats` and names the blank that sets the count. Those cannot be scaffolded up front because the count does not exist yet.
 
 At scaffold, they get one container section holding an empty marker that says what is coming. The moment the counting blank fills, write its list to the file and then write one section per item, numbered `9.1`, `9.2`, before the next question goes out. The file catches up to the count in the same turn the count lands.
 
@@ -94,7 +94,7 @@ No preamble, no recap of what they just said, no praise, no reading their answer
 
 Load-bearing is not a rank of importance. Every blank on the card matters or it would not be a blank. The mark answers one question: when this answer comes back thin, does the skill push or take it? A goal picked from three cannot come back thin. A working title is allowed to be rough. A story answer can come back as "they were stuck", and that is the thin answer that kills the video while sounding like progress.
 
-The card marks which blanks push, and its header names the line in the planner that earned each one the mark. The bar is high on purpose: a dedicated statement in the planner doc that the video fails without it, not an entry in its Common mistakes list. Case study has five, listicle has one, and no format has more than three. A card that marked everything would push on everything, and a session that pushes on everything gets abandoned.
+The card marks which blanks push, and its header names the line in the planner that earned each one the mark. The bar is high on purpose: a dedicated statement in the planner doc that the video fails without it, not an entry in its Common mistakes list. Success story has five, list video has one, and no format has more than three. A card that marked everything would push on everything, and a session that pushes on everything gets abandoned.
 
 Load-bearing blanks that repeat push per item. The first one teaches the shape, and the rest usually land without help.
 

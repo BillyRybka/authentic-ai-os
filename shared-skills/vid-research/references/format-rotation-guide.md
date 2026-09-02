@@ -38,7 +38,7 @@ It should not copy another creator's wording, claims, personality, or private fr
 
 Each format has a different structure, creator-level requirement, and scoring profile. The scores are starting signals from source material, not universal truth.
 
-### 1. Short Process (10-20 min)
+### 1. Step-by-Step (10-20 min)
 A quick process to get a specific result.
 
 - Structure: intro, one emotional setup, sequential steps, end
@@ -48,7 +48,7 @@ A quick process to get a specific result.
 - Weak fit: the topic needs deep proof, a transformation story, or complex context
 - Best for: workflows, setup processes, routines, execution videos
 
-### 2. Case Study (10-30 min)
+### 2. Success Story (10-30 min)
 One relatable transformation taught through Problem, Action, Outcome.
 
 - Structure: intro, PAO story, one big lesson, 1-3 actionable steps, end
@@ -58,7 +58,7 @@ One relatable transformation taught through Problem, Action, Outcome.
 - Weak fit: the creator has no real result, no clear story, or the result is not surprising
 - Best for: selling systems, proving methodology, showing transformation
 
-### 3. Roast / Review (10-20 min)
+### 3. Review / Review (10-20 min)
 Review a public example or audience submission, name the problem, show the fix.
 
 - Structure: intro, review 1, review 2, review 3, end
@@ -98,7 +98,7 @@ Timely coverage of a new event, update, trend, or novel angle.
 - Weak fit: the creator cannot move fast, or the channel would become dependent on daily news
 - Best for: fast attention, topical relevance, list growth
 
-### 7. Listicle (10-20 min)
+### 7. List Video (10-20 min)
 A numbered list of points with emotion plus logic per point.
 
 - Structure: intro, repeated lesson blocks, end
@@ -125,14 +125,14 @@ When the creator has no useful channel data, pick first defaults from avatar fit
 
 Good starting choices often include:
 
-- Short Process, because it is simple, repeatable, and useful to many audiences
-- Listicle, because it is accessible and good for early testing
-- Case Study, only if the creator has real proof and can tell the story clearly
+- Step-by-Step, because it is simple, repeatable, and useful to many audiences
+- List Video, because it is accessible and good for early testing
+- Success Story, only if the creator has real proof and can tell the story clearly
 
 Be careful with:
 
 - Deep Dive as a first core format, because cold viewers may not trust a long video yet
-- Roast without a submissions or public-example pipeline
+- Review without a submissions or public-example pipeline
 - Interview as a sales format, because views may come from the guest rather than the creator
 - News as the whole channel, because it can train viewers to come for updates instead of the creator's core expertise
 
@@ -155,39 +155,39 @@ These are examples from other industries so the skill does not overfit to one cr
 
 **Strong starting rotation**
 
-- Core 1: Short Process. First-time investors need step-by-step decisions like how to estimate rent, evaluate a neighborhood, or spot a bad deal.
-- Core 2: Case Study. A real purchase, failed deal, or client win proves the advice is not theory.
-- Core 3: Listicle. Lists like "5 red flags before you buy" are accessible for cold viewers.
+- Core 1: Step-by-Step. First-time investors need step-by-step decisions like how to estimate rent, evaluate a neighborhood, or spot a bad deal.
+- Core 2: Success Story. A real purchase, failed deal, or client win proves the advice is not theory.
+- Core 3: List Video. Lists like "5 red flags before you buy" are accessible for cold viewers.
 - Experimental: News. Test timely market updates only if the advisor can publish fast and tie the news back to buying decisions.
 
 Why it works: the mix gives beginner-friendly help, proof, and one timely attention test.
 
 **Plain but usable**
 
-- Short Process, Listicle, Case Study, experimental News.
+- Step-by-Step, List Video, Success Story, experimental News.
 
 Why it is weaker: the choices are reasonable, but the saved file does not explain what evidence or audience behavior supports them.
 
 **Bad**
 
-- Deep Dive, Interview, News, experimental Roast.
+- Deep Dive, Interview, News, experimental Review.
 
-Why it fails: it asks a cold audience to trust long videos, borrows authority instead of building the creator's, leans too much on timely updates, and uses Roast without a clear visible-work pipeline.
+Why it fails: it asks a cold audience to trust long videos, borrows authority instead of building the creator's, leans too much on timely updates, and uses Review without a clear visible-work pipeline.
 
 ### Example 2: Leadership Consultant For New Managers
 
 **Strong starting rotation**
 
-- Core 1: Short Process. New managers need scripts, meeting systems, and simple decision rules.
-- Core 2: Case Study. A manager conflict or turnaround story builds trust and shows judgment.
-- Core 3: Listicle. Mistakes, phrases, or habits are easy entry points for cold viewers.
+- Core 1: Step-by-Step. New managers need scripts, meeting systems, and simple decision rules.
+- Core 2: Success Story. A manager conflict or turnaround story builds trust and shows judgment.
+- Core 3: List Video. Mistakes, phrases, or habits are easy entry points for cold viewers.
 - Experimental: Interview. Test one guest only if the guest is known to this audience and the creator adds expert commentary.
 
 Why it works: the rotation teaches usable behavior while still proving the consultant's judgment.
 
 **Plain but usable**
 
-- Short Process, Case Study, Listicle, experimental Interview.
+- Step-by-Step, Success Story, List Video, experimental Interview.
 
 Why it is weaker: it gives the formats but not the reason each one fits new managers.
 
@@ -201,22 +201,22 @@ Why it fails: too much attention goes to guests and updates, while the creator's
 
 **Strong starting rotation**
 
-- Core 1: Short Process. Busy parents need simple shopping, prep, and meal routines.
-- Core 2: Listicle. Lists of swaps, mistakes, and quick meals are easy to open.
-- Core 3: Case Study. A real parent transformation makes the promise believable.
-- Experimental: Roast / Review. Test lunchbox, grocery cart, or meal-plan reviews if examples are available.
+- Core 1: Step-by-Step. Busy parents need simple shopping, prep, and meal routines.
+- Core 2: List Video. Lists of swaps, mistakes, and quick meals are easy to open.
+- Core 3: Success Story. A real parent transformation makes the promise believable.
+- Experimental: Review / Review. Test lunchbox, grocery cart, or meal-plan reviews if examples are available.
 
 Why it works: the formats match low-time viewers and keep proof close to the offer.
 
 **Plain but usable**
 
-- Short Process, Listicle, Case Study, experimental Roast.
+- Step-by-Step, List Video, Success Story, experimental Review.
 
-Why it is weaker: it does not say whether the coach has real case studies or review examples.
+Why it is weaker: it does not say whether the coach has real success stories or review examples.
 
 **Bad**
 
-- Deep Dive, Interview, News, experimental Case Study.
+- Deep Dive, Interview, News, experimental Success Story.
 
 Why it fails: deep lessons and expert interviews may be too much for busy parents. News is usually not the core reason this viewer follows a nutrition coach.
 
@@ -224,22 +224,22 @@ Why it fails: deep lessons and expert interviews may be too much for busy parent
 
 **Strong starting rotation**
 
-- Core 1: Roast / Review. Website and offer pages are visible, so critique shows expertise fast.
-- Core 2: Short Process. Simple fixes like homepage above-the-fold, contact page, or service page structure are easy to use.
-- Core 3: Case Study. Before-and-after client work proves the method.
+- Core 1: Review / Review. Website and offer pages are visible, so critique shows expertise fast.
+- Core 2: Step-by-Step. Simple fixes like homepage above-the-fold, contact page, or service page structure are easy to use.
+- Core 3: Success Story. Before-and-after client work proves the method.
 - Experimental: Deep Dive. Test a longer teardown only after the shorter reviews prove demand.
 
 Why it works: the creator can show the work, name the problem, and show the fix.
 
 **Plain but usable**
 
-- Roast, Short Process, Case Study, experimental Deep Dive.
+- Review, Step-by-Step, Success Story, experimental Deep Dive.
 
 Why it is weaker: it does not explain the evidence needed, like examples, permission, or strong before-and-after proof.
 
 **Bad**
 
-- News, Interview, Listicle, experimental News.
+- News, Interview, List Video, experimental News.
 
 Why it fails: those formats underuse the visible proof that makes this niche easy to trust.
 
@@ -248,12 +248,12 @@ Why it fails: those formats underuse the visible proof that makes this niche eas
 Reject or downgrade these unless the creator has a clear reason:
 
 - **Deep Dive as core for a new channel:** use only if the creator already has trust, strong proof, and a topic worth long attention.
-- **Case Study without proof:** if there is no real outcome, it becomes a story-shaped opinion piece.
-- **Roast without examples:** no submissions, public examples, or visible work means there is nothing useful to review.
+- **Success Story without proof:** if there is no real outcome, it becomes a story-shaped opinion piece.
+- **Review without examples:** no submissions, public examples, or visible work means there is nothing useful to review.
 - **Interview as the main sales format:** it may get views, but it often builds the guest more than the creator.
 - **News as the whole channel:** it can grow attention while weakening evergreen authority.
-- **Listicle for every video:** easy to make, but can become shallow if it never leads to proof or deeper teaching.
-- **Short Process without a specific result:** "how to improve" is too vague. The process needs a defined outcome.
+- **List Video for every video:** easy to make, but can become shallow if it never leads to proof or deeper teaching.
+- **Step-by-Step without a specific result:** "how to improve" is too vague. The process needs a defined outcome.
 
 ## Promotion And Retirement Rules
 

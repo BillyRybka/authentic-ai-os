@@ -28,31 +28,31 @@ The format planners encode pairings that work and pairings that tank. Pulled her
 
 ### Sales-friendly formats
 
-- **Case Study (sales recommended).** Direct CTA at end ("If you want this for yourself, here's the link") OR stealth CTA woven through. The receipt in the body IS the proof; close converts the warm viewer.
+- **Success Story (sales recommended).** Direct CTA at end ("If you want this for yourself, here's the link") OR stealth CTA woven through. The receipt in the body IS the proof; close converts the warm viewer.
 - **Deep Dive (sales recommended for established creators).** Aggressive CTA at end. Viewers who finished a 60-min video are buyers. Leaving them without a path is a missed conversion.
-- **Roast (sales recommended).** The fix IS the conversion ("if you want this for yourself, here's the link"). Direct CTA at end. Submission CTA also lives in close (mandatory).
-- **Short Process (sales acceptable).** CTA at ~90s, middle, end. Sales page link in description.
-- **Listicle (sales acceptable).** Embed CTA mid-video right after a strong point, then again in close.
+- **Review (sales recommended).** The fix IS the conversion ("if you want this for yourself, here's the link"). Direct CTA at end. Submission CTA also lives in close (mandatory).
+- **Step-by-Step (sales acceptable).** CTA at ~90s, middle, end. Sales page link in description.
+- **List Video (sales acceptable).** Embed CTA mid-video right after a strong point, then again in close.
 
 ### Email-friendly formats
 
-- **Short Process (emails acceptable).** Lead magnet directly tied to video content (if step 3 is a checklist, give them the checklist). Mention 3x: early, middle, end.
-- **Listicle (emails recommended).** Lead magnet related to the list (the printable cheat sheet). Mention 3x.
-- **Case Study (emails acceptable).** Lead magnet tied to the methodology used. Mention 3x.
+- **Step-by-Step (emails acceptable).** Lead magnet directly tied to video content (if step 3 is a checklist, give them the checklist). Mention 3x: early, middle, end.
+- **List Video (emails recommended).** Lead magnet related to the list (the printable cheat sheet). Mention 3x.
+- **Success Story (emails acceptable).** Lead magnet tied to the methodology used. Mention 3x.
 - **Deep Dive (emails acceptable).** Lead magnet is the "shortcut version" of the deep dive.
 - **News (emails acceptable).** Lead magnet tied to the news ("the checklist for navigating [thing]"). Mention 2x.
-- **Roast (emails acceptable).** Lead magnet: "the 7 things I look for when reviewing [thing]". Submission funnel doubles as email list.
+- **Review (emails acceptable).** Lead magnet: "the 7 things I look for when reviewing [thing]". Submission funnel doubles as email list.
 
 ### Views-only formats
 
 - **News (views recommended).** NO external links in description (kills algorithm recommendations). End-screen to non-news evergreen.
 - **Interview (views recommended).** NO external links in description. End-screen to a video where the CREATOR is the expert (per interview planner, host credibility doesn't transfer from guest).
-- **Listicle (views recommended).** NO external links. End-screen to another listicle (binge) or related deep dive.
+- **List Video (views recommended).** NO external links. End-screen to another list video (binge) or related deep dive.
 
 ### Format-goal pairings to refuse
 
 - **Interview + sales.** Interviews almost never convert. A documented case is a 300k-view interview producing zero sales. If the creator picks interview + sales, surface the warning and recommend switching to emails or views.
-- **News + sales.** Viewers came for the story, not the offer. News for sales tanks. Refuse and recommend deep-dive or case-study format if sales is the goal.
+- **News + sales.** Viewers came for the story, not the offer. News for sales tanks. Refuse and recommend deep-dive or success-story format if sales is the goal.
 
 ---
 
@@ -140,11 +140,11 @@ Same Pivot, same Gap, no sales CTA. Bridge does the whole job.
 
 ## 4. Mid-video CTA carry-through
 
-For email-goal videos, the body has already mentioned the lead magnet 1-2 times. The close adds the third mention. For sales-goal videos, the body may have a stealth CTA woven through (per case-study and short-process planners). The close decides whether to do another stealth mention or shift to direct.
+For email-goal videos, the body has already mentioned the lead magnet 1-2 times. The close adds the third mention. For sales-goal videos, the body may have a stealth CTA woven through (per success-story and step-by-step planners). The close decides whether to do another stealth mention or shift to direct.
 
 **Pattern: stealth → direct in close.** Body weaves "this is what we do in [program]" naturally during a step. Close lands a direct pitch ("if you want this for yourself, here's the link"). The stealth pre-warms; the direct close converts.
 
-**Pattern: direct early → reinforce in close.** Body lands a direct pitch around the 90-second mark (per short-process planner). Close reinforces ("the link is still in the description, and here's the next step on your stack"). Two mentions, escalating confidence.
+**Pattern: direct early → reinforce in close.** Body lands a direct pitch around the 90-second mark (per step-by-step planner). Close reinforces ("the link is still in the description, and here's the next step on your stack"). Two mentions, escalating confidence.
 
 The skill doesn't write the body's CTA placement, that's vid-segment's job. The skill reads what the body did and aligns the close so the cumulative pattern feels designed, not stacked.
 
@@ -154,12 +154,12 @@ The skill doesn't write the body's CTA placement, that's vid-segment's job. The 
 
 Tone scales with format and creator's voice profile.
 
-- **Roast and Deep Dive:** higher energy CTA acceptable. Audiences are warmer.
-- **Case Study and Short Process:** medium energy. Direct but not loud.
-- **News and Listicle:** quieter CTA. The format itself is the engagement; CTA shouldn't compete.
+- **Review and Deep Dive:** higher energy CTA acceptable. Audiences are warmer.
+- **Success Story and Step-by-Step:** medium energy. Direct but not loud.
+- **News and List Video:** quieter CTA. The format itself is the engagement; CTA shouldn't compete.
 - **Interview:** quietest. The whole format hinges on the guest's gravitas, not the host's pitch.
 
-The voice profile overrides the format default. A calm-voiced creator running a roast still closes calmly, the format suggests aggressive, the voice profile says "loud isn't me." Voice profile wins. Better to under-pitch in the creator's voice than over-pitch in someone else's.
+The voice profile overrides the format default. A calm-voiced creator running a review still closes calmly, the format suggests aggressive, the voice profile says "loud isn't me." Voice profile wins. Better to under-pitch in the creator's voice than over-pitch in someone else's.
 
 ---
 

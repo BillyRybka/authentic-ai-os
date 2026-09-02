@@ -24,7 +24,7 @@ When pain is acute and the result is moderate, Poke. When pain is moderate and t
 
 ## Worked: Poke the Problem (acute pain, moderate result)
 
-**Setup:** Short Process video on writing follow-up emails. Avatar problem #1 is "I forget to follow up on warm leads and they go cold." The result is "you'll send better follow-ups," which is real but not dramatic.
+**Setup:** Step-by-Step video on writing follow-up emails. Avatar problem #1 is "I forget to follow up on warm leads and they go cold." The result is "you'll send better follow-ups," which is real but not dramatic.
 
 **Output (after a Question Hook):**
 
@@ -41,7 +41,7 @@ The result tease is implicit ("solve the memory problem"). Poke alone is enough 
 
 ## Worked: Tease the Result (moderate pain, dramatic result)
 
-**Setup:** Case Study video. The client made $250k in their first year off a single offer. Avatar feels mild frustration with their current revenue but isn't desperate. The receipt is huge.
+**Setup:** Success Story video. The client made $250k in their first year off a single offer. Avatar feels mild frustration with their current revenue but isn't desperate. The receipt is huge.
 
 **Output (after a Statement Hook):**
 
@@ -70,11 +70,11 @@ When the result is dramatic enough on its own, Poke wastes time. Just tease.
 - Then the "But..." style pivot teases the result ($4 million)
 - Closes with the contract ("give you each one")
 
-When both halves are loud, Combine carries the weight. Most powerful, longest of the three. Reserve for formats that earn the runtime (Deep Dive, sometimes Case Study, sometimes Listicle).
+When both halves are loud, Combine carries the weight. Most powerful, longest of the three. Reserve for formats that earn the runtime (Deep Dive, sometimes Success Story, sometimes List Video).
 
 ## Near-miss: Poke when the avatar's pain is mild
 
-**Setup:** Listicle video on Photoshop shortcuts. Avatar problem isn't really acute. They're fine, just slow.
+**Setup:** List video on Photoshop shortcuts. Avatar problem isn't really acute. They're fine, just slow.
 
 **Wrong move:** open with a heavy Poke ("Do you ever stare at Photoshop wondering if you'll ever stop fighting the tools? Every designer I know does. The thing is, slow editing is killing your rate-per-hour and you don't even realize it.").
 
@@ -84,7 +84,7 @@ When both halves are loud, Combine carries the weight. Most powerful, longest of
 
 ## Near-miss: Tease when the result is generic
 
-**Setup:** Short Process video on writing better LinkedIn posts. The "result" is "you'll get more engagement on LinkedIn." Real, but not dramatic.
+**Setup:** Step-by-Step video on writing better LinkedIn posts. The "result" is "you'll get more engagement on LinkedIn." Real, but not dramatic.
 
 **Wrong move:** open with a heavy Tease ("I used to write LinkedIn posts that got 12 likes. Then I figured out a five-step formula that makes every post hit 200+ likes.").
 
@@ -98,7 +98,7 @@ When both halves are loud, Combine carries the weight. Most powerful, longest of
 
 ## Near-miss: Combine when neither half is loud
 
-**Setup:** Listicle video on productivity habits. Avatar pain is "I want to be more productive" (mild). Result is "you'll have better habits" (mild).
+**Setup:** List video on productivity habits. Avatar pain is "I want to be more productive" (mild). Result is "you'll have better habits" (mild).
 
 **Wrong move:** open with a Combine ("Do you ever feel like you're not as productive as you could be? Every busy person I know does. The thing is, your habits are the lever. But there are five habits that compound, so I'm going to give you each one.").
 

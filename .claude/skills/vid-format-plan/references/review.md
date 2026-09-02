@@ -1,19 +1,19 @@
 ---
 type: reference
 doc: format-card
-format: roast
-tags: [format-card, roast, review]
+format: review
+tags: [format-card, review]
 ---
 
-# Roast format card
+# Review format card
 
 Fifteen numbered blanks, in the order the file lays them out and the order they get asked. Blanks 9 through 12 repeat once per contestant, so the real count is 11 plus 4 per review.
 
-`knowledge/format-planners/roast.md` is the content source of truth. This card holds the wording of each ask and the bar a passing answer clears, and points back at the planner for everything else. Nothing from the planner gets restated here. Two copies of one rule drift the first time either gets edited.
+`knowledge/format-planners/review.md` is the content source of truth. This card holds the wording of each ask and the bar a passing answer clears, and points back at the planner for everything else. Nothing from the planner gets restated here. Two copies of one rule drift the first time either gets edited.
 
 **Load-bearing: blanks 11 and 13.** The fix, per review, because the planner says the fix is where the gold is and that showing the problem without it proves nothing. And the submission CTA, because the planner states in as many words that it is non-optional and that it is how the format compounds. Those two get up to two follow-ups when the answer comes back thin, then a gap callout. Every other blank gets one ask and takes whatever comes back.
 
-**Never say the word roast to the creator's audience.** The planner gives this its own section: "free review" gets a thousand submissions, "free roast" gets twenty. Anything this skill writes that the audience will see (blank 1's post, blank 3's title, blank 13's CTA) says review. Internally, in the file and in the conversation, roast is fine.
+**Never say the word roast to the creator's audience.** The planner gives this its own section: "free review" gets a thousand submissions, "free roast" gets twenty. Anything this skill writes that the audience will see (blank 1's post, blank 3's title, blank 13's CTA) says review. Internally, in the file and in the conversation, review is fine.
 
 **Section names in the plan file are the blank names below**, numbered as they are numbered here.
 
@@ -30,7 +30,7 @@ Fifteen numbered blanks, in the order the file lays them out and the order they 
 - **Ask 2:** What are you offering to review, and what result does it get them?
 - **Push:** none.
 - **Passing:** either a count of submissions already in hand, or the thing being reviewed plus the result it promises, which is what the post needs.
-- **Notes:** the planner has the post template. Fill its two variables from their answer and write the filled post into the file. If the audience is too small to produce submissions, the planner's workaround is public material: roast famous people or brands, no submission needed. Offer that once, only if they say the list is thin.
+- **Notes:** the planner has the post template. Fill its two variables from their answer and write the filled post into the file. If the audience is too small to produce submissions, the planner's workaround is public material: review famous people or brands, no submission needed. Offer that once, only if they say the list is thin.
 
 ## 2. The form
 
@@ -61,7 +61,7 @@ Fifteen numbered blanks, in the order the file lays them out and the order they 
 - **Ask 2:** What's on the thumbnail?
 - **Push:** none.
 - **Passing:** a title in words plus what the thumbnail shows.
-- **Notes:** the planner builds the package off the most universal problem in the submissions, and wants the thumbnail to hint at the fix rather than only the problem. The title says review, never roast.
+- **Notes:** the planner builds the package off the most universal problem in the submissions, and wants the thumbnail to hint at the fix rather than only the problem. The title says review, never review.
 
 ## 5. Viewer's top 3 questions
 
@@ -160,7 +160,7 @@ Fifteen numbered blanks, in the order the file lays them out and the order they 
 - **Push 1:** What do they actually do? Where do they click?
 - **Push 2:** Say the first one. It has to be inside 90 seconds.
 - **Passing:** an ask with a destination, plus three placements, the first inside the first 90 seconds.
-- **Notes:** the planner calls this non-optional and the reason the format compounds: no CTA, the funnel breaks, future videos run dry. It says review, never roast. On the sales goal this sits alongside the offer CTA rather than replacing it, since the planner runs both.
+- **Notes:** the planner calls this non-optional and the reason the format compounds: no CTA, the funnel breaks, future videos run dry. It says review, never review. On the sales goal this sits alongside the offer CTA rather than replacing it, since the planner runs both.
 
 ## 14. Delivery
 

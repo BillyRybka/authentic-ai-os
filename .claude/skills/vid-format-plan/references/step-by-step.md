@@ -1,17 +1,17 @@
 ---
 type: reference
 doc: format-card
-format: short-process
-tags: [format-card, short-process]
+format: step-by-step
+tags: [format-card, step-by-step]
 ---
 
-# Short process format card
+# Step-by-step format card
 
 Thirteen numbered blanks, in the order the file lays them out and the order they get asked. Blank 10 repeats once per step, so the real count is 12 plus 1 per step.
 
-`knowledge/format-planners/short-process.md` is the content source of truth. This card holds the wording of each ask and the bar a passing answer clears, and points back at the planner for everything else. Nothing from the planner gets restated here. Two copies of one rule drift the first time either gets edited.
+`knowledge/format-planners/step-by-step.md` is the content source of truth. This card holds the wording of each ask and the bar a passing answer clears, and points back at the planner for everything else. Nothing from the planner gets restated here. Two copies of one rule drift the first time either gets edited.
 
-**Load-bearing: blanks 7 and 8.** The planner's Rules section states both as hard: one parable up front, which the structure section calls the critical distinction that separates this format from a listicle, and a maximum of eight steps, where five that get eighty percent beat ten that dilute. Those two get up to two follow-ups when the answer comes back thin, then a gap callout. Every other blank gets one ask and takes whatever comes back.
+**Load-bearing: blanks 7 and 8.** The planner's Rules section states both as hard: one parable up front, which the structure section calls the critical distinction that separates this format from a list video, and a maximum of eight steps, where five that get eighty percent beat ten that dilute. Those two get up to two follow-ups when the answer comes back thin, then a gap callout. Every other blank gets one ask and takes whatever comes back.
 
 **Section names in the plan file are the blank names below**, numbered as they are numbered here.
 
@@ -68,7 +68,7 @@ Thirteen numbered blanks, in the order the file lays them out and the order they
 - **Ask:** Which of those pay off the three questions?
 - **Push:** none.
 - **Passing:** the survivors, everything else struck.
-- **Notes:** the planner's filter here is narrow on purpose: keep only what directly answers the three viewer questions. Its cake analogy is the scope test if the creator's list is sprawling into a full system. Short process is the sponge, deep dive is the whole cake. Say it once if the scope has clearly slipped, then take their call.
+- **Notes:** the planner's filter here is narrow on purpose: keep only what directly answers the three viewer questions. Its cake analogy is the scope test if the creator's list is sprawling into a full system. Step-by-step is the sponge, deep dive is the whole cake. Say it once if the scope has clearly slipped, then take their call.
 
 ## 6. Intro: the result tease
 
@@ -89,7 +89,7 @@ Thirteen numbered blanks, in the order the file lays them out and the order they
 - **Push 1:** Demo, contrast, story, or metaphor. Which one?
 - **Push 2:** What's the old way you're arguing against?
 - **Passing:** one type named plus the material behind it: the thing being demoed, the two sides of the contrast, the story, or the frame.
-- **Notes:** one, up front, not one per step. That is the planner's critical distinction and the line between this format and a listicle. Run the matrix silently against the problem the video solves and offer the type it lands on as a candidate. The doc's Old Way / New Way example is there if they want to see one, but do not read it at them.
+- **Notes:** one, up front, not one per step. That is the planner's critical distinction and the line between this format and a list video. Run the matrix silently against the problem the video solves and offer the type it lands on as a candidate. The doc's Old Way / New Way example is there if they want to see one, but do not read it at them.
 
 ## 8. The steps
 

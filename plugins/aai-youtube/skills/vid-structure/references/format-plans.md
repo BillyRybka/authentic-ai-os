@@ -10,7 +10,7 @@ Read only the section matching the locked format. Start from the repository form
 
 Every section still carries the shared core: **Job**, **Sources**, and **Takeaway**. The fields below are conditional additions, not blank slots to fill.
 
-## Short Process
+## Step-by-Step
 
 Plan a bounded route to one result.
 
@@ -29,7 +29,7 @@ Positive: three clear actions, one opening contrast, and a screenshot attached t
 
 Negative: eight steps padded from five, each carrying a separate metaphor and client story.
 
-## Case Study
+## Success Story
 
 Plan one real transformation as a causal story, not five generic lessons.
 
@@ -47,7 +47,7 @@ The outcome may be disclosed in the title or opening. In that case the reason to
 
 An unknown material outcome or causal action is a critical gap. Do not replace it with a vague success line.
 
-## Roast
+## Review
 
 Plan from the real work or asset being reviewed.
 
@@ -115,7 +115,7 @@ Useful optional fields: **Claim source**, **Date**, **Confidence**, **Point of v
 
 An unsourced material fact is a critical gap. Keep the body as short as the story warrants. Do not manufacture a late reveal when the useful fact belongs first.
 
-## Listicle
+## List Video
 
 Plan distinct items that each create value on their own.
 
