@@ -1,41 +1,42 @@
 ---
 type: skill-asset
 skill: vid-structure
-purpose: canonical structure-owned state for piece.md
+purpose: the structure-owned fields in piece.md
 ---
 
 # Piece State Template
 
-Vid-structure-v2 updates existing frontmatter only. It does not create `piece.md` and does not change the piece body.
+vid-structure does not create `piece.md` and never touches its body. It updates only these frontmatter fields, preserving every other field byte for byte.
 
 ```yaml
 status: drafting
 segment_purposes:
-  - "{exact material-anchored body heading}"
-  - "{exact next body heading}"
+  - "{exact body heading 1, in the creator's material}"
+  - "{exact body heading 2}"
 segments_completed: []
 tension_plan:
-  central_question: "{main question raised by the locked title and thumbnail package}"
-  reason_to_continue: "{what remains meaningfully unresolved as the body advances}"
-  payoff_section: "{exact section label that fulfills the package's central promise}"
+  central_question: "{the question the viewer is holding from the title and thumbnail}"
+  title_promise_segment: {1-based index of the section that pays it off}
   threads:
-    - name: "{only when a real cross-section dependency exists}"
-      opens: "{exact section label}"
-      closes: "{exact later section label}"
+    - "{what one section opens and a later one closes, named by what it is}"
 last_updated: {YYYY-MM-DD}
 ```
 
-Use `threads: []` when no cross-section thread helps the piece.
+## Rules
 
-## Ownership and write rules
+- `segment_purposes`: one entry per body section, in final order, matching the `script.md` headings exactly. Material-anchored, never `point 1`. The pipeline compares `segments_completed.length` against this list to know when the body is done, so the count is the real count.
+- `segments_completed: []` is written only on a first outline when the field is absent. `vid-segment` owns it afterward. Never clear it to make routing convenient.
+- `tension_plan`: `central_question` and `title_promise_segment` are read by `vid-segment` and `vid-pressure-test`. `threads` holds one or two, or `[]` when the sections stand alone. Never invent one.
+- `status`: advance `ideating` to `drafting`. Never regress a later status.
+- `last_updated`: today, `YYYY-MM-DD`.
+- On a re-structure, replace `segment_purposes` and `tension_plan`; they describe the current outline, not a history.
 
-- V2 owns `segment_purposes` and `tension_plan`.
-- V2 advances `status` from `ideating` to `drafting`. It never regresses a later status.
-- V2 initializes `segments_completed: []` only on the first outline when the field is absent. `vid-segment` owns later additions.
-- `last_updated` is shared and moves to today after a successful write.
-- Preserve every other frontmatter field and the complete body byte for byte.
-- Never write bank-use arrays during planning.
+Worked example:
 
-Every `segment_purposes` entry must exactly match one body heading, in order. Every `payoff_section`, `opens`, and `closes` value must exactly match one of those entries. Threads are optional, but their boundaries are not.
-
-The only exception is a re-structure of completed V1 prose whose protected completion identifiers already differ from headings. Follow `references/restructure-safety.md`; never use the exception for new sections.
+```yaml
+tension_plan:
+  central_question: "Which of the five is quietly keeping you as the bottleneck?"
+  title_promise_segment: 3
+  threads:
+    - "every mistake is a version of it lives in your head; opened at mistake 1, closed at mistake 5"
+```

@@ -19,21 +19,21 @@ Treat a body section as completed when either condition is true:
 
 Use the union. A stale completion list must not expose prose to replacement.
 
-Older pieces may use shortened completion or purpose labels that do not exactly equal their body headings. Preserve those completed identifiers rather than renaming downstream-owned state. Require one unambiguous heading match for each legacy identifier, keep the mapping stable, and use exact heading labels for every new uncompleted section. Do not use this exception on a first V2 outline.
+Older pieces may use shortened completion or purpose labels that do not exactly equal their body headings. Preserve those completed identifiers rather than renaming downstream-owned state. Require one unambiguous heading match for each legacy identifier, keep the mapping stable, and use exact heading labels for every new uncompleted section. Do not use this exception on a first outline.
 
 Intro prose belongs to `vid-intro`, body prose to `vid-segment`, and ending prose to `vid-ending`. Preserve it byte for byte unless the creator runs the owning writing skill to revise it.
 
-Once downstream prose exists, preserve the complete `script.md` frontmatter as protected state. V2 does not change its `status`, `tier`, `piece`, or `last_refreshed` during re-structure until shared ownership is defined at promotion.
+Once downstream prose exists, preserve the complete `script.md` frontmatter as protected state. vid-structure does not change its `status`, `tier`, `piece`, or `last_refreshed` during re-structure until the shared contract assigns later ownership.
 
 ## Safe changes
 
-When no body prose is completed, V2 may replace the body plan after approval while preserving any existing intro or ending prose. Rebuild `segment_purposes` and `tension_plan` to match.
+When no body prose is completed, vid-structure may replace the body plan after approval while preserving any existing intro or ending prose. Rebuild `segment_purposes` and `tension_plan` to match.
 
-When body prose is completed, V2 may safely:
+When body prose is completed, vid-structure may safely:
 
 - refine or replace plan blocks only in uncompleted sections
 - cut, merge, add, rename, or reorder only within the uncompleted suffix
-- update cuts, production follow-ups, and tension decisions that do not change a completed section's job or position
+- update cuts, to-build rows, and tension decisions that do not change a completed section's job or position
 - preserve completed section labels, order, prose, and matching `segments_completed` entries exactly
 
 ## Changes that require downstream revision
