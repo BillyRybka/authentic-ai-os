@@ -183,7 +183,7 @@ If the segment's format can't support a visual metaphor (e.g., news segment with
 At Phase 2 (structure pass), when the block is metaphor:
 
 1. Query `banks/metaphor-bank/*.md` by `concept:` field, `category:`, and theme tags
-2. Filter visual metaphors based on format support (news / short process compress visual metaphors out)
+2. Filter visual metaphors based on format support (news / step-by-step compress visual metaphors out)
 3. Surface 0-2 candidates with the visual flag visible
 
 At Phase 3 (prose pass):

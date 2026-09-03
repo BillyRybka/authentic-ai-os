@@ -14,7 +14,7 @@
       "displayName": "AAI YouTube",
       "source": "./plugins/aai-youtube",
       "description": "Authentic AI for YouTube. Skills for foundation setup, voice capture, story/proof/metaphor banks, thumbnail and title development.",
-      "version": "0.4.3",
+      "version": "0.5.0",
       "author": {
         "name": "Billy Rybka",
         "email": "billy@peaksystems.io"

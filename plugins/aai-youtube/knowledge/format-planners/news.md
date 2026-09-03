@@ -116,7 +116,7 @@ Word-for-word script if time permits. **Bullets-from-notes is acceptable** when 
 
 ### NOT for Sales
 
-If the avatar wants to buy something, news is the wrong vehicle. They came for the story, not the offer. Save sales pitches for case studies and deep dives.
+If the avatar wants to buy something, news is the wrong vehicle. They came for the story, not the offer. Save sales pitches for success stories and deep dives.
 
 ## Title formulas
 

@@ -88,7 +88,7 @@ The story's `story_type` (client / own / viewer) should match the segment's pers
 - **Own stories** carry strong credibility weight. Use when the segment's job is establishing the creator's expertise OR when admitting the creator's failure makes the lesson land harder.
 - **Viewer stories** carry the lowest weight. Use only when neither client nor own exists and the segment can't run without a story.
 
-**Worked (sales-segment in case-study format):**
+**Worked (sales-segment in success-story format):**
 
 Pulled: a `client` story where the protagonist's transformation directly mirrors the avatar's desired outcome.
 

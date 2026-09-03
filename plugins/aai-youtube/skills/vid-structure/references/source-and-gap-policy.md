@@ -1,78 +1,54 @@
 ---
 type: skill-reference
 skill: vid-structure
-purpose: provenance, bank selection, evidence, and gap decisions
+purpose: naming sources, picking bank entries, deciding proof, and what counts as a hole
 ---
 
 # Source and Gap Policy
 
-Use this when attaching material to a section or deciding whether the plan is ready to hand off.
+Read this while locking sections.
 
-## Accepted provenance
+## Naming a source
 
-Name sources precisely enough that a writer can retrieve the material without asking what was meant.
+Name it precisely enough that the writer retrieves it without asking what was meant.
 
-- Brain dump: `brain-dump.md`, plus a short exact anchor from the relevant block.
+- Brain dump: a short exact anchor from the block, quoted.
 - Piece state: the exact field or `## The Read` line.
-- Creator decision in this session: label it `creator-approved in structure session` and preserve the approved wording.
-- Supplied local source: exact file path and relevant heading, page, timestamp, or short anchor.
-- Supplied web source: exact URL and the claim it supports. Do not call it verified unless it was checked.
-- Bank entry: a validated Obsidian wikilink plus one line naming what in the entry fits this section.
-- Unrecorded interview answer: `to elicit in recording`, followed by the target story or insight. Never present it as known source material.
+- A creator decision made in this session: keep the approved wording.
+- Supplied local source: path plus heading, page, or timestamp.
+- Supplied web source: the URL and the claim it supports. Not "verified" unless it was checked.
+- Bank entry: a wikilink to a file that exists, plus one line on what in it fits this section.
+- Unrecorded interview answer: `to elicit in recording`, then the target story or insight. It is a question target, never a known fact.
 
-Plain text is better than a dead link. Never create a person or bank wikilink during planning just because the dump names someone.
+Plain text beats a dead link. Never create a person or bank wikilink during planning because the dump names someone.
 
-## Selecting a bank entry
+## Picking a bank entry
 
-Query only a bank type the section has earned. Match against the entry's decision key:
+Query only the bank type the section has earned, one query per section. Match on the entry's decision key: `illustrates` for story, proof, and testimonial; `concept` for metaphor; `problem_it_solves` for framework.
 
-- story, proof, testimonial: `illustrates`
-- metaphor: `concept`
-- framework: `problem_it_solves`
+Read the whole candidate before recommending it. Confirm the file exists, its `type` matches its bank, the material is specific enough to write from, and any permission or anonymization note allows the use.
 
-Read the complete candidate entry before recommending it. Confirm the file exists, its `type` matches its bank, the relevant material is specific enough to write from, and any permission or anonymization note allows the intended use.
+One clear fit: recommend it. Two or three that fit for different creative reasons: show them with a one-line tradeoff each. Never paste a search result list.
 
-When one entry clearly fits, recommend it. When two or three fit for meaningfully different creative reasons, show those alternatives with one-line tradeoffs. Do not present a bank search result list when the choice is obvious.
+Planning is not consumption. Do not touch `*_used`, `used_in`, or an entry's `status`. The writing skill does that after approved prose uses the entry.
 
-Planning is not consumption. Do not update the piece's `*_used` arrays, the entry's `used_in`, or the entry's `status`. The writing skill does that only after approved prose uses the entry.
+## Proof
 
-## Evidence decisions
+Attach proof where the viewer has a real reason to doubt the claim, and wherever the format's body plan asks for it. A bank proof, a screenshot, a clip, a before and after, a calculation, a demonstration.
 
-Attach evidence when the viewer has a material reason to doubt the claim or when the format depends on proof. Evidence can be a bank proof, source document, screenshot, clip, calculation, demonstration, or direct before-and-after.
+Not on every section. Someone's quote is not proof of a result. A predicted effect is labelled predicted.
 
-Do not add proof to every section. Do not treat another person's quote as proof of a result. State whether an effect is observed, reported, or predicted.
+## Holes
 
-## Critical gaps
+**A hole in material** is a `to build` flag on the line and a row in `## To build`. The plan saves with it. `vid-segment` resolves it at write time through `vid-bank` or a cut, never by inventing.
 
-A gap is critical when any of these is true:
+**A hole that breaks the format** gets named to the creator before the save, and they decide: capture it, narrow the claim, cut the section, or go back to framing. These are:
 
-- the section's main claim has no honest source
-- a story is missing the event that makes its lesson true
-- a case-study outcome or causal action is unknown
-- a news fact that changes the conclusion is unverified
-- a demonstration is the promised deliverable but its real inputs or result are absent
-- an interview question relies on a factual premise that has not been confirmed
-- the writer would have to ask the creator what happened, choose a different section, or invent connective logic
+- a success story with no outcome, no causal action, or no proof for the outcome
+- a news fact that changes the conclusion and has no source
+- a review with no asset to show
+- a demonstration that is the promised deliverable, with no real inputs or result
+- an interview question built on a factual premise nobody confirmed
+- a section whose main claim nothing in the dump or banks supports
 
-Resolve a critical gap before saving the writer-ready plan. Options are capture or source the material, narrow the claim, merge, cut, reorder, or return to framing or packaging.
-
-For a pre-recording Interview, an exact `to elicit in recording` target is not a critical gap when the downstream deliverable is the host's framing, question, and follow-up prompts. It becomes a gap only when the plan asserts what the guest will say or relies on an unconfirmed factual premise.
-
-## Production follow-ups
-
-A production follow-up is allowed only when the content decision is complete and the remaining task cannot change the prose plan.
-
-Allowed:
-
-- export the already verified retention screenshot from the named dashboard
-- request the high-resolution copy of a supplied image already reviewed
-- record the approved screen demonstration using the exact inputs already tested
-
-Not allowed:
-
-- find a client story that proves this
-- get the real revenue number
-- decide what a guest will say instead of planning the host prompt
-- choose a metaphor later
-
-The second group is unfinished planning, not production follow-up.
+An empty section behind a named hole is the honest output when the creator has nothing. Filling it is fabrication.

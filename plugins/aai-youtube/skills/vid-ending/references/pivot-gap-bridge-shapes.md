@@ -186,23 +186,23 @@ Why this misses: the viewer can't watch a video that doesn't exist yet. "Stay tu
 
 ## 4. Worked examples (full Pivot → Gap → Bridge)
 
-### Short Process, goal=sales
+### Step-by-Step, goal=sales
 
 > "You now have everything you need to land your first 3 clients without a website. The next problem is keeping them past month two, and that's where most coaches get stuck. I made a video on it. Watch this next."
 
 Pivot (1 sentence, names transformation) → Gap (1 sentence, names problem from Top 3) → Bridge (2 sentences, confident next-video). Reads aloud in ~22 seconds.
 
-### Case Study, goal=sales
+### Success Story, goal=sales
 
 > "That's how Steve went from 0 clients to $80k a month in 9 weeks. The reason most coaches still grind even with a methodology like this is the delivery model, when client three signs, the bottleneck moves to delivery. That's what I'm going to show you next."
 
 Pivot recaps the transformation in plain language, includes the receipts already in the body. Gap names the second-order problem (delivery bottleneck). Bridge points to a deep-dive on the methodology.
 
-### Roast, goal=sales
+### Review, goal=sales
 
 > "So now you know the three biggest mistakes that kill thumbnails and the fixes that make them work. Yours is probably making one of these too. I review thumbnails every couple of weeks, drop yours in the form linked below, and watch this next where I show you a fix that doubled one creator's CTR overnight."
 
-Pivot recaps the universal lesson. Gap implicates the viewer's own thumbnail. Bridge does double duty: submission CTA (mandatory for roast format per planner) AND next-video pointer.
+Pivot recaps the universal lesson. Gap implicates the viewer's own thumbnail. Bridge does double duty: submission CTA (mandatory for review format per planner) AND next-video pointer.
 
 ### Deep Dive, goal=sales
 
@@ -216,7 +216,7 @@ Pivot is short (the body did the lift). Gap names the next-stage problem (offer 
 
 Pivot is one line. Gap is "what to watch for" (action position, not a problem). Bridge points to non-news evergreen (per news format planner, convert the algorithm spike into channel audience, never end-screen to more news).
 
-### Listicle, goal=emails
+### List Video, goal=emails
 
 > "Those are the 7 brutal truths I wish I'd known. The next one's the one most people miss until year three: how to systemize what you've learned so it actually compounds. The full checklist is in the link below, and watch this next where I walk through the system step by step."
 

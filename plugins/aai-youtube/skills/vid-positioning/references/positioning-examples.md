@@ -184,7 +184,7 @@ Niche creators usually become "the X guy" or "the X lady": the ads guy, the narc
 
 The Iceberg Statement names the ONE thing.
 
-## Case study: the notebook creator
+## Success story: the notebook creator
 
 One creator posted a video titled "This pocket notebook is (slowly) replacing my phone." It did 3.9M views.
 

@@ -93,9 +93,9 @@ Same numbers. Different placement. The bolted version reads as resume; the woven
 
 The fix in the worked version: phrase the sentence so the analysis is the SOURCE of the three moves, not a separate brag.
 
-## Worked: Big client result woven into Hook (Case Study format)
+## Worked: Big client result woven into Hook (Success Story format)
 
-**Brain dump material:** Steve, a Case Study client, went from 0 clients to $80k/month in six months.
+**Brain dump material:** Steve, a Success Story client, went from 0 clients to $80k/month in six months.
 
 **Output:**
 
@@ -107,7 +107,7 @@ The fix in the worked version: phrase the sentence so the analysis is the SOURCE
 - The implied question ("how?") is what pulls the viewer through
 - "Three things changed" doubles as a Setup tease, no separate Setup line needed
 
-This is the pattern Case Study intros default to: the receipt up front as both Hook AND credibility. Other formats can use this shape when the receipt is loud enough to earn the cold viewer's attention by itself.
+This is the pattern Success Story intros default to: the receipt up front as both Hook AND credibility. Other formats can use this shape when the receipt is loud enough to earn the cold viewer's attention by itself.
 
 ## Near-miss: Big client result that's wrong-stage for the avatar
 
@@ -121,9 +121,9 @@ This is the pattern Case Study intros default to: the receipt up front as both H
 - The viewer's brain reads "$250k to $1M is a different planet from where I am" and tunes out
 - The credibility lands on the creator, but the viewer doesn't see themselves in the case
 
-**The rule:** match the case to the avatar's stage. Big client results only earn the Hook slot when the avatar can mentally simulate themselves in the client's starting state. If the avatar is at $10k, use a $0-to-$15k case, not a $250k-to-$1M case. Pulled from `format-planners/case-study.md` Story Rules.
+**The rule:** match the case to the avatar's stage. Big client results only earn the Hook slot when the avatar can mentally simulate themselves in the client's starting state. If the avatar is at $10k, use a $0-to-$15k case, not a $250k-to-$1M case. Pulled from `format-planners/success-story.md` Story Rules.
 
-## Worked: Volume of people helped, woven into Problem/Result for Roast
+## Worked: Volume of people helped, woven into Problem/Result for Review
 
 **Brain dump material:** creator has reviewed 200+ thumbnails for clients. Found three universal mistakes.
 
@@ -141,7 +141,7 @@ This is the pattern Case Study intros default to: the receipt up front as both H
 
 A simple decision flow:
 
-- **Receipt dramatic enough to stop a cold viewer in their tracks?** → Hook (Case Study, Deep Dive, sometimes Listicle)
+- **Receipt dramatic enough to stop a cold viewer in their tracks?** → Hook (Success Story, Deep Dive, sometimes List Video)
 - **Receipt is proof of the result you're teasing?** → Problem/Result (Tease or Combine)
 - **Credibility frames the methodology in the body?** → Setup (Effort signal or Volume helped)
 
@@ -152,8 +152,8 @@ Default to Problem/Result if unsure. That's the most common slot across formats 
 Some intros earn attention without weaving credibility at all:
 
 - **News:** the news IS the value. Cold viewers came for the story, not the creator
-- **Roast (small channel):** the visual material (the contestant submission on screen) carries the energy
-- **Short Process (small channel):** the result IS the credibility most of the time
+- **Review (small channel):** the visual material (the contestant submission on screen) carries the energy
+- **Step-by-Step (small channel):** the result IS the credibility most of the time
 
 When the format planner says credibility is "often skipped," skip it. Don't force a weave just to follow a template. The format planner knows when the format earns trust without it.
 

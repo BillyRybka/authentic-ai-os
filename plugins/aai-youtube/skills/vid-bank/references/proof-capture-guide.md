@@ -53,7 +53,7 @@ Use when the creator needs to establish they've actually done what they're teach
 
 ### Client win
 
-A different person's result, with their permission or properly anonymized. Discord messages, email replies, comment screenshots, case study numbers.
+A different person's result, with their permission or properly anonymized. Discord messages, email replies, comment screenshots, success story numbers.
 
 Use when the creator needs to prove the method works for someone besides themselves. Strongest proof type for sales-oriented videos.
 

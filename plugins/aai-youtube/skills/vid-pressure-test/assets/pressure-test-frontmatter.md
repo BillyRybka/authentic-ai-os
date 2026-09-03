@@ -116,7 +116,7 @@ published: null
 # Written by vid-framing
 frame: "Daily posting destroyed my quality and tanked retention"
 core_payoff: "A schedule that doubles quality without losing growth"
-format: short-process
+format: step-by-step
 voice_context: youtube-script
 goal: views
 outlier_anchor: "..."

@@ -15,7 +15,7 @@ A segment is two bricks: a **parable** (the show: visual demo, story, metaphor, 
 
 ## Why parable + principle shapes vary by format
 
-The two bricks are the same everywhere, but every format weights them differently. A 7-minute news segment can't carry a 90-second story parable. A 60-minute deep dive can't run on tight news-shape segments without losing tension. The weighting has to match the format's energy. Some formats lean almost entirely on the principle (short process) and only add a parable where a step is hard.
+The two bricks are the same everywhere, but every format weights them differently. A 7-minute news segment can't carry a 90-second story parable. A 60-minute deep dive can't run on tight news-shape segments without losing tension. The weighting has to match the format's energy. Some formats lean almost entirely on the principle (step-by-step) and only add a parable where a step is hard.
 
 The seven format shapes below pull from `knowledge/format-planners/{format}.md`. If a planner conflicts with anything here, the planner wins. Surface the conflict to the creator.
 
@@ -45,9 +45,9 @@ Why this misses: the parable is a topic label, not an emotional or stakes-based 
 
 ---
 
-## Shape 2: Short Process segment (lean, principle-only by default)
+## Shape 2: Step-by-Step segment (lean, principle-only by default)
 
-Short Process runs principle-first. Body steps default to lean principle-only. Add a parable INSIDE a step ONLY when that step is hard or the viewer won't believe it.
+Step-by-Step runs principle-first. Body steps default to lean principle-only. Add a parable INSIDE a step ONLY when that step is hard or the viewer won't believe it.
 
 **Worked (lean Step 3 in a 5-step process):**
 
@@ -69,13 +69,13 @@ Why this lands: the hard step earns the parable. The parable is a 30-second visu
 
 **Near-miss (every step gets a parable, which flatlines the format):**
 
-A 5-step short process where every single step opens with a story and a metaphor and a principle.
+A 5-step video where every single step opens with a story and a metaphor and a principle.
 
-Why it misses: Short process is meant to be FAST. A parable at every step doubles the runtime, dilutes the emotion (every parable is a "this matters!" signal, and five "this matters!"s in one video means none of them matter), and contradicts the format's identity. Save parables for the steps that genuinely need them.
+Why it misses: Step-by-step is meant to be FAST. A parable at every step doubles the runtime, dilutes the emotion (every parable is a "this matters!" signal, and five "this matters!"s in one video means none of them matter), and contradicts the format's identity. Save parables for the steps that genuinely need them.
 
 ---
 
-## Shape 3: Listicle segment (parable + principle per point)
+## Shape 3: List Video segment (parable + principle per point)
 
 Each point gets a parable then a principle. Strong transitions are the lifeline. Vary the parable type across points (don't reuse the same type for every point).
 
@@ -89,7 +89,7 @@ Each point gets a parable then a principle. Strong transitions are the lifeline.
 
 Why this lands: the parable opens with a personal-confession framing (humanizes the mistake), then plays a fully-told story (Problem-Action-Outcome with specific numbers, 0.4% to 4.1%). The principle explains WHY it worked (info-gathering vs. action-driving), closing on one sharp takeaway. The transition forward-hooks Point 5 by naming what's even more upstream.
 
-**Worked (Point 5 with a DIFFERENT parable type, same listicle):**
+**Worked (Point 5 with a DIFFERENT parable type, same list video):**
 
 > PARABLE (metaphor): "Mistake number 5 is everywhere, but a metaphor will make it click. Most lead-magnet forms are like a bouncer at a club: the more questions they ask at the door, the longer the line gets, and the fewer people make it inside."
 >
@@ -97,19 +97,19 @@ Why this lands: the parable opens with a personal-confession framing (humanizes 
 >
 > TRANSITION OUT: "Mistake number 6 is what happens AFTER they convert, and it's the one that decides whether they actually buy."
 
-Why this lands: different parable type than Point 4 (metaphor vs. story), so the listicle's energy varies. The bouncer metaphor is everyday-familiar (clubs, queues). The principle has a specific number range. The transition pivots to the post-conversion phase.
+Why this lands: different parable type than Point 4 (metaphor vs. story), so the list video's energy varies. The bouncer metaphor is everyday-familiar (clubs, queues). The principle has a specific number range. The transition pivots to the post-conversion phase.
 
 **Near-miss (every point opens "Lesson number X is..."):**
 
-Why it misses: pure announcement. No forward hook. No promise. Listicle viewers get bored fast and bounce. See `knowledge/transition-patterns.md` Section 2 for forward-hook patterns.
+Why it misses: pure announcement. No forward hook. No promise. List Video viewers get bored fast and bounce. See `knowledge/transition-patterns.md` Section 2 for forward-hook patterns.
 
 ---
 
-## Shape 4: Case Study segment (one parable across the whole body)
+## Shape 4: Success Story segment (one parable across the whole body)
 
-Case study's body IS the story arc, so the whole body is one big parable. There's typically one segment, not many. The body answers the 5 case study questions (what was the problem / why did they need to fix it / what actions / what outcome / where's the proof). The principle (the takeaway) lands AT THE END of the body, not per-segment.
+Success story's body IS the story arc, so the whole body is one big parable. There's typically one segment, not many. The body answers the 5 success story questions (what was the problem / why did they need to fix it / what actions / what outcome / where's the proof). The principle (the takeaway) lands AT THE END of the body, not per-segment.
 
-**Worked (full case-study body as one segment):**
+**Worked (full success-story body as one segment):**
 
 > PARABLE (the story IS the parable, Problem-Action-Outcome at full length): Opens on the stakes. "When [Client] came to me, his agency was billing $42k a month, all of it tied to himself, and he hadn't taken a Saturday off in three years."
 >   - Problem: His delivery was bottlenecked on him because every project required custom strategy. Stakes: his wife had just told him "if this doesn't change, I'm raising the kid alone."
@@ -122,11 +122,11 @@ Case study's body IS the story arc, so the whole body is one big parable. There'
 >
 > TRANSITION OUT (this is the only body segment, so transition is to the ending): "You now have everything you need to start productizing your delivery. The next problem is hiring the contractor without losing the quality, and I made a video on that. Watch it next."
 
-Why this lands: one arc, one segment, one transformation. Specific numbers ($42k to $74k). Failure mid-arc (the contractor mistake) makes the story trustworthy. The lesson + 3 steps land at the end. The transition pivots to the next problem (hiring) because the case study is one body segment.
+Why this lands: one arc, one segment, one transformation. Specific numbers ($42k to $74k). Failure mid-arc (the contractor mistake) makes the story trustworthy. The lesson + 3 steps land at the end. The transition pivots to the next problem (hiring) because the success story is one body segment.
 
-**Near-miss (case study chopped into multi-segment listicle):**
+**Near-miss (success story chopped into multi-segment list video):**
 
-Treating the case study like a listicle, where every action gets its own parable + principle, flattens the arc. The viewer needs ONE story they're following, not 7 mini-stories. If the body has multiple segments, the format is wrong (probably should be deep-dive instead).
+Treating the success story like a list video, where every action gets its own parable + principle, flattens the arc. The viewer needs ONE story they're following, not 7 mini-stories. If the body has multiple segments, the format is wrong (probably should be deep-dive instead).
 
 ---
 
@@ -150,7 +150,7 @@ Why it misses: no specifics. No POV. No stakes. This is a press release, and vie
 
 ---
 
-## Shape 6: Roast / Review segment (parable = what's wrong, principle = the fix)
+## Shape 6: Review / Review segment (parable = what's wrong, principle = the fix)
 
 Per contestant: show what they have and what's wrong (the parable), then show the fix and name the principle. 3-7 minutes per review. Tone: stern-but-kind 7/10, never 10/10.
 
@@ -168,7 +168,7 @@ Why this lands: the parable is the contestant's actual material on screen plus t
 
 > "Contestant two has a bad thumbnail. It's bad because of these reasons. Don't do that."
 
-Why it misses: showing the problem (parable) without the fix (principle) proves nothing. Roast format converts because viewers see the fix work. Without the fix, you've just been mean.
+Why it misses: showing the problem (parable) without the fix (principle) proves nothing. Review format converts because viewers see the fix work. Without the fix, you've just been mean.
 
 ---
 
@@ -202,7 +202,7 @@ These fail across every format shape. If you see them in a structure draft, rest
 - **Principle with no parable when the point needs one.** Most segments need both bricks. Pure principle = research summary. Pure parable = drama without a lesson. (Lean-segment exception below.)
 - **Takeaway that's a topic-label echo of the open.** "And that's outbound" closes nothing. The takeaway names what the viewer walks AWAY with: the lesson, not the topic.
 - **Transition that's pure announcement ("now point 4").** See `knowledge/transition-patterns.md` Section 2 for forward-hook patterns. Pure announcement loses 5-10% retention per transition.
-- **A parable where the format planner says none.** Every step of a short process getting its own parable contradicts the format's identity (fast action). Trust the planner.
+- **A parable where the format planner says none.** Every step of a step-by-step getting its own parable contradicts the format's identity (fast action). Trust the planner.
 
 ---
 
@@ -216,9 +216,9 @@ The rule: if you pay something off early and then keep explaining it, that is a 
 
 In practice: a segment can run principle-only and land the lesson fast, without a full parable, IF the lesson lands and the segment immediately sets up the next thing the viewer needs to know. The danger is paying off early and then continuing to explain the same thing the viewer already understood. That's where retention breaks. The fix is the rehook (the transition), not a forced second brick.
 
-Worked example: a Short Process segment lands the lesson in 12 seconds with a one-line metaphor, then immediately sets up the friction in step 2 ("but the second you try this with a cold list, it falls apart, here's what's actually going on..."). No story or stat needed. The rehook IS the next move.
+Worked example: a Step-by-Step segment lands the lesson in 12 seconds with a one-line metaphor, then immediately sets up the friction in step 2 ("but the second you try this with a cold list, it falls apart, here's what's actually going on..."). No story or stat needed. The rehook IS the next move.
 
-Near-miss: a Short Process segment lands the lesson in 12 seconds and then keeps explaining the same lesson with three more variations. Retention drops because the viewer's brain already moved on.
+Near-miss: a Step-by-Step segment lands the lesson in 12 seconds and then keeps explaining the same lesson with three more variations. Retention drops because the viewer's brain already moved on.
 
 **Case 2: Intro setups can be paid off anywhere in the video.**
 

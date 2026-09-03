@@ -89,7 +89,7 @@ Different goals require different temperatures. Picking a goal without matching 
 
 **Either cold or warm works.** Views-goal videos are the channel's hot-audience-warming engine. They sacrifice immediate conversion for reach + binge-able-ness.
 
-**Implication for framing:** views-goal videos can be broader. They use the surface of the iceberg, not the depth. Cold-attracting hooks. Format choices that travel well (Short Process, Listicle, News).
+**Implication for framing:** views-goal videos can be broader. They use the surface of the iceberg, not the depth. Cold-attracting hooks. Format choices that travel well (Step-by-Step, List Video, News).
 
 **Reminder:** views without temperature build a list of 3,000 that's functionally 750. A views-goal video can run broad, but keep it inside the iceberg, the lane the channel serves. Broad is not the same as off-lane.
 

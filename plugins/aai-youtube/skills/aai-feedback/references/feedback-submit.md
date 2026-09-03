@@ -65,7 +65,7 @@ The session excerpt can be long and contain quotes and newlines, so never build 
       "whatHappened": "...",
       "whatTheyWanted": "...",
       "skillName": "vid-intake",
-      "sessionMode": "mode 3, own transcript, listicle, systems",
+      "sessionMode": "mode 3, own transcript, list video, systems",
       "pluginVersion": "0.2.2",
       "reproductionCase": "{ \"slug\": \"...\", \"skill\": \"vid-intake\", \"seed\": \"...\", \"persona\": { \"reveals\": [], \"withholds\": [] } }",
       "fixturesSnapshot": "--- foundation/avatar.md ---\n...\n--- foundation/iceberg.md ---\n...\n--- banks/title-bank.md (cited rows) ---\n...",

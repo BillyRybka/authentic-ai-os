@@ -22,7 +22,7 @@ Ask in order. Every YES becomes a candidate.
 
 Multiple YES: surface ALL matched types as candidates (1-3), each with a one-line why. The types are peers, not a ranked hierarchy; pick by fit to THIS segment's idea and the creator's voice. Don't auto-default to Visual Demo because it scored first.
 
-All NO: the segment is probably a tight principle-only step (the short-process and deep-dive default) or the emotional setup was supplied by an earlier segment. Confirm with the format planner before writing. Don't force a parable that no question earned.
+All NO: the segment is probably a tight principle-only step (the step-by-step and deep-dive default) or the emotional setup was supplied by an earlier segment. Confirm with the format planner before writing. Don't force a parable that no question earned.
 
 If the type choice and the format planner conflict, the format planner wins. The parable exists for a structural reason in the format, even when the matrix doesn't fire.
 

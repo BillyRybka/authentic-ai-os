@@ -33,7 +33,7 @@ Read each file when its phase starts. Never front-load.
 
 **Build the lock list:** every number, dollar figure, percentage, timeframe, and named method in the script. The Gap and any receipt in the close use ONLY these.
 
-**Read the format planner's close shape.** It is authoritative for how this format closes (a roast's submission CTA, an interview recapping the GUEST's transformation, news bridging to evergreen). If the planner's default conflicts with the creator's goal, surface it (an interview defaults to views or emails; a sales goal tanks there, credibility flows to the guest).
+**Read the format planner's close shape.** It is authoritative for how this format closes (a review's submission CTA, an interview recapping the GUEST's transformation, news bridging to evergreen). If the planner's default conflicts with the creator's goal, surface it (an interview defaults to views or emails; a sales goal tanks there, credibility flows to the guest).
 
 **Pick the next video first, then derive the Gap from it.** Scan what the creator has ALREADY published, favor what converts for this goal and reads as the logical next watch, and confirm the pick. Then write the Gap as the problem THAT video solves. Never invent a problem to fit an unmade video. If nothing published is a close-enough next step, fall back to a subscribe pointer.
 
