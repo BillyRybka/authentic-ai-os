@@ -1,49 +1,49 @@
 # Thumbnail strategy lens
 
-Use this read-only lens to classify and judge thumbnail-text directions after drafting. It calibrates strategy, not wording. It never supplies ideas, facts, visual direction, or a required category mix.
+Use this read-only lens to classify and judge thumbnail-text directions after drafting. It calibrates strategy, not wording. It never supplies facts or visual direction.
 
 ## The package test
 
 A thumbnail earns its place only when it gives the right viewer a stronger reason to click beside this exact title.
 
 - **Context:** The title and thumbnail together make the topic or expectation clear to the right viewer. The thumbnail does not need to repeat context the title already supplies.
-- **Curiosity:** The package creates a genuine question, contradiction, desire, consequence, or unresolved expectation.
+- **Curiosity:** The package makes the viewer think what, why, or how.
 - **Clarity:** The thumbnail text lands immediately as one idea. Aim for one to three words. Never use more than four.
 
 All three must pass. A phrase can be true and still fail because it does not make the package more clickable.
 
-## Fitting strategies
+## The six strategies
 
-Treat these as possible lenses, not formulas or quotas. Use only what the selected video's evidence can carry.
+These are the same six the research bank tags every outlier with. Use the names exactly so a winning test can be matched back to what already won on this channel.
 
-### Belief clash
+### Cognitive dissonance
 
-Challenge something the audience assumes is true inside the video's promise. The click comes from needing to resolve the contradiction. Never contradict the title's solution, advise the opposite action, or make the pair sound like two different videos.
+Challenge what the audience holds as true. "Do not buy a house." "Look poor." "You don't need subscribers." "Stop delegating." The click comes from needing to resolve the reversal. Easiest to write as text, hits what, why, and how hardest, and works on any channel. Try it on every video. The video must pay the reversal off, usually in the intro.
 
 ### Comparison
 
-Set two states, approaches, or outcomes against each other. Use it only when the difference is real, supported, and easy to understand.
+Before and after. 275 to 175. Day 1 to Day 7. Highest credibility when the change is real and easy to grasp. Off the table without a supported difference.
 
-### Result or proof
+### Result
 
-Make the outcome or receipt concrete. Use only a result, number, timeframe, or proof point that the selected video's evidence directly supports.
+Show or name the outcome the viewer wants, or the receipt behind it. A figure, a timeframe, a named method, the exact command or artifact the viewer walks away with. Use only what the selected video's evidence directly supports. Do not reject a mechanism merely because it is short or shares a word with the title.
 
-### Borrowed recognition
+### Social hacking
 
-Use a person, brand, platform, or tool the audience already recognizes. It must be genuinely relevant to the video's claim, not borrowed attention pasted onto an unrelated promise.
+Borrow a person, brand, platform, or tool the audience already trusts, and attribute the claim to them. Rocket fuel for small channels. It pulls that name's fans rather than fans of the topic, so do not run it every video. The name has to be genuinely known and relevant to the claim.
 
-### Open curiosity
+### Curiosity
 
-Create a specific what, why, or how without giving away the payoff. Commands, warnings, and incomplete implications can work when the video pays them off quickly.
+Same target as cognitive dissonance without the reversal. Just make them wonder. "This is a lie." "Delete this." "Quit everything." Best for a cold audience. Highest clickbait risk, so the intro has to pay it off fast.
 
-### Concrete mechanism
+### Minimal
 
-Name or show the actual thing the viewer gets, uses, or sees. A command, artifact, method, or interface can earn the click when the title gives it meaning. Do not reject it merely because it is short or shares a word with the title.
+A strong image, no text. The visual thumbnail workflow owns it. A text set never produces it.
 
 ## Classify without steering
 
-Classify the directions that survived drafting. Do not manufacture an option to cover a strategy. The ten options should test meaningfully different click hypotheses, but strong range comes from the video and package, not category coverage. Cosmetic rewrites and unsupported strategy experiments do not create useful range.
+Classify the directions that survived drafting. Do not pad a strategy the material cannot carry. The ten options should span at least three strategies when the material allows, because the three saved tests teach which strategy this audience responds to. Cosmetic rewrites do not create range.
 
 Shared title words are allowed when repetition adds clarity, force, or a useful new implication. Reject semantic repetition, not matching words.
 
-Minimal or no-text thumbnails, layout, faces, colors, production routes, and image design belong to a visual-thumbnail workflow. This skill remains thumbnail text only.
+Layout, faces, colors, production routes, and image design belong to the visual thumbnail workflow. This skill remains thumbnail text only.

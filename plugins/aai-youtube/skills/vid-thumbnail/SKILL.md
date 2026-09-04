@@ -21,13 +21,13 @@ Read `content/pieces/{slug}/piece.md`. Require `title`, `frame`, and `core_payof
 
 Use the locked title, frame, core payoff, goal, `## The Read`, and `must_not_become` as boundaries. Older pieces may lack some newer fields; continue from the locked material that exists.
 
-Read a complete `script.md` when present. Use it as evidence for what the video actually says and can deliver, but never let it override the locked framing. Read `brain-dump.md` when no complete script exists and whenever factual provenance, omitted source material, or a material gap needs checking. Creator-provided context and directly linked source material may also support a claim.
+Read a complete `script.md` when present. Use it as evidence for what the video actually says and can deliver, but never let it override the locked framing. Read `brain-dump.md` when no complete script exists and whenever factual provenance, omitted source material, or a material gap needs checking. Creator-provided context and directly linked source material may also support a claim. Bank entries the brain dump links, including the names the creator gave them, are the creator's material. Read them when they exist.
 
 ## 2. Establish support privately
 
 Identify the locked title's main hook, the question it plants, and its tone. Then identify factual material the thumbnail may use: exact figures, timeframes, names, tools, results, proof, mechanisms, commands, consequences, and genuine belief clashes.
 
-Every claim must trace to the selected video's material. Never invent, round, strengthen, merge, or borrow a fact from a bank or example. A script can demonstrate delivery; use the brain dump or source material when provenance is uncertain.
+Every fact must trace to the selected video's material. Numbers land verbatim. Never invent, round, merge, or borrow a fact from a bank or example. Bold framing of true material is allowed. The bar is deliverability: the video has to honor what the text implies. A script can demonstrate delivery; use the brain dump or source material when provenance is uncertain.
 
 ## 3. Calibrate before drafting
 
@@ -54,13 +54,13 @@ Keep every survivor:
 - curious or provocative without pre-delivering the full payoff
 - free of vague hype, stacked claims, filler, and language that needs visual direction to make sense
 
-Read the title and each candidate as one package. Cut a candidate when the pair merely repeats itself, fights the locked promise, feels generic enough for many unrelated videos, or removes the reason to watch. Productive contradiction may challenge an audience belief inside the promise. It must never tell the viewer to reject the title's solution, take the opposite action, or expect a different video.
+Read the title and each candidate as one package. Cut a candidate when the pair merely repeats itself, feels generic enough for many unrelated videos, removes the reason to watch, or promises a different video. Cognitive dissonance is the go-to: a command or claim that reverses what this audience is told, like a founder channel saying STOP DELEGATING, earns its place when the video pays the reversal off. Try it on every video the material can carry.
 
 Apply the context, curiosity, and clarity test from the strategy lens to every survivor. Judge the locked title and thumbnail text as one package, so the title may supply context the thumbnail does not repeat. Keep the option only when the package is instantly legible and creates a distinct, compelling reaction, question, tension, or expectation. A true detail is not enough by itself. Reject options that merely name a fact, tool, setup detail, warning, exception, generic problem, implementation caveat, or standalone label. Also reject unsupported scarcity and unexplained tool names. A detail from any of those categories may survive only when the complete package creates a clear hook the video can deliver.
 
 Judge the package by meaning, not literal word overlap. Shared words remain allowed when they strengthen clarity, curiosity, or force.
 
-The ten options must create meaningfully different learning signals. Cosmetic rewrites, punctuation changes, casing changes, or synonyms do not count as separate options.
+The ten options must create meaningfully different learning signals and span at least three strategies from the lens when the material can carry them. The three saved tests teach which strategy this audience responds to, so range across strategies is the point. Cosmetic rewrites, punctuation changes, casing changes, or synonyms do not count as separate options.
 
 Before presenting, verify each option one last time against the script when complete and the video's evidence when provenance matters. If the material cannot yet support ten strong options, do not pad. Briefly name the missing kind of evidence and ask one focused question before presenting the set. Do not show fewer than ten as the decision set.
 
@@ -87,7 +87,7 @@ If the creator wants a replacement before choosing, revise only the affected opt
 
 ## 6. Save the chosen three
 
-Treat the creator's explicit selection of exactly three option numbers as approval to save those tests. Before writing, verify that each chosen option remains truthful, distinct from the other two, and deliverable by the video. If one fails, explain the specific conflict briefly and ask for a replacement choice from the remaining options.
+Treat the creator's explicit selection of exactly three option numbers as approval to save those tests. Before writing, verify that each chosen option remains truthful, distinct from the other two, and deliverable by the video. If one fails, explain the specific conflict briefly and ask for a replacement choice from the remaining options. When two of the three run the same strategy, say so in one line, then save their choice.
 
 After three options are approved:
 
@@ -98,7 +98,7 @@ After three options are approved:
 5. Preserve every other frontmatter field and every body line unchanged.
 6. Re-read the saved file and verify that only `thumbnail_text`, `thumbnail_shape`, and `last_updated` changed.
 
-Choose each `thumbnail_shape` label privately to describe what the selected test is measuring. Use a simple accurate category such as `belief-clash`, `comparison`, `result`, `proof`, `borrowed-recognition`, `consequence`, `mechanism`, `number`, `command`, `curiosity`, `named-method`, or `other`. These labels are measurement metadata, not creator-facing patterns, and they do not need to cover different categories when the actual hypotheses differ.
+Set each `thumbnail_shape` label to the strategy the selected test runs: `cognitive-dissonance`, `comparison`, `result`, `social-hacking`, or `curiosity`. These are the same names the research bank tags outliers with, so a winner can be matched back to the bank. They are measurement metadata, not creator-facing patterns.
 
 Use aligned YAML arrays:
 
