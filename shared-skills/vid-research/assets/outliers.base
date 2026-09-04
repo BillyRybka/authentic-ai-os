@@ -63,6 +63,48 @@ views:
         direction: ASC
       - property: xmed
         direction: DESC
+  - type: cards
+    name: By hero
+    image: note.thumbnail
+    imageFit: contain
+    sort:
+      - property: hero
+        direction: ASC
+      - property: xmed
+        direction: DESC
+  - type: cards
+    name: No face
+    filters:
+      and:
+        - 'face == "none"'
+    image: note.thumbnail
+    imageFit: contain
+    sort:
+      - property: xmed
+        direction: DESC
+  - type: cards
+    name: Dark and big text
+    filters:
+      and:
+        - 'bg_tone == "dark"'
+        - 'text_amount == "phrase"'
+    image: note.thumbnail
+    imageFit: contain
+    sort:
+      - property: xmed
+        direction: DESC
+  - type: table
+    name: By promise
+    order:
+      - file.name
+      - channel
+      - promise
+      - strategy
+      - views
+      - xmed
+    sort:
+      - property: xmed
+        direction: DESC
   - type: table
     name: Needs attention
     filters:

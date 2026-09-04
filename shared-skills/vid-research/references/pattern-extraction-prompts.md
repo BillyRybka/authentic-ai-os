@@ -228,6 +228,47 @@ Members:
 Why this pulls: audience trusts authorities who admit being wrong; reversals signal active learning rather than dogma.
 ```
 
+## Prompt 6: Emotional promise tagging (every outlier)
+
+**Purpose:** tag what the package makes the viewer feel, judged from title plus thumbnail together. The feeling often lives in the title ("You're not behind (yet)") while the image is just a face, so this is a package property stored on the outlier note, never a thumbnail-only read.
+
+**Input:** one outlier's title, its verbatim `thumbnail_text`, and its `strategy`. Run once per outlier during the workup; the vision pass and this pass write to the same note.
+
+**Prompt:**
+
+```
+Title: "{title}"
+Thumbnail text: "{thumbnail_text}"
+Strategy: {strategy}
+
+Tag every emotional promise that passes its test. Multi-select. Most packages carry two. Tag every one that passes; do not pick a favorite. Use only these seven values:
+
+- B (Big): the result claimed is larger than the niche normally hears. A number or outcome that makes you ask "that much?"
+- E (Easy): the path feels short or the bar low: minutes, hack, simple, for beginners, for dummies
+- N (New): something feels novel or previously hidden: just dropped, nobody tells you, a withheld mechanism
+- S (Safe): trust is borrowed or earned: a known name or tool, a completed past-tense result, a calm authoritative face
+- fear: the viewer is doing something wrong or stands to lose: STOP, DON'T, SUCKS, wrong, the hard way
+- status: the viewer ends up ahead of others: 99%, get ahead, winners and losers, better than
+- contrarian: the package contradicts what the niche believes: awful idea, sucks actually, why X is bad
+
+Output format:
+promise: [{values}]
+```
+
+**Worked output:**
+
+```
+Title: "How to Use Google Antigravity Better than 99% of People"
+Thumbnail text: "99%"
+Strategy: Result
+
+promise: [status, S]
+```
+
+"Better than 99%" puts the viewer ahead of others (status). A named tool the viewer already trusts borrows its safety (S). Nothing claims a big number, an easy path, or a reversal, so B, E, N, fear, contrarian stay off.
+
+**Fails when:** it tags from the strategy name instead of the words. Cognitive Dissonance often pairs with `contrarian` or `fear`, but the tag has to pass its own test on this title and this thumbnail text. A Result thumbnail with a modest figure is not `B`.
+
 ## Where outputs land
 
 - Prompt 1 (themes) → the Channels table in research-log.md
@@ -235,8 +276,9 @@ Why this pulls: audience trusts authorities who admit being wrong; reversals sig
 - Prompt 3 (power words) → power-words-bank.md (global + audience-specific)
 - Prompt 4 (title patterns) → title-bank.md as blocks where the heading IS the template string and the body carries spread + own_channel_proven + why it lands + worked examples
 - Prompt 5 (topics) → topic clusters under Findings in research-log.md (own + niche only), not a standalone bank
+- Prompt 6 (promise) → the `promise` list in that outlier's note frontmatter in `banks/outliers/`
 
-All entries start `status: draft-pending-curation` until Theory of One curation pass promotes them.
+Bank entries (Prompts 3 and 4) start `status: draft-pending-curation` until the curation pass promotes them. Outlier note fields (Prompt 6) are written straight to the note.
 
 ## Common mistakes (apply across all prompts)
 
