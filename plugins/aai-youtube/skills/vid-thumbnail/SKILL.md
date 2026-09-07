@@ -11,7 +11,7 @@ Keep research, generation, and filtering private. The creator sees the locked ti
 
 ## How a thumbnail earns the click
 
-The viewer is scrolling. The image lands before the title does, and the two are read as one package in under a second. The only job of the text is to make the right viewer think what, why, or how. If it does not do that, nothing else about it matters.
+The viewer has not watched the video yet. They may know the creator. They may have seen every video on the channel. It does not matter. All they have is the title and these words, read as one package in under a second. Anything that needs the video to make sense is an inside joke. A metaphor, an example, a story beat, or a phrase from inside the script is not a thumbnail until the title alone makes it land. The only job of the text is to make the right viewer think what, why, or how. Sharp, direct, and clear. If it does not do that, nothing else about it matters.
 
 Every title leaves a gap. Write what the title says. Then write what it withholds, the thing the viewer would have to click to find out. The thumbnail works that gap and never restates what the title already carries. The pairings that work:
 
@@ -20,13 +20,13 @@ Every title leaves a gap. Write what the title says. Then write what it withhold
 - The title teases that something exists. The thumbnail names it. "The One Rule That Killed My Procrastination" with "THE 15-SECOND RULE."
 - The title diagnoses. The thumbnail promises the fix without revealing it. "95% of People STILL Prompt ChatGPT Wrong" with "DO THIS INSTEAD."
 
-The strongest move on any channel is cognitive dissonance: find what every other creator in this niche tells the viewer to do, and say the opposite, because this video can back it up. "LOOK POOR" on a finance channel. "WORK LESS" on a productivity channel. "DON'T HIRE A VA" on an operations channel. The viewer has to resolve the contradiction, and the only way to resolve it is to watch. Try it on every video the material can carry.
+The first move to try on any channel is cognitive dissonance: name what the viewer has been told or assumes, and say the opposite, because this video backs it up. "LOOK POOR" on a finance channel. "WORK LESS" on a productivity channel. "DON'T HIRE A VA" on an operations channel. The belief is in the material. Every video argues against something: the advice the viewer keeps hearing, the thing they assume, the move they were about to make. Find that in the script or brain dump and reverse it. The viewer has to resolve the contradiction, and the only way to resolve it is to watch. It is the first thing to try, not the only thing. Result, comparison, curiosity, and social hacking each win when the material carries them, and the ten must show that range.
 
 Specificity is credibility. "$712,921.88" beats "$700K." "-30% IN 6 WEEKS" beats "REVENUE DROPPED." Cents matter. The number that would feel made up if it were not true is the one to use. A number that is not in the material does not exist.
 
 Strong verbs pull. STOP, FIX, DELETE, COPY, DON'T, QUIT. Soft verbs die. CONSIDER, TRY, LEARN, EXPLORE.
 
-The words must belong to this video. Ask whether they would fit a hundred other videos in the niche. "BOTTLENECK" fits every founder video. "BACKWARDS" only fits the one where the steps were done in the wrong order. Signal this story, not the channel's theme.
+The words must belong to this video. Ask whether they would fit a hundred other videos in the niche. "BOTTLENECK" fits every founder video. "BACKWARDS" only fits the one where the steps were done in the wrong order. Signal this story, not the channel's theme. Belonging to this video is not the same as coming from inside it. "BACKWARDS" works because the title explains what went backwards. "HALF A RECIPE" does not, because nothing in the title says what the recipe is for.
 
 Bold is allowed. Provocation is allowed. The bar is not whether the text sounds safe. The bar is whether the video honors what the text implies. "STOP DELEGATING" works on a video that shows what to do before you delegate. It fails on a video that says delegate more.
 
@@ -84,15 +84,15 @@ After drafting, read `references/thumbnail-strategy-lens.md` in full. Use it to 
 
 Read the title and each candidate as one package. Keep a candidate only when the package makes the right viewer think what, why, or how, and the video can pay that off. Kill it when:
 
+- it needs the video to make sense: a metaphor, example, story beat, or phrase from inside the script that the title alone does not explain
 - it restates the title's idea, so the pair says one thing twice
-- it runs past four words
+- it runs past four words. Count them
 - it states the lesson so plainly there is no reason to click
 - it just names a fact, a tool, a role, a setting, or a caveat, with no question attached
 - it would fit a hundred other videos in this niche
 - it uses a number, name, or claim the material does not hold
 - it promises a different video than the title does
-- it leans on a visual metaphor word (ROADMAP, BLUEPRINT, UNLOCK, JOURNEY), a hedge, stock hype (INSANE, GAME-CHANGER), or open-mouth language (MIND BLOWN)
-- it only makes sense after watching
+- it leans on a decoration word (ROADMAP, UNLOCK, JOURNEY), a hedge, stock hype (INSANE, GAME-CHANGER), or open-mouth language (MIND BLOWN)
 
 Shared words with the title are fine when they add clarity or force. Judge the meaning of the pair, not word overlap.
 
